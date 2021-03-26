@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="字符编码"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>字符编码 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ascii"><span class="toc-number">1.</span> <span class="toc-text"> ASCII</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#unicode"><span class="toc-number">2.</span> <span class="toc-text"> Unicode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#unicode%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text"> Unicode转换格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#utf-8"><span class="toc-number">2.1.1.</span> <span class="toc-text"> UTF-8</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#base64"><span class="toc-number">3.</span> <span class="toc-text"> Base64</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">字符编码</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-01-15</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">计算机系统</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="ascii"><a class="markdownIt-Anchor" href="#ascii"></a> ASCII</h1>
+<p>ASCII编码将字符与整数0-127（7位无符号二进制数）对应</p>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">二进制</th>
+<th style="text-align:left">十进制</th>
+<th style="text-align:left">十六进制</th>
+<th style="text-align:left">缩写</th>
+<th style="text-align:left">键盘输入</th>
+<th style="text-align:left">转义形式</th>
+<th style="text-align:left">名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">000 0000</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">00</td>
+<td style="text-align:left">NUL</td>
+<td style="text-align:left">Ctrl+@</td>
+<td style="text-align:left">\0</td>
+<td style="text-align:left">NULL</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>回车（carriage ret 打印头复位到行首）<code>\r</code> 0x0D<br />
+换行（new line 打印头下移） <code>\n</code> 0x0A<br />
+空格 0x20<br />
+数字0  0x30<br />
+大写A    0x41<br />
+小写a    0x61</p>
+<p>EASCII扩展ASCII<br />
+GB2312、GBK、GB18030<br />
+<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/19677619">GB2312、GBK、GB18030 这几种字符集的主要区别是什么？</a></p>
+<h1 id="unicode"><a class="markdownIt-Anchor" href="#unicode"></a> Unicode</h1>
+<p>Unicode（Universal Coded Character Set (UCS)）是一种信息技术标准，用于对世界上大多数书写系统中的文本进行一致的编码、表示和处理。直白的说，它为世界上各种语言中的每个文字赋予一个数字，用该数字表示这个字符。<br />
+Unicode定义的范围是从十六进制的0到10FFFF，称为代码点。简记为U+0000到U+10FFFF。这其中有的代码点对应的不是可见字符，例如回车。还有的代码点是保留的，目前没有被使用。</p>
+<h2 id="unicode转换格式"><a class="markdownIt-Anchor" href="#unicode转换格式"></a> Unicode转换格式</h2>
+<p>Unicode标准定义了Unicode转换格式(UCS Transfer Format，简称UTF)，如 UTF-8，UTF-16和UTF-32以及其他几种编码。最常用的编码是UTF-8，UTF-16和UCS -2（UTF-16的前身，不完全支持Unicode）<br />
+Unicode转换格式中的数字编码，通过一系列的计算可以转换为Unicode定义的代码点，反之也可以通过Unicode代码点转换为Unicode转换格式中的编码。</p>
+<p>Unicode转换格式存在的原因：</p>
+<ul>
+<li>若直接使用Unicode代码点进行定长编码，由于最大的代码点为U+10FFFF，所以每个字符都需要24bit，过于浪费。</li>
+<li>为了节约空间必须使用变长编码，目标是用的字节少，编码就短，用的字节多，编码就长。</li>
+<li>变长编码存在问题，给定多个字符的编码，在读取时如何知道几个字节组成了一个字符？这需要有标识位来区分占用几个字节。标识位不能是定长，如果是定长，未来要编码的字节越来越长，而有限的标识位不可能区分无限的字节长度，因此标识位也需要是变长。</li>
+</ul>
+<p>UTF-8：单字节变长编码<br />
+UTF-16：双字节变长编码<br />
+UCS-2：双字节定长编码，具有大端与小端的区别。<br />
+UTF-32：四字节变长编码<br />
+UCS-4：四字节定长编码，具有大端与小端的区别。</p>
+<h3 id="utf-8"><a class="markdownIt-Anchor" href="#utf-8"></a> UTF-8</h3>
+<p>UTF-8将Unicode代码点编码为1-4个字节。标识位采用一进制，它是几个字节，就有几个前导1（1字节除外，为了与ASCII格式兼容，1字节没有前导的1），后跟一个用来分隔的0。随后每个非起始字节，都以10开头。以便在丢失中间字节后快速出错并快速恢复。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">U+ 0000 ~ U+  007F(0bit-7bit):   0XXXXXXX</span><br><span class="line">U+ 0080 ~ U+  07FF(8bit-11bit):  110XXXXX 10XXXXXX</span><br><span class="line">U+ 0800 ~ U+  FFFF(12bit-16bit): 1110XXXX 10XXXXXX 10XXXXXX</span><br><span class="line">U+10000 ~ U+10FFFF(17bit-21bit): 11110XXX 10XXXXXX 10XXXXXX 10XXXXXX</span><br></pre></td></tr></table></figure>
+<p>1字节有7bit可存，从2字节开始，最多有<code>5n+1</code>bit可存，（首字节<code>8-n-1</code>，其余字节<code>(8-2)*(n-1)</code>）。</p>
+<p>从8bit的Unicode代码点开始，求需要几个字节才能表示：<code>Floor((bitsLength-1)/5)</code><br />
+每当读到一个字节时，如果以0开头，就只读一个字节。如果以110开头，就读两个字节拼在一起。至于为什么不用10开头？因为10开头表示多字节的非起始字节，意味着可以继续读这个字节然后与前面的字节拼在一起。</p>
+<p>对于代码点为U+77E5的字符，它的二进制表示为<code>0111 0111 1110 0101</code>，它占用15bit，在UTF-8中需要用<code>Floor((15-1)/5)=3</code>个字节，低位对齐代入<br />
+<code>1110XXXX 10XXXXXX 10XXXXXX</code>得到<code>11100111 10011111 10100101</code>。<br />
+反之，由<code>11100111 10011111 10100101</code>的首字节可知，它的标识位有3个前导1，占用3个字节。从模板中提取出<code>0111 0111 1110 0101</code>，即十六进制U+77E5</p>
+<h1 id="base64"><a class="markdownIt-Anchor" href="#base64"></a> Base64</h1>
+<p>过去，有一些协议只能发送ASCII文本，而无法发送二进制数据（因为如果发送二进制数据，它可能和协议本身的二进制数据冲突，例如要发送的二进制数据中恰好形成了协议的结束标记），为此，必须有一种办法使用文本来传输二进制数据，Base64使用64个ASCII可显示字符来表示所有二进制数据，每个字符表示6个bit。由于每个字符本身需要用8bit表示，因此对于<code>x</code>bit的原始数据，Base64将占用<code>x/6*8=1.3x</code>bit。<br />
+Base64是64进制编码，比起Hex的16进制编码更加高效。因为Hex每个字符表示4bit，字符本身用8bit，因此将占用<code>x/4*8=2x</code>bit</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/计算机系统/字符编码.html">https://rcocco.github.io/categories/计算机/计算机系统/字符编码.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97.html"><i class="fa fa-chevron-left">  </i><span>浮点运算</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/Unicode.html"><span>Unicode</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

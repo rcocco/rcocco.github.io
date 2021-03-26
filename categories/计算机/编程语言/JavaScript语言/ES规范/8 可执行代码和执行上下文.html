@@ -1,0 +1,485 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="8 可执行代码和执行上下文"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>8 可执行代码和执行上下文 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E4%B8%8E%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">1.</span> <span class="toc-text"> 8 可执行代码与执行上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#81-%E8%AF%8D%E6%B3%95%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.</span> <span class="toc-text"> 8.1 词法环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#811-%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 8.1.1 环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8111-%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 8.1.1.1 声明式环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#81111-hasbindingn"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text"> 8.1.1.1.1 HasBinding(N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81112-createmutablebindingn-d"><span class="toc-number">1.1.1.1.2.</span> <span class="toc-text"> 8.1.1.1.2 CreateMutableBinding(N, D)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81113-createimmutablebindingn-s"><span class="toc-number">1.1.1.1.3.</span> <span class="toc-text"> 8.1.1.1.3 CreateImmutableBinding(N, S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81114-initializebindingnv"><span class="toc-number">1.1.1.1.4.</span> <span class="toc-text"> 8.1.1.1.4 InitializeBinding(N,V)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81115-setmutablebinding-nvs"><span class="toc-number">1.1.1.1.5.</span> <span class="toc-text"> 8.1.1.1.5 SetMutableBinding (N,V,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81116-getbindingvaluens"><span class="toc-number">1.1.1.1.6.</span> <span class="toc-text"> 8.1.1.1.6 GetBindingValue(N,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81117-deletebinding-n"><span class="toc-number">1.1.1.1.7.</span> <span class="toc-text"> 8.1.1.1.7 DeleteBinding (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81118-hasthisbinding"><span class="toc-number">1.1.1.1.8.</span> <span class="toc-text"> 8.1.1.1.8 HasThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81119-hassuperbinding"><span class="toc-number">1.1.1.1.9.</span> <span class="toc-text"> 8.1.1.1.9 HasSuperBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811110-withbaseobject"><span class="toc-number">1.1.1.1.10.</span> <span class="toc-text"> 8.1.1.1.10 WithBaseObject()</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8112-%E5%AF%B9%E8%B1%A1%E5%BC%8F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 8.1.1.2 对象式环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#81121-hasbindingn"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text"> 8.1.1.2.1 HasBinding(N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81122-createmutablebinding-n-d"><span class="toc-number">1.1.1.2.2.</span> <span class="toc-text"> 8.1.1.2.2 CreateMutableBinding (N, D)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81123-createimmutablebinding-n-s"><span class="toc-number">1.1.1.2.3.</span> <span class="toc-text"> 8.1.1.2.3 CreateImmutableBinding (N, S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81124-initializebinding-nv"><span class="toc-number">1.1.1.2.4.</span> <span class="toc-text"> 8.1.1.2.4 InitializeBinding (N,V)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81125-setmutablebinding-nvs"><span class="toc-number">1.1.1.2.5.</span> <span class="toc-text"> 8.1.1.2.5 SetMutableBinding (N,V,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81126-getbindingvaluens"><span class="toc-number">1.1.1.2.6.</span> <span class="toc-text"> 8.1.1.2.6 GetBindingValue(N,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81127-deletebinding-n"><span class="toc-number">1.1.1.2.7.</span> <span class="toc-text"> 8.1.1.2.7 DeleteBinding (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81128-hasthisbinding"><span class="toc-number">1.1.1.2.8.</span> <span class="toc-text"> 8.1.1.2.8 HasThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81129-hassuperbinding"><span class="toc-number">1.1.1.2.9.</span> <span class="toc-text"> 8.1.1.2.9 HasSuperBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811210-withbaseobject"><span class="toc-number">1.1.1.2.10.</span> <span class="toc-text"> 8.1.1.2.10 WithBaseObject()</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8113-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 8.1.1.3 函数式环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#81131-bindthisvaluev"><span class="toc-number">1.1.1.3.1.</span> <span class="toc-text"> 8.1.1.3.1 BindThisValue(V)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81132-hasthisbinding"><span class="toc-number">1.1.1.3.2.</span> <span class="toc-text"> 8.1.1.3.2 HasThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81133-hassuperbinding"><span class="toc-number">1.1.1.3.3.</span> <span class="toc-text"> 8.1.1.3.3 HasSuperBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81134-getthisbinding"><span class="toc-number">1.1.1.3.4.</span> <span class="toc-text"> 8.1.1.3.4 GetThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81135-getsuperbase"><span class="toc-number">1.1.1.3.5.</span> <span class="toc-text"> 8.1.1.3.5 GetSuperBase ()</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8114-%E5%85%A8%E5%B1%80%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.4.</span> <span class="toc-text"> 8.1.1.4 全局环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#81141-hasbindingn"><span class="toc-number">1.1.1.4.1.</span> <span class="toc-text"> 8.1.1.4.1 HasBinding(N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81142-createmutablebinding-n-d"><span class="toc-number">1.1.1.4.2.</span> <span class="toc-text"> 8.1.1.4.2 CreateMutableBinding (N, D)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81143-createimmutablebinding-n-s"><span class="toc-number">1.1.1.4.3.</span> <span class="toc-text"> 8.1.1.4.3 CreateImmutableBinding (N, S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81144-initializebinding-nv"><span class="toc-number">1.1.1.4.4.</span> <span class="toc-text"> 8.1.1.4.4 InitializeBinding (N,V)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81145-setmutablebinding-nvs"><span class="toc-number">1.1.1.4.5.</span> <span class="toc-text"> 8.1.1.4.5 SetMutableBinding (N,V,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81146-getbindingvaluens"><span class="toc-number">1.1.1.4.6.</span> <span class="toc-text"> 8.1.1.4.6 GetBindingValue(N,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81147-deletebinding-n"><span class="toc-number">1.1.1.4.7.</span> <span class="toc-text"> 8.1.1.4.7 DeleteBinding (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81148-hasthisbinding"><span class="toc-number">1.1.1.4.8.</span> <span class="toc-text"> 8.1.1.4.8 HasThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81149-hassuperbinding"><span class="toc-number">1.1.1.4.9.</span> <span class="toc-text"> 8.1.1.4.9 HasSuperBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811410-withbaseobject"><span class="toc-number">1.1.1.4.10.</span> <span class="toc-text"> 8.1.1.4.10 WithBaseObject()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811411-getthisbinding"><span class="toc-number">1.1.1.4.11.</span> <span class="toc-text"> 8.1.1.4.11 GetThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811412-hasvardeclaration-n"><span class="toc-number">1.1.1.4.12.</span> <span class="toc-text"> 8.1.1.4.12 HasVarDeclaration (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811413-haslexicaldeclaration-n"><span class="toc-number">1.1.1.4.13.</span> <span class="toc-text"> 8.1.1.4.13 HasLexicalDeclaration (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811414-hasrestrictedglobalproperty-n"><span class="toc-number">1.1.1.4.14.</span> <span class="toc-text"> 8.1.1.4.14 HasRestrictedGlobalProperty (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811415-candeclareglobalvar-n"><span class="toc-number">1.1.1.4.15.</span> <span class="toc-text"> 8.1.1.4.15 CanDeclareGlobalVar (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811416-candeclareglobalfunction-n"><span class="toc-number">1.1.1.4.16.</span> <span class="toc-text"> 8.1.1.4.16 CanDeclareGlobalFunction (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811417-createglobalvarbinding-n-d"><span class="toc-number">1.1.1.4.17.</span> <span class="toc-text"> 8.1.1.4.17 CreateGlobalVarBinding (N, D)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#811418-createglobalfunctionbinding-n-v-d"><span class="toc-number">1.1.1.4.18.</span> <span class="toc-text"> 8.1.1.4.18 CreateGlobalFunctionBinding (N, V, D)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8115-%E6%A8%A1%E5%9D%97%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.1.5.</span> <span class="toc-text"> 8.1.1.5 模块环境记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#81151-getbindingvaluens"><span class="toc-number">1.1.1.5.1.</span> <span class="toc-text"> 8.1.1.5.1 GetBindingValue(N,S)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81152-deletebinding-n"><span class="toc-number">1.1.1.5.2.</span> <span class="toc-text"> 8.1.1.5.2 DeleteBinding (N)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81153-hasthisbinding"><span class="toc-number">1.1.1.5.3.</span> <span class="toc-text"> 8.1.1.5.3 HasThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81154-getthisbinding"><span class="toc-number">1.1.1.5.4.</span> <span class="toc-text"> 8.1.1.5.4 GetThisBinding ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#81155-createimportbinding-n-m-n2"><span class="toc-number">1.1.1.5.5.</span> <span class="toc-text"> 8.1.1.5.5 CreateImportBinding (N, M, N2)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#812-%E8%AF%8D%E6%B3%95%E7%8E%AF%E5%A2%83%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 8.1.2 词法环境操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8121-getidentifierreference-lex-name-strict"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 8.1.2.1 GetIdentifierReference (lex, name, strict)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8122-newdeclarativeenvironment-e"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 8.1.2.2 NewDeclarativeEnvironment (E)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8123-newobjectenvironment-o-e"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 8.1.2.3 NewObjectEnvironment (O, E)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8124-newfunctionenvironment-f-newtarget"><span class="toc-number">1.1.2.4.</span> <span class="toc-text"> 8.1.2.4 NewFunctionEnvironment ( F, newTarget )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8125-newglobalenvironment-g"><span class="toc-number">1.1.2.5.</span> <span class="toc-text"> 8.1.2.5 NewGlobalEnvironment ( G )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8126-newmoduleenvironment-e"><span class="toc-number">1.1.2.6.</span> <span class="toc-text"> 8.1.2.6 NewModuleEnvironment (E)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#82-code-realms"><span class="toc-number">1.2.</span> <span class="toc-text"> 8.2 Code Realms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#821-createrealm"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 8.2.1 CreateRealm ( )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#822-createintrinsics-realmrec"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 8.2.2 CreateIntrinsics ( realmRec )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#823-setrealmglobalobject-realmrec-globalobj"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 8.2.3 SetRealmGlobalObject ( realmRec, globalObj )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#824-setdefaultglobalbindings-realmrec"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 8.2.4 SetDefaultGlobalBindings ( realmRec )</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#83-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">1.3.</span> <span class="toc-text"> 8.3 执行上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#831-resolvebinding-name-env"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 8.3.1 ResolveBinding ( name, [env] )</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.</span> <span class="toc-text"> 可执行代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.5.</span> <span class="toc-text"> 执行环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E8%A7%A3%E6%9E%90"><span class="toc-number">1.6.</span> <span class="toc-text"> 标识符解析</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">8 可执行代码和执行上下文</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-17</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="8-可执行代码与执行上下文"><a class="markdownIt-Anchor" href="#8-可执行代码与执行上下文"></a> 8 可执行代码与执行上下文</h1>
+<h2 id="81-词法环境"><a class="markdownIt-Anchor" href="#81-词法环境"></a> 8.1 词法环境</h2>
+<p>词法环境是一个用于定义<code>Identifiers</code>与特定变量和函数在 ECMAScript 代码的词法嵌套结构上关联关系的规范类型。一个词法环境由一个环境记录项和可能为空的外部词法环境引用构成。通常词法环境会与 ECMAScript 代码诸如 FunctionDeclaration、<s>WithStatement</s> BlockStatement 或者 TryStatement 的 Catch 块这样的特定句法结构相联系，且类似代码每次执行都会有一个新的词法环境被创建出来。</p>
+<span id="more"></span>
+<p>环境记录项记录了在其关联的词法环境范围中创建的标识符绑定。</p>
+<p>外部词法环境引用用于表示词法环境的逻辑嵌套关系模型。（内部）词法环境的外部引用是逻辑上包含内部词法环境的词法环境。外部词法环境可能有多个内部词法环境。例如，如果一个 FunctionDeclaration 包含两个嵌套的 FunctionDeclaration，那么每个内嵌函数的词法环境都是外部函数本次<s>执行</s>计算(evaluation)所产生的词法环境。</p>
+<p><s>全局环境是一个唯一的词法环境，它在任何 ECMA 脚本的代码执行前创建。全局环境的环境数据是一个对象环境数据，该环境数据使用全局对象（15.1）作为绑定对象。全局环境的外部环境引用为 null。</s><br />
+全局环境是没有外部环境的词法环境。 全局环境的外部环境引用为null。 全局环境的环境记录可能预填充了标识符绑定，并且包含一个关联的全局对象，该对象的属性提供了某些全局环境的标识符绑定。 此全局对象是全局环境的<code>this</code>绑定的值。 在执行ECMAScript代码时，可以将其他属性添加到全局对象，并且可以修改初始属性。</p>
+<p>在 ECMA 脚本的代码执行过程中，可能会向全局对象添加额外的属性，也可能修改其初始属性的值。</p>
+<p>模块环境是一个包含模块顶级声明的绑定的词法环境，它还包含模块显式导入的绑定。 模块环境的外部环境是全局环境。</p>
+<p>函数环境是一个词法环境，它对应于ECMAScript函数对象的调用。 函数环境可以建立新的<code>this</code>绑定。 函数环境还会捕获 为了支持<code>super</code>方法调用 所需的状态。</p>
+<p>词法环境和环境记录的值纯粹是规范机制，不需要与ECMAScript实现的任何特定artefact(任何人造物)相对应。 ECMAScript程序无法直接访问或操纵这些值。</p>
+<h3 id="811-环境记录"><a class="markdownIt-Anchor" href="#811-环境记录"></a> 8.1.1 环境记录</h3>
+<p>在本标准中，有两种主要的环境记录：声明式环境记录和对象式环境记录。声明式环境记录项用于定义那些将标识符与语言值直接绑定的 ECMA 脚本语法元素，例如 FunctionDeclaration、VariableDeclaration 以及 Catch 语句。对象式环境记录项用于定义那些将标识符与具体对象的属性绑定的 ECMA 脚本元素，例如 <s>Program 以及</s> WithStatement 表达式。全局环境记录和函数环境记录是明确用于脚本(Script)全局声明和函数内顶级声明的专门化(specializations)</p>
+<p>出于规范目的，环境记录值是Record规范类型的值。可以将环境记录值理解为面向对象中的一个简单继承结构，其中环境记录是一个抽象类，有三个具体实现类：声明式环境记录、对象式环境记录、全局环境记录。函数环境记录和模块环境记录是声明式环境记录的子类。抽象类包含了 表15 所描述的抽象方法定义，针对每一个具体实现类，每个抽象方法都有不同的具体算法。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">HasBinding(N)</td>
+<td style="text-align:left">判断环境记录是否有对字符串值N的绑定。如果有则返回true，否则返回false</td>
+</tr>
+<tr>
+<td style="text-align:left">CreateMutableBinding(N, D)</td>
+<td style="text-align:left">在环境记录中创建一个新的但未初始化的可变绑定。字符串值N是绑定的名称。如果可选参数D的值为true，则该绑定在后续操作中可以被删除。</td>
+</tr>
+<tr>
+<td style="text-align:left">CreateImmutableBinding(N, S)</td>
+<td style="text-align:left">在环境记录中创建一个新的但未初始化的不可变绑定。字符串值N是绑定的名称。如果S为true，则不管引用该绑定的操作的严格模式设置如何，尝试在其初始化之前访问绑定的值或在其初始化之后对其进行设置都将始终引发异常。S是可选参数，默认为false。</td>
+</tr>
+<tr>
+<td style="text-align:left">InitializeBinding(N,V)</td>
+<td style="text-align:left">设置环境记录中已经存在但未初始化的绑定的值。字符串值N是绑定名称的文本。V是绑定的值，该值可以任何ECMAScript语言类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">SetMutableBinding(N,V,S)</td>
+<td style="text-align:left">在环境记录中设置一个已经存在的绑定的值。其中字符串N是绑定的名称。V是绑定的值，该值可以任何ECMAScript语言类型。S是一个Boolean类型的标记，当S为true并且该绑定不允许赋值时，则抛出一个 TypeError 异常。</td>
+</tr>
+<tr>
+<td style="text-align:left">GetBindingValue(N,S)</td>
+<td style="text-align:left">返回环境记录中一个已经存在的绑定的值。其中字符串N是绑定的名称。S用于标识源自严格模式代码的引用，或者以其他方式要求严格模式引用语义的引用。如果S为true并且该绑定不存在，抛出ReferenceError异常。如果绑定存在但未初始化，则无论S的值如何，都会抛出ReferenceError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">DeleteBinding(N)</td>
+<td style="text-align:left">从环境记录中删除一个绑定。其中字符串N是绑定的名称。如果N指定的绑定存在，将其删除并返回true。如果绑定存在但无法删除则返回 false。如果绑定不存在则返回true。</td>
+</tr>
+<tr>
+<td style="text-align:left">HasThisBinding()</td>
+<td style="text-align:left">判断环境记录是否建立了<code>this</code>绑定。是则返回true，不是则返回false</td>
+</tr>
+<tr>
+<td style="text-align:left">HasSuperBinding()</td>
+<td style="text-align:left">判断环境记录是否建立了<code>super</code>绑定。是则返回true，不是则返回false</td>
+</tr>
+<tr>
+<td style="text-align:left">WithBaseObject()</td>
+<td style="text-align:left">如果此环境记录与with语句关联，则返回with对象。否则，返回undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="8111-声明式环境记录"><a class="markdownIt-Anchor" href="#8111-声明式环境记录"></a> 8.1.1.1 声明式环境记录</h4>
+<p>每个声明式环境记录都与一个 ECMAScript 程序作用域相关联，这个作用域包含变量、常量、let、class、模块、import 和（或）函数声明。声明式环境记录绑定了作用域内定义的一系列标识符。</p>
+<p>声明式环境记录的具体规范方法的行为由以下算法定义：</p>
+<h5 id="81111-hasbindingn"><a class="markdownIt-Anchor" href="#81111-hasbindingn"></a> 8.1.1.1.1 HasBinding(N)</h5>
+<p>声明式环境记录的 HasBinding 具体方法用于简单地判断作为参数的标识符是否是当前对象绑定的标识符之一：</p>
+<ol>
+<li>令<code>envRec</code>为函数调用时对应的声明式环境记录。</li>
+<li>如果<code>envRec</code>有一个名称为<code>N</code>的绑定，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h5 id="81112-createmutablebindingn-d"><a class="markdownIt-Anchor" href="#81112-createmutablebindingn-d"></a> 8.1.1.1.2 CreateMutableBinding(N, D)</h5>
+<p>声明式环境记录的 CreateMutableBinding 具体方法会创建一个名称为 N 的未初始化的绑定。当前环境记录中不能存在 N 的绑定。如果调用时提供了布尔类型的参数 D 且其值为 true，则新建的绑定被标记为可删除。</p>
+<ol>
+<li>令<code>envRec</code>为函数调用时对应的声明式环境记录。</li>
+<li>断言：<code>envRec</code> 不存在 N 的绑定。</li>
+<li>在 envRec 中为 N 创建一个可变绑定，并记录它未初始化。如果 D 为 true 则记录新创建的绑定可在后续操作中通过调用 DeleteBinding 删除。</li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<h5 id="81113-createimmutablebindingn-s"><a class="markdownIt-Anchor" href="#81113-createimmutablebindingn-s"></a> 8.1.1.1.3 CreateImmutableBinding(N, S)</h5>
+<p>声明式环境记录的 CreateImmutableBinding 具体方法会创建一个名称为 N 的未初始化的绑定。当前环境记录中不能存在 N 的绑定。如果调用时提供了布尔类型的参数 S 且其值为 true，则新建的绑定被标记为严格绑定。</p>
+<ol>
+<li>令<code>envRec</code>为函数调用时对应的声明式环境记录。</li>
+<li>断言：<code>envRec</code> 不存在 N 的绑定。</li>
+<li>在 envRec 中为 N 创建一个可变绑定，并记录它未初始化。如果 S 为 true 则记录新创建的绑定是严格绑定。</li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<h5 id="81114-initializebindingnv"><a class="markdownIt-Anchor" href="#81114-initializebindingnv"></a> 8.1.1.1.4 InitializeBinding(N,V)</h5>
+<p>声明式环境记录项的 InitializeBinding 具体方法用于将当前名称为参数 N 的绑定的值修改为参数 V 指定的值。方法调用时，必须存在 N 未初始化的绑定。</p>
+<ol>
+<li>令<code>envRec</code>为函数调用时对应的声明式环境记录。</li>
+<li>断言：<code>envRec</code> 必须有一个 N 的未初始化绑定。</li>
+<li>在<code>envRec</code>中将<code>N</code>的绑定的值设置为<code>V</code>。</li>
+<li>在<code>envRec</code>中将<code>N</code>的绑定记录为已初始化。</li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<h5 id="81115-setmutablebinding-nvs"><a class="markdownIt-Anchor" href="#81115-setmutablebinding-nvs"></a> 8.1.1.1.5 SetMutableBinding (N,V,S)</h5>
+<p>pass</p>
+<h5 id="81116-getbindingvaluens"><a class="markdownIt-Anchor" href="#81116-getbindingvaluens"></a> 8.1.1.1.6 GetBindingValue(N,S)</h5>
+<p>pass</p>
+<h5 id="81117-deletebinding-n"><a class="markdownIt-Anchor" href="#81117-deletebinding-n"></a> 8.1.1.1.7 DeleteBinding (N)</h5>
+<p>pass</p>
+<h5 id="81118-hasthisbinding"><a class="markdownIt-Anchor" href="#81118-hasthisbinding"></a> 8.1.1.1.8 HasThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81119-hassuperbinding"><a class="markdownIt-Anchor" href="#81119-hassuperbinding"></a> 8.1.1.1.9 HasSuperBinding ()</h5>
+<p>pass</p>
+<h5 id="811110-withbaseobject"><a class="markdownIt-Anchor" href="#811110-withbaseobject"></a> 8.1.1.1.10 WithBaseObject()</h5>
+<p>pass</p>
+<h4 id="8112-对象式环境记录"><a class="markdownIt-Anchor" href="#8112-对象式环境记录"></a> 8.1.1.2 对象式环境记录</h4>
+<p>每一个对象式环境记录都关联到一个对象，这个对象称为对象式环境纪录的绑定对象。对象式环境记录绑定直接与其绑定对象的属性名称相对应的一组字符串标识符名称。不是以IdentifierName形式出现的字符串属性键不在这组绑定标识符中。绑定对象的自有属性和继承属性都在这组标识符中，而不管属性的 [[Enumerable]] 特性值是什么。由于对象的属性可以动态的增减，因此对象式环境记录项所绑定的标识符集合也会隐式地变化，这是增减绑定对象的属性而产生的副作用。通过以上描述的副作用而建立的绑定被视为可变绑定，即使该绑定对应的属性的 [[Writable]] 特性的值为 false。对象式环境记录没有不可变绑定。</p>
+<p>为<code>with</code>语句(13.11)创建的对象式环境记录可以将其绑定对象作为隐式<code>this</code>值，以供函数调用使用。这个功能由与对象式环境记录关联的<code>withEnvironment</code>布尔值控制。默认情况下，对于任何对象式环境记录，<code>withEnvironment</code>均为<code>false</code>。</p>
+<p>对象式环境记录的具体规范方法的行为由以下算法定义：</p>
+<h5 id="81121-hasbindingn"><a class="markdownIt-Anchor" href="#81121-hasbindingn"></a> 8.1.1.2.1 HasBinding(N)</h5>
+<p>pass</p>
+<h5 id="81122-createmutablebinding-n-d"><a class="markdownIt-Anchor" href="#81122-createmutablebinding-n-d"></a> 8.1.1.2.2 CreateMutableBinding (N, D)</h5>
+<p>pass</p>
+<h5 id="81123-createimmutablebinding-n-s"><a class="markdownIt-Anchor" href="#81123-createimmutablebinding-n-s"></a> 8.1.1.2.3 CreateImmutableBinding (N, S)</h5>
+<p>pass</p>
+<h5 id="81124-initializebinding-nv"><a class="markdownIt-Anchor" href="#81124-initializebinding-nv"></a> 8.1.1.2.4 InitializeBinding (N,V)</h5>
+<p>pass</p>
+<h5 id="81125-setmutablebinding-nvs"><a class="markdownIt-Anchor" href="#81125-setmutablebinding-nvs"></a> 8.1.1.2.5 SetMutableBinding (N,V,S)</h5>
+<p>pass</p>
+<h5 id="81126-getbindingvaluens"><a class="markdownIt-Anchor" href="#81126-getbindingvaluens"></a> 8.1.1.2.6 GetBindingValue(N,S)</h5>
+<p>pass</p>
+<h5 id="81127-deletebinding-n"><a class="markdownIt-Anchor" href="#81127-deletebinding-n"></a> 8.1.1.2.7 DeleteBinding (N)</h5>
+<p>pass</p>
+<h5 id="81128-hasthisbinding"><a class="markdownIt-Anchor" href="#81128-hasthisbinding"></a> 8.1.1.2.8 HasThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81129-hassuperbinding"><a class="markdownIt-Anchor" href="#81129-hassuperbinding"></a> 8.1.1.2.9 HasSuperBinding ()</h5>
+<p>pass</p>
+<h5 id="811210-withbaseobject"><a class="markdownIt-Anchor" href="#811210-withbaseobject"></a> 8.1.1.2.10 WithBaseObject()</h5>
+<p>pass</p>
+<h4 id="8113-函数式环境记录"><a class="markdownIt-Anchor" href="#8113-函数式环境记录"></a> 8.1.1.3 函数式环境记录</h4>
+<p>函数式环境记录是一种声明式环境记录，用来表示函数的顶级作用域，并且如果函数不是<code>ArrowFunction</code>，则提供<code>this</code>绑定。<br />
+如果一个函数不是<code>ArrowFunction</code>，并且引用了<code>super</code>，则它的函数式环境记录还将包含用来从函数内部执行<code>super</code>方法调用的状态。</p>
+<p>函数式环境记录有表16列出的其他状态字段：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[thisValue]]</td>
+<td style="text-align:left"><code>Any</code></td>
+<td style="text-align:left">这是此函数调用使用的<code>this</code>值。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[thisBindingStatus]]</td>
+<td style="text-align:left"><code>&quot;lexical&quot; | &quot;initialized&quot; | &quot;uninitialized&quot;</code></td>
+<td style="text-align:left">如果该值为&quot;lexical&quot;，则为ArrowFunction，并且没有局部this值。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[FunctionObject]]</td>
+<td style="text-align:left"><code>Object</code></td>
+<td style="text-align:left">函数对象，其调用创建了此环境记录</td>
+</tr>
+<tr>
+<td style="text-align:left">[[HomeObject]]</td>
+<td style="text-align:left"><code>Object | undefined</code></td>
+<td style="text-align:left">如果关联的函数有<code>super</code>属性访问并且不是<code>ArrowFunction</code>，则[[HomeObject]]是该函数作为方法绑定到的对象。 [[HomeObject]]的默认值是undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">[[NewTarget]]</td>
+<td style="text-align:left"><code>Object | undefined</code></td>
+<td style="text-align:left">如果此环境记录是通过[[Construct]]内部方法创建的，则[[NewTarget]]是[[Construct]]的newTarget参数的值。 否则，其值是undefined</td>
+</tr>
+</tbody>
+</table>
+<p>函数式环境记录支持表15中列出的所有声明式环境记录方法，并且除<code>HasThisBinding</code>和<code>HasSuperBinding</code>外，所有这些方法都具有相同的规范。 此外，函数式环境记录还支持表17中列出的方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BindThisValue(V)</td>
+<td style="text-align:left">设置[[thisValue]]并记录它已被初始化。</td>
+</tr>
+<tr>
+<td style="text-align:left">GetThisBinding()</td>
+<td style="text-align:left">返回此环境记录的<code>this</code>绑定的值。如果<code>this</code>绑定尚未初始化，则抛出ReferenceError</td>
+</tr>
+<tr>
+<td style="text-align:left">GetSuperBase()</td>
+<td style="text-align:left">返回作为此环境记录中绑定的<code>super</code>属性访问基础的对象。对象是从此环境记录的[[HomeObject]]字段派生的。值<code>undefined</code>表示<code>super</code>属性访问将产生运行时错误</td>
+</tr>
+</tbody>
+</table>
+<p>函数式环境记录的其他具体规范方法的行为由以下算法定义：</p>
+<h5 id="81131-bindthisvaluev"><a class="markdownIt-Anchor" href="#81131-bindthisvaluev"></a> 8.1.1.3.1 BindThisValue(V)</h5>
+<p>pass</p>
+<h5 id="81132-hasthisbinding"><a class="markdownIt-Anchor" href="#81132-hasthisbinding"></a> 8.1.1.3.2 HasThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81133-hassuperbinding"><a class="markdownIt-Anchor" href="#81133-hassuperbinding"></a> 8.1.1.3.3 HasSuperBinding ()</h5>
+<p>pass</p>
+<h5 id="81134-getthisbinding"><a class="markdownIt-Anchor" href="#81134-getthisbinding"></a> 8.1.1.3.4 GetThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81135-getsuperbase"><a class="markdownIt-Anchor" href="#81135-getsuperbase"></a> 8.1.1.3.5 GetSuperBase ()</h5>
+<p>pass</p>
+<h4 id="8114-全局环境记录"><a class="markdownIt-Anchor" href="#8114-全局环境记录"></a> 8.1.1.4 全局环境记录</h4>
+<p>全局环境记录用于表示 由所有在公共Realm(8.2)中处理的ECMAScript脚本元素共享的 最外层作用域。全局环境记录为内置全局对象(built-in globals)(clause 18)、全局对象的属性以及脚本中出现的所有顶级声明(13.2.8, 13.2.10)提供了绑定。</p>
+<p>全局环境记录逻辑上是单个记录，但它以一个对象式环境记录和一个声明式环境记录的封装表示。</p>
+<p>pass</p>
+<h5 id="81141-hasbindingn"><a class="markdownIt-Anchor" href="#81141-hasbindingn"></a> 8.1.1.4.1 HasBinding(N)</h5>
+<p>pass</p>
+<h5 id="81142-createmutablebinding-n-d"><a class="markdownIt-Anchor" href="#81142-createmutablebinding-n-d"></a> 8.1.1.4.2 CreateMutableBinding (N, D)</h5>
+<p>pass</p>
+<h5 id="81143-createimmutablebinding-n-s"><a class="markdownIt-Anchor" href="#81143-createimmutablebinding-n-s"></a> 8.1.1.4.3 CreateImmutableBinding (N, S)</h5>
+<p>pass</p>
+<h5 id="81144-initializebinding-nv"><a class="markdownIt-Anchor" href="#81144-initializebinding-nv"></a> 8.1.1.4.4 InitializeBinding (N,V)</h5>
+<p>pass</p>
+<h5 id="81145-setmutablebinding-nvs"><a class="markdownIt-Anchor" href="#81145-setmutablebinding-nvs"></a> 8.1.1.4.5 SetMutableBinding (N,V,S)</h5>
+<p>pass</p>
+<h5 id="81146-getbindingvaluens"><a class="markdownIt-Anchor" href="#81146-getbindingvaluens"></a> 8.1.1.4.6 GetBindingValue(N,S)</h5>
+<p>pass</p>
+<h5 id="81147-deletebinding-n"><a class="markdownIt-Anchor" href="#81147-deletebinding-n"></a> 8.1.1.4.7 DeleteBinding (N)</h5>
+<p>pass</p>
+<h5 id="81148-hasthisbinding"><a class="markdownIt-Anchor" href="#81148-hasthisbinding"></a> 8.1.1.4.8 HasThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81149-hassuperbinding"><a class="markdownIt-Anchor" href="#81149-hassuperbinding"></a> 8.1.1.4.9 HasSuperBinding ()</h5>
+<p>pass</p>
+<h5 id="811410-withbaseobject"><a class="markdownIt-Anchor" href="#811410-withbaseobject"></a> 8.1.1.4.10 WithBaseObject()</h5>
+<p>pass</p>
+<h5 id="811411-getthisbinding"><a class="markdownIt-Anchor" href="#811411-getthisbinding"></a> 8.1.1.4.11 GetThisBinding ()</h5>
+<p>pass</p>
+<h5 id="811412-hasvardeclaration-n"><a class="markdownIt-Anchor" href="#811412-hasvardeclaration-n"></a> 8.1.1.4.12 HasVarDeclaration (N)</h5>
+<p>pass</p>
+<h5 id="811413-haslexicaldeclaration-n"><a class="markdownIt-Anchor" href="#811413-haslexicaldeclaration-n"></a> 8.1.1.4.13 HasLexicalDeclaration (N)</h5>
+<p>pass</p>
+<h5 id="811414-hasrestrictedglobalproperty-n"><a class="markdownIt-Anchor" href="#811414-hasrestrictedglobalproperty-n"></a> 8.1.1.4.14 HasRestrictedGlobalProperty (N)</h5>
+<p>pass</p>
+<h5 id="811415-candeclareglobalvar-n"><a class="markdownIt-Anchor" href="#811415-candeclareglobalvar-n"></a> 8.1.1.4.15 CanDeclareGlobalVar (N)</h5>
+<p>pass</p>
+<h5 id="811416-candeclareglobalfunction-n"><a class="markdownIt-Anchor" href="#811416-candeclareglobalfunction-n"></a> 8.1.1.4.16 CanDeclareGlobalFunction (N)</h5>
+<p>pass</p>
+<h5 id="811417-createglobalvarbinding-n-d"><a class="markdownIt-Anchor" href="#811417-createglobalvarbinding-n-d"></a> 8.1.1.4.17 CreateGlobalVarBinding (N, D)</h5>
+<p>pass</p>
+<h5 id="811418-createglobalfunctionbinding-n-v-d"><a class="markdownIt-Anchor" href="#811418-createglobalfunctionbinding-n-v-d"></a> 8.1.1.4.18 CreateGlobalFunctionBinding (N, V, D)</h5>
+<p>pass</p>
+<h4 id="8115-模块环境记录"><a class="markdownIt-Anchor" href="#8115-模块环境记录"></a> 8.1.1.5 模块环境记录</h4>
+<p>模块环境记录是用于表示ECMAScript模块外部作用域的声明式环境记录。<br />
+pass</p>
+<h5 id="81151-getbindingvaluens"><a class="markdownIt-Anchor" href="#81151-getbindingvaluens"></a> 8.1.1.5.1 GetBindingValue(N,S)</h5>
+<p>pass</p>
+<h5 id="81152-deletebinding-n"><a class="markdownIt-Anchor" href="#81152-deletebinding-n"></a> 8.1.1.5.2 DeleteBinding (N)</h5>
+<p>pass</p>
+<h5 id="81153-hasthisbinding"><a class="markdownIt-Anchor" href="#81153-hasthisbinding"></a> 8.1.1.5.3 HasThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81154-getthisbinding"><a class="markdownIt-Anchor" href="#81154-getthisbinding"></a> 8.1.1.5.4 GetThisBinding ()</h5>
+<p>pass</p>
+<h5 id="81155-createimportbinding-n-m-n2"><a class="markdownIt-Anchor" href="#81155-createimportbinding-n-m-n2"></a> 8.1.1.5.5 CreateImportBinding (N, M, N2)</h5>
+<p>pass</p>
+<h3 id="812-词法环境操作"><a class="markdownIt-Anchor" href="#812-词法环境操作"></a> 8.1.2 词法环境操作</h3>
+<p>本规范中，以下抽象操作用于在词法环境上进行操作。</p>
+<h4 id="8121-getidentifierreference-lex-name-strict"><a class="markdownIt-Anchor" href="#8121-getidentifierreference-lex-name-strict"></a> 8.1.2.1 GetIdentifierReference (lex, name, strict)</h4>
+<p>抽象操作GetIdentifierReference通过一个词法环境lex，一个字符串name和一个布尔标志strict作为参数来调用。 lex的值可以为null。 调用时，将执行以下步骤：</p>
+<ol>
+<li>如果<code>lex</code>值为<code>null</code>，则返回一个引用类型，其基值(base value)为<code>undefined</code>，引用名(referenced name)为<code>name</code>，严格引用标志(strict reference flag)为<code>strict</code></li>
+<li>令<code>envRec</code>为<code>lex</code>的环境记录</li>
+<li>令<code>exists</code>为<code>envRec.HasBinding(name)</code></li>
+<li><code>ReturnIfAbrupt(exists)</code></li>
+<li>如果<code>exists</code>为<code>true</code>，则返回一个引用类型，其基值(base value)为<code>envRec</code>，引用名(referenced name)为<code>name</code>，严格引用标志(strict reference flag)为<code>strict</code></li>
+<li>否则：
+<ol>
+<li>令<code>outer</code>为<code>lex</code>的外部环境引用的值</li>
+<li>返回<code>GetIdentifierReference(outer, name, strict)</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="8122-newdeclarativeenvironment-e"><a class="markdownIt-Anchor" href="#8122-newdeclarativeenvironment-e"></a> 8.1.2.2 NewDeclarativeEnvironment (E)</h4>
+<p>当抽象操作<code>NewDeclarativeEnvironment</code>以一个词法环境(Lexical Environment)作为参数<code>E</code>被调用时，执行以下步骤：</p>
+<ol>
+<li>令<code>env</code>为一个新的词法环境(Lexical Environment)</li>
+<li>令<code>envRec</code>为一个新的不包含任何绑定的声明式环境记录</li>
+<li>将<code>env</code>的环境记录设为<code>envRec</code></li>
+<li>将<code>env</code>的外部词法环境引用设为<code>E</code></li>
+<li>返回<code>env</code></li>
+</ol>
+<h4 id="8123-newobjectenvironment-o-e"><a class="markdownIt-Anchor" href="#8123-newobjectenvironment-o-e"></a> 8.1.2.3 NewObjectEnvironment (O, E)</h4>
+<p>当使用对象O和词法环境E作为参数调用抽象操作NewObjectEnvironment时，将执行以下步骤：</p>
+<ol>
+<li>令<code>env</code>为一个新的词法环境</li>
+<li>令<code>envRec</code>为一个新的对象环境记录，其中包含<code>O</code>作为绑定对象</li>
+<li>将<code>env</code>的环境记录设为<code>envRec</code></li>
+<li>将<code>env</code>的外部词法环境引用设为<code>E</code></li>
+<li>返回<code>env</code></li>
+</ol>
+<h4 id="8124-newfunctionenvironment-f-newtarget"><a class="markdownIt-Anchor" href="#8124-newfunctionenvironment-f-newtarget"></a> 8.1.2.4 NewFunctionEnvironment ( F, newTarget )</h4>
+<p>当使用参数<code>F</code>和<code>newTarget</code>调用抽象操作<code>NewFunctionEnvironment</code>时，将执行以下步骤：</p>
+<ol>
+<li>断言：<code>F</code>是ECMAScript函数</li>
+<li>断言：<code>Type(newTarget)</code>为<code>Undefined</code>或<code>Object</code></li>
+<li>令<code>env</code>为新的词法环境</li>
+<li>令<code>envRec</code>为不包含绑定的新的函数式环境记录</li>
+<li>将<code>envRec.[[FunctionObject]]</code>设为<code>F</code></li>
+<li>如果<code>F</code>的<code>[[ThisMode]]</code>内部插槽为<code>lexical</code>，将<code>envRec.[[thisBindingStatus]]</code>设为<code>&quot;lexical&quot;</code></li>
+<li>否则，将<code>envRec.[[thisBindingStatus]]</code>设为<code>&quot;uninitialized&quot;</code></li>
+<li>令<code>home</code>为<code>F</code>的<code>[[HomeObject]]</code>内部插槽的值</li>
+<li>将<code>envRec.[[HomeObject]]</code>设为<code>home</code></li>
+<li>将<code>envRec.[[NewTarget]]</code>设为<code>newTarget</code></li>
+<li>将<code>env</code>的环境记录设为<code>envRec</code></li>
+<li>将<code>env</code>的外部词法环境引用设为<code>F</code>的<code>[[Environment]]</code>内部插槽的值</li>
+<li>返回<code>env</code></li>
+</ol>
+<h4 id="8125-newglobalenvironment-g"><a class="markdownIt-Anchor" href="#8125-newglobalenvironment-g"></a> 8.1.2.5 NewGlobalEnvironment ( G )</h4>
+<h4 id="8126-newmoduleenvironment-e"><a class="markdownIt-Anchor" href="#8126-newmoduleenvironment-e"></a> 8.1.2.6 NewModuleEnvironment (E)</h4>
+<h2 id="82-code-realms"><a class="markdownIt-Anchor" href="#82-code-realms"></a> 8.2 Code Realms</h2>
+<p>在计算之前，所有ECMAScript代码都必须与一个范围(Realm)相关联。从概念上讲，范围由一组固有对象、一个ECMAScript全局环境、该全局环境作用域内加载的所有ECMAScript代码，以及其他关联状态和资源组成。</p>
+<p>一个范围(Realm)以具有表21中指定字段的记录(Record)表示。(A Realm is specified as a Record with the fields specified in Table 21)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[intrinsics]]</td>
+<td style="text-align:left">一个记录，其字段名是固有键(intrinsic keys)且值是对象</td>
+<td style="text-align:left">这些是与此Realm关联的代码使用的固有值</td>
+</tr>
+<tr>
+<td style="text-align:left">[[globalThis]]</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">此Realm的全局对象</td>
+</tr>
+<tr>
+<td style="text-align:left">[[globalEnv]]</td>
+<td style="text-align:left">词法环境</td>
+<td style="text-align:left">此Realm的全局环境</td>
+</tr>
+<tr>
+<td style="text-align:left">[[templateMap]]</td>
+<td style="text-align:left">记录<code>&#123; [[strings]]: List, [[array]]: Object&#125;</code>的列表</td>
+<td style="text-align:left">对于每个Realm，模板对象使用[[templateMap]]被分别规范化，每个[[strings]]值都是一个List，按源文本顺序包含已评估的TemplateLiteral的原始String值。 关联的[[array]]值是传递给标签函数的相应模板对象。</td>
+</tr>
+</tbody>
+</table>
+<p>一个实现可以定义其他特定于实现的字段。</p>
+<h3 id="821-createrealm"><a class="markdownIt-Anchor" href="#821-createrealm"></a> 8.2.1 CreateRealm ( )</h3>
+<h3 id="822-createintrinsics-realmrec"><a class="markdownIt-Anchor" href="#822-createintrinsics-realmrec"></a> 8.2.2 CreateIntrinsics ( realmRec )</h3>
+<h3 id="823-setrealmglobalobject-realmrec-globalobj"><a class="markdownIt-Anchor" href="#823-setrealmglobalobject-realmrec-globalobj"></a> 8.2.3 SetRealmGlobalObject ( realmRec, globalObj )</h3>
+<h3 id="824-setdefaultglobalbindings-realmrec"><a class="markdownIt-Anchor" href="#824-setdefaultglobalbindings-realmrec"></a> 8.2.4 SetDefaultGlobalBindings ( realmRec )</h3>
+<h2 id="83-执行上下文"><a class="markdownIt-Anchor" href="#83-执行上下文"></a> 8.3 执行上下文</h2>
+<p>执行上下文是用于由ECMAScript实现跟踪代码的运行时计算的规范装置。在任何时间点，最多只有一个实际正在执行代码的执行上下文，这称为运行中的执行上下文(the running execution context)。一个栈用于追踪执行上下文，运行中的执行上下文始终是栈顶元素。每当控制权从与当前运行的执行上下文关联的可执行代码转移到与该执行上下文不关联的可执行代码时，都会创建一个新的执行上下文。 新创建的执行上下文被压入栈，并成为运行中的的执行上下文。</p>
+<p>一个执行上下文包含所有用于追踪其关联代码的执行进度所需的特定于实现的状态。 每个执行上下文至少具有表22中列出的状态组件。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">组件</th>
+<th style="text-align:left">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">代码执行状态</td>
+<td style="text-align:left">执行，暂停和恢复与此执行上下文关联的代码的计算所需的任何状态。</td>
+</tr>
+<tr>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">如果此执行上下文正在计算函数对象的代码，则此组件的值就是该函数对象。如果上下文正在计算脚本或模块的代码，则该值为null。</td>
+</tr>
+<tr>
+<td style="text-align:left">Realm</td>
+<td style="text-align:left">关联代码从其访问ECMAScript资源的Realm。</td>
+</tr>
+</tbody>
+</table>
+<p>通过运行中的执行上下文对代码的计算可以在本规范中定义的各个点暂停。一旦运行中的执行上下文被暂停，则另一个不同的执行上下文可以成为运行中的执行上下文并开始计算其代码。在稍后的某个时间，暂停的执行上下文可能会再次变为运行中的执行上下文，并在先前被暂停的位置继续计算其代码。运行中的执行上下文状态的转换通常以类似堆栈的后进/先出方式出现。但是，某些ECMAScript功能要求运行中的执行上下文进行非LIFO转换。</p>
+<p>运行中的执行上下文的Realm组件的值被称为当前Realm，运行中的执行上下文的函数组件被称为激活的(active)函数对象。</p>
+<p>ECMAScript代码的执行上下文具有表23中列出的其他状态组件。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">组件</th>
+<th style="text-align:left">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">LexicalEnvironment</td>
+<td style="text-align:left">指定一个词法环境对象，用于解析此执行上下文内的代码创建的标识符引用。</td>
+</tr>
+<tr>
+<td style="text-align:left">VariableEnvironment</td>
+<td style="text-align:left">指定一个词法环境对象，其环境记录用于保存此执行上下文内的 VariableStatements 语句创建的绑定</td>
+</tr>
+</tbody>
+</table>
+<p>一个执行上下文的词法环境(LexicalEnvironment)组件和变量环境(VariableEnvironment)组件总是一个词法环境。当创建一个执行上下文时，它的<code>LexicalEnvironment</code>组件和<code>VariableEnvironment</code>组件最初具有相同值。</p>
+<p>表示生成器对象的计算的执行上下文具有表24中列出的其他状态组件。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">组件</th>
+<th style="text-align:left">目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Generator</td>
+<td style="text-align:left">此执行上下文正在计算的GeneratorObject</td>
+</tr>
+</tbody>
+</table>
+<p>在大多数情况下，只有运行中的执行上下文（执行上下文栈的栈顶元素）会由规范中的算法直接操作。 因此，当不加限定地使用术语“LexicalEnvironment”和“VariableEnvironment”时，它们是指运行中的执行上下文的那些组件。</p>
+<p>执行上下文纯粹是一种规范机制，不需要与ECMAScript实现的任何特定artefact(人造物)相对应。 ECMAScript代码不可能直接访问或观察一个执行上下文。</p>
+<h3 id="831-resolvebinding-name-env"><a class="markdownIt-Anchor" href="#831-resolvebinding-name-env"></a> 8.3.1 ResolveBinding ( name, [env] )</h3>
+<p>ResolveBinding抽象操作用于确定作为字符串值传递的<code>name</code>的绑定。 可选参数env可用于显式提供要搜索绑定的词法环境。 在执行ECMAScript代码期间，使用以下算法执行ResolveBinding：</p>
+<ol>
+<li>如果没有传递<code>env</code>或<code>env</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>env</code>为运行中的执行上下文的<code>LexicalEnvironment</code></li>
+</ol>
+</li>
+<li>断言：<code>env</code>是词法环境</li>
+<li>如果在严格模式代码中包含与要计算的语法产生式相匹配的代码，则令<code>strict</code>为<code>true</code>，否则令<code>strict</code>为<code>false</code></li>
+<li>返回<code>GetIdentifierReference(env, name, strict )</code></li>
+</ol>
+<p>注：ResolveBinding的结果始终是一个Reference值，其引用的name组件等于<code>name</code>参数。</p>
+<h2 id="可执行代码"><a class="markdownIt-Anchor" href="#可执行代码"></a> 可执行代码</h2>
+<p>一共有三种 ECMA 脚本可执行代码：</p>
+<ul>
+<li>全局代码是指被作为 ECMAScript Program 处理的源代码文本。一个特定 Program 的全局代码不包括作为 FunctionBody 被解析的源代码文本。</li>
+<li>Eval 代码是指提供给 eval 内置函数的源代码文本。更精确地说，如果传递给 eval 内置函数的参数为一个字符串，该字符串将被作为 ECMA 脚本 Program 进行处理。在特定的一次对 eval 的调用过程中，eval 代码作为该 Program 的全局代码部分。</li>
+<li>函数代码是指作为 FunctionBody 被解析的源代码文本。一个 FunctionBody 的函数代码不包括作为其嵌套函数的 FunctionBody 被解析的源代码文本。函数代码同时还特指以构造器方式调用 Function 内置对象时所提供的源代码文本。更精确地说，调用 Function 构造器时传递的最后一个参数将被转换为字符串并作为 FunctionBody 使用。如果调用 Function 构造器时，传递了一个以上的参数，除最后一个参数以外的其他参数都将转换为字符串，并以逗号作为分隔符连接在一起成为一个字符串，该字符串被解析为 FormalParameterList 供由最后一个参数定义的 FunctionBody 使用。初始化 Function 对象时所提供的函数代码，并不包括作为其嵌套函数的 FunctionBody 被解析的源代码文本。</li>
+</ul>
+<h2 id="执行环境"><a class="markdownIt-Anchor" href="#执行环境"></a> 执行环境</h2>
+<p>当控制器转入 ECMA 脚本的可执行代码时，控制器会进入一个执行环境。当前活动的多个执行环境在逻辑上形成一个栈结构。该逻辑栈的最顶层的执行环境称为当前运行的执行环境。任何时候，当控制器从当前运行的执行环境相关的可执行代码转入与该执行环境无关的可执行代码时，会创建一个新的执行环境。新建的这个执行环境会推入栈中，成为当前运行的执行环境。</p>
+<p>执行环境包含所有用于追踪与其相关的代码的执行进度的状态。精确地说，每个执行环境包含如 表19 列出的组件。</p>
+<ul>
+<li>词法环境组件：指定一个词法环境对象，用于解析该执行环境内的代码创建的标识符引用。</li>
+<li>变量环境组件：指定一个词法环境对象，其环境数据用于保存由该执行环境内的代码通过 VariableStatement 和 FunctionDeclaration 创建的绑定。</li>
+<li>this 绑定：指定该执行环境内的 ECMA 脚本代码中 this 关键字所关联的值。</li>
+</ul>
+<p>其中执行环境的词法环境组件和变量环境组件始终为词法环境对象。当创建一个执行环境时，其词法环境组件和变量环境组件最初是同一个值。在该执行环境相关联的代码的执行过程中，变量环境组件永远不变，而词法环境组件有可能改变。</p>
+<p>注：变量环境的不变和词法环境的可能改变都是指引用的改变，规范12.10和12.14两部分的内容提到了词法环境在with以及catch语句块中会改变。</p>
+<p>在本标准中，通常情况下，只有正在运行的执行环境（执行环境栈里的最顶层对象）会被算法直接修改。因此当遇到“词法环境组件”、“变量环境组件”、“this 绑定组件”这三个术语时，指的是正在运行的执行环境的对应组件。</p>
+<p>执行环境是一个纯粹的标准机制，并不代表任何 ECMA 脚本实现的工件。在 ECMA 脚本程序中是不可能访问到执行环境的。</p>
+<h2 id="标识符解析"><a class="markdownIt-Anchor" href="#标识符解析"></a> 标识符解析</h2>
+<p>标识符解析是指使用正在运行的执行环境中的词法环境组件，通过一个 Identifier 获得其对应的绑定的过程。在 ECMA 脚本代码执行过程中，PrimaryExpression : Identifier 这一语法产生式将按以下算法进行解释执行：</p>
+<ol>
+<li>令 env 为正在运行的执行环境的 词法环境组件。</li>
+<li>如果正在解释执行的语法产生式处在严格模式下的代码中，则仅 strict 的值为 true，否则令 strict 的值为 false。</li>
+<li>以 env、Identifier 和 strict 为参数，调用 GetIdentifierReference 函数，并返回调用的结果。</li>
+</ol>
+<p>解释执行一个标识符得到的结果必定是引用类型的对象，且其引用名属性的值与 Identifier 字符串相等。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/8 可执行代码和执行上下文.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/8 可执行代码和执行上下文.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/7%20%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C.html"><i class="fa fa-chevron-left">  </i><span>7 抽象操作</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/9%20%E6%99%AE%E9%80%9A%E5%92%8C%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1%E8%A1%8C%E4%B8%BA.html"><span>9 普通和奇异对象行为</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

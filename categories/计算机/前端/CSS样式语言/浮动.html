@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="浮动"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>浮动 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text"> 浮动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="toc-number">2.</span> <span class="toc-text"> 清除浮动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AD%E5%90%88%E6%B5%AE%E5%8A%A8"><span class="toc-number">3.</span> <span class="toc-text"> 闭合浮动</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E5%BD%A2%E7%8A%B6"><span class="toc-number">4.</span> <span class="toc-text"> 浮动形状</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">浮动</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>浮动在过去是所有Web布局方案的基础（很大程度依赖于<code>clear</code>属性），但浮动并不是为布局而生的，把它作为布局工具是无奈之举，和使用表格布局一样，当时没有其他办法来实现布局效果。<br />
+浮动源于图像，它使得图像周围的元素围绕图像流动。</p>
+<span id="more"></span>
+<h1 id="浮动"><a class="markdownIt-Anchor" href="#浮动"></a> 浮动</h1>
+<p><code>float</code>属性将元素向左或者向右移动，直到碰到包含块或者另一个浮动元素的边界，使得文字或者行内元素将环绕它的 margin box。元素会从常规流中移除，尽管仍然在流中保留了一部分（和绝对定位相反）</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left | right | none | inline-start | inline-end</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值，但<code>display:none</code>或<code>position</code>为<code>absolute</code>或<code>fixed</code>时计算值为none</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>用户代理可以把根元素上的<code>float</code>当作<code>none</code></p>
+<ul>
+<li>浮动隐含着使用块布局，即它会把<code>display</code>属性的计算值变为<code>block</code>，浮动元素周围的外边距不会折叠。</li>
+<li>浮动将元素向左边或者右边移动，一直移动到碰到包含块边界或者另一个浮动元素的边界，如果没有空间（浮动元素在文档中之前的元素、匿名文本也将占用空间），它会向下移动再尝试向左向右移动。如果存在行框，浮动元素的上外边界会与当前行框的上边界对齐，例如行内元素只是平行移动，如果元素不浮动时候在第二行，向左浮动时也是在第二行向左移动，即便第一行有空间它也不会上去的。</li>
+<li>因为浮动元素不在常规流内，在浮动元素之前或者之后创建的非定位块盒会垂直排列，就像浮动不存在一样，但是这些块盒会根据需要，缩短挨着浮动元素创建的当前行及后续行框，以便给浮动元素的外边距框让出空间。行框挨着浮动元素的条件是存在一个同时满足这4个条件的垂直位置：
+<ul>
+<li>(a)位于行框的顶端或顶端下方</li>
+<li>(b)位于行框的底端或底端上方</li>
+<li>©在浮动元素上外边距边界下方</li>
+<li>(d)在浮动元素下外边距边界上方<br />
+换言之，如果存在一个垂直位置，既在一个行框顶端和底端之间，又在一个浮动元素上下外边距之间，则称行框挨着浮动元素。<br />
+注意：也就是说0外高度（outer height）或者负外高度（盒）的浮动不会缩短行框</li>
+</ul>
+</li>
+<li>如果一个缩短的行框小到无法容纳任何内容了，那么该行框会向下移动（并重新计算其宽度）直到有些内容能适应（它的空间）或者再没出现其它浮动了。当前行里浮动盒之前的所有内容都会在浮动方向另一侧的相同行重新排列（reflow）。换句话说，如果行内级盒被放在同一行中的左浮动元素之前，并且适应剩余的行框空间，左浮动（盒）就放在该行，与行框的顶端对齐，然后，相应地，该行中已经放好的这个内联级盒会被移动到浮动盒右边（右边是左浮动的另一侧），对于rtl和右浮动，反之亦然</li>
+<li>表格，块级替换元素或常规流中建立了新的块格式化上下文的元素（例如一个’overflow’不为’visible’的元素）不能和与元素自身处于同一块格式化上下文中的任何浮动（盒）的外边距框重叠。如果必要的话，实现应该把它放在所有之前出现的浮动（盒）下方，以清除（clear）该元素（受到的浮动影响），如果空间充足的话，可以放得与浮动（盒）相邻。它们甚至会让该元素的边框框比10.3.3小节中定义的更窄。CSS2没有定义UA什么情况下可以把该元素挨着浮动（盒）放以及该元素可以变得多窄</li>
+<li>浮动（盒）的内容会堆叠起来，就像浮动（盒）生成了新的堆叠上下文（stacking contexts）一样，除了所有定位元素和实际创建了新的堆叠上下文并参与了浮动（盒）的父级堆叠上下文的元素。浮动（盒）可以与常规流中的其它盒重叠（例如，当常规流盒挨着具有负外边距的浮动（盒）时），出现这种情况时，浮动（盒）会被渲染在非定位（non-positioned）流内块之上，流内行内（盒）之下；换句说话，行内盒与浮动元素重叠时，行内盒的边框、背景和内容都在浮动元素“之上”渲染。块级盒与浮动元素重叠时，块级盒的边框、背景在浮动元素“背后”渲染，而内容在浮动元素“之上”渲染。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201017131416731_9666.png" alt="" /></li>
+</ul>
+<p><strong>浮动的九条规则如下：</strong><br />
+注意：这些规则里涉及的其它元素仅仅是指与浮动（盒）处于同一个块格式化上下文的其它元素。</p>
+<ol>
+<li>左浮动盒的左外边界不能位于其包含块的左边界的左边。向右浮动的元素也有类似的规则<br />
+圆圈中的数字是元素在文档中的原始位置。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201013110302666_16383.png" alt="" width="300" /></li>
+<li>如果当前盒是向左浮动的，并且在这之前源文档中还有元素生成了左浮动盒，那么对于每一个之前的盒，要么当前盒的左外边界在之前的盒的右外边界的右边，要么其顶部要低于之前盒的底部。右浮动盒也有类似的规则。如下图，三个左浮动元素，3的左边界位于1的右边界右边，3的顶部低于2的底部，满足条件。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201020095206934_26501.png" alt="" width="300" /></li>
+<li>左浮动盒的右外边不能位于挨着它的任意右浮动盒的左外边界的右边。右浮动盒也有类似的规则</li>
+<li>浮动盒的外顶端（outer top）不能高于其包含块的顶部。当浮动（盒）出现在两个折叠外边距（collapsing margins）之间时，浮动（盒）的定位就像它有个空的匿名块父级存在于（当前）流一样。这个父级的位置通过外边距合并章节中的规则来定义。例如，有三个段落，中间那个段落是浮动的。此时中间那个段落在浮动时好似有一个块级父元素，避免浮动的段落一直向上移动，超出三个段落共有的元素。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;float: left;&quot;</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;float: left;&quot;</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>lorem<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>浮动盒的外顶端不能高于源文档中任何在该元素之前的元素生成的块盒或者浮动盒的外顶端<br />
+这就是为什么第三个元素要对齐第二个元素，而不是第一个元素。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201013114850762_1248.png" alt="" width="300" /></li>
+<li>元素的浮动盒的外顶端不能高于任何含有源文档中在该元素之前的元素生成的盒的行框的顶端（浮动元素的顶边不能高于源代码中出现在浮动元素之前的元素生成的框体所在行框的顶边。）<br />
+如果图像在1的位置，则它的顶边最高只能是该行行框的顶边。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201013115118280_12574.png" alt="" width="300" /></li>
+<li>左浮动元素的左边如果还有一个左浮动元素，那么它的右外边界不能在包含块右边界的右侧；类似地，右浮动元素的右边如果还有一个右浮动元素，那么它的右外边界不能在包含块左边界的左侧。<br />
+这条规则说，浮动元素永远不会超过包含块边界，除非浮动元素太宽，包含块放不下。如果多个浮动元素排在一起时超出了包含块边界，则后面的浮动元素将放到前面浮动元素的下面的某个位置。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201019160305794_19416.png" alt="" width="300" /></li>
+<li>浮动元素必须放在尽可能高的位置上。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201013115710118_30017.png" alt="" width="300" /></li>
+<li>左浮动盒必须尽量往左放，右浮动盒尽量往右放。更高的位置要比更左/右的位置优先<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201013115917025_14438.png" alt="" width="300" /></li>
+</ol>
+<h1 id="清除浮动"><a class="markdownIt-Anchor" href="#清除浮动"></a> 清除浮动</h1>
+<p><code>clear</code>属性说明了元素盒的哪一边不能与之前的浮动盒相邻，它令元素自身下移使得某一边没有浮动元素。<code>clear</code>属性不考虑元素自身的或者其它块格式化上下文中的浮动。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left | right | both | none</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：块级元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值含义如下：</p>
+<ul>
+<li>
+<p><code>left</code>：要求该盒的上边框边界位于源文档中<strong>在此之前</strong>的元素形成的所有左浮动盒的下外边界下方</p>
+</li>
+<li>
+<p><code>right</code>：要求该盒的上边框边界位于源文档中<strong>在此之前</strong>的元素形成的所有右浮动盒的下外边界下方</p>
+</li>
+<li>
+<p><code>both</code>：要求该盒的上边框边界位于源文档中<strong>在该元素之前</strong>的元素形成的所有左浮动盒和右浮动盒的下外边界下方</p>
+</li>
+<li>
+<p><code>none</code>：对该盒相对于浮动（盒）的位置没有约束</p>
+</li>
+<li>
+<p>属性值不为<code>none</code>就隐含了要引入空隙（clearance）。空隙会阻止外边距合并，并作为元素<code>margin-top</code>上方的空间。用来在垂直方向上把元素推离浮动（元素）（It is used to push the element vertically past the float）</p>
+</li>
+<li>
+<p>想计算设置了<code>clear</code>的元素的空隙：</p>
+<ol>
+<li>先要确定该元素的上边框边界的假定位置。该位置是当元素的<code>clear</code>属性为<code>none</code>时其上边框边界实际所在的位置。</li>
+<li>如果该元素的上边框边界的假定位置没有越过（past）相关的浮动（盒），那么就得引入空隙，并根据规则合并外边距</li>
+<li>然后，空隙的高度（amount）被设置为下面两者的较大值：<br />
+(a)把块的边框边界放在最低的将被<code>clear</code>的浮动（盒）的下外边界，所必需的高度<br />
+(b)把块的上边框边界放在其假定位置（<code>clear</code>为<code>none</code>时的位置），所必需的高度</li>
+</ol>
+<p>或者，空隙被精确地设置为把块的边框边界放在最低的将被<code>clear</code>的浮动（盒）的下外边界，所必需的高度<br />
+注意：空隙可以为负或者为0</p>
+</li>
+</ul>
+<p>当该属性被设置在浮动元素上时，会改变浮动定位的规则。需要加上额外的约束：浮动（盒）的上外边界必须处于所有在此之前的左浮动盒（<code>clear: left</code>的情况）的下外边界下方，或者所有在此之前的右浮动盒（<code>clear: right</code>的情况）的下外边界下方，或者两者都要满足（<code>clear: both</code>的情况）</p>
+<h1 id="闭合浮动"><a class="markdownIt-Anchor" href="#闭合浮动"></a> 闭合浮动</h1>
+<p>根据规范，一般情况下，如果常规流中的块级非替换元素的<code>height</code>是<code>auto</code>，高度取决于该元素是否含有常规流中的块级子元素，以及是否具有padding或border。<br />
+因此如果该元素只有浮动后代，在计算高度时浮动后代会被忽略，就好像不存在一样。<br />
+但很多时候我们需要让高度计算浮动后代，称之为闭合浮动。</p>
+<p>办法如下：</p>
+<ul>
+<li>使元素为内容建立新的块格式化上下文，从而采用【块格式化上下文中的auto高度】规则计算浮动后代高度。具体来说：
+<ul>
+<li>使元素浮动</li>
+<li>使元素绝对定位</li>
+<li>使元素变为非块盒的块容器（例如<code>inline-blocks</code>，<code>table-cells</code>和<code>table-captions</code>）</li>
+<li>设置<code>overflow</code>不为<code>visible</code></li>
+<li>设置<code>display: flow-root</code></li>
+</ul>
+</li>
+<li>利用清除浮动规则，通过伪元素<code>::after</code>或在浮动元素代码之后的其他显式元素，设置<code>display: block</code>与<code>clear: both</code>，令其放置在之前所有浮动元素之下，进而变相的增加了包含块高度。</li>
+</ul>
+<h1 id="浮动形状"><a class="markdownIt-Anchor" href="#浮动形状"></a> 浮动形状</h1>
+<p><code>shape-outside</code>属性可以定义浮动形状，控制其他文本应该按照什么形状来环绕浮动元素。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">none | [ &lt;shape-box&gt; || &lt;basic-shape&gt; ] | &lt;image&gt;</span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;shape-box&gt; = &lt;box&gt; | margin-box</span><br><span class="line">&lt;basic-shape&gt; = &lt;inset()&gt; | &lt;circle()&gt; | &lt;ellipse()&gt; | &lt;polygon()&gt; | &lt;path()&gt;</span><br><span class="line">&lt;image&gt; = &lt;url&gt; | &lt;image()&gt; | &lt;image-set()&gt; | &lt;element()&gt; | &lt;paint()&gt; | &lt;cross-fade()&gt; | &lt;gradient&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;box&gt; = border-box | padding-box | content-box</span><br><span class="line">&lt;inset()&gt; = inset( &lt;length-percentage&gt;&#123;1,4&#125; [ round &lt;<span class="string">&#x27;border-radius&#x27;</span>&gt; ]? )</span><br><span class="line">&lt;circle()&gt; = circle( [ &lt;shape-radius&gt; ]? [ at &lt;position&gt; ]? )</span><br><span class="line">&lt;ellipse()&gt; = ellipse( [ &lt;shape-radius&gt;&#123;2&#125; ]? [ at &lt;position&gt; ]? )</span><br><span class="line">&lt;polygon()&gt; = polygon( &lt;fill-rule&gt;? , [ &lt;length-percentage&gt; &lt;length-percentage&gt; ]<span class="comment"># )</span></span><br><span class="line">&lt;path()&gt; = path( [ &lt;fill-rule&gt;, ]? &lt;string&gt; )</span><br><span class="line">&lt;image()&gt; = image( &lt;image-tags&gt;? [ &lt;image-src&gt;? , &lt;color&gt;? ]! )</span><br><span class="line">&lt;image-set()&gt; = image-set( &lt;image-set-option&gt;<span class="comment"># )</span></span><br><span class="line">&lt;element()&gt; = element( &lt;id-selector&gt; )</span><br><span class="line">&lt;paint()&gt; = paint( &lt;ident&gt;, &lt;declaration-value&gt;? )</span><br><span class="line">&lt;cross-fade()&gt; = cross-fade( &lt;cf-mixing-image&gt; , &lt;cf-final-image&gt;? )</span><br><span class="line">&lt;gradient&gt; = &lt;linear-gradient()&gt; | &lt;repeating-linear-gradient()&gt; | &lt;radial-gradient()&gt; | &lt;repeating-radial-gradient()&gt; | &lt;conic-gradient()&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：浮动元素</li>
+<li>计算值：basic-shape为定义的值，image是绝对URI，否则是指定的值</li>
+<li>继承性：否</li>
+<li>动画性：basic-shape时是，其他时候否</li>
+</ul>
+<p>例如，将浮动形状设置为一个含有透明部分的图像，则内容会流入透明部分。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201021102922738_10550.png" alt="" width="621" /></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/浮动.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/浮动.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%AE%9A%E4%BD%8D.html"><i class="fa fa-chevron-left">  </i><span>定位</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7.html"><span>字体属性</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="6 数据类型和值"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>6 数据类型和值 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#6-ecmascript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text"> 6 ECMAScript数据类型和值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-ecmascript%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 6.1 ECMAScript语言类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#611-undefined%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 6.1.1 Undefined类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#612-null%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 6.1.2 Null类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#613-boolean%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 6.1.3 Boolean类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#614-string%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 6.1.4 String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#615-symbol-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 6.1.5 Symbol 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6151-%E7%9F%A5%E5%90%8D-symbols"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 6.1.5.1 知名 Symbols</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#616-number-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 6.1.6 Number 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#617-object%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 6.1.7 Object类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6171-%E5%B1%9E%E6%80%A7%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.8.1.</span> <span class="toc-text"> 6.1.7.1 属性的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6172-object%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%86%85%E9%83%A8%E6%8F%92%E6%A7%BD"><span class="toc-number">1.1.8.2.</span> <span class="toc-text"> 6.1.7.2 Object内部方法和内部插槽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6173-%E5%9F%BA%E6%9C%AC%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.8.3.</span> <span class="toc-text"> 6.1.7.3 基本内部方法中的不变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#getprototypeof"><span class="toc-number">1.1.8.3.1.</span> <span class="toc-text"> [[GetPrototypeOf]] ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#setprototypeof-v"><span class="toc-number">1.1.8.3.2.</span> <span class="toc-text"> [[SetPrototypeOf]] (V)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#preventextensions"><span class="toc-number">1.1.8.3.3.</span> <span class="toc-text"> [[PreventExtensions]] ()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#getownproperty"><span class="toc-number">1.1.8.3.4.</span> <span class="toc-text"> [[GetOwnProperty]] §</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#defineownproperty-p-desc"><span class="toc-number">1.1.8.3.5.</span> <span class="toc-text"> [[DefineOwnProperty]] (P, Desc)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hasproperty-p"><span class="toc-number">1.1.8.3.6.</span> <span class="toc-text"> [[HasProperty]] ( P )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#get-p-receiver"><span class="toc-number">1.1.8.3.7.</span> <span class="toc-text"> [[Get]] (P, Receiver)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#set-p-v-receiver"><span class="toc-number">1.1.8.3.8.</span> <span class="toc-text"> [[Set]] ( P, V, Receiver)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#delete-p"><span class="toc-number">1.1.8.3.9.</span> <span class="toc-text"> [[Delete]] ( P )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#enumerate"><span class="toc-number">1.1.8.3.10.</span> <span class="toc-text"> [[Enumerate]] ( )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ownpropertykeys"><span class="toc-number">1.1.8.3.11.</span> <span class="toc-text"> [[OwnPropertyKeys]] ( )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#construct"><span class="toc-number">1.1.8.3.12.</span> <span class="toc-text"> [[Construct]] ( )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6174-%E7%9F%A5%E5%90%8D%E5%9B%BA%E6%9C%89%E5%AF%B9%E8%B1%A1intrinsic-objects"><span class="toc-number">1.1.8.4.</span> <span class="toc-text"> 6.1.7.4 知名固有对象(Intrinsic Objects)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-ecmascript%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 6.2 ECMAScript规范类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#621-%E5%88%97%E8%A1%A8%E5%92%8C%E8%AE%B0%E5%BD%95%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 6.2.1 列表和记录规范类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#622-%E5%AE%8C%E7%BB%93%E8%AE%B0%E5%BD%95%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 6.2.2 完结记录规范类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6221-normalcompletion"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 6.2.2.1 NormalCompletion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6222-%E9%9A%90%E5%BC%8F%E5%AE%8C%E7%BB%93%E5%80%BC"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 6.2.2.2 隐式完结值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6223-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 6.2.2.3  抛出异常</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6224-returnifabrupt"><span class="toc-number">1.2.2.4.</span> <span class="toc-text"> 6.2.2.4 ReturnIfAbrupt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6225-updateemptycompletionrecord-value"><span class="toc-number">1.2.2.5.</span> <span class="toc-text"> 6.2.2.5 UpdateEmpty(completionRecord, value)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#623-%E5%BC%95%E7%94%A8%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 6.2.3 引用规范类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6231-getvaluev"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 6.2.3.1 GetValue(V)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6232-putvaluevw"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 6.2.3.2 PutValue(V,W)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6233-getthisvalue-v"><span class="toc-number">1.2.3.3.</span> <span class="toc-text"> 6.2.3.3 GetThisValue (V)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6234-initializereferencedbinding-v-w"><span class="toc-number">1.2.3.4.</span> <span class="toc-text"> 6.2.3.4 InitializeReferencedBinding (V, W)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#624-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 6.2.4 属性描述符规范类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6241-isaccessordescriptordesc"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 6.2.4.1 IsAccessorDescriptor(Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6242-isdatadescriptordesc"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 6.2.4.2 IsDataDescriptor(Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6243-isgenericdescriptordesc"><span class="toc-number">1.2.4.3.</span> <span class="toc-text"> 6.2.4.3 IsGenericDescriptor(Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6244-frompropertydescriptordesc"><span class="toc-number">1.2.4.4.</span> <span class="toc-text"> 6.2.4.4 FromPropertyDescriptor(Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6245-topropertydescriptorobj"><span class="toc-number">1.2.4.5.</span> <span class="toc-text"> 6.2.4.5 ToPropertyDescriptor(Obj)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6246-completepropertydescriptordesc"><span class="toc-number">1.2.4.6.</span> <span class="toc-text"> 6.2.4.6 CompletePropertyDescriptor(Desc)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#625-%E8%AF%8D%E6%B3%95%E7%8E%AF%E5%A2%83%E5%92%8C%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95%E9%A1%B9%E8%A7%84%E8%8C%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 6.2.5 词法环境和环境记录项规范类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#626-%E6%95%B0%E6%8D%AE%E5%9D%97"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 6.2.6 数据块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6261-createbytedatablocksize"><span class="toc-number">1.2.6.1.</span> <span class="toc-text"> 6.2.6.1 CreateByteDataBlock(size)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6262-copydatablockbytestoblock-toindex-fromblock-fromindex-count"><span class="toc-number">1.2.6.2.</span> <span class="toc-text"> 6.2.6.2 CopyDataBlockBytes(toBlock, toIndex, fromBlock, fromIndex, count)</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">6 数据类型和值</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-23</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="6-ecmascript数据类型和值"><a class="markdownIt-Anchor" href="#6-ecmascript数据类型和值"></a> 6 ECMAScript数据类型和值</h1>
+<p>规范的算法会处理每个关联了类型的值，所有可能出现的值的类型都定义在本条目中。这些类型又再细分为 ECMAScript语言类型 和 规范类型。</p>
+<span id="more"></span>
+<p>在本规范中，记法 Type(x) 表示 “x 的类型”，而“类型”指的就是上述的 ECMAScript语言类型 与规范类型。当使用“empty”一词来命名值时，等同于说“没有任何类型的值”。</p>
+<h2 id="61-ecmascript语言类型"><a class="markdownIt-Anchor" href="#61-ecmascript语言类型"></a> 6.1 ECMAScript语言类型</h2>
+<p>ECMAScript语言类型 对应的是程序员使用 ECMAScript 语言直接操作的值。ECMAScript语言类型 包括 Undefined、Null、Boolean、String、Symbol、Number、Object。ECMAScript语言值是以ECMAScript语言类型为特征的值。</p>
+<h3 id="611-undefined类型"><a class="markdownIt-Anchor" href="#611-undefined类型"></a> 6.1.1 Undefined类型</h3>
+<p>Undefined类型 有且只有一个值，称为 undefined 。任何没有被赋值的变量值为 undefined 。</p>
+<h3 id="612-null类型"><a class="markdownIt-Anchor" href="#612-null类型"></a> 6.1.2 Null类型</h3>
+<p>Null类型 有且只有一个值，称为 null 。</p>
+<h3 id="613-boolean类型"><a class="markdownIt-Anchor" href="#613-boolean类型"></a> 6.1.3 Boolean类型</h3>
+<p>Boolean类型 表示逻辑实体，有两个值，称为 true 和 false。</p>
+<h3 id="614-string类型"><a class="markdownIt-Anchor" href="#614-string类型"></a> 6.1.4 String类型</h3>
+<p>~~字符串类型是所有有限的零个或多个16位无符号整数值（“元素”）的有序序列。~~字符串类型是零个或多个16位无符号整数值（“元素”）的所有有序序列的集合，最大长度为<code>2^53-1</code>个元素。在运行的 ECMAScript 程序中，字符串类型常被用于表示文本数据，此时字符串中的每个元素都被视为一个 UTF-16 代码单元值。<s>代码单元（参看 章节 6）</s>。 每个元素都被认为占有此序列中的一个位置，用非负整数索引这些位置。任何时候，第一个元素（若存在）在位置0，下一个元素（若存在）在位置1，依此类推。字符串的长度即其中元素（即16位的值）的个数。空字符串长度为零，因而不包含任何元素。</p>
+<p>在ECMAScript操作解释字符串值的情况下，每个元素都解释为单个UTF-16代码单元。 但是，ECMAScript对String值中的代码单元序列没有任何限制或要求，因此当将它们解释为UTF-16代码单元序列时，它们可能格式不正确。 不解释字符串内容的操作将它们视为未区分的16位无符号整数的序列。 函数String.prototype.normalize（请参见21.1.3.12）可用于显式标准化String值。 String.prototype.localeCompare（请参见21.1.3.10）在内部对String值进行规范化，但是没有其他操作隐式对对其进行操作的字符串进行规范化。 只有明确指定为对语言或语言环境敏感的操作才会产生对语言敏感的结果。</p>
+<p><s>若一个字符串包含实际的文本数据，每个元素都被认为是一个单独的 UTF-16 代码单元。无论这是不是 String 实际的存储格式，String 中的字符都被当作表示为 UTF-16 来计数。除非特别声明，作用在字符串上的所有操作都视它们为无差别的 16 位无符号整数；这些操作不保证结果字符串仍为正规形式，也不保证语言敏感结果。</s></p>
+<p>注： 这些决议背后的原理是尽可能地保持字符串的实现简单而高效。~~这意味着，在运行中的程序读到从外部进入执行环境的文本数据（即，用户输入、从文件读取文本 、从网络上接收文本，等等）之前，它们已被转为 Unicode 正规形式 C。通常情况下，这个转化在进入的文本被从其原始字符编码转为 Unicode 的同时进行（且强制去除头部附加信息）。因此，建议 ECMAScript 程序源代码为正规形式 C，保证字符串常量是正规化的（如果保证源代码文本是正规化的话），即便它们不包含任何 Unicode 转义序列。~~如果ECMAScript源文本为正规形式C，则只要字符串文字不包含任何Unicode转义序列，就可以保证对其进行规范化。</p>
+<p>一些操作将字符串内容解释为UTF-16编码的Unicode代码点。 在这种情况下，解释为：</p>
+<ul>
+<li>0到0xD7FF范围内或0xE000到0xFFFF范围内的代码单元被解释为具有相同值的代码点。</li>
+<li>一个由两个代码单元组成的序列，第一个代码单元c1在范围0xD800到0xDBFF内，第二个代码单元c2在范围0xDC00到0xDFFF内，是一个代理对，并且会被解释为值为<code>(c1 - 0xD800) * 0x400 + (c2 - 0xDC00) + 0x10000</code>的代码点（见10.1.2）</li>
+<li>一个在范围0xD800到0xDFFF内的代码单元，但不是代理对的一部分，会被解释为具有箱通知的代码点。</li>
+</ul>
+<h3 id="615-symbol-类型"><a class="markdownIt-Anchor" href="#615-symbol-类型"></a> 6.1.5 Symbol 类型</h3>
+<p>Symbol类型 是所有用来作为对象属性的键的非String值的集合。<br />
+每个可能的Symbol值是唯一的、不可变的。<br />
+每个Symbol值不变地持有一个关联值[[Description]]，该值是undefined或者一个String值。</p>
+<h3 id="6151-知名-symbols"><a class="markdownIt-Anchor" href="#6151-知名-symbols"></a> 6.1.5.1 知名 Symbols</h3>
+<p>知名(Well-known) Symbols 是本规范中的算法明确引用内置Symbol值。它们通常用作属性的键，其值用作规范算法的扩展点。 除非另有说明，否则知名Symbol值由所有Code Realms共享。<br />
+在本规范中，使用<code>@@name</code>形式的记号来引用知名Symbol，这里<code>name</code>是下表中列出的值之一。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">规范名</th>
+<th style="text-align:left">[[Description]]</th>
+<th style="text-align:left">值和目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">@@hasInstance</td>
+<td style="text-align:left">“Symbol.hasInstance”</td>
+<td style="text-align:left">一种确定构造函数对象是否将一个对象识别为构造函数实例之一的方法。 由instanceof运算符的语义调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@isConcatSpreadable</td>
+<td style="text-align:left">“Symbol.isConcatSpreadable”</td>
+<td style="text-align:left">一个布尔值属性，如果为true，则表示应通过Array.prototype.concat将对象展平为其数组元素。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@iterator</td>
+<td style="text-align:left">“Symbol.iterator”</td>
+<td style="text-align:left">返回对象的默认Iterator的方法。 由for-of语句的语义调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@match</td>
+<td style="text-align:left">“Symbol.match”</td>
+<td style="text-align:left">将正则表达式与字符串匹配的正则表达式方法。 由String.prototype.match方法调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@replace</td>
+<td style="text-align:left">“Symbol.replace”</td>
+<td style="text-align:left">一个正则表达式方法，用于替换字符串的匹配子字符串。 由String.prototype.replace方法调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@search</td>
+<td style="text-align:left">“Symbol.search”</td>
+<td style="text-align:left">返回与正则表达式匹配的字符串中的索引的正则表达式方法。 由String.prototype.search方法调用</td>
+</tr>
+<tr>
+<td style="text-align:left">@@species</td>
+<td style="text-align:left">“Symbol.species”</td>
+<td style="text-align:left">函数值属性，是用于创建派生对象的构造函数。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@split</td>
+<td style="text-align:left">“Symbol.split”</td>
+<td style="text-align:left">一个正则表达式方法，该方法在与正则表达式匹配的索引处拆分字符串。 由String.prototype.split方法调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@toPrimitive</td>
+<td style="text-align:left">“Symbol.toPrimitive”</td>
+<td style="text-align:left">一种将对象转换为相应原始值的方法。 由ToPrimitive抽象操作调用。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@toStringTag</td>
+<td style="text-align:left">“Symbol.toStringTag”</td>
+<td style="text-align:left">一个字符串值的属性，用于创建对象的默认字符串描述。 由内置方法Object.prototype.toString访问。</td>
+</tr>
+<tr>
+<td style="text-align:left">@@unscopables</td>
+<td style="text-align:left">“Symbol.unscopables”</td>
+<td style="text-align:left">一个对象值属性，其自有属性名是从关联对象的with环境绑定中排除的属性名称。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="616-number-类型"><a class="markdownIt-Anchor" href="#616-number-类型"></a> 6.1.6 Number 类型</h3>
+<p>精确地描述，数值类型拥有 18437736874454810627 个值（阶码全为1的只有三个有效值，<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="36.73ex" height="2.61ex" role="img" focusable="false" viewBox="0 -903.7 16234.7 1153.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1196.5, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mo" transform="translate(2196.7, 0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msup" transform="translate(2585.7, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g><g data-mml-node="mo" transform="translate(3726.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(4726.6, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(5226.6, 0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(5837.8, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(6838, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g></g><g data-mml-node="mo" transform="translate(7941.9, 0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(8942.1, 0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g><g data-mml-node="mo" transform="translate(9719.9, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(10775.6, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(12255, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(13255.2, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(14734.5, 0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(15734.7, 0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g></g></g></svg></mjx-container>），表示为 IEEE-754-2008 格式64位双精度数值。IEEE标准中有 9007199254740990 个非数字值（<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="19.756ex" height="2.185ex" role="img" focusable="false" viewBox="0 -883.9 8732.3 965.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1196.5, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(2196.7, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(2918.9, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(3919.2, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(4696.9, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(5752.7, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(7232, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(8232.3, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></svg></mjx-container>，注意 NaN是有效值但也是非数字值），在 ECMAScript 中，它们被表示为一个单独的特殊值：NaN。（请注意，NaN 值由程序表达式 NaN 产生，并假设执行程序不能调整定义的全局变量 NaN。） 在某些实现中，外部代码也许有能力探测出众多非数字值之间的不同，但此类行为依赖于具体实现；对于 ECMAScript 代码而言，NaN 值相互之间无法区别。</p>
+<p>注意：在将Number值存储到ArrayBuffer中后，可能会在ArrayBuffer（请参阅24.1）中观察到的位模式不一定与ECMAScript实现使用的Number值的内部表示相同。</p>
+<p>还有另外两个特殊值，称为正无穷和负无穷。为简洁起见，在说明目的时，用符号 +∞ 和 -∞ 分别代表它们。（请注意，两个无限数值由程序表达式 +Infinity（简作 Infinity） 和 -Infinity 产生，并假设执行程序不能调整定义的全局变量 Infinity。）</p>
+<p>另外 18437736874454810624（即，<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="8.454ex" height="2.203ex" role="img" focusable="false" viewBox="0 -891.7 3736.7 973.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(1479.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(2479.6, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>） 个值被称为有限数值。其中的一半是正数，另一半是负数，对于每个正数而言，都有一个与之对应的、相同绝对值的负数。<br />
+请注意，还有一个正零和一个负零。为简洁起见，类似地，在说明目的时，分别用用符号 +0 和 -0 代表这些值。（请注意，这两个数字零由程序表达式 +0（简作 0） 和 -0 产生。）</p>
+<p>这 18437736874454810622（即，<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="12.351ex" height="2.203ex" role="img" focusable="false" viewBox="0 -891.7 5459.1 973.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(1479.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(2479.6, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(3958.9, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(4959.1, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></svg></mjx-container>） 个有限非零值分为两种：<br />
+其中 18428729675200069632（即，<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="8.454ex" height="2.203ex" role="img" focusable="false" viewBox="0 -891.7 3736.7 973.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(1479.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(2479.6, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>） 个是常规值（规格化），形如<br />
+<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="10.569ex" height="1.666ex" role="img" focusable="false" viewBox="0 -725.5 4671.4 736.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mo" transform="translate(691.2, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mi" transform="translate(1691.4, 0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2791.7, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(3791.9, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g></g></g></g></svg></mjx-container><br />
+这里的 s 是 +1 或 -1，m 是一个小于 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="2.844ex" height="2ex" role="img" focusable="false" viewBox="0 -883.9 1257.1 883.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container> 但不小于 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="2.844ex" height="2ex" role="img" focusable="false" viewBox="0 -883.9 1257.1 883.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container> 的正整数（IEEE标准中尾数M被解释为小数，前面有隐含的1，而规范将小数点右移了52位并将阶码看作无符号整数，之后在又乘以了<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="4.089ex" height="2ex" role="img" focusable="false" viewBox="0 -883.9 1807.2 883.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778, 0)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>以抵消右移），e 是一个闭区间 -1074 到 971 中的整数（-1022与1023分别减去52得到）。</p>
+<p>剩下的 9007199254740990（即，253-2）个值是非常规的，形如<br />
+<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="10.569ex" height="1.666ex" role="img" focusable="false" viewBox="0 -725.5 4671.4 736.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mo" transform="translate(691.2, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mi" transform="translate(1691.4, 0)"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2791.7, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(3791.9, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500, 413) scale(0.707)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g></g></g></g></svg></mjx-container><br />
+这里的 m 是 +1 或 -1，m 是一个小于 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="2.844ex" height="2ex" role="img" focusable="false" viewBox="0 -883.9 1257.1 883.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container> 的 正整数，e 为 -1074</p>
+<p>所有绝对值不超过<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="10.11ex" height="2.185ex" role="img" focusable="false" viewBox="0 -883.9 4468.6 965.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600, 0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1378, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(2155.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(3211.5, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>的正整数和负整数都可被数值类型表示（不过，整数0有两个呈现形式，+0和-0，超过这个范围的整数将被舍入到最近的可被数值类型表示的整数。</p>
+<p>如果一个有限的数值非零且用来表达它（上文两种形式之一）的整数 m 是奇数（即二进制位最后一位是1），则该数值有奇数标记。否则，它有偶数标记（二进制位最后一位是0）。<br />
+在本规范中，当 x 表示一个精确的非零实数数学量（甚至可以是无理数，比如 π）时，短语 “x 的 Number 值” 意为，以下面的方式选择一个 Number 值。考虑数值类型的所有有限值的集合，从集合中去掉 -0 并添加两个数值类型中不可呈现的值（刚刚超过最大值的值），即 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="4.444ex" height="2.017ex" role="img" focusable="false" viewBox="0 -891.7 1964.2 891.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000, 0)"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1500, 0)"></path></g></g></g></g></g></svg></mjx-container>（<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="14.911ex" height="2.201ex" role="img" focusable="false" viewBox="0 -891 6590.7 973"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(778, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(1500.2, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(2500.4, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(3979.8, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(4980, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path data-c="37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z" transform="translate(500, 0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1000, 0)"></path></g></g></g></g></g></svg></mjx-container>）和 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="6.204ex" height="2.203ex" role="img" focusable="false" viewBox="0 -891.7 2742.2 973.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(778, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000, 0)"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1500, 0)"></path></g></g></g></g></g></svg></mjx-container> （<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="14.911ex" height="2.201ex" role="img" focusable="false" viewBox="0 -891 6590.7 973"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(1500.2, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(2500.4, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(3979.8, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(4980, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path data-c="37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z" transform="translate(500, 0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1000, 0)"></path></g></g></g></g></g></svg></mjx-container>）。选择此集合中值最接近 x 的一员，若集合中的两值近似相等，那么选择有偶数标记的那个；为此，21024 和 -21024 这两个超额值被认为有偶数标记。最终，若选择 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="4.444ex" height="2.017ex" role="img" focusable="false" viewBox="0 -891.7 1964.2 891.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000, 0)"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1500, 0)"></path></g></g></g></g></g></svg></mjx-container> ，用 +∞ 替换它；若选择 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="6.204ex" height="2.203ex" role="img" focusable="false" viewBox="0 -891.7 2742.2 973.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(778, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1000, 0)"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(1500, 0)"></path></g></g></g></g></g></svg></mjx-container> ，用 -∞ 替换它；若选择 +0，当且仅当 x 小于零时，用 -0 替换它；其它任何被选取的值都不用改变。结果就是 x 的 Number 值。（此过程正是 IEEE-754-2008 的向最近舍入、偶数优先模式对应的行为。）</p>
+<p>某些 ECMAScript 运算符仅涉及闭区间 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="4.604ex" height="2.185ex" role="img" focusable="false" viewBox="0 -883.9 2035.1 965.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(778, 0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container> 到 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="6.741ex" height="2.185ex" role="img" focusable="false" viewBox="0 -883.9 2979.6 965.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(1479.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2479.6, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container> 的整数，或闭区间 0 到 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="6.741ex" height="2.185ex" role="img" focusable="false" viewBox="0 -883.9 2979.6 965.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500, 0)"></path></g></g></g><g data-mml-node="mo" transform="translate(1479.3, 0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(2479.6, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>。这些运算符接受任何数值类型的值，不过，数值首先被转换为期望范围内的整数值。~~参见 ToInt32 和 ToUint32 的描述，分别在章节 9.5 和 9.6 中。~~请参阅7.1中数字转换操作的说明。</p>
+<h3 id="617-object类型"><a class="markdownIt-Anchor" href="#617-object类型"></a> 6.1.7 Object类型</h3>
+<p>Object 在逻辑上是一个属性的集合。每个属性既可以是一个<s>命名</s>数据属性，也可以是一个<s>命名</s>访问器属性~~，或是一个内部属性：~~</p>
+<ul>
+<li><s>命名</s>数据属性：由一个<s>名字</s>键与一个 ECMAScript语言类型 值，以及一个 Boolean 特性(attributes)集合组成。</li>
+<li><s>命名</s>访问器属性：由一个<s>名字</s>键与一个或两个访问器函数，和一个 Boolean 特性集合组成。访问器函数用于存储或检索与属性关联的ECMAScript语言值。<s>访问器函数用于存取一个与该属性相关联的 ECMAScript语言类型 值。有两种带名字的访问器属性（非内部属性）：get 和 put，分别对应取值和赋值。</s></li>
+<li><s>内部属性：没有名字，且不能直接通过 ECMAScript 语言操作。内部属性的存在纯粹为了规范的目的。</s></li>
+</ul>
+<p>属性使用key值来标识。一个属性key值要么是一个String值，要么是一个Symbol值。所有String和Symbol值，包括空字符串，都可以用作属性key。属性名称是String值的属性key。</p>
+<p>整数索引是一个String值的属性key，它是规范的数字字符串（请参见7.1.16），其数值为+0或<code>≤2^53-1</code>的正整数。 数组索引是整数索引，其数值i在<code>+0 ≤ i &lt;2^32-1</code>范围内。</p>
+<p>属性键用于访问属性及其值。 对属性的访问有两种方法：get和set，分别对应于值检索和赋值。 通过get和set访问可访问的属性包括作为对象直接一部分的自有属性和由另一个关联对象通过属性继承关系提供的继承属性。 继承的属性可以是关联对象的拥有属性或继承的属性。 一个对象的每个自己的属性必须各自具有与该对象的其他自己的属性的键值不同的键值。</p>
+<p>从逻辑上讲，所有对象都是属性的集合，但是有多种形式的对象在其访问和操作其属性时具有不同的语义。 普通对象是对象的最常见形式，并具有默认的对象语义。 奇异对象是其属性语义与默认语义有任何不同的任何形式的对象。</p>
+<h4 id="6171-属性的特性"><a class="markdownIt-Anchor" href="#6171-属性的特性"></a> 6.1.7.1 属性的特性</h4>
+<p>本规范中的特性用于定义和解释对象属性的状态。</p>
+<p>表2：数据属性由一个key关联到一个下面列出的特性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特性名</th>
+<th style="text-align:left">值域</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[Value]]</td>
+<td style="text-align:left">任何 ECMAScript语言类型</td>
+<td style="text-align:left">通过属性的get访问来获取该值</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Writable]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果为 false，试图通过 ECMAScript 代码 [[Set]] 去改变该属性的 [[Value]]将会失败。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Enumerable]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果为 true，则该属性可被 for-in 枚举出来，否则，该属性不可枚举。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Configurable]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果为 false，试图删除该属性或改变该属性为访问器属性，或改变它的特性（除了 [[Value]] ，或将[[Writable]]改为false），都会失败。</td>
+</tr>
+</tbody>
+</table>
+<p>表3：访问器属性由一个key关联到一个下表中列出的特性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特性名</th>
+<th style="text-align:left">值域</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[Get]]</td>
+<td style="text-align:left">Object或Undefined</td>
+<td style="text-align:left">如果该值为一个 Object 对象，那么它必须是一个函数对象。每次有对属性进行 get 访问时，该函数的内部方法 [[Call]] 会伴随着一个空参数列表被调用，并取出该属性值。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Set]]</td>
+<td style="text-align:left">Object或Undefined</td>
+<td style="text-align:left">如果该值为一个 Object 对象，那么它必须是一个函数对象。每次有对属性进行 set 访问时，该函数的内部方法 [[Call]] 会伴随着一个参数列表被调用，这个参数列表包含了指定值作为唯一的参数。属性的内部方法 [[Set]] 可能会对随后的 属性 内部方法 [[Get]] 的调用返回结果产生影响。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Enumerable]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果为 true，则该属性可被 for-in 枚举出来，否则，该属性不可枚举。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Configurable]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果为 false，试图删除该属性，改变该属性为数据属性，或改变它的特性，都会失败。</td>
+</tr>
+</tbody>
+</table>
+<p>如果此规范未明确指定属性的初始值，则使用下表中定义的默认值。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特性名</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[Value]]</td>
+<td style="text-align:left">undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Get]]</td>
+<td style="text-align:left">undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Set]]</td>
+<td style="text-align:left">undefined</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Writable]]</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Enumerable]]</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Configurable]]</td>
+<td style="text-align:left">false</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6172-object内部方法和内部插槽"><a class="markdownIt-Anchor" href="#6172-object内部方法和内部插槽"></a> 6.1.7.2 Object内部方法和内部插槽</h4>
+<p><s>所有对象都有一个叫做 [[Prototype]] 的内部属性。此对象的值是 null 或一个对象，并且它用于实现继承。一个原生属性是否可以把宿主对象作为它的 [[Prototype]] 取决于实现。所有 [[Prototype]] 链必须是有限长度（即，从任何对象开始，递归访问 [[Prototype]] 内部属性必须最终到头，并且值是 null）。从 [[Prototype]] 对象继承来的命名数据属性（作为子对象的属性可见）可以通过 get 获取，但无法用于 通过 put 写入。命名访问器属性会把 get 和 put 请求都继承。</s><br />
+<s>规范的每种内置对象都定义了 [[Class]] 内部属性的值。宿主对象的 [[Class]] 内部属性的值可以是除了 “Arguments”、“Array”、“Boolean”、“Date”、“Error”、“Function”、“JSON”、“Math”、“Number”、“Object”、“RegExp”、“String” 的任何字符串。[[Class]] 内部属性的值用于内部区分对象的种类。注，规范中除了通过 Object.prototype.toString 没有提供任何手段使程序访问此值。</s><br />
+ECMAScript中对象的实际语义是通过称为内部方法的算法指定的。 ECMAScript引擎中的每个对象都与一组内部方法相关联，这些内部方法定义了其运行时行为。 这些内部方法不是ECMAScript语言的一部分。 它们仅出于说明目的由本规范定义。 但是，ECMAScript实现中的每个对象必须按照与其关联的内部方法指定的方式运行。 实现的确切方式由实现方式决定。</p>
+<p>内部方法名称是多态的。 这意味着，当一个通用的内部方法名称被调用时，不同的对象值可能执行不同的算法。 调用内部方法的实际对象是调用的“目标”。 如果在运行时算法的实现尝试使用该对象不支持的对象的内部方法，则将引发TypeError异常。</p>
+<p>内部插槽对应于与对象关联并由各种ECMAScript规范算法使用的内部状态。 内部插槽不是对象属性，也不会被继承。 根据特定的内部插槽规范，这种状态可以由任何ECMAScript语言类型的值或特定的ECMAScript规范类型的值组成。 除非另有明确说明，否则内部插槽将作为创建对象过程的一部分进行分配，并且可能不会动态添加到对象中。 除非另有说明，否则内部插槽的初始值为未定义的值。 本规范中的各种算法都会创建具有内部插槽的对象。 但是，ECMAScript语言没有提供将内部插槽与对象关联的直接方法。</p>
+<p>在本规范中，内部方法和内部插槽使用双方括号[[]]中包含的名称标识。</p>
+<p>表5总结了此规范使用的基本内部方法，这些方法适用于由ECMAScript代码创建或操纵的所有对象。 每个对象都必须具有用于所有基本内部方法的算法。 但是，所有对象不一定都对那些方法使用相同的算法。</p>
+<p>表5和其他类似表的“签名”列描述了每个内部方法的调用模式。 调用模式始终包括带括号的描述性参数名称列表。 如果参数名称与ECMAScript类型名称相同，则名称描述参数值的必需类型。 如果内部方法显式返回一个值，则其参数列表后跟符号“→”和返回值的类型名称。 签名中使用的类型名称是指第6节中定义的类型，并由以下附加名称扩展。 “ any”表示该值可以是任何ECMAScript语言类型。 内部方法隐式返回完成记录，如6.2.2中所述。 除了其参数外，内部方法始终可以访问作为方法调用目标的对象。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部方法</th>
+<th style="text-align:left">签名</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[GetPrototypeOf]]</td>
+<td style="text-align:left"><code>() → Object | Null</code></td>
+<td style="text-align:left">确定为该对象提供继承属性的对象。 空值表示没有任何继承属性。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[SetPrototypeOf]]</td>
+<td style="text-align:left"><code>(Object | Null) → Boolean</code></td>
+<td style="text-align:left">将此对象与提供继承属性的另一个对象相关联。 传递null表示没有继承属性。 返回true表示操作成功完成，返回false表示操作不成功。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[IsExtensible]]</td>
+<td style="text-align:left"><code>( ) → Boolean</code></td>
+<td style="text-align:left">确定是否允许向该对象添加其他属性。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[PreventExtensions]]</td>
+<td style="text-align:left"><code>( ) → Boolean</code></td>
+<td style="text-align:left">控制是否可以将新属性添加到该对象。 如果操作成功，则返回true；如果操作失败，则返回false。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[GetOwnProperty]]</td>
+<td style="text-align:left"><code>(propertyKey) → Undefined | Property Descriptor</code></td>
+<td style="text-align:left">返回此对象自有属性的属性描述符，该属性的键为propertyKey，如果不存在这样的属性，则返回undefined。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[HasProperty]]</td>
+<td style="text-align:left"><code>(propertyKey) → Boolean</code></td>
+<td style="text-align:left">返回一个布尔值，该值指示此对象是否有自身或继承的键为propertyKey的属性。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Get]]</td>
+<td style="text-align:left"><code>(propertyKey, Receiver) → any</code></td>
+<td style="text-align:left">从此对象返回其键为propertyKey的属性的值。 如果必须执行任何ECMAScript代码来检索属性值，则在执行代码时，将Receiver用作<code>this</code>值。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Set]]</td>
+<td style="text-align:left"><code>(propertyKey,value, Receiver) → Boolean</code></td>
+<td style="text-align:left">将键为propertyKey的属性的值设置为value。 如果必须执行任何ECMAScript代码来设置属性值，则在执行代码时，将Receiver用作<code>this</code>值。 如果成功设置了属性值，则返回true；如果无法设置，则返回false。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Delete]]</td>
+<td style="text-align:left"><code>(propertyKey) → Boolean</code></td>
+<td style="text-align:left">从此对象中删除其自身的键为propertyKey的属性。 如果未删除该属性并且该属性仍然存在，则返回false。 如果属性已删除或不存在，则返回true。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[DefineOwnProperty]]</td>
+<td style="text-align:left"><code>(propertyKey, PropertyDescriptor) → Boolean</code></td>
+<td style="text-align:left">创建或更改其自身的属性（其键为propertyKey），使其具有PropertyDescriptor描述的状态。 如果成功创建/更新了该属性，则返回true；如果无法创建或更新该属性，则返回false。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Enumerate]]</td>
+<td style="text-align:left"><code>()→Object</code></td>
+<td style="text-align:left">返回一个迭代器对象，该对象生成对象的字符串键可枚举属性的键。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[OwnPropertyKeys]]</td>
+<td style="text-align:left"><code>()→List of propertyKey</code></td>
+<td style="text-align:left">返回一个List，其元素都是对象自有属性键。</td>
+</tr>
+</tbody>
+</table>
+<p>表6总结了可以被称为函数的对象所支持的其他基本内部方法。 函数对象是支持[[Call]]内部方法的对象。 构造函数（也称为构造函数）是支持[[Construct]]内部方法的函数对象。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部方法</th>
+<th style="text-align:left">签名</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[Call]]</td>
+<td style="text-align:left"><code>(any, a List of any) → any</code></td>
+<td style="text-align:left">确定为该对象提供继承属性的对象。 空值表示没有任何继承属性。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Construct]]</td>
+<td style="text-align:left"><code>(a List of any, Object) → Object</code></td>
+<td style="text-align:left">创建一个对象。 通过<code>new</code>或<code>super</code>运算符调用。 内部方法的第一个参数是包含运算符参数的列表。 第二个参数是<code>new</code>运算符最初应用于的对象。 实现此内部方法的对象称为构造函数。 函数对象不一定是构造函数，此类非构造函数函数对象没有[[Construct]]内部方法。</td>
+</tr>
+</tbody>
+</table>
+<p>在第9节中指定了普通对象和标准奇异对象的基本内部方法的语义。如果实现不支持对奇异对象的内部方法的任何指定使用，则该用法在尝试时必须引发TypeError异常。</p>
+<h4 id="6173-基本内部方法中的不变量"><a class="markdownIt-Anchor" href="#6173-基本内部方法中的不变量"></a> 6.1.7.3 基本内部方法中的不变量</h4>
+<p>ECMAScript引擎的对象内部方法必须符合以下指定的不变量列表。 普通ECMAScript对象以及本规范中的所有标准奇异对象都维护这些不变量。 ECMAScript代理对象通过对[[ProxyHandler]]对象上调用的traps的结果进行运行时检查来维护这些不变量。</p>
+<p>提供的任何实现都需要使用外来对象，这些对象也必须维护这些不变量。 违反这些不变量可能会导致ECMAScript代码具有无法预测的行为并造成安全问题。 但是，违反这些不变量绝不能损害实现的内存安全性。</p>
+<p>一个实现必须不允许以任何方式规避这些不变量，例如通过提供实现基本内部方法功能而不使用其不变量的替代接口。</p>
+<p>定义：</p>
+<ul>
+<li>内部方法的目标是在其上调用内部方法的对象。</li>
+<li>如果已观察到目标从其[[IsExtensible]]内部方法返回false，或从其[[PreventExtensions]]内部方法返回true，则该目标是不可扩展的。</li>
+<li>不存在的属性是在不可扩展目标上不作为自己的属性存在的属性。</li>
+<li>对SameValue的所有引用均符合7.2.9中指定的SameValue算法的定义。</li>
+</ul>
+<h5 id="getprototypeof"><a class="markdownIt-Anchor" href="#getprototypeof"></a> [[GetPrototypeOf]] ()</h5>
+<ul>
+<li>返回值的类型必须为Object或Null。</li>
+<li>如果目标是不可扩展的，并且[[GetPrototypeOf]]返回值v，则将来对[[GetPrototypeOf]]的任何调用都应返回与v相同的值。</li>
+<li>注意：对象的原型链应具有有限的长度（也就是说，从任何对象开始，将[[GetPrototypeOf]]内部方法递归地应用到其结果中，最终将导致该值变为null）。 但是，如果原型链包含任何不使用[[GetProtototypeOf]]的普通对象版定义的奇异对象，则此要求不能作为对象级别不变而强制执行。 当访问对象属性时，这种环形原型链可能会导致无限循环。</li>
+</ul>
+<h5 id="setprototypeof-v"><a class="markdownIt-Anchor" href="#setprototypeof-v"></a> [[SetPrototypeOf]] (V)</h5>
+<ul>
+<li>返回值的类型必须为布尔值。</li>
+<li>如果目标是不可扩展的，则[[SetPrototypeOf]]必须返回false，除非V与目标观察到的[[GetPrototypeOf]]值相同。</li>
+</ul>
+<h5 id="preventextensions"><a class="markdownIt-Anchor" href="#preventextensions"></a> [[PreventExtensions]] ()</h5>
+<ul>
+<li>返回值的类型必须为布尔值。</li>
+<li>如果[[PreventExtensions]]返回true，则将来对目标上的[[IsExtensible]]的所有调用都必须返回false，并且现在认为目标是不可扩展的。</li>
+</ul>
+<h5 id="getownproperty"><a class="markdownIt-Anchor" href="#getownproperty"></a> [[GetOwnProperty]] §</h5>
+<ul>
+<li>返回值的类型必须是属性描述符或“Undefined”。</li>
+<li>如果返回值的类型为属性描述符，则返回值必须是完整的属性描述符（请参见6.2.4.6）。</li>
+<li>如果将属性P描述为<code>Desc.[[Value]]==v</code>的数据属性，并且<code>Desc.[[Writable]]</code>和<code>Desc.[[Configurable]]</code>均为false，那么在之后所有的<code>[[GetOwnProperty]](P)</code>调用中，必须为<code>Desc.[[Value]]</code>特性返回SameValue。</li>
+<li>如果P的[[Writable]]以外的特性可能随时间变化，或该属性可能消失，则P的<code>[[Configurable]]</code>属性必须为true。</li>
+<li>如果<code>[[Writable]]</code>属性可能从false更改为true，则<code>[[Configurable]]</code>属性必须为true。</li>
+<li>如果目标是不可扩展的且P是不存在，则将来在目标上的<code>[[GetOwnProperty]](P)</code>调用都必须将P描述为不存在（换句话说<code>[[GetOwnProperty]](P)</code>必须返回 未定义）。</li>
+</ul>
+<p>注意：作为第三个不变式的结果，如果将一个属性描述为数据属性，并且该属性随时间可能返回不同的值，则即使没有通过其他内部方法来更改值的机制，<code>Desc.[[Writable]]</code>和<code>Desc.[[Configurable]]</code>属性之一或全部都必须为true</p>
+<h5 id="defineownproperty-p-desc"><a class="markdownIt-Anchor" href="#defineownproperty-p-desc"></a> [[DefineOwnProperty]] (P, Desc)</h5>
+<ul>
+<li>返回值的类型必须为布尔值。</li>
+<li>如果先前已将P视为目标的不可配置的自有属性，则[[[DefineOwnProperty]]必须返回false，除非：
+<ol>
+<li>P是不可配置、可写的自有数据属性。 不可配置、可写数据属性可以被修改为不可配置、不可写数据属性。</li>
+<li>Desc中的所有属性都与P的属性是SameValue的。</li>
+</ol>
+</li>
+<li>如果目标是不可扩展的并且P是不存在的自有属性，则<code>[[[DefineOwnProperty]](P，Desc)</code>必须返回false。 即，不可扩展的目标对象无法使用新属性进行扩展。</li>
+</ul>
+<h5 id="hasproperty-p"><a class="markdownIt-Anchor" href="#hasproperty-p"></a> [[HasProperty]] ( P )</h5>
+<ul>
+<li>返回值的类型必须为布尔值。</li>
+<li>如果先前将P视为目标的不可配置数据或访问者自有属性，则[[HasProperty]]必须返回true。</li>
+</ul>
+<h5 id="get-p-receiver"><a class="markdownIt-Anchor" href="#get-p-receiver"></a> [[Get]] (P, Receiver)</h5>
+<ul>
+<li>如果先前已将P视为目标值为值v的不可配置、不可写的自有数据属性，则[[Get]]必须返回SameValue。</li>
+<li>如果先前将P视为其[[Get]]属性未定义的目标的不可配置的自身访问器属性，则[[Get]]操作必须返回undefined。</li>
+</ul>
+<h5 id="set-p-v-receiver"><a class="markdownIt-Anchor" href="#set-p-v-receiver"></a> [[Set]] ( P, V, Receiver)</h5>
+<p>pass</p>
+<h5 id="delete-p"><a class="markdownIt-Anchor" href="#delete-p"></a> [[Delete]] ( P )</h5>
+<p>pass</p>
+<h5 id="enumerate"><a class="markdownIt-Anchor" href="#enumerate"></a> [[Enumerate]] ( )</h5>
+<p>pass</p>
+<h5 id="ownpropertykeys"><a class="markdownIt-Anchor" href="#ownpropertykeys"></a> [[OwnPropertyKeys]] ( )</h5>
+<p>pass</p>
+<h5 id="construct"><a class="markdownIt-Anchor" href="#construct"></a> [[Construct]] ( )</h5>
+<p>pass</p>
+<h4 id="6174-知名固有对象intrinsic-objects"><a class="markdownIt-Anchor" href="#6174-知名固有对象intrinsic-objects"></a> 6.1.7.4 知名固有对象(Intrinsic Objects)</h4>
+<p>知名固有对象是内置对象，这些对象由本规范的算法明确引用，并且通常具有Realm特定标识。 除非另有说明，否则每个内部对象实际上对应于一组相似对象，每个Realm一个。</p>
+<p>在本规范中，诸如<code>%name%</code>之类的引用表示与该名称对应的与当前Realm相关联的固有对象。 8.3中描述了当前Realm及其内部函数的确定。 表7列出了知名内部函数。</p>
+<p>表7：知名内部对象</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部名称</th>
+<th style="text-align:left">全局名称</th>
+<th style="text-align:left">ECMAScript语言关联</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%Array%</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left"><code>Array</code>构造器(22.1.1)</td>
+</tr>
+<tr>
+<td style="text-align:left">%ArrayBuffer%</td>
+<td style="text-align:left">ArrayBuffer</td>
+<td style="text-align:left"><code>ArrayBuffer</code>构造器(24.1.2)</td>
+</tr>
+<tr>
+<td style="text-align:left">%Object%</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left"><code>Object</code>构造器(19.1.1)</td>
+</tr>
+<tr>
+<td style="text-align:left">%ObjectPrototype%</td>
+<td style="text-align:left">Object.prototype</td>
+<td style="text-align:left">%Object%的数据属性<code>prototype</code>的初始值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="62-ecmascript规范类型"><a class="markdownIt-Anchor" href="#62-ecmascript规范类型"></a> 6.2 ECMAScript规范类型</h2>
+<p>规范类型 对应的是 元值，它被用于在算法中描述 ECMAScript 语言结构的语义和 ECMAScript语言类型。规范类型包括引用、列表、完结、属性描述式、词法环境、 环境纪录、数据块。规范类型的值是规范自造的，在 ECMAScript 的实现中不必对应到特定的实体上。规范类型可用来描述 ECMAScript 表达式运算的中间结果，但这样的值不能储存为对象的属性或 ECMAScript 语言的变量值。</p>
+<h3 id="621-列表和记录规范类型"><a class="markdownIt-Anchor" href="#621-列表和记录规范类型"></a> 6.2.1 列表和记录规范类型</h3>
+<p>列表类型用于说明 new 表达式、函数调用，和其他需要值的简单有序列表的算法中的参数列表的计算。列表类型的值是包含独立值的列表元素的简单有序序列。这些序列可以是任意长度。列表的元素可以使用0开始的索引进行随机访问。 为了符号上的方便，可以使用类似数组的语法来访问列表元素。 例如，<code>arguments[2]</code>是表示列表<code>arguments</code>的第3个元素的简写。</p>
+<p>为方便起见，在本规范中，可以使用字面值语法来表示新的List值。 例如，«1、2»定义具有两个元素的List值，每个元素都被初始化为特定值。 一个新的空列表可以表示为«»。</p>
+<p>记录类型用于描述本规范算法内的数据聚合。 Record类型值包含一个或多个命名字段。 每个字段的值可以是ECMAScript值，也可以是由与Record类型关联的名称表示的抽象值。 字段名称始终用双括号括起来，例如[[value]]。</p>
+<p>为方便起见，在本规范中，可以使用类似于对象常量的语法来表示Record值。 例如，<code>&#123;[[field1]]: 42, [[field2]]: false, [[field3]]: empty&#125;</code>定义了一个Record值，该值具有三个字段，每个字段都被初始化为特定值。 字段名称顺序不重要。 没有明确列出的任何字段都被视为不存在。</p>
+<p>在规范文本和算法中，点符号可用于指代Record值的特定字段。 例如，如果R是上一段中显示的记录，则<code>R.[[field2]]</code>是“ R的名为[[field2]]的字段”的简写。</p>
+<p>常用Record字段的组合这种模式可能被命名，并且该名称可以用作字面Record值的前缀，以标识所描述的特定类型的聚合。 例如：<code>PropertyDescriptor&#123;[[Value]]: 42, [[Writable]]: false, [[Configurable]]: true&#125;</code>。</p>
+<h3 id="622-完结记录规范类型"><a class="markdownIt-Anchor" href="#622-完结记录规范类型"></a> 6.2.2 完结记录规范类型</h3>
+<p>完结类型是一种记录，用于说明值和控制流的运行时传播，例如将控制转移到外部的声明<code>(break, continue, return, throw)</code>的行为。</p>
+<p>完结类型的值为Record值，其字段由表8定义。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段(Field)</th>
+<th style="text-align:left">值(Value)</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[type]]</td>
+<td style="text-align:left">(normal, break, continue, return, throw)之一</td>
+<td style="text-align:left">出现的完结类型</td>
+</tr>
+<tr>
+<td style="text-align:left">[[value]]</td>
+<td style="text-align:left">任何ECMAScript语言值或为空</td>
+<td style="text-align:left">产生的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[target]]</td>
+<td style="text-align:left">任何ECMAScript字符串或为空</td>
+<td style="text-align:left">定向控制转移的目标标签。</td>
+</tr>
+</tbody>
+</table>
+<p>术语 非常规完结(abrupt completion)是指任何[[type]]值不为<code>normal</code>的完结。</p>
+<h4 id="6221-normalcompletion"><a class="markdownIt-Anchor" href="#6221-normalcompletion"></a> 6.2.2.1 NormalCompletion</h4>
+<p>抽象操作NormalCompletion接受单个参数，例如：</p>
+<blockquote>
+<p>返回 <code>NormalCompletion(argument)</code></p>
+</blockquote>
+<p>它是一种简写，定义如下：</p>
+<blockquote>
+<p>返回<code>Completion&#123;[[type]]: normal, [[value]]: argument, [[target]]:empty&#125;</code></p>
+</blockquote>
+<h4 id="6222-隐式完结值"><a class="markdownIt-Anchor" href="#6222-隐式完结值"></a> 6.2.2.2 隐式完结值</h4>
+<p>本规范的算法通常隐式返回[[type]]为 normal 的完结记录。 除非从上下文中可以明显看出，否则返回一个而非完结记录的值的算法语句，例如</p>
+<blockquote>
+<p>返回<code>Infinity</code></p>
+</blockquote>
+<p>实际上与以下内容含义相同：</p>
+<blockquote>
+<p>返回<code>NormalCompletion(&quot;Infinity&quot;)</code></p>
+</blockquote>
+<p>但是，如果“ return”语句的值表达式是“完结记录”构造字面量，则返回作为结果的“完结记录”。 如果值表达式是对抽象操作的调用，则“ return”语句仅返回由抽象操作产生的完结记录。</p>
+<p>抽象操作 <code>Completion(completionRecord)</code>用于强调将返回先前计算的完结记录。 <code>Completion</code>抽象操作接受单个参数<code>completionRecord</code>并执行以下步骤：</p>
+<ol>
+<li>Assert: <code>completementRecord</code>是一个完结记录。</li>
+<li>将<code>completementRecord</code>作为此抽象操作的完结记录返回</li>
+</ol>
+<p>在算法步骤中没有值的“ return”语句与以下内容具有相同的含义：</p>
+<ol>
+<li>返回<code>NormalCompletion(undefined)</code></li>
+</ol>
+<p>任何在没有显式要求完整的完结记录值的上下文中对完结记录值的引用，等同于对完结记录值的[[value]]的字段的显式引用，除非完结记录是非常规完结。</p>
+<h4 id="6223-抛出异常"><a class="markdownIt-Anchor" href="#6223-抛出异常"></a> 6.2.2.3  抛出异常</h4>
+<p>抛出异常的算法步骤，例如</p>
+<blockquote>
+<p>Throw a TypeError exception.</p>
+</blockquote>
+<p>和以下内容含义相同：</p>
+<blockquote>
+<p>返回<code>Completion&#123;[[type]]: throw, [[value]]: a newly created TypeError object, [[target]]:empty&#125;.</code></p>
+</blockquote>
+<h4 id="6224-returnifabrupt"><a class="markdownIt-Anchor" href="#6224-returnifabrupt"></a> 6.2.2.4 ReturnIfAbrupt</h4>
+<p>算法步骤<code>ReturnIfAbrupt(argument)</code>和以下内容含义相同：</p>
+<ol>
+<li>If<code>argument</code>是非常规完结，返回<code>argument</code></li>
+<li>Else if<code>argument</code>是完结记录项，则令<code>argument</code>为<code>argument.[[value]]</code></li>
+</ol>
+<h4 id="6225-updateemptycompletionrecord-value"><a class="markdownIt-Anchor" href="#6225-updateemptycompletionrecord-value"></a> 6.2.2.5 UpdateEmpty(completionRecord, value)</h4>
+<p>抽象操作<code>UpdateEmpty</code>接受参数<code>completionRecord</code>和<code>value</code>，然后执行以下步骤：</p>
+<ol>
+<li>Assert: 如果<code>completionRecord.[[type]]</code>为<code>throw</code>，则<code>completionRecord.[[value]]</code>不为<code>empty</code></li>
+<li>If<code>completionRecord.[[type]]</code>为<code>throw</code>，返回<code>Completion(completionRecord)</code></li>
+<li>If<code>completionRecord.[[value]]</code>不为<code>empty</code>，返回<code>Completion(completionRecord)</code></li>
+<li>返回<code>Completion&#123;[[type]]: completionRecord.[[type]], [[value]]: value, [[target]]: completionRecord.[[target]] &#125;.</code></li>
+</ol>
+<h3 id="623-引用规范类型"><a class="markdownIt-Anchor" href="#623-引用规范类型"></a> 6.2.3 引用规范类型</h3>
+<p>注意：Reference类型用于解释诸如delete，typeof，赋值运算符，super关键字和其他语言功能之类的运算符的行为。 例如，赋值运算中的左操作数应产生引用。</p>
+<p>一个引用是个已解析的名字或属性绑定。它由三部分组成：基值、引用名称，和一个严格引用标志（布尔值）。 基值是 <code>undefined</code>、一个Object、一个Boolean、一个String、一个Number、一个Symbol，或者一个环境记录项中。基值是 undefined 表示此引用不可以解析为一个绑定。引用名称是一个字符串或Symbol。</p>
+<p>super引用是一种引用，用于表示使用super关键字表示的名称绑定。 super引用有额外的<code>thisValue</code>部分，其基值永远不会是环境记录项。</p>
+<p>本规范中使用以下抽象操作来访问引用的部分：</p>
+<ul>
+<li>GetBase(V)：返回引用值 V 的基值部分。</li>
+<li>GetReferencedName(V)：返回引用值 V 的引用名称部分。</li>
+<li>IsStrictReference(V)：返回引用值 V 的严格引用标志部分。</li>
+<li>HasPrimitiveBase(V)：如果基值的类型是 Boolean、String、Symbol、Number，那么返回 true。</li>
+<li>IsPropertyReference(V)：如果基值是个 Object 或 HasPrimitiveBase(V) 是 true，那么返回 true；否则返回 false。</li>
+<li>IsUnresolvableReference(V)：如果基值是 undefined 那么返回 true，否则返回 false。</li>
+<li>IsSuperReference(V)：如果引用有thisValue部分则返回 true。</li>
+</ul>
+<p>本规范使用以下抽象操作来操作引用：</p>
+<h4 id="6231-getvaluev"><a class="markdownIt-Anchor" href="#6231-getvaluev"></a> 6.2.3.1 GetValue(V)</h4>
+<ol>
+<li><code>ReturnIfAbrupt(V)</code></li>
+<li>If<code>Type(V)</code>不是引用，返回V</li>
+<li>令<code>base</code>为<code>GetBase(V)</code></li>
+<li>If<code>IsUnresolvableReference(V)</code>，抛出 ReferenceError 异常</li>
+<li>If<code>IsPropertyReference(V)</code>，则：
+<ol>
+<li>If<code>HasPrimitiveBase(V)</code> 为true，则
+<ol>
+<li>断言：在这种情况下，base永远不会为null或undefined</li>
+<li>令<code>base</code>为<code>ToObject(base)</code></li>
+</ol>
+</li>
+<li>返回<code>base.[[Get]](GetReferencedName(V), GetThisValue(V))</code></li>
+</ol>
+</li>
+<li>Else<code>base</code>必是环境记录项
+<ol>
+<li>返回<code>base.GetBindingValue(GetReferencedName(V), IsStrictReference(V))</code></li>
+</ol>
+</li>
+</ol>
+<p>注意：5.1.2步<code>ToObject</code>创建的对象无法在上面的抽象操作以及普通对象[[Get]]内部方法以外的地方访问。实现可能会选择避免实际创建对象。</p>
+<h4 id="6232-putvaluevw"><a class="markdownIt-Anchor" href="#6232-putvaluevw"></a> 6.2.3.2 PutValue(V,W)</h4>
+<ol>
+<li><code>ReturnIfAbrupt(V)</code></li>
+<li><code>ReturnIfAbrupt(W)</code></li>
+<li>If<code>Type(V)</code>不是引用，抛出 ReferenceError 异常</li>
+<li>令<code>base</code>为<code>GetBase(V)</code></li>
+<li>If<code>IsUnresolvableReference(V)</code>，则
+<ol>
+<li>如果<code>IsStrictReference(V)</code>为true，则抛出 ReferenceError 异常</li>
+<li>令<code>globalObj</code>为<code>GetGlobalObject()</code></li>
+<li>返回<code>Set(globalObj,GetReferencedName(V), W, false)</code></li>
+</ol>
+</li>
+<li>Else if<code>IsPropertyReference(V)</code>，则
+<ol>
+<li>如果<code>HasPrimitiveBase(V)</code>为true，则
+<ol>
+<li>断言：在这种情况下，base永远不会为null或undefined</li>
+<li>令<code>base</code>为<code>ToObject(base)</code></li>
+</ol>
+</li>
+<li>令<code>succeeded</code>为<code>base.[[Set]](GetReferencedName(V), W, GetThisValue(V))</code></li>
+<li><code>ReturnIfAbrupt(succeeded)</code></li>
+<li>如果<code>succeeded</code>为true，并且<code>IsStrictReference(V)</code>为true，则抛出TypeError异常</li>
+<li>返回</li>
+</ol>
+</li>
+<li>Else<code>base</code>必定是环境记录项
+<ol>
+<li>返回<code>base.SetMutableBinding(GetReferencedName(V), W, IsStrictReference(V))</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="6233-getthisvalue-v"><a class="markdownIt-Anchor" href="#6233-getthisvalue-v"></a> 6.2.3.3 GetThisValue (V)</h4>
+<ol>
+<li>断言：<code>IsPropertyReference(V)</code>为true</li>
+<li>如果<code>IsSuperReference(V)</code>，则返回引用V的<code>thisValue</code>部分的值。</li>
+<li>返回<code>GetBase(V)</code></li>
+</ol>
+<h4 id="6234-initializereferencedbinding-v-w"><a class="markdownIt-Anchor" href="#6234-initializereferencedbinding-v-w"></a> 6.2.3.4 InitializeReferencedBinding (V, W)</h4>
+<ol>
+<li><code>ReturnIfAbrupt(V)</code></li>
+<li><code>ReturnIfAbrupt(W)</code></li>
+<li>断言：<code>Type(V)</code>是引用</li>
+<li>断言：<code>IsUnresolvableReference(V)</code>为false</li>
+<li>令<code>base</code>为<code>GetBase(V)</code></li>
+<li>断言：<code>base</code>是环境记录</li>
+<li>返回<code>base.InitializeBinding(GetReferencedName(V), W)</code></li>
+</ol>
+<h3 id="624-属性描述符规范类型"><a class="markdownIt-Anchor" href="#624-属性描述符规范类型"></a> 6.2.4 属性描述符规范类型</h3>
+<p>属性描述符类型是用来解释对象属性具体操作的特性集。属性描述符类型的值是记录项。每个字段的名称是一个特性名并且它的值是一个相应的特性值，这些特性在【属性的特性】一节有说明。此外，任何字段都可能存在或不存在。在本规范中用于标记属性描述符记录的字面值描述的模式名称是<code>PropertyDescriptor</code>。</p>
+<p>根据是否存在或使用了某些字段，属性描述符的值可进一步划分为数据属性描述符和访问器属性描述符。一个数据属性描述符里包括叫做 [[Value]] 或 [[Writable]] 的字段。一个访问器属性描述符里包括叫做 [[Get]] 或 [[Set]] 的字段。任何属性描述都可能有名为 [[Enumerable]] 和 [[Configurable]] 的字段。一个属性描述符不能同时是数据属性描述符和访问器属性描述符；但是，它可能二者都不是。一个通用属性描述符是，既不是数据属性描述符也不是访问器属性描述符的属性描述符值。一个完全填充属性描述符是访问器属性描述符或数据属性描述符，并且拥有【属性的特性】一节 表2 或 表3 里定义的所有属性特性对应的字段。</p>
+<p>在本规范中使用以下的抽象操作来操作属性描述符值：</p>
+<h4 id="6241-isaccessordescriptordesc"><a class="markdownIt-Anchor" href="#6241-isaccessordescriptordesc"></a> 6.2.4.1 IsAccessorDescriptor(Desc)</h4>
+<p>当抽象操作<code>IsAccessorDescriptor</code>以属性描述符<code>Desc</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li>如果<code>Desc</code>是undefined，返回false</li>
+<li>如果<code>Desc.[[Get]]</code>和<code>Desc.[[Set]]</code>都不存在，返回false</li>
+<li>返回true</li>
+</ol>
+<h4 id="6242-isdatadescriptordesc"><a class="markdownIt-Anchor" href="#6242-isdatadescriptordesc"></a> 6.2.4.2 IsDataDescriptor(Desc)</h4>
+<p>当抽象操作<code>IsDataDescriptor</code>以属性描述符<code>Desc</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li>如果<code>Desc</code>是undefined，返回false</li>
+<li>如果<code>Desc.[[Value]]</code>和<code>Desc.[[Writable]]</code>都不存在，返回false</li>
+<li>返回true</li>
+</ol>
+<h4 id="6243-isgenericdescriptordesc"><a class="markdownIt-Anchor" href="#6243-isgenericdescriptordesc"></a> 6.2.4.3 IsGenericDescriptor(Desc)</h4>
+<p>当抽象操作<code>IsGenericDescriptor</code>以属性描述符<code>Desc</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li>如果<code>Desc</code>是undefined，返回false</li>
+<li>如果<code>IsAccessorDescriptor(Desc)</code>和<code>IsDataDescriptor(Desc)</code>均为false，返回true</li>
+<li>返回false</li>
+</ol>
+<h4 id="6244-frompropertydescriptordesc"><a class="markdownIt-Anchor" href="#6244-frompropertydescriptordesc"></a> 6.2.4.4 FromPropertyDescriptor(Desc)</h4>
+<p>当抽象操作<code>FromPropertyDescriptor</code>以属性描述符<code>Desc</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li>如果<code>Desc</code>是undefined，返回undefined</li>
+<li>令<code>obj</code>为<code>ObjectCreate(%ObjectPrototype%)</code></li>
+<li>断言：<code>obj</code>是没有自有属性的可扩展普通对象</li>
+<li>如果<code>Desc</code>有<code>[[Value]]</code>字段，则执行<code>CreateDataProperty(obj, &quot;value&quot;, Desc.[[Value]])</code></li>
+<li>如果<code>Desc</code>有<code>[[Writable]]</code>字段，则执行<code>CreateDataProperty(obj, &quot;writable&quot;, Desc.[[Writable]])</code></li>
+<li>如果<code>Desc</code>有<code>[[Get]]</code>字段，则执行<code>CreateDataProperty(obj, &quot;get&quot;, Desc.[[Get]])</code></li>
+<li>如果<code>Desc</code>有<code>[[Set]]</code>字段，则执行<code>CreateDataProperty(obj, &quot;set&quot;, Desc.[[Set]])</code></li>
+<li>如果<code>Desc</code>有<code>[[Enumerable]]</code>字段，则执行<code>CreateDataProperty(obj, &quot;enumerable&quot;, Desc.[[Enumerable]])</code></li>
+<li>如果<code>Desc</code>有<code>[[Configurable]]</code>字段，则执行<code>CreateDataProperty(obj , &quot;configurable&quot;, Desc.[[Configurable]])</code></li>
+<li>断言：上面所有的<code>CreateDataProperty</code>操作均返回true</li>
+<li>返回<code>obj</code></li>
+</ol>
+<h4 id="6245-topropertydescriptorobj"><a class="markdownIt-Anchor" href="#6245-topropertydescriptorobj"></a> 6.2.4.5 ToPropertyDescriptor(Obj)</h4>
+<p>当抽象操作<code>ToPropertyDescriptor</code>以对象<code>Obj</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(Obj)</code></li>
+<li>如果<code>Type(Obj)</code>不是Object，抛出TypeError异常</li>
+<li>令<code>desc</code>为一个最初没有字段的新的属性描述符。</li>
+<li>令<code>hasEnumerable</code>为<code>HasProperty(Obj, &quot;enumerable&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasEnumerable)</code></li>
+<li>如果<code>hasEnumerable</code>为true，则
+<ol>
+<li>令<code>enum</code>为<code>ToBoolean(Get(Obj, &quot;enumerable&quot;))</code></li>
+<li><code>ReturnIfAbrupt(enum)</code></li>
+<li>将<code>desc.[[Enumerable]]</code>设为<code>enum</code></li>
+</ol>
+</li>
+<li>令<code>hasConfigurable</code>为<code>HasProperty(Obj, &quot;configurable&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasConfigurable)</code></li>
+<li>如果<code>hasConfigurable</code>为true，则
+<ol>
+<li>令<code>conf</code>为<code>ToBoolean(Get(Obj, &quot;configurable&quot;))</code></li>
+<li><code>ReturnIfAbrupt(conf)</code></li>
+<li>将<code>desc.[[Configurable]]</code>设为<code>conf</code></li>
+</ol>
+</li>
+<li>令<code>hasValue</code>为<code>HasProperty(Obj, &quot;value&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasValue)</code></li>
+<li>如果<code>hasValue</code>为true，则
+<ol>
+<li>令<code>value</code>为<code>Get(Obj, &quot;value&quot;)</code></li>
+<li><code>ReturnIfAbrupt(value)</code></li>
+<li>将<code>desc.[[Value]]</code>设为<code>value</code></li>
+</ol>
+</li>
+<li>令<code>hasWritable</code>为<code>HasProperty(Obj, &quot;writable&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasWritable)</code></li>
+<li>如果<code>hasWritable</code>为true，则
+<ol>
+<li>令<code>writable</code>为<code>ToBoolean(Get(Obj, &quot;writable&quot;))</code></li>
+<li><code>ReturnIfAbrupt(writable)</code></li>
+<li>将<code>desc.[[Writable]]</code>设为<code>writable</code></li>
+</ol>
+</li>
+<li>令<code>hasGet</code>为<code>HasProperty(Obj, &quot;get&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasGet)</code></li>
+<li>如果<code>hasGet</code>为true，则
+<ol>
+<li>令<code>getter</code>为<code>Get(Obj, &quot;get&quot;)</code></li>
+<li><code>ReturnIfAbrupt(getter)</code></li>
+<li>如果<code>IsCallable(getter)</code>为false，并且<code>getter</code>不是undefined，抛出TypeError异常</li>
+<li>将<code>desc.[[Get]]</code>设为<code>getter</code></li>
+</ol>
+</li>
+<li>令<code>hasSet</code>为<code>HasProperty(Obj, &quot;set&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasSet)</code></li>
+<li>如果<code>hasSet</code>为true，则
+<ol>
+<li>令<code>setter</code>为<code>Get(Obj, &quot;set&quot;)</code></li>
+<li><code>ReturnIfAbrupt(setter)</code></li>
+<li>如果<code>IsCallable(setter)</code>为false，并且<code>setter</code>不是undefined，抛出TypeError异常</li>
+<li>将<code>desc.[[Set]]</code>设为<code>setter</code></li>
+</ol>
+</li>
+<li>如果<code>desc.[[Get]]</code>或<code>desc.[[Set]]</code>存在，则
+<ol>
+<li>如果<code>desc.[[Value]]</code>或<code>desc.[[Writable]]</code>存在，抛出TypeError异常</li>
+</ol>
+</li>
+<li>返回<code>desc</code></li>
+</ol>
+<h4 id="6246-completepropertydescriptordesc"><a class="markdownIt-Anchor" href="#6246-completepropertydescriptordesc"></a> 6.2.4.6 CompletePropertyDescriptor(Desc)</h4>
+<p>当抽象操作<code>CompletePropertyDescriptor</code>以属性描述符<code>Desc</code>为参数被调用时，执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(Desc)</code></li>
+<li>断言：<code>Desc</code>是一个属性描述符</li>
+<li>令<code>like</code>为<code>Record&#123;[[Value]]: undefined, [[Writable]]: false, [[Get]]: undefined, [[Set]]: undefined, [[Enumerable]]: false, [[Configurable]]: false&#125;</code></li>
+<li>If<code>IsGenericDescriptor(Desc)</code>或<code>IsDataDescriptor(Desc)</code>为true，则
+<ol>
+<li>如果<code>Desc</code>没有<code>[[Value]]</code>字段，将<code>Desc.[[Value]]</code>设为<code>like.[[Value]]</code></li>
+<li>如果<code>Desc</code>没有<code>[[Writable]]</code>字段，将<code>Desc.[[Writable]]</code>设为<code>like.[[Writable]]</code></li>
+</ol>
+</li>
+<li>Else
+<ol>
+<li>如果<code>Desc</code>没有<code>[[Get]]</code>字段，将<code>Desc.[[Get]]</code>设为<code>like.[[Get]]</code></li>
+<li>如果<code>Desc</code>没有<code>[[Set]]</code>字段，将<code>Desc.[[Set]]</code>设为<code>like.[[Set]]</code></li>
+</ol>
+</li>
+<li>如果<code>Desc</code>没有<code>[[Enumerable]]</code>字段，将<code>Desc.[[Enumerable]]</code>设为<code>like.[[Enumerable]]</code></li>
+<li>如果<code>Desc</code>没有<code>[[Configurable]]</code>字段，将<code>Desc.[[Configurable]]</code>设为<code>like.[[Configurable]]</code></li>
+<li>返回<code>desc</code></li>
+</ol>
+<h3 id="625-词法环境和环境记录项规范类型"><a class="markdownIt-Anchor" href="#625-词法环境和环境记录项规范类型"></a> 6.2.5 词法环境和环境记录项规范类型</h3>
+<p>词法环境和环境记录项类型用于说明在嵌套的函数或块中的名称解析行为。这些类型和他们的操作定义在8.1。</p>
+<h3 id="626-数据块"><a class="markdownIt-Anchor" href="#626-数据块"></a> 6.2.6 数据块</h3>
+<p>数据块规范类型用于描述一个distinct和可变的字节大小(8bit)数字值序列。使用固定数量的字节创建数据块值，每个字节的初始值均为0。</p>
+<p>为方便起见，在本规范中，类似数组的语法可用于访问数据块值的各个字节。 此表示法将数据块值表示为0开始的整数索引字节序列。 例如，如果db是5字节的数据块值，则<code>db[2]</code>可用于访问其第3个字节。</p>
+<p>在本规范中，以下抽象操作用于对数据块值进行操作：</p>
+<h4 id="6261-createbytedatablocksize"><a class="markdownIt-Anchor" href="#6261-createbytedatablocksize"></a> 6.2.6.1 CreateByteDataBlock(size)</h4>
+<p>pass</p>
+<h4 id="6262-copydatablockbytestoblock-toindex-fromblock-fromindex-count"><a class="markdownIt-Anchor" href="#6262-copydatablockbytestoblock-toindex-fromblock-fromindex-count"></a> 6.2.6.2 CopyDataBlockBytes(toBlock, toIndex, fromBlock, fromIndex, count)</h4>
+<p>pass</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/6 数据类型和值.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/6 数据类型和值.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/5%20%E7%AC%A6%E5%8F%B7%E7%BA%A6%E5%AE%9A.html"><i class="fa fa-chevron-left">  </i><span>5 符号约定</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/7%20%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C.html"><span>7 抽象操作</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

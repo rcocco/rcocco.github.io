@@ -1,0 +1,551 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="13 语句和声明"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>13 语句和声明 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#13-%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%A3%B0%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text"> 13 语句和声明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#132-%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text"> 13.2 块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1326-%E9%9D%99%E6%80%81%E8%AF%AD%E4%B9%89lexicallyscopeddeclarations"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 13.2.6 静态语义:LexicallyScopedDeclarations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13212-%E9%9D%99%E6%80%81%E8%AF%AD%E4%B9%89varscopeddeclarations"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 13.2.12 静态语义:VarScopedDeclarations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13213-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 13.2.13 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#133-%E5%A3%B0%E6%98%8E%E5%92%8C%E5%8F%98%E9%87%8F%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 13.3 声明和变量语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1331-let%E5%92%8Cconst%E5%A3%B0%E6%98%8E"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 13.3.1 Let和Const声明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13314-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 13.3.1.4 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1332-variable%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 13.3.2 Variable语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13324-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 13.3.2.4 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1333-%E8%A7%A3%E6%9E%84%E7%BB%91%E5%AE%9A%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 13.3.3 解构绑定模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#136-if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 13.6 if语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1367-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 13.6.7 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#137-%E8%BF%AD%E4%BB%A3%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.</span> <span class="toc-text"> 13.7 迭代语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1372-do-while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 13.7.2 do-while语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13726-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89labelledevaluation"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 13.7.2.6 运行时语义:LabelledEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1373-while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 13.7.3 while语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13736-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89labelledevaluation"><span class="toc-number">1.4.2.1.</span> <span class="toc-text"> 13.7.3.6 运行时语义:LabelledEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1374-for%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 13.7.4 for语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13747-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89labelledevaluation"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 13.7.4.7 运行时语义:LabelledEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13748-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89forbodyevaluation-test-increment-stmt-periterationbindings-labelset"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 13.7.4.8 运行时语义:ForBodyEvaluation( test, increment, stmt, perIterationBindings, labelSet )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13749-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89createperiterationenvironment-periterationbindings"><span class="toc-number">1.4.3.3.</span> <span class="toc-text"> 13.7.4.9 运行时语义:CreatePerIterationEnvironment( perIterationBindings )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1375-for-in%E5%92%8Cfor-of%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 13.7.5 for-in和for-of语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#137511-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89labelledevaluation"><span class="toc-number">1.4.4.1.</span> <span class="toc-text"> 13.7.5.11 运行时语义:LabelledEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#137512-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89forinofheadevaluation-tdznames-expr-iterationkind"><span class="toc-number">1.4.4.2.</span> <span class="toc-text"> 13.7.5.12 运行时语义:ForIn&#x2F;OfHeadEvaluation ( TDZnames, expr, iterationKind)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#137513-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89forinofbodyevaluation-lhs-stmt-iterator-lhskind-labelset"><span class="toc-number">1.4.4.3.</span> <span class="toc-text"> 13.7.5.13 运行时语义:ForIn&#x2F;OfBodyEvaluation ( lhs, stmt, iterator, lhsKind, labelSet )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#138-continue-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.5.</span> <span class="toc-text"> 13.8 continue 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1383-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 13.8.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#139-break-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.6.</span> <span class="toc-text"> 13.9 break 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1393-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 13.9.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1311-with-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.7.</span> <span class="toc-text"> 13.11 with 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13117-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 13.11.7 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1312-switch-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.8.</span> <span class="toc-text"> 13.12 switch 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#131211-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 13.12.11 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1313-%E6%A0%87%E7%AD%BE%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.9.</span> <span class="toc-text"> 13.13 标签语句</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">13 语句和声明</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-26</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="13-语句和声明"><a class="markdownIt-Anchor" href="#13-语句和声明"></a> 13 语句和声明</h1>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Statement[Yield, Return] :</span><br><span class="line">	BlockStatement[?Yield, ?Return]</span><br><span class="line">	VariableStatement[?Yield]</span><br><span class="line">	EmptyStatement</span><br><span class="line">	ExpressionStatement[?Yield]</span><br><span class="line">	IfStatement[?Yield, ?Return]</span><br><span class="line">	BreakableStatement[?Yield, ?Return]</span><br><span class="line">	ContinueStatement[?Yield]</span><br><span class="line">	BreakStatement[?Yield]</span><br><span class="line">	[+Return] ReturnStatement[?Yield]</span><br><span class="line">	WithStatement[?Yield, ?Return]</span><br><span class="line">	LabelledStatement[?Yield, ?Return]</span><br><span class="line">	ThrowStatement[?Yield]</span><br><span class="line">	TryStatement[?Yield, ?Return]</span><br><span class="line">	DebuggerStatement</span><br><span class="line"></span><br><span class="line">Declaration[Yield] :</span><br><span class="line">	HoistableDeclaration[?Yield]</span><br><span class="line">	ClassDeclaration[?Yield]</span><br><span class="line">	LexicalDeclaration[In, ?Yield]</span><br><span class="line"></span><br><span class="line">HoistableDeclaration[Yield, Default] :</span><br><span class="line">	FunctionDeclaration[?Yield,?Default]</span><br><span class="line">	GeneratorDeclaration[?Yield, ?Default]</span><br><span class="line"></span><br><span class="line">BreakableStatement[Yield, Return] :</span><br><span class="line">	IterationStatement[?Yield, ?Return]</span><br><span class="line">	SwitchStatement[?Yield, ?Return]</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="132-块"><a class="markdownIt-Anchor" href="#132-块"></a> 13.2 块</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">BlockStatement[Yield, Return] :</span><br><span class="line">	Block[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">Block[Yield, Return] :</span><br><span class="line">	&#123; StatementList[?Yield, ?Return]opt &#125;</span><br><span class="line"></span><br><span class="line">StatementList[Yield, Return] :</span><br><span class="line">	StatementListItem[?Yield, ?Return]</span><br><span class="line">	StatementList[?Yield, ?Return] StatementListItem[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">StatementListItem[Yield, Return] :</span><br><span class="line">	Statement[?Yield, ?Return]</span><br><span class="line">	Declaration[?Yield]</span><br></pre></td></tr></table></figure>
+<h3 id="1326-静态语义lexicallyscopeddeclarations"><a class="markdownIt-Anchor" href="#1326-静态语义lexicallyscopeddeclarations"></a> 13.2.6 静态语义:LexicallyScopedDeclarations</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StatementListItem : Declaration</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回一个包含<code>Declaration</code>的<code>DeclarationPart</code>的新列表</li>
+</ol>
+<h3 id="13212-静态语义varscopeddeclarations"><a class="markdownIt-Anchor" href="#13212-静态语义varscopeddeclarations"></a> 13.2.12 静态语义:VarScopedDeclarations</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StatementListItem : Declaration</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回一个空列表</li>
+</ol>
+<h3 id="13213-运行时语义计算"><a class="markdownIt-Anchor" href="#13213-运行时语义计算"></a> 13.2.13 运行时语义:计算</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Block : &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Block : &#123; StatementList &#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>oldEnv</code>为运行中的执行上下文的<code>LexicalEnvironment</code>（词法环境）</li>
+<li>令<code>blockEnv</code>为<code>NewDeclarativeEnvironment(oldEnv)</code></li>
+<li>执行<code>BlockDeclarationInstantiation(StatementList, blockEnv)</code></li>
+<li>将运行中的执行上下文的<code>LexicalEnvironment</code>设为<code>blockEnv</code></li>
+<li>令<code>blockValue</code>为计算<code>StatementList</code>的结果</li>
+<li>将运行中的执行上下文的<code>LexicalEnvironment</code>设为<code>oldEnv</code></li>
+<li>返回<code>blockValue</code></li>
+</ol>
+<h2 id="133-声明和变量语句"><a class="markdownIt-Anchor" href="#133-声明和变量语句"></a> 13.3 声明和变量语句</h2>
+<h3 id="1331-let和const声明"><a class="markdownIt-Anchor" href="#1331-let和const声明"></a> 13.3.1 Let和Const声明</h3>
+<p>注：let和const声明定义了范围为运行中的执行上下文的词法环境(LexicalEnvironment)的变量。变量在包含它们的词法环境被实例化时创建，但在计算变量的 LexicalBinding 之前，不能以任何方式访问。<br />
+由 LexicalBinding 和 Initializer 定义的变量在计算 LexicalBinding 时（而不是在创建变量时）被赋予其Initializer的AssignmentExpression的值。如果let声明中的 LexicalBinding 没有 Initializer，则在计算 LexicalBinding 时变量会被赋予undefined值。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LexicalDeclaration[In, Yield] :</span><br><span class="line">	LetOrConst BindingList[?In, ?Yield] ;</span><br><span class="line"></span><br><span class="line">LetOrConst :</span><br><span class="line">	let</span><br><span class="line">	const</span><br><span class="line"></span><br><span class="line">BindingList[In, Yield] :</span><br><span class="line">	LexicalBinding[?In, ?Yield]</span><br><span class="line">	BindingList[?In, ?Yield] , LexicalBinding[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">LexicalBinding[In, Yield] :</span><br><span class="line">	BindingIdentifier[?Yield] Initializer[?In, ?Yield]&#123;opt&#125;</span><br><span class="line">	BindingPattern[?Yield] Initializer[?In, ?Yield]</span><br></pre></td></tr></table></figure>
+<h4 id="13314-运行时语义计算"><a class="markdownIt-Anchor" href="#13314-运行时语义计算"></a> 13.3.1.4 运行时语义:计算</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LexicalDeclaration : LetOrConst BindingList ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>next</code>为计算<code>BindingList</code>的结果</li>
+<li><code>ReturnIfAbrupt(next)</code></li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingList : BindingList , LexicalBinding</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>next</code>为计算<code>BindingList</code>的结果</li>
+<li><code>ReturnIfAbrupt(next)</code></li>
+<li>返回计算<code>LexicalBinding</code>的结果</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LexicalBinding : BindingIdentifier</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>lhs</code>为<code>ResolveBinding(StringValue of BindingIdentifier)</code></li>
+<li>返回<code>InitializeReferencedBinding(lhs, undefined)</code></li>
+</ol>
+<p>注：静态语义规则可确保这种形式的<code>LexicalBinding</code>不会出现在<code>const</code>声明中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LexicalBinding : BindingIdentifier Initializer</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>bindingId</code>为<code>BindingIdentifier</code>的<code>StringValue</code></li>
+<li>令<code>lhs</code>为<code>ResolveBinding(bindingId)</code></li>
+<li>令<code>rhs</code>为计算<code>Initializer</code>的结果</li>
+<li>令<code>value</code>为<code>GetValue(rhs)</code></li>
+<li><code>ReturnIfAbrupt(value)</code></li>
+<li>如果<code>IsAnonymousFunctionDefinition(Initializer)</code>为<code>true</code>，则
+<ol>
+<li>令<code>hasNameProperty</code>为<code>HasOwnProperty(value, &quot;name&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasNameProperty)</code></li>
+<li>如果<code>hasNameProperty</code>为<code>false</code>，执行<code>SetFunctionName(value, bindingId)</code></li>
+</ol>
+</li>
+<li>返回<code>InitializeReferencedBinding(lhs, value)</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LexicalBinding : BindingPattern Initializer</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>rhs</code>为计算<code>Initializer</code>的结果</li>
+<li>令<code>value</code>为<code>GetValue(rhs)</code></li>
+<li><code>ReturnIfAbrupt(value)</code></li>
+<li>令<code>env</code>为运行中的执行上下文的词法环境</li>
+<li>返回使用<code>value</code>和<code>env</code>作为参数对<code>BindingPattern</code>执行<code>BindingInitialization</code>的结果。</li>
+</ol>
+<h3 id="1332-variable语句"><a class="markdownIt-Anchor" href="#1332-variable语句"></a> 13.3.2 Variable语句</h3>
+<p>注：var语句声明了范围为运行中的执行上下文的变量环境(VariableEnvironment)中的变量。var变量在包含它们的词法环境被实例化时被创建，并且在创建时初始化为<code>undefined</code>。在任何 VariableEnvironment 的范围内，一个公共的 BindingIdentifier 可能会出现在多个VariableDeclaration中，但这些声明只能共同定义一个变量。由VariableDeclaration和Initializer定义的变量在执行VariableDeclaration时（而不是在创建变量时）被赋予其Initializer的AssignmentExpression的值。</p>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">VariableStatement[Yield] :</span><br><span class="line">	<span class="keyword">var</span> VariableDeclarationList[In, ?Yield] ;</span><br><span class="line"></span><br><span class="line">VariableDeclarationList[In, Yield] :</span><br><span class="line">	VariableDeclaration[?In, ?Yield]</span><br><span class="line">	VariableDeclarationList[?In, ?Yield] , VariableDeclaration[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">VariableDeclaration[In, Yield] :</span><br><span class="line">	BindingIdentifier[?Yield] Initializer[?In, ?Yield]&#123;opt&#125;</span><br><span class="line">	BindingPattern[?Yield] Initializer[?In, ?Yield]</span><br></pre></td></tr></table></figure>
+<h4 id="13324-运行时语义计算"><a class="markdownIt-Anchor" href="#13324-运行时语义计算"></a> 13.3.2.4 运行时语义:计算</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VariableStatement : <span class="keyword">var</span> VariableDeclarationList ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>next</code>为计算<code>VariableDeclarationList</code>的结果</li>
+<li><code>ReturnIfAbrupt(next)</code></li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VariableDeclarationList : VariableDeclarationList , VariableDeclaration</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>next</code>为计算<code>VariableDeclarationList</code>的结果</li>
+<li><code>ReturnIfAbrupt(next)</code></li>
+<li>返回计算<code>VariableDeclaration</code>的结果</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VariableDeclaration : BindingIdentifier</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VariableDeclaration : BindingIdentifier Initializer</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>bindingId</code>为<code>BindingIdentifier</code>的<code>StringValue</code></li>
+<li>令<code>lhs</code>为<code>ResolveBinding(bindingId)</code></li>
+<li><code>ReturnIfAbrupt(lhs)</code></li>
+<li>令<code>rhs</code>为计算<code>Initializer</code>的结果</li>
+<li>令<code>value</code>为<code>GetValue(rhs)</code></li>
+<li><code>ReturnIfAbrupt(value)</code></li>
+<li>如果<code>IsAnonymousFunctionDefinition(Initializer)</code>为<code>true</code>，则
+<ol>
+<li>令<code>hasNameProperty</code>为<code>HasOwnProperty(value, &quot;name&quot;)</code></li>
+<li><code>ReturnIfAbrupt(hasNameProperty)</code></li>
+<li>如果<code>hasNameProperty</code>为<code>false</code>，执行<code>SetFunctionName(value, bindingId)</code></li>
+</ol>
+</li>
+<li>返回<code>PutValue(lhs, value)</code></li>
+</ol>
+<p>注：如果<code>VariableDeclaration</code>嵌套在with语句中，并且<code>VariableDeclaration</code>中的<code>BindingIdentifier</code>与with语句的对象环境记录的绑定对象的属性名称相同，则第7步将为该属性赋值，而不是赋给<code>Identifier</code>的<code>VariableEnvironment</code>绑定。</p>
+<h3 id="1333-解构绑定模式"><a class="markdownIt-Anchor" href="#1333-解构绑定模式"></a> 13.3.3 解构绑定模式</h3>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">BindingPattern[Yield] :</span><br><span class="line">	ObjectBindingPattern[?Yield]</span><br><span class="line">	ArrayBindingPattern[?Yield]</span><br><span class="line"></span><br><span class="line">ObjectBindingPattern[Yield] :</span><br><span class="line">	&#123; &#125;</span><br><span class="line">	&#123; BindingPropertyList[?Yield] &#125;</span><br><span class="line">	&#123; BindingPropertyList[?Yield] , &#125;</span><br><span class="line"></span><br><span class="line">ArrayBindingPattern[Yield] :</span><br><span class="line">	[ Elision&#123;opt&#125; BindingRestElement[?Yield]&#123;opt&#125; ]</span><br><span class="line">	[ BindingElementList[?Yield] ]</span><br><span class="line">	[ BindingElementList[?Yield] , Elision&#123;opt&#125; BindingRestElement[?Yield]&#123;opt&#125; ]</span><br><span class="line">BindingPropertyList[Yield] :</span><br><span class="line">BindingProperty[?Yield]</span><br><span class="line">BindingPropertyList[?Yield] , BindingProperty[?Yield]</span><br><span class="line">BindingElementList[Yield] :</span><br><span class="line">BindingElisionElement[?Yield]</span><br><span class="line">BindingElementList[?Yield] , BindingElisionElement[?Yield]</span><br><span class="line">BindingElisionElement[Yield] :</span><br><span class="line">Elision&#123;opt&#125; BindingElement[?Yield]</span><br><span class="line">BindingProperty[Yield] :</span><br><span class="line">SingleNameBinding[?Yield]</span><br><span class="line">PropertyName[?Yield] : BindingElement[?Yield]</span><br><span class="line">BindingElement[Yield ] :</span><br><span class="line">SingleNameBinding[?Yield]</span><br><span class="line">BindingPattern[?Yield] Initializer[In, ?Yield]&#123;opt&#125;</span><br><span class="line">SingleNameBinding[Yield] :</span><br><span class="line">BindingIdentifier[?Yield] Initializer[In, ?Yield]&#123;opt&#125;</span><br><span class="line">BindingRestElement[Yield] :</span><br><span class="line">... BindingIdentifier[?Yield]</span><br></pre></td></tr></table></figure>
+<h2 id="136-if语句"><a class="markdownIt-Anchor" href="#136-if语句"></a> 13.6 if语句</h2>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IfStatement[Yield, Return] :</span><br><span class="line">	if ( Expression[In, ?Yield] ) Statement[?Yield, ?Return] else Statement[?Yield, ?Return]</span><br><span class="line">	if ( Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br></pre></td></tr></table></figure>
+<p>每个<code>else</code>对应的<code>if</code>如果有二义性，则应该对应到没有合适<code>else</code>的最有可能的<code>if</code>。</p>
+<h3 id="1367-运行时语义计算"><a class="markdownIt-Anchor" href="#1367-运行时语义计算"></a> 13.6.7 运行时语义:计算</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IfStatement : if ( Expression ) Statement else Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>exprRef</code>为计算<code>Expression</code>的结果</li>
+<li>令<code>exprValue</code>为<code>ToBoolean(GetValue(exprRef))</code></li>
+<li><code>ReturnIfAbrupt(exprValue)</code></li>
+<li>如果<code>exprValue</code>为<code>true</code>，则
+<ol>
+<li>令<code>stmtCompletion</code>为计算第一个<code>Statement</code>的结果</li>
+</ol>
+</li>
+<li>否则，
+<ol>
+<li>令<code>stmtCompletion</code>为计算第二个<code>Statement</code>的结果</li>
+</ol>
+</li>
+<li><code>ReturnIfAbrupt(stmtCompletion)</code></li>
+<li>如果<code>stmtCompletion.[[value]]</code>不为<code>empty</code>，返回<code>stmtCompletion</code></li>
+<li>返回<code>NormalCompletion(undefined)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IfStatement : <span class="keyword">if</span> ( Expression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>exprRef</code>为计算<code>Expression</code>的结果</li>
+<li>令<code>exprValue</code>为<code>ToBoolean(GetValue(exprRef))</code></li>
+<li><code>ReturnIfAbrupt(exprValue)</code></li>
+<li>如果<code>exprValue</code>为<code>false</code>，则
+<ol>
+<li>返回<code>NormalCompletion(undefined)</code></li>
+</ol>
+</li>
+<li>否则，
+<ol>
+<li>令<code>stmtCompletion</code>为计算<code>Statement</code>的结果</li>
+<li><code>ReturnIfAbrupt(stmtCompletion)</code></li>
+<li>如果<code>stmtCompletion.[[value]]</code>不为<code>empty</code>，返回<code>stmtCompletion</code></li>
+<li>返回<code>NormalCompletion(undefined)</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="137-迭代语句"><a class="markdownIt-Anchor" href="#137-迭代语句"></a> 13.7 迭代语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement[Yield, Return] :</span><br><span class="line">	<span class="keyword">do</span> Statement[?Yield, ?Return] <span class="keyword">while</span> ( Expression[In, ?Yield] ) ;</span><br><span class="line">	<span class="keyword">while</span> ( Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( [lookahead ∉ &#123;<span class="keyword">let</span> [&#125;] Expression[?Yield]opt ; Expression[In, ?Yield]opt ; Expression[In, ?Yield]opt ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">var</span> VariableDeclarationList[?Yield] ; Expression[In, ?Yield]opt ; Expression[In, ?Yield]opt ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( LexicalDeclaration[?Yield] Expression[In, ?Yield]opt ; Expression[In, ?Yield]opt ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( [lookahead ∉ &#123;<span class="keyword">let</span> [&#125;] LeftHandSideExpression[?Yield] <span class="keyword">in</span> Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">var</span> ForBinding[?Yield] <span class="keyword">in</span> Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( ForDeclaration[?Yield] <span class="keyword">in</span> Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( [lookahead ≠ <span class="keyword">let</span> ] LeftHandSideExpression[?Yield] <span class="keyword">of</span> AssignmentExpression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">var</span> ForBinding[?Yield] <span class="keyword">of</span> AssignmentExpression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line">	<span class="keyword">for</span> ( ForDeclaration[?Yield] <span class="keyword">of</span> AssignmentExpression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">ForDeclaration[Yield] :</span><br><span class="line">	LetOrConst ForBinding[?Yield]</span><br><span class="line"></span><br><span class="line">ForBinding[Yield] :</span><br><span class="line">	BindingIdentifier[?Yield]</span><br><span class="line">	BindingPattern[?Yield]</span><br></pre></td></tr></table></figure>
+<h3 id="1372-do-while语句"><a class="markdownIt-Anchor" href="#1372-do-while语句"></a> 13.7.2 do-while语句</h3>
+<h4 id="13726-运行时语义labelledevaluation"><a class="markdownIt-Anchor" href="#13726-运行时语义labelledevaluation"></a> 13.7.2.6 运行时语义:LabelledEvaluation</h4>
+<p>带有参数<code>labelSet</code><br />
+参见 13.1.7, 13.7.3.6, 13.7.4.7, 13.7.5.11, 13.13.14</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">do</span> Statement <span class="keyword">while</span> ( Expression ) ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>V = undefined</code></li>
+<li>重复：
+<ol>
+<li>令<code>stmt</code>为计算<code>Statement</code>的结果</li>
+<li>如果<code>LoopContinues(stmt, labelSet)</code>为<code>false</code>返回<code>Completion(UpdateEmpty(stmt, V))</code></li>
+<li>如果<code>stmt.[[value]]</code>不为<code>empty</code>，令<code>V = stmt.[[value]]</code></li>
+<li>令<code>exprRef</code>为计算<code>Expression</code>的结果</li>
+<li>令<code>exprValue</code>为<code>GetValue(exprRef)</code></li>
+<li><code>ReturnIfAbrupt(exprValue)</code></li>
+<li>如果<code>ToBoolean(exprValue)</code>为<code>false</code>，返回<code>NormalCompletion(V)</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="1373-while语句"><a class="markdownIt-Anchor" href="#1373-while语句"></a> 13.7.3 while语句</h3>
+<h4 id="13736-运行时语义labelledevaluation"><a class="markdownIt-Anchor" href="#13736-运行时语义labelledevaluation"></a> 13.7.3.6 运行时语义:LabelledEvaluation</h4>
+<p>接受参数<code>labelSet</code><br />
+参见 13.1.7, 13.7.2.6, 13.7.4.7, 13.7.5.11, 13.13.14</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">while</span> ( Expression ) Statement</span><br></pre></td></tr></table></figure>
+<h3 id="1374-for语句"><a class="markdownIt-Anchor" href="#1374-for语句"></a> 13.7.4 for语句</h3>
+<h4 id="13747-运行时语义labelledevaluation"><a class="markdownIt-Anchor" href="#13747-运行时语义labelledevaluation"></a> 13.7.4.7 运行时语义:LabelledEvaluation</h4>
+<p>接受参数<code>labelSet</code><br />
+参见 13.1.7, 13.7.2.6, 13.7.3.6, 13.7.5.11, 13.13.14</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( Expression&#123;opt&#125; ; Expression&#123;opt&#125; ; Expression&#123;opt&#125; ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>如果第一个表达式<code>Expression</code>存在，则
+<ol>
+<li>令 <code>exprRef</code> 为计算第一个表达式的结果</li>
+<li>令<code>exprValue</code>为<code>GetValue(exprRef)</code></li>
+<li><code>ReturnIfAbrupt(exprValue)</code></li>
+</ol>
+</li>
+<li>返回<code>ForBodyEvaluation(第二个Expression, 第三个Expression, Statement, « », labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( <span class="keyword">var</span> VariableDeclarationList ; Expression&#123;opt&#125; ; Expression&#123;opt&#125; ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>varDcl</code>为计算<code>VariableDeclarationList</code>的结果</li>
+<li><code>ReturnIfAbrupt(varDcl)</code></li>
+<li>返回<code>ForBodyEvaluation(第一个Expression, 第二个Expression, Statement, « », labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( LexicalDeclaration Expression&#123;opt&#125; ; Expression&#123;opt&#125; ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>oldEnv</code>为运行中的执行上下文的词法环境(LexicalEnvironment)</li>
+<li>令<code>loopEnv</code>为<code>NewDeclarativeEnvironment(oldEnv)</code></li>
+<li>令<code>isConst</code>为对<code>LexicalDeclaration</code>执行<code>IsConstantDeclaration</code>的结果(13.3.1.3)</li>
+<li>令<code>boundNames</code>为<code>LexicalDeclaration</code>的<code>BoundNames</code>(13.3.1.2)</li>
+<li>对<code>boundNames</code>中的每个元素<code>dn</code>，执行
+<ol>
+<li>如果<code>isConst</code>为<code>true</code>，则执行<code>loopEnv.CreateImmutableBinding(dn, true)</code></li>
+<li>否则：
+<ol>
+<li>执行<code>loopEnv.CreateMutableBinding(dn, false)</code></li>
+<li>断言：上面对<code>CreateMutableBinding</code>的调用永远不可能返回一个非常规完结</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>将运行中的执行上下文的词法环境设为<code>loopEnv</code></li>
+<li>令<code>forDcl</code>为计算<code>LexicalDeclaration</code>的结果</li>
+<li>如果<code>forDcl</code>是非常规完结，则：
+<ol>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>返回<code>Completion(forDcl)</code></li>
+</ol>
+</li>
+<li>如果<code>isConst</code>为<code>false</code>，令<code>perIterationLets</code>为<code>boundNames</code>；否则令<code>perIterationLets</code>为<code>« »</code></li>
+<li>令<code>bodyResult</code>为<code>ForBodyEvaluation(第一个Expression, 第二个Expression, Statement, perIterationLets, labelSet)</code></li>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>返回<code>Completion(bodyResult)</code></li>
+</ol>
+<h4 id="13748-运行时语义forbodyevaluation-test-increment-stmt-periterationbindings-labelset"><a class="markdownIt-Anchor" href="#13748-运行时语义forbodyevaluation-test-increment-stmt-periterationbindings-labelset"></a> 13.7.4.8 运行时语义:ForBodyEvaluation( test, increment, stmt, perIterationBindings, labelSet )</h4>
+<p>抽象操作<code>ForBodyEvaluation</code>接受参数<code>test</code>, <code>increment</code>, <code>stmt</code>, <code>perIterationBindings</code>, 和 <code>labelSet</code>并执行以下操作：</p>
+<ol>
+<li>令<code>V=undefined</code></li>
+<li>令<code>status</code>为<code>CreatePerIterationEnvironment(perIterationBindings)</code></li>
+<li><code>ReturnIfAbrupt(status)</code></li>
+<li>重复执行：
+<ol>
+<li>如果<code>test</code>不是<code>[empty]</code>，则
+<ol>
+<li>令<code>testRef</code>计算<code>test</code>的结果</li>
+<li>令<code>testValue</code>为<code>GetValue(testRef)</code></li>
+<li><code>ReturnIfAbrupt(testValue)</code></li>
+<li>如果<code>ToBoolean(testValue)</code>为<code>false</code>，返回<code>NormalCompletion(V)</code></li>
+</ol>
+</li>
+<li>令<code>result</code>为计算<code>stmt</code>的结果</li>
+<li>如果<code>LoopContinues(result, labelSet)</code>为<code>false</code>，返回<code>Completion(UpdateEmpty(result, V))</code></li>
+<li>如果<code>result.[[value]]</code>不是<code>empty</code>，令<code>V = result.[[value]]</code></li>
+<li>令<code>status</code>为<code>CreatePerIterationEnvironment(perIterationBindings)</code></li>
+<li><code>ReturnIfAbrupt(status)</code></li>
+<li>如果<code>increment</code>不是<code>[empty]</code>，则
+<ol>
+<li>令<code>incRef</code>为计算<code>increment</code>的结果</li>
+<li>令<code>incValue</code>为<code>GetValue(incRef)</code></li>
+<li><code>ReturnIfAbrupt(incValue)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="13749-运行时语义createperiterationenvironment-periterationbindings"><a class="markdownIt-Anchor" href="#13749-运行时语义createperiterationenvironment-periterationbindings"></a> 13.7.4.9 运行时语义:CreatePerIterationEnvironment( perIterationBindings )</h4>
+<p>抽象操作<code>CreatePerIterationEnvironment</code>接受参数<code>perIterationBindings</code>并执行以下步骤：</p>
+<ol>
+<li>如果<code>perIterationBindings</code>有任何元素，则
+<ol>
+<li>令<code>lastIterationEnv</code>为运行中的执行上下文的词法环境。</li>
+<li>令<code>outer</code>为<code>lastIterationEnv</code>的外部环境引用</li>
+<li>断言：<code>outer</code>不是<code>null</code></li>
+<li>令<code>thisIterationEnv</code>为<code>NewDeclarativeEnvironment(outer)</code></li>
+<li>对<code>perIterationBindings</code>中的每个元素<code>bn</code>，执行：
+<ol>
+<li>令<code>status</code>为<code>thisIterationEnv.CreateMutableBinding(bn, false)</code></li>
+<li>断言：<code>status</code>不可能是非常规完结</li>
+<li>令<code>lastValue</code>为<code>lastIterationEnv.GetBindingValue(bn, true)</code></li>
+<li><code>ReturnIfAbrupt(lastValue)</code></li>
+<li>执行<code>thisIterationEnv.InitializeBinding(bn, lastValue)</code></li>
+</ol>
+</li>
+<li>将运行中的执行上下文的词法环境设为<code>thisIterationEnv</code></li>
+</ol>
+</li>
+<li>返回<code>undefined</code></li>
+</ol>
+<h3 id="1375-for-in和for-of语句"><a class="markdownIt-Anchor" href="#1375-for-in和for-of语句"></a> 13.7.5 for-in和for-of语句</h3>
+<h4 id="137511-运行时语义labelledevaluation"><a class="markdownIt-Anchor" href="#137511-运行时语义labelledevaluation"></a> 13.7.5.11 运行时语义:LabelledEvaluation</h4>
+<p>接受参数<code>labelSet</code><br />
+参见 13.1.7, 13.7.2.6, 13.7.3.6, 13.7.4.7, 13.13.14</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( LeftHandSideExpression <span class="keyword">in</span> Expression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation( « », Expression, enumerate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(LeftHandSideExpression, Statement, keyResult, assignment, labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( <span class="keyword">var</span> ForBinding <span class="keyword">in</span> Expression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation( « », Expression, enumerate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(ForBinding, Statement, keyResult, varBinding, labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( ForDeclaration <span class="keyword">in</span> Expression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation(BoundNames of ForDeclaration, Expression, enumerate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(ForDeclaration, Statement, keyResult, lexicalBinding, labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( LeftHandSideExpression <span class="keyword">of</span> AssignmentExpression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation( « », AssignmentExpression, iterate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(LeftHandSideExpression, Statement, keyResult, assignment, labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( <span class="keyword">var</span> ForBinding <span class="keyword">of</span> AssignmentExpression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation( « », AssignmentExpression, iterate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(ForBinding, Statement, keyResult, varBinding, labelSet)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement : <span class="keyword">for</span> ( ForDeclaration <span class="keyword">of</span> AssignmentExpression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>keyResult</code>为<code>ForIn/OfHeadEvaluation( BoundNames of ForDeclaration, AssignmentExpression, iterate)</code></li>
+<li><code>ReturnIfAbrupt(keyResult)</code></li>
+<li>返回<code>ForIn/OfBodyEvaluation(ForDeclaration, Statement, keyResult, lexicalBinding, labelSet)</code></li>
+</ol>
+<h4 id="137512-运行时语义forinofheadevaluation-tdznames-expr-iterationkind"><a class="markdownIt-Anchor" href="#137512-运行时语义forinofheadevaluation-tdznames-expr-iterationkind"></a> 13.7.5.12 运行时语义:ForIn/OfHeadEvaluation ( TDZnames, expr, iterationKind)</h4>
+<p>使用参数<code>TDZnames</code>、<code>expr</code>和<code>iterationKind</code>调用抽象操作<code>ForIn/OfHeadEvaluation</code>。<code>iterationKind</code>的值为<code>enumerate</code>或<code>iterate</code></p>
+<ol>
+<li>令<code>oldEnv</code>为运行中的执行上下文的词法环境。</li>
+<li>如果<code>TDZnames</code>不是空列表，则：
+<ol>
+<li>断言：<code>TDZnames</code>没有重复的条目</li>
+<li>令<code>TDZ</code>为<code>NewDeclarativeEnvironment(oldEnv)</code></li>
+<li>对<code>TDZnames</code>中的每个字符串<code>name</code>，执行：
+<ol>
+<li>令<code>status</code>为<code>TDZ.CreateMutableBinding(name, false)</code></li>
+<li>断言：<code>status</code>不可能是非常规完结</li>
+</ol>
+</li>
+<li>将运行中的执行上下文的词法环境设为<code>TDZ</code></li>
+</ol>
+</li>
+<li>令<code>exprRef</code>为计算产生式<code>expr</code>的结果</li>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>令<code>exprValue</code>为<code>GetValue(exprRef)</code></li>
+<li><code>ReturnIfAbrupt(exprValue)</code></li>
+<li>如果<code>iterationKind</code>为<code>enumerate</code>，则
+<ol>
+<li>如果<code>exprValue.[[value]]</code>为<code>null</code>或<code>undefined</code>，则返回<code>Completion&#123;[[type]]: break, [[value]]: empty, [[target]]: empty&#125;</code></li>
+<li>令<code>obj</code>为<code>ToObject(exprValue)</code></li>
+<li>返回<code>obj.[[Enumerate]]()</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>iterationKind</code>为<code>iterate</code></li>
+<li>返回<code>GetIterator(exprValue)</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="137513-运行时语义forinofbodyevaluation-lhs-stmt-iterator-lhskind-labelset"><a class="markdownIt-Anchor" href="#137513-运行时语义forinofbodyevaluation-lhs-stmt-iterator-lhskind-labelset"></a> 13.7.5.13 运行时语义:ForIn/OfBodyEvaluation ( lhs, stmt, iterator, lhsKind, labelSet )</h4>
+<p>使用参数<code>lhs</code>、<code>stmt</code>、<code>iterator</code>、<code>lhsKind</code>和<code>labelSet</code>调用抽象操作<code>ForIn/OfBodyEvaluation</code>。<code>lhsKind</code>的值为<code>assignment</code>或<code>varBinding</code>或<code>lexicalBinding</code></p>
+<ol>
+<li>令<code>oldEnv</code>为运行中的执行上下文的词法环境。</li>
+<li>令<code>V = undefined</code></li>
+<li>令<code>destructuring</code>为<code>lhs</code>的<code>IsDestructuring</code></li>
+<li>如果<code>destructuring</code>为<code>true</code>且<code>lhsKind</code>为<code>assignment</code>，则
+<ol>
+<li>断言：<code>lhs</code>是一个<code>LeftHandSideExpression</code></li>
+<li>令<code>assignmentPattern</code>为使用<code>AssignmentPattern</code>作为目标符号解析<code>lhs</code>对应的源文本</li>
+</ol>
+</li>
+<li>重复：
+<ol>
+<li>令<code>nextResult</code>为<code>IteratorStep(iterator)</code></li>
+<li><code>ReturnIfAbrupt(nextResult)</code></li>
+<li>如果<code>nextResult</code>为<code>false</code>，返回<code>NormalCompletion(V)</code></li>
+<li>令<code>nextValue</code>为<code>IteratorValue(nextResult)</code></li>
+<li><code>ReturnIfAbrupt(nextValue)</code></li>
+<li>如果<code>lhsKind</code>为<code>assignment</code>或<code>varBinding</code>，则
+<ol>
+<li>如果<code>destructuring</code>为<code>false</code>，则
+<ol>
+<li>令<code>lhsRef</code>为计算<code>lhs</code>的结果 ( 它可能重复计算了)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>lhsKind</code>是<code>lexicalBinding</code></li>
+<li>断言：<code>lhs</code>是一个<code>ForDeclaration</code></li>
+<li>令<code>iterationEnv</code>为<code>NewDeclarativeEnvironment(oldEnv)</code></li>
+<li>使用参数<code>iterationEnv</code>执行<code>lhs</code>的<code>BindingInstantiation</code></li>
+<li>将运行中的执行上下文的词法环境设为<code>iterationEnv</code></li>
+<li>如果<code>destructuring</code>为<code>false</code>，则
+<ol>
+<li>断言：<code>lhs</code>绑定了单个名字</li>
+<li>令<code>lhsName</code> 为<code>lhs</code>的<code>BoundNames</code>的唯一元素</li>
+<li>令<code>lhsRef</code>为<code>ResolveBinding(lhsName)</code></li>
+<li>断言：<code>lhsRef</code>不是非常规完结</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>如果<code>destructuring</code>为<code>false</code>，则
+<ol>
+<li>如果<code>lhsRef</code>是非常规完结，则令<code>status</code>为<code>lhsRef</code></li>
+<li>否则如果<code>lhsKind</code>是<code>lexicalBinding</code>，则令<code>status</code>为<code>InitializeReferencedBinding(lhsRef, nextValue)</code></li>
+<li>否则，令<code>status</code>为<code>PutValue(lhsRef, nextValue)</code></li>
+</ol>
+</li>
+<li>否则，
+<ol>
+<li>如果<code>lhsKind</code>是<code>assignment</code>，则
+<ol>
+<li>令<code>status</code>为使用参数<code>nextValue</code>执行<code>assignmentPattern</code>的<code>DestructuringAssignmentEvaluation</code>的结果</li>
+</ol>
+</li>
+<li>否则如果<code>lhsKind</code>是<code>varBinding</code>，则
+<ol>
+<li>断言：<code>lhs</code>是<code>ForBinding</code></li>
+<li>令<code>status</code>为使用参数<code>nextValue</code>和<code>undefined</code>执行<code>lhs</code>的<code>BindingInitialization</code>的结果</li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>lhsKind</code>是<code>lexicalBinding</code></li>
+<li>断言：<code>lhs</code>是一个<code>ForDeclaration</code></li>
+<li>令<code>status</code>为使用参数<code>nextValue</code>和<code>iterationEnv</code>执行<code>lhs</code>的<code>BindingInitialization</code>的结果</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>如果<code>status</code>是非常规完结，则
+<ol>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>返回<code>IteratorClose(iterator, status)</code></li>
+</ol>
+</li>
+<li>令<code>result</code>为计算<code>stmt</code>的结果</li>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>如果<code>LoopContinues(result, labelSet)</code>为<code>false</code>，返回<code>IteratorClose(iterator, UpdateEmpty(result, V))</code></li>
+<li>如果<code>result.[[value]]</code>不为<code>empty</code>，令<code>V</code>为<code>result.[[value]]</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="138-continue-语句"><a class="markdownIt-Anchor" href="#138-continue-语句"></a> 13.8 continue 语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ContinueStatement[Yield] :</span><br><span class="line">	<span class="keyword">continue</span> ;</span><br><span class="line">	<span class="keyword">continue</span> [no LineTerminator here] LabelIdentifier[?Yield] ;</span><br></pre></td></tr></table></figure>
+<h3 id="1383-运行时语义计算"><a class="markdownIt-Anchor" href="#1383-运行时语义计算"></a> 13.8.3 运行时语义:计算</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ContinueStatement : <span class="keyword">continue</span> ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回<code>Completion&#123;[[type]]: continue, [[value]]: empty, [[target]]: empty&#125;.</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ContinueStatement : <span class="keyword">continue</span> LabelIdentifier ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>label</code>为<code>LabelIdentifier</code>的字符串值（StringValue）</li>
+<li>返回<code>Completion&#123;[[type]]: continue, [[value]]: empty, [[target]]: label &#125;</code></li>
+</ol>
+<h2 id="139-break-语句"><a class="markdownIt-Anchor" href="#139-break-语句"></a> 13.9 break 语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BreakStatement[Yield] :</span><br><span class="line">	<span class="keyword">break</span> ;</span><br><span class="line">	<span class="keyword">break</span> [no LineTerminator here] LabelIdentifier[?Yield] ;</span><br></pre></td></tr></table></figure>
+<h3 id="1393-运行时语义计算"><a class="markdownIt-Anchor" href="#1393-运行时语义计算"></a> 13.9.3 运行时语义:计算</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BreakStatement : <span class="keyword">break</span> ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回<code>Completion&#123;[[type]]: continue, [[value]]: empty, [[target]]: empty&#125;.</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BreakStatement : <span class="keyword">break</span> LabelIdentifier ;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>label</code>为<code>LabelIdentifier</code>的字符串值（StringValue）</li>
+<li>返回<code>Completion&#123;[[type]]: continue, [[value]]: empty, [[target]]: label &#125;</code></li>
+</ol>
+<h2 id="1311-with-语句"><a class="markdownIt-Anchor" href="#1311-with-语句"></a> 13.11 with 语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WithStatement[Yield, Return] :</span><br><span class="line">	<span class="keyword">with</span> ( Expression[In, ?Yield] ) Statement[?Yield, ?Return]</span><br></pre></td></tr></table></figure>
+<p>with语句将已计算对象的对象环境记录添加到正在运行的执行上下文的词法环境中。 然后，它使用此扩充词法环境执行一条语句。 最后，它还原了原始词汇环境。</p>
+<h3 id="13117-运行时语义计算"><a class="markdownIt-Anchor" href="#13117-运行时语义计算"></a> 13.11.7 运行时语义:计算</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WithStatement : <span class="keyword">with</span> ( Expression ) Statement</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>val</code>为计算<code>Expression</code>的结果</li>
+<li>令<code>obj</code>为<code>ToObject(GetValue(val))</code></li>
+<li><code>ReturnIfAbrupt(obj)</code></li>
+<li>令<code>oldEnv</code>为正在运行的执行上下文的词法环境</li>
+<li>令<code>newEnv</code>为<code>NewObjectEnvironment(obj, oldEnv)</code></li>
+<li>将<code>newEnv</code>的环境记录的<code>withEnvironment</code>标志设为<code>true</code></li>
+<li>将正在运行的执行上下文的词法环境设为<code>newEnv</code></li>
+<li>令<code>C</code>为计算<code>Statement</code>的结果</li>
+<li>将正在运行的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>如果<code>C.[[type]]</code>为<code>normal</code>并且<code>C.[[value]]</code>为<code>empty</code>，返回<code>NormalCompletion(undefined)</code></li>
+<li>返回<code>Completion(C)</code></li>
+</ol>
+<h2 id="1312-switch-语句"><a class="markdownIt-Anchor" href="#1312-switch-语句"></a> 13.12 switch 语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SwitchStatement[Yield, Return] :</span><br><span class="line">	<span class="keyword">switch</span> ( Expression[In, ?Yield] ) CaseBlock[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">CaseBlock[Yield, Return] :</span><br><span class="line">	&#123; CaseClauses[?Yield, ?Return]opt &#125;</span><br><span class="line">	&#123; CaseClauses[?Yield, ?Return]opt DefaultClause[?Yield, ?Return] CaseClauses[?Yield, ?Return]opt &#125;</span><br><span class="line"></span><br><span class="line">CaseClauses[Yield, Return] :</span><br><span class="line">	CaseClause[?Yield, ?Return]</span><br><span class="line">	CaseClauses[?Yield, ?Return] CaseClause[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">CaseClause[Yield, Return] :</span><br><span class="line">	<span class="keyword">case</span> Expression[In, ?Yield] : StatementList[?Yield, ?Return]opt</span><br><span class="line"></span><br><span class="line">DefaultClause[Yield, Return] :</span><br><span class="line">	<span class="keyword">default</span> : StatementList[?Yield, ?Return]opt</span><br></pre></td></tr></table></figure>
+<h3 id="131211-运行时语义计算"><a class="markdownIt-Anchor" href="#131211-运行时语义计算"></a> 13.12.11 运行时语义:计算</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SwitchStatement : <span class="keyword">switch</span> ( Expression ) CaseBlock</span><br></pre></td></tr></table></figure>
+<ol>
+<li>令<code>exprRef</code>为计算<code>Expression</code>的结果</li>
+<li>令<code>switchValue</code>为<code>GetValue(exprRef)</code></li>
+<li><code>ReturnIfAbrupt(switchValue)</code></li>
+<li>令<code>oldEnv</code>为正在运行中执行上下文的词法环境</li>
+<li>令<code>blockEnv</code>为<code>NewDeclarativeEnvironment(oldEnv)</code></li>
+<li>执行<code>BlockDeclarationInstantiation(CaseBlock, blockEnv)</code></li>
+<li>将运行中的执行上下文的词法环境设为<code>blockEnv</code></li>
+<li>令<code>R</code>为使用参数<code>switchValue</code>执行<code>CaseBlock</code>的<code>CaseBlockEvaluation</code>的结果</li>
+<li>将运行中的执行上下文的词法环境设为<code>oldEnv</code></li>
+<li>返回<code>R</code></li>
+</ol>
+<h2 id="1313-标签语句"><a class="markdownIt-Anchor" href="#1313-标签语句"></a> 13.13 标签语句</h2>
+<p>语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LabelledStatement[Yield, Return] :</span><br><span class="line">	LabelIdentifier[?Yield] : LabelledItem[?Yield, ?Return]</span><br><span class="line"></span><br><span class="line">LabelledItem[Yield, Return] :</span><br><span class="line">	Statement[?Yield, ?Return]</span><br><span class="line">	FunctionDeclaration[?Yield]</span><br></pre></td></tr></table></figure>
+<p>注：声明可以以标签为前缀。 带标签的语句仅与带标签的break和Continue语句结合使用。 ECMAScript没有goto语句。 语句可以是LabelledStatement的一部分，LabeledStatement本身可以是LabelledStatement的一部分，依此类推。 在描述单个语句的语义时，以这种方式引入的标签统称为“当前标签集”。 LabelledStatement除了将标签引入标签集外没有其他语义含义。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/13 语句和声明.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/13 语句和声明.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/12%20%E8%A1%A8%E8%BE%BE%E5%BC%8F.html"><i class="fa fa-chevron-left">  </i><span>12 表达式</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/14%20%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB.html"><span>14 函数和类</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

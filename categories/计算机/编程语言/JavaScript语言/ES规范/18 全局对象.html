@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="18 全局对象"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>18 全局对象 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#18-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text"> 18 全局对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#181-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%80%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 18.1 全局对象的值属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1811-infinity"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 18.1.1 Infinity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1812-nan"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 18.1.2 NaN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1813-undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 18.1.3 undefined</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#182-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 18.2 全局对象的函数属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1821-eval-x"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 18.2.1 eval (x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1822-isfinite-number"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 18.2.2 isFinite (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1823-isnan-number"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 18.2.3 isNaN (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1824-parsefloat-string"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 18.2.4 parseFloat (string)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1825-parseint-string-radix"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 18.2.5 parseInt (string , radix)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18315-number"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 18.3.15 Number ( . . . )</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">18 全局对象</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="18-全局对象"><a class="markdownIt-Anchor" href="#18-全局对象"></a> 18 全局对象</h1>
+<p>唯一的全局对象是在控制流进入任何执行上下文之前创建的。</p>
+<p>全局对象没有[[Construct]]内部方法，不能在new运算符中将全局对象作为构造函数。</p>
+<p>全局对象没有[[Call]]内部方法，不能将全局对象作为函数调用。</p>
+<p>全局对象的[[Prototype]]内部插槽的值取决于实现。</p>
+<span id="more"></span>
+<p>除了本规范中定义的属性之外，全局对象还可以具有其他宿主定义的属性。 这可能包括一个值为全局对象本身的属性。 例如，在HTML文档对象模型中，全局对象的window属性是全局对象本身。</p>
+<h2 id="181-全局对象的值属性"><a class="markdownIt-Anchor" href="#181-全局对象的值属性"></a> 18.1 全局对象的值属性</h2>
+<h3 id="1811-infinity"><a class="markdownIt-Anchor" href="#1811-infinity"></a> 18.1.1 Infinity</h3>
+<p><code>Infinity</code>的值为<code>+∞</code>（参见 6.1.6）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h3 id="1812-nan"><a class="markdownIt-Anchor" href="#1812-nan"></a> 18.1.2 NaN</h3>
+<p><code>NaN</code>的值为<code>NaN</code>（参见 6.1.6）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h3 id="1813-undefined"><a class="markdownIt-Anchor" href="#1813-undefined"></a> 18.1.3 undefined</h3>
+<p><code>undefined</code>的值为<code>undefined</code>（参见 6.1.1）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h2 id="182-全局对象的函数属性"><a class="markdownIt-Anchor" href="#182-全局对象的函数属性"></a> 18.2 全局对象的函数属性</h2>
+<h3 id="1821-eval-x"><a class="markdownIt-Anchor" href="#1821-eval-x"></a> 18.2.1 eval (x)</h3>
+<h3 id="1822-isfinite-number"><a class="markdownIt-Anchor" href="#1822-isfinite-number"></a> 18.2.2 isFinite (number)</h3>
+<p>isFinite函数是固有对象％isFinite％。 当使用一个参数x调用isFinite函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>num</code>为<code>ToNumber(number)</code></li>
+<li><code>ReturnIfAbrupt(num)</code></li>
+<li>如果<code>num</code>为<code>NaN</code>或<code>+∞</code>或<code>−∞</code>，返回<code>false</code></li>
+<li>否则，返回<code>true</code></li>
+</ol>
+<h3 id="1823-isnan-number"><a class="markdownIt-Anchor" href="#1823-isnan-number"></a> 18.2.3 isNaN (number)</h3>
+<p>isNaN函数是固有对象％isNaN％。 当使用一个参数x调用isFinite函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>num</code>为<code>ToNumber(number)</code></li>
+<li><code>ReturnIfAbrupt(num)</code></li>
+<li>如果<code>num</code>为<code>NaN</code>，返回<code>true</code></li>
+<li>否则，返回<code>false</code></li>
+</ol>
+<p>注意：ECMAScript代码测试值<code>X</code>是否为<code>NaN</code>的可靠方法是<code>X！== X</code>形式的表达式。当且仅当<code>X</code>为<code>NaN</code>时，结果为true。</p>
+<h3 id="1824-parsefloat-string"><a class="markdownIt-Anchor" href="#1824-parsefloat-string"></a> 18.2.4 parseFloat (string)</h3>
+<p>parseFloat函数产生一个Number值，该值由将<code>string</code>参数的内容解释为十进制字面值的结果确定。</p>
+<p>parseFloat函数是固有对象％parseFloat％，当使用一个参数<code>string</code>调用parseFloat函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>inputString</code>为<code>ToString(string)</code></li>
+<li><code>ReturnIfAbrupt(inputString)</code></li>
+<li>令<code>trimmedString</code>为<code>inputString</code>的子串，该子串由不是 StrWhiteSpaceChar 的最左边的代码单元和该代码单元右边的所有代码单元组成（换句话说，删除前导空白符）如果<code>inputString</code>不包含任何此类代码单元，则令<code>trimmedString</code>为空字符串。</li>
+<li>如果<code>trimmedString</code>和它的任何前缀都不满足 StrDecimalLiteral 的语法（请参见7.1.3.1），则返回<code>NaN</code>。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/_v_images/20210201163533688_29099.png" alt="" width="621" /></li>
+<li>令<code>numberString</code>为<code>trimmedString</code>的最长前缀，该前缀满足 StrDecimalLiteral 语法。最长前缀也可能是<code>trimmedString</code>自己。</li>
+<li>令<code>mathFloat</code>为<code>numberString</code>的数学值(MV)</li>
+<li>如果<code>mathFloat=0</code>，则：
+<ol>
+<li>如果<code>trimmedString</code>的第一个代码单元为<code>-</code>，返回<code>-0</code></li>
+<li>返回<code>+0</code></li>
+</ol>
+</li>
+<li>返回<code>mathFloat</code>的Number值</li>
+</ol>
+<p>parseFloat只能将字符串的开头部分解释为Number值； 它忽略了不能解释为十进制字面值表示法的一部分的任何代码单元，并且没有给出任何此类代码单元被忽略的指示。</p>
+<h3 id="1825-parseint-string-radix"><a class="markdownIt-Anchor" href="#1825-parseint-string-radix"></a> 18.2.5 parseInt (string , radix)</h3>
+<p>parseInt函数产生一个整数值，该整数值由根据指定的<code>radix</code>来解释字符串参数的结果决定。 <code>string</code>中的前导空白将被忽略。 如果<code>radix</code>为<code>undefined</code>或<code>0</code>，则假定为<code>10</code>，除非数字以代码单元对<code>0x</code>或<code>0X</code>开头（在这种情况下，基数为16）。 如果基数为16，则数字也可以选择以代码单元对<code>0x</code>或<code>0X</code>开头。</p>
+<p>parseInt函数是固有对象％parseInt％，调用parseInt函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>inputString</code>为<code>ToString(string)</code></li>
+<li><code>ReturnIfAbrupt(string)</code></li>
+<li>令<code>S</code>为<code>inputString</code>的新创建的子串，它由不是 StrWhiteSpaceChar 的第一个代码单元以及该代码单元之后的所有代码单元组成。 （换句话说，删除前导空白符）如果<code>inputString</code>不包含任何此类代码单元，则使S为空字符串。</li>
+<li>令<code>sign</code>为<code>1</code></li>
+<li>如果<code>S</code>不为空且<code>S</code>的第一个代码单元为<code>0x002D(HYPHEN-MINUS)</code>减号，令<code>sign</code>为<code>-1</code></li>
+<li>如果<code>S</code>不为空且<code>S</code>的第一个代码单元为<code>0x002B(PLUS SIGN)</code>加号或<code>0x002D(HYPHEN-MINUS)</code>减号，删除<code>S</code>的第一个代码单元</li>
+<li>令<code>R</code>为<code>ToInt32(radix)</code></li>
+<li><code>ReturnIfAbrupt(R)</code></li>
+<li>令<code>stripPrefix</code>为<code>true</code></li>
+<li>如果<code>R ≠ 0</code>，则：
+<ol>
+<li>如果<code>R &lt; 2</code>或者<code>R &gt; 36</code>，返回<code>NaN</code></li>
+<li>如果<code>R ≠ 16</code>，令<code>stripPrefix</code>为<code>false</code></li>
+</ol>
+</li>
+<li>否则<code>R = 0</code>，令<code>R = 10</code></li>
+<li>如果<code>stripPrefix</code>为<code>true</code>，则：
+<ol>
+<li>如果<code>S</code>的长度大于等于2，且<code>S</code>的前两个代码单元为<code>0x</code>或<code>0X</code>，则删除<code>S</code>的前两个代码单元，并且令<code>R = 16</code></li>
+</ol>
+</li>
+<li>如果<code>S</code>包含不是进制基数<code>R</code>的数字的代码单元，则令<code>Z</code>为<code>S</code>的子串，它由第一个这样的（不是进制基数<code>R</code>的数字的）代码单元之前的所有代码单元组成； 否则，令<code>Z</code>为<code>S</code>。</li>
+<li>如果<code>Z</code>为空串，返回<code>NaN</code></li>
+<li>令<code>mathInt</code>为由<code>Z</code>表示的R进制下的数学整数值，使用字母<code>A-Z</code>和<code>a-z</code>表示从10到35的数字值（但是，如果<code>R</code>为10，并且<code>Z</code>包含20个以上有效数字，则根据实现方式的选择，第20位之后的每个有效数字都可以用0代替。如果R不是2、4、8、10、16或32，则<code>mathInt</code>可能是依赖于实现的由<code>Z</code>表示的R进制下的数学整数值的近似）</li>
+<li>如果<code>mathInt</code>为<code>0</code>，则：
+<ol>
+<li>如果<code>sign = −1</code>，返回<code>-0</code></li>
+<li>返回<code>+0</code></li>
+</ol>
+</li>
+<li>令<code>number</code>为<code>mathInt</code>的Number值</li>
+<li>返回<code>sign × number</code></li>
+</ol>
+<p>注意：parseInt只能将字符串的开头部分解释为整数值； 它会忽略无法解释为整数符号的一部分的任何代码单元，并且不会给出任何此类代码单元被忽略的指示。</p>
+<h3 id="18315-number"><a class="markdownIt-Anchor" href="#18315-number"></a> 18.3.15 Number ( . . . )</h3>
+<p>参见 20.1.1</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/18 全局对象.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/18 全局对象.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/14%20%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB.html"><i class="fa fa-chevron-left">  </i><span>14 函数和类</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/19%20%E5%9F%BA%E6%9C%AC%E5%AF%B9%E8%B1%A1.html"><span>19 基本对象</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

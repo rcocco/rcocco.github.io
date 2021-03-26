@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="浏览器安全"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>浏览器安全 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="toc-number">1.</span> <span class="toc-text"> 同源策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text"> 导论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 绕过同源策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%88%B6%E5%9F%9F%E4%BA%A4%E4%BA%92"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 子父域交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%9F%9F%E7%AA%97%E5%8F%A3%E4%BA%A4%E4%BA%92"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 不同域窗口交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%87%E6%AE%B5%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 片段标识符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#windowname"><span class="toc-number">1.3.2.2.</span> <span class="toc-text"> window.name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E6%96%87%E6%A1%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.2.3.</span> <span class="toc-text"> 跨文档通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%9F%9F%E8%B5%84%E6%BA%90%E4%BA%A4%E4%BA%92"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 不同域资源交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cors%E8%B7%A8%E6%BA%90%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> CORS跨源资源共享</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jsonp"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> JSONP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#websockets"><span class="toc-number">1.3.3.3.</span> <span class="toc-text"> WebSockets</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xss"><span class="toc-number">2.</span> <span class="toc-text"> XSS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#csrf"><span class="toc-number">3.</span> <span class="toc-text"> CSRF</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">浏览器安全</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-01-27</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Web%E5%BC%80%E5%8F%91/">Web开发</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="同源策略"><a class="markdownIt-Anchor" href="#同源策略"></a> 同源策略</h1>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a><br />
+<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html</a></p>
+<span id="more"></span>
+<h2 id="导论"><a class="markdownIt-Anchor" href="#导论"></a> 导论</h2>
+<p>用户在访问页面时，由不同作者开发的网页往往在同一个浏览器中打开，而浏览器上运行的JavaScript脚本又有很高的权限，它可以操作DOM，访问cookie等敏感信息。<br />
+cookie是服务器识别某个特定用户的字符串，最初，浏览器设计的是如果它向目标网站发送请求，则会自动带上目标网站曾经发过来的cookie，这带来了很严重的安全隐患，例如如果网站A的脚本向网站B发送请求，浏览器会自动带上自己保存网站A的cookie，B网站就会认为这就是用户在操作，那么网站A的作者就可以冒充用户在网站B上进行任何操作。又或者如果网站A的脚本可以操作网站B的DOM，那么它就可以将网站B中用户输入的密码等发送的地址修改为自己的地址。</p>
+<p>为了解决这个问题，浏览器采用了“同源策略”(same-origin policy)，它是浏览器安全的基石。</p>
+<h2 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h2>
+<p>同源策略的意思是：除非两个网页同源，否则一个页面的脚本在与另一个页面进行交互时将受到一系列限制。<br />
+注意，同源策略仅适用于脚本。表单提交、<code>&lt;script&gt;</code>、<code>&lt;img&gt;</code>等标签引入外部资源都不受同源策略限制。</p>
+<p>同源是指三个相同：协议相同、域名相同、端口相同。<br />
+IE中的同源实现不太一样，如果将两个域名添加到了IE的高度可信任区，则不会实行同源限制。另外，IE也不会检查端口号。</p>
+<p>最初的限制是，A网页的DOM，B网页不能访问。随着互联网的发展，同源策略限制的范围越来越大，目前有三种行为受到限制：</p>
+<ul>
+<li>Cookie、LocalStorage、IndexDB无法读取。</li>
+<li>DOM无法获得</li>
+<li>AJAX请求不能发送</li>
+</ul>
+<h2 id="绕过同源策略"><a class="markdownIt-Anchor" href="#绕过同源策略"></a> 绕过同源策略</h2>
+<p>同源策略为浏览器提供了安全性，但在某些情况下也给网页开发者造成了一些麻烦，因为由于不同源而被限制的行为很可能正是开发者所需要的，例如一个网站使用了其他网站提供的公共API，又例如大型网站有多个子域名需要在这些不同域的网页之间传递数据。</p>
+<p>为此就需要通过一些方法绕过某些同源策略限制。</p>
+<h3 id="子父域交互"><a class="markdownIt-Anchor" href="#子父域交互"></a> 子父域交互</h3>
+<p>一个页面可以将源修改为父域名，使得同源限制基于父域名进行检测，这样两个子域名之间，子域名和父域名之间都可以通过同源策略。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.domain = <span class="string">&quot;company.com&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>当修改了<code>document.domain</code>的值时，浏览器内部用于同源策略检查的端口号将自动重置为<code>null</code>，因此，如果只在子域名网页修改了源，由于它的内部端口号<code>null</code>和父域名网页内部端口号<code>80</code>不相同，仍然无法通过同源策略检查。所以父域名网页也需要设置<code>document.domain = document.domain</code>，将自己设置为自己以重置端口号。<br />
+这种做法也用于相同域名不同端口号的页面通过同源策略检查。</p>
+<h3 id="不同域窗口交互"><a class="markdownIt-Anchor" href="#不同域窗口交互"></a> 不同域窗口交互</h3>
+<p>如果两个窗口是父子窗口，即一个窗口是另一个的<code>iframe</code>，又或者一个窗口是由另一个窗口通过<code>window.open</code>打开的，则在不同域之间可以通过以下方法传递数据：</p>
+<h4 id="片段标识符"><a class="markdownIt-Anchor" href="#片段标识符"></a> 片段标识符</h4>
+<p>片段标识符指的是URL中<code>#</code>后面的部分，例如<code>http://www.baidu.com#abc</code>中的<code>#abc</code>。修改片段标识符，页面不会刷新。<br />
+不同域的父子窗口无法访问彼此的DOM，但可以操作彼此的URL，为此，一个窗口可以将要传递的信息写入另一个窗口的URL的片段标识符中，另一个窗口通过监听<code>hashchange</code>片段标识符变化事件来获取数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父窗口</span></span><br><span class="line">frame.src = frame.src + <span class="string">&quot;#&quot;</span> + data;</span><br><span class="line"><span class="comment">// 子窗口</span></span><br><span class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> message = <span class="built_in">window</span>.location.hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// 子窗口</span></span><br><span class="line"><span class="built_in">window</span>.parent.location.href = <span class="built_in">window</span>.parent.location.href + <span class="string">&quot;#&quot;</span> + data;</span><br><span class="line"><span class="comment">// 父窗口</span></span><br><span class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> message = <span class="built_in">window</span>.location.hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="windowname"><a class="markdownIt-Anchor" href="#windowname"></a> <a target="_blank" rel="noopener" href="http://window.name">window.name</a></h4>
+<p>对于同一个窗口，全局变量name的值不会随着所访问的网页变化而变化。例如窗口起初在访问<code>www.baidu.com</code>，此时设置<code>window.name = 22</code>，然后窗口跳转到新页面<code>www.qq.com</code>，此时的<code>window.name</code>还是<code>22</code>。<br />
+由此得到一种方法：首先使窗口与目标页面同源，目标页面将数据写入<code>window.name</code>，然后再使窗口与当前页面同源，当前页面就可以读取到<code>window.name</code>。<br />
+这个窗口通常是使用<code>iframe</code>实现的，监听<code>iframe</code>的<code>onload</code>事件</p>
+<h4 id="跨文档通信"><a class="markdownIt-Anchor" href="#跨文档通信"></a> 跨文档通信</h4>
+<p>HTML5提供了跨文档通信API，它为<code>window</code>对象增加了<code>postMessage</code>方法，允许跨窗口通信，不论窗口是否同源。监听<code>message</code>事件就可以收到消息。</p>
+<h3 id="不同域资源交互"><a class="markdownIt-Anchor" href="#不同域资源交互"></a> 不同域资源交互</h3>
+<p>在不打开新窗口的情况下，要访问其他域的资源也有一些解决办法：</p>
+<h4 id="cors跨源资源共享"><a class="markdownIt-Anchor" href="#cors跨源资源共享"></a> CORS跨源资源共享</h4>
+<p>CORS是基于HTTP头的机制，它是由浏览器和服务器共同完成的，对于客户端开发者，发送跨源请求和发送同源请求的代码几乎没有任何区别（跨源默认情况不带cookie，想带cookie需要加一句<code>xhr.withCredentials = true;</code>），但在处理响应时有所不同，跨源请求时客户端不一定能拿到响应报文，也不一定能拿到所有响应头。跨源请求得到的响应，默认情况下只有7个可以拿到的响应头：</p>
+<ul>
+<li><code>Cache-Control</code></li>
+<li><code>Content-Language</code></li>
+<li><code>Content-Length</code></li>
+<li><code>Content-Type</code></li>
+<li><code>Expires</code></li>
+<li><code>Last-Modified</code></li>
+<li><code>Pragma</code></li>
+</ul>
+<p>浏览器将跨源请求分为两类：简单请求，和 非简单请求。分别进行处理。</p>
+<ol>
+<li>简单请求是请求方法为这三种之一：</li>
+</ol>
+<ul>
+<li><code>HEAD</code></li>
+<li><code>GET</code></li>
+<li><code>POST</code><br />
+且手动设置的请求头不超过以下几种（浏览器自动设置的不会进行判断），以下称为CORS安全请求头：</li>
+<li><code>Accept</code></li>
+<li><code>Accept-Language</code></li>
+<li><code>Content-Language</code></li>
+<li><code>Content-Type: application/x-www-form-urlencoded</code></li>
+<li><code>Content-Type: multipart/form-data</code></li>
+<li><code>Content-Type: text/plain</code><br />
+这些方法和请求头是过去Web一直允许的跨域请求中的内容，例如表单。</li>
+</ul>
+<p>当浏览器发现本次请求是一个简单请求，就会在请求头中添加<code>Origin</code>字段，指明本次请求来自哪个源。<br />
+服务器收到HTTP请求后，<s>可以根据<code>Origin</code>字段来判断是否要正常返回响应</s>（没有必要，对于浏览器，响应发过去会浏览器自己会判断要不要拦截，对于非浏览器，<code>Origin</code>字段可以伪造，没有判断的意义），在发送响应的同时还需要通知浏览器允许响应的源，为此服务器需要在响应头中添加<code>Access-Control-Allow-Origin</code>字段，以指定服务器允许的源，例如<code>Access-Control-Allow-Origin: https://foo.example</code>，或者用通配符表示允许所有源：<code>Access-Control-Allow-Origin: *</code>。<br />
+浏览器接收到HTTP响应后，根据<code>Access-Control-Allow-Origin</code>的值来决定是否将响应发给客户端开发者，如果是不允许的源或者服务器没有设置，则会触发<code>error</code>事件，并且浏览器不会将响应交给客户端开发者。</p>
+<ol start="2">
+<li>非简单请求</li>
+</ol>
+<p>当浏览器发现本次请求是一个非简单请求时，它会先发送一个预检(preflight)请求，根据预检请求的响应来决定是否发送非简单请求。<br />
+预检请求使用的是OPTION方法，它的<code>Host</code>和URL与非简单请求相同，还添加了三个字段：</p>
+<ul>
+<li><code>Origin</code>指示请求来自哪个源（一定存在的字段）</li>
+<li><code>Access-Control-Request-Method</code>指示要发送的非简单请求所使用的方法（一定存在的字段）</li>
+<li><code>Access-Control-Request-Headers</code>指示要发送的非简单请求所手动设置的请求头（不包括简单请求的那几种），多个请求头用逗号分隔（可能存在的字段）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Origin: null</span><br><span class="line">Origin: &lt;scheme&gt; &quot;:&#x2F;&#x2F;&quot; &lt;hostname&gt; [ &quot;:&quot; &lt;port&gt; ]</span><br><span class="line">Access-Control-Request-Method: &lt;method&gt;</span><br><span class="line">Access-Control-Request-Headers: &lt;header-name&gt;, &lt;header-name&gt;, ...</span><br></pre></td></tr></table></figure>
+<p>服务器收到预检请求后，根据这三个字段来发回对应的响应头，用来告诉浏览器允许的源、允许的方法、允许的请求头等等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: *</span><br><span class="line">Access-Control-Allow-Origin: http:&#x2F;&#x2F;api.bob.com</span><br><span class="line">Access-Control-Allow-Methods: GET, POST, PUT</span><br><span class="line">Access-Control-Allow-Headers: X-Custom-Header</span><br></pre></td></tr></table></figure>
+<p>浏览器收到预检请求的响应后，会检查上述CORS相关响应头，只有相关响应头存在且与要发送的非简单请求匹配时，才会真正发送非简单请求并带上<code>Origin</code>请求头，否则浏览器不会发送非简单请求，而是会报错。</p>
+<p>综上，为了正确配置CORS，服务器端开发者需要配置相关响应头。<br />
+非OPTION请求</p>
+<ul>
+<li><code>Access-Control-Allow-Origin</code>：必须有的字段。值为一个源<code>&lt;origin&gt;</code>（如果服务器允许多个源，则这里必须返回发出请求的客户端的那个源），或通配符<code>*</code>（如果请求设置了带有凭证例如cookie，就不能用通配符，必须明确指定源）</li>
+<li><code>Access-Control-Allow-Credentials</code>：可选字段。唯一值为<code>true</code>。只有允许请求携带凭证时才设置该响应头。</li>
+<li><code>Access-Control-Expose-Headers</code>：可选字段。值为逗号分隔的HTTP头名字，或者通配符<code>*</code>（只有在非凭证请求时才表示通配符，但通配符不包含<code>Authorization</code>，在凭证请求中它不表示通配符而表示一个名为<code>*</code>的HTTP头）。默认情况下，客户端只能拿到跨源请求的7个响应头，如果允许客户端获取更多响应头，则需要设置该字段。<br />
+OPTION请求</li>
+<li><code>Access-Control-Allow-Origin</code>：同上。</li>
+<li><code>Access-Control-Allow-Methods</code>：必须有的字段，值为逗号分隔的方法名，或者通配符<code>*</code>（只有在非凭证请求时才表示通配符，在凭证请求中它不表示通配符而表示一个名为<code>*</code>的HTTP头）。表示允许用来请求的方法。</li>
+<li><code>Access-Control-Allow-Headers</code>：可选字段，如果预检请求有自定义头则需要设置该HTTP头。值为逗号分隔的HTTP头名称，或者通配符<code>*</code>（只有在非凭证请求时才表示通配符，但通配符不包含<code>Authorization</code>，在凭证请求中它不表示通配符而表示一个名为<code>*</code>的HTTP头）</li>
+<li><code>Access-Control-Allow-Credentials</code>：同上：</li>
+<li><code>Access-Control-Max-Age</code>：值为以整数表示的秒，表示预检请求的响应（<code>Access-Control-Allow-Methods</code>和<code>Access-Control-Allow-Headers</code>）可以被浏览器缓存多久。默认缓存5秒，值为<code>-1</code>则会禁用缓存，因此每次发送相同的非简单请求都会重新发预检请求。最大值不同浏览器有所不同，火狐是<code>86400</code>，谷歌则是<code>600</code>或<code>7200</code></li>
+</ul>
+<h4 id="jsonp"><a class="markdownIt-Anchor" href="#jsonp"></a> JSONP</h4>
+<p>JSONP(JSON with padding 带填充的JSON)是CORS出现前最常用的跨域访问资源的方法，它的原理是利用<code>&lt;script&gt;</code>标签不进行同源策略检查这一特点，让目标服务器将数据放入脚本文件，当前页面引入携带数据的脚本并执行，由此得到数据。<br />
+如果当前页面和目标服务器都约定使用某个变量名来存放数据，例如<code>data</code>，那么<code>window.data</code>就可以得到数据，但这种预先的约定容易污染命名空间，因为必须保证该名字没有被使用过。<br />
+更好的实现是，客户端使用一个函数来处理接收的数据，将函数名作为查询字符串向服务器请求数据，服务器收到请求后，在脚本文件中调用该函数并传递数据作为参数。<br />
+客户端示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// do somthing</span></span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">script.src = <span class="string">&quot;http://api.data.com?callback=process&quot;</span></span><br><span class="line"><span class="comment">// 如果成功或失败也会触发load和error事件</span></span><br><span class="line">script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.head.removeChild(script);</span><br><span class="line">&#125;</span><br><span class="line">script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>[functionName] = <span class="literal">undefined</span>;</span><br><span class="line">  <span class="built_in">document</span>.head.removeChild(script);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.head.appendChild(script);</span><br></pre></td></tr></table></figure>
+<p>由于必须有一个全局函数，为了不与现有的全局变量名冲突，可以为根据时间动态创建全局变量来绑定函数表达式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">url, f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">  script.src = url;</span><br><span class="line">  <span class="keyword">let</span> functionName = <span class="string">&quot;JSONP_CALLBACK_&quot;</span> + <span class="built_in">Date</span>.now();</span><br><span class="line">  <span class="built_in">window</span>[functionName] = f;</span><br><span class="line">  <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line">jsonp(url, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>服务器创建的脚本文件形如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process(&#123;<span class="attr">name</span>: <span class="string">&quot;Alex&quot;</span>, <span class="attr">age</span>: <span class="number">18</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>缺点是只能发GET请求，也无法控制发送的请求头，这些都是由浏览器自己处理。</p>
+<h4 id="websockets"><a class="markdownIt-Anchor" href="#websockets"></a> WebSockets</h4>
+<p>WebSocket会添加一个HTTP请求头<code>Origin</code>以指示请求的源是什么，服务器通过这个字段判断是否应该返回内容。</p>
+<h1 id="xss"><a class="markdownIt-Anchor" href="#xss"></a> XSS</h1>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Cross-site_scripting">https://developer.mozilla.org/zh-CN/docs/Glossary/Cross-site_scripting</a><br />
+<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016551188">https://segmentfault.com/a/1190000016551188</a><br />
+<a target="_blank" rel="noopener" href="https://blog.rapid7.com/2013/06/20/xss-vs-injection/">https://blog.rapid7.com/2013/06/20/xss-vs-injection/</a><br />
+Cross-site scripting（跨站脚本攻击）<br />
+它和注入(Injection)并不相同，注入漏洞是一段包含SQL、OS、LDAP的代码被提交到了服务端，服务端程序将其当做服务端代码一样进行解释，导致攻击者可以控制服务端的某些内容。例如提交的表单内容被存入数据库，但表单内容包含中止当前语句然后删库的SQL。<br />
+XSS是在服务端将数据重新显示在浏览器时发生的，攻击者的代码不是给服务器造成危害，而是给用户端造成危害。例如服务端程序将用户留言显示回页面，但用户留言可能包含有危害的JS代码。</p>
+<p>攻击者利用的是用户对站点的信任。</p>
+<p>转义或者CSP</p>
+<h1 id="csrf"><a class="markdownIt-Anchor" href="#csrf"></a> CSRF</h1>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/Web开发/浏览器安全.html">https://rcocco.github.io/categories/计算机/Web开发/浏览器安全.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Web%E5%BC%80%E5%8F%91/Koa.html"><i class="fa fa-chevron-left">  </i><span>Koa</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Web%E5%BC%80%E5%8F%91/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E/PUG.html"><span>PUG</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

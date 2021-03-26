@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Github"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>Github | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAssh-key"><span class="toc-number">1.</span> <span class="toc-text"> 创建SSH KEY</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-number">2.</span> <span class="toc-text"> 添加公钥</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text"> 新建仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.</span> <span class="toc-text"> 快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="toc-number">5.</span> <span class="toc-text"> 工具栏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E9%A1%B5%E9%9D%A2"><span class="toc-number">6.</span> <span class="toc-text"> 个人信息页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E9%A1%B5%E9%9D%A2"><span class="toc-number">7.</span> <span class="toc-text"> 仓库页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%AE%E5%88%AB"><span class="toc-number">8.</span> <span class="toc-text"> 查看差别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-number">8.1.</span> <span class="toc-text"> 查看分支间的差别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%87%A0%E5%A4%A9%E5%89%8D%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-number">8.2.</span> <span class="toc-text"> 查看与几天前的差别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%B8%8E%E6%8C%87%E5%AE%9A%E6%97%A5%E6%9C%9F%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-number">8.3.</span> <span class="toc-text"> 查看与指定日期之间的差别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%9B%BE%E7%89%87%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="toc-number">8.4.</span> <span class="toc-text"> 查看图片的差别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#issue"><span class="toc-number">9.</span> <span class="toc-text"> Issue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8markdown"><span class="toc-number">9.1.</span> <span class="toc-text"> 使用markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E4%BB%A5%E4%BE%BF%E6%95%B4%E7%90%86"><span class="toc-number">9.2.</span> <span class="toc-text"> 添加标签以便整理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%87%8C%E7%A8%8B%E7%A2%91%E4%BB%A5%E4%BE%BF%E7%AE%A1%E7%90%86"><span class="toc-number">9.3.</span> <span class="toc-text"> 添加里程碑以便管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%8F%91%E5%B8%83issue%E6%97%B6%E7%9A%84%E8%A7%84%E8%8C%83"><span class="toc-number">9.4.</span> <span class="toc-text"> 设置发布Issue时的规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AFcommit%E6%93%8D%E4%BD%9Cissue"><span class="toc-number">9.5.</span> <span class="toc-text"> 通过提交信息commit操作Issue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%9B%B8%E5%85%B3issue%E4%B8%AD%E6%98%BE%E7%A4%BA%E6%9F%90%E6%AC%A1%E6%8F%90%E4%BA%A4"><span class="toc-number">9.5.1.</span> <span class="toc-text"> 在相关Issue中显示某次提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#close-issue"><span class="toc-number">9.5.2.</span> <span class="toc-text"> Close Issue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E7%89%B9%E5%AE%9Aissue%E8%BD%AC%E6%8D%A2%E4%B8%BApull-request"><span class="toc-number">9.6.</span> <span class="toc-text"> 将特定Issue转换为Pull Request</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pull-request"><span class="toc-number">10.</span> <span class="toc-text"> Pull Request</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#conversation"><span class="toc-number">10.1.</span> <span class="toc-text"> Conversation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#commits"><span class="toc-number">10.2.</span> <span class="toc-text"> Commits</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#files-changed"><span class="toc-number">10.3.</span> <span class="toc-text"> Files Changed</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#wiki"><span class="toc-number">11.</span> <span class="toc-text"> Wiki</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pages"><span class="toc-number">11.1.</span> <span class="toc-text"> Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-number">11.2.</span> <span class="toc-text"> History</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#settings"><span class="toc-number">12.</span> <span class="toc-text"> Settings</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#features"><span class="toc-number">12.1.</span> <span class="toc-text"> Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-pages"><span class="toc-number">12.2.</span> <span class="toc-text"> Github Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#danger-zone"><span class="toc-number">12.3.</span> <span class="toc-text"> Danger Zone</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD"><span class="toc-number">13.</span> <span class="toc-text"> 其他功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github-jobs"><span class="toc-number">13.1.</span> <span class="toc-text"> GitHub Jobs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-enterprise"><span class="toc-number">13.2.</span> <span class="toc-text"> GitHub Enterprise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-api"><span class="toc-number">13.3.</span> <span class="toc-text"> Github API</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">14.</span> <span class="toc-text"> 推送至远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">14.1.</span> <span class="toc-text"> 添加远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E8%87%B3master%E5%88%86%E6%94%AF"><span class="toc-number">14.2.</span> <span class="toc-text"> 推送至master分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E8%87%B3master%E4%BB%A5%E5%A4%96%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">14.3.</span> <span class="toc-text"> 推送至master以外的分支</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%8E%B7%E5%8F%96"><span class="toc-number">15.</span> <span class="toc-text"> 从远程仓库获取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">15.1.</span> <span class="toc-text"> 获取远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93-2"><span class="toc-number">15.1.1.</span> <span class="toc-text"> 获取远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E7%9A%84feature-d%E5%88%86%E6%94%AF"><span class="toc-number">15.1.2.</span> <span class="toc-text"> 获取远程的feature-D分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E6%9C%AC%E5%9C%B0%E7%9A%84feature-d%E5%88%86%E6%94%AF%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9"><span class="toc-number">15.1.3.</span> <span class="toc-text"> 向本地的feature-D分支提交更改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%88%86%E6%94%AF"><span class="toc-number">15.2.</span> <span class="toc-text"> 获取最新的远程仓库分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E7%9A%84%E8%B5%84%E6%96%99"><span class="toc-number">15.3.</span> <span class="toc-text"> 深入理解Git的资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95pull-request"><span class="toc-number">16.</span> <span class="toc-text"> 尝试Pull Request</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pull-request%E7%9A%84%E6%A6%82%E8%A6%81"><span class="toc-number">16.1.</span> <span class="toc-text"> Pull Request的概要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E9%80%81-pull-request-%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">16.2.</span> <span class="toc-text"> 发送 Pull Request 的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9pull-request%E6%9B%B4%E5%8A%A0%E6%9C%89%E6%95%88%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">16.3.</span> <span class="toc-text"> 让Pull Request更加有效的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%91%E9%80%81-pull-request-%E8%BF%9B%E8%A1%8C%E8%AE%A8%E8%AE%BA"><span class="toc-number">16.3.1.</span> <span class="toc-text"> 在开发过程中发送 Pull Request 进行讨论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%8E%E7%A1%AE%E6%A0%87%E5%87%BA%E6%AD%A3%E5%9C%A8%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD"><span class="toc-number">16.3.2.</span> <span class="toc-text"> 明确标出正在开发过程中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E8%BF%9B%E8%A1%8C-fork-%E7%9B%B4%E6%8E%A5%E4%BB%8E%E5%88%86%E6%94%AF%E5%8F%91%E9%80%81-pull-request"><span class="toc-number">16.3.3.</span> <span class="toc-text"> 不进行 Fork 直接从分支发送 Pull Request</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E7%9A%84%E7%BB%B4%E6%8A%A4"><span class="toc-number">16.4.</span> <span class="toc-text"> 仓库的维护</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E7%9A%84fork%E4%B8%8Eclone"><span class="toc-number">16.4.1.</span> <span class="toc-text"> 仓库的Fork与Clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99%E5%8E%9F%E4%BB%93%E5%BA%93%E8%AE%BE%E7%BD%AE%E5%90%8D%E7%A7%B0"><span class="toc-number">16.4.2.</span> <span class="toc-text"> 给原仓库设置名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9C%80%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">16.4.3.</span> <span class="toc-text"> 获取最新数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6pull-request"><span class="toc-number">17.</span> <span class="toc-text"> 接收Pull Request</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%BA%B3-pull-request-%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">17.1.</span> <span class="toc-text"> 采纳 Pull Request 的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%BA%B3-pull-request-%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-number">17.2.</span> <span class="toc-text"> 采纳 Pull Request 前的准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5"><span class="toc-number">17.2.1.</span> <span class="toc-text"> 代码审查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83%E4%B8%AD%E5%8F%8D%E6%98%A0pull-request%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">17.2.2.</span> <span class="toc-text"> 在本地环境中反映Pull Request的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%8E%A5%E6%94%B6%E6%96%B9%E7%9A%84%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E8%87%B3%E6%9C%80%E6%96%B0%E7%8A%B6%E6%80%81"><span class="toc-number">17.2.2.1.</span> <span class="toc-text"> 将接收方的本地仓库更新至最新状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8F%91%E9%80%81%E6%96%B9%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">17.2.2.2.</span> <span class="toc-text"> 获取发送方的远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%A3%80%E6%9F%A5%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">17.2.2.3.</span> <span class="toc-text"> 创建用于检查的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E5%B9%B6"><span class="toc-number">17.2.2.4.</span> <span class="toc-text"> 合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-number">17.2.2.5.</span> <span class="toc-text"> 删除分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF"><span class="toc-number">17.2.2.6.</span> <span class="toc-text"> 如何提升代码管理技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%87%E7%BA%B3pull-request"><span class="toc-number">17.3.</span> <span class="toc-text"> 采纳Pull Request</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%88%B0%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-number">17.3.1.</span> <span class="toc-text"> 合并到主分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9"><span class="toc-number">17.3.2.</span> <span class="toc-text"> push修改内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">17.4.</span> <span class="toc-text"> 小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-github%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">18.</span> <span class="toc-text"> 使用 Github的开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%A2%E9%98%9F%E4%BD%BF%E7%94%A8-github-%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">18.1.</span> <span class="toc-text"> 团队使用 GitHub 时的注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%88%87%E4%BB%8E%E7%AE%80"><span class="toc-number">18.1.1.</span> <span class="toc-text"> 一切从简</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E4%B8%8E-github-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">18.1.1.1.</span> <span class="toc-text"> 项目管理工具与 GitHub 的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8Dfork%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">18.1.2.</span> <span class="toc-text"> 不Fork仓库的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-flow%E4%BB%A5%E9%83%A8%E7%BD%B2%E4%B8%BA%E4%B8%AD%E5%BF%83%E7%9A%84%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">18.2.</span> <span class="toc-text"> GitHub Flow——以部署为中心的开发模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github-flow%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">18.3.</span> <span class="toc-text"> Github Flow的流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%97%B6%E9%83%A8%E7%BD%B2%E6%B2%A1%E6%9C%89%E5%8F%91%E5%B8%83%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">18.3.1.</span> <span class="toc-text"> 随时部署，没有发布的概念</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%81%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="toc-number">19.</span> <span class="toc-text"> 私人仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">20.</span> <span class="toc-text"> 参考资料</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">Github</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-16</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">软件使用问题</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>;;;<br />
+<code>git push</code>的时候总提示：<code>fatal: HttpRequestException encountered</code><br />
+这个的原因是github禁用了TLS1.0/1.1协议，<a target="_blank" rel="noopener" href="https://githubengineering.com/crypto-deprecation-notice/">github禁用了对弱加密的支持</a>，我们可以对 git for windows 更新到最新的版本或者去更新<a target="_blank" rel="noopener" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">windows的git凭证管理器</a>，这样就可以了。</p>
+<h1 id="创建ssh-key"><a class="markdownIt-Anchor" href="#创建ssh-key"></a> 创建SSH KEY</h1>
+<p>Github是通过SSH的公钥来对连接已有仓库时的进行认证。<br />
+因此首先要创建你自己的一对密钥以供使用，输入<code>ssh-keygen -t rsa -C &quot;邮箱@example.com&quot;</code>，例如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;my2020@gmail.com&quot;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>之后会提示输入一个保存密钥的路径，也可以什么都不输入直接回车，来使用括号中的默认路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa): </span><br></pre></td></tr></table></figure>
+<p>然后会提示输入密码，以及再次确认密码。<br />
+这个密码不是必须的，如果不想要输入可以直接回车。<br />
+一旦输入了密码，那么每次使用SSH连接时不仅需要私钥文件，还需要输入密码。<br />
+如果没有密码，显然任何人只要能使用你的电脑或者访问你的硬盘就可以用你的私钥登录，有密码则多了一重保障，代价是每次都要额外输入，安全性与便利性不可兼得。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): 输入密码</span><br><span class="line">Enter same passphrase again: 再次输入密码</span><br></pre></td></tr></table></figure>
+<p>最后创建密钥完成会提示，你的私钥<code>id_rsa</code>和公钥<code>id_rsa.pub</code>已经被保存到某某目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> /Users/your_user_directory/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/your_user_directory/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:xxxxxxxxxxxxxxxx your_email@example.com</span><br><span class="line">The key<span class="string">&#x27;s randomart image is:</span></span><br><span class="line"><span class="string">xxxxxxx</span></span><br></pre></td></tr></table></figure>
+<h1 id="添加公钥"><a class="markdownIt-Anchor" href="#添加公钥"></a> 添加公钥</h1>
+<p>在Github中添加公钥，以后就可以在任何一台电脑上使用私钥来认证了。<br />
+点击右上角头像右边的小三角，选择Settings，点击左侧的SSH and GPG keys。再点击右边绿色按钮New SSH key。<br />
+Title输入框里输入你喜欢的密钥名称，<br />
+Key输入框里粘贴刚刚创建的<code>id_rsa.pub</code>文件的内容，里面的内容应该是以ssh-rsa开头<br />
+添加成功之后，创建账户时所用的邮箱会接到一封提示“公共密钥添加完成”的邮件。<br />
+最后来测试一下用刚才创建的私钥与Github认证，输入<code>ssh -T git@github.com</code>，出现下面的提示就代表成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi your_github_name! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+<h1 id="新建仓库"><a class="markdownIt-Anchor" href="#新建仓库"></a> 新建仓库</h1>
+<p>点击Github右上角加号旁边的小三角，在下拉菜单中点击New repository来创建一个仓库</p>
+<ul>
+<li>Repository name是仓库名，应该与本地仓库名一致，避免混淆。</li>
+<li>Description 是仓库的说明，也可以不填。</li>
+<li>Public和Private是仓库的可见性，选择Public表示创建公开仓库，互联网上的所有人都能看到公开仓库里的内容。选择Private表示创建非公开仓库，你可以自己设置哪些人可以看这个仓库的内容。</li>
+<li>Initialize this repository with下面的三个勾选框是用来让Github自动做一些初始化工作，如果是打算导入一个已存在的本地仓库，那就所有勾选框都不要勾选。
+<ol>
+<li>Add a README file：自动生成一个README文件，用来写一些关于这个项目的大段描述。</li>
+<li>Add .gitignore：自动生成一个.gitignore文件，用来设置哪些文件不需要由Git仓库管理。</li>
+<li>Choose a license：选择一个许可协议，许可协议用来告诉其他人对于这个仓库的内容，你可以做什么，不能做什么。</li>
+</ol>
+</li>
+</ul>
+<p>本地仓库关联到github仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/rcocco/miao.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h1 id="快捷键"><a class="markdownIt-Anchor" href="#快捷键"></a> 快捷键</h1>
+<p>在任何页面按下<code>Shift + /</code>都可以查看Github可用的键盘快捷键</p>
+<h1 id="工具栏"><a class="markdownIt-Anchor" href="#工具栏"></a> 工具栏</h1>
+<ol>
+<li>LOGO：点击左上角的LOGO可以进入控制面板</li>
+<li>搜索框：在这里输入想找的用户或代码片段，就可以搜索到与之相关的信息。</li>
+<li>Pull Requests：这里可以查看你提交或者受到的Pull Request。</li>
+<li>Issues：这里查看你提出或者提到你的Issue。</li>
+<li>Marketplace：这里提供了一些免费或者付费的工具，这些工具可以集成到你的Github中进而扩展或改善你的工作流。</li>
+<li>Explore：从各个角度介绍 GitHub 上的热门软件。在这里有机会了解到最尖端的技术和软件。作为一名程序员，可以在上面找到许多灵感。</li>
+<li>铃铛：Notifications，用于提示用户是否有新的通知。用户在新建 Issue、被评论、进行 Pull Request 等时都会收到通知。另外，按照默认设置，用户在 GitHub 收到的通知会同时发送到该用户的注册邮箱。邮箱接收通知的相关设置在 Account settings 中进行</li>
+<li>加号：Create a new…，可以创建新的仓库、组织或者新的Gist和Issue等等。
+<ul>
+<li>Gist：Gist 功能主要用于管理及发布一些没必要保存在仓库中的代码，比如小的代码片段等。可以把一些随便编写的脚本代码等放在 Gist中。系统会自动管理更新历史，并且提供了 Fork 功能。另外，通过 Gist还可以很方便地为同事编写代码示例。在 Gist 上添加的代码示例可以嵌入博客中。当然，如果选择了语言，还会自动添加语法高亮。</li>
+</ul>
+</li>
+<li>头像：点击后可以在下拉菜单中进入你自己的主页、仓库、gist或账户设置页面等等。</li>
+</ol>
+<h1 id="个人信息页面"><a class="markdownIt-Anchor" href="#个人信息页面"></a> 个人信息页面</h1>
+<p>访问下述 URL，就可以看到各位的个人信息。<br />
+<code>https://github.com/用户名</code></p>
+<ul>
+<li>左侧的侧边栏：显示注册用户的基本信息，包括头像、姓名、所属公司、邮箱地址、已加入的 Organization 、follwer的人数、follow其他人的人数、star的数量等等。在自己的个人信息页面可以编辑姓名、公司、邮箱等信息，在别人的信息页面可以看到 Follow 按钮,如果对该用户感兴趣，可以点击Follow按钮。这样一来，这个人在 GitHub 上的活动都会显示在你的 News Feed 中。</li>
+<li>右侧上方四个选项：
+<ol>
+<li>Overview：
+<ol>
+<li>Pinned：显示该用户的一部分仓库的概览，在自己的个人信息页面点击Custom your pins可以选择哪些仓库被展示在这个位置。</li>
+<li>contributions：显示该用户一年来的贡献情况，一格表示一天，记录当日用户对拥有读取权限的仓库的大致贡献度。贡献度的衡量标准包括发送 Pull Request 的次数、写 Issue 的次数、进行提交的次数等。颜色越深代表贡献度越高。一名程序员绿色的天数越多，证明他对 GitHub 越熟悉。</li>
+<li>Contribution activity：显示该用户具体的贡献情况，例如提交和Pull Request了什么项目，提出了什么Issue等等。</li>
+</ol>
+</li>
+<li>Repositories：显示该用户公开的仓库。Fork 来的仓库也显示在这里。仓库名称、简要说明、使用的语言、最终更新日期都会出现在列表中。星形图案旁边的数字表示给这个仓库添加 Star 的人数，再旁边是被Fork 数。右侧的绿色折线图表示这个仓库的更新频率。横向为时间轴，右侧为最新时间。</li>
+<li>Projects：显示该用户的项目板，项目版可以帮助管理和追踪你要完成的工作。</li>
+<li>Packages：显示用户发布的软件包，这个功能可以用来进行在团队中软件包管理，也可以与开源社区分享。</li>
+</ol>
+</li>
+</ul>
+<h1 id="仓库页面"><a class="markdownIt-Anchor" href="#仓库页面"></a> 仓库页面</h1>
+<p>仓库的URL形式如下：<br />
+<code>https://github.com/用户名/仓库名</code><br />
+这个页面可以说是各个软件的大门。循着目录找下去我们就可以查阅自己想要的文件。如果有相应权限，还可以对文件的内容直接进行编辑、提交。</p>
+<ul>
+<li>用户名/仓库名：左上方图标旁边是用户名/仓库名。</li>
+<li>Watch/Star/Fork：右上方有三个按钮
+<ol>
+<li>第一个是Watch按钮，点击这个按钮就可以 Watch 该仓库，今后该仓库的更新信息会显示在用户的公开活动中；</li>
+<li>第二个是Star按钮，数字表示给这个仓库添加 Star 的人数。这个数越高，代表该仓库越受关注。Watch 与 Star 有所不同，Watch 之后该仓库的相关信息会在后述的Notifications 中显示，让用户可以追踪仓库的内容，而 Star 更像是书签，让用户将来可以在 Star 标记的列表中找到该仓库。另外，Star 数还是GitHub 上判断仓库热门程度的指标之一；</li>
+<li>第三个是Fork按钮，后面的数字代表该仓库被 Fork 至各用户仓库的次数。这个数字越大，表示参与这个仓库开发的人越多。</li>
+</ol>
+</li>
+<li>Code：显示该仓库中的文件列表。</li>
+<li>Issue：用于 BUG 报告、功能添加、方向性讨论等，将这些以 Issue 形式进行管理。Pull Request 时也会创建 Issue。旁边显示的数字是当前处于Open 状态的 Issue 数。</li>
+<li>Pull requests：在 Pull Requests 中可以列表查看并管理 Pull Request。代码的更改和讨论都可以在这里进行。旁边显示的数字表示尚未 Close 的 Pull Request的数量。</li>
+<li>Actions：用于生成，测试和部署代码。</li>
+<li>Projects：显示该仓库的项目板，项目版可以帮助管理和追踪要完成的工作。</li>
+<li>Wiki：Wiki 是一种比 HTML 语法更简单的页面描述功能。常用于记录开发者之间应该共享的信息或软件文档。数字表示当前 Wiki 的页面数量。</li>
+<li>Secutiry：用于管理项目或者依赖项中的安全漏洞。</li>
+<li>Insights：
+<ol>
+<li>Pulse：这是体现该仓库软件开发活跃度的功能。近期该仓库创建了多少 Pull Request 或 Issue，有多少人参与了这个仓库的开发等，都可以在这里一目了然。根据这个页面，用户可以判断目前这个软件是否正在被积极开发，或者持有仓库修改权限的人是否在认真地进行 BUG 修正等维护工作。在挑选 GitHub 上开发的软件时，它可以作为一个重要的衡量标准。
+<ul>
+<li>Overview 的左半部分显示了特定期间内活动过的 Pull Request 数。通过这些信息，用户可以了解该软件最近正在开发哪些功能。如果发现对方正在进行功能扩展或者修正，不妨积极试用一下这个功能。这或许会成为您加入开源软件开发的契机。</li>
+<li>Overview 的右半部分显示了特定期间内活动过的 Issue 数。通过观察 Issue 的整体动向，用户能够知道这个软件是否有人在积极地维护与支持。对方仓库越是活跃，用户发送的 BUG 报告和相关探讨越可能收到回应。</li>
+<li>Overview 下方显示的是与提交相关的信息。左侧部分包含了如下几类信息：编写过代码的人数、提交的次数、master 分支中修改过的文件数、master 分支中添加的行数、master 分支中删除的行数；右侧图表显示了这些开发者具体发送的提交数。通过图表我们可以了解到有哪些开发者在格外积极地向该仓库发送提交。</li>
+<li>页面最下方的 Unresolved Conversations 列出的 Issue 和 Pull Request 都创建于 Period 指定的时间之前，它们都尚未 Close 并且仍有人参与评论。一般情况下，仓库中软件的重大事项讨论都会持续很长时间，所以这些讨论大多放在这里。其中会有不少关于该软件今后发展方向的讨论。如果各位有哪些比较关心的软件，不妨关注一下这部分的讨论内容。</li>
+</ul>
+</li>
+<li>Contributors：显示对该仓库进行过提交的程序员名单。如果您也对该仓库发送过Pull Request 并且被采纳，那么在这里就能找到自己的名字。左边的数字是程序员的人数。在 Contributors 的图表中，我们可以看到每个用户在相应日期中发送提交、添加代码、删除代码的大致数量。从这里我们能够了解到该仓库的代码主要由哪些人编写。而且，还可以通过图表分析出该软件大幅修改阶段和稳定维护阶段的相应时期。</li>
+<li>Community：这里列出的该项目给出的相关规范与开源指南中推荐的规范的比较，例如描述文件、许可证书、Issue和Pull Request模板</li>
+<li>Commits：这里显示了一年内每周收到的提交的大致数量。第二张表中还可以查看相应周每天的提交数量。判断某个仓库是否有人在积极更新时，这部分是一个重要的指标。从折线图中我们可以直观地掌握一周内每天何时收到的提交最多，仓库的关键人物往往会出现在提交频率高的时间段，因此用户发送的 Pull Request 最有可能在这段时间内被处理。大致了解时间规律，将有助于各位把握好发送 Pull Request 以及等待回复的时间点。</li>
+<li>Code frequency：这里显示了该仓库中代码行数的增加量和删除量。一款优秀的软件并不会一味地增加代码，在经过重构之后，代码量往往会降低。通过这张图，我们可以直观地把握相应信息。</li>
+<li>Dependency graph：这里显示了该仓库中的项目的依赖项目，以及哪些项目依赖该仓库。</li>
+<li>Network：以图表形式显示包括克隆仓库在内的所有分支的提交（图 5.33）。从图上可以直观地看出每个人做了多少工作。将鼠标指针停留在表中提交或合并的点上，可以查看相应的参考内容。</li>
+<li>Forks：显示该仓库的所有Folk仓库。</li>
+</ol>
+</li>
+<li>Settings：这个选项只有用户拥有更改设置的权限时才能看到，有时隐藏在Insights右边的三个小圆点里，该选项可以更改当前仓库的设置。</li>
+<li>master：<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926113801686_6464.png" alt="" width="100" />显示当前分支的名称。从这里可以切换仓库内分支或tag，查看其他分支的文件。</li>
+<li>commits：在这里可以查看当前分支的提交历史。左侧的数字表示提交数。</li>
+<li>branches：可以查看仓库的分支列表。左侧的数字表示当前拥有的分支数。</li>
+<li>tags：可以查看仓库的标签列表，左侧数字表示当前拥有的标签数。</li>
+<li>Go to file：进入快速搜搜页面，输入要找的目录或文件的名字。筛选器会在仓库或目录的文件中进行筛选，搜索出要找的文件。这种方式比一级级查看目录和文件快得多。在仓库页面按下t键也有同样的效果。</li>
+<li>Add file：可以在仓库中创建新文件或上传文件，前提是用户拥有写入的权限。</li>
+<li>绿色Code按钮：给出了clone 仓库时所需的 URL。URL有HTTPS、SSH等形式，可以根据需要选择一个使用。
+<ol>
+<li>Open with Github Desktop：启动 GitHub 专用的客户端应用程序并进行 clone。</li>
+<li>Download ZIP：将当前正在阅览的分支中的文件以 ZIP 形式打包下载。这种方式与Git 的 clone 不同，只是单纯将文件下载到本地，所以无法通过 Git 查看日志或对仓库进行更改。如果只是想使用仓库中的文件，比较适合用这种方式下载。</li>
+</ol>
+</li>
+<li>右侧About：这里显示仓库的描述、网站、主题等等，在自己的仓库下可以点击齿轮按钮进行修改。</li>
+<li>Releases：这里显示软件的发行版本，也就是给用户使用的正式版本。</li>
+</ul>
+<h1 id="查看差别"><a class="markdownIt-Anchor" href="#查看差别"></a> 查看差别</h1>
+<p>在 GitHub 上，直接修改 URL 就可以让用户以多种形式查看差别。这里我们以 Ruby on Rails 的仓库为例，给各位介绍直接修改 URL 的一些技巧。</p>
+<h2 id="查看分支间的差别"><a class="markdownIt-Anchor" href="#查看分支间的差别"></a> 查看分支间的差别</h2>
+<p>比如我们想查看 4-0-stable 分支相比 3-2-stable 分支修改了什么，可以在仓库地址后面加上<code>/compare/3-2-stable...4-0-stable</code>，即https://github.com/rails/rails/compare/3-2-stable…4-0-stable<br />
+注意写在前面的比较的起点，也就是基准文件，后面的是比较的终点，也就是用来对比的文件。</p>
+<h2 id="查看与几天前的差别"><a class="markdownIt-Anchor" href="#查看与几天前的差别"></a> 查看与几天前的差别</h2>
+<p>假如我们想查看 master 分支在最近 7 天内的差别，可以在仓库地址后面加上<code>/compare/master@&#123;7.day.ago&#125;...master</code>，即https://github.com/rails/rails/compare/master@{7.day.ago}…master<br />
+指定期间可以使用：</p>
+<ul>
+<li>day</li>
+<li>week</li>
+<li>month</li>
+<li>year<br />
+四个时间单位，如果差别过大则不会列出所有提交，只显示最近的一部分。</li>
+</ul>
+<h2 id="查看与指定日期之间的差别"><a class="markdownIt-Anchor" href="#查看与指定日期之间的差别"></a> 查看与指定日期之间的差别</h2>
+<p>假设我们想查看 master 分支 2013 年 1 月 1 日与现在的区别，可以在仓库地址后面加上<code>/compare/master@&#123;2013-01-01&#125;...master</code>，即https://github.com/rails/rails/compare/master@{2013-01-01}…master<br />
+这样，便可以查看与指定日期之间的差别。但是如果指定日期与现在的差别过大，或者指定日期过于久远，则无法显示。</p>
+<h2 id="查看图片的差别"><a class="markdownIt-Anchor" href="#查看图片的差别"></a> 查看图片的差别</h2>
+<p>在 GitHub 上不但可以查看代码的差别，还有多种方法供用户查看图片的差别。<br />
+以<a target="_blank" rel="noopener" href="https://github.com/cameronmcefee/Image-Diff-View-Modes">cameronmcefee/Image-Diff-View-Modes</a>仓库为例：<br />
+首先在commits中找到有图片修改的提交，这里是哈希值为8e95f70…的提交。<br />
+接着可以看到每个修改的图片文件右侧都有<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926124006391_16651.png" alt="" width="100" />，点击右侧的按钮，在下方就会显示图片比较界面，有三种模式可供选择：</p>
+<ul>
+<li>2-up：2-up 可以同时显示一张旧图片和一张新图片，从而完成对比</li>
+<li>Swipe：Swipe 可以在分界线左右两侧分别显示旧图片和新图片。鼠标可以拖动分界线左右移动，帮助用户对比细节差异和细微的颜色差异。</li>
+<li>Onion Skin：Onion Skin 能够将新旧两张图片重叠放置，分阶段从旧图片慢慢过<br />
+渡至新图片，用户可以拖动下方滑动条自由调节过渡比例。通过这一功能，用户能够一步步确认新图片相对于旧图片的变化。</li>
+</ul>
+<h1 id="issue"><a class="markdownIt-Anchor" href="#issue"></a> Issue</h1>
+<p>在软件开发过程中，开发者们为了跟踪 BUG 及进行软件相关讨论，进而方便管理，创建了 Issue。管理 Issue 的系统称为 BTS（Bug Tracking System，BUG 跟踪系统）。当今具有代表性的 BTS 有 Redmine、Trac、Bugzilla等。<br />
+GitHub 也为自身加入了 BTS 的功能。在 GitHub 上，可以将它作为软件开发者之间的交流工具，多多加以利用。遇到下面几种情况时，各位就可以使用这个功能。</p>
+<ul>
+<li>发现软件的 BUG 并报告</li>
+<li>有事想向作者询问、探讨</li>
+<li>事先列出今后准备实施的任务<br />
+Issue 除 BUG 管理之外还有许多其他用途。在软件开发者的圈子中，将 Issue 用于多种用途的情况已经司空见惯。</li>
+</ul>
+<h2 id="使用markdown"><a class="markdownIt-Anchor" href="#使用markdown"></a> 使用markdown</h2>
+<p>GitHub 的 Issue 及评论可以使用 Github Flavored Markdown 语法进行描述，从而获得丰富的表现力。</p>
+<h2 id="添加标签以便整理"><a class="markdownIt-Anchor" href="#添加标签以便整理"></a> 添加标签以便整理</h2>
+<p>Issue 可以通过添加标签（Label）来进行整理。添加标签后，Issue的左侧就会显示标签。点击页面左侧的标签，还可以只显示该类标签的 Issue。<br />
+标签可以自由创建。既可以按语言和技术分类，也可以按照 BUG、任务、备忘等作业类型分类。各位可以按照需要选择便于整理的标签。<br />
+提个小建议：其实在 Issue 比较少的情况下不必每个都添加标签，大可等 Issue 积攒到一定数量，只有进行筛选才能清晰把握时再添加标签。</p>
+<h2 id="添加里程碑以便管理"><a class="markdownIt-Anchor" href="#添加里程碑以便管理"></a> 添加里程碑以便管理</h2>
+<p>除标签外，还可以通过添加里程碑(Milestones)来管理 Issue。可以设置项目距离下一个版本（3.0.0 版）还有几个 Issue 需要实施，例如整体的 96% 已经实施完毕并 Close。从这里的链接我们可以查看剩余的Issue。<br />
+设置里程碑，就可以用 Issue 来管理任务。</p>
+<h2 id="设置发布issue时的规范"><a class="markdownIt-Anchor" href="#设置发布issue时的规范"></a> 设置发布Issue时的规范</h2>
+<p>在仓库的根目录下添加 <a target="_blank" rel="noopener" href="http://CONTRIBUTING.md">CONTRIBUTING.md</a> 文件后该链接就会显示出来，规范的内容一般包括报告时Issue的描述方法、Pull Request 时的规则或要求、许可证的相关信息等。为了在开源项目开发中能与其他人和谐相处，请务必在贡献之前仔细阅读这些规范。</p>
+<h2 id="通过提交信息commit操作issue"><a class="markdownIt-Anchor" href="#通过提交信息commit操作issue"></a> 通过提交信息commit操作Issue</h2>
+<p>在 GitHub 上，只要按照特定的格式描述提交信息，就可以像一般 BTS 带有的功能那样对 Issue 进行操作。</p>
+<h3 id="在相关issue中显示某次提交"><a class="markdownIt-Anchor" href="#在相关issue中显示某次提交"></a> 在相关Issue中显示某次提交</h3>
+<p>在 Issue 一览表中我们可以看到，每一个 Issue 标题的下面都分配了诸如“#24”的编号。只要在提交信息的描述中加入“#24”，就可以在 Issue 中显示该提交的相关信息，使关联的提交一目了然。这里只需轻轻点击一下便可以显示相应提交的具体内容，在代码审查时省去了从大量提交日志中搜索相应提交的麻烦，非常方便。</p>
+<h3 id="close-issue"><a class="markdownIt-Anchor" href="#close-issue"></a> Close Issue</h3>
+<p>如果一个处于 Open 状态的 Issue 已经处理完毕，只要在该提交中以下列任意一种格式描述提交信息，对应的 Issue 就会被 Close。</p>
+<ul>
+<li>fix #24</li>
+<li>fixes #24</li>
+<li>fixed #24</li>
+<li>close #24</li>
+<li>closes #24</li>
+<li>closed #24</li>
+<li>resolve #24</li>
+<li>resolves #24</li>
+<li>resolved #24</li>
+</ul>
+<p>利用这个方法，每次提交并 push 之后，就不必再大费周章地到 GitHub 的 Issue 中寻找相应 Issue 再手动 Close，省去不少麻烦。<br />
+像这样，只要按照特定的格式描述提交信息，GitHub 就会自动识别并处理，让使用 GitHub 变得更加轻松。</p>
+<h2 id="将特定issue转换为pull-request"><a class="markdownIt-Anchor" href="#将特定issue转换为pull-request"></a> 将特定Issue转换为Pull Request</h2>
+<p>在 GitHub 上，如果给 Issue 添加源代码，它就会变成我们马上要讲到的 Pull Request。Issue 与 Pull Request 的编号相互通用，通过 GitHub的 API 可以将特定的 Issue 转换为 Pull Request，能够完成这一操作的hub 命令将在本书的 8.1 节中讲解。在这里，各位只要先记住 Issue 与Pull Request 的编号通用即可。</p>
+<h1 id="pull-request"><a class="markdownIt-Anchor" href="#pull-request"></a> Pull Request</h1>
+<p>Pull Request 是用户修改代码后向对方仓库发送采纳请求的功能，也是 GitHub 的核心功能（图 5.19）。正因为有了这个功能，才会让众多开发者轻松地加入到开源开发的队伍中来。<br />
+在 Pull Request 页面能够列表查看当前处于Open状态的Pull Request。通过点击页面左部和上部的选项可以进行筛选和重新排列。<br />
+在列表中点击特定的 Pull Request 就会进入详细页面（图 5.20）。页面上方显示着这次是从谁的哪个分支向谁的哪个分支发送了 Pull Request。下面，我们对各个标签（Tag）页进行讲解。</p>
+<h2 id="conversation"><a class="markdownIt-Anchor" href="#conversation"></a> Conversation</h2>
+<p>在 Conversation 标签页中，可以查看与当前 Pull Request 相关的所有评论以及提交的历史记录。人们在这里添加评论互相探讨，发送提交落实讨论内容的整个过程会按时间顺序列出，供用户查看。各位在查看过程中如果有自己的想法，不妨积极地添加评论参与探讨。<br />
+在 Conversation 中人们通过添加评论进行对话。这里有一个简单方法可以帮您引用某个人的评论。选中想引用的评论然后按 R 键，被选择的部分就会自动以评论语法写入评论文本框。这样一来就可以轻松便捷地引用评论了。该快捷键在 Issue中同样有效。<br />
+GitHub 的文化中有使用表情的习惯。表情种类繁多，要一次全记下来十分困难。这时我们可以利用表情的自动补全功能。<br />
+在评论中输入“:”（冒号）便会启动表情自动补全功能。只要输入几个与该表情相关的字母，系统就会为您筛选自动补全的对象（图 a）。选择想要的表情，其相应代码（前后都有冒号的字符串）便会插入到文本框中。<br />
+准确表达感情可以让交流变得和谐，各位请记得多加利用。</p>
+<h2 id="commits"><a class="markdownIt-Anchor" href="#commits"></a> Commits</h2>
+<p>在 Commits 标签页中，按时间顺序列表显示了与当前 Pull Request相关的提交。标签上的数字为提交的次数。每个提交右侧的哈希值可以连接到该提交的代码。</p>
+<h2 id="files-changed"><a class="markdownIt-Anchor" href="#files-changed"></a> Files Changed</h2>
+<p>Files Changed 标签页中可以查看当前 Pull Request 更改的文件内容以及前后差别。标签上的数字表示新建及被更改的文件数。<br />
+默认情况下系统会将空格的不同也高亮显示，所以在空格有改动的情况下会难以阅读。这时只要在 URL 的末尾添加“?w=1”就可以不显示空格的差别。<br />
+将鼠标指针放到被更改行行号的左侧，我们会看到一个加号。点击这个加号可以在代码中插入评论。这样，评论是针对哪行代码的就一目了然了。这个插入评论的功能让针对代码的讨论变得十分顺畅。特别是在多人协作的软件开发中，这个功能更加不可或缺。</p>
+<h1 id="wiki"><a class="markdownIt-Anchor" href="#wiki"></a> Wiki</h1>
+<p>Wiki 是一个使用简单的语法就能编写文档的功能。所有有权限的人都可以对文章进行修改，所以比较适合多人共同编写文章的情况。创建、编辑文档时不必另外启动软件，用起来十分方便，非常适合用来针对更新频率较高的软件进行文档等信息方面的汇总。<br />
+与 Issue 和 Pull Request 相同，Wiki 也支持 GFM 语法，所以可以轻松创建表现力丰富的文档。点击页面右上角的 New Page 按钮便可以创建新的 Wiki 页。<br />
+Wiki 功能本身的数据也在 Git 中进行管理。点击 Clone URL 按钮可以将当前 Wiki 的 Git 仓库 URL 复制到剪贴板中。用户能够通过 clone操作获取 Wiki 仓库，然后在本地创建、编辑页面，进行提交再 push，便可以完成对 Wiki 的创建及编辑工作。</p>
+<h2 id="pages"><a class="markdownIt-Anchor" href="#pages"></a> Pages</h2>
+<p>在 Pages 标签页中可以列表查看 Wiki 页面</p>
+<h2 id="history"><a class="markdownIt-Anchor" href="#history"></a> History</h2>
+<p>在 History 标签页中可以查看 Wiki 的修改历史记录。<br />
+由于 Wiki 功能也有历史记录可查，所以软件开发者可以放心地投入到工作中去。将 Wiki 仓库 clone 到本地，就可以不借助浏览器，直接用自己熟悉的编辑器进行编辑，十分人性化。<br />
+一般情况下，Wiki 中记载着软件相关的 FAQ、文档、代码示例及解说等信息。各位在使用 GitHub 上开发的软件前，建议先查看一遍Wiki。<br />
+所有 Wiki 页面都可以显示侧边栏。做法很简单，只要创建名为“_sidebar”的页面即可。_sidebar 页不会显示在 Pages 的页面一览中。在编辑各页面时页面下部会附加 Sidebar 段，用户可以在这里编辑侧边栏的内容。</p>
+<h1 id="settings"><a class="markdownIt-Anchor" href="#settings"></a> Settings</h1>
+<p>如果有对仓库更改的权限就可以看到仓库的设置页面。<br />
+设置页面可以修改仓库名称。</p>
+<h2 id="features"><a class="markdownIt-Anchor" href="#features"></a> Features</h2>
+<p>这里可以更改 Wiki 和 Issue 的相关设置。如果想关闭某些功能，只要取消已勾选的相应复选框，该功能就会从菜单中移除，无法使用。</p>
+<h2 id="github-pages"><a class="markdownIt-Anchor" href="#github-pages"></a> Github Pages</h2>
+<p><a target="_blank" rel="noopener" href="https://pages.github.com/">Github Pages</a>能够从仓库创建一个网页。默认该功能是不开启的，开启时可以选择基于哪个分支来创建网页。<br />
+默认的提供的域名是：<code>https://账户名称.github.io/仓库名称/</code>，也可以自定义域名。<br />
+访问该页面时会首先尝试访问该仓库下的<code>index.html</code>文件，如果没有的话会访问<code>README.md</code>文件。<br />
+唯一的特例是，仓库名为<code>账户名称.github.io</code>，从这个仓库创建网页时，Github默认提供的域名是<code>https://账户名称.github.io/</code>。</p>
+<h2 id="danger-zone"><a class="markdownIt-Anchor" href="#danger-zone"></a> Danger Zone</h2>
+<p>这里都是一些需要格外留意的设置。在这里，用户可以将仓库改为私有或是变更仓库所有者，甚至删除仓库本身。这些设置有可能影响到其他人，在变更时一定要谨慎。</p>
+<h1 id="其他功能"><a class="markdownIt-Anchor" href="#其他功能"></a> 其他功能</h1>
+<h2 id="github-jobs"><a class="markdownIt-Anchor" href="#github-jobs"></a> GitHub Jobs</h2>
+<p><a target="_blank" rel="noopener" href="https://jobs.github.com/">Github Jobs</a>是面向全世界招聘程序员的职位公告板<br />
+450 美元可以发布 30 天招聘公告，希望在世界范围内招聘优秀程序员的公司不妨尝试一下这个功能。<br />
+想到海外就职的程序员也可以多看一看这里。</p>
+<h2 id="github-enterprise"><a class="markdownIt-Anchor" href="#github-enterprise"></a> GitHub Enterprise</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/pricing">GitHub Enterprise</a>专为那些无法将源代码放到公司之外的企业设计。这项服务可以以虚拟机的形式提供 GitHub。申请后可以先试用 45 天，所以企业内部在探讨是否导入时可以实际使用一下再决定。<br />
+导入的最大阻碍其实是成本。这项服务主要面向 20 人以上的组织，如果规模不足，建议还是使用普通的 GitHub。详细内容请参照 GitHub Enterprise 的页面。<br />
+考虑到实体机的运行成本及维护成本，除非是规模相当大的企业，否则还是不建议使用 GitHub Enterprise。</p>
+<h2 id="github-api"><a class="markdownIt-Anchor" href="#github-api"></a> Github API</h2>
+<p>GitHub 面向开发者公开了 API。特别是在开发面向程序员的 Web服务时，能与 GitHub 集成绝对有利无弊。详细内容请参照<a target="_blank" rel="noopener" href="https://docs.github.com/en/developers">官方文档</a></p>
+<h1 id="推送至远程仓库"><a class="markdownIt-Anchor" href="#推送至远程仓库"></a> 推送至远程仓库</h1>
+<h2 id="添加远程仓库"><a class="markdownIt-Anchor" href="#添加远程仓库"></a> 添加远程仓库</h2>
+<p>在 GitHub 上创建的仓库路径为“git@github.com:用户名/仓库名.git”。<br />
+使用<code>git remote add</code>命令将Github上创建的仓库设置成本地仓库的远程仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:github-book/git-tutorial.git</span><br></pre></td></tr></table></figure>
+<p>这里<code>origin</code>是Git软件给远程仓库起的名字，也可以改成别的。后面是远程仓库的地址。<br />
+成功后使用<code>git remote -v</code>命令可以看到与本地仓库关联的远程仓库地址。<br />
+如果想删除本地仓库与远程仓库之间的关联，可以使用<code>git remote remove 仓库名</code>，例如<code>git remote remove origin</code></p>
+<h2 id="推送至master分支"><a class="markdownIt-Anchor" href="#推送至master分支"></a> 推送至master分支</h2>
+<p>使用<code>git push</code>命令，可以将本地仓库的当前分支推送给远程仓库的某个分支。<br />
+假设本地仓库的当前分支是master分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br><span class="line">Counting objects: 20, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (10/10), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (20/20), 1.60 KiB, <span class="keyword">done</span>.</span><br><span class="line">Total 20 (delta 3), reused 0 (delta 0)</span><br><span class="line">To git@github.com:github-book/git-tutorial.git</span><br><span class="line">*[new branch] master -&gt; master</span><br><span class="line">Branch master <span class="built_in">set</span> up to track remote branch master from origin.</span><br></pre></td></tr></table></figure>
+<p><code>git push -u origin master</code>命令将当前master分支的内容推送给名为origin的远程仓库的master分支。<code>-u</code>参数可以在推送的同时，将 origin 仓库的 master 分支设置为本地仓库当前分支的 upstream（上游）。添加了这个参数，将来运行 git pull命令从远程仓库获取内容时，本地仓库的这个分支就可以直接从 origin 的 master 分支获取内容，省去了另外添加参数的麻烦。<br />
+执行成功后，本地仓库的master分支的内容就被推送到Github上的远程仓库的master分支。在Github上也可以确认这一点。</p>
+<h2 id="推送至master以外的分支"><a class="markdownIt-Anchor" href="#推送至master以外的分支"></a> 推送至master以外的分支</h2>
+<p>除了 master 分支之外，远程仓库也可以创建其他分支。举个例子，我们在本地仓库中创建 feature-D 分支，并将它以同名形式 push 至远程仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b feature-D</span><br><span class="line">Switched to a new branch <span class="string">&#x27;feature-D&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>我们在本地仓库中创建了 feature-D 分支，现在将它 push 给远程仓库并保持分支名称不变。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin feature-D</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To git@github.com:github-book/git-tutorial.git</span><br><span class="line">*[new branch] feature-D -&gt; feature-D</span><br><span class="line">Branch feature-D <span class="built_in">set</span> up to track remote branch feature-D from origin.</span><br></pre></td></tr></table></figure>
+<p>现在，在远程仓库的 GitHub 页面就可以查看到 feature-D 分支了。</p>
+<h1 id="从远程仓库获取"><a class="markdownIt-Anchor" href="#从远程仓库获取"></a> 从远程仓库获取</h1>
+<p>我们已经向Github上建立的远程仓库push了feature-D分支，任何能够访问远程仓库的人都可以获取feature-D分支并加以修改。<br />
+现在假设我们是一个新的共同开发者，需要从远程仓库获取内容到本地来进行开发。</p>
+<h2 id="获取远程仓库"><a class="markdownIt-Anchor" href="#获取远程仓库"></a> 获取远程仓库</h2>
+<h3 id="获取远程仓库-2"><a class="markdownIt-Anchor" href="#获取远程仓库-2"></a> 获取远程仓库</h3>
+<p>首先切换到其他目录下，使用<code>git clone</code>命令将Github上的仓库clone到本地。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:github-book/git-tutorial.git</span><br><span class="line">Cloning into <span class="string">&#x27;git-tutorial&#x27;</span>...</span><br><span class="line">remote: Counting objects: 20, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (7/7), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 20 (delta 3), reused 20 (delta 3)</span><br><span class="line">Receiving objects: 100% (20/20), <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (3/3), <span class="keyword">done</span>.</span><br><span class="line">$ <span class="built_in">cd</span> git-tutorial</span><br></pre></td></tr></table></figure>
+<p>执行 git clone命令后我们会默认处于 master 分支下，同时系统会自动将 origin 设置成该远程仓库的标识符。也就是说，当前本地仓库的 master 分支与 GitHub 端远程仓库（origin）的 master 分支在内容上是完全相同的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">*master</span><br><span class="line">remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">remotes/origin/feature-D</span><br><span class="line">remotes/origin/master</span><br></pre></td></tr></table></figure>
+<p>我们用 <code>git branch -a</code>命令查看当前分支的相关信息。添加 <code>-a</code>参数可以同时显示本地仓库和远程仓库的分支信息。结果中显示了 remotes/origin/feature-D，证明我们的远程仓库中已经有了 feature-D 分支。</p>
+<h3 id="获取远程的feature-d分支"><a class="markdownIt-Anchor" href="#获取远程的feature-d分支"></a> 获取远程的feature-D分支</h3>
+<p>我们试着将 feature-D 分支获取至本地仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b feature-D origin/feature-D</span><br><span class="line">Branch feature-D <span class="built_in">set</span> up to track remote branch feature-D from origin.</span><br><span class="line">Switched to a new branch <span class="string">&#x27;feature-D&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>-b 参数的后面是本地仓库中新建分支的名称。为了便于理解，我们仍将其命名为 feature-D，让它与远程仓库的对应分支保持同名。新建分支名称后面是获取来源的分支名称。例子中指定了 origin/feature-D，就是说以名为 origin 的仓库（这里指 GitHub 端的仓库）的 feature-D 分支为来源，在本地仓库中创建 feature-D 分支。</p>
+<h3 id="向本地的feature-d分支提交更改"><a class="markdownIt-Anchor" href="#向本地的feature-d分支提交更改"></a> 向本地的feature-D分支提交更改</h3>
+<p>现在假定我们是另一名开发者，要做一个新的提交。在 <a target="_blank" rel="noopener" href="http://README.md">README.md</a> 文件中添加一行文字，查看更改。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br><span class="line">diff --git a/README.md b/README.md</span><br><span class="line">index af647fd..30378c9 100644</span><br><span class="line">--- a/README.md</span><br><span class="line">+++ b/README.md</span><br><span class="line">@@ -3,3 +3,4 @@</span><br><span class="line">-feature-A</span><br><span class="line">-fix-B</span><br><span class="line">-feature-C</span><br><span class="line">+-feature-D</span><br></pre></td></tr></table></figure>
+<p>按照之前学过的方式提交即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -am <span class="string">&quot;Add feature-D&quot;</span></span><br><span class="line">[feature-D ed9721e] Add feature-D</span><br><span class="line">1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+<p>现在来推送 feature-D 分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">Counting objects: 5, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (2/2), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (3/3), 281 bytes, <span class="keyword">done</span>.</span><br><span class="line">Total 3 (delta 1), reused 0 (delta 0)</span><br><span class="line">To git@github.com:github-book/git-tutorial.git</span><br><span class="line">ca0f98b..ed9721e feature-D -&gt; feature-D</span><br></pre></td></tr></table></figure>
+<p>从远程仓库获取 feature-D 分支，在本地仓库中提交更改，再将feature-D 分支推送回远程仓库，通过这一系列操作，就可以与其他开发者相互合作，共同培育 feature-D 分支，实现某些功能。</p>
+<h2 id="获取最新的远程仓库分支"><a class="markdownIt-Anchor" href="#获取最新的远程仓库分支"></a> 获取最新的远程仓库分支</h2>
+<p>现在我们放下刚刚操作的目录，回到原先的那个目录下。这边的本地仓库中只创建了 feature-D 分支，并没有在 feature-D 分支中进行任何提交。然而远程仓库的 feature-D 分支中已经有了我们刚刚推送的提交。这时我们就可以使用 git pull 命令，将本地的 feature-D 分支更新到最新状态。当前分支为 feature-D 分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin feature-D</span><br><span class="line">remote: Counting objects: 5, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (1/1), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 3 (delta 1), reused 3 (delta 1)</span><br><span class="line">Unpacking objects: 100% (3/3), <span class="keyword">done</span>.</span><br><span class="line">From github.com:github-book/git-tutorial</span><br><span class="line">*branch feature-D -&gt; FETCH_HEAD</span><br><span class="line">First, rewinding head to replay your work on top of it...</span><br><span class="line">Fast-forwarded feature-D to ed9721e686f8c588e55ec6b8071b669f411486b8.</span><br></pre></td></tr></table></figure>
+<p>GitHub 端远程仓库中的 feature-D 分支是最新状态，所以本地仓库中的 feature-D 分支就得到了更新。今后只需要像平常一样在本地进行提交再 push 给远程仓库，就可以与其他开发者同时在同一个分支中进行作业，不断给 feature-D 增加新功能。<br />
+如果两人同时修改了同一部分的源代码，push 时就很容易发生冲突。所以多名开发者在同一个分支中进行作业时，为减少冲突情况的发生，建议更频繁地进行 push 和 pull 操作。</p>
+<h2 id="深入理解git的资料"><a class="markdownIt-Anchor" href="#深入理解git的资料"></a> 深入理解Git的资料</h2>
+<p>在实际的开发现场，往往要用到更加高级的 Git 操作。这里，我们向各位介绍一些参考资料，能够帮助各位深入理解 Git 的相关知识。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">Pro Git</a><br />
+Pro Git 由就职于 GitHub 公司的 Scott ChaconB 执笔，是一部零基础的 Git 学习资料。基于知识共享的 CC BY-NC-SA 3.0 许可协议，各位可以免费阅读到包括简体中文在内的各国语言版本。</li>
+<li><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">LearnGitBranching</a><br />
+LearnGitBranching是学习 Git 基本操作的网站（图 4.9）。注重树形结构的学习方式非常适合初学者使用，点击右下角的地球标志还可切换各种语言进行学习。</li>
+<li><a target="_blank" rel="noopener" href="http://try.github.io/">tryGit</a><br />
+通过 tryGit 我们可以在 Web 上一边操作一边学习 Git 的基本功能。很可惜该教程只有英文版。</li>
+</ol>
+<p>git status：始终是一个好主意，此命令向您显示您所在的分支，工作或暂存目录中的文件以及其他任何重要信息。<br />
+git remote -v：显示相关的远程存储库及其存储的名称，例如origin。<br />
+git remote add origin <url>：添加一个远程服务器，以便您可以与其他人在新初始化的存储库上进行协作。<br />
+git push：将所有本地分支提交上载到远程。<br />
+git push -u origin master：第一次推送分支时，这种类型的推送将配置远程数据库与本地存储库之间的关系，以便您将来可以使用git pull并且git push没有其他选项。<br />
+git branch：这显示了本地存储库中的现有分支。您还可以git branch [banch-name]用于从当前位置创建分支，或git branch --all查看所有分支，包括计算机上的本地分支以及从最后一个git pull或git fetch从远程存储的远程跟踪分支。<br />
+git pull：用来自GitHub上相应远程分支的所有新提交更新您当前的本地工作分支。git pull是的组合git fetch和git merge。<br />
+git status：始终是一个好主意，此命令向您显示您所在的分支，工作或暂存目录中的文件以及其他任何重要信息。<br />
+git checkout [branch-name]：切换到指定的分支并更新工作目录。<br />
+git commit -m “descriptive message”：在版本历史记录中永久记录文件快照。<br />
+git push：将所有本地分支提交上载到远程。</p>
+<p>如果线上的分支有超出了本地的分支，此时不能push，必须先pull。<br />
+pull操作同时会合并本地结点，首先自动合并，如果自动合并失败例如修改了同一行代码，就会提示要求手动解决冲突，即手动编辑文件使之变为合并后的结果。<br />
+完成后本地分支完全包含线上分支，此时就可以push了</p>
+<h1 id="尝试pull-request"><a class="markdownIt-Anchor" href="#尝试pull-request"></a> 尝试Pull Request</h1>
+<p>按部就班地创建 GitHub 账号并公开自己的源代码并不是什么难事。不过，刚刚接触 GitHub 的人往往不会或不敢使用 Pull Request 功能。<br />
+Pull Request 是社会化编程的象征。GitHub 创造的这一功能，可以说给开源开发世界带来了一场革命。不会用这个功能，就等于不会用GitHub。<br />
+不过，掌握 Pull Request 的难度确实较高，刚刚接触 GitHub 的人在发送 Pull Request 时，往往会遇到找不到对方的项目或者不知道该如何发送等问题。<br />
+所以，本书将为各位创造一个亲自动手发送 Pull Request 的机会，请各位不要错过。</p>
+<h2 id="pull-request的概要"><a class="markdownIt-Anchor" href="#pull-request的概要"></a> Pull Request的概要</h2>
+<p>Pull Request 是自己修改源代码后，请求对方仓库采纳该修改时采取的一种行为。在网络上也常常被简称为 PR。<br />
+下面来看看具体的例子。现在假设我们在使用 GitHub 上的一款开源软件。<br />
+在使用这款软件的过程中，我们偶然间发现了 BUG。为了继续使用软件，我们手动修复了这个 BUG。如果我们修改的这段代码能被该软件的开发仓库采纳，今后与我们同样使用这款软件的人就不会再遇到这个 BUG。为此，我们要第一时间发送 Pull Request。<br />
+在 GitHub 上发送 Pull Request 后，接收方的仓库会创建一个附带源代码的 Issue，我们在这个 Issue 中记录详细内容。这就是 Pull Request。<br />
+发送过去的 Pull Request 是否被采纳，要由接收方仓库的管理者进行判断。一般只要代码没有问题，对方都会采纳。如果有问题，我们会收到评论。<br />
+只要 Pull Request 被顺利采纳，我们就会成为这个项目的 Contributor（贡献者），我们编写的这段代码也将被全世界的人使用。这正是社会化编程和开源开发的一大乐趣。</p>
+<h2 id="发送-pull-request-的流程"><a class="markdownIt-Anchor" href="#发送-pull-request-的流程"></a> 发送 Pull Request 的流程</h2>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200925110926327_22667.png" alt="" width="378" /></p>
+<ol>
+<li>Fork：首先打开对方仓库页面，点击Fork按钮拷贝一份来创建自己的仓库。</li>
+<li>Clone：在Git中使用<code>git clone</code>命令将自己的远程仓库克隆一份到本地</li>
+<li>创建新的特性分支：查看一下<code>clone</code>出的仓库的分支，用<code>git branch -a</code>命令找到想要进一步开发的分支。然后使用<code>git checkout -b new-branch-name start-branch-name</code>命令创建一个新的特性分支，因为在 GitHub 上发送 Pull Request 时，一般都是发送特性分支。这样一来，Pull Request 就拥有了更明确的特性（主题）。让对方了解自己修改代码的意图，有助于提高代码审查的效率。</li>
+<li>开发：在新的特性分支下进行开发，然后提交修改至本地仓库。</li>
+<li>Push：要从 GitHub 发送 Pull Request，GitHub 端的仓库中必须有一个包含了修改后代码的分支。所以我们把本地特性分支<code>push</code>到Github端我们自己的仓库，例如<code>git push origin your-branch-name</code>。</li>
+<li>检查：登录Github上自己的仓库，切换到新创建的特性分支，点击Compare查看一下更改是否正确</li>
+<li>提交PR：确认无误后，Create Pull Request，在在评论栏中简明扼要地描述本次进行 Pull Request 的理由。确认没有问题后，点击 Send pull request 按钮。这样一来，Pull Request 的目标仓库中就会新建 Pull Request 和 Issue，同时该仓库的管理者会接到通知。</li>
+</ol>
+<h2 id="让pull-request更加有效的方法"><a class="markdownIt-Anchor" href="#让pull-request更加有效的方法"></a> 让Pull Request更加有效的方法</h2>
+<h3 id="在开发过程中发送-pull-request-进行讨论"><a class="markdownIt-Anchor" href="#在开发过程中发送-pull-request-进行讨论"></a> 在开发过程中发送 Pull Request 进行讨论</h3>
+<p>在软件的设计与实现过程中如果想发起讨论，Pull Request 是个非常好的契机。我们虽然可以像本次示例一样等代码完成后再发送 Pull Request，但在实际开发过程中，这样做很可能导致一个功能在完成后才收到设计或实现方面的指正，从而使代码需要大幅更改或重新实现。<br />
+在 GitHub 上，我们可以尽早创建 Pull Request，从审查中获得反馈，让大家在设计与实现方面思路一致，借此逐渐提高代码质量。这个方法在团队开发大型项目时尤其有效，已将 GitHub 运用到实际开发中的团队请务必试一试。<br />
+这个方法执行起来很简单。只要在想发起讨论时发送 Pull Request 即可，不必等代码最终完成。即便某个功能尚在开发之中，只要在 Pull Request 中附带一段简单代码让大家有个大体印象，就能获取不少反馈。如果在 Pull Request 中再加入直观易懂的 Tasklist（请参照第 5 章的“Tasklist 语法”），就能很清楚反映出哪些功能已经实现，将来要做哪些工作。这不但能加快审查者的工作效率，还能作为自己的备忘录使用。<br />
+从反馈中，我们不但能获得对自己所提议的新功能的支持和相关改善意见，有时还会被人指出自己没注意到的失误，或者准备编写的代码与其他成员重复等。这样一来，我们最终所完成的代码的质量一定会比原先高出许多。<br />
+向发送过 Pull Request 的分支添加提交时，该提交会自动添加至已发送的 Pull Request 中。<br />
+这一方法要求尽早发送 Pull Request，越早效果越明显。另外还有一件事要记住，就是千万不要在 Pull Request 中添加无关的修改。处理与主题无关的作业请另外创建分支，不然会让原本清晰的讨论变得一团糟。</p>
+<h3 id="明确标出正在开发过程中"><a class="markdownIt-Anchor" href="#明确标出正在开发过程中"></a> 明确标出正在开发过程中</h3>
+<p>为防止开发到一半的 Pull Request 被误合并，一般都会像图 6.7 中所示的那样在标题前加上“[WIP]”字样。WIP 是 Work In Progress 的简写，表示仍在开发过程中。等所有功能都实现之后，再消去这个前缀。<br />
+这种在代码库中边讨论边开发的开发流程，要比以往在完成之后审查再反馈的流程高效得多。这个方法已经被应用到众多的软件开发现场。通过这一方法，开发者可以体验 GitHub 上独有的速度感。各位请务必加以实践。</p>
+<h3 id="不进行-fork-直接从分支发送-pull-request"><a class="markdownIt-Anchor" href="#不进行-fork-直接从分支发送-pull-request"></a> 不进行 Fork 直接从分支发送 Pull Request</h3>
+<p>一般说来，在 GitHub 上修改对方的代码时，需要先将仓库 Fork 到本地，然后再修改代码，发送 Pull Request。但是，如果用户对该仓库有编辑权限，则可以直接创建分支，从分支发送 Pull Request。利用这一设计，团队开发时不妨为每一名成员赋予编辑权限，免去 Fork 仓库的麻烦。这样，成员在有需要时就可以创建自己的分支，然后直接向 master分支等发送 Pull Request。</p>
+<h2 id="仓库的维护"><a class="markdownIt-Anchor" href="#仓库的维护"></a> 仓库的维护</h2>
+<p>Fork 或 clone 来的仓库，一旦放置不管就会离最新的源代码越来越远。如果不以最新的源代码为基础进行开发，劳神费力地编写代码也很可能是白费力气。下面就让我们学习如何让仓库保持最新状态。<br />
+通常来说 clone 来的仓库实际上与原仓库并没有任何关系。所以我们需要将原仓库设置为远程仓库，从该仓库获取（fetch）数据与本地仓库进行合并（merge），让本地仓库的源代码保持最新状态（图 6.8）。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200925213948350_21680.png" alt="" width="524" /></p>
+<h3 id="仓库的fork与clone"><a class="markdownIt-Anchor" href="#仓库的fork与clone"></a> 仓库的Fork与Clone</h3>
+<p>将 octocat/Spoon-Knife 作为原仓库，在 GitHub 上进行 Fork，然后 clone。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:hirocastest/Spoon-Knife.git</span><br><span class="line">Cloning into <span class="string">&#x27;Spoon-Knife&#x27;</span>...</span><br><span class="line">remote: Counting objects: 24, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (21/21), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 24 (delta 7), reused 17 (delta 1)</span><br><span class="line">Receiving objects: 100% (24/24), 74.36 KiB | 68 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (7/7), <span class="keyword">done</span>.</span><br><span class="line">$ <span class="built_in">cd</span> Spoon-Knife</span><br></pre></td></tr></table></figure>
+<h3 id="给原仓库设置名称"><a class="markdownIt-Anchor" href="#给原仓库设置名称"></a> 给原仓库设置名称</h3>
+<p>我们给原仓库设置 upstream 的名称，将其作为远程仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add upstream git://github.com/octocat/Spoon-Knife.git</span><br></pre></td></tr></table></figure>
+<p>今后，我们的这个仓库将以 upstream 作为原仓库的标识符。这个环境下只需要设定一次。</p>
+<h3 id="获取最新数据"><a class="markdownIt-Anchor" href="#获取最新数据"></a> 获取最新数据</h3>
+<p>下面我们从远程仓库实际获取（fetch）最新源代码，与自己仓库的分支进行合并。要让仓库维持最新状态，只需要重复这一工作即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br><span class="line">From git://github.com/octocat/Spoon-Knife</span><br><span class="line">* [new branch] master -&gt; upstream/master</span><br><span class="line">$ git merge upstream/master</span><br><span class="line">Already up-to-date.</span><br></pre></td></tr></table></figure>
+<p>我们通过 git fetch 命令获取最新的数据，将 upstream/master 分支与当前分支（master）合并。虽然本次示例没有可以合并的内容，但这一操作确实可以将最新的源代码合并至当前分支。<br />
+这样一来，当前分支（master）就获得了最新的源代码。各位在创建特性分支，编辑源代码之前，建议先将仓库更新到这一状态。一般情况下 master 分支都会获取最新代码，很少需要 Fork 的开发者亲自进行修正。</p>
+<h1 id="接收pull-request"><a class="markdownIt-Anchor" href="#接收pull-request"></a> 接收Pull Request</h1>
+<p>发送过 Pull Request 的人不多，接收过 Pull Request 的人就更少了。下面让我们来学习接收 Pull Request 时的相关知识，以备不时之需。</p>
+<h2 id="采纳-pull-request-的方法"><a class="markdownIt-Anchor" href="#采纳-pull-request-的方法"></a> 采纳 Pull Request 的方法</h2>
+<p>接收到 Pull Request 后，会如图 7.1 中所示，在仓库的 Pull Request标签页中显示别人发送过来的 Pull Request 的一览表。现在让我们点击Pull Request 查看详细内容。<br />
+详细页面与我们发送 Pull Request 时的页面大致相同。点击 Mergepull request 按钮（图 7.2），Pull Request 的内容便会自动合并至仓库。在采纳之前，请尽量将接收到的 Pull Request 拿到本地开发环境中进行检查，确认是否能够正常运行以及代码是否安全。或者用将要在第 8 章中介绍的 Jenkins 等持续集成工具进行自动测试，保证新代码不破坏原有功能之后，再合并进仓库。<br />
+这里我们为各位讲解在本地开发环境中检查接收到的 Pull Request的流程。</p>
+<h2 id="采纳-pull-request-前的准备"><a class="markdownIt-Anchor" href="#采纳-pull-request-前的准备"></a> 采纳 Pull Request 前的准备</h2>
+<p>除确认 Pull Request 送来的代码是否运行正常外，各位还请在代码审查上也多花些心思。GitHub 上可以快速高效地审查代码。下面我们就来介绍这些功能。<br />
+学会使用各种各样的功能进行代码审查，要比以往使用工具的审查轻松很多。如果团队中所有人都养成时常审查自己代码的习惯，其叠加效果将不可估量。</p>
+<h3 id="代码审查"><a class="markdownIt-Anchor" href="#代码审查"></a> 代码审查</h3>
+<p>如图 7.3 所示，在 GitHub 上可以对 Pull Request 的具体的某行代码进行评论。这让代码审查变得十分高效。<br />
+发出评论之后相关人员会立刻接到 Notifications，无论是 PullRequest 的发送方还是接收方，都能迅速反馈。由于 GitHub 的便捷性和审查的简易性，让很多人离开 GitHub 之后在工作中倍感压力。</p>
+<h3 id="在本地环境中反映pull-request的内容"><a class="markdownIt-Anchor" href="#在本地环境中反映pull-request的内容"></a> 在本地环境中反映Pull Request的内容</h3>
+<p>下面我们来讲解收到 Pull Request 后在本地开发环境中进行实际检查的流程。在本示例中，Pull Request 接收方的用户名为 ituring，发送方的用户名为“PR 发送者”。</p>
+<h4 id="将接收方的本地仓库更新至最新状态"><a class="markdownIt-Anchor" href="#将接收方的本地仓库更新至最新状态"></a> 将接收方的本地仓库更新至最新状态</h4>
+<p>首先，将 Pull Request 接收方的仓库 clone 到本地开发环境中（图7.8 左侧）。如果已经 clone 过，那么请进行 pull 等操作更新至最新状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:ituring/first-pr.git</span><br><span class="line">Cloning into <span class="string">&#x27;first-pr&#x27;</span>...</span><br><span class="line">remote: Counting objects: 34, <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (26/26), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 34 (delta 10), reused 15 (delta 4)</span><br><span class="line">Receiving objects: 100% (34/34), 89.48 KiB | 112 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (10/10), <span class="keyword">done</span>.</span><br><span class="line">$ <span class="built_in">cd</span> first-pr</span><br></pre></td></tr></table></figure>
+<h4 id="获取发送方的远程仓库"><a class="markdownIt-Anchor" href="#获取发送方的远程仓库"></a> 获取发送方的远程仓库</h4>
+<p>将 Pull Request 发送方的仓库设置为本地仓库的远程仓库，获取发送方仓库的数据。在本示例中，我们将图 7.8 右上的仓库设置为远程仓库，进行 fetch。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add PR发送者 git@github.com:PR发送者/first-pr.git</span><br><span class="line">$ git fetch PR发送者</span><br><span class="line">省略</span><br><span class="line">From github.com:PR发送者/first-pr</span><br><span class="line">* [new branch] gh-pages -&gt; PR发送者/gh-pages</span><br><span class="line">* [new branch] master -&gt; PR发送者/master</span><br><span class="line">* [new branch] work -&gt; PR发送者/work</span><br></pre></td></tr></table></figure>
+<p>现在我们获取了 Pull Request 发送方仓库以及分支的数据（PR 发送者 /work）。</p>
+<h4 id="创建用于检查的分支"><a class="markdownIt-Anchor" href="#创建用于检查的分支"></a> 创建用于检查的分支</h4>
+<p>前面我们只获取了远程仓库的数据，这些数据尚未反映在任何一个分支中。因此我们需要创建一个分支，用来模拟采纳 Pull Request 后的状态。由于这是我们第一个 Pull Request，分支名就叫 pr1。这一步相当于图 7.9 左侧箭头（checkout）代表的操作。现在 gh-pages 与 pr1 分支的内容完全相同。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926124803093_454.png" alt="" width="277" /></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b pr1</span><br><span class="line">Switched to a new branch <span class="string">&#x27;pr1&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="合并"><a class="markdownIt-Anchor" href="#合并"></a> 合并</h4>
+<p>下面要将已经 fetch 完毕的“PR 发送者 /work”的修改内容与 pr1 分支进行合并。也就是图 7.9 下侧箭头（merge）代表的操作。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge PR发送者/work</span><br><span class="line">Updating cc62779..243f28d</span><br><span class="line">Fast-forward</span><br><span class="line">index.html | 2 ++</span><br><span class="line">1 file changed, 2 insertions(+)</span><br></pre></td></tr></table></figure>
+<p>这样一来，pr1 分支中就加入了“PR 发送者 /work”分支的修改内容。本示例中我们只修改了 index.html 文件，所以检查一下 index.html有没有显示错误即可。在实际开发中，各位需要通过自动测试等手段检查软件是否能正常运行。</p>
+<h4 id="删除分支"><a class="markdownIt-Anchor" href="#删除分支"></a> 删除分支</h4>
+<p>检查结束后 pr1 分支就没用了，可以直接删除。我们切换至 pr1 之<br />
+外的分支，运行下面的代码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D pr1</span><br><span class="line">Deleted branch pr1 (was 243f28d).</span><br></pre></td></tr></table></figure>
+<h4 id="如何提升代码管理技术"><a class="markdownIt-Anchor" href="#如何提升代码管理技术"></a> 如何提升代码管理技术</h4>
+<p>如果能灵活运用分支的创建及合并，便可以在确保安全性的前提下并行开发多个功能。这一技术在软件开发现场非常有用，而且团队规模越大效果越好。<br />
+笔者认为掌握这一技术的最佳方法就是积累经验。在 GitHub上，可以通过自己给自己的不同分支发送 Pull Request 进行练习。<br />
+想学会安全又专业的源代码管理，不妨先多多尝试 Git 与GitHub。</p>
+<h2 id="采纳pull-request"><a class="markdownIt-Anchor" href="#采纳pull-request"></a> 采纳Pull Request</h2>
+<p>完成上述内容后，如果 Pull Request 的内容没有问题，大可打开浏览器找出相应的 Pull Request 页面，点击 Merge pull request 按钮，随后Pull Request 的内容会自动合并至仓库（图 7.10）。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926125548741_20593.png" alt="" width="361" /><br />
+不过，由于我们已经在本地构筑了相同的环境，只要通过 CLI 进行合并操作再 push 至 GitHub，Pull Request 中就会反映出 Pull Request 被采纳后的状态（图 7.11）。这个状态对应到本示例中就是“PR 发送者 /work”分支合并到 gh-pages 分支。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926125603203_18000.png" alt="" width="318" /></p>
+<h3 id="合并到主分支"><a class="markdownIt-Anchor" href="#合并到主分支"></a> 合并到主分支</h3>
+<p>首先，我们切换至 gh-pages 分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout gh-pages</span><br><span class="line">Switched to branch <span class="string">&#x27;gh-pages&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>然后合并“PR 发送者 /work”分支的内容。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge PR送信者/work</span><br><span class="line">Updating cc62779..243f28d</span><br><span class="line">Fast-forward</span><br><span class="line">index.html | 2 ++</span><br><span class="line">1 file changed, 2 insertions(+)</span><br></pre></td></tr></table></figure>
+<p>这样一来“PR 发送者 /work”分支就合并到了 gh-pages 分支中。</p>
+<h3 id="push修改内容"><a class="markdownIt-Anchor" href="#push修改内容"></a> push修改内容</h3>
+<p>现在只剩下 push 一步了，不过为保险起见，我们先查看本地与GitHub 端仓库内代码的差别。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git diff origin/gh-pages</span><br><span class="line">diff --git a/index.html b/index.html</span><br><span class="line">index f2034b3..91b8ecb 100644</span><br><span class="line">--- a/index.html</span><br><span class="line">+++ b/index.html</span><br><span class="line">@@ -39,6 +39,8 @@</span><br><span class="line">&lt;p&gt;请写明这是对本书的实践或描述对本书的感想并发送Pull Request。&lt;/p&gt;</span><br><span class="line">+&lt;p class=<span class="string">&quot;impression&quot;</span>&gt;这本书读着很有趣。（@HIROCASTER）&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>确认没有目的之外的差别后，进行 push。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">省略</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To git@github.com:ituring/first-pr.git</span><br><span class="line">cc62779..243f28d local_gh-pages -&gt; gh-pages</span><br></pre></td></tr></table></figure>
+<p>用这种方法处理后，仓库的 Pull Request 会自动从 Open 状态变为 Close 状态（图 7.12）。现在我们可以去查看网页，已采纳的源代码应该已经反映出来了。</p>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<p>本章中我们讲解了如何安全地接收 Pull Request。<br />
+像本次示例中这种只有几行代码的 Pull Request，大可直接打开GitHub 网页点击合并，但在实际的开发现场中，接收到的 Pull Request往往会更加复杂，有时甚至与多个文件挂钩。所以各位要清楚本次示例只是为练习而准备，是 Pull Request 最简单的情况。<br />
+作为仓库的维护者要时刻记得，无法运行的代码绝不可以合入仓库，否则会失去团队对你的信任。<br />
+另外还要注意，不要发布那些无法运行的、没有通过测试的、有语法错误的源代码。</p>
+<h1 id="使用-github的开发流程"><a class="markdownIt-Anchor" href="#使用-github的开发流程"></a> 使用 Github的开发流程</h1>
+<p>“开发流程”，是指使用了 Git 与 GitHub 的团队开发所涉及的规则及步骤。接下来的部分我们将会讲解 2 种开发流程，每个流程都有各自不同的特征。在实际开发中究竟要采用哪一种，需要根据现场团队的情况来决定。</p>
+<h2 id="团队使用-github-时的注意事项"><a class="markdownIt-Anchor" href="#团队使用-github-时的注意事项"></a> 团队使用 GitHub 时的注意事项</h2>
+<p>在详细讲解使用 Git 与 GitHub 的开发流程之前，我们先来看一看由软件开发者们组成的团队要想最大限度地发挥出他们的能力需要具备哪些前提条件。</p>
+<h3 id="一切从简"><a class="markdownIt-Anchor" href="#一切从简"></a> 一切从简</h3>
+<p>面向企业发售的开发者工具或协作工具往往拥有十分丰富的功能。某些企业为使用这些丰富功能，会专门为其制定软件开发规则。然而不妨反思一下，我们所处的开发现场真的需要这么多功能和规则吗？<br />
+GitHub 的各项功能都非常简单，就是因为在实际的软件开发中，往往用不到那些复杂度极高的功能。</p>
+<h4 id="项目管理工具与-github-的区别"><a class="markdownIt-Anchor" href="#项目管理工具与-github-的区别"></a> 项目管理工具与 GitHub 的区别</h4>
+<p>比如图 9.1 所示的著名开源项目管理工具 Redmine 的新建问题页，从繁多的可输入项目中我们就可以看出其功能的丰富程度。而且Redmine 还有众多插件，可以为其进一步添加功能。然而 GitHub 的New Issue 页却如图 9.2 所示，非常简单。<br />
+Redmine 等项目管理工具是以管理项目为目的的，势必要考虑管理人员会输入哪些信息，以及需要提醒管理人员输入哪些信息，所以会拥有众多可输入项目。<br />
+而 GitHub 是一款为软件开发者提供支持的工具，与项目管理工具相比，它更注重辅助开发者高速开发高品质软件。要知道，往往事物越是简单，人们实施起来就越快。<br />
+在这里，笔者要向准备使用 GitHub 的各位开发者提个建议。GitHub本身相较于各位正在使用的项目管理工具确实会有功能方面的不足。但是，先不要急着用其他工具来强行弥补，不妨试着大胆放弃这些功能。<br />
+GitHub 的这些简单功能，完全能够应对软件开发中的需要。想让团队最大限度发挥实力，建议剔除复杂规则，只以最简单的规则进行开发。</p>
+<h3 id="不fork仓库的方法"><a class="markdownIt-Anchor" href="#不fork仓库的方法"></a> 不Fork仓库的方法</h3>
+<p>已经将 GitHub 利用到开源软件开发中的读者们想必会以下面的流程进行 Pull Request。</p>
+<ol>
+<li>在 GitHub 上进行 Fork</li>
+<li>将第1步的仓库 clone 至本地开发环境</li>
+<li>在本地环境中创建特性分支</li>
+<li>对特性分支进行代码修改并进行提交</li>
+<li>将特性分支 push 到第1步的仓库中</li>
+<li>在 GitHub 上对 Fork 来源仓库发送 Pull Reques</li>
+</ol>
+<p>在无法给不特定的多数人赋予提交权限的公开软件开发中，这种流程能够防止仓库收到计划之外的提交。<br />
+然而在公司企业的开发中，开发者每天都要见面，要经常互相发送Pull Request，这种流程就显得有些繁琐了。因此，下面我们要介绍一个不需要 Fork 仓库的工作流程。这种方法可以让每一名开发者都掌握着一个本地仓库和一个远程仓库，使整个开发流程变得简单<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926130635116_16832.png" alt="" width="322" /></p>
+<h2 id="github-flow以部署为中心的开发模式"><a class="markdownIt-Anchor" href="#github-flow以部署为中心的开发模式"></a> GitHub Flow——以部署为中心的开发模式</h2>
+<p>下面我们为各位讲解 GitHub 公司正在实践的一个十分简单的开发流程。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/_v_images/20200926130726465_28728.png" alt="" width="257" /><br />
+这是一个以部署为中心的开发流程，所谓部署就是在正式环境中配置源代码并试运行。在实际开发中往往 1 天之内会实施几十次部署，而支撑这一切的，就是足够简单的开发流程以及完全的自动化。简单的开发流程能够让问题应对变得更加灵活。正在使用GitHub 的各位，请务必尝试这一开发流程。<br />
+正因为这一开发流程十分简单，所以无论大小团队都可以取得不错的效果。在 GitHub 公司，大致会让 15 至 20 人组成团队，利用这一流程进行同一项目的开发。以笔者的经验，由 20 人左右的团队使用这个流程来共同开发一个项目，基本不会出现什么大问题。</p>
+<h2 id="github-flow的流程"><a class="markdownIt-Anchor" href="#github-flow的流程"></a> Github Flow的流程</h2>
+<p>整个开发流程大致如下。</p>
+<ol>
+<li>令 master 分支时常保持可以部署的状态</li>
+<li>进行新的作业时要从 master 分支创建新分支，新分支名称要具有描述性</li>
+<li>在第2步新建的本地仓库分支中进行提交</li>
+<li>在 GitHub 端仓库创建同名分支，定期 push</li>
+<li>需要帮助或反馈时创建 Pull Request，以 Pull Request 进行交流</li>
+<li>让其他开发者进行审查，确认作业完成后与 master 分支合并</li>
+<li>与 master 分支合并后立刻部署</li>
+</ol>
+<p>以上便是这一流程的全部内容。由于流程中基本只需为特定作业创建特定分支，从开始作业到进行部署之间的过程十分简单，可以降低开发者学习开发流程的成本。而且正由于其简单，所以大量开发者可以迅速将其利用到开发之中，并且可以借助它来灵活处理一些细微的代码变更。<br />
+下面我们按顺序一步步进行讲解。</p>
+<h3 id="随时部署没有发布的概念"><a class="markdownIt-Anchor" href="#随时部署没有发布的概念"></a> 随时部署，没有发布的概念</h3>
+<p>这个流程必须遵守“令 master 分支随时保持可以部署的状态”这一规则。每隔几小时进行一次部署，可以有效防止同时出现多个严重 BUG。<br />
+虽然有时仍会有一些小 BUG 出现，但只要将相应的提交 revert 或者提交修正过的代码即可轻松应对。这一流程要以小时甚至分钟为单位持续地进行部署，所以不存在发布的概念。因此，不会出现让 HEAD 返回去指向很久之前的提交，借以取消整个作业内容的情况。<br />
+由于 master 分支时常保持着可以部署的状态，所以开发者可以随时创建新的分支。<br />
+要注意，没有进行过测试或者测试未通过的代码绝不可以合并到master 分支。因此势必要用到持续集成等手段。</p>
+<h1 id="私人仓库"><a class="markdownIt-Anchor" href="#私人仓库"></a> 私人仓库</h1>
+<p>添加协作者，在仓库页面点击Setting，然后点左侧的Manage access，点下方按钮邀请对方</p>
+<p>GitHub 中可使用的描述方法并不止“@ 用户名”一种。<br />
+输入“@ 组织名”可以让属于该 Organization（组织）的所<br />
+有成员收到通知<br />
+注 a。输入“@ 组织名 / 团队”可以让该团队的所<br />
+有成员收到通知。这就是同时向多人发送通知的方法。<br />
+输入“# 编号”，会连接到该仓库所对应的 Issue 编号。输入<br />
+“用户名 / 仓库名 # 编号”则可以连接到指定仓库所对应的 Issue<br />
+编号。只要按照这类特定格式书写便会自动创建链接。<br />
+多加利用上述这些功能，可以让交流更有效率。</p>
+<p><a target="_blank" rel="noopener" href="https://username.github.io/cangkuming/%E7%AD%89%E4%BB%B7%E4%BA%8Ehttps://username.github.io/cangkuming/index.html">https://username.github.io/cangkuming/等价于https://username.github.io/cangkuming/index.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://username.github.io/username.github.io/%E7%AD%89%E4%BB%B7%E4%BA%8Ehttps://username.github.io/">https://username.github.io/username.github.io/等价于https://username.github.io/</a></p>
+<h1 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h1>
+<p>《Github入门与实践》<br />
+<a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/committing-changes-to-your-project/comparing-commits">Github Docs</a><br />
+<a target="_blank" rel="noopener" href="http://www.voidcc.com/project/github-cheat-sheet">http://www.voidcc.com/project/github-cheat-sheet</a></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/软件使用问题/Github.html">https://rcocco.github.io/categories/计算机/软件使用问题/Github.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/Git.html"><i class="fa fa-chevron-left">  </i><span>Git</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/Graphviz.html"><span>Graphviz</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

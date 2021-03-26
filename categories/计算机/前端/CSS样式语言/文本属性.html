@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="文本属性"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>文本属性 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.</span> <span class="toc-text"> 缩进</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%AF%B9%E9%BD%90%E6%96%87%E6%9C%AC"><span class="toc-number">2.</span> <span class="toc-text"> 水平对齐文本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%8C%E9%AB%98"><span class="toc-number">3.</span> <span class="toc-text"> 行高</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%B5%E5%90%91%E5%AF%B9%E9%BD%90%E6%96%87%E6%9C%AC"><span class="toc-number">4.</span> <span class="toc-text"> 纵向对齐文本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E8%AF%8D%E9%97%B4%E8%B7%9D"><span class="toc-number">5.</span> <span class="toc-text"> 单词间距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E9%97%B4%E8%B7%9D"><span class="toc-number">6.</span> <span class="toc-text"> 字符间距</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%BD%AC%E6%8D%A2"><span class="toc-number">7.</span> <span class="toc-text"> 文本转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0"><span class="toc-number">8.</span> <span class="toc-text"> 文本装饰</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0%E7%BA%BF%E5%9E%8B"><span class="toc-number">8.1.</span> <span class="toc-text"> 文本装饰线型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0%E6%A0%B7%E5%BC%8F"><span class="toc-number">8.2.</span> <span class="toc-text"> 文本装饰样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0%E9%A2%9C%E8%89%B2"><span class="toc-number">8.3.</span> <span class="toc-text"> 文本装饰颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0%E7%B2%97%E7%BB%86"><span class="toc-number">8.4.</span> <span class="toc-text"> 文本装饰粗细</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E9%98%B4%E5%BD%B1"><span class="toc-number">9.</span> <span class="toc-text"> 文本阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E7%A9%BA%E7%99%BD"><span class="toc-number">10.</span> <span class="toc-text"> 处理空白</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B6%E8%A1%A8%E7%AC%A6%E5%AE%BD%E5%BA%A6"><span class="toc-number">11.</span> <span class="toc-text"> 制表符宽度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%AD%E5%AD%97%E8%BF%9E%E5%AD%97%E7%AC%A6"><span class="toc-number">12.</span> <span class="toc-text"> 断字(连字符)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BD%AF%E6%8D%A2%E8%A1%8C"><span class="toc-number">13.</span> <span class="toc-text"> 所有语言的软换行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cjk%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BD%AF%E6%8D%A2%E8%A1%8C"><span class="toc-number">14.</span> <span class="toc-text"> CJK语言的软换行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%8D%A2%E8%A1%8C"><span class="toc-number">15.</span> <span class="toc-text"> 文本换行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E6%BA%A2%E5%87%BA"><span class="toc-number">16.</span> <span class="toc-text"> 隐藏溢出</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">文本属性</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>参考资料：<a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2015/11/diff-word-break-break-all-word-wrap-break-word/">https://www.zhangxinxu.com/wordpress/2015/11/diff-word-break-break-all-word-wrap-break-word/</a></p>
+<ul>
+<li>块级方向指当前书写模式放置块级元素的方向。以英语为例，块级方向从上到下，或者说是纵向的，例如一个段落（或其他文本元素）放在另一个段落下面。</li>
+<li>行内方向指块级元素中行内元素的书写方向。以英语为例，行内方向从左到右，或者说是横向的。对阿拉伯语和希伯来语等语言来说，行内方向从右到左。</li>
+</ul>
+<span id="more"></span>
+<h1 id="缩进"><a class="markdownIt-Anchor" href="#缩进"></a> 缩进</h1>
+<p><code>text-indent</code>属性用于指定段落第一行文本开头缩进的长度，长度可以是负值，负值可以实现悬挂缩进效果，即第一行突出。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;length&gt; | &lt;percentage&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：0</li>
+<li>适用于：块级元素</li>
+<li>百分数：相对于所在块级元素的宽度</li>
+<li>计算值：百分数；长度值是一个绝对长度</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>无论怎么缩进第一行永远有文字，原第一行的文字可能会下移到其他行。非常大的缩进会使文字超出元素宽度。<br />
+同理，无论多大的负缩进，第一行永远有文字，后面的行的文字可能会上移到之前的行。即便所有字都向左缩进看不到了，这一行仍然有字。只不过超出了元素宽度。</p>
+<p>Firefox65和Chrome72以前百分数是相对于父元素的内容宽度，后来修复了这个行为：<a target="_blank" rel="noopener" href="https://www.fxsitecompat.dev/en-CA/docs/2018/percentage-on-text-indent-is-now-relative-to-containing-block-instead-of-the-parent/">Percentage on text-indent is now relative to containing block instead of the parent</a></p>
+<h1 id="水平对齐文本"><a class="markdownIt-Anchor" href="#水平对齐文本"></a> 水平对齐文本</h1>
+<p><code>text-align</code>属性控制元素中各文本行的水平对齐方式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start | end | left | right | center | justify | match-parent</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：start。如果浏览器不支持start，当direction是ltr时为left，当direction是rtl时为right。</li>
+<li>适用于：块级元素</li>
+<li>计算值：指定的值，match-parent除外</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>left</code>：左对齐。对于纵向书写的语言，left对应于书写起边。</li>
+<li><code>right</code>：右对齐。对于纵向书写的语言，right对应于书写的终边。</li>
+<li><code>center</code>：居中对齐。</li>
+<li><code>start</code>：和起边对齐。对于从左到右书写的语言，等价于left；对于从右到左书写的语言，等价于right；</li>
+<li><code>end</code>：和终边对齐。对于从左到右书写的语言，等价于right；对于从右到左书写的语言，等价于left；</li>
+<li><code>justify</code>：两端对齐。使文本除了最后一行的两端分别与行框(line box)边缘对齐，然后调整单词之间的空白，使得每一行长度完全一致。</li>
+<li><code>match-parent</code>：类似于<code>inherit</code>，但如果父元素的值是start或end，match-parent的值会根据父元素的direction变成left或right。而inherit的值就是start或end。</li>
+</ul>
+<p><code>text-align-last</code>属性控制块元素中文本最后一行，或者有强制换行（例如<code>&lt;br&gt;</code>）的行的水平对齐方式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | start | end | left | right | center | justify</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：块级元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>auto</code>：当<code>text-align</code>为<code>justify</code>时，值为<code>start</code>。其他情况受影响的行取值跟随<code>text-align</code>属性的值。</li>
+<li><code>left</code>：左对齐。对于纵向书写的语言，left对应于书写起边。</li>
+<li><code>right</code>：右对齐。对于纵向书写的语言，right对应于书写的终边。</li>
+<li><code>center</code>：居中对齐。</li>
+<li><code>start</code>：和起边对齐。对于从左到右书写的语言，等价于left；对于从右到左书写的语言，等价于right；</li>
+<li><code>end</code>：和终边对齐。对于从左到右书写的语言，等价于right；对于从右到左书写的语言，等价于left；</li>
+<li><code>justify</code>：两端对齐。使文本的两端分别与行框(line box)边缘对齐，然后调整单词之间的空白，使得每一行长度完全一致。</li>
+</ul>
+<p>如果元素既是第一行也是最后一行，<code>text-align-last</code>的优先级比<code>text-align</code>高。<br />
+两端对齐调整的是单词之间的空白，对于中文来说，每一个字被认为是一个单词。<br />
+如果只有一行字希望两端对齐，<code>text-align</code>属性设为<code>justify</code>是无效的，因为它明确说明了除了最后一行。应该使用<code>text-align-last</code>属性。</p>
+<h1 id="行高"><a class="markdownIt-Anchor" href="#行高"></a> 行高</h1>
+<p><code>line-height</code>定义文本行的基线之间的最小距离（基线之间实际距离可能更大），与字号无关，决定着元素所在方框的高度是增还是减。<code>line-height</code>不等于行距，行距是它的一部分，它是除字体高度之外在文本行上方的额外空间。也就是说<code>line-height</code>的值与字体高度之差才是行距。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>百分数：相对于元素自身的字号</li>
+<li>计算值：长度和百分数得到绝对长度；否则是指定的值。</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>文本行中的每一个元素构成一个内容区(content area)，其高度由字体的高度决定。<br />
+随内容区出现的是一个行内框(inline box)，如果不考虑其他因素，行内框的高度应该与内容区高度相同，但由于<code>line-height</code>的存在二者高度往往是不同的。<br />
+元素的行距等于<code>line-height</code>的值减去<code>font-size</code>的值。这个值是行距的总值，可能为负数。行距被分为两半，一半放到内容区上面，一半放到内容区下面。内容框高度加上行距，就是行内框的高度。<br />
+例如<code>font-size: 14px; line-height: 18px;</code>，则内容区高度也是14px，二者之差为4px，被分成两半放到内容区上面和下面，于是内容区上面多出2px，下面也多出2px。<br />
+确定了一行所有元素的行内框之后，行框(line box)也就确定了。行框的顶端就是最高的行内框的顶端，行框的底端就是最低的行内框的底端。<br />
+即公式：<code>line-height = font-size + 行距</code>，对于数字值，给定行距可以得到：<br />
+<code>&lt;number&gt; = 行距 / font-size + 1</code><br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201007171400323_21540.png" alt="" width="621" /></p>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：取决于用户代理。一般是字体高度的1.2倍。</li>
+<li><code>&lt;number&gt;</code>：无单位数字，行高将是该数字乘以元素自己的font-size大小。这是首选方式。</li>
+<li><code>&lt;length&gt;</code>：长度值，即便给定绝对长度，浏览器实际使用的值也可能不同。相对长度em和ex是相对于元素的font-size值计算，在继承时可能产生意外结果。</li>
+<li><code>&lt;percentage&gt;</code>：百分值。相对于元素的font-size值计算，在继承时可能产生意外结果。</li>
+</ul>
+<p>注意如果父元素设定的行高是百分比或长度值，子元素继承的是计算值，而非原来的百分比或长度值。这意味着子元素的行高是相对于父元素的字体计算的，因为继承的计算值是这么算的。这一点可能导致子元素的行高过大或过小，因为这种情况下的行高不是基于自身的字号算出的。<br />
+将行高设置为数字可以解决这个问题，因为数字值继承的仍然是数字，而数字又会乘以子元素自己的font-size。</p>
+<h1 id="纵向对齐文本"><a class="markdownIt-Anchor" href="#纵向对齐文本"></a> 纵向对齐文本</h1>
+<p><code>vertical-align</code>属性用于设置行内元素和置换元素（例如图像和表单输入框）的纵向对齐方式。它不影响块级元素中文本的对齐方式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baseline | sub | super | text-top | text-bottom | middle | top | bottom | &lt;percentage&gt; | &lt;length&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：baseline</li>
+<li>适用于：行内元素和单元格，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>百分数：相对于元素自身的line-height计算</li>
+<li>计算值：长度和百分数得到绝对长度；否则是指定的值。</li>
+<li>继承性：否</li>
+<li>动画性：<code>&lt;length&gt;</code>、<code>&lt;percentage&gt;</code></li>
+<li>备注：用在单元格上只能取<code>baseline</code>、<code>top</code>、<code>middle</code>和<code>bottom</code></li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201007171400323_21540.png" alt="" width="621" /></p>
+<h1 id="单词间距"><a class="markdownIt-Anchor" href="#单词间距"></a> 单词间距</h1>
+<p><code>word-spacing</code>属性用于设置单词之间的距离在默认值基础上增加多少。可以为负值，表示减少。“单词”是指两侧具有某种空白的非空白字符构成的字符串，因此该属性不能用于中文。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | &lt;length&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：长度值得到绝对长度；否则是normal</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：等价于长度值0，即默认的间距，通常由字体决定。</li>
+<li><code>&lt;length&gt;</code>：正长度值单词之间的距离增加给定长度，负长度值距离减少给定长度。</li>
+</ul>
+<h1 id="字符间距"><a class="markdownIt-Anchor" href="#字符间距"></a> 字符间距</h1>
+<p><code>letter-spacing</code>属性用于设置字符之间的距离在默认值基础上增加多少。可以为负值，表示减少。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | &lt;length&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：长度值得到绝对长度；否则是normal</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：默认的间距，通常与0相同，区别在于，如果元素设定了<code>text-align: justify</code>，为了让文本占满整行宽度，字符和单词之间的距离可能会被调整。</li>
+<li><code>&lt;length&gt;</code>：正长度值字符之间的距离增加给定长度，负长度值距离减少给定长度。长度值不会因为两端对齐而被调整。</li>
+</ul>
+<p>继承得到的是计算值，因此可能遇到和行高一样的问题，计算值基于父元素的相关属性计算，然而这个值不一定适合后代元素。该属性没有行高那样的换算系数，因此你只能为每一个受影响的后代元素单独设定。</p>
+<h1 id="文本转换"><a class="markdownIt-Anchor" href="#文本转换"></a> 文本转换</h1>
+<p><code>text-transform</code>属性用于改变文本的大小写。该属性的优点在于一个规则就能实现大小写转换，日后修改也方便。比<code>font-variant</code>先应用。<br />
+使用场景例如输入礼品卡号时让用户输入的文字自动大写，不需要用户按住Shift键来输入大写。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none | uppercase | lowercase | capitalize</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>none</code>：不对文本做任何修改。</li>
+<li><code>uppercase</code>：把文本转换成大写字母。</li>
+<li><code>lowercase</code>：把文本转换成小写字母。</li>
+<li><code>capitalize</code>：把各单词首字母大写。</li>
+</ul>
+<h1 id="文本装饰"><a class="markdownIt-Anchor" href="#文本装饰"></a> 文本装饰</h1>
+<p><code>text-decoration</code>属性用于设置文本上的划线，例如下划线和删除线。它现在是四个属性<code>text-decoration-line</code>、<code>text-decoration-color</code>、<code>text-decoration-style</code>和<code>text-decoration-thickness</code>的简写属性。以前相当于<code>text-decoration-line</code>属性。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="string">&#x27;text-decoration-line&#x27;</span>&gt; || &lt;<span class="string">&#x27;text-decoration-style&#x27;</span>&gt; || &lt;<span class="string">&#x27;text-decoration-color&#x27;</span>&gt; || &lt;<span class="string">&#x27;text-decoration-thickness&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：每个被简写的属性的初始值，即none solid currentColor auto</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<h2 id="文本装饰线型"><a class="markdownIt-Anchor" href="#文本装饰线型"></a> 文本装饰线型</h2>
+<p><code>text-decoration-line</code>属性用于设置文本装饰的种类。允许同时设置多种线型。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none | [ underline || overline || line-through ]</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>none</code>：没有文本装饰。</li>
+<li><code>underline</code>：下划线。</li>
+<li><code>overline</code>：上划线。</li>
+<li><code>line-throug</code>：中划线（删除线）</li>
+</ul>
+<h2 id="文本装饰样式"><a class="markdownIt-Anchor" href="#文本装饰样式"></a> 文本装饰样式</h2>
+<p><code>text-decoration-style</code>属性用于设置文本装饰的线的样式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">solid | double | dotted | dashed | wavy</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：solid</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>solid</code>：实线。</li>
+<li><code>double</code>：双实线。</li>
+<li><code>dotted</code>：点组成的线。</li>
+<li><code>dashed</code>：短线组成的线（虚线）</li>
+<li><code>wavy</code>：波浪线。</li>
+</ul>
+<h2 id="文本装饰颜色"><a class="markdownIt-Anchor" href="#文本装饰颜色"></a> 文本装饰颜色</h2>
+<p><code>text-decoration-style</code>属性用于设置文本装饰的线的颜色。颜色适用于所有线型，因此你无法单独为下划线和删除线设置不同颜色，但可以通过使用嵌套元素，将不同的线型应用于每个元素，然后基于每个元素来指定线颜色来实现此效果。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;color&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：currentColor（代表元素的color属性值）</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：计算的颜色值。</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<h2 id="文本装饰粗细"><a class="markdownIt-Anchor" href="#文本装饰粗细"></a> 文本装饰粗细</h2>
+<p><code>text-decoration-style</code>属性用于设置文本装饰的线的粗细。粗细适用于所有线型，因此你无法单独为下划线和删除线设置不同粗细，但可以通过使用嵌套元素，将不同的线型应用于每个元素，然后基于每个元素来指定线粗细来实现此效果。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | from-font | &lt;length&gt; | &lt;percentage&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>百分数：相对于元素自身的font-size值</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>auto</code>：浏览器自行选择适当的粗细。</li>
+<li><code>from-font</code>：如果字体文件包括关于合适的粗细的信息，使用该值。如果没有，等同于auto。</li>
+<li><code>&lt;length&gt;</code>：长度值。</li>
+<li><code>&lt;percentage&gt;</code>：将文本装饰线的粗细指定为当前字体的1em的百分值。百分值继承的时候是相对值，因此会随着字体的变化而缩放。浏览器必须至少使用1个设备像素。对于此属性的给定应用，即使存在具有不同字体大小的子元素，粗细在应用于它的整个盒子上也是恒定的。</li>
+</ul>
+<h1 id="文本阴影"><a class="markdownIt-Anchor" href="#文本阴影"></a> 文本阴影</h1>
+<p><code>text-shadow</code>属性为文本添加阴影。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none | [ &lt;length&gt;&#123;2,3&#125; || &lt;color&gt; ]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code>和<code>::first-line</code>上</li>
+<li>计算值：一个颜色加三个绝对长度</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值为<code>none</code>时没有阴影。<br />
+可以添加一个或多个阴影，彼此之间用逗号分隔。<br />
+每个阴影由一个可选的颜色和三个长度值定义，最后一个长度值也是可选的。</p>
+<ul>
+<li>颜色设定的是阴影的颜色，如果不设置将于文本颜色相同。</li>
+<li>前两个长度值是阴影离文本的距离，第一个长度值设定横向偏移，正的长度值向右偏，负的长度值向左偏；第二个长度值设定纵向偏移，正的长度值向下偏，负的长度值向上偏。</li>
+<li>可选的第三个长度值定义阴影的模糊半径。模糊半径是从阴影轮廓到模糊效果边界的距离。这个值越大越看不清阴影中的字，会扩散成模糊的一片。</li>
+</ul>
+<h1 id="处理空白"><a class="markdownIt-Anchor" href="#处理空白"></a> 处理空白</h1>
+<p><code>white-space</code>属性用于指定对文档源码中的空格、换行符和制表符的处理方式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | pre | nowrap | pre-wrap | pre-line | break-spaces</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：换行符替换成空格，连续的空白符压缩成一个。允许文本自动换行。</li>
+<li><code>pre</code>：保留连续的空白符和换行符。禁止文本自动换行。</li>
+<li><code>nowrap</code>：换行符替换成空格，连续的空白符压缩成一个。禁止文本自动换行。</li>
+<li><code>pre-wrap</code>：保留连续的空白符和换行符。允许文本自动换行。</li>
+<li><code>pre-line</code>：保留换行符，连续的空白符被压缩成一个。允许文本自动换行。</li>
+<li><code>break-spaces</code>：与<code>pre-line</code>相同，除了：
+<ul>
+<li>任何保留的空白序列总是占用空间，包括在行尾。</li>
+<li>每个保留的空格字符后都存在换行机会，包括空格字符之间。</li>
+<li>这样保留的空间占用空间而不会挂起，从而影响盒子的固有尺寸（最小内容大小和最大内容大小）。</li>
+</ul>
+</li>
+</ul>
+<p>见下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性值</th>
+<th style="text-align:center">换行符</th>
+<th style="text-align:center">空格和制表符</th>
+<th style="text-align:center">文字换行</th>
+<th style="text-align:center">行尾空格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">normal</td>
+<td style="text-align:center">合并</td>
+<td style="text-align:center">合并</td>
+<td style="text-align:center">换行</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td style="text-align:center">pre</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">不换行</td>
+<td style="text-align:center">保留</td>
+</tr>
+<tr>
+<td style="text-align:center">nowrap</td>
+<td style="text-align:center">合并</td>
+<td style="text-align:center">合并</td>
+<td style="text-align:center">不换行</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td style="text-align:center">pre-wrap</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">换行</td>
+<td style="text-align:center">挂起</td>
+</tr>
+<tr>
+<td style="text-align:center">pre-line</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">合并</td>
+<td style="text-align:center">换行</td>
+<td style="text-align:center">删除</td>
+</tr>
+<tr>
+<td style="text-align:center">break-spaces</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">保留</td>
+<td style="text-align:center">换行</td>
+<td style="text-align:center">换行</td>
+</tr>
+</tbody>
+</table>
+<p>注意不论上面哪一种，遇到<code>&lt;br&gt;</code>元素都会换行。</p>
+<h1 id="制表符宽度"><a class="markdownIt-Anchor" href="#制表符宽度"></a> 制表符宽度</h1>
+<p><code>tab-size</code>属性用于设置当显示制表符时，制表符显示的长度。注意，如果<code>white-space</code>的值导致空白被折叠了，这个属性虽然还会计算，但没有任何视觉效果。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">integer</span>&gt; | &lt;length&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：8</li>
+<li>适用于：块级元素</li>
+<li>计算值：指定的数字或一个绝对长度</li>
+<li>继承性：是</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>&lt;integer&gt;</code>：制表符相当于<code>&lt;integer&gt;</code>个空格。</li>
+<li><code>&lt;length&gt;</code>：制表符将渲染成指定长度。</li>
+</ul>
+<h1 id="断字连字符"><a class="markdownIt-Anchor" href="#断字连字符"></a> 断字(连字符)</h1>
+<p><code>hyphens</code>属性用于指定当单词在一行放不下可能跨越多行时是否用连字符将其断开，把一个单词分成两行写。可以在文本中手动插入换行符，也可以由浏览器自动插入换行符。<br />
+有两个Unicode字符用于指定潜在的换行时机：</p>
+<ul>
+<li>
+<p>符号<code>-</code>，即<code>U+2010</code>，它是硬连字符，表示一个可见的潜在换行时机，即便该行并没有在这里打断单词，连字符仍然会显示。</p>
+</li>
+<li>
+<p>符号<code>&amp;shy;</code>，即<code>U+00AD</code>，它是软连字符，如果没有打断单词，它并不会显示出来，如果有必要，浏览器应该在该处打断单词。</p>
+</li>
+<li>
+<p>取值语法：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none | manual | auto</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始值：manual</p>
+</li>
+<li>
+<p>适用于：所有元素</p>
+</li>
+<li>
+<p>计算值：指定的值</p>
+</li>
+<li>
+<p>继承性：是</p>
+</li>
+<li>
+<p>动画性：否</p>
+</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>manual</code>：只有在文档中手动插入连字符（例如U+00AD或<code>&amp;shy;</code>）处断字，否则不断字。</li>
+<li><code>none</code>：即便有手动插入的连字符，也不断字。U+00AD或<code>&amp;shy;</code>将被忽略。</li>
+<li><code>auto</code>：即使没有手动插入连字符，浏览器也会在合适位置断字，如果有手动插入的连字符，浏览器一般会遵循。</li>
+</ul>
+<h1 id="所有语言的软换行"><a class="markdownIt-Anchor" href="#所有语言的软换行"></a> 所有语言的软换行</h1>
+<p><code>word-break</code>属性用于控制不同语言处理文本软换行的方式，所谓软换行是为了避免文本溢出内容框而由用户代理自动进行的换行。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | break-all | keep-all</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：使用默认换行规则，文本会在单词之间换行，例如英语会在空格处换行，而CJK语言会在任何两个字符之间换行。</li>
+<li><code>break-all</code>：允许在任何两个字符（即便在单词内部）之间换行。使用这个值时，连字符不显示。</li>
+<li><code>keep-all</code>：CJK字符之间不换行。非CJK文本行为与normal相同。</li>
+</ul>
+<h1 id="cjk语言的软换行"><a class="markdownIt-Anchor" href="#cjk语言的软换行"></a> CJK语言的软换行</h1>
+<p><code>line-breakk</code>属性用于控制CJK语言处理文本软换行的方式，如果在一段英文中混杂部分CJK字符，该属性只作用于CJK字符。如果把内容声明为CJK语言，该属性会用于CJK字符，以及CJK文本中的非CJK字符，例如标点符号、货币符号和一些其他字符。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | loose | normal | strict</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>auto</code>：按正常行为软换行。用户代理可以根据情况变更换行方式，例如较短的行采用宽松的换行规则，较长的行使用严格的换行规则。其实它的作用是让用户代理根据需求在loose,normal和strict之间切换，甚至可以在一个元素的不同行之间切换。</li>
+<li><code>loose</code>：采用最宽松的换行规则，主要用于文本行较短的情况，例如报纸</li>
+<li><code>normal</code>：采用最常规的换行规则。</li>
+<li><code>strict</code>：采用最严格的换行规则。</li>
+</ul>
+<h1 id="文本换行"><a class="markdownIt-Anchor" href="#文本换行"></a> 文本换行</h1>
+<p><code>overflow-wrap</code>属性用于行内元素，设置浏览器是否在不可断字的字符串中插入换行符，以防止文本溢出了行框。该属性以前叫<code>word-wrap</code></p>
+<p>注意：与相比word-break，overflow-wrap仅当无法将整个单词放在自己的行而不溢出的情况下，才会产生中断。<br />
+不溢出就无法将整个单词放在自己的行时，才会换行。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">normal | break-word</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：normal</li>
+<li>适用于：非替换行内元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>normal</code>：按正常方式换行。即在单词之间换行，或者由所用语言决定。</li>
+<li><code>break-word</code>：可以在单词内部换行。与<code>word-break: break-all</code>相比，<code>overflow-wrap</code>会观察这一行是否有其他可以换行的字符，例如空格、CJK字符，然后在字符处换行，而不强行把英文单词打断。这会造成某些文本行后面留有很多空白。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201008100135374_2063.png" alt="" /></li>
+</ul>
+<h1 id="隐藏溢出"><a class="markdownIt-Anchor" href="#隐藏溢出"></a> 隐藏溢出</h1>
+<p>指定在存在溢出时，<code>text-overflow</code></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/文本属性.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/文本属性.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%AD%97%E4%BD%93%E5%B1%9E%E6%80%A7.html"><i class="fa fa-chevron-left">  </i><span>字体属性</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E9%A2%9C%E8%89%B2.html"><span>颜色</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

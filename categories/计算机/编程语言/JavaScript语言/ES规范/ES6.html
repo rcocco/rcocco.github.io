@@ -1,0 +1,893 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="ES6"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>ES6 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text"> 表达式与运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 主值表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.1.1.</span> <span class="toc-text"> this关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 标识符引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 字面量引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 数组初始化语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AF%AD%E6%B3%95"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 对象初始化语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%BB%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 群组运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A6%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 左值表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E8%AE%BF%E9%97%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 属性访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> new 运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text"> 函数调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.</span> <span class="toc-text"> 一元运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#delete%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.1.</span> <span class="toc-text"> delete运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#void%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.2.</span> <span class="toc-text"> void运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.3.</span> <span class="toc-text"> typeof 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6-2"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 一元+运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%85%83-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 一元-运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E4%BD%8D%E9%9D%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 按位非运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%9D%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 逻辑非运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.</span> <span class="toc-text"> 乘法运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 使用*运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6-2"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 使用&#x2F;运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6-3"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 使用%运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.6.</span> <span class="toc-text"> 加法运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6-2"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 加法运算符（+）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6-"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 减法运算符（-）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text"> 移位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 左移运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 算术右移运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 逻辑右移运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.</span> <span class="toc-text"> 关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 小于运算符&lt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E4%BA%8E%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 小于等于运算符&lt;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 大于等于运算符（&gt;&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E5%85%B3%E7%B3%BB%E6%AF%94%E8%BE%83%E7%AE%97%E6%B3%95"><span class="toc-number">1.8.4.</span> <span class="toc-text"> 抽象关系比较算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.5.</span> <span class="toc-text"> instanceof 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.6.</span> <span class="toc-text"> in 运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text"> 等值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.1.</span> <span class="toc-text"> 等于运算符（&#x3D;&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.2.</span> <span class="toc-text"> 不等于运算符（!&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E7%9B%B8%E7%AD%89%E6%AF%94%E8%BE%83%E7%AE%97%E6%B3%95"><span class="toc-number">1.9.3.</span> <span class="toc-text"> 抽象相等比较算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.4.</span> <span class="toc-text"> 严格等于运算符（&#x3D;&#x3D;&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E4%B8%8D%E7%AD%89%E4%BA%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.5.</span> <span class="toc-text"> 严格不等于运算符（!&#x3D;&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E7%AD%89%E4%BA%8E%E6%AF%94%E8%BE%83%E7%AE%97%E6%B3%95"><span class="toc-number">1.9.6.</span> <span class="toc-text"> 严格等于比较算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text"> 二元按位运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.</span> <span class="toc-text"> 二元逻辑运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.12.</span> <span class="toc-text"> 条件运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.13.</span> <span class="toc-text"> 赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E8%B5%8B%E5%80%BC"><span class="toc-number">1.13.1.</span> <span class="toc-text"> 简单赋值（&#x3D;）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E8%B5%8B%E5%80%BCop"><span class="toc-number">1.13.2.</span> <span class="toc-text"> 组合赋值（op&#x3D;）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.14.</span> <span class="toc-text"> 逗号运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.</span> <span class="toc-text"> 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97"><span class="toc-number">2.1.</span> <span class="toc-text"> 块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.</span> <span class="toc-text"> 变量语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.3.</span> <span class="toc-text"> 空语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.4.</span> <span class="toc-text"> 表达式语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.5.</span> <span class="toc-text"> if 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.6.</span> <span class="toc-text"> 迭代语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#continue-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.7.</span> <span class="toc-text"> continue 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#break-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.8.</span> <span class="toc-text"> break 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#return-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.9.</span> <span class="toc-text"> return 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#with-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.10.</span> <span class="toc-text"> with 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.11.</span> <span class="toc-text"> switch语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.12.</span> <span class="toc-text"> 标签语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throw-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.13.</span> <span class="toc-text"> throw 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#try-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.14.</span> <span class="toc-text"> try 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#debugger-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.15.</span> <span class="toc-text"> debugger 语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text"> 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.1.</span> <span class="toc-text"> 创建函数对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call"><span class="toc-number">3.2.</span> <span class="toc-text"> [[Call]]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#construct"><span class="toc-number">3.3.</span> <span class="toc-text"> [[Construct]]</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">ES6</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-01-28</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="表达式与运算符"><a class="markdownIt-Anchor" href="#表达式与运算符"></a> 表达式与运算符</h1>
+<h2 id="主值表达式"><a class="markdownIt-Anchor" href="#主值表达式"></a> 主值表达式</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PrimaryExpression :</span><br><span class="line">    this</span><br><span class="line">    Identifier</span><br><span class="line">    Literal</span><br><span class="line">    ArrayLiteral</span><br><span class="line">    ObjectLiteral</span><br><span class="line">    ( Expression )</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="this关键字"><a class="markdownIt-Anchor" href="#this关键字"></a> this关键字</h3>
+<p>this 关键字执行为当前执行环境的 this 绑定。</p>
+<h3 id="标识符引用"><a class="markdownIt-Anchor" href="#标识符引用"></a> 标识符引用</h3>
+<p>Identifier 的执行遵循 10.3.1 所规定的标识符查找。标识符执行的结果总是一个 Reference 类型的值。</p>
+<h3 id="字面量引用"><a class="markdownIt-Anchor" href="#字面量引用"></a> 字面量引用</h3>
+<p>Literal 按照 7.8 所描述的方式执行。</p>
+<h3 id="数组初始化语法"><a class="markdownIt-Anchor" href="#数组初始化语法"></a> 数组初始化语法</h3>
+<p>数组初始化是一个以字面量的形式书写的描述数组对象的初始化的表达式。它是一个零个或者多个表达式的序列，其中每一个表示一个数组元素，并且用方括号括起来。元素并不一定要是字面量，每次数组初始化执行时它们都会被执行一次。</p>
+<p>数组元素可能在元素列表的开始、结束，或者中间位置以逗号取代。当元素列表中的一个逗号的前面没有 AssignmentExpression（如，一个逗号在另一个逗号之前。）的情况下，缺失的数组元素仍然会对数组长度有贡献，并且增加后续元素的索引值。以逗号省略的数组元素是 undefined。假如元素在数组末尾被省略，那么元素不会贡献数组长度。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ArrayLiteral :</span><br><span class="line">    [,*]</span><br><span class="line">    [ ElementList ]</span><br><span class="line">    [ ElementList , ,* ]</span><br><span class="line"></span><br><span class="line">ElementList :</span><br><span class="line">    ,* AssignmentExpression</span><br><span class="line">    ElementList , ,* AssignmentExpression</span><br><span class="line"></span><br><span class="line">Elision = ,+</span><br></pre></td></tr></table></figure>
+<h3 id="对象初始化语法"><a class="markdownIt-Anchor" href="#对象初始化语法"></a> 对象初始化语法</h3>
+<p>对象初始化是一个以直接量的方式描述对象的初始化过程的表达式。它是用花括号括起来的由零或者多对属性名 / 关联值组成的列表，值不需要是直接量，每次对象初始化被执行到时他们会执行一次。<br />
+产生式 <code>ObjectLiteral : &#123; &#125;</code> 按照下面的过程执行：如同以表达式 new Object() 创建新对象，其中 Object 是标准的内置构造器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ObjectLiteral :</span><br><span class="line">    &#123; &#125;</span><br><span class="line">    &#123; PropertyNameAndValueList &#125;</span><br><span class="line">    &#123; PropertyNameAndValueList , &#125;</span><br><span class="line"></span><br><span class="line">PropertyNameAndValueList = (PropertyAssignment,)*PropertyAssignment</span><br><span class="line"><span class="comment">## set访问器的参数名必须是标识符，不能是保留字</span></span><br><span class="line">PropertyAssignment :</span><br><span class="line">    PropertyName : AssignmentExpression</span><br><span class="line">    get <span class="function"><span class="title">PropertyName</span></span> ( ) &#123; FunctionBody &#125;</span><br><span class="line">    <span class="built_in">set</span> PropertyName ( Identifier ) &#123; FunctionBody &#125;</span><br><span class="line"><span class="comment">## 属性名可以是标识符加保留字、字符串字面量、数字字面量</span></span><br><span class="line">PropertyName :</span><br><span class="line">    IdentifierName</span><br><span class="line">    StringLiteral</span><br><span class="line">    NumericLiteral</span><br></pre></td></tr></table></figure>
+<h3 id="群组运算符"><a class="markdownIt-Anchor" href="#群组运算符"></a> 群组运算符</h3>
+<p>产生式 PrimaryExpression : ( Expression ) 按照下面的过程执行：</p>
+<ol>
+<li>返回执行 Expression 的结果。这可能是一个 Reference。</li>
+</ol>
+<p>注：本算法不在执行 Expression 后使用 GetValue。这主要的目的是让 delete 与 typeof 运算符可以作用在被括号括起来的表达式。</p>
+<h2 id="左值表达式"><a class="markdownIt-Anchor" href="#左值表达式"></a> 左值表达式</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">MemberExpression :</span><br><span class="line">    PrimaryExpression</span><br><span class="line">    FunctionExpression</span><br><span class="line">    MemberExpression [ Expression ]</span><br><span class="line">    MemberExpression . IdentifierName</span><br><span class="line">    new MemberExpression Arguments</span><br><span class="line"></span><br><span class="line">NewExpression :</span><br><span class="line">    MemberExpression</span><br><span class="line">    new NewExpression</span><br><span class="line"></span><br><span class="line">CallExpression :</span><br><span class="line">    MemberExpression Arguments</span><br><span class="line">    CallExpression Arguments</span><br><span class="line">    CallExpression [ Expression ]</span><br><span class="line">    CallExpression . IdentifierName</span><br><span class="line"></span><br><span class="line">Arguments :</span><br><span class="line">    ( )</span><br><span class="line">    ( ArgumentList )</span><br><span class="line"></span><br><span class="line">ArgumentList :</span><br><span class="line">    AssignmentExpression</span><br><span class="line">    ArgumentList , AssignmentExpression</span><br><span class="line"></span><br><span class="line">LeftHandSideExpression :</span><br><span class="line">    NewExpression</span><br><span class="line">    CallExpression</span><br></pre></td></tr></table></figure>
+<h3 id="属性访问"><a class="markdownIt-Anchor" href="#属性访问"></a> 属性访问</h3>
+<p>属性是通过 name 来访问的，可以使用点表示法访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MemberExpression . IdentifierName</span><br><span class="line">CallExpression . IdentifierName</span><br></pre></td></tr></table></figure>
+<p>或者括号表示法访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MemberExpression [ Expression ]</span><br><span class="line">CallExpression [ Expression ]</span><br></pre></td></tr></table></figure>
+<p>点表示法实际等价于</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MemberExpression [ &lt;identifier-name-string&gt; ]</span><br><span class="line">CallExpression [ &lt;identifier-name-string&gt; ]</span><br></pre></td></tr></table></figure>
+<p><code>&lt;identifier-name-string&gt;</code> 是一个字符串字面量，它与 Unicode 编码后的 IdentifierName 包含相同的字符序列。</p>
+<p>产生式 <code>MemberExpression : MemberExpression [ Expression ]</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 baseReference 为解释执行 MemberExpression 的结果。</li>
+<li>令 baseValue 为 GetValue(baseReference)。</li>
+<li>令 propertyNameReference 为解释执行 Expression 的结果。</li>
+<li>令 propertyNameValue 为 GetValue(propertyNameReference)。</li>
+<li>调用 CheckObjectCoercible(baseValue)。</li>
+<li>令 propertyNameString 为 ToString(propertyNameValue)。</li>
+<li>如果正在执行中的语法产生式包含在严格模式代码当中，令 strict 为 true，否则令 strict 为 false。</li>
+<li>返回一个值类型的引用，其基值为 baseValue 且其引用名为 propertyNameString，严格模式标记为 strict。</li>
+</ol>
+<p>产生CallExpression : CallExpression [ Expression ]的执行方式与以上执行过程完全一样，除非CallExpression在步骤1已经执行过。</p>
+<p>注：第6步意味着，ToString(GetValue(Expression))相同的Expression将取得相同的引用。例如数字2和字符串<code>&quot;2&quot;</code>。</p>
+<h3 id="new-运算符"><a class="markdownIt-Anchor" href="#new-运算符"></a> new 运算符</h3>
+<p>产生式 NewExpression : new NewExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 ref 为解释执行 NewExpression 的结果。</li>
+<li>令 constructor 为 GetValue(ref)。</li>
+<li>如果 Type(constructor) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>如果 constructor 没有实现 [[Construct]] 内置方法，抛出一个 TypeError 异常。</li>
+<li>返回调用 constructor 的 [[Construct]] 内置方法的结果，传入按无参数传入参数列表（就是一个空的参数列表）。</li>
+</ol>
+<p>产生式 MemberExpression : new MemberExpression Arguments 按照下面的过程执行 :</p>
+<ol>
+<li>令 ref 为解释执行 MemberExpression 的结果。</li>
+<li>令 constructor 为 GetValue(ref)。</li>
+<li>令 argList 为解释执行 Arguments 的结果，是一个参数值的内部列表（11.2.4）。</li>
+<li>如果 Type(constructor) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>如果 constructor 没有实现 [[Construct]] 内置方法，抛出一个 TypeError 异常。</li>
+<li>返回以 argList 为参数调用 constructor 的 [[Construct]] 内置方法的结果。</li>
+</ol>
+<p>函数的 [[Construct]] 内置方法算法如下：<br />
+当以一个可能的空的参数列表调用函数对象 F 的 [[Construct]] 内部方法，采用以下步骤：</p>
+<ol>
+<li>令 obj 为新创建的 ECMAScript 原生对象。</li>
+<li>依照 8.12 设定 obj 的所有内部方法。</li>
+<li>设定 obj 的 [[Class]] 内部属性为 “Object”。</li>
+<li>设定 obj 的 [[Extensible]] 内部属性为 true。</li>
+<li>令 proto 为以参数 “prototype” 调用 F 的 [[Get]] 内部属性的值。</li>
+<li>如果 Type(proto) 是 Object，设定 obj 的 [[Prototype]] 内部属性为 proto。</li>
+<li>如果 Type(proto) 不是 Object，设定 obj 的 [[Prototype]] 内部属性为 15.2.4 描述的标准内置的 Object 原型对象（即Object内置对象的原型Object.prototype）。</li>
+<li>以 obj 为 this 值，调用 [[Construct]] 的参数列表为 args，调用 F 的 [[Call]] 内部属性，令 result 为调用结果。</li>
+<li>如果 Type(result) 是 Object，则返回 result。</li>
+<li>返回 obj。</li>
+</ol>
+<h2 id="函数调用"><a class="markdownIt-Anchor" href="#函数调用"></a> 函数调用</h2>
+<p>产生式 CallExpression : MemberExpression Arguments 按照下面的过程执行 :</p>
+<ol>
+<li>令 ref 为解释执行 MemberExpression 的结果。</li>
+<li>令 func 为 GetValue(ref)。</li>
+<li>令 argList 为解释执行 Arguments 的结果，产生参数值们的内部列表（参见 11.2.4）。</li>
+<li>如果 Type(func) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>如果 IsCallable(func) 为 false，抛出一个 TypeError 异常。</li>
+<li>如果 Type(ref) 为 Reference，那么
+<ol>
+<li>如果 IsPropertyReference(ref) 为 true，那么
+<ol>
+<li>令 thisValue 为 GetBase(ref)。</li>
+</ol>
+</li>
+<li>否则，ref 的基值是一个环境记录项。
+<ol>
+<li>令 thisValue 为调用 GetBase(ref) 的 ImplicitThisValue 具体方法的结果。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>否则，Type(ref) 不是 Reference。
+<ol>
+<li>令 thisValue 为 undefined。</li>
+</ol>
+</li>
+<li>返回调用 func 的 [[Call]] 内置方法的结果，传入 thisValue 作为 this 值和列表 argList 作为参数列表。</li>
+</ol>
+<h2 id="一元运算符"><a class="markdownIt-Anchor" href="#一元运算符"></a> 一元运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression :</span><br><span class="line">    PostfixExpression</span><br><span class="line">    delete UnaryExpression</span><br><span class="line">    void UnaryExpression</span><br><span class="line">    typeof UnaryExpression</span><br><span class="line">    ++ UnaryExpression</span><br><span class="line">    -- UnaryExpression</span><br><span class="line">    + UnaryExpression</span><br><span class="line">    - UnaryExpression</span><br><span class="line">    ~ UnaryExpression</span><br><span class="line">    ! UnaryExpression</span><br></pre></td></tr></table></figure>
+<h3 id="delete运算符"><a class="markdownIt-Anchor" href="#delete运算符"></a> delete运算符</h3>
+<p>产生式 <code>UnaryExpression : delete UnaryExpression</code> 按照下面的过程执行 ：</p>
+<ol>
+<li>令 ref 为解释执行 UnaryExpression 的结果。</li>
+<li>如果 Type(ref) 不是 Reference，返回 true。</li>
+<li>若 IsUnresolvableReference(ref) 则
+<ol>
+<li>如果 IsStrictReference(ref) 为 true，抛出一个 SyntaxError 异常。</li>
+<li>否则，返回 true。</li>
+</ol>
+</li>
+<li>如果 IsPropertyReference(ref) 为 true 则：
+<ol>
+<li>返回以 GetReferencedName(ref) 和 IsStrictReference(ref) 做为参数调用 ToObject(GetBase(ref)) 的 [[Delete]] 内置方法的结果。</li>
+</ol>
+</li>
+<li>否则，ref 是到环境记录项绑定的 Reference，所以：
+<ol>
+<li>如果 IsStrictReference(ref) 为 true，抛出一个 SyntaxError 异常。</li>
+<li>令 bindings 为 GetBase(ref)。</li>
+<li>返回以 GetReferencedName(ref) 为参数调用 bindings 的 DeleteBinding 具体方法的结果。</li>
+</ol>
+</li>
+</ol>
+<p>注：当 delete 操作符在严格模式下出现时，并且 UnaryExpression 是一个变量、函数参数或者函数名的直接引用，则抛出 SyntaxError 异常。此外，严格模式下删除属性且其内置属性 [[Configurable]] 为 false 时，则抛出 TypeError 异常。</p>
+<h3 id="void运算符"><a class="markdownIt-Anchor" href="#void运算符"></a> void运算符</h3>
+<p>产生式 UnaryExpression : void UnaryExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 expr 为解释执行 UnaryExpression 的结果。</li>
+<li>调用 GetValue(expr)。</li>
+<li>返回 undefined。</li>
+</ol>
+<p>注：就算值不会用到，用户代理仍必须调用 GetValue，因为可能有可观测的副作用。</p>
+<h3 id="typeof-运算符"><a class="markdownIt-Anchor" href="#typeof-运算符"></a> typeof 运算符</h3>
+<p>产生式 UnaryExpression : typeof UnaryExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 val 为解释执行 UnaryExpression 的结果。</li>
+<li>如果 Type(val) 为 Reference，则：
+<ol>
+<li>如果 IsUnresolvableReference(val) 为 true，返回 “undefined”。</li>
+<li>令 val 为 GetValue(val)。</li>
+</ol>
+</li>
+<li>返回根据下表由 Type(val) 决定的字符串。</li>
+</ol>
+<ul>
+<li>val类型是Undefined：	“undefined”</li>
+<li>val类型是Null：“object”</li>
+<li>val类型是Boolean：“boolean”</li>
+<li>val类型是Number：“number”</li>
+<li>val类型是String：“string”</li>
+<li>val类型是Object（原生，且没有实现 [[Call]]）：“object”</li>
+<li>val类型是Object（原生或者宿主且实现了 [[Call]]）：“function”</li>
+<li>val类型是Object（宿主且没实现 [[Call]]）：由实现定义，但不能是 “undefined”、“boolean”、“number” 或 “string”。</li>
+</ul>
+<h3 id="一元运算符-2"><a class="markdownIt-Anchor" href="#一元运算符-2"></a> 一元+运算符</h3>
+<p>产生式 UnaryExpression : + UnaryExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 expr 为解释执行 UnaryExpression 的结果。</li>
+<li>返回 ToNumber(GetValue(expr))。</li>
+</ol>
+<h3 id="一元-运算符"><a class="markdownIt-Anchor" href="#一元-运算符"></a> 一元-运算符</h3>
+<p>产生式 UnaryExpression : - UnaryExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 expr 为解释执行 UnaryExpression 的结果。</li>
+<li>令 oldValue 为 ToNumber(GetValue(expr))。</li>
+<li>如果 oldValue 为 NaN，返回 NaN。</li>
+<li>返回 oldValue 取负（即，算出一个数字相同但是符号相反的值）的结果。</li>
+</ol>
+<h3 id="按位非运算符"><a class="markdownIt-Anchor" href="#按位非运算符"></a> 按位非运算符</h3>
+<p>产生式 UnaryExpression : ~ UnaryExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 expr 为解释执行 UnaryExpression 的结果。</li>
+<li>令 oldValue 为 ToInt32(GetValue(expr))。</li>
+<li>返回 oldValue 按位取反的结果。结果为 32位 有符号整数。</li>
+</ol>
+<h3 id="逻辑非运算符"><a class="markdownIt-Anchor" href="#逻辑非运算符"></a> 逻辑非运算符</h3>
+<p>产生式 UnaryExpression : ! UnaryExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 expr 为解释执行 UnaryExpression 的结果。</li>
+<li>令 oldValue 为 ToBoolean(GetValue(expr))。</li>
+<li>如果 oldValue 为 true，返回 false。</li>
+<li>返回 true。</li>
+</ol>
+<h2 id="乘法运算符"><a class="markdownIt-Anchor" href="#乘法运算符"></a> 乘法运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MultiplicativeExpression :</span><br><span class="line">    UnaryExpression</span><br><span class="line">    MultiplicativeExpression * UnaryExpression</span><br><span class="line">    MultiplicativeExpression / UnaryExpression</span><br><span class="line">    MultiplicativeExpression % UnaryExpression</span><br></pre></td></tr></table></figure>
+<p>产生式 <code>MultiplicativeExpression : MultiplicativeExpression @ UnaryExpression</code>，其中 <code>@</code> 表示上面定义的运算符其一，按照下面的过程执行：</p>
+<ol>
+<li>令 left 为解释执行 MultiplicativeExpression 的结果。</li>
+<li>令 leftValue 为 GetValue(left)。</li>
+<li>令 right 为解释执行 UnaryExpression 的结果。</li>
+<li>令 rightValue 为 GetValue(right)。</li>
+<li>令 leftNum 为 ToNumber(leftValue)。</li>
+<li>令 rightNum 为 ToNumber(rightValue)。</li>
+<li>返回将特定运算符 (*, / 或 %) 作用于 leftNum 和 rightNum 的结果。参见下面的注解。</li>
+</ol>
+<h3 id="使用运算符"><a class="markdownIt-Anchor" href="#使用运算符"></a> 使用*运算符</h3>
+<p><code>*</code> 运算符表示乘法，产生操作数的乘积。乘法运算满足交换律。因为精度问题，乘法不总是满足结合律。</p>
+<p>浮点数的乘法遵循 IEEE 754 二进制双精度幅度浮点算法规则：</p>
+<ul>
+<li>若两个操作数之一为 NaN，结果为 NaN。</li>
+<li>假如两个操作数的正负号相同，结果就是正的，如果不同就是负的。</li>
+<li>无穷大被零乘结果是 NaN。</li>
+<li>无穷大被无穷大乘结果就是无穷大。符号按照前面说过的规则决定。</li>
+<li>无穷大被有穷的非零值乘结果是带正负号的无穷大。符号仍然按照前面说过的规则决定。</li>
+<li>其它情况下，既没有无穷大也没有 NaN 参与运算，结果计算出来后会按照 IEEE 754 round-to-nearest 取到最接近的能表示的数。如果值过大不能表示，则结果为相应的正负无穷大。如果值过小不能表示，则结果为相应的正负零。ECMAScript 要求支持 IEEE 754 规定的渐进下溢。</li>
+</ul>
+<h3 id="使用运算符-2"><a class="markdownIt-Anchor" href="#使用运算符-2"></a> 使用/运算符</h3>
+<p>/ 运算符表示除法，产生操作数的商。左操作数是被除数，右操作数是除数。</p>
+<p>ECMAScript 不支持整数除法。所有除法运算的操作数和结果都是双精度浮点数。浮点数的除法遵循 IEEE 754 二进制双精度幅度浮点算法规则：</p>
+<ul>
+<li>若两个操作数之一为 NaN，结果为 NaN。</li>
+<li>假如两个操作数的正负号相同，结果就是正的，如果不同就是负的。</li>
+<li>无穷大被无穷大除结果是 NaN。</li>
+<li>无穷大被零除结果是无穷大。符号按照前面说过的规则决定。</li>
+<li>无穷大被非零有穷的值除结果是有正负号的无穷大。符号按照前面说过的规则决定。</li>
+<li>有穷的非零值被无穷大除结果是零。符号按照前面说过的规则决定。</li>
+<li>零被零除结果是 NaN；零被其它有穷数除结果是零，符号按照前面说过的规则决定。</li>
+<li>有穷的非零值被零除结果是有正负号的无穷大。符号按照前面说过的规则决定。</li>
+<li>其它情况下，既没有无穷大也没有 NaN 参与运算，结果计算出来后会按照 IEEE 754 round-to-nearest 取到最接近的能表示的数。如果值过大不能表示，则结果为相应的正负无穷大。如果值过小不能表示，则结果为相应的正负零。ECMAScript 要求支持 IEEE 754 规定的渐进下溢。</li>
+</ul>
+<h3 id="使用运算符-3"><a class="markdownIt-Anchor" href="#使用运算符-3"></a> 使用%运算符</h3>
+<p>% 运算符产生其运算符在除法中的余数。左操作数是被除数，右操作数是除数。</p>
+<p>注：在 C 和 C++ 中，余数运算符只接受整数为操作数；在 ECMAScript，它还接受浮点操作数。</p>
+<p>浮点数使用 % 运算符的余数运算与 IEEE 754 所定义的 “remainder” 运算不完全相同。IEEE 754 “remainder” 运算做邻近取整除法的余数计算，而不是舍尾除法，这样它的行为跟通常意义上的整数余数运算符行为不一致。而 ECMAScript 语言定义浮点操作 % 为与 Java 取余运算符一致；可以参照 C 库中的函数 fmod。<br />
+遵循公式<code>a%b = a - Math.trunc(a/b) * b</code></p>
+<p>ECMAScript 浮点数的取余法遵循 IEEE 754 二进制双精度幅度浮点算法规则：</p>
+<ol>
+<li>若两个操作数之一为 NaN，结果为 NaN。</li>
+<li>结果的符号等于被除数。</li>
+<li>若被除数是无穷大或者除数是零，或者两者皆是，结果就是 NaN。</li>
+<li>若被除数有穷而除数为无穷大，结果为被除数。</li>
+<li>若被除数为零且除数非零且有穷，结果与被除数相同。</li>
+<li>其它情况下，既没有零或无穷大，也没有 NaN 参与运算，从被除数 n 和除数 d 得到浮点数余数 r 以数学关系式 r = n − (d × q) 定义，其中 q 是个整数，在 n / d 为负时为负，在 n / d 为正时为正，它应该在不超过 n 和 d 的商的前提下尽可能大。结果计算出来后会按照 IEEE 754 round-to-nearest 取到最接近的能表示的数。</li>
+</ol>
+<h2 id="加法运算符"><a class="markdownIt-Anchor" href="#加法运算符"></a> 加法运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AdditiveExpression :</span><br><span class="line">    MultiplicativeExpression</span><br><span class="line">    AdditiveExpression + MultiplicativeExpression</span><br><span class="line">    AdditiveExpression - MultiplicativeExpression</span><br></pre></td></tr></table></figure>
+<h3 id="加法运算符-2"><a class="markdownIt-Anchor" href="#加法运算符-2"></a> 加法运算符（+）</h3>
+<p>加法运算符启动字符串相接或是数值相加。<br />
+产生式 <code>AdditiveExpression : AdditiveExpression + MultiplicativeExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 AdditiveExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 MultiplicativeExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lprim 为 ToPrimitive(lval)。</li>
+<li>令 rprim 为 ToPrimitive(rval)。</li>
+<li>如果 Type(lprim) 为 String 或者 Type(rprim) 为 String，则：
+<ol>
+<li>返回由 ToString(lprim) 和 ToString(rprim) 连接而成的字符串。</li>
+</ol>
+</li>
+<li>返回将加法运算作用于 ToNumber(lprim) 和 ToNumber(rprim) 的结果。参见 下面 的注解。</li>
+</ol>
+<p>注：在 第5步 和 第6步 中 ToPrimitive 的调用没有提供暗示类型。所有除了 Date 对象的 ECMAScript 原生对象会在没有提示的时候假设提示是 Number；Date 对象会假设提示是 String。宿主对象可以假设提示是任何东西。</p>
+<p>注：第7步 与关系比较算法的 第3步 不同（11.8.5），使用逻辑 “或” 而不是 “与”。逻辑或意味着，Type(l) == String || Type® == String，即l是String、或r是String、或二者都是String。11.8.5中的逻辑与意味着，!(Type(l) == String &amp;&amp; Type® == String)，即l是String、或r是String、或二者都不是String。</p>
+<p><code>+</code> 运算符作用于两个数字类型的操作数时表示加法，产生两个操作数之和。<br />
+加法是满足交换律的运算，但是不总满足结合律。<br />
+加法遵循 IEEE 754 二进制双精度幅度浮点算法规则：</p>
+<ul>
+<li>若两个操作数之一为 NaN，结果为 NaN。</li>
+<li>两个正负号相反的无穷之和为 NaN。</li>
+<li>两个正负号相同的无穷大之和是具有相同正负的无穷大。</li>
+<li>无穷大和有穷值之和等于操作数中的无穷大。</li>
+<li>两个负零之和为 -0。</li>
+<li>两个正零，或者两个正负号相反的零之和为 +0。</li>
+<li>零与非零有穷值之和等于非零的那个操作数。</li>
+<li>两个大小相等，符号相反的非零有穷值之和为 +0。</li>
+<li>其它情况下，既没有无穷大也没有 NaN 或者零参与运算，并且操作数要么大小不等，要么符号相同，结果计算出来后会按照 IEEE 754 round-to-nearest 取到最接近的能表示的数。如果值过大不能表示，则结果为相应的正负无穷大。如果值过小不能表示，则结果为相应的正负零。ECMAScript 要求支持 IEEE 754 规定的渐进下溢。</li>
+</ul>
+<h3 id="减法运算符-"><a class="markdownIt-Anchor" href="#减法运算符-"></a> 减法运算符（-）</h3>
+<p>产生式 AdditiveExpression : AdditiveExpression - MultiplicativeExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 lref 为解释执行 AdditiveExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 MultiplicativeExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lnum 为 ToNumber(lval)。</li>
+<li>令 rnum 为 ToNumber(rval)。</li>
+<li>返回返回将减法运算作用于 lnum 和 rnum 的结果。参见 11.6.3 后的注解。</li>
+</ol>
+<p><code>-</code> 运算符表示减法，产生两个数字之差。<br />
+运算符作用于两个数字类型时表示减法，产生两个操作数之差。左边操作数是被减数右边是减数。给定操作数 a 和 b，总是有 a–b 产生与 a + (-b) 产生相同结果</p>
+<h2 id="移位运算符"><a class="markdownIt-Anchor" href="#移位运算符"></a> 移位运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ShiftExpression :</span><br><span class="line">    AdditiveExpression</span><br><span class="line">    ShiftExpression &lt;&lt; <span class="string">AdditiveExpression</span></span><br><span class="line"><span class="string">    ShiftExpression &gt;&gt; AdditiveExpression</span></span><br><span class="line">    ShiftExpression &gt;&gt;&gt; AdditiveExpression</span><br></pre></td></tr></table></figure>
+<h3 id="左移运算符"><a class="markdownIt-Anchor" href="#左移运算符"></a> 左移运算符</h3>
+<p>对左边参数执行右边参数指定大小的左移位运算。<br />
+产生式 <code>ShiftExpression : ShiftExpression &lt;&lt; AdditiveExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 AdditiveExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lnum 为 ToInt32(lval)。</li>
+<li>令 rnum 为 ToUint32(rval)。</li>
+<li>令 shiftCount 为用掩码算出 rnum 的最后五个比特位，即计算 rnum &amp; 0x1F 的结果。</li>
+<li>返回 lnum 左移 shiftCount 比特位的结果。结果是一个有符号 32位 整数。</li>
+</ol>
+<p>注：第7步意味着实际的移位量是 rnum % 32，即低log2(32)=5位</p>
+<h3 id="算术右移运算符"><a class="markdownIt-Anchor" href="#算术右移运算符"></a> 算术右移运算符</h3>
+<p>对左边参数执行右边参数指定大小的右移位带号填充运算。<br />
+产生式 <code>ShiftExpression : ShiftExpression &gt;&gt; AdditiveExpression</code> 按照下面的过程执行 :</p>
+<ol>
+<li>令 lref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 AdditiveExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lnum 为 ToInt32(lval)。</li>
+<li>令 rnum 为 ToUint32(rval)。</li>
+<li>令 shiftCount 为用掩码算出 rnum 的最后五个比特位，即计算 rnum &amp; 0x1F 的结果。</li>
+<li>返回 lnum 带符号扩展的右移 shiftCount 比特位的结果。最高有效位用符号位填充。结果是一个有符号 32位 整数。</li>
+</ol>
+<h3 id="逻辑右移运算符"><a class="markdownIt-Anchor" href="#逻辑右移运算符"></a> 逻辑右移运算符</h3>
+<p>对左边参数执行右边参数指定大小的右移位填零运算。<br />
+产生式 ShiftExpression : ShiftExpression &gt;&gt;&gt; AdditiveExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 lref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 AdditiveExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lnum 为 ToUint32(lval)。</li>
+<li>令 rnum 为 ToUint32(rval)。</li>
+<li>令 shiftCount 为用掩码算出 rnum 的最后五个比特位，即计算 rnum &amp; 0x1F 的结果。</li>
+<li>返回 lnum 做零填充右移 shiftCount 比特位的结果。缺少的比特位填零。结果是一个无符号 32位 整数。</li>
+</ol>
+<h2 id="关系运算符"><a class="markdownIt-Anchor" href="#关系运算符"></a> 关系运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression :</span><br><span class="line">    ShiftExpression</span><br><span class="line">    RelationalExpression &lt; ShiftExpression</span><br><span class="line">    RelationalExpression &gt; ShiftExpression</span><br><span class="line">    RelationalExpression &lt;= ShiftExpression</span><br><span class="line">    RelationalExpression &gt;= ShiftExpression</span><br><span class="line">    RelationalExpression instanceof ShiftExpression</span><br><span class="line">    RelationalExpression <span class="keyword">in</span> ShiftExpression</span><br><span class="line">RelationalExpressionNoIn :</span><br><span class="line">    ShiftExpression</span><br><span class="line">    RelationalExpressionNoIn &lt; ShiftExpression</span><br><span class="line">    RelationalExpressionNoIn &gt; ShiftExpression</span><br><span class="line">    RelationalExpressionNoIn &lt;= ShiftExpression</span><br><span class="line">    RelationalExpressionNoIn &gt;= ShiftExpression</span><br><span class="line">    RelationalExpressionNoIn instanceof ShiftExpression</span><br></pre></td></tr></table></figure>
+<p>注：“NoIn” 变种的存在是为了要避免把一个关系表达式里的 in 和一个 for语句 里的 in 搞混。</p>
+<p>语义：</p>
+<p>关系运算符的执行结果总是一个表示运算符代表的关系在两个参数之间成立与否的 Boolean 值。</p>
+<p>除了要执行内有的 RelationalExpressionNoIn 而不是RelationalExpression 以外，产生式 RelationalExpressionNoIn 的执行方式与产生式 RelationalExpression 的执行方式相同。</p>
+<h3 id="小于运算符"><a class="markdownIt-Anchor" href="#小于运算符"></a> 小于运算符&lt;</h3>
+<p>产生式 <code>RelationalExpression : RelationalExpression &lt; ShiftExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为启用抽象关系比较 lval &lt; rval（参见 11.8.5) 的结果。</li>
+<li>如果 r 为 undefined，返回 false。否则，返回 r。</li>
+</ol>
+<h3 id="小于等于运算符"><a class="markdownIt-Anchor" href="#小于等于运算符"></a> 小于等于运算符&lt;=</h3>
+<p>产生式 <code>RelationalExpression : RelationalExpression &lt;= ShiftExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为启用抽象关系比较 rval &lt; lval 的结果，参数 LeftFirst 设为 false。（参见 11.8.5)</li>
+<li>如果 r 为 true 或者 undefined ，返回 false。否则，返回 true。</li>
+</ol>
+<h3 id="大于等于运算符"><a class="markdownIt-Anchor" href="#大于等于运算符"></a> 大于等于运算符（&gt;=）</h3>
+<p>产生式 <code>RelationalExpression : RelationalExpression &gt;= ShiftExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为启用抽象关系比较 lval &lt; rval 的结果。（参见 11.8.5)</li>
+<li>如果 r 为 true 或者 undefined，返回 false。否则，返回 true。</li>
+</ol>
+<h3 id="抽象关系比较算法"><a class="markdownIt-Anchor" href="#抽象关系比较算法"></a> 抽象关系比较算法</h3>
+<p>以 x 和 y 为值进行小于比较（x &lt; y 的比较），会产生的结果可为 true、false 或 undefined（这说明 x、y 中最少有一个操作数是 NaN）。除了 x 和 y，这个算法另外需要一个名为 LeftFirst 的布尔值标记作为参数。这个标记用于解析顺序的控制，因为操作数 x 和 y 在执行的时候会有潜在可见的副作用。这个标志的存在是必须的，因为 ECMAScript 规定了表达式是从左到右顺序执行。LeftFirst 的默认值是 true，这表明在相关的表达式中，参数 x 出现在参数 y 之前。如果 LeftFirst 值是 false，情况会相反，操作数的执行必须是先 y 后 x。这样的一个小于比较的执行步骤如下：</p>
+<ol>
+<li>如果 LeftFirst 标志是 true，那么
+<ol>
+<li>让 px 为调用 ToPrimitive(x, 暗示 Number 类型) 的结果。</li>
+<li>让 py 为调用 ToPrimitive(y, 暗示 Number 类型) 的结果。</li>
+</ol>
+</li>
+<li>否则解释执行的顺序需要反转，从而保证从左到右的执行顺序
+<ol>
+<li>让 py 为调用 ToPrimitive(y, 暗示 Number 类型) 的结果。</li>
+<li>让 px 为调用 ToPrimitive(x, 暗示 Number 类型) 的结果。</li>
+</ol>
+</li>
+<li>如果 Type(px) 和 Type(py) 得到的结果不都是 String 类型，那么
+<ol>
+<li>让 nx 为调用 ToNumber(px) 的结果。因为 px 和 py 都已经是基本数据类型（primitive values 也作原始值），其执行顺序并不重要。</li>
+<li>让 ny 为调用 ToNumber(py) 的结果。</li>
+<li>如果 nx 是 NaN，返回 undefined。</li>
+<li>如果 ny 是 NaN，返回 undefined。</li>
+<li>如果 nx 和 ny 的数字值相同，返回 false。</li>
+<li>如果 nx 是 +0 且 ny 是 -0，返回 flase。</li>
+<li>如果 nx 是 -0 且 ny 是 +0，返回 false。</li>
+<li>如果 nx 是 +∞，返回 fasle。</li>
+<li>如果 ny 是 +∞，返回 true。</li>
+<li>如果 ny 是 -∞，返回 false。</li>
+<li>如果 nx 是 -∞，返回 true。</li>
+<li>如果 nx 数学上的值小于 ny 数学上的值（注意这些数学值都不能是无限的且不能都为 0），返回 ture。否则返回 false。</li>
+</ol>
+</li>
+<li>否则，px 和 py 都是 Strings 类型
+<ol>
+<li>如果 py 是 px 的一个前缀，返回 false。（当字符串 q 的值可以是字符串 p 和一个其他的字符串 r 拼接而成时，字符串 p 就是 q 的前缀。注意：任何字符串都是自己的前缀，因为 r 可能是空字符串。）</li>
+<li>如果 px 是 py 的前缀，返回 true。</li>
+<li>让 k 成为最小的非负整数，能使得在 px 字符串中位置 k 的字符与字符串 py 字符串中位置 k 的字符不相同。（因为 px 与 py 不是彼此的前綴，这里 k 必然存在。）</li>
+<li>让 m 为字符串 px 中位置 k 的字符的编码单元值。</li>
+<li>让 n 成为字符串 py 中位置 k 的字符的编码单元值。</li>
+<li>如果 m &lt; n，返回 true。否则，返回 false。</li>
+</ol>
+</li>
+</ol>
+<p>注：使用或代替的时候要注意，这里的 第3步 和加号操作符 + 算法（11.6.1）的 第7步 的区别。这里用的是逻辑与，!(Type(l) == String &amp;&amp; Type® == String)，即l是String、或r是String、或二者都不是String。转换成逻辑或应该是 Type(l) != String || Type® != String。而加号操作符算法第7步是Type(l) == String || Type® == String</p>
+<p>注：String 类型的比较使用了其编码单元值的作为一个简单的词法表序列去比较。这里不打算使用更复杂的、语义化的字符或字符串序列，和 Unicode 规范的整理序列进行比较。因此，字符串的值和其对应的 Unicode 标准的值是不相同的。实际上，这个算法假定了所有字符串已经是正常化的格式。同时要注意，对于字符串拼接追加的字符的时候，UTF-16 编码单元值的词法表序列是不同于代码点值的序列的。</p>
+<p>注：根据UTF16规定，如果代码点在0x0000-0xFFFF之间，则编码单元值等于代码点。<br />
+另外，<code>&quot;\uF902&quot; &lt; &quot;\uD83D\uDE42&quot;</code>的值为false，尽管根据UTF16标准，<code>\uD83D\uDE42</code>合起来才是一个字符，但在JavaScript中认为它是两个字符，因此比较时实际比较的是<code>&quot;\uF902&quot; &lt; &quot;\uD83D&quot;</code>。</p>
+<p>贯穿本文档的短语“代码单元”和单词“字符”特指表示文本的单个16位单元的16位无符号值。短语“Unicode 字符”特指单个 Unicode 标量值（这可能大于16位，因此它可能代表多个代码单位）表示的语言或排版上的抽象单位。短语“代码点”是指这样一个 Unicode 标量值。“Unicode 字符”仅指由单一的 Unicode 标量值表示的实体：组合字符序列的每个组成部分都是单个“Unicode 字符”，尽管用户可能会认为整个序列是单个字符。</p>
+<p>在字符串字面量、正则表达式字面量、标识符中的任意字符（代码单元），可以是由六个字符组成的 Unicode 转义序列，即 \u 加上四个16进制数字。在注释中，这样的转义序列被当作注释的一部分忽略掉。在字符串字面量或正则表达式字面量，Unicode 转义序列会给字面量值贡献一个字符。在标识符中，转义序列给标识符贡献一个字符。</p>
+<h3 id="instanceof-运算符"><a class="markdownIt-Anchor" href="#instanceof-运算符"></a> instanceof 运算符</h3>
+<p>产生式 <code>RelationalExpression: RelationalExpression instanceof ShiftExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>如果 Type(rval) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>如果 rval 没有 [[HasInstance]] 内置方法，抛出一个 TypeError 异常。</li>
+<li>返回以参数 lval 调用 rval 的 [[HasInstance]] 内置方法的结果。</li>
+</ol>
+<p>[[HasInstance]]返回一个表示参数对象是否可能是由本对象构建的布尔值。在标准内置 ECMAScript 对象中只有 Function 对象实现 [[HasInstance]]。</p>
+<p>[[HasInstance]] (V)<br />
+设 F 是个函数对象。 当以 V 作为参数调用 F 的 [[HasInstance]] 内部方法，采用如下步骤：</p>
+<ol>
+<li>如果 V 不是个对象，返回 false。</li>
+<li>令 O 为用属性名 “prototype” 调用 F 的 [[Get]] 内部方法的结果。</li>
+<li>如果 Type(O) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>重复
+<ol>
+<li>令 V 为 V 的 [[Prototype]] 内部属性值。</li>
+<li>如果 V 是 null，返回 false。</li>
+<li>如果 O 和 V 指向相同对象，返回 true。</li>
+</ol>
+</li>
+</ol>
+<p>注： 用 Function.prototype.bind 创建的函数对象拥有的不同的 [[HasInstance]] 实现，在 15.3.4.5.3 中定义。</p>
+<p>以下均为true<br />
+Function instanceof Function<br />
+Object instanceof Object<br />
+Function isntanceof Object<br />
+Object instanceof Function</p>
+<p><code>Object.__proto__ === Function.prototype</code>为true<br />
+<code>Function.__proto__ === Function.prototype</code>为true<br />
+<code>Function.__proto__.__proto__ === Object.prototype</code>为true<br />
+<code>Function.__proto__ === Object.prototype</code>为false<br />
+<code>Object.__proto__ === Object.prototype</code>为false<br />
+<code>Object.__proto__.__proto__ === Object.prototype</code>为true<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/_v_images/20201218093707068_25310.png" alt="" width="621" /><br />
+凡是函数，其隐式引用都是Function.prototype对象，Function和Object也是函数。<br />
+反是对象，其隐式引用都是Object.prototype对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">indexOf</span>(<span class="params">arr, val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(int i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] === val)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="in-运算符"><a class="markdownIt-Anchor" href="#in-运算符"></a> in 运算符</h3>
+<p>产生式 <code>RelationalExpression : RelationalExpression in ShiftExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 ShiftExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>如果 Type(rval) 不是 Object，抛出一个 TypeError 异常。</li>
+<li>返回以参数 ToString(lval) 调用 rval 的 [[HasProperty]] 内置方法的结果。</li>
+</ol>
+<h2 id="等值运算符"><a class="markdownIt-Anchor" href="#等值运算符"></a> 等值运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">EqualityExpression :</span><br><span class="line">    RelationalExpression</span><br><span class="line">    EqualityExpression == RelationalExpression</span><br><span class="line">    EqualityExpression != RelationalExpression</span><br><span class="line">    EqualityExpression === RelationalExpression</span><br><span class="line">    EqualityExpression !== RelationalExpression</span><br><span class="line">EqualityExpressionNoIn :</span><br><span class="line">    RelationalExpressionNoIn</span><br><span class="line">    EqualityExpressionNoIn == RelationalExpressionNoIn</span><br><span class="line">    EqualityExpressionNoIn != RelationalExpressionNoIn</span><br><span class="line">    EqualityExpressionNoIn === RelationalExpressionNoIn</span><br><span class="line">    EqualityExpressionNoIn !== RelationalExpressionNoIn</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>等值运算符的执行结果总是一个表示运算符代表的关系在两个参数之间成立与否的 Boolean 值。</p>
+<p>除了要执行内有的 EqualityExpressionNoIn 与 RelationalExpressionNoIn 而不是EqualityExpression 与 RelationalExpression 以外，产生式 EqualityExpressionNoIn 的执行方式与产生式 EqualityExpression 的执行方式相同。</p>
+<h3 id="等于运算符"><a class="markdownIt-Anchor" href="#等于运算符"></a> 等于运算符（==）</h3>
+<p>产生式 EqualityExpression : EqualityExpression == RelationalExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 EqualityExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>返回做用抽象相等比较算法于 rval == lval（参见 11.9.3）的结果。</li>
+</ol>
+<h3 id="不等于运算符"><a class="markdownIt-Anchor" href="#不等于运算符"></a> 不等于运算符（!=）</h3>
+<p>产生式 EqualityExpression : EqualityExpression != RelationalExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 EqualityExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为做用抽象相等比较算法于 rval == lval（参见 11.9.3）的结果。</li>
+<li>如果 r 为 true，返回 false。否则，返回 true。</li>
+</ol>
+<h3 id="抽象相等比较算法"><a class="markdownIt-Anchor" href="#抽象相等比较算法"></a> 抽象相等比较算法</h3>
+<p>以 x 和 y 为值进行 x == y 比较会产生的结果可为 true 或 false。比较的执行步骤如下：</p>
+<ol>
+<li>若 Type(x) 与 Type(y) 相同， 则
+<ol>
+<li>若 Type(x) 为 Undefined， 返回 true。</li>
+<li>若 Type(x)为 Null， 返回 true。</li>
+<li>若 Type(x)为 Number，则
+<ol>
+<li>若 x 为 NaN，返回 false。</li>
+<li>若 y 为 NaN，返回 false。</li>
+<li>若 x 与 y 为相等数值，返回 true。</li>
+<li>若 x 为 +0 且 y 为 −0，返回 true。</li>
+<li>若 x 为 −0 且 y 为 +0，返回 true。</li>
+<li>返回 false。</li>
+</ol>
+</li>
+<li>若 Type(x) 为 String，则当 x 和 y 为完全相同的字符序列（长度相等且相同字符在相同位置）时返回 true。否则，返回 false。</li>
+<li>若 Type(x) 为 Boolean，当 x 和 y 为同为 true 或者同为 false 时返回 true。否则，返回 false。</li>
+<li>当 x 和 y 为引用同一对象时返回 true。否则，返回 false。</li>
+</ol>
+</li>
+<li>若 x 为 null 且 y 为 undefined，返回 true。</li>
+<li>若 x 为 undefined 且 y 为 null，返回 true。</li>
+<li>若 Type(x) 为 Number 且 Type(y) 为 String，返回 x == ToNumber(y) 的结果。</li>
+<li>若 Type(x) 为 String 且 Type(y) 为 Number，返回比较 ToNumber(x) == y 的结果。</li>
+<li>若 Type(x) 为 Boolean，返回比较 ToNumber(x) == y 的结果。</li>
+<li>若 Type(y) 为 Boolean，返回比较 x == ToNumber(y) 的结果。</li>
+<li>若 Type(x) 为 String 或 Number，且 Type(y) 为 Object，返回比较 x == ToPrimitive(y) 的结果。</li>
+<li>若 Type(x) 为 Object 且 Type(y) 为 String 或 Number，返回比较 ToPrimitive(x) == y 的结果。</li>
+<li>返回 false。</li>
+</ol>
+<p>注：根据上述等于的定义：</p>
+<ul>
+<li>字符串比较可以以：&quot;&quot; + a == “” + b 硬性触发。</li>
+<li>数值比较可以以：+a == +b 硬性触发。</li>
+<li>布尔比较可以以：!a == !b 硬性触发。</li>
+</ul>
+<p>注：等于运算符有以下的不变量：</p>
+<ul>
+<li>A != B 与 !(A == B) 相等。</li>
+<li>除了 A 与 B 的执行顺序以外，A == B 与 B == A 相等。</li>
+</ul>
+<p>注：等于运算符不总是可传递。举例来说，两个代表相同 String 值但是不同的 String 对象会分别与 String 值 ==，但是两个对象间不相等。<br />
+注：String 的比较使用代码单元序列的简单等号比较。这里不打算使用更复杂的、语义化的字符或字符串序列，和 Unicode 规范的整理序列进行比较。因此，在 Unicode 标准中相等的 String 值可能在本算法中不相等。也就是，这个算法假定了所有字符串已经正规化。</p>
+<h3 id="严格等于运算符"><a class="markdownIt-Anchor" href="#严格等于运算符"></a> 严格等于运算符（===）</h3>
+<p>产生式 EqualityExpression : EqualityExpression === RelationalExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 EqualityExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>返回做用严格等于比较算法于 rval === lval（参见 11.9.6）的结果。</li>
+</ol>
+<h3 id="严格不等于运算符"><a class="markdownIt-Anchor" href="#严格不等于运算符"></a> 严格不等于运算符（!==）</h3>
+<p>产生式 EqualityExpression : EqualityExpression !== RelationalExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 EqualityExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 RelationalExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为做用严格等于比较算法于 rval === lval（参见 11.9.6）的结果。</li>
+<li>如果 r 为 true，返回 false。否则，返回 true。</li>
+</ol>
+<h3 id="严格等于比较算法"><a class="markdownIt-Anchor" href="#严格等于比较算法"></a> 严格等于比较算法</h3>
+<p>比较 x === y，x 和 y 为值，需要产出 true 或 false。比较过程如下：</p>
+<ol>
+<li>如果 Type(x) 与 Type(y) 的结果不一致，返回 false。</li>
+<li>如果 Type(x) 结果为 Undefined，返回 true。</li>
+<li>如果 Type(x) 结果为 Null，返回 true。</li>
+<li>如果 Type(x) 结果为 Number，则
+<ol>
+<li>如果 x 为 NaN，返回 false。</li>
+<li>如果 y 为 NaN，返回 false。</li>
+<li>如果 x 与 y 为同一个数字，返回 true。</li>
+<li>如果 x 为 +0，y 为 -0，返回 true。</li>
+<li>如果 x 为 -0，y 为 +0，返回 true。</li>
+<li>返回 false。</li>
+</ol>
+</li>
+<li>如果 Type(x) 结果为 String，如果 x 与 y 为完全相同的字符序列（相同的长度和相同的字符对应相同的位置），返回 true，否则，返回 false。</li>
+<li>如果 Type(x) 结果为 Boolean，如果 x 与 y 都为 true 或 false，则返回 true，否则，返回 false。</li>
+<li>如果 x 和 y 引用到同一个 Object 对象，返回 true，否则，返回 false。</li>
+</ol>
+<p>注： 此算法与 SameValue （9.12） 算法在对待 有符号零 和 NaN 上表现不同。</p>
+<h2 id="二元按位运算符"><a class="markdownIt-Anchor" href="#二元按位运算符"></a> 二元按位运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BitwiseANDExpression :</span><br><span class="line">    EqualityExpression</span><br><span class="line">    BitwiseANDExpression &amp; EqualityExpression</span><br><span class="line">BitwiseXORExpression :</span><br><span class="line">    BitwiseANDExpression</span><br><span class="line">    BitwiseXORExpression ^ BitwiseANDExpression</span><br><span class="line">BitwiseORExpression :</span><br><span class="line">    BitwiseXORExpression</span><br><span class="line">    BitwiseORExpression | BitwiseXORExpression</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>产生式 A : A @ B，其中 @ 是上述产生式中其中一个位运算符，按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 A 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 B 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 lnum 为 ToInt32(lval)。</li>
+<li>令 rnum 为 ToInt32(rval)。</li>
+<li>返回作用位运算符 @ 作用到 lnum 和 rnum 的结果，是一个 32位 有符号整数。</li>
+</ol>
+<h2 id="二元逻辑运算符"><a class="markdownIt-Anchor" href="#二元逻辑运算符"></a> 二元逻辑运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression :</span><br><span class="line">    BitwiseORExpression</span><br><span class="line">    LogicalANDExpression &amp;&amp; BitwiseORExpression</span><br><span class="line">LogicalORExpression :</span><br><span class="line">    LogicalANDExpression</span><br><span class="line">    LogicalORExpression || LogicalANDExpression</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>产生式 <code>LogicalANDExpression : LogicalANDExpression &amp;&amp; BitwiseORExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 LogicalANDExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>如果 ToBoolean(lval) 为 false，返回 lval。</li>
+<li>令 rref 为解释执行 BitwiseORExpression 的结果。</li>
+<li>返回 GetValue(rref)。</li>
+</ol>
+<p>产生式 <code>LogicalORExpression : LogicalORExpression || LogicalANDExpression</code> 按照下面的过程执行 :</p>
+<ol>
+<li>令 lref 为解释执行 LogicalORExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>如果 ToBoolean(lval) 为 true，返回 lval。</li>
+<li>令 rref 为解释执行 LogicalANDExpression 的结果。</li>
+<li>返回 GetValue(rref)。</li>
+</ol>
+<p>除了要执行内有的 LogicalANDExpressionNoIn、BitwiseORExpressionNoIn 与 LogicalORExpressionNoIn 而不是LogicalANDExpression、BitwiseORExpression 与 LogicalORExpression 以外，产生式 LogicalANDExpressionNoIn 与 LogicalORExpressionNoIn 的执行方式与产生式 LogicalANDExpression 与 LogicalORExpression 的执行方式相同。</p>
+<p>注：&amp;&amp; 与 || 运算符产生的值不一定是布尔值。产生的值总是两个表达式其一。只有当GetValue的值是布尔值时返回的才是布尔值。</p>
+<h2 id="条件运算符"><a class="markdownIt-Anchor" href="#条件运算符"></a> 条件运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ConditionalExpression :</span><br><span class="line">    LogicalORExpression</span><br><span class="line">    LogicalORExpression ? AssignmentExpression : AssignmentExpression</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>产生式 <code>ConditionalExpression : LogicalORExpression ? AssignmentExpression : AssignmentExpression</code> 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 LogicalORExpression 的结果。</li>
+<li>如果 ToBoolean(GetValue(lref)) 为 true，那么：
+<ol>
+<li>令 trueRef 为解释执行第一个 AssignmentExpression 的结果。</li>
+<li>返回 GetValue(trueRef)。</li>
+</ol>
+</li>
+<li>否则
+<ol>
+<li>令 falseRef 为解释执行第二个 AssignmentExpression 的结果。</li>
+<li>返回 GetValue(falseRef)。</li>
+</ol>
+</li>
+</ol>
+<p>除了要执行内有的 LogicalORExpressionNoIn、AssignmentExpression 与 AssignmentExpressionNoIn 而不是LogicalORExpression、AssignmentExpression 与 AssignmentExpression 以外，产生式 ConditionalExpressionNoIn 的执行方式与产生式 ConditionalExpression 的执行方式相同。</p>
+<p>注：在 ECMAScript 里 ConditionalExpression 的语法与 C、Java 的语法有一点不同，C、Java 允许第二个子表达式可以是任意的 Expression 但是限制第三个表达式必须是 ConditionalExpression。ECMAScript 在这里不同的理由是让两支条件都可以使用赋值表达式并消除既无用解析又困难的情形：在中间的表达式使用逗号表达式。</p>
+<h2 id="赋值运算符"><a class="markdownIt-Anchor" href="#赋值运算符"></a> 赋值运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AssignmentExpression :</span><br><span class="line">    ConditionalExpression</span><br><span class="line">    LeftHandSideExpression AssignmentOperator AssignmentExpression</span><br><span class="line">AssignmentOperator : One of</span><br><span class="line">    = *= /= %= += -= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;= &amp;= ^= |=</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>除了要执行内有的 ConditionalExpressionNoIn 与 ConditionalExpressionNoIn 而不是ConditionalExpression 与 AssignmentExpression 以外，产生式 AssignmentExpressionNoIn 的执行方式与产生式 AssignmentExpression 的执行方式相同。</p>
+<h3 id="简单赋值"><a class="markdownIt-Anchor" href="#简单赋值"></a> 简单赋值（=）</h3>
+<p>产生式 AssignmentExpression : LeftHandSideExpression = AssignmentExpression 按照下面的过程执行 :</p>
+<ol>
+<li>令 lref 为解释执行 LeftHandSideExpression 的结果。</li>
+<li>令 rref 为解释执行 AssignmentExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>抛出一个 SyntaxError 异常，当以下条件都成立 :
+<ul>
+<li>Type(lref) 为 Reference</li>
+<li>IsStrictReference(lref) 为 true</li>
+<li>Type(GetBase(lref)) 为环境记录项</li>
+<li>GetReferencedName(lref) 为 “eval” 或 “arguments”</li>
+</ul>
+</li>
+<li>调用 PutValue(lref, rval)。</li>
+<li>返回 rval。</li>
+</ol>
+<p>注：当赋值出现在严格模式代码的时候，赋值的 LeftHandSideExpression 必须不被解释执行为一个不可解析的引用。若这种情形发生，则赋值的时候用户代理会抛出 ReferenceError 例外。LeftHandSideExpression 也不可以是一个特性值是 {[[Writable]]: false} 的数据属性，或是特性值是 {[[Set]]: undefined} 的访问器属性，或是 [[Extensible]] 内部属性是 false 的对象尚未存在的属性引用。在这些情况下用户代理会抛出 TypeError 异常。</p>
+<h3 id="组合赋值op"><a class="markdownIt-Anchor" href="#组合赋值op"></a> 组合赋值（op=）</h3>
+<p>产生式 AssignmentExpression : LeftHandSideExpression @= AssignmentExpression，其中 @ 表示上述的运算符其一，按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 LeftHandSideExpression 的结果。</li>
+<li>令 lval 为 GetValue(lref)。</li>
+<li>令 rref 为解释执行 AssignmentExpression 的结果。</li>
+<li>令 rval 为 GetValue(rref)。</li>
+<li>令 r 为作用运算符 @ 于 lval 和 rval 的结果。</li>
+<li>抛出一个 SyntaxError 异常，当以下条件都成立 :
+<ul>
+<li>Type(lref) 为 Reference</li>
+<li>IsStrictReference(lref) 为 true</li>
+<li>Type(GetBase(lref)) 为环境记录项</li>
+<li>GetReferencedName(lref) 为 “eval” 或 “arguments”</li>
+</ul>
+</li>
+<li>调用 PutValue(lref, r)。</li>
+<li>返回 r。</li>
+</ol>
+<p>注：参见 11.13.1 的备注。</p>
+<h2 id="逗号运算符"><a class="markdownIt-Anchor" href="#逗号运算符"></a> 逗号运算符</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Expression :</span><br><span class="line">    AssignmentExpression</span><br><span class="line">    Expression , AssignmentExpression</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>产生式 Expression : Expression , AssignmentExpression 按照下面的过程执行：</p>
+<ol>
+<li>令 lref 为解释执行 Expression 的结果。</li>
+<li>调用 GetValue(lref)。</li>
+<li>令 rref 为解释执行 AssignmentExpression 的结果。</li>
+<li>返回 GetValue(rref)。</li>
+</ol>
+<p>除了要执行内有的 ExpressionNoIn 与 AssignmentExpressionNoIn 而不是 Expression 与 AssignmentExpression 以外，产生式 ExpressionNoIn 的执行方式与产生式 Expression 的执行方式相同。</p>
+<p>注：就算值不会用到，用户代理仍必须调用 GetValue，因为可能有可观测的副作用。</p>
+<p>从左到右依次执行，但返回最右的值。</p>
+<h1 id="语句"><a class="markdownIt-Anchor" href="#语句"></a> 语句</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Statement :</span><br><span class="line">  Block</span><br><span class="line">  VariableStatement</span><br><span class="line">  EmptyStatement</span><br><span class="line">  ExpressionStatement</span><br><span class="line">  IfStatement</span><br><span class="line">  IterationStatement</span><br><span class="line">  ContinueStatement</span><br><span class="line">  BreakStatement</span><br><span class="line">  ReturnStatement</span><br><span class="line">  WithStatement</span><br><span class="line">  LabelledStatement</span><br><span class="line">  SwitchStatement</span><br><span class="line">  ThrowStatement</span><br><span class="line">  TryStatement</span><br><span class="line">  DebuggerStatement</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>一个 Statement 可以是 LabelledStatement 的一部分，这个 LabelledStatement 自身也可以是 LabelledStatement 的一部分，以 此类推。当描述个别语句时引入标签的这种方式统称为 “当前标签组”。一个 LabelledStatement 介绍了一个标签到一个 标签组，此外没有其他语义。一个 IterationStatement 或 SwitchStatement 的标签组最初包含单个 empty 元素。任何其他语句的标签组最初是空的。</p>
+<h2 id="块"><a class="markdownIt-Anchor" href="#块"></a> 块</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Block :</span><br><span class="line">  &#123; StatementListopt &#125;</span><br><span class="line">StatementList :</span><br><span class="line">  Statement</span><br><span class="line">  StatementList Statement</span><br></pre></td></tr></table></figure>
+<h2 id="变量语句"><a class="markdownIt-Anchor" href="#变量语句"></a> 变量语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">VariableStatement :</span><br><span class="line">    var VariableDeclarationList ;</span><br><span class="line">VariableDeclarationList :</span><br><span class="line">    VariableDeclaration</span><br><span class="line">    VariableDeclarationList , VariableDeclaration</span><br><span class="line">VariableDeclaration :</span><br><span class="line">    Identifier Initialiser_opt</span><br><span class="line">Initialiser :</span><br><span class="line">    = AssignmentExpression</span><br></pre></td></tr></table></figure>
+<p>一个变量语句声明依 10.5 中定义创建的变量。当创建变量时初始化为 undefined。当 VariableStatement 被执行时变量关联的 Initialiser 会被分配 AssignmentExpression 的值，而不是在变量创建时。</p>
+<h2 id="空语句"><a class="markdownIt-Anchor" href="#空语句"></a> 空语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EmptyStatement :</span><br><span class="line">  ;</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>产生式 EmptyStatement : ; 按照下面的过程执行 :</p>
+<ol>
+<li>返回 (normal, empty, empty)。</li>
+</ol>
+<h2 id="表达式语句"><a class="markdownIt-Anchor" href="#表达式语句"></a> 表达式语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ExpressionStatement :</span><br><span class="line">  [lookahead ∉ &#123;&#123;, <span class="keyword">function</span>&#125;] Expression ;</span><br></pre></td></tr></table></figure>
+<p>注： 一个 ExpressionStatement 不能用一个开大括号开始，因为这可能会使它和 Block 混淆。此外，ExpressionStatement 不能用 function 关键字开始，因为这可能会使它和 FunctionDeclaration 混淆。</p>
+<p>语义：</p>
+<p>产生式 <code>ExpressionStatement : [lookahead ∉ &#123;&#123;, function&#125;] Expression ;</code> 按照下面的过程执行 :</p>
+<ol>
+<li>令 exprRef 为解释执行 Expression 的结果。</li>
+<li>返回 (normal, GetValue(exprRef), empty)。</li>
+</ol>
+<h2 id="if-语句"><a class="markdownIt-Anchor" href="#if-语句"></a> if 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IfStatement :</span><br><span class="line">  <span class="keyword">if</span> ( Expression ) Statement <span class="keyword">else</span> Statement</span><br><span class="line">  <span class="keyword">if</span> ( Expression ) Statement</span><br></pre></td></tr></table></figure>
+<p>每个 else 选择与它相关联的 if 是不确定的，应与此 else 最近的并且原本没有与其对应的 else 的可能的 if 对应。</p>
+<p>产生式 IfStatement : if ( Expression ) Statement 按照下面的过程执行 :</p>
+<ol>
+<li>令 exprRef 为解释执行 Expression 的结果。</li>
+<li>如果 ToBoolean(GetValue (exprRef)) 为 false 则返回 (normal, empty, empty).</li>
+<li>返回解释执行 Statement 的结果。</li>
+</ol>
+<h2 id="迭代语句"><a class="markdownIt-Anchor" href="#迭代语句"></a> 迭代语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">IterationStatement :</span><br><span class="line">  <span class="keyword">do</span> Statement <span class="keyword">while</span> ( Expression ) ;</span><br><span class="line">  <span class="keyword">while</span> ( Expression ) Statement</span><br><span class="line">  <span class="keyword">for</span> ( ExpressionNoIn_opt ; Expression_opt ; Expression_opt ) Statement</span><br><span class="line">  <span class="keyword">for</span> ( var VariableDeclarationListNoIn ; Expression_opt ; Expression_opt ) Statement</span><br><span class="line">  <span class="keyword">for</span> ( LeftHandSideExpression <span class="keyword">in</span> Expression ) Statement</span><br><span class="line">  <span class="keyword">for</span> ( var VariableDeclarationNoIn <span class="keyword">in</span> Expression ) Statement</span><br></pre></td></tr></table></figure>
+<p>枚举的属性（第一个算法中的 第6.1步、第二个算法中的 第7.1步）的机制和顺序并没有指定。在枚举过程中枚举的对象属性可能被删除。如果在枚举过程中，删除了还没有被访问到的属性，那么它将不会被访问到。如果在枚举过程中添加新属性到列举的对象，新增加的属性也无法保证被当前执行中的枚举访问到。在任何枚举中对同一个属性名称的访问不得超过一次。</p>
+<p>从对象中枚举属性时也包括对象的原型链。但如果一个原型中的属性是“被遮住的”（原型链中靠前的对象有同样的属性名）就不会枚举。当一个原型对象的属性被原型链中靠前的对象属性遮住时就不考虑它的[[Enumerable]]特性。</p>
+<h2 id="continue-语句"><a class="markdownIt-Anchor" href="#continue-语句"></a> continue 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ContinueStatement :</span><br><span class="line">  <span class="built_in">continue</span> ;</span><br><span class="line">  <span class="built_in">continue</span> [no LineTerminator here] Identifier ;</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>如果以下任意一个为真，那么程序被认为是语法错误的：</p>
+<ul>
+<li>程序包含一个不带可选的 Identifier 的 continue 语句，没有直接或间接（不跨越函数边界）的嵌套在 IterationStatement 里。</li>
+<li>程序包含一个有可选的 Identifier 的 continue 语句，这个 Identifier 没有出现在 IterationStatement 中闭合标签组里（不跨越函数边界）。</li>
+</ul>
+<h2 id="break-语句"><a class="markdownIt-Anchor" href="#break-语句"></a> break 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BreakStatement :</span><br><span class="line">  <span class="built_in">break</span> ;</span><br><span class="line">  <span class="built_in">break</span> [no LineTerminator here] Identifier ;</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>如果以下任意一个为真，那么程序被认为是语法错误的：</p>
+<ul>
+<li>程序包含一个不带可选的 Identifier 的 break 语句，没有直接或间接（不跨越函数边界）的嵌套在 IterationStatement 或 SwitchStatement 里。</li>
+<li>程序包含一个有可选的 Identifier 的 break 语句，这个 Identifier 没有出现在 Statement 中闭合标签组里（不跨越函数边界）。</li>
+</ul>
+<h2 id="return-语句"><a class="markdownIt-Anchor" href="#return-语句"></a> return 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReturnStatement :</span><br><span class="line">  <span class="built_in">return</span> ;</span><br><span class="line">  <span class="built_in">return</span> [no LineTerminator here] Expression ;</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>在一个 ECMAScript 程序中包含的 return 语句没有在 FunctionBody 里面，那么就是语法错误的。一个 return 语句导致函数停止执行，并返回一个值给调用者。如果省略 Expression，返回值是 undefined。否则，返回值是 Expression 的值。</p>
+<h2 id="with-语句"><a class="markdownIt-Anchor" href="#with-语句"></a> with 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WithStatement :</span><br><span class="line">  with ( Expression ) Statement</span><br></pre></td></tr></table></figure>
+<p>with 语句为计算对象给当前执行上下文的词法环境添加一个对象环境记录项。然后，用这个增强的词法环境执行一个语句。最后，恢复到原来的词法环境。</p>
+<p>语义 :</p>
+<p>产生式 WithStatement : with ( Expression ) Statement 按照下面的过程执行 :</p>
+<ol>
+<li>令 val 为解释执行 Expression 的结果。</li>
+<li>令 obj 为 ToObject(GetValue(val))。</li>
+<li>令 oldEnv 为运行中的执行上下文的词法环境组件。</li>
+<li>令 newEnv 为以 obj 和 oldEnv 为参数调用 NewObjectEnvironment 的结果。</li>
+<li>设定 newEnv 的 provideThis 标志为 true。</li>
+<li>设定运行中的执行上下文的词法环境组件为 newEnv。<br />
+7.令 C 为解释执行 Statement 的结果，但如果解释执行是由异常抛出，则令 C 为 (throw, V, empty)，这里的 V 是异常。（现在继续执行，仿佛没有抛出异常。)</li>
+<li>设定运行中的执行上下文的词法环境组件为 oldEnv。</li>
+<li>返回 C。</li>
+</ol>
+<p>注： 无论控制是从嵌入的 Statement 怎样离开的，不论是正常离开还是以非常规完结或异常，词法环境组件总是恢复到它之前的状态。</p>
+<p>即将Expression的值ToObject，然后以该object作为新的词法环境，此时<code>q = 2</code>即<code>object.q = 2</code>，类似于非严格模式的<code>window</code>全局对象下的词法环境。</p>
+<h2 id="switch语句"><a class="markdownIt-Anchor" href="#switch语句"></a> switch语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SwitchStatement :</span><br><span class="line">  switch ( Expression ) CaseBlock</span><br><span class="line">CaseBlock :</span><br><span class="line">  &#123; CaseClausesopt &#125;</span><br><span class="line">  &#123; CaseClausesopt DefaultClause CaseClausesopt &#125;</span><br><span class="line">CaseClauses :</span><br><span class="line">  CaseClause</span><br><span class="line">  CaseClauses CaseClause</span><br><span class="line">CaseClause :</span><br><span class="line">  <span class="keyword">case</span> Expression : StatementListopt</span><br><span class="line">DefaultClause :</span><br><span class="line">  default : StatementListopt</span><br></pre></td></tr></table></figure>
+<h2 id="标签语句"><a class="markdownIt-Anchor" href="#标签语句"></a> 标签语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LabelledStatement :</span><br><span class="line">  Identifier : Statement</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>一个 Statement 可以由一个标签作为前缀。标签语句仅与标签化的 break 和 continue 语句一起使用。ECMAScript 没有 goto 语句。</p>
+<p>如果一个 ECMAScript 程序包含有相同 Identifier 作为标签的 LabelledStatement 闭合的 LabelledStatement，那么认为它是是语法错误的。这不适用于直接或间接嵌套在标签语句里面的 FunctionDeclaration 的函数体里出现标签的情况。</p>
+<p>产生式 Identifier : Statement 的解释执行方式是，先添加 Identifier 到 Statement 的标签组，再解释执行 Statement。如果 LabelledStatement 自身有一个非空标签组，这些标签还是会添加到解释执行前的 Statement 的标签组里。如果 Statement 的解释执行结果是 (break, V, L)，这里的 L 等于 Identifier，则产生式的结果是 (normal, V, empty)。</p>
+<p>在解释执行 LabelledStatement 之前，认为包含的 Statement 拥有一个空标签组，除非它是 IterationStatement 或 SwitchStatement，这种情况下认为它拥有一个包含单个元素 empty 的标签组。</p>
+<h2 id="throw-语句"><a class="markdownIt-Anchor" href="#throw-语句"></a> throw 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ThrowStatement :</span><br><span class="line">  throw [no LineTerminator here] Expression ;</span><br></pre></td></tr></table></figure>
+<h2 id="try-语句"><a class="markdownIt-Anchor" href="#try-语句"></a> try 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">TryStatement :</span><br><span class="line">  try Block Catch</span><br><span class="line">  try Block Finally</span><br><span class="line">  try Block Catch Finally</span><br><span class="line">Catch :</span><br><span class="line">  catch ( Identifier ) Block</span><br><span class="line">Finally :</span><br><span class="line">  finally Block</span><br></pre></td></tr></table></figure>
+<p>try 语句包裹一个可以出现特殊状况，如果运行时错误或 throw 语句的代码块。catch 子句提供了异常处理代码。如果 catch 子句捕获到一个异常，这个异常会绑定到它的 Identifier 上。</p>
+<h2 id="debugger-语句"><a class="markdownIt-Anchor" href="#debugger-语句"></a> debugger 语句</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DebuggerStatement :</span><br><span class="line">  debugger ;</span><br></pre></td></tr></table></figure>
+<p>语义：</p>
+<p>解释执行 DebuggerStatement 产生式可允许让一个实现在调试器下运行时设置断点。如果调试器不存在或是非激活状态，这个语句没有可观测效果。</p>
+<h1 id="函数"><a class="markdownIt-Anchor" href="#函数"></a> 函数</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FunctionDeclaration :</span><br><span class="line">  <span class="keyword">function</span> Identifier ( FormalParameterList_opt ) &#123; FunctionBody &#125;</span><br><span class="line">FunctionExpression :</span><br><span class="line">  <span class="keyword">function</span> Identifier_opt ( FormalParameterList_opt ) &#123; FunctionBody &#125;</span><br><span class="line">FormalParameterList :</span><br><span class="line">  Identifier</span><br><span class="line">  FormalParameterList , Identifier</span><br><span class="line">FunctionBody :</span><br><span class="line">  SourceElements_opt</span><br></pre></td></tr></table></figure>
+<p>语义</p>
+<p>产生式 <code>FunctionDeclaration : function Identifier ( FormalParameterListopt ) &#123; FunctionBody &#125;</code> 依照定义绑定初始化 (10.5) 如下初始化：</p>
+<ol>
+<li>依照 13.2，指定 FormalParameterListopt 为参数列表，指定 FunctionBody 为 函数体，创建一个新函数对象，返回结果。运行中的执行环境的 VariableEnvironment 传递为 Scope。如果 FunctionDeclaration 包含在严格模式代码里或 FunctionBody 是严格模式代码，那么传递 true 为 Strict 标志。</li>
+</ol>
+<p>产生式 <code>FunctionExpression : function ( FormalParameterListopt ) &#123; FunctionBody &#125;</code> 的解释执行如下：</p>
+<ol>
+<li>依照 13.2，指定 FormalParameterListopt 为参数列表，指定 FunctionBody 为 函数体，创建一个新函数对象，返回结果。运行中的执行环境的 LexicalEnvironment 传递为 Scope。如果 FunctionExpression 包含在严格模式代码里或 FunctionBody 是严格模式代码，那么传递 true 为 Strict 标志。</li>
+</ol>
+<p>注：函数声明的 变量环境 被传递为Scope，而函数表达式的 词法环境 被传递为Scope。<br />
+问：这个区别会造成什么影响？变量环境和词法环境最开始是一样的，之后词法环境可能变化而变量环境不会变化。</p>
+<p>产生式 <code>FunctionExpression : function Identifier ( FormalParameterListopt ) &#123; FunctionBody &#125;</code> 的解释执行如下：</p>
+<ol>
+<li>令 funcEnv 为以运行中执行环境的 LexicalEnvironment 为参数调用 NewDeclarativeEnvironment 的结果。</li>
+<li>令 envRec 为 funcEnv 的环境记录项。</li>
+<li>以 Identifier 的字符串值为参数调用 envRec 的具体方法 CreateImmutableBinding(N)。</li>
+<li>令 closure 为依照 13.2，指定 FormalParameterListopt 为参数，指定 FunctionBody 为 函数体，创建一个新函数对象的结果。传递 funcEnv 为 Scope。如果 FunctionExpression 包含在严格模式代码里或 FunctionBody 是严格模式代码，那么传递 true 为 Strict 标志。</li>
+<li>以 Identifier 的字符串值和 closure 为参数调用 envRec 的具体方法 InitializeImmutableBinding(N,V)。</li>
+<li>返回 closure。</li>
+</ol>
+<p>注： 可以从 FunctionExpression 的 FunctionBody 里面引用 FunctionExpression 的 Identifier，以允许函数递归调用自身。然而不像 FunctionDeclaration，FunctionExpression 的 Identifier 不能被范围封闭的 FunctionExpression 引用，也不会影响它。</p>
+<p>产生式 <code>FunctionBody : SourceElementsopt</code> 的解释执行如下：</p>
+<ol>
+<li>如果这个 FunctionBody 所在 FunctionDeclaration 或 FunctionExpression 包含在严格模式代码内，或其 SourceElements 的指令序言（14.1）包含一个 use strict 指令，或满足 10.1.1 的任何条件，那么其代码严格模式代码。如果 FunctionBody 的代码是严格模式代码，SourceElements 的解释执行为以下的严格模式代码步骤。否则，SourceElements 的解释执行为以下的非严格模式代码。</li>
+<li>如果 SourceElements 存在，则返回 SourceElements 的解释执行结果。</li>
+<li>否则返回 (normal, undefined, empty)。</li>
+</ol>
+<h2 id="创建函数对象"><a class="markdownIt-Anchor" href="#创建函数对象"></a> 创建函数对象</h2>
+<p>指定 FormalParameterList 为可选的 参数列表，指定 FunctionBody 为 函数体，指定 Scope 为词法环境，Strict 为布尔标记，按照如下步骤构建函数对象：</p>
+<ol>
+<li>创建一个新的 ECMAScript 原生对象，令 F 为此对象。</li>
+<li>依照 8.12 描述设定 F 的除 [[Get]] 以外的所有内部方法。</li>
+<li>设定 F 的 [[Class]] 内部属性为 “Function”。</li>
+<li>设定 F 的 [[Prototype]] 内部属性为 15.3.3.1 指定的标准内置 Function 对象的 prototype 属性。</li>
+<li>依照 15.3.5.4 描述，设定 F 的 [[Get]] 内部属性。</li>
+<li>依照 13.2.1 描述，设定 F 的 [[Call]] 内部属性。</li>
+<li>依照 13.2.2 描述，设定 F 的 [[Construct]] 内部属性。</li>
+<li>依照 15.3.5.3 描述，设定 F 的 [[HasInstance]] 内部属性。</li>
+<li>设定 F 的 [[Scope]] 内部属性为 Scope 的值。</li>
+<li>令 names 为一个列表容器，其中元素是以从左到右的文本顺序对应 FormalParameterList 的标识符的字符串。</li>
+<li>设定 F 的 [[FormalParameters]] 内部属性为 names。</li>
+<li>设定 F 的 [[Code]] 内部属性为 FunctionBody。</li>
+<li>设定 F 的 [[Extensible]] 内部属性为 true。</li>
+<li>令 len 为 FormalParameterList 指定的形式参数的个数。如果没有指定参数，则令 len 为 0。</li>
+<li>以参数 “length”、属性描述符 {[[Value]]: len, [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false}、false 调用 F 的 [[DefineOwnProperty]] 内部方法。</li>
+<li>令 proto 为仿佛使用 new Object() 表达式创建新对象的结果，其中 Object 是标准内置构造器名。</li>
+<li>以参数 “constructor”、属性描述符 {[[Value]]: F, { [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: true}、false 调用 proto 的 [[DefineOwnProperty]] 内部方法。</li>
+<li>以参数 “prototype”、属性描述符 {[[Value]]: proto, [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: false}、false 调用 F 的 [[DefineOwnProperty]] 内部方法。</li>
+<li>如果 Strict 是 true，则
+<ol>
+<li>令 thrower 为 [[ThrowTypeError]] 函数对象（13.2.3）。</li>
+<li>以参数 “caller”、属性描述符 {[[Get]]: thrower, [[Set]]: thrower, [[Enumerable]]: false, [[Configurable]]: false}、false 调用 F 的 [[DefineOwnProperty]] 内部方法。</li>
+<li>以参数 “arguments”、属性描述符 {[[Get]]: thrower, [[Set]]: thrower, [[Enumerable]]: false, [[Configurable]]: false}、false 调用 F 的 [[DefineOwnProperty]] 内部方法。</li>
+</ol>
+</li>
+<li>返回 F。</li>
+</ol>
+<p>注：每个函数都会自动创建一个 prototype 属性，以满足函数会被当作构造器的可能性。</p>
+<h2 id="call"><a class="markdownIt-Anchor" href="#call"></a> [[Call]]</h2>
+<p>当用一个 this 值、一个参数列表调用函数对象 F 的 [[Call]] 内部方法，采用以下步骤：</p>
+<ol>
+<li>用 F 的 [[FormalParameters]] 内部属性值、参数列表 args、10.4.3 描述的 this 值来建立函数代码的一个新执行环境，令 funcCtx 为其结果。</li>
+<li>令 result 为 FunctionBody（也就是 F 的 [[Code]] 内部属性）解释执行的结果。如果 F 没有 [[Code]] 内部属性或其值是空的 FunctionBody，则 result 是 (normal, undefined, empty)。</li>
+<li>退出 funcCtx 运行环境，恢复到之前的执行运行环境。</li>
+<li>如果 result.type 是 throw 则抛出 result.value。</li>
+<li>如果 result.type 是 return 则返回 result.value。</li>
+<li>否则 result.type 必定是 normal。返回 undefined。</li>
+</ol>
+<h2 id="construct"><a class="markdownIt-Anchor" href="#construct"></a> [[Construct]]</h2>
+<p>当以一个可能的空的参数列表调用函数对象 F 的 [[Construct]] 内部方法，采用以下步骤：</p>
+<ol>
+<li>令 obj 为新创建的 ECMAScript 原生对象。</li>
+<li>依照 8.12 设定 obj 的所有内部方法。</li>
+<li>设定 obj 的 [[Class]] 内部属性为 “Object”。</li>
+<li>设定 obj 的 [[Extensible]] 内部属性为 true。</li>
+<li>令 proto 为以参数 “prototype” 调用 F 的 [[Get]] 内部属性的值。</li>
+<li>如果 Type(proto) 是 Object，设定 obj 的 [[Prototype]] 内部属性为 proto。</li>
+<li>如果 Type(proto) 不是 Object，设定 obj 的 [[Prototype]] 内部属性为 15.2.4 描述的标准内置的 Object 原型对象（即Object内置对象的原型Object.prototype）。</li>
+<li>以 obj 为 this 值，调用 [[Construct]] 的参数列表为 args，调用 F 的 [[Call]] 内部属性，令 result 为调用结果。</li>
+<li>如果 Type(result) 是 Object，则返回 result。</li>
+<li>返回 obj。</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/ES6.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/ES6.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/ES5.html"><i class="fa fa-chevron-left">  </i><span>ES5</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/%E7%89%88%E6%9C%AC.html"><span>版本</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,1011 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="7 抽象操作"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>7 抽象操作 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text"> 7 抽象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 7.1 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#711-toprimitiveinputpreferredtype"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 7.1.1 ToPrimitive(input[,PreferredType])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#712-tobooleanargument"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 7.1.2 ToBoolean(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#713-tonumberargument"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 7.1.3 ToNumber(argument)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7131-%E5%AF%B9string%E7%B1%BB%E5%9E%8B%E5%BA%94%E7%94%A8-tonumber"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 7.1.3.1 对String类型应用 ToNumber</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#71311-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89mv"><span class="toc-number">1.1.3.1.1.</span> <span class="toc-text"> 7.1.3.1.1 运行时语义:MV</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#714-tointegerargument"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 7.1.4 ToInteger(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#715-toint32argument"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 7.1.5 ToInt32(argument )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#716-touint32argument"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 7.1.6 ToUint32(argument )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#717-toint16argument"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 7.1.7 ToInt16(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#718-touint16argument"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 7.1.8 ToUint16(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#719-toint8argument"><span class="toc-number">1.1.9.</span> <span class="toc-text"> 7.1.9 ToInt8(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7110-touint8argument"><span class="toc-number">1.1.10.</span> <span class="toc-text"> 7.1.10 ToUint8(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7111-touint8clampargument"><span class="toc-number">1.1.11.</span> <span class="toc-text"> 7.1.11 ToUint8Clamp(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7112-tostringargument"><span class="toc-number">1.1.12.</span> <span class="toc-text"> 7.1.12 ToString(argument)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#71121-%E5%AF%B9number%E7%B1%BB%E5%9E%8B%E5%BA%94%E7%94%A8-tostring"><span class="toc-number">1.1.12.1.</span> <span class="toc-text"> 7.1.12.1 对Number类型应用 ToString</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7113-toobjectargument"><span class="toc-number">1.1.13.</span> <span class="toc-text"> 7.1.13 ToObject(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7114-topropertykeyargument"><span class="toc-number">1.1.14.</span> <span class="toc-text"> 7.1.14 ToPropertyKey(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7115-tolengthargument"><span class="toc-number">1.1.15.</span> <span class="toc-text"> 7.1.15 ToLength(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7116-canonicalnumericindexstringargument"><span class="toc-number">1.1.16.</span> <span class="toc-text"> 7.1.16 CanonicalNumericIndexString(argument)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-%E6%B5%8B%E8%AF%95%E4%B8%8E%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text"> 7.2 测试与比较操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#721-requireobjectcoercibleargument"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 7.2.1 RequireObjectCoercible(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#722-isarrayargument"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 7.2.2 IsArray(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#723-iscallableargument"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 7.2.3 IsCallable(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#724-isconstructorargument"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 7.2.4 IsConstructor(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#725-isextensibleo"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 7.2.5 IsExtensible(O)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#726-isintegerargument"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 7.2.6 IsInteger(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#727-ispropertykeyargument"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 7.2.7 IsPropertyKey(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#728-isregexpargument"><span class="toc-number">1.2.8.</span> <span class="toc-text"> 7.2.8 IsRegExp(argument)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#729-samevaluex-y"><span class="toc-number">1.2.9.</span> <span class="toc-text"> 7.2.9 SameValue(x, y)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7210-samevaluezerox-y"><span class="toc-number">1.2.10.</span> <span class="toc-text"> 7.2.10 SameValueZero(x, y)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7211-%E6%8A%BD%E8%B1%A1%E5%85%B3%E7%B3%BB%E6%AF%94%E8%BE%83"><span class="toc-number">1.2.11.</span> <span class="toc-text"> 7.2.11 抽象关系比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7212-%E6%8A%BD%E8%B1%A1%E7%9B%B8%E7%AD%89%E6%AF%94%E8%BE%83"><span class="toc-number">1.2.12.</span> <span class="toc-text"> 7.2.12 抽象相等比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7213-%E4%B8%A5%E6%A0%BC%E7%9B%B8%E7%AD%89%E6%AF%94%E8%BE%83"><span class="toc-number">1.2.13.</span> <span class="toc-text"> 7.2.13 严格相等比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#73-object%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text"> 7.3 Object上的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#731-geto-p"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 7.3.1 Get(O, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#732-getv-v-p"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 7.3.2 GetV (V, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#733-seto-p-v-throw"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 7.3.3 Set(O, P, V, Throw)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#734-createdatapropertyo-p-v"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 7.3.4 CreateDataProperty(O, P, V)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#735-createmethodpropertyo-p-v"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 7.3.5 CreateMethodProperty(O, P, V)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#736-createdatapropertyorthrowo-p-v"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 7.3.6 CreateDataPropertyOrThrow(O, P, V)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#737-definepropertyorthrow-o-p-desc"><span class="toc-number">1.3.7.</span> <span class="toc-text"> 7.3.7 DefinePropertyOrThrow (O, P, desc)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#738-deletepropertyorthrow-o-p"><span class="toc-number">1.3.8.</span> <span class="toc-text"> 7.3.8 DeletePropertyOrThrow (O, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#739-getmethod-o-p"><span class="toc-number">1.3.9.</span> <span class="toc-text"> 7.3.9 GetMethod (O, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7310-hasproperty-o-p"><span class="toc-number">1.3.10.</span> <span class="toc-text"> 7.3.10 HasProperty (O, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7311-hasownproperty-o-p"><span class="toc-number">1.3.11.</span> <span class="toc-text"> 7.3.11 HasOwnProperty (O, P)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7312-callf-v-argumentslist"><span class="toc-number">1.3.12.</span> <span class="toc-text"> 7.3.12 Call(F, V, [argumentsList])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7313-construct-f-argumentslist-newtarget"><span class="toc-number">1.3.13.</span> <span class="toc-text"> 7.3.13 Construct (F, [argumentsList], [newTarget])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7314-setintegritylevel-o-level"><span class="toc-number">1.3.14.</span> <span class="toc-text"> 7.3.14 SetIntegrityLevel (O, level)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7315-testintegritylevel-o-level"><span class="toc-number">1.3.15.</span> <span class="toc-text"> 7.3.15 TestIntegrityLevel (O, level)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7316-createarrayfromlist-elements"><span class="toc-number">1.3.16.</span> <span class="toc-text"> 7.3.16 CreateArrayFromList (elements)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7317-createlistfromarraylike-obj-elementtypes"><span class="toc-number">1.3.17.</span> <span class="toc-text"> 7.3.17 CreateListFromArrayLike (obj [, elementTypes] )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7318-invokeop-argumentslist"><span class="toc-number">1.3.18.</span> <span class="toc-text"> 7.3.18 Invoke(O,P, [argumentsList])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7319-ordinaryhasinstance-c-o"><span class="toc-number">1.3.19.</span> <span class="toc-text"> 7.3.19 OrdinaryHasInstance (C, O)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#es8-7321-enumerableownproperties-o-kind"><span class="toc-number">1.3.20.</span> <span class="toc-text"> ES8 7.3.21 EnumerableOwnProperties ( O, kind )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7320-speciesconstructor-o-defaultconstructor"><span class="toc-number">1.3.21.</span> <span class="toc-text"> 7.3.20 SpeciesConstructor ( O, defaultConstructor )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7321-enumerableownnames-o"><span class="toc-number">1.3.22.</span> <span class="toc-text"> 7.3.21 EnumerableOwnNames (O)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7322-getfunctionrealm-obj"><span class="toc-number">1.3.23.</span> <span class="toc-text"> 7.3.22 GetFunctionRealm ( obj )</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#74-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E4%B8%8A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.</span> <span class="toc-text"> 7.4 可迭代对象上的操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#741-getiterator-obj-method"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 7.4.1 GetIterator ( obj, method )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#742-iteratornext-iterator-value"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 7.4.2 IteratorNext ( iterator, value )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#743-iteratorcomplete-iterresult"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 7.4.3 IteratorComplete ( iterResult )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#744-iteratorvalue-iterresult"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 7.4.4 IteratorValue ( iterResult )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#745-iteratorstep-iterator"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 7.4.5 IteratorStep ( iterator )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#746-iteratorclose-iterator-completion"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 7.4.6 IteratorClose( iterator, completion )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#747-createiterresultobject-value-done"><span class="toc-number">1.4.7.</span> <span class="toc-text"> 7.4.7 CreateIterResultObject ( value, done )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#748-createlistiterator-list"><span class="toc-number">1.4.8.</span> <span class="toc-text"> 7.4.8 CreateListIterator ( list )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7481-listiterator-next"><span class="toc-number">1.4.8.1.</span> <span class="toc-text"> 7.4.8.1 ListIterator next( )</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">7 抽象操作</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-03</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="7-抽象操作"><a class="markdownIt-Anchor" href="#7-抽象操作"></a> 7 抽象操作</h1>
+<p>这些操作不是ECMAScript语言的一部分。 在这里定义它们仅是为了帮助指定ECMAScript语言的语义。 在本规范中定义了其他更专门的抽象操作。</p>
+<span id="more"></span>
+<h2 id="71-类型转换"><a class="markdownIt-Anchor" href="#71-类型转换"></a> 7.1 类型转换</h2>
+<p>ECMAScript语言会隐式地在需要时执行自动类型转换。定义一套关于转换的抽象操作有助于阐明某些结构的语义。这些关于转换的抽象操作是多态的，它们可以接受任何ECMAScript语言类型，或是完结记录值，但这些操作中不能使用其他规范类型。</p>
+<h3 id="711-toprimitiveinputpreferredtype"><a class="markdownIt-Anchor" href="#711-toprimitiveinputpreferredtype"></a> 7.1.1 ToPrimitive(input[,PreferredType])</h3>
+<p>ToPrimitive 抽象操作接受一个<code>input</code>参数，和一个可选的<code>PreferredType</code>参数。抽象操作 ToPrimitive 将<code>input</code>参数转换为一个非对象类型。如果对象能够转换为多种原始类型，则可以使用可选提示<code>PreferredType</code>来选择类型。根据下表完成转换：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Input类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>input</code>是非常规完结，则返回<code>input</code>。否则返回<code>ToPrimitive(input.[[value]])</code>，同时传递可选提示<code>PreferredType</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">返回<code>input</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">执行以下步骤：</td>
+</tr>
+</tbody>
+</table>
+<p>当<code>Type(input)</code>为<code>Object</code>执行以下步骤：</p>
+<ol>
+<li>If 没有参数<code>PreferredType</code>，令<code>hint</code>为<code>&quot;default&quot;</code></li>
+<li>Else if <code>PreferredType</code>暗示String，令<code>hint</code>为<code>&quot;string&quot;</code></li>
+<li>Else <code>PreferredType</code>暗示Number，令<code>hint</code>为<code>&quot;number&quot;</code></li>
+<li>令<code>exoticToPrim</code>为<code>GetMethod(input, @@toPrimitive)</code></li>
+<li><code>ReturnIfAbrupt(exoticToPrim)</code></li>
+<li>如果<code>exoticToPrim</code>不为<code>undefined</code>，则
+<ol>
+<li>令<code>result</code>为<code>Call(exoticToPrim, input, «hint»)</code></li>
+<li><code>ReturnIfAbrupt(result)</code></li>
+<li>如果<code>Type(result)</code>不是Object，则返回<code>result</code></li>
+<li>抛出TypeError异常</li>
+</ol>
+</li>
+<li>如果<code>hint</code>是<code>default</code>，令<code>hint</code>为<code>number</code></li>
+<li>返回<code>OrdinaryToPrimitive(input,hint)</code></li>
+</ol>
+<p>当使用参数<code>O</code>和<code>hint</code>调用抽象操作<code>OrdinaryToPrimitive</code>时，执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为Object</li>
+<li>断言：<code>Type(hint)</code>为String，并且其值是<code>string</code>或<code>number</code></li>
+<li>If <code>hint</code>为<code>string</code>，则令<code>methodNames</code>为<code>«&quot;toString&quot;, &quot;valueOf&quot;»</code></li>
+<li>Else 令<code>methodNames</code>为<code>«&quot;valueOf&quot;, &quot;toString&quot;»</code></li>
+<li>对于有序列表<code>methodNames</code>中的每个<code>name</code>，执行：
+<ol>
+<li>令<code>method</code>为<code>Get(O, name)</code></li>
+<li><code>ReturnIfAbrupt(method)</code></li>
+<li>如果<code>IsCallable(method)</code>为true，则
+<ol>
+<li>令<code>result</code>为<code>Call(method, O)</code></li>
+<li><code>ReturnIfAbrupt(result)</code></li>
+<li>如果<code>Type(result)</code>不为<code>Object</code>，返回<code>result</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>抛出TypeError异常</li>
+</ol>
+<p>如果在没有<code>hint</code>的情况下调用ToPrimitive，则其行为通常类似于<code>hint</code>是Number。 但是，对象可以通过定义<code>@@toPrimitive</code>方法来重写此行为。 在本规范定义的对象中，只有<code>Date</code>对象（请参见20.3.4.45）和<code>Symbol</code>对象（请参见19.4.3.4）会重写默认的ToPrimitive行为。 <code>Date</code>对象将没有<code>hint</code>视为<code>hint</code>为String。</p>
+<h3 id="712-tobooleanargument"><a class="markdownIt-Anchor" href="#712-tobooleanargument"></a> 7.1.2 ToBoolean(argument)</h3>
+<p>ToBoolean 抽象操作根据下表将其参数<code>argument</code>转换为Boolean类型的值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>argument</code>是非常规完结，则返回<code>argument</code>。否则返回<code>ToBoolean(argument.[[value]])</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">返回<code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">返回<code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">如果<code>argument</code>为<code>+0</code>,<code>-0</code>或<code>NaN</code>，则返回<code>false</code>，否则返回<code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">如果<code>argument</code>是空字符串（长度为零），则返回<code>false</code>，否则返回<code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">返回<code>true</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">返回<code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="713-tonumberargument"><a class="markdownIt-Anchor" href="#713-tonumberargument"></a> 7.1.3 ToNumber(argument)</h3>
+<p>ToNumber 抽象操作根据下表将其参数<code>argument</code>转换为<code>Number</code>类型的值：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>input</code>是非常规完结，则返回<code>argument</code>。否则返回<code>ToNumber(argument.[[value]])</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">返回<code>NaN</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">返回<code>+0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果<code>argument</code>为<code>true</code>则返回<code>1</code>，若为<code>false</code>则返回<code>0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">返回<code>argument</code>（不转换）</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">参见下文的文法和注释。</td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">令<code>primValue</code>为<code>ToPrimitive(argument, hint Number)</code>，返回<code>ToNumber(primValue)</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="7131-对string类型应用-tonumber"><a class="markdownIt-Anchor" href="#7131-对string类型应用-tonumber"></a> 7.1.3.1 对String类型应用 ToNumber</h4>
+<p>应用于字符串的ToNumber将以下语法应用于被解释为UTF-16编码代码点（6.1.4）序列的输入字符串。 如果语法无法将String解释为 StringNumericLiteral 的扩展（指从该产生式扩展出去），则ToNumber的结果为NaN。</p>
+<p>注意：该语法的终结符全部由Unicode BMP代码点组成，因此，如果字符串包含任何增补代码点或任何未配对的代理代码点的UTF-16编码，则结果为NaN。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">StringNumericLiteral :::</span><br><span class="line">	StrWhiteSpace&#123;opt&#125;</span><br><span class="line">	StrWhiteSpace&#123;opt&#125; StrNumericLiteral StrWhiteSpace&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">StrWhiteSpace :::</span><br><span class="line">	StrWhiteSpaceChar StrWhiteSpace&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">StrWhiteSpaceChar :::</span><br><span class="line">	WhiteSpace</span><br><span class="line">	LineTerminator</span><br><span class="line"></span><br><span class="line">StrNumericLiteral :::</span><br><span class="line">	StrDecimalLiteral</span><br><span class="line">	BinaryIntegerLiteral</span><br><span class="line">	OctalIntegerLiteral</span><br><span class="line">	HexIntegerLiteral</span><br><span class="line"></span><br><span class="line">StrDecimalLiteral :::</span><br><span class="line">	StrUnsignedDecimalLiteral</span><br><span class="line">	+ StrUnsignedDecimalLiteral</span><br><span class="line">	- StrUnsignedDecimalLiteral</span><br><span class="line"></span><br><span class="line">StrUnsignedDecimalLiteral :::</span><br><span class="line">	Infinity</span><br><span class="line">	DecimalDigits . DecimalDigits&#123;opt&#125; ExponentPart&#123;opt&#125;</span><br><span class="line">	. DecimalDigits ExponentPart&#123;opt&#125;</span><br><span class="line">	DecimalDigits ExponentPart&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">DecimalDigits :::</span><br><span class="line">	DecimalDigit</span><br><span class="line">	DecimalDigits DecimalDigit</span><br><span class="line"></span><br><span class="line">DecimalDigit ::: one of</span><br><span class="line">	0 1 2 3 4 5 6 7 8 9</span><br><span class="line"></span><br><span class="line">ExponentPart :::</span><br><span class="line">	ExponentIndicator SignedInteger</span><br><span class="line"></span><br><span class="line">ExponentIndicator ::: one of</span><br><span class="line">	e E</span><br><span class="line"></span><br><span class="line">SignedInteger :::</span><br><span class="line">	DecimalDigits</span><br><span class="line">	+ DecimalDigits</span><br><span class="line">	- DecimalDigits</span><br></pre></td></tr></table></figure>
+<p>正则版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">StringNumericLiteral &#x3D; \s*|\s*([+-]?(([0-9]+[.][0-9]*|[.][0-9]+|[0-9]+)([eE][+-]?[0-9]+)?|Infinity)|0[bB][01]+|0[oO][0-7]+|0[xX][0-9a-fA-F]+)\s*</span><br><span class="line">StrWhiteSpace &#x3D; \s+</span><br><span class="line">StrWhiteSpaceChar &#x3D; \s</span><br><span class="line">StrNumericLiteral &#x3D; [+-]?(([0-9]+[.][0-9]*|[.][0-9]+|[0-9]+)([eE][+-]?[0-9]+)?|Infinity)|0[bB][01]+|0[oO][0-7]+|0[xX][0-9a-fA-F]+</span><br><span class="line">StrDecimalLiteral &#x3D; [+-]?(([0-9]+[.][0-9]*|[.][0-9]+|[0-9]+)([eE][+-]?[0-9]+)?|Infinity)</span><br><span class="line">StrUnsignedDecimalLiteral &#x3D; ([0-9]+[.][0-9]*|[.][0-9]+|[0-9]+)([eE][+-]?[0-9]+)?|Infinity</span><br><span class="line">DecimalDigits &#x3D; [0-9]+</span><br><span class="line">DecimalDigit &#x3D; [0-9]</span><br><span class="line">ExponentPart &#x3D; [eE][+-]?[0-9]+</span><br><span class="line">ExponentIndicator &#x3D; [eE]</span><br><span class="line">SignedInteger &#x3D; [+-]?[0-9]+</span><br></pre></td></tr></table></figure>
+<p>上面未明确定义的所有语法符号都在数字字面值词法语法部分有定义（11.8.3）。</p>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/_v_images/20210201112949152_13358.png" alt="" width="621" /><br />
+它和数值字面量的语法略有不同：<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/_v_images/20210130202642265_24333.png" alt="" width="621" /></p>
+<p>注意：StringNumericLiteral和NumericLiteral（参见11.8.3）的语法之间有一些区别：</p>
+<ul>
+<li>StringNumericLiteral 的前后可以有若干的空白字符或行结束符</li>
+<li>十进制的 StringNumericLiteral 可以有任意数量的前导0</li>
+<li>十进制的 StringNumericLiteral 可以包含<code>+</code>或<code>-</code>来指示符号</li>
+<li>空的，或只包含空白的 StringNumericLiteral 会被转换为<code>+0</code></li>
+<li><code>Infinity</code>和<code>-Infinity</code>可被识别为 StringNumericLiteral，但不会被识别为NumericLiteral</li>
+</ul>
+<h5 id="71311-运行时语义mv"><a class="markdownIt-Anchor" href="#71311-运行时语义mv"></a> 7.1.3.1.1 运行时语义:MV</h5>
+<p>字符串到数字值的转换，大体上类似于判定 NumericLiteral 的数字值，不过有些细节上的不同，所以，这里给出了把 StringNumericLiteral 转换为数值类型的值的过程。这个值分两步来判定：首先，从 StringNumericLiteral 中导出数学值；第二步，以下面所描述的方式对该数学值进行舍入。</p>
+<p>下文未提供的任何语法符号上的MV是11.8.3.1中定义的该符号的MV。</p>
+<ul>
+<li>The MV of StringNumericLiteral ::: [empty] is 0</li>
+</ul>
+<p>一旦字符串数值常量的数学值被精确地确定，接下来就会被舍入为数值类型的一个值。如果数学值是 0，那么舍入值为 +0，否则如果字符串数值常量中第一个非空白代码点是 ‘-’，舍入值为 -0。对于其它情况，舍入后的值必须是其数学值的数字值（在6.1.6中定义的意义上），除非该字面量包含一个 StrUnsignedDecimalLiteral 且该字面量大于 20 位有效数字，此时此数字的值是下面两种之一：一是将其 20 位之后的每个有效数字用 0 替换，产生此字符串解析出的数学值的数字值；二是将其 20 位之后的每个有效数字用 0 替换，并在第 20 位有效数字加一，产生此字符串解析出的数学值的数字值Question.png。判断一个数位是否为有效数位，首先它不能是 ExponentPart 的一部分，且</p>
+<ul>
+<li>它不是 0；或</li>
+<li>它的左边是一个非零值，右边是一个不在 ExponentPart 中的非零值。</li>
+</ul>
+<h3 id="714-tointegerargument"><a class="markdownIt-Anchor" href="#714-tointegerargument"></a> 7.1.4 ToInteger(argument)</h3>
+<p>ToInteger 抽象操作将其参数转换为整数值。<br />
+此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>为<code>NaN</code>，返回<code>+0</code></li>
+<li>如果<code>number</code>是<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>number</code></li>
+<li>返回数值<code>sign(number)×floor(abs(number))</code></li>
+</ol>
+<h3 id="715-toint32argument"><a class="markdownIt-Anchor" href="#715-toint32argument"></a> 7.1.5 ToInt32(argument )</h3>
+<p>ToInt32 抽象操作将其参数<code>agrument</code>转换为 在<code>-2^31</code>到<code>2^31-1</code>闭区间内的<code>2^32</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int32bit</code>为<code>int modulo 2^32</code></li>
+<li>如果<code>int32bit &gt;= 2^31</code>，则返回<code>int32bit-2^32</code>，否则返回<code>int32bit</code></li>
+</ol>
+<p>注：上面对<code>ToInt32</code>的定义中：</p>
+<ul>
+<li><code>ToInt32</code> 抽象操作是幂等的：对同一个值调用一次和调用两次这个操作会得到同样的结果。</li>
+<li>对于任意的 x 值，<code>ToInt32(ToUint32(x))</code> 总是等价于 <code>ToInt32(x)</code>（它延续了后者将 <code>+∞</code> 和 <code>-∞</code> 映射到 <code>+0</code> 的性质）</li>
+<li><code>ToInt32</code> 会将 <code>-0</code> 映射到 <code>+0</code>。</li>
+</ul>
+<h3 id="716-touint32argument"><a class="markdownIt-Anchor" href="#716-touint32argument"></a> 7.1.6 ToUint32(argument )</h3>
+<p>ToUint32 抽象操作将其参数<code>agrument</code>转换为 在<code>0</code>到<code>2^32-1</code>闭区间内的<code>2^32</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int32bit</code>为<code>int modulo 2^32</code></li>
+<li>返回<code>int32bit</code></li>
+</ol>
+<p>注：上面对<code>ToUint32</code>的定义中：</p>
+<ul>
+<li><code>ToUint32</code> 与 <code>ToInt32</code> 之间唯有 第6步 不同。</li>
+<li><code>ToUint32</code> 抽象操作是幂等的：对同一个值调用一次和调用两次这个操作会得到同样的结果。</li>
+<li>对于任意的 x 值，<code>ToUint32(ToInt32(x))</code> 总是等价于 <code>ToUint32(x)</code>（它延续了后者将 <code>+∞</code> 和 <code>-∞</code> 映射到 <code>+0</code> 的性质）</li>
+<li><code>ToUint32</code> 会将 <code>-0</code> 映射到 <code>+0</code></li>
+</ul>
+<h3 id="717-toint16argument"><a class="markdownIt-Anchor" href="#717-toint16argument"></a> 7.1.7 ToInt16(argument)</h3>
+<p>ToInt16 抽象操作将其参数<code>agrument</code>转换为 在<code>-2^15</code>到<code>2^15-1</code>闭区间内的<code>2^16</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int16bit</code>为<code>int modulo 2^16</code></li>
+<li>如果<code>int16bit &gt;= 2^15</code>，则返回<code>int16bit-2^16</code>，否则返回<code>int16bit</code></li>
+</ol>
+<h3 id="718-touint16argument"><a class="markdownIt-Anchor" href="#718-touint16argument"></a> 7.1.8 ToUint16(argument)</h3>
+<p>ToUint16 抽象操作将其参数<code>agrument</code>转换为 在<code>0</code>到<code>2^16-1</code>闭区间内的<code>2^16</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int16bit</code>为<code>int modulo 2^16</code></li>
+<li>返回<code>int16bit</code></li>
+</ol>
+<p>注： 上面给出的 ToUint16 的定义中：</p>
+<ul>
+<li><code>ToUint16</code> 和 <code>ToUint32</code> 之间唯一的不同是 第5步 中，<code>2^16</code> 取代了 <code>2^32</code>。</li>
+<li><code>ToUint16</code> 会将 <code>-0</code> 映射为 <code>+0</code></li>
+</ul>
+<h3 id="719-toint8argument"><a class="markdownIt-Anchor" href="#719-toint8argument"></a> 7.1.9 ToInt8(argument)</h3>
+<p>ToInt8 抽象操作将其参数<code>agrument</code>转换为 在<code>-2^7</code>到<code>2^7-1</code>闭区间内的<code>2^8</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int8bit</code>为<code>int modulo 2^8</code></li>
+<li>如果<code>int8bit &gt;= 2^7</code>，则返回<code>int16bit-2^8</code>，否则返回<code>int8bit</code></li>
+</ol>
+<h3 id="7110-touint8argument"><a class="markdownIt-Anchor" href="#7110-touint8argument"></a> 7.1.10 ToUint8(argument)</h3>
+<p>ToUint8 抽象操作将其参数<code>agrument</code>转换为 在<code>0</code>到<code>2^8-1</code>闭区间内的<code>2^8</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>,<code>+0</code>,<code>-0</code>,<code>+∞</code>或<code>-∞</code>，返回<code>+0</code></li>
+<li>令<code>int</code>为数学值<code>sign(number)×floor(abs(number))</code></li>
+<li>令<code>int8bit</code>为<code>int modulo 2^8</code></li>
+<li>返回<code>int8bit</code></li>
+</ol>
+<h3 id="7111-touint8clampargument"><a class="markdownIt-Anchor" href="#7111-touint8clampargument"></a> 7.1.11 ToUint8Clamp(argument)</h3>
+<p>ToUint8Clamp 抽象操作将其参数<code>agrument</code>转换为 在<code>0</code>到<code>2^8-1</code>闭区间内的<code>2^8</code> 个整数中的一个。此抽象操作函数如下所示：</p>
+<ol>
+<li>令<code>number</code>为<code>ToNumber(argument)</code></li>
+<li><code>ReturnIfAbrupt(number)</code></li>
+<li>如果<code>number</code>是<code>NaN</code>，返回<code>+0</code></li>
+<li>如果<code>number &lt;= 0</code>，返回<code>+0</code></li>
+<li>如果<code>number &gt;= 255</code>，返回<code>255</code></li>
+<li>令<code>f</code>为<code>floor(number)</code></li>
+<li>如果<code>f + 0.5 &lt; number</code>，返回<code>f + 1</code></li>
+<li>如果<code>number &lt; f + 0.5</code>，返回<code>f</code></li>
+<li>如果<code>f</code>是奇数，返回<code>f + 1</code></li>
+<li>返回<code>f</code></li>
+</ol>
+<p>注：与其他ECMAScript整数转换抽象操作不同，<code>ToUint8Clamp</code>舍入而不是截断非整数值，并且不将<code>+∞</code>转换为<code>0</code>。<code>ToUint8Clamp</code>采用“将中间值舍入为偶数”来进行平局决胜。 这与<code>Math.round</code>有所不同，<code>Math.round</code>采用“将中间值向上舍入”来进行平局决胜。</p>
+<h3 id="7112-tostringargument"><a class="markdownIt-Anchor" href="#7112-tostringargument"></a> 7.1.12 ToString(argument)</h3>
+<p>ToString 抽象操作根据下表将其参数<code>argument</code>转换为String类型的值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>argument</code>是非常规完结，则返回<code>argument</code>。否则返回<code>ToString(argument.[[value]])</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">返回<code>&quot;undefined&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">返回<code>&quot;null&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">如果<code>argument</code>为<code>true</code>，返回<code>&quot;true&quot;</code>。如果<code>argument</code>为<code>false</code>，返回<code>&quot;false&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">见下面的说明</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">令<code>primValue</code>为<code>ToPrimitive(argument, hint String)</code>，返回<code>ToString(primValue)</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="71121-对number类型应用-tostring"><a class="markdownIt-Anchor" href="#71121-对number类型应用-tostring"></a> 7.1.12.1 对Number类型应用 ToString</h4>
+<p>对数值类型应用 ToString 抽象操作将Number类型的值 m 转换为如下字符串格式：</p>
+<ol>
+<li>如果<code>m</code>是<code>NaN</code>，返回字符串<code>&quot;NaN&quot;</code></li>
+<li>如果<code>m</code>是<code>+0</code>或<code>-0</code>，返回字符串 <code>&quot;0&quot;</code>。</li>
+<li>如果<code>m &lt; 0</code>，返回连接两个字符串<code>&quot;-&quot;</code>和<code>ToString(-m)</code>得到的字符串。</li>
+<li>如果<code>m</code>是<code>+oo</code>，返回字符串<code>&quot;Infinity&quot;</code></li>
+<li>否则，令<code>n</code>、<code>k</code>和<code>s</code>皆为整数，且满足 <code>k &gt;= 1</code> 、<code>10^(k-1) &lt;= s &lt; 10^k</code> 、 <code>m = s×10^(n-k)</code>、<code>k</code>尽可能小。注意<code>k</code>是<code>s</code>的十进制位数。<code>s</code>不能被 <code>10</code> 整除，且<code>s</code>的最低有效位不一定要被这些要求唯一确定。（注：<code>s</code>表示<code>m</code>去掉小数点和头尾的0后的数，k表示s的位数。<code>m</code>的小数点左移<code>n</code>位再右移<code>k</code>位得到<code>s</code>(<code>0.s * 10^n = m</code>)</li>
+<li>如果 <code>k &lt;= n &lt;= 21</code>，返回<code>s</code>的<code>k</code>位十进制表示（有序的，没有前导0），后面跟着<code>n-k</code>个字符<code>0</code></li>
+<li>如果<code>0 &lt; n &lt;= 21</code>，返回<code>s</code>的十进制表示的高<code>n</code>位有效数字组成的字符串，后面跟随一个小数点<code>.</code>，再后面跟着剩下的<code>k-n</code>位<code>s</code>在十进制的表示。</li>
+<li>如果<code>-6 &lt; n &lt;= 0</code>，返回由字符<code>0</code>组成的字符串，后面跟随一个小数点<code>.</code>，再后面是<code>-n</code>个字符<code>0</code>字符，最后是<code>k</code>位<code>s</code>在十进制的表示。</li>
+<li>否则，如果<code>k = 1</code>，返回由单个数字<code>s</code>组成的字符串，后面跟随小写字母<code>e</code>，根据 <code>n-1</code>是正或负，再后面是一个加号<code>+</code>或减号<code>-</code> ，再往后是整数<code>abs(n-1)</code>的十进制表示（没有前导<code>0</code>）。</li>
+<li>返回<code>s</code>的十进制表示中的最高有效位组成的字符串，后面跟随一个小数点<code>.</code>，再后面是余下的是<code>k-1</code>位<code>s</code>在十进制的表示，再往后是小写字母<code>e</code>，根据<code>n-1</code> 是正或负，再后面是一个加号<code>+</code>或减号<code>-</code>，再往后是整数<code>abs(n-1)</code>的十进制表示（没有前导<code>0</code>）。</li>
+</ol>
+<p>注：下列意见可能对实现有帮助，但不是本标准规范要求的一部分：</p>
+<ul>
+<li>如果<code>x</code>是除<code>-0</code>以外的任一数字值，那么<code>ToNumber(ToString(x))</code>与<code>x</code>是完全相同的数字值。</li>
+<li>s的最低有效位并非总是由 第5步 中所列的要求唯一确定。</li>
+</ul>
+<p>注：对于那些提供了比上面的规则所要求的更精确的转换的实现，我们推荐下面这个步骤 5 的替代版本作为参考：</p>
+<p>5.否则，令<code>n</code>、<code>k</code>和<code>s</code>皆为整数，且满足 <code>k &gt;= 1</code> 、<code>10^(k-1) &lt;= s &lt; 10^k</code> 、 <code>m = s×10^(n-k)</code>、<code>k</code>尽可能小。如果<code>s</code>有多种可能，选择使得值<code>s×10^(n-k)</code>最接近数值<code>m</code>的<code>s</code>。如果这样可能的<code>s</code>有两个，选择是偶数的那个。注意<code>k</code>是<code>s</code>的十进制位数。<code>s</code>不能被 <code>10</code> 整除。</p>
+<p>注意：ECMAScript的实现者可能会发现David M. Gay编写的有关浮点数从二进制到十进制转换的论文和代码很有用：</p>
+<p>Gay, David M. Correctly Rounded Binary-Decimal and Decimal-Binary Conversions. Numerical Analysis, Manuscript 90-10. AT&amp;T Bell Laboratories (Murray Hill, New Jersey). November 30, 1990. Available as</p>
+<p><a target="_blank" rel="noopener" href="http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz">http://cm.bell-labs.com/cm/cs/doc/90/4-10.ps.gz</a>. Associated code available as<br />
+<a target="_blank" rel="noopener" href="http://netlib.sandia.gov/fp/dtoa.c">http://netlib.sandia.gov/fp/dtoa.c</a> and as<br />
+<a target="_blank" rel="noopener" href="http://netlib.sandia.gov/fp/g_fmt.c">http://netlib.sandia.gov/fp/g_fmt.c</a> and may also be found at the various netlib mirror sites.</p>
+<h3 id="7113-toobjectargument"><a class="markdownIt-Anchor" href="#7113-toobjectargument"></a> 7.1.13 ToObject(argument)</h3>
+<p>ToObject 抽象操作根据下表将其参数<code>argument</code>转换为Object类型的值</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>argument</code>是非常规完结，则返回<code>argument</code>。否则返回<code>ToObject(argument.[[value]])</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">返回一个新的Boolean对象，其[[BooleanData]]内部插槽被设置为<code>argument</code>的值。关于Boolean对象的描述，请参见19.3</td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">返回一个新的Number对象，其[[NumberData]]内部插槽被设置为<code>argument</code>的值。关于NumberBoolean对象的描述，请参见20.1</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">返回一个新的String对象，其[[BooleanData]]内部插槽被设置为<code>argument</code>的值。关于String对象的描述，请参见21.1</td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">返回一个新的Symbol对象，其[[SymbolData]]内部插槽被设置为<code>argument</code>的值。关于Symbol对象的描述，请参见19.4</td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="7114-topropertykeyargument"><a class="markdownIt-Anchor" href="#7114-topropertykeyargument"></a> 7.1.14 ToPropertyKey(argument)</h3>
+<p>ToPropertyKey 抽象操作通过执行以下步骤将其参数<code>argument</code>转换一个可以用作属性键(property key)的值</p>
+<ol>
+<li>令<code>key</code>为<code>ToPrimitive(argument, hint String)</code></li>
+<li><code>ReturnIfAbrupt(key)</code></li>
+<li>如果<code>Type(key)</code>为<code>Symbol</code>，返回<code>key</code></li>
+<li>返回<code>ToString(key)</code></li>
+</ol>
+<h3 id="7115-tolengthargument"><a class="markdownIt-Anchor" href="#7115-tolengthargument"></a> 7.1.15 ToLength(argument)</h3>
+<p>ToLength 抽象操作将其参数<code>argument</code>转换一个适合用作类数组对象长度的整数。它执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(argument)</code></li>
+<li>令<code>len</code>为<code>ToInteger(argument)</code></li>
+<li><code>ReturnIfAbrupt(len)</code></li>
+<li>如果<code>len &lt;= +0</code>，返回<code>+0</code></li>
+<li>如果<code>len</code>为<code>+oo</code>，返回<code>2^53-1</code></li>
+<li>返回<code>min(len, 2^53-1)</code></li>
+</ol>
+<h3 id="7116-canonicalnumericindexstringargument"><a class="markdownIt-Anchor" href="#7116-canonicalnumericindexstringargument"></a> 7.1.16 CanonicalNumericIndexString(argument)</h3>
+<p>如果<code>argument</code>是<code>ToString</code>方法生成的某个Number的字符串表示，或是字符串<code>&quot;-0&quot;</code>，则抽象操作 CanonicalNumericIndexString 返回<code>argument</code>转换成的数字值，否则返回undefined。抽象操作函数执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(argument)</code>是<code>String</code></li>
+<li>如果<code>argument</code>为<code>&quot;-0&quot;</code>，返回<code>-0</code></li>
+<li>令<code>n</code>为<code>ToNumber(argument)</code></li>
+<li>如果<code>SameValue(ToString(n), argument)</code>为<code>false</code>，返回<code>undefined</code></li>
+<li>返回<code>n</code></li>
+</ol>
+<p>规范数字字符串是使得CanonicalNumericIndexString抽象操作不会返回undefined的任何String值。</p>
+<h2 id="72-测试与比较操作"><a class="markdownIt-Anchor" href="#72-测试与比较操作"></a> 7.2 测试与比较操作</h2>
+<h3 id="721-requireobjectcoercibleargument"><a class="markdownIt-Anchor" href="#721-requireobjectcoercibleargument"></a> 7.2.1 RequireObjectCoercible(argument)</h3>
+<p>如果<code>argument</code>不能通过<code>ToObject</code>转换为一个Object，则抽象操作RequireObjectCoercible会引发错误。 由表14定义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完结记录</td>
+<td style="text-align:left">如果<code>argument</code>是非常规完结，则返回<code>argument</code>。否则返回<code>RequireObjectCoercible(argument.[[value]])</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Null</td>
+<td style="text-align:left">抛出TypeError异常</td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Symbol</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">返回<code>argument</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="722-isarrayargument"><a class="markdownIt-Anchor" href="#722-isarrayargument"></a> 7.2.2 IsArray(argument)</h3>
+<p>抽象操作 IsArray 接收一个参数<code>argument</code>，然后执行以下步骤：</p>
+<ol>
+<li>如果<code>Type(argument)</code>不是<code>Object</code>，返回<code>false</code></li>
+<li>如果<code>argument</code>是数组奇异对象，返回<code>true</code></li>
+<li>如果<code>argument</code>是代理奇异对象，则
+<ol>
+<li>如果<code>argument</code>的[[ProxyHandler]]内部插槽的值为<code>null</code>，抛出TypeError异常</li>
+<li>令<code>target</code>为<code>argument</code>的[[ProxyTarget]]内部插槽的值</li>
+<li>返回<code>IsArray(target)</code></li>
+</ol>
+</li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="723-iscallableargument"><a class="markdownIt-Anchor" href="#723-iscallableargument"></a> 7.2.3 IsCallable(argument)</h3>
+<p>抽象操作 IsCallable 用于确定<code>argument</code>（必须是ECMAScript语言值，或完结记录）是否是拥有[[Call]]内部方法的可调用函数。</p>
+<ol>
+<li><code>ReturnIfAbrupt(argument)</code></li>
+<li>如果<code>Type(argument)</code>不是<code>Object</code>，返回<code>false</code></li>
+<li>如果<code>argument</code>有[[Call]]内部方法，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="724-isconstructorargument"><a class="markdownIt-Anchor" href="#724-isconstructorargument"></a> 7.2.4 IsConstructor(argument)</h3>
+<p>抽象操作 IsConstructor 用于确定<code>argument</code>（必须是ECMAScript语言值，或完结记录）是否是一个拥有[[Construct]]内部方法的函数对象。</p>
+<ol>
+<li><code>ReturnIfAbrupt(argument)</code></li>
+<li>如果<code>Type(argument)</code>不是<code>Object</code>，返回<code>false</code></li>
+<li>如果<code>argument</code>有[[Construct]]内部方法，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="725-isextensibleo"><a class="markdownIt-Anchor" href="#725-isextensibleo"></a> 7.2.5 IsExtensible(O)</h3>
+<p>抽象操作 IsExtensible 用于确定是否可以将额外的属性添加到对象<code>O</code>上。返回一个Boolean值。此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>是<code>Object</code></li>
+<li>返回<code>O.[[IsExtensible]]()</code></li>
+</ol>
+<h3 id="726-isintegerargument"><a class="markdownIt-Anchor" href="#726-isintegerargument"></a> 7.2.6 IsInteger(argument)</h3>
+<p>抽象操作 IsInteger 用于确定<code>argument</code>是否是一个有限的整数值。</p>
+<ol>
+<li><code>ReturnIfAbrupt(argument)</code></li>
+<li>如果<code>Type(argument)</code>不是<code>Number</code>，返回<code>false</code></li>
+<li>如果<code>argument</code>是<code>NaN</code>,<code>+oo</code>或<code>-oo</code>，返回<code>false</code></li>
+<li>如果<code>floor(abs(argument)) ≠ abs(argument)</code>，返回<code>false</code></li>
+<li>返回<code>true</code></li>
+</ol>
+<h3 id="727-ispropertykeyargument"><a class="markdownIt-Anchor" href="#727-ispropertykeyargument"></a> 7.2.7 IsPropertyKey(argument)</h3>
+<p>抽象操作 IsPropertyKey 用于确定<code>argument</code>（必须是ECMAScript语言值，或完结记录）是否是可以用于属性键的值。</p>
+<ol>
+<li><code>ReturnIfAbrupt(argument)</code></li>
+<li>如果<code>Type(argument)</code>是<code>String</code>，返回<code>true</code></li>
+<li>如果<code>Type(argument)</code>是<code>Symbol</code>，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="728-isregexpargument"><a class="markdownIt-Anchor" href="#728-isregexpargument"></a> 7.2.8 IsRegExp(argument)</h3>
+<p>抽象操作 IsRegExp 接收参数<code>argument</code>并执行以下步骤：</p>
+<ol>
+<li>如果<code>Type(argument)</code>不是<code>Object</code>，返回<code>false</code></li>
+<li>令<code>isRegExp</code>为<code>Get(argument, @@match)</code></li>
+<li><code>ReturnIfAbrupt(isRegExp)</code></li>
+<li>如果<code>isRegExp</code>不是undefined，返回<code>ToBoolean(isRegExp)</code></li>
+<li>如果<code>argument</code>有[[RegExpMatcher]]内部插槽，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="729-samevaluex-y"><a class="markdownIt-Anchor" href="#729-samevaluex-y"></a> 7.2.9 SameValue(x, y)</h3>
+<p>内部比较抽象操作<code>SameValue(x, y)</code>（这里<code>x</code>和<code>y</code>是ECMAScript语言值）返回<code>true</code>或<code>false</code>。比较执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(x)</code></li>
+<li><code>ReturnIfAbrupt(y)</code></li>
+<li>如果<code>Type(x)</code>和<code>Type(y)</code>不同，返回<code>false</code></li>
+<li>如果<code>Type(x)</code>是 Undefined ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Null ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Number ，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>都是<code>NaN</code>，返回<code>true</code></li>
+<li>如果<code>x</code>是<code>+0</code>，<code>y</code>是<code>-0</code>，返回<code>false</code></li>
+<li>如果<code>x</code>是<code>-0</code>，<code>y</code>是<code>+0</code>，返回<code>false</code></li>
+<li>如果<code>x</code>和<code>y</code>是相同的Number值，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是String，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>是完全相同的代码单元序列（相同长度、对应位置代码单元相同）返回<code>true</code>。否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是Boolean，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>同为<code>true</code>或者同为<code>false</code>，返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是Symbol，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>是相同的Symbol值返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>x</code>和<code>y</code>是相同的Object值，返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+<p>注意：该算法在有符号零和<code>NaN</code>的处理上不同于严格相等比较算法</p>
+<h3 id="7210-samevaluezerox-y"><a class="markdownIt-Anchor" href="#7210-samevaluezerox-y"></a> 7.2.10 SameValueZero(x, y)</h3>
+<p>内部比较抽象操作<code>SameValueZero(x, y)</code>（这里<code>x</code>和<code>y</code>是ECMAScript语言值）返回<code>true</code>或<code>false</code>。比较执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(x)</code></li>
+<li><code>ReturnIfAbrupt(y)</code></li>
+<li>如果<code>Type(x)</code>和<code>Type(y)</code>不同，返回<code>false</code></li>
+<li>如果<code>Type(x)</code>是 Undefined ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Null ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Number ，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>都是<code>NaN</code>，返回<code>true</code></li>
+<li>如果<code>x</code>是<code>+0</code>，<code>y</code>是<code>-0</code>，返回<code>true</code></li>
+<li>如果<code>x</code>是<code>-0</code>，<code>y</code>是<code>+0</code>，返回<code>true</code></li>
+<li>如果<code>x</code>和<code>y</code>是相同的Number值，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是String，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>是完全相同的代码单元序列（相同长度、对应位置代码单元相同）返回<code>true</code>。否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是Boolean，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>同为<code>true</code>或者同为<code>false</code>，返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是Symbol，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>是相同的Symbol值返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>x</code>和<code>y</code>是相同的Object值，返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+<p>注意：SameValueZero与SameValue仅在对待<code>+0</code>和<code>-0</code>不同。</p>
+<h3 id="7211-抽象关系比较"><a class="markdownIt-Anchor" href="#7211-抽象关系比较"></a> 7.2.11 抽象关系比较</h3>
+<p>比较<code>x &lt; y</code>（其中<code>x</code>和<code>y</code>是值）会产生<code>true</code>，<code>false</code>或<code>undefined</code>（表示至少一个操作数是<code>NaN</code>）。除了<code>x</code>和<code>y</code>之外，该算法还使用一个名为<code>LeftFirst</code>的Boolean标志作为参数。 该标志用于控制对<code>x</code>和<code>y</code>执行具有潜在可见副作用的操作的顺序。 这是必须的，因为ECMAScript指定了从左到右的表达式求值。<code>LeftFirst</code>的默认值为<code>true</code>，表示<code>x</code>参数对应的表达式应该出现在<code>y</code>参数对应表达式的左边。如果<code>LeftFirst</code>为<code>false</code>，则情况相反，<code>y</code>必须在<code>x</code>之前执行操作。 这样的比较执行如下：</p>
+<ol>
+<li><code>ReturnIfAbrupt(x)</code></li>
+<li><code>ReturnIfAbrupt(y)</code></li>
+<li>If <code>LeftFirst</code>标志为<code>true</code>，则
+<ol>
+<li>令<code>px</code>为<code>ToPrimitive(x, hint Number)</code></li>
+<li><code>ReturnIfAbrupt(px)</code></li>
+<li>令<code>py</code>为<code>ToPrimitive(y, hint Number)</code></li>
+<li><code>ReturnIfAbrupt(py)</code></li>
+</ol>
+</li>
+<li>Else 需要颠倒计算顺序以保留从左到右的计算
+<ol>
+<li>令<code>py</code>为<code>ToPrimitive(y, hint Number)</code></li>
+<li><code>ReturnIfAbrupt(py)</code></li>
+<li>令<code>px</code>为<code>ToPrimitive(x, hint Number)</code></li>
+<li><code>ReturnIfAbrupt(px)</code></li>
+</ol>
+</li>
+<li>If <code>px</code>和<code>py</code>都是String，则
+<ol>
+<li>如果<code>py</code>是<code>px</code>的前缀，返回<code>false</code>（字符串<code>p</code>是字符串<code>q</code>的前缀是说<code>q</code>是<code>p</code>与某个字符串<code>r</code>连接的结果。注意任何字符串都是它自己的前缀，因为<code>r</code>可以是空串）</li>
+<li>如果<code>px</code>是<code>py</code>的前缀，返回<code>true</code></li>
+<li>令<code>k</code>为使<code>px</code>与<code>py</code>在索引<code>k</code>处的代码单元不同的最小的非负整数（这样的<code>k</code>一定存在，因为前两步表明这两个字符串都不是另一个的前缀）</li>
+<li>令<code>m</code>为<code>px</code>在索引<code>k</code>处的代码单元值（整数）</li>
+<li>令<code>n</code>为<code>py</code>在索引<code>k</code>处的代码单元值（整数）</li>
+<li>如果<code>m &lt; n</code>，返回<code>true</code>。否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>Else
+<ol>
+<li>令<code>nx</code>为<code>ToNumber(px)</code>，因为<code>px</code>和<code>py</code>是原始值，所以计算顺序并不重要。</li>
+<li><code>ReturnIfAbrupt(nx)</code></li>
+<li>令<code>ny</code>为<code>ToNumber(py)</code></li>
+<li><code>ReturnIfAbrupt(ny)</code></li>
+<li>如果<code>nx</code>是<code>NaN</code>，返回<code>undefined</code></li>
+<li>如果<code>ny</code>是<code>NaN</code>，返回<code>undefined</code></li>
+<li>如果<code>nx</code>和<code>ny</code>是相同的Number值，返回<code>false</code></li>
+<li>如果<code>nx</code>是<code>+0</code>，<code>ny</code>是<code>-0</code>，返回<code>false</code></li>
+<li>如果<code>nx</code>是<code>-0</code>，<code>ny</code>是<code>+0</code>，返回<code>false</code></li>
+<li>如果<code>nx</code>是<code>+oo</code>，返回<code>false</code></li>
+<li>如果<code>ny</code>是<code>+oo</code>，返回<code>true</code></li>
+<li>如果<code>ny</code>是<code>-oo</code>，返回<code>false</code></li>
+<li>如果<code>nx</code>是<code>-oo</code>，返回<code>true</code></li>
+<li>如果<code>nx</code>的数学值小于<code>ny</code>的数学值（请注意，这些数学值都是有限的且不都是零），则返回<code>true</code>。 否则，返回<code>false</code></li>
+</ol>
+</li>
+</ol>
+<p>注意：步骤5与加法运算符算法(12.7.3)的第11步不同之处在于，它使用and而不是or。</p>
+<p>注意：字符串的比较使用在代码单元值序列上的简单字典序。没有尝试使用更复杂的，面向语义的字符或字符串相等性定义以及Unicode规范中定义的整理顺序。 因此，根据Unicode标准规范相等的字符串值可以测试为不相等。 实际上，该算法假定两个字符串都已经处于规范化形式。 另外，请注意，对于包含补充字符的字符串，UTF-16代码单元值序列上的字典顺序不同于代码点值序列上的字典顺序。</p>
+<h3 id="7212-抽象相等比较"><a class="markdownIt-Anchor" href="#7212-抽象相等比较"></a> 7.2.12 抽象相等比较</h3>
+<p>比较<code>x == y</code>（其中<code>x</code>和<code>y</code>是值）会产生<code>true</code>或<code>false</code>。比较执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(x)</code></li>
+<li><code>ReturnIfAbrupt(y)</code></li>
+<li>如果<code>Type(x)</code>和<code>Type(y)</code>相同，则返回严格相等比较<code>x === y</code></li>
+<li>如果<code>x</code>为<code>null</code>并且<code>y</code>为<code>undefined</code>，返回<code>true</code></li>
+<li>如果<code>x</code>为<code>undefined</code>并且<code>y</code>为<code>null</code>，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是Number并且<code>Type(y)</code>是String，返回比较<code>x == ToNumber(y)</code>的结果</li>
+<li>如果<code>Type(x)</code>是String并且<code>Type(y)</code>是Number，返回比较<code>ToNumber(x) == y</code>的结果</li>
+<li>如果<code>Type(x)</code>是Boolean，返回比较<code>ToNumber(x) == y</code>的结果</li>
+<li>如果<code>Type(y)</code>是Boolean，返回比较<code>x == ToNumber(y)</code>的结果</li>
+<li>如果<code>Type(x)</code>是String，Number或者Symbol，并且<code>Type(y)</code>是Object，则返回比较<code>x == ToPrimitive(y)</code>的结果</li>
+<li>如果<code>Type(x)</code>是Object并且<code>Type(y)</code>是String，Number或者Symbol，则返回比较<code>ToPrimitive(x) == y</code>的结果</li>
+<li>返回<code>false</code></li>
+</ol>
+<h3 id="7213-严格相等比较"><a class="markdownIt-Anchor" href="#7213-严格相等比较"></a> 7.2.13 严格相等比较</h3>
+<p>比较<code>x === y</code>（其中<code>x</code>和<code>y</code>是值）会产生<code>true</code>或<code>false</code>。比较执行以下步骤：</p>
+<ol>
+<li>如果<code>Type(x)</code>和<code>Type(y)</code>不同，返回<code>false</code></li>
+<li>如果<code>Type(x)</code>是 Undefined ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Null ，返回<code>true</code></li>
+<li>如果<code>Type(x)</code>是 Number ，则
+<ol>
+<li>如果<code>x</code>是<code>NaN</code>，返回<code>false</code></li>
+<li>如果<code>y</code>是<code>NaN</code>，返回<code>false</code></li>
+<li>如果<code>x</code>和<code>y</code>是相同的Number值，返回<code>true</code></li>
+<li>如果<code>x</code>是<code>+0</code>，<code>y</code>是<code>-0</code>，返回<code>true</code></li>
+<li>如果<code>x</code>是<code>-0</code>，<code>y</code>是<code>+0</code>，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是String，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>是完全相同的代码单元序列（相同长度、对应位置代码单元相同）返回<code>true</code>。否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>Type(x)</code>是Boolean，则
+<ol>
+<li>如果<code>x</code>和<code>y</code>同为<code>true</code>或者同为<code>false</code>，返回<code>true</code>；否则，返回<code>false</code></li>
+</ol>
+</li>
+<li>如果<code>x</code>和<code>y</code>是相同的Symbol值，返回<code>true</code></li>
+<li>如果<code>x</code>和<code>y</code>是相同的Object值，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<p>注意：此算法与SameValue算法在对待有符号零和<code>NaN</code>时不同。</p>
+<h2 id="73-object上的操作"><a class="markdownIt-Anchor" href="#73-object上的操作"></a> 7.3 Object上的操作</h2>
+<h3 id="731-geto-p"><a class="markdownIt-Anchor" href="#731-geto-p"></a> 7.3.1 Get(O, P)</h3>
+<p>抽象操作Get用于检索对象的特定属性的值。 使用参数O和P调用该操作，其中O是对象，P是属性键。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>返回<code>O.[[Get]](P, O)</code></li>
+</ol>
+<h3 id="732-getv-v-p"><a class="markdownIt-Anchor" href="#732-getv-v-p"></a> 7.3.2 GetV (V, P)</h3>
+<p>抽象操作GetV用于检索ECMAScript语言值的特定属性的值。 如果该值不是对象，则使用适合该值类型的包装对象执行属性查找。 使用参数V和P调用该操作，其中V是值，P是属性键。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>令<code>O</code>为<code>ToObject(V)</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>返回<code>O.[[Get]](P, V)</code></li>
+</ol>
+<h3 id="733-seto-p-v-throw"><a class="markdownIt-Anchor" href="#733-seto-p-v-throw"></a> 7.3.3 Set(O, P, V, Throw)</h3>
+<p>抽象操作Set用于设置对象的特定属性的值。 使用参数O，P，V和Throw调用该操作，其中O是对象，P是属性键，V是该属性的新值，Throw是布尔值标志。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>断言：<code>Type(Throw)</code>为<code>Boolean</code></li>
+<li>令<code>success</code>为<code>O.[[Set]](P, V, O)</code></li>
+<li><code>ReturnIfAbrupt(success)</code></li>
+<li>如果<code>success</code>为<code>false</code>并且<code>Throw</code>为<code>true</code>，抛出TypeError异常</li>
+<li>返回<code>success</code></li>
+</ol>
+<h3 id="734-createdatapropertyo-p-v"><a class="markdownIt-Anchor" href="#734-createdatapropertyo-p-v"></a> 7.3.4 CreateDataProperty(O, P, V)</h3>
+<p>pass</p>
+<h3 id="735-createmethodpropertyo-p-v"><a class="markdownIt-Anchor" href="#735-createmethodpropertyo-p-v"></a> 7.3.5 CreateMethodProperty(O, P, V)</h3>
+<p>pass</p>
+<h3 id="736-createdatapropertyorthrowo-p-v"><a class="markdownIt-Anchor" href="#736-createdatapropertyorthrowo-p-v"></a> 7.3.6 CreateDataPropertyOrThrow(O, P, V)</h3>
+<p>pass</p>
+<h3 id="737-definepropertyorthrow-o-p-desc"><a class="markdownIt-Anchor" href="#737-definepropertyorthrow-o-p-desc"></a> 7.3.7 DefinePropertyOrThrow (O, P, desc)</h3>
+<p>抽象操作DefinePropertyOrThrow用于以某种方式调用对象的[[DefineOwnProperty]]内部方法，如果无法执行请求的属性更新，该方式将引发TypeError异常。 使用参数O，P和desc调用该操作，其中O是对象，P是属性键，而desc是该属性的属性描述符。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>令<code>success</code>为<code>O.[[DefineOwnProperty]](P, desc)</code></li>
+<li><code>ReturnIfAbrupt(success)</code></li>
+<li>如果<code>success</code>为<code>false</code>，抛出 TypeError 异常</li>
+<li>返回<code>success</code></li>
+</ol>
+<h3 id="738-deletepropertyorthrow-o-p"><a class="markdownIt-Anchor" href="#738-deletepropertyorthrow-o-p"></a> 7.3.8 DeletePropertyOrThrow (O, P)</h3>
+<p>pass</p>
+<h3 id="739-getmethod-o-p"><a class="markdownIt-Anchor" href="#739-getmethod-o-p"></a> 7.3.9 GetMethod (O, P)</h3>
+<p>当期望属性的值是一个函数时，抽象操作GetMethod用于获取该对象的特定属性的值。 使用参数O和P调用该操作，其中O是对象，P是属性键。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>令<code>func</code>为<code>GetV(O, P)</code></li>
+<li><code>ReturnIfAbrupt(func)</code></li>
+<li>如果<code>func</code>为<code>undefined</code>或<code>null</code>，返回<code>undefined</code></li>
+<li>如果<code>IsCallable(func)</code>为<code>false</code>抛出 TypeError 异常</li>
+<li>返回<code>func</code></li>
+</ol>
+<h3 id="7310-hasproperty-o-p"><a class="markdownIt-Anchor" href="#7310-hasproperty-o-p"></a> 7.3.10 HasProperty (O, P)</h3>
+<p>抽象操作HasProperty用于确定对象是否具有带有指定属性键的属性。 该属性可能是自有的或继承的。 返回一个布尔值。 使用参数O和P调用该操作，其中O是对象，P是属性键。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>返回<code>O.[[HasProperty]](P)</code></li>
+</ol>
+<h3 id="7311-hasownproperty-o-p"><a class="markdownIt-Anchor" href="#7311-hasownproperty-o-p"></a> 7.3.11 HasOwnProperty (O, P)</h3>
+<p>抽象操作HasOwnProperty用于确定对象是否具有指定属性键的自有属性。 返回一个布尔值。 使用参数O和P调用该操作，其中O是对象，P是属性键。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>断言：<code>IsPropertyKey(P)</code>为<code>true</code></li>
+<li>令<code>desc</code>为<code>O.[[GetOwnProperty]](P)</code></li>
+<li><code>ReturnIfAbrupt(desc)</code></li>
+<li>如果<code>desc</code>为<code>undefined</code>，返回<code>false</code></li>
+<li>返回<code>true</code></li>
+</ol>
+<h3 id="7312-callf-v-argumentslist"><a class="markdownIt-Anchor" href="#7312-callf-v-argumentslist"></a> 7.3.12 Call(F, V, [argumentsList])</h3>
+<p>抽象操作<code>Call</code>用于调用函数对象的<code>[[Call]]</code>内部方法。 使用参数<code>F</code>，<code>V</code>以及可选的<code>argumentsList</code>调用该操作，其中<code>F</code>是函数对象，<code>V</code>是ECMAScript语言值，它是<code>[[Call]]</code>的<code>this</code>值，<code>argumentsList</code>是传递给内部方法对应参数的值。 如果<code>argumentsList</code>不存在，则使用一个空的列表作为其值。 此抽象操作执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(F)</code></li>
+<li>如果没有传递<code>argumentsList</code>，令<code>argumentsList</code>为一个新的空列表</li>
+<li>如果<code>IsCallable(F)</code>为<code>false</code>，抛出 TypeError 异常</li>
+<li>返回<code>F.[[Call]](V, argumentsList)</code></li>
+</ol>
+<h3 id="7313-construct-f-argumentslist-newtarget"><a class="markdownIt-Anchor" href="#7313-construct-f-argumentslist-newtarget"></a> 7.3.13 Construct (F, [argumentsList], [newTarget])</h3>
+<p>抽象操作Construct用于调用函数对象的<code>[[Construct]]</code>内部方法。 该操作使用参数<code>F</code>和可选的<code>argumentsList</code>和<code>newTarget</code>调用，其中<code>F</code>是函数对象。 <code>argumentsList</code>和<code>newTarget</code>是要作为内部方法的相应参数传递的值。 如果<code>argumentsList</code>不存在，则使用一个空的List作为其值。 如果不存在<code>newTarget</code>，则将F用作其值。 此抽象操作执行以下步骤：</p>
+<ol>
+<li>如果没有传递<code>newTarget</code>，令<code>newTarget</code>为<code>F</code></li>
+<li>如果没有传递<code>argumentsList</code>，令<code>argumentsList</code>为一个新的空列表</li>
+<li>断言：<code>IsConstructor (F)</code>为<code>true</code></li>
+<li>断言：<code>IsConstructor (newTarget)</code>为<code>true</code></li>
+<li>返回<code>F.[[Construct]](argumentsList, newTarget)</code></li>
+</ol>
+<p>注：如果没有传递<code>newTarget</code>，则此操作等价于<code>new F(...argumentsList)</code></p>
+<h3 id="7314-setintegritylevel-o-level"><a class="markdownIt-Anchor" href="#7314-setintegritylevel-o-level"></a> 7.3.14 SetIntegrityLevel (O, level)</h3>
+<p>pass</p>
+<h3 id="7315-testintegritylevel-o-level"><a class="markdownIt-Anchor" href="#7315-testintegritylevel-o-level"></a> 7.3.15 TestIntegrityLevel (O, level)</h3>
+<p>pass</p>
+<h3 id="7316-createarrayfromlist-elements"><a class="markdownIt-Anchor" href="#7316-createarrayfromlist-elements"></a> 7.3.16 CreateArrayFromList (elements)</h3>
+<p>pass</p>
+<h3 id="7317-createlistfromarraylike-obj-elementtypes"><a class="markdownIt-Anchor" href="#7317-createlistfromarraylike-obj-elementtypes"></a> 7.3.17 CreateListFromArrayLike (obj [, elementTypes] )</h3>
+<p>pass</p>
+<h3 id="7318-invokeop-argumentslist"><a class="markdownIt-Anchor" href="#7318-invokeop-argumentslist"></a> 7.3.18 Invoke(O,P, [argumentsList])</h3>
+<p>pass</p>
+<h3 id="7319-ordinaryhasinstance-c-o"><a class="markdownIt-Anchor" href="#7319-ordinaryhasinstance-c-o"></a> 7.3.19 OrdinaryHasInstance (C, O)</h3>
+<p>抽象操作OrdinaryHasInstance实现用于确定对象O是否从构造函数C提供的实例对象继承路径继承的默认算法。该抽象操作执行以下步骤：</p>
+<ol>
+<li>如果<code>IsCallable(C)</code>为<code>false</code>，返回<code>false</code></li>
+<li>如果<code>C</code>有<code>[[BoundTargetFunction]]</code>内部插槽，则
+<ol>
+<li>令<code>BC</code>为<code>C</code>的<code>[[BoundTargetFunction]]</code>内部插槽的值</li>
+<li>返回<code>InstanceofOperator(O,BC)</code> (见 12.9.4)</li>
+</ol>
+</li>
+<li>如果<code>Type(O)</code>不是<code>Object</code>，返回<code>false</code></li>
+<li>令<code>P</code>为<code>Get(C, &quot;prototype&quot;)</code></li>
+<li><code>ReturnIfAbrupt(P)</code></li>
+<li>如果<code>Type(P)</code>不是<code>Object</code>，抛出 <code>TypeError</code> 异常</li>
+<li>重复：
+<ol>
+<li>令<code>O</code>为<code>O.[[GetPrototypeOf]]()</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>如果<code>O</code>为<code>null</code>，返回<code>false</code></li>
+<li>如果<code>SameValue(P, O)</code>为<code>true</code>，返回<code>true</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="es8-7321-enumerableownproperties-o-kind"><a class="markdownIt-Anchor" href="#es8-7321-enumerableownproperties-o-kind"></a> ES8 7.3.21 EnumerableOwnProperties ( O, kind )</h3>
+<p>当使用对象<code>O</code>和字符串<code>kind</code>调用抽象操作<code>EnumerableOwnProperties</code>时，执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>令<code>ownKeys</code>为<code>O.[[OwnPropertyKeys]]()</code></li>
+<li>令<code>properties</code>为一个新的空列表</li>
+<li>对<code>ownKeys</code>中的每个元素<code>key</code>，按列表顺序：
+<ol>
+<li>如果<code>Type(key)</code>为<code>String</code>，则
+<ol>
+<li>令<code>desc</code>为<code>O.[[GetOwnProperty]](key)</code></li>
+<li>如果<code>desc</code>不为<code>undefined</code>并且<code>desc.[[Enumerable]]</code>为<code>true</code>，则
+<ol>
+<li>如果<code>kind</code>为<code>&quot;key&quot;</code>，将<code>key</code>添加到<code>properties</code></li>
+<li>否则，
+<ol>
+<li>令<code>value</code>为<code>Get(O, key)</code></li>
+<li>如果<code>kind</code>为<code>&quot;value&quot;</code>，将<code>value</code>添加到<code>properties</code></li>
+<li>否则，
+<ol>
+<li>断言：<code>kind</code>为<code>&quot;key+value&quot;</code></li>
+<li>令<code>entry</code>为<code>CreateArrayFromList(« key, value »)</code></li>
+<li>将<code>entry</code>添加到<code>properties</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>对<code>properties</code>的元素进行排序，以使它们具有与Iterator（使用O调用EnumerateObjectProperties内部方法返回的迭代器）产生的相对顺序相同的相对顺序。</li>
+<li>返回<code>properties</code></li>
+</ol>
+<h3 id="7320-speciesconstructor-o-defaultconstructor"><a class="markdownIt-Anchor" href="#7320-speciesconstructor-o-defaultconstructor"></a> 7.3.20 SpeciesConstructor ( O, defaultConstructor )</h3>
+<p>pass</p>
+<h3 id="7321-enumerableownnames-o"><a class="markdownIt-Anchor" href="#7321-enumerableownnames-o"></a> 7.3.21 EnumerableOwnNames (O)</h3>
+<p>当使用参数<code>O</code>（对象）调用抽象操作<code>EnumerableOwnNames</code>时，将执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(O)</code>为<code>Object</code></li>
+<li>令<code>ownKeys</code>为<code>O.[[OwnPropertyKeys]]()</code></li>
+<li><code>ReturnIfAbrupt(ownKeys)</code></li>
+<li>令<code>names</code>为一个新的空列表</li>
+<li>对<code>ownKyes</code>中的每个元素<code>key</code>，按照列表顺序执行：
+<ol>
+<li>如果<code>Type(key)</code>为<code>String</code>，则
+<ol>
+<li>令<code>desc</code>为<code>O.[[GetOwnProperty]](key)</code></li>
+<li><code>ReturnIfAbrupt(desc)</code></li>
+<li>如果<code>desc</code>不为<code>undefined</code>，则
+<ol>
+<li>如果<code>desc.[[Enumerable]]</code>为<code>true</code>，将<code>key</code>添加到<code>names</code>里</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>对<code>names</code>的元素进行排序，以使其与Iterator产生的相对顺序相同，如果在O上调用[[Enumerate]]内部方法，则该Iterator会返回该相对顺序。</li>
+<li>返回<code>names</code></li>
+</ol>
+<p>注：返回列表中元素的顺序与for-in语句使用的枚举顺序相同。</p>
+<h3 id="7322-getfunctionrealm-obj"><a class="markdownIt-Anchor" href="#7322-getfunctionrealm-obj"></a> 7.3.22 GetFunctionRealm ( obj )</h3>
+<p>pass</p>
+<h2 id="74-可迭代对象上的操作"><a class="markdownIt-Anchor" href="#74-可迭代对象上的操作"></a> 7.4 可迭代对象上的操作</h2>
+<p>参见公共迭代接口（25.1）</p>
+<h3 id="741-getiterator-obj-method"><a class="markdownIt-Anchor" href="#741-getiterator-obj-method"></a> 7.4.1 GetIterator ( obj, method )</h3>
+<p>接受参数<code>obj</code>和可选参数<code>method</code>的抽象操作<code>GetIterator</code>执行以下步骤：</p>
+<ol>
+<li><code>ReturnIfAbrupt(obj)</code></li>
+<li>如果没有传递参数<code>method</code>，则
+<ol>
+<li>令<code>method</code>为<code>GetMethod(obj, @@iterator)</code></li>
+<li><code>ReturnIfAbrupt(method)</code></li>
+</ol>
+</li>
+<li>令<code>iterator</code>为<code>Call(method,obj)</code></li>
+<li><code>ReturnIfAbrupt(iterator)</code></li>
+<li>如果<code>Type(iterator)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>返回<code>iterator</code></li>
+</ol>
+<h3 id="742-iteratornext-iterator-value"><a class="markdownIt-Anchor" href="#742-iteratornext-iterator-value"></a> 7.4.2 IteratorNext ( iterator, value )</h3>
+<p>抽象操作<code>IteratorNext</code>接受参数<code>iterator</code>和可选参数<code>value</code>，并执行以下步骤：</p>
+<ol>
+<li>如果没有传递<code>value</code>，则令<code>result</code>为<code>Invoke(iterator, &quot;next&quot;, «‍ »)</code></li>
+<li>否则，令<code>result</code>为<code>Invoke(iterator, &quot;next&quot;, «‍value»)</code></li>
+<li><code>ReturnIfAbrupt(result)</code></li>
+<li>如果<code>Type(result)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>返回<code>result</code></li>
+</ol>
+<h3 id="743-iteratorcomplete-iterresult"><a class="markdownIt-Anchor" href="#743-iteratorcomplete-iterresult"></a> 7.4.3 IteratorComplete ( iterResult )</h3>
+<p>抽象操作<code>IteratorComplete</code>接受参数<code>iterResult</code>，并执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(iterResult)</code>为<code>Object</code></li>
+<li>返回<code>ToBoolean(Get(iterResult, &quot;done&quot;))</code></li>
+</ol>
+<h3 id="744-iteratorvalue-iterresult"><a class="markdownIt-Anchor" href="#744-iteratorvalue-iterresult"></a> 7.4.4 IteratorValue ( iterResult )</h3>
+<p>抽象操作<code>IteratorValue</code>接受参数<code>iterResult</code>，并执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(iterResult)</code>为<code>Object</code></li>
+<li>返回<code>Get(iterResult, &quot;value&quot;)</code></li>
+</ol>
+<h3 id="745-iteratorstep-iterator"><a class="markdownIt-Anchor" href="#745-iteratorstep-iterator"></a> 7.4.5 IteratorStep ( iterator )</h3>
+<p>带有参数<code>iterator</code>的抽象操作<code>IteratorStep</code>会从<code>iterator</code>请求下一个值，并返回<code>false</code>（指示迭代器已到达末尾）或<code>IteratorResult</code>对象（如果有下一个值）。 <code>IteratorStep</code>执行以下步骤：</p>
+<ol>
+<li>令<code>result</code>为<code>IteratorNext(iterator)</code></li>
+<li><code>ReturnIfAbrupt(result)</code></li>
+<li>令<code>done</code>为<code>IteratorComplete(result)</code></li>
+<li><code>ReturnIfAbrupt(done)</code></li>
+<li>如果<code>done</code>为<code>true</code>，返回<code>false</code></li>
+<li>返回<code>result</code></li>
+</ol>
+<h3 id="746-iteratorclose-iterator-completion"><a class="markdownIt-Anchor" href="#746-iteratorclose-iterator-completion"></a> 7.4.6 IteratorClose( iterator, completion )</h3>
+<p>带有参数<code>iterator</code>和<code>complete</code>的抽象操作<code>IteratorClose</code>用于通知迭代器它应该执行的在达到其完成状态时通常应执行的任何操作：</p>
+<ol>
+<li>断言：<code>Type(iterator)</code>为<code>Object</code></li>
+<li>断言<code>completion</code>是完结记录</li>
+<li>令<code>return</code>为<code>GetMethod(iterator, &quot;return&quot;)</code></li>
+<li><code>ReturnIfAbrupt(return)</code></li>
+<li>如果<code>return</code>为<code>undefined</code>，返回<code>Completion(completion)</code></li>
+<li>令<code>innerResult</code>为<code>Call(return, iterator, «‍ »)</code></li>
+<li>如果<code>completion.[[type]]</code>为<code>throw</code>，返回<code>Completion(completion)</code></li>
+<li>如果<code>innerResult.[[type]]</code>为<code>throw</code>，返回<code>Completion(innerResult)</code></li>
+<li>如果<code>Type(innerResult.[[value]])</code>不是<code>Object</code>，抛出 <code>TypeError</code> 异常</li>
+<li>返回<code>Completion(completion)</code></li>
+</ol>
+<h3 id="747-createiterresultobject-value-done"><a class="markdownIt-Anchor" href="#747-createiterresultobject-value-done"></a> 7.4.7 CreateIterResultObject ( value, done )</h3>
+<p>pass</p>
+<h3 id="748-createlistiterator-list"><a class="markdownIt-Anchor" href="#748-createlistiterator-list"></a> 7.4.8 CreateListIterator ( list )</h3>
+<p>pass</p>
+<h4 id="7481-listiterator-next"><a class="markdownIt-Anchor" href="#7481-listiterator-next"></a> 7.4.8.1 ListIterator next( )</h4>
+<p>pass</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/7 抽象操作.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/7 抽象操作.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/6%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%80%BC.html"><i class="fa fa-chevron-left">  </i><span>6 数据类型和值</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/8%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html"><span>8 可执行代码和执行上下文</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="CSS概述"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>CSS概述 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text"> 样式表中的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%A7%84%E5%88%99"><span class="toc-number">2.1.</span> <span class="toc-text"> CSS规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%A9%BA%E7%99%BD%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text"> 关于空白符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B3%A8%E9%87%8A"><span class="toc-number">2.3.</span> <span class="toc-text"> 关于注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text"> 元素的分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%8Acss%E5%BA%94%E7%94%A8%E5%88%B0html%E4%B8%8A"><span class="toc-number">4.</span> <span class="toc-text"> 把CSS应用到HTML上</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%96%E5%80%BC%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text"> 取值语法</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">CSS概述</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h1>
+<p>层叠样式表(Cascading Style Sheets)，简称CSS，是用来告诉浏览器如何显示你写在HTML中的内容。所谓层叠，是指样式可以结合起来使用，并且具有优先级。<br />
+例如在HTML中有一个段落元素<code>&lt;p&gt;</code>，从HTML语义，浏览器知道这是一个段落，但段落里文字的大小、颜色等等信息HTML语义并没有提供，浏览器固然可以自己决定，但这样一来所有页面都千篇一律。不同人有不同的设计想法，为了实现这一点就要在CSS中编写相关样式信息，浏览器从CSS文件了解到如何显示元素，并为用户展示出来。<br />
+CSS的思想是，使用选择器来定位到HTML元素，然后编写一系列样式声明来应用到所定位的元素上。</p>
+<span id="more"></span>
+<h1 id="样式表中的内容"><a class="markdownIt-Anchor" href="#样式表中的内容"></a> 样式表中的内容</h1>
+<h2 id="css规则"><a class="markdownIt-Anchor" href="#css规则"></a> CSS规则</h2>
+<p>样式表中是一条条CSS规则，有时也会有一些注释或者<code>@</code>开头的声明，例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一条CSS规则由两个基本部分构成：选择器(selector)和声明块(declaration block)。</p>
+<ul>
+<li>选择器是像上述代码中<code>h1</code>这样的部分，它定义了HTML文档中哪些部分受这条CSS规则的影响。</li>
+<li>声明块是以花括号<code>&#123;&#125;</code>括起来的一个或多个声明。
+<ul>
+<li>一个声明由属性名和属性值组成，属性名和属性值用冒号分隔，属性值的结尾用分号<code>;</code>表示声明的结束。形如<code>属性名:属性值;</code> 。如果属性值是多个关键字，关键字之间通常用空格分隔，有时也用斜线<code>/</code>或者逗号<code>,</code>来分隔。例如</li>
+</ul>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font</span>: medium Helvetica;&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">font</span>: large/<span class="number">150%</span> sans-serif;&#125;</span><br><span class="line"><span class="selector-class">.box</span> &#123;linear-gradient(<span class="number">180deg</span>, <span class="selector-id">#FFF</span> <span class="number">0%</span>, <span class="selector-id">#000</span> <span class="number">100%</span>);&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果一个声明中的属性名或者属性值错误，这条声明将被忽略。</li>
+</ul>
+</li>
+</ul>
+<p>样式表中不能有HTML标记，除了HTML注释。</p>
+<h2 id="关于空白符"><a class="markdownIt-Anchor" href="#关于空白符"></a> 关于空白符</h2>
+<p>样式表中的绝大部分位置都可以随意添加空格、换行或制表符，例如上面的代码和下面的是等价的</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;<span class="attribute">background</span>:yellow;&#125;</span><br></pre></td></tr></table></figure>
+<p>但某些声明的属性值会特别要求多个关键字之间用空白分开。</p>
+<h2 id="关于注释"><a class="markdownIt-Anchor" href="#关于注释"></a> 关于注释</h2>
+<p>样式表中也支持注释，注释是在代码中所写的解释和说明，它不会影响任何显示的结果。<br />
+注释也是一种快速使代码不生效而不需要删除的办法。<br />
+CSS注释内容放在<code>/*</code>和<code>*/</code>之间，注释可以跨越多行。例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 设置</span></span><br><span class="line"><span class="comment">   一级标题</span></span><br><span class="line"><span class="comment">   的样式</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red; <span class="comment">/* 将颜色设置为红色 */</span></span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于CSS会忽略属性名无效的声明，有时为了方便起见也会直接在属性名前加几个字符，例如小x，使属性名无效，进而忽略整条声明来达到注释效果。</p>
+<h1 id="元素的分类"><a class="markdownIt-Anchor" href="#元素的分类"></a> 元素的分类</h1>
+<p>CSS作用于HTML元素，在CSS看来，HTML元素通常分为替换元素和非替换元素。</p>
+<ul>
+<li>替换元素：内容超出CSS格式化模型的元素，元素的内容不是由文档内容直接表示，而是由文档之外的内容表示，标签只是一个用于占位的东西。例如<code>&lt;img&gt;</code>，它的内容由文档之外的图像文件替换，如果没有链接指向外部文件，这个元素什么也表示不了。替换元素通常拥有固有尺寸（intrinsic dimensions）：固有宽度，固有高度和固有比例（intrinsic ratio）。输入控件也被认为是替换元素。替换元素一般没有后代元素。</li>
+<li>非替换元素：元素的内容是在元素自身生成的框中显示。文本、段落、标题、列表等大部分元素都是非替换元素。</li>
+</ul>
+<p>另外一些时候，CSS还会根据显示的效果（显示角色display role）把元素分成块级和行内两种主要显示类型。</p>
+<ul>
+<li>块级元素：块级元素默认占满父元素内容区域的宽度，不会让其他元素在它旁边。也就是说块级元素在元素框前后都断行。最常见的块级元素是<code>&lt;p&gt;</code>和<code>&lt;div&gt;</code>，块级元素和替换非替换元素没有关系，但替换元素往往不是块级元素。列表也是块级元素，它和其他块级元素的唯一不同是元素框旁边多了一个圆点或数字。</li>
+<li>行内元素：行内元素在一行文本内生成元素框，不打断所在行。最常见的行内元素是<code>&lt;a&gt;</code>，还有<code>&lt;strong&gt;</code>和<code>&lt;em&gt;</code>。这类元素不在自身所在元素框的前后断行，因此可以出现在另一个元素的内容中，且不影响所在元素。</li>
+</ul>
+<p>HTML规定块级元素不能放在行内元素里面，例如<code>&lt;a&gt;&lt;p&gt;&lt;/p&gt;&lt;/a&gt;</code>是错误的。<br />
+但CSS并没有这个限制，可以用<code>display</code>属性把一个块级元素的显示效果改成和行内元素一样，也可以反过来把行内元素的显示效果改成和块级元素一样。例如<code>&lt;p&gt;&lt;a&gt;&lt;/a&gt;&lt;/p&gt;</code>符合HTML规定，但在CSS中可以把<code>&lt;p&gt;</code>设置为显示效果和行内元素一样，而把<code>&lt;a&gt;</code>的显示效果设置为和块级元素一样。</p>
+<h1 id="把css应用到html上"><a class="markdownIt-Anchor" href="#把css应用到html上"></a> 把CSS应用到HTML上</h1>
+<p>为了让浏览器明确知道哪个HTML页面使用哪种样式，需要把CSS样式与HTML文件关联起来，有三种办法：</p>
+<ol>
+<li>行内样式：<code>&lt;body&gt;</code>元素之内的每个HTML元素都能用<code>style</code>属性指定该元素的样式信息，把<code>style</code>的属性值写为一条条CSS声明，不能使用选择器也不能写声明块的花括号<code>&#123;&#125;</code>，例如 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: maroon; background: yellow;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>嵌入式样式表：HTML的<code>&lt;head&gt;</code>元素中可以用<code>&lt;style&gt;</code>元素用来编写样式表，例如 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">h1</span> &#123;<span class="attribute">color</span>: red;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>外部样式表：HTML的<code>&lt;head&gt;</code>元素中可以用<code>&lt;link&gt;</code>元素加载外部样式表，例如 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;sheet1.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<code>rel</code>和<code>type</code>属性的值是固定的，<code>href</code>属性是外部样式表的URL。<br />
+也可以在<code>&lt;style&gt;</code>元素中用<code>@import</code>导入外部样式表，但是必须放在其他所有CSS规则之前，例如 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css"><span class="keyword">@import</span> url(sheet1.css)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+使用多个<code>&lt;link&gt;</code>元素可以加载多个外部样式表，浏览器会合并样式规则再应用到文档上。</li>
+</ol>
+<h1 id="取值语法"><a class="markdownIt-Anchor" href="#取值语法"></a> 取值语法</h1>
+<p>《CSS权威指南》以及MDN上，在某个属性的取值说明中，会出现形如<code>&lt;length&gt; | &lt;percentage&gt; | auto</code>的语法。</p>
+<p><code>&lt;&gt;</code>之间的斜体字表示值的类型，或者是引用其他属性的值。例如，<code>font</code>接受原本属于<code>font-family</code>属性的值，因此使用<code>&lt;font-family&gt;</code>表示。<br />
+以等宽字体显示的值是关键字，必须原样照写，不能加引号。正斜线<code>/</code>和逗号<code>,</code>也必须原样使用。<br />
+取值范围有多种组合方式：</p>
+<ol>
+<li>连在一起只由空格分开的两个或多个关键字，必须以给定的顺序使用。例如<code>help me</code>表示这个属性必须以这样的顺序取值。</li>
+<li>两个<code>&amp;</code>连接的值<code>X &amp;&amp; Y</code>表示必须同时取<code>X</code>和<code>Y</code>，但是顺序任意。因此<code>X Y</code>和<code>Y X</code>都是有效的值</li>
+<li>两个竖线分隔的值<code>X || Y</code>表示至少取其中一个值，也可以同时取多个值，而且顺序是任意的，因此，<code>X</code>、<code>Y</code>、<code>X Y</code>和<code>Y X</code>都是有效的值。</li>
+<li>以竖线<code>|</code>分隔的值<code>X | Y</code>，必须取其中一个值，而且只能取一个，例如<code>[ X | Y | Z]</code>表示值可以取<code>X</code>、<code>Y</code>或<code>Z</code>。</li>
+</ol>
+<ul>
+<li>方括号<code>[]</code>用于分组，例如<code>[please || help || me] do this</code>表示<code>please</code>、<code>help</code>和<code>me</code>的顺序任意，但是必须出现一次；<code>do this</code>必须出现，而且必须以指定的顺序，例如<code>please help me do this</code>、<code>help me do this</code>、<code>me please help do this</code></li>
+<li>运算符优先级从1到4。因此<code>a b | c || d &amp;&amp; e f</code>等价于<code>[a b] | [ c || [ d &amp;&amp; [e f] ] ]</code></li>
+</ul>
+<p>各部分或方括号分组后面可以跟有以下修饰符中的一个：</p>
+<ul>
+<li>星号<code>*</code>表示前面的值或方括号分组可以重复零次或多次。因此，<code>bucket*</code>表示<code>bucket</code>这个词可以出现任意次，包括零次。可出现的次数没有上限。</li>
+<li>加号<code>+</code>表示前面的值或方括号分组可以重复一次或多次。因此，<code>mop+</code>表示<code>mop</code>这个词至少要出现一次，此外还可以出现多次。</li>
+<li>井号<code>#</code>表示前面的值或方括号分组可以重复一次或多次，而且多次出现时要以逗号分隔。因此，<code>floor#</code>可以是<code>floor, floor, floor, floor</code>等。这个修饰符最常与方括号分组或值的类型一起使用。</li>
+<li>问号<code>?</code>表示前面的值或方括号分组是可选的。例如<code>[pine tree]?</code>表示<code>pine tree</code>这两个词不是必须的（但如果出现了，必须以给定顺序使用）</li>
+<li>感叹号<code>!</code>表示前面的值或方括号分组是必须的。因此，即使句法看起来与想表达的意思不同，最终必须得到至少一个值。例如，<code>[ what? is? happening? ]!</code>表示这三个词中至少有一个是可选的。</li>
+<li>花括号里的一对数<code>&#123;M,N&#125;</code>表示前面的值或方括号分组至少重复<code>M</code>次，最多重复<code>N</code>次。例如<code>ha&#123;1,3&#125;</code>表示<code>ha</code>可以出现一次、两次或三次。</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li><code>give || me || liberty</code>：<code>||</code>表示可以取任意个值，顺序也是任意的。也就是说三个词中至少要使用一个，顺序是任意的，例如<code>give liberty</code>、<code>give me</code>、<code>liberty me give</code>和<code>give me liberty</code>都是有效的值</li>
+<li><code>[ I | am]? the || walrus</code>：先读修饰符，<code>?</code>表示可有可无，再读里面<code>|</code>表示有且只能有一个，也就是如果有，方括号里只能有一个，如果没有也可以。<code>the</code>和<code>walrus</code>至少取一个，也可以都取而且顺序任意。即<code>I the walrus</code>、<code>am walrus the</code>、<code>am the</code>、<code>I walrus</code>、<code>walrus the</code>等。</li>
+<li><code>koo+ ka-choo</code>：<code>+</code>表示出现一次或多次，即一个或多个<code>koo</code>，后面跟着<code>ka-choo</code>，即<code>koo ka-choo</code>、<code>koo koo ka-choo</code>。</li>
+<li><code>I really&#123;1,4&#125;? [love|hate] [Microsoft|Netscape|Opera|Safari|Chrome]</code>：问号表示<code>really</code>可有可无，如果有的话，花括号表示<code>really</code>至少出现1次，最多出现4次。后面跟着<code>love</code>或<code>hate</code>，再跟着<code>Microsoft</code>或<code>Netscape</code>等等。</li>
+<li><code>It's a [ mad ]# world</code>：井号<code>#</code>表示<code>mad</code>出现一次或多次，但多次出现必须以逗号分开，即<code>It's a mad world</code>、<code>It's a mad, mad, mad world</code></li>
+<li><code>[ [ Alpha || Baker || Cray ], ]&#123;2,3&#125; and Delphi</code>：<code>Alpha</code>、<code>Baker</code>和<code>Cray</code>可以出现2到3次，而且后面必须跟着<code>and Delphi</code>。例如<code>Cray, Alpha, and Delphi</code></li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/CSS概述.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/CSS概述.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/SVG.html"><i class="fa fa-chevron-left">  </i><span>SVG</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E9%80%89%E6%8B%A9%E5%99%A8.html"><span>选择器</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

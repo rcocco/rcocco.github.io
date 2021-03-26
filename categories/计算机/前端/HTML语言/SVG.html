@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="SVG"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>SVG | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0"><span class="toc-number">1.</span> <span class="toc-text"> 基本元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E8%BD%B4"><span class="toc-number">2.</span> <span class="toc-text"> 坐标轴</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text"> 创建容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B4%E7%BA%BF"><span class="toc-number">4.</span> <span class="toc-text"> 直线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%98%E7%BA%BF"><span class="toc-number">5.</span> <span class="toc-text"> 折线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E5%BD%A2"><span class="toc-number">6.</span> <span class="toc-text"> 矩形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A4%AD%E5%9C%86"><span class="toc-number">7.</span> <span class="toc-text"> 椭圆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="toc-number">8.</span> <span class="toc-text"> 多边形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84"><span class="toc-number">9.</span> <span class="toc-text"> 路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A1%AB%E5%85%85"><span class="toc-number">10.</span> <span class="toc-text"> 填充</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">SVG</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/">HTML语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p><a target="_blank" rel="noopener" href="https://www.mk2048.com/blog/blog_hjjb0h0jhj.html">https://www.mk2048.com/blog/blog_hjjb0h0jhj.html</a><br />
+<a target="_blank" rel="noopener" href="https://github.com/tutsplus/how-to-hand-code-svg">https://github.com/tutsplus/how-to-hand-code-svg</a></p>
+<h1 id="基本元素"><a class="markdownIt-Anchor" href="#基本元素"></a> 基本元素</h1>
+<ul>
+<li><code>&lt;svg&gt;</code> 包裹并定义整个矢量图。<code>&lt;svg&gt;</code> 标签之于矢量图就如同 <code>&lt;html&gt;</code> 标签之于一个 web 页面。</li>
+<li><code>&lt;line&gt;</code> 创建一条直线。</li>
+<li><code>&lt;polyline&gt;</code> 创建折线。</li>
+<li><code>&lt;rect&gt;</code> 创建矩形。</li>
+<li><code>&lt;ellipse&gt;</code>创建圆和椭圆。</li>
+<li><code>&lt;polygon&gt;</code>创建多边形。</li>
+<li><code>&lt;path&gt;</code>通过指定点以及点和点之间的线来创建任意形状。</li>
+<li><code>&lt;defs&gt;</code>定义一个可复用的图形。初始情况下<code>&lt;defs&gt;</code>里面的内容是不可见的。<code>&lt;defs&gt;</code>标签之于矢量图就如同<code>&lt;head&gt;</code>标签之于一个 web 页面。</li>
+<li><code>&lt;g&gt;</code>将多种形状组合起来。将组合后的形状置于<code>&lt;defs&gt;</code>中可以让它能够被复用。</li>
+<li><code>&lt;symbol&gt;</code>类似于一个组合，但是拥有一些额外的特性。通常被置于 <code>&lt;defs&gt;</code>标签中便于复用。</li>
+<li><code>&lt;use&gt;</code>获取在<code>&lt;defs&gt;</code>中定义的复用对象并在 SVG 中显示出来。</li>
+</ul>
+<span id="more"></span>
+<h1 id="坐标轴"><a class="markdownIt-Anchor" href="#坐标轴"></a> 坐标轴</h1>
+<p>x表示横轴，正方向是向右的，y表示纵轴，正方向是向下的。<br />
+<code>handcodesvg.html</code>绘图板中，一个格子是10px，中等粗细的线之间是100px。</p>
+<h1 id="创建容器"><a class="markdownIt-Anchor" href="#创建容器"></a> 创建容器</h1>
+<p><code>&lt;svg&gt;</code>元素是容器，最好指定<code>width</code>和<code>height</code>属性<br />
+例如<code>&lt;svg width=&quot;750&quot; height=&quot;500&quot;&gt;&lt;/svg&gt;</code></p>
+<h1 id="直线"><a class="markdownIt-Anchor" href="#直线"></a> 直线</h1>
+<p><code>&lt;line&gt;</code>元素用来画直线，需要指定起点的坐标和终点的坐标，使用4个属性来表示：<code>x1</code>为起点横轴坐标，<code>y1</code>为起点纵轴坐标，<code>x2</code>为终点横轴坐标，<code>y2</code>为终点纵轴坐标。<br />
+例如<code>&lt;line x1=&quot;3&quot; y1=&quot;3&quot; x2=&quot;48&quot; y1=&quot;3&quot;&gt;&lt;/line&gt;</code></p>
+<h1 id="折线"><a class="markdownIt-Anchor" href="#折线"></a> 折线</h1>
+<p><code>&lt;polyline&gt;</code>元素用来画折线，它需要指定构成折线的点的坐标，使用2个以空格分隔的数字表示，多个点之间可以用逗号分隔，也可以用空格或者换行符分隔。<br />
+这些点的坐标需要写在<code>&lt;polyline&gt;</code>的<code>points</code>属性中。<br />
+例如<code>&lt;polyline points=&quot;3 3,30 28,3 53&quot;&gt;&lt;/polyline&gt;</code></p>
+<h1 id="矩形"><a class="markdownIt-Anchor" href="#矩形"></a> 矩形</h1>
+<p><code>&lt;rect&gt;</code>元素用来画矩形，它需要指定矩形左上角的坐标、矩形的宽度和高度。如果有需要也可以指定圆角半径。使用4个属性表示：<code>x</code>为左上角横轴坐标，<code>y</code>为左上角纵轴坐标，<code>width</code>为矩形宽度，<code>height</code> 为矩形高度。（<code>rx</code>和<code>ry</code>圆角半径）<br />
+例如<code>&lt;rect x=&quot;3&quot; y=&quot;3&quot; width=&quot;80&quot; height=&quot;60&quot;&gt;&lt;/rect&gt;</code></p>
+<h1 id="椭圆"><a class="markdownIt-Anchor" href="#椭圆"></a> 椭圆</h1>
+<p><code>&lt;ellipse&gt;</code>元素用来画椭圆，它需要指定椭圆中心，以及水平半径和垂直半径。使用4个属性表示：<code>cx</code>为中心横轴坐标，<code>cy</code>为中心纵轴坐标，<code>rx</code>为水平半径，<code>ry</code>为垂直半径。<br />
+例如<code>&lt;ellipse cx=&quot;43&quot; cy=&quot;43&quot; rx=&quot;40&quot; ry=&quot;40&quot;&gt;&lt;/ellipse&gt;</code></p>
+<h1 id="多边形"><a class="markdownIt-Anchor" href="#多边形"></a> 多边形</h1>
+<p><code>&lt;polygon&gt;</code>元素用来画多边形，它和<code>&lt;polyline&gt;</code>完全相似，只是<code>&lt;polygon&gt;</code>图形是自动闭合的，而<code>&lt;polyline&gt;</code>图形不是闭合的。<br />
+它需要指定构成折线的点的坐标，使用2个以空格分隔的数字表示，多个点之间可以用逗号分隔，也可以用空格或者换行符分隔。<br />
+这些点的坐标需要写在<code>&lt;polygon&gt;</code>的<code>points</code>属性中。<br />
+例如<code>&lt;polygon points=&quot;35 23, 60 43, 35 63&quot;&gt;&lt;/polygon&gt;</code></p>
+<h1 id="路径"><a class="markdownIt-Anchor" href="#路径"></a> 路径</h1>
+<p><code>&lt;path&gt;</code>元素用来创建路径，类似创建多边形，但你可以在点与点之间创建曲线而不是直线。<br />
+<code>d</code>属性用于定义路径的各种操作。<br />
+路径的每个操作是由单个字母加坐标组成的。<br />
+常用操作如下：<br />
+<code>M</code>表示moveto，后面跟一个坐标，大写M表示后面是一个绝对坐标，小写M表示后面是一个相对坐标。意思是把准备绘画的当前位置调整为指定坐标。<br />
+<code>L</code>表示lineto，后面跟一个坐标，意思是从当前位置到坐标所指定的新位置画一条线。<br />
+<code>Z</code>表示闭合路径。后面不需要跟东西。它会在当前位置与路径起始点之间画一条直线来闭合形状。<br />
+例如<code>&lt;path d=&quot;M 18 3,L 46 3,L 46 40,L 61 40,L 32 68,L 3 40,L 18 40,Z&quot;&gt;&lt;/path&gt;</code><br />
+逗号分隔不是必须的，也可以用空格分隔。甚至可以把逗号放在坐标x和y之间，因此实际上路径操作只看操作个数，不看逗号位置。</p>
+<h1 id="填充"><a class="markdownIt-Anchor" href="#填充"></a> 填充</h1>
+<p>通过内联样式，可以给图形添加填充，例如<code>&lt;ellipse style=&quot;fill:black;&quot; cx=&quot;43&quot; cy=&quot;65&quot; rx=&quot;5&quot; ry=&quot;5&quot;&gt;&lt;/ellipse&gt;</code></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/HTML语言/SVG.html">https://rcocco.github.io/categories/计算机/前端/HTML语言/SVG.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/body.html"><i class="fa fa-chevron-left">  </i><span>body</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/CSS%E6%A6%82%E8%BF%B0.html"><span>CSS概述</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

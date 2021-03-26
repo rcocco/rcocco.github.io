@@ -1,0 +1,500 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Jekyll"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>Jekyll | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">2.</span> <span class="toc-text"> 命令行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text"> 项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text"> 配置文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2"><span class="toc-number">5.</span> <span class="toc-text"> 页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#liquid%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="toc-number">6.</span> <span class="toc-text"> Liquid模板引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E8%AE%B0"><span class="toc-number">6.1.</span> <span class="toc-text"> 标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.1.2.</span> <span class="toc-text"> 语法高亮代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-number">6.1.3.</span> <span class="toc-text"> 链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">6.2.</span> <span class="toc-text"> 过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">6.3.</span> <span class="toc-text"> 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80"><span class="toc-number">6.4.</span> <span class="toc-text"> 布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5"><span class="toc-number">7.</span> <span class="toc-text"> 永久链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AA%E6%95%B4%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text"> 未整理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#liquid%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E-2"><span class="toc-number">9.</span> <span class="toc-text"> Liquid模板引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">9.1.</span> <span class="toc-text"> 集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-number">9.2.</span> <span class="toc-text"> 文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">9.3.</span> <span class="toc-text"> 静态文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE"><span class="toc-number">9.4.</span> <span class="toc-text"> 自定义数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text"> 文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E6%95%B0%E6%8D%AE"><span class="toc-number">11.</span> <span class="toc-text"> 前置数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6-2"><span class="toc-number">12.</span> <span class="toc-text"> 静态文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sassscss"><span class="toc-number">12.1.</span> <span class="toc-text"> Sass&#x2F;SCSS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88-2"><span class="toc-number">13.</span> <span class="toc-text"> 集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%9B%86%E5%90%88"><span class="toc-number">13.1.</span> <span class="toc-text"> 添加集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%8E%92%E5%BA%8F"><span class="toc-number">13.2.</span> <span class="toc-text"> 文档排序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84"><span class="toc-number">14.</span> <span class="toc-text"> 路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E7%8B%AC%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">15.</span> <span class="toc-text"> 单独定义变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Emd%E7%9A%84%E9%A1%B5%E9%9D%A2"><span class="toc-number">16.</span> <span class="toc-text"> 基于md的页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">17.</span> <span class="toc-text"> 资源文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2"><span class="toc-number">18.</span> <span class="toc-text"> 博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88-3"><span class="toc-number">19.</span> <span class="toc-text"> 集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%89%8D%E7%BD%AE"><span class="toc-number">20.</span> <span class="toc-text"> 默认前置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">21.</span> <span class="toc-text"> 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">21.1.</span> <span class="toc-text"> 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83"><span class="toc-number">21.2.</span> <span class="toc-text"> 生产环境</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">Jekyll</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-16</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">软件使用问题</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>;;;<br />
+Jekyll是用Ruby语言编写的静态页面生成工具。它将给定的文档数据使用特定的网页模板渲染出来，生成相应的HTML文件。</p>
+<p>本文无限期停更。Jekyll对于中文文件名和目录名生成出来路径都是乱码，没法用，弃了。换Hexo了。电脑上笔记的路径名和文件名都是中文，我不可能迁就Jekyll去改成英文，因为我在Vnote中也要看，在找笔记的时候看母语总比看外语直观。</p>
+<span id="more"></span>
+<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+<p>首先需要安装Ruby相关环境。<br />
+在安装完Ruby后，在终端中输入<code>gem install jekyll bundler</code>以安装Jekyll。<br />
+在自己想存放静态页面的目录下，输入<code>bundle init</code>来自动创建<code>Gemfile</code>文件。<br />
+使用文本编辑器打开<code>Gemfile</code>，在后面加上<code>gem &quot;jekyll&quot;</code>来使Jekyll作为项目的依赖。<br />
+然后运行<code>bundle</code>命令来为当前项目安装Jekyll</p>
+<h1 id="命令行"><a class="markdownIt-Anchor" href="#命令行"></a> 命令行</h1>
+<p>在所有Jekyll命令前加上<code>bundle exec</code>可以使其在执行时使用Gemfile文件定义的Jekyll版本。</p>
+<p><code>bundle exec jekyll build</code>：构建网站，将所有文件输出到<code>_site</code>文件夹<br />
+<code>bundle exec jekyll serve</code>：执行<code>jekyll build</code>然后建立一个静态服务器监听<code>http://localhost:4000</code>，当修改了文件后会自动重新执行<code>jekyll build</code>需要创建。</p>
+<h1 id="项目结构"><a class="markdownIt-Anchor" href="#项目结构"></a> 项目结构</h1>
+<p>默认的Jekyll项目结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── _data</span><br><span class="line">│   └── members.yml</span><br><span class="line">├── _drafts</span><br><span class="line">│   ├── begin-with-the-crazy-ideas.md</span><br><span class="line">│   └── on-simplicity-in-technology.md</span><br><span class="line">├── _includes</span><br><span class="line">│   ├── footer.html</span><br><span class="line">│   └── header.html</span><br><span class="line">├── _layouts</span><br><span class="line">│   ├── default.html</span><br><span class="line">│   └── post.html</span><br><span class="line">├── _posts</span><br><span class="line">│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md</span><br><span class="line">│   └── 2009-04-26-barcamp-boston-4-roundup.md</span><br><span class="line">├── _sass</span><br><span class="line">│   ├── _base.scss</span><br><span class="line">│   └── _layout.scss</span><br><span class="line">├── _site</span><br><span class="line">├── .jekyll-metadata</span><br><span class="line">└── index.html # can also be an &#39;index.md&#39; with valid front matter</span><br></pre></td></tr></table></figure>
+<p><code>_config.yml</code>：Jekyll的配置文件。<br />
+<code>_drafts</code>：存放未发布的帖子。<br />
+<code>_includes</code>：存放用于导入的文件。<br />
+<code>_layouts</code>：存放模板文件。<br />
+<code>_posts</code>：存放帖子文件，名称应为<code>YEAR-MONTH-DAY-title.MARKUP</code><br />
+<code>_data</code>：存放数据文件<br />
+<code>_sass</code>：存放用于导入的Sass文件。<br />
+<code>_site</code>：存放Jekyll最终生成的网站文件。<br />
+<code>.jekyll-metadata</code>：用于跟踪自上次构建站点以来尚未修改的文件，以及在下一个构建中需要重新生成的文件。<br />
+<code>index.md</code>或<code>index.html</code>：用于渲染主页。</p>
+<p>其他文件和文件夹会被原封不动复制到生成的站点中。<br />
+但注意以<code>.</code>、<code>_</code>、<code>#</code>和<code>~</code>开头的文件和目录默认不会被复制到生成的站点中，除非在配置文件中用<code>include</code>属性指定。</p>
+<h1 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h1>
+<p>站点源（根目录）下的<code>_config.yml</code>是配置文件。<br />
+默认的配置文件具有以下内容，如果用户创建了<code>_config.yml</code>文件，则相同属性以用户的配置文件为准。<br />
+Jekyll不会监视配置文件的修改，因此在修改配置文件后需要重新启动Jekyll才会生效。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 路径是相对于工作目录的，而不是站点源</span></span><br><span class="line"><span class="attr">source              :</span> <span class="string">.</span> <span class="comment"># 站点源路径</span></span><br><span class="line"><span class="attr">destination         :</span> <span class="string">./_site</span> <span class="comment"># 生成的网站文件路径</span></span><br><span class="line"><span class="attr">collections_dir     :</span> <span class="string">.</span> <span class="comment"># 所有集合文件的路径</span></span><br><span class="line"><span class="attr">plugins_dir         :</span> <span class="string">_plugins</span> <span class="comment"># 插件文件的路径</span></span><br><span class="line"><span class="attr">layouts_dir         :</span> <span class="string">_layouts</span> <span class="comment"># 布局文件的路径</span></span><br><span class="line"><span class="attr">data_dir            :</span> <span class="string">_data</span> <span class="comment"># 数据文件的路径</span></span><br><span class="line"><span class="attr">includes_dir        :</span> <span class="string">_includes</span> <span class="comment"># 用于导入的文件的路径</span></span><br><span class="line"><span class="attr">sass:</span> <span class="comment"># 这里可以定义Sass输出样式</span></span><br><span class="line">  <span class="attr">sass_dir:</span> <span class="string">_sass</span> <span class="comment"># 用于import的sass文件的路径</span></span><br><span class="line"><span class="attr">collections:</span> <span class="comment"># 集合</span></span><br><span class="line">  <span class="attr">posts:</span> <span class="comment"># 名为posts的集合</span></span><br><span class="line">    <span class="attr">output          :</span> <span class="literal">true</span> <span class="comment"># 是否自动生成单独的页面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Handling Reading</span></span><br><span class="line"><span class="attr">safe                :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">include             :</span> [<span class="string">&quot;.htaccess&quot;</span>]</span><br><span class="line"><span class="attr">exclude             :</span> [<span class="string">&quot;Gemfile&quot;</span>, <span class="string">&quot;Gemfile.lock&quot;</span>, <span class="string">&quot;node_modules&quot;</span>, <span class="string">&quot;vendor/bundle/&quot;</span>, <span class="string">&quot;vendor/cache/&quot;</span>, <span class="string">&quot;vendor/gems/&quot;</span>, <span class="string">&quot;vendor/ruby/&quot;</span>]</span><br><span class="line"><span class="attr">keep_files          :</span> [<span class="string">&quot;.git&quot;</span>, <span class="string">&quot;.svn&quot;</span>]</span><br><span class="line"><span class="attr">encoding            :</span> <span class="string">&quot;utf-8&quot;</span></span><br><span class="line"><span class="attr">markdown_ext        :</span> <span class="string">&quot;markdown,mkdown,mkdn,mkd,md&quot;</span></span><br><span class="line"><span class="attr">strict_front_matter :</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Filtering Content</span></span><br><span class="line"><span class="attr">show_drafts         :</span> <span class="literal">null</span></span><br><span class="line"><span class="attr">limit_posts         :</span> <span class="number">0</span></span><br><span class="line"><span class="attr">future              :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">unpublished         :</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Plugins</span></span><br><span class="line"><span class="attr">whitelist           :</span> []</span><br><span class="line"><span class="attr">plugins             :</span> []</span><br><span class="line"></span><br><span class="line"><span class="comment"># Conversion</span></span><br><span class="line"><span class="attr">markdown            :</span> <span class="string">kramdown</span></span><br><span class="line"><span class="attr">highlighter         :</span> <span class="string">rouge</span></span><br><span class="line"><span class="attr">lsi                 :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">excerpt_separator   :</span> <span class="string">&quot;\n\n&quot;</span></span><br><span class="line"><span class="attr">incremental         :</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Serving</span></span><br><span class="line"><span class="attr">detach              :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">port                :</span> <span class="number">4000</span></span><br><span class="line"><span class="attr">host                :</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="attr">baseurl             :</span> <span class="string">&quot;&quot;</span> <span class="comment"># does not include hostname</span></span><br><span class="line"><span class="attr">show_dir_listing    :</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Outputting</span></span><br><span class="line"><span class="attr">permalink           :</span> <span class="string">date</span></span><br><span class="line"><span class="attr">paginate_path       :</span> <span class="string">/page:num</span></span><br><span class="line"><span class="attr">timezone            :</span> <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="attr">quiet               :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">verbose             :</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">defaults            :</span> []</span><br><span class="line"></span><br><span class="line"><span class="attr">liquid:</span></span><br><span class="line">  <span class="attr">error_mode        :</span> <span class="string">warn</span></span><br><span class="line">  <span class="attr">strict_filters    :</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">strict_variables  :</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Markdown Processors</span></span><br><span class="line"><span class="attr">kramdown:</span></span><br><span class="line">  <span class="attr">auto_ids          :</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">entity_output     :</span> <span class="string">as_char</span></span><br><span class="line">  <span class="attr">toc_levels        :</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">  <span class="attr">smart_quotes      :</span> <span class="string">lsquo,rsquo,ldquo,rdquo</span></span><br><span class="line">  <span class="attr">input             :</span> <span class="string">GFM</span></span><br><span class="line">  <span class="attr">hard_wrap         :</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">footnote_nr       :</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">show_warnings     :</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="页面"><a class="markdownIt-Anchor" href="#页面"></a> 页面</h1>
+<p>页面是内容的基本单位。<br />
+一个HTML文件或一个MD文件都是一个页面，它们最终都被渲染为HTML文档。</p>
+<h1 id="liquid模板引擎"><a class="markdownIt-Anchor" href="#liquid模板引擎"></a> Liquid模板引擎</h1>
+<p>除了Liquid自带的标记和过滤器，Jekyll还提供了额外的标记和过滤器。<br />
+你也可以使用插件来自定义标记和过滤器。</p>
+<h2 id="标记"><a class="markdownIt-Anchor" href="#标记"></a> 标记</h2>
+<h3 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h3>
+<p><code>include</code>标记可以将另一个文件的内容插入到当前位置。<br />
+<code>include</code>会在<code>includes_dir</code>设置的路径中查找特定的文件。<br />
+<code>include_relative</code>会基于当前文件的路径查找特定的文件。<br />
+注意路径参数中不能用<code>../</code>语法指定父目录。<br />
+路径也可以是一个变量，但需要用对象来引用。<br />
+<code>include</code>语句还可以向被导入的文件传递参数，使用类似于HTML属性的语法，属性值要么是一个字符串，要么是一个不加引号的变量名。如果是字符串，它里面不能包含<code>&#123;&#123; &#125;&#125;</code>这种Liquid对象语法。因此如果想传递变量，需要用<code>capture</code>基于要传递的变量定义一个字符串变量，再传给<code>include</code>。</p>
+<p>在被导入的文件中通过<code>&#123;&#123; include.属性名 &#125;&#125;</code>就可以引用到传递的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include footer.html %&#125;</span><br><span class="line">&#123;% include_relative somedir&#x2F;footer.html %&#125;</span><br><span class="line">&#123;% include &#123;&#123; page.my_variable &#125;&#125; %&#125;</span><br><span class="line">&#123;% include note.html a&#x3D;&quot;1&quot; b&#x3D;&quot;2&quot; %&#125;</span><br><span class="line">&#123;% capture download_note %&#125;&#123;&#123; site.product_name &#125;&#125;&#123;% endcapture %&#125;</span><br><span class="line">&#123;% include note.html content&#x3D;download_note %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="语法高亮代码块"><a class="markdownIt-Anchor" href="#语法高亮代码块"></a> 语法高亮代码块</h3>
+<p><code>highlight</code>和<code>endhighlight</code>标记可以创建语法高亮的代码块：<br />
+支持的语言见<a target="_blank" rel="noopener" href="https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers">Rouge Wiki</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% highlight ruby %&#125;</span><br><span class="line">def foo</span><br><span class="line">  puts &#39;foo&#39;</span><br><span class="line">end</span><br><span class="line">&#123;% endhighlight %&#125;</span><br></pre></td></tr></table></figure>
+<p>高亮标记后加一个<code>linenos</code>参数，<code>&#123;% highlight ruby linenos %&#125;</code>，可以使代码块前面显示行号。</p>
+<h3 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> 链接</h3>
+<p><code>link</code>标记可以正确生成引用某个文件的URL链接，如果参数是一个文件的路径，则必须包含扩展名。<br />
+路径是相对于根目录（配置文件所在目录）的，而不是相对于当前文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% link _collection&#x2F;name-of-document.md %&#125;</span><br><span class="line">&#123;% link _posts&#x2F;2016-07-26-name-of-post.md %&#125;</span><br><span class="line">&#123;% link news&#x2F;index.html %&#125;</span><br><span class="line">&#123;% link &#x2F;assets&#x2F;files&#x2F;doc.pdf %&#125;</span><br><span class="line">&#123;% link &#123;&#123; page.my_variable &#125;&#125; %&#125;</span><br></pre></td></tr></table></figure>
+<p>如果不确定文件路径，使用<code>&#123;&#123; page.path &#125;&#125;</code>输出查看一下。<br />
+<code>link</code>标记不允许使用过滤器。</p>
+<p><code>post_url</code>标记可以生成指向某个文章的URL。参数不需要有扩展名。<br />
+路径是相对于<code>collections_dir</code>的<code>_posts</code>目录的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_url 2010-07-21-name-of-post %&#125;</span><br><span class="line">&#123;% post_url &#x2F;subdir&#x2F;2010-07-21-name-of-post %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="过滤器"><a class="markdownIt-Anchor" href="#过滤器"></a> 过滤器</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">过滤器</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>to_integer</code></td>
+<td style="text-align:left">将字符串或布尔值转为整数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>slugify: &quot;default&quot;</code></td>
+<td style="text-align:left">用指定的<a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/liquid/filters/#options-for-the-slugify-filter">模式</a>将字符串切分，然后再用连字符<code>-</code>连接成一个字符串</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>normalize_whitespace</code></td>
+<td style="text-align:left">将字符串中出现的空白符压缩成一个空格</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>markdownify</code></td>
+<td style="text-align:left">将Markdown格式字符串转为HTML</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sassify</code></td>
+<td style="text-align:left">将Sass或Scss格式字符串转为CSS</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>jsonify</code></td>
+<td style="text-align:left">将Hash或数组转为JSON</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>smartify</code></td>
+<td style="text-align:left">将字符串中的引号转为智能引号（弯引号）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>number_of_words: &quot;auto&quot;</code></td>
+<td style="text-align:left">计算单词数量，参数为<code>auto</code>和<code>cjk</code>时会将每个不用空格分开的连续CJK字符作为一个单词计数，能够正确处理英语与CJK混合的情况。不加参数会将CJK字符当成英文字母计算。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>xml_escape</code></td>
+<td style="text-align:left">将字符串转义以用于XML</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cgi_escape</code></td>
+<td style="text-align:left">将字符串转义以用于URL，特殊字符进行<code>%</code>编码，空格被换成<code>+</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>uri_escape</code></td>
+<td style="text-align:left">将字符串转义以用于URL，特殊字符进行<code>%</code>编码，空格被换成<code>%20</code>，<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters">保留字</a>不会被转义</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>relative_url</code></td>
+<td style="text-align:left">将配置的<code>baseurl</code>属性值正确添加到左侧路径的前面</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>absolute_url</code></td>
+<td style="text-align:left">将配置的<code>url</code>和<code>baseurl</code>属性值正确添加到左侧路径的前面</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_xmlschema</code></td>
+<td style="text-align:left">将日期字符串转为XML Schema (ISO 8601)格式<code>2008-11-07T13:07:54-08:00</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_rfc822</code></td>
+<td style="text-align:left">将日期字符串转为RFC-822格式<code>Mon, 07 Nov 2008 13:07:54 -0800</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_string</code></td>
+<td style="text-align:left">将日期字符串转为<code>07 Nov 2008</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_string: &quot;ordinal&quot;, &quot;US&quot;</code></td>
+<td style="text-align:left">将日期字符串转为<code>Nov 7th, 2008</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_long_string</code></td>
+<td style="text-align:left">将日期字符串转为<code>07 November 2008</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>date_to_long_string: &quot;ordinal&quot;</code></td>
+<td style="text-align:left">将日期字符串转为<code>7th November 2008</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sample: %d</code></td>
+<td style="text-align:left">从数组中随机选<code>%d</code>个元素，不加参数则选1个元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>push: 值</code></td>
+<td style="text-align:left">在数组末尾添加1个值并返回添加后的数组</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>pop</code></td>
+<td style="text-align:left">从数组末尾删除1个值并返回删除后的数组</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>unshift</code></td>
+<td style="text-align:left">在数组开头添加1个值并返回添加后的数组</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>shift</code></td>
+<td style="text-align:left">从数组开头删除1个值并返回删除后的数组</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>array_to_sentence_string: &quot;and&quot;</code></td>
+<td style="text-align:left">将数组元素拼接成句子字符串。各元素用逗号和空格连接，最后一个逗号空格后跟参数串。例如<code>foo, bar, and baz</code>。不加参数默认是<code>and</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>where: %s, %s</code></td>
+<td style="text-align:left">将数组中所有具有指定属性(第一个<code>%s</code>)且值为指定值(第二个<code>%s</code>)的元素提取出来，组成新的数组。第二个<code>%s</code>可以换成<code>nil</code>或者<code>empty</code>（空串）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>where_exp: %s, 表达式字符串</code></td>
+<td style="text-align:left">将数组中所有具有指定属性(第一个<code>%s</code>)且表达式为真的元素提取出来，组成新的数组。例如<code>where_exp:&quot;item&quot;, &quot;item.graduation_year == 2014&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>find: %s, %s</code></td>
+<td style="text-align:left">返回数组中第一个具有指定属性(第一个<code>%s</code>)且其值为指定值(第二个<code>%s</code>)的对象，如果不存在则返回<code>nil</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>find_exp: %s, 表达式字符串</code></td>
+<td style="text-align:left">返回数组中第一个具有指定属性(第一个<code>%s</code>)且表达式为真的对象，如果不存在则返回<code>nil</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>group_by: %s</code></td>
+<td style="text-align:left">将数组元素基于<code>%s</code>属性值分组，返回一个新数组，每个元素是一个分组，其<code>name</code>属性为分组名，<code>items</code>属性为被分组的元素组成的数组。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>group_by_exp: %s, 表达式字符串</code></td>
+<td style="text-align:left">将数组元素基于<code>%s</code>和表达式分组，返回一个新数组，每个元素是一个分组，其<code>name</code>属性为分组名，<code>items</code>属性为被分组的元素组成的数组。例如<code>group_by_exp: &quot;item&quot;, &quot;item.graduation_year | truncate: 3, ''&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>inspect</code></td>
+<td style="text-align:left">将对象转为字符串，以便调试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h2>
+<p>Jekyll也为模板提供了一些预定义的变量：</p>
+<ul>
+<li><code>site</code>：网站变量对象。
+<ul>
+<li><code>site.time</code>：当前时间（运行<code>jekyll</code>命令的时间）</li>
+<li><code>site.pages</code>：所有Pages的列表</li>
+<li><code>site.posts</code>：所有Posts按时间顺序（最近的在前）的列表</li>
+<li><code>site.related_posts</code>：如果正被处理的页面是Post，则返回10个相关的Post，默认是最近的Post。</li>
+<li><code>site.static_files</code>：所有静态文件对象组成的列表，每个对象有<code>name</code>,<code>modified_time</code>,<code>name</code>，<code>basename</code>，<code>extname</code>五个属性。</li>
+<li><code>site.html_pages</code>：<code>site.pages</code>中以<code>.html</code>结尾的Pages的列表</li>
+<li><code>site.html_files</code>：<code>site.static_files</code>中以<code>.html</code>结尾的静态文件对象组成的列表</li>
+<li><code>site.collections</code>：所有集合组成的列表（包括<code>posts</code>）</li>
+<li><code>site.data</code>：所有从<code>data_dir</code>中读取的数据的列表。</li>
+<li><code>site.documents</code>：每个集合中的文档组成的列表。</li>
+<li><code>site.categories.CATEGORY</code>：所有类别为<code>CATEGORY</code>的Posts组成的列表</li>
+<li><code>site.tags.TAG</code>：所有标签为<code>TAG</code>的Posts组成的列表</li>
+<li><code>site.url</code>：返回网站的协议、域名和端口。一般是配置文件中定义的<code>url</code>，如果是通过<code>jekyll serve</code>启动则<code>url</code>默认是<code>http://localhost:4000</code>。</li>
+<li><code>site.[CONFIGURATION_DATA]</code>：返回配置文件中<code>CONFIGURATION_DATA</code>属性的值。通过此方法可以读取到配置文件中的所有属性。</li>
+</ul>
+</li>
+<li><code>page</code>：页面变量对象
+<ul>
+<li><code>page.content</code>：此页面的内容。是否是渲染过的内容取决于Liquid是否处理和页面是什么。</li>
+<li><code>page.title</code>：页面的标题。</li>
+<li><code>page.excerpt</code>：页面里未渲染的摘录。</li>
+<li><code>page.url</code>：页面的URL，不带域名的，但带有一个前导的反斜杠<code>/</code></li>
+<li><code>page.date</code>：关联到Post的日期，可能会被Post的前置（<code>2008-12-14 10:30:00 +0900</code>）覆盖</li>
+<li><code>page.id</code>：集合中的文档或Post的唯一标识符，例如<code>/2008/12/14/my-post</code></li>
+<li><code>page.categories</code>：此post所属的类别。类别根据<code>_posts</code>目录的结构得到，例如<code>/work/code/_posts/2008-12-24-closures.md</code>的类别是<code>['work', 'code']</code>，也可以通过前置设置。</li>
+<li><code>page.collection</code>：此文档所属的集合名。如果不属于集合，则是空串。</li>
+<li><code>page.tags</code>：此post所属的标签。可以通过前置设置。</li>
+<li><code>page.dir</code>：源目录和此post或page之间的路径，例如<code>/pages/</code>。可以被前置的<code>permalink</code>覆盖。</li>
+<li><code>page.name</code>：post或page的文件名，例如<code>about.md</code></li>
+<li><code>page.path</code>：post或page的路径。可以被前置覆盖。</li>
+<li><code>page.next</code>：返回<code>site.posts</code>中当前post的下一个post，如果不存在则返回<code>nil</code>。</li>
+<li><code>page.previous</code>：返回<code>site.posts</code>中当前post的上一个post，如果不存在则返回<code>nil</code>。</li>
+<li><code>page.[FRONTMATTER_DATA]</code>：返回此页面（布局文件除外）前置中设置的<code>[FRONTMATTER_DATA]</code>属性的值。</li>
+</ul>
+</li>
+<li><code>layout</code>：布局信息和相关前置。在布局文件中设置的前置可以通过此对象访问。
+<ul>
+<li><code>layout.[FRONTMATTER_DATA]</code>：返回此布局页面前置中设置的<code>[FRONTMATTER_DATA]</code>属性的值。</li>
+</ul>
+</li>
+<li><code>content</code>：只在布局文件中存在。它是要被放到布局文件中的Post或Page的内容。</li>
+<li><code>paginator</code>：当设置了<code>paginate</code>配置选项时，此变量可用。
+<ul>
+<li><code>paginator.page</code>：当前页数。</li>
+<li><code>paginator.per_page</code>：每个page中post的数量</li>
+<li><code>paginator.posts</code>：当前page可用的posts</li>
+<li><code>paginator.total_posts</code>：posts的总数量</li>
+<li><code>paginator.total_pages</code>：pages的总数量</li>
+<li><code>paginator.previous_page</code>：前一页的页数，不存在则为<code>nil</code></li>
+<li><code>paginator.previous_page_path</code>：前一页的路径，不存在则为<code>nil</code></li>
+<li><code>paginator.next_page</code>：后一页的页数，不存在则为<code>nil</code></li>
+<li><code>paginator.next_page_path</code>：后一页的路径，不存在则为<code>nil</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="布局"><a class="markdownIt-Anchor" href="#布局"></a> 布局</h2>
+<p>布局用于实现模板继承。在一定程度上类似于<code>include</code>标记。<br />
+布局文件是HTML文档，应该放在<code>layouts_dir</code>目录中。</p>
+<p>编写布局文件时，一定要在合适的地方书写<code>&#123;&#123; content &#125;&#125;</code>，来将使用该布局的文档内容插入这个位置。布局文件可以没有前置，也可以有前置。如果想访问布局的前置，需要使用<code>layout</code>全局变量而不是<code>page</code>全局变量。</p>
+<p>使用布局文件时，只需要在文档的前置中指定布局文件的名字，例如<code>layout: mylayout</code>即可。可以通过默认前置来避免在每个文档的前置部分书写布局文件名字的麻烦。<br />
+一旦使用了布局文件，在Jekyll渲染该页面时，就会自动把内容插入到布局文件中，然后将合并后的结果作为当前页面。</p>
+<p>布局文件又可以通过前置指定另一个布局。例如有一个文档和两个布局文件。</p>
+<p>文档：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">---</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<p><code>_layouts/post.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: default</span><br><span class="line">---</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 帖子布局 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;&#123; content &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p><code>_layouts/default.html</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>LOGO<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">&#123;&#123; content &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>则渲染文档时，<code>Hello World!</code>被插入到<code>post.html</code>的<code>&#123;&#123; content &#125;&#125;</code>中，然后<code>post.html</code>整体又被插入到<code>default.html</code>中，最终得到</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>LOGO<span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 帖子布局 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h1 id="永久链接"><a class="markdownIt-Anchor" href="#永久链接"></a> 永久链接</h1>
+<p>永久链接是pages、posts或收藏的输出路径，通过设置永久链接，可以使得最终的网站的目录结构和源代码中的目录结构不同。</p>
+<p>可以在每个文档的前置的<code>permalink</code>属性中设置输出路径，如<code>permalink: /about/</code>。</p>
+<p>也可以在配置文件的<code>permalink</code>属性中设置输出路径，配置文件的此属性会应用到所有文件。例如<code>permalink: /:categories/:year/:month/:day/:title:output_ext</code>。不存在的字段会被忽略。</p>
+<p>还可以在配置文件的<code>collections</code>属性中的某个集合下面设置<code>permalink</code>，应用到此集合的所有文件。</p>
+<p>在设置永久链接时有一些自带的占位符，在路径中以冒号加下面的名称表示：</p>
+<ul>
+<li><code>year</code>：从post的文件名中得到的4位年份，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>short_year</code>：从post的文件名中得到的2位年份，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>month</code>：从post的文件名中得到的2位月份<code>01-12</code>，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>i_month</code>：从post的文件名中得到的1-2位月份<code>1-12</code>，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>short_month</code>：3字母的月份缩写，例如<code>Jan</code></li>
+<li><code>long_month</code>：月份英文全名。</li>
+<li><code>day</code>：从post的文件名中得到的2位日期<code>01-31</code>，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>i_day</code>：从post的文件名中得到的1-2位日期<code>1-31</code>，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>y_day</code>：从post的文件名中得到的3位日期<code>001-366</code>，可能被文档的<code>date</code>前置属性覆盖。</li>
+<li><code>w_year</code>：当前周的周一所在年份</li>
+<li><code>week</code>：当前周<code>01-53</code></li>
+<li><code>w_day</code>：星期<code>1-7</code></li>
+<li><code>short_day</code>：3字母星期缩写，例如<code>Sun</code></li>
+<li><code>long_day</code>：星期英文全名，例如<code>Sunday</code></li>
+<li><code>hour</code>：小时<code>00-23</code>，来自post的<code>date</code>前置属性</li>
+<li><code>minute</code>：分钟<code>00-59</code>，来自post的<code>date</code>前置属性</li>
+<li><code>second</code>：秒<code>00-59</code>，来自post的<code>date</code>前置属性</li>
+<li><code>title</code>：从文档的文件名中得到的标题。可能被文档的<code>slug</code>前置属性覆盖</li>
+<li><code>slug</code>：将标题中数字和字母以外的字符替换成连字符得到的标题。可能被文档的<code>slug</code>前置属性覆盖</li>
+<li><code>categories</code>：此post所属的类别，如果有多个类别，会创建<code>/category1/category2</code>这样的路径</li>
+<li><code>slugified_categories</code>：类似<code>categories</code>，但如果类别名中有字母和数字以外的字符，会被转换成连字符</li>
+</ul>
+<p>在集合中还有以下占位符可用：</p>
+<ul>
+<li><code>collection</code>：集合名</li>
+<li><code>path</code>：文档相对于集合目录的路径，包括文件名</li>
+<li><code>name</code>：文档的文件名，但连续的空格和非字母数字会被替换成一个连字符</li>
+<li><code>title</code>：如果文档的前置中有<code>slug</code>则是它，如果没有则等于<code>name</code></li>
+<li><code>output_ext</code>：输出文件的扩展名</li>
+</ul>
+<p>对于页面还有以下占位符可用：</p>
+<ul>
+<li><code>path</code>：页面相对于站点源目录的路径，不包括文件名</li>
+<li><code>basename</code>：页面的文件名</li>
+<li><code>output_ext</code>：输出文件的扩展名</li>
+</ul>
+<p>还有一些内置的<code>permalink</code>路径变量，可以在配置文件中通过<code>permalink: date</code>这种形式使用：</p>
+<ul>
+<li><code>date</code>：<code>/:categories/:year/:month/:day/:title:output_ext</code></li>
+<li><code>pretty</code>：<code>/:categories/:year/:month/:day/:title/</code></li>
+<li><code>ordinal</code>：<code>/:categories/:year/:y_day/:title:output_ext</code></li>
+<li><code>weekdate</code>：<code>/:categories/:year/W:week/:short_day/:title:output_ext</code></li>
+<li><code>none</code>：<code>/:categories/:title:output_ext</code></li>
+</ul>
+<h1 id="未整理"><a class="markdownIt-Anchor" href="#未整理"></a> 未整理</h1>
+<h1 id="liquid模板引擎-2"><a class="markdownIt-Anchor" href="#liquid模板引擎-2"></a> Liquid模板引擎</h1>
+<h2 id="集合"><a class="markdownIt-Anchor" href="#集合"></a> 集合</h2>
+<p><code>site.collections</code>中是在配置文件中指定的集合的数据。<br />
+<code>label</code>是集合的名称。<br />
+<code>docs</code>是文档的数组。<br />
+<code>files</code>是集合中静态文件的数组<br />
+<code>relative_directory</code>相对于站点源的集合源目录的路径。<br />
+<code>directory</code>集合源目录的完整路径。<br />
+<code>output</code>集合文档是否会被输出为独立的文件。</p>
+<p>除了自己定义的任何集合外，<code>posts</code>集合被硬编码到Jekyll中。无论是否有<code>_posts</code>目录，它都存在。迭代时<code>site.collections</code>要注意这一点，因为可能需要过滤掉它。</p>
+<h2 id="文档"><a class="markdownIt-Anchor" href="#文档"></a> 文档</h2>
+<p>文档的属性有<br />
+<code>content</code>：文档的（未渲染的）内容。 如果没有前置，Jekyll将不会在集合中生成文件。 如果有前置，则值为前置之后的<code>---</code>后的所有内容。<br />
+<code>output</code>：基于<code>content</code>渲染过的内容。<br />
+<code>path</code>：文档源文件的完整路径。<br />
+<code>relative_path</code>：相对于站点源的文档源目录的路径。<br />
+<code>url</code>：生成的集合文件的URL，只在<code>output: true</code>时才用<br />
+<code>collection</code>：文档所属的集合名<br />
+<code>date</code>：文档所属集合的日期</p>
+<h2 id="静态文件"><a class="markdownIt-Anchor" href="#静态文件"></a> 静态文件</h2>
+<p><code>site.static_files</code>可以访问静态文件</p>
+<p><code>file.path</code>：文件的相对路径，例如<code>/assets/img/image.jpg</code><br />
+<code>file.modified_time</code>：文件的上次修改时间，例如<code>2016-04-01 16:35:26 +0200</code><br />
+<code>file.name</code>：文件名<br />
+<code>file.basename</code>：不包括扩展名的文件名<br />
+<code>file.extname</code>：扩展名（包括点<code>.</code>号）</p>
+<h2 id="自定义数据"><a class="markdownIt-Anchor" href="#自定义数据"></a> 自定义数据</h2>
+<p>除了Jekyll提供的内置变量外，您还可以指定自己的自定义数据，这些数据可以通过Liquid模板系统进行访问。<br />
+配置文件的<code>data_dir</code>指定了数据文件的位置，数据文件可以是<code>.yml</code>, <code>.yaml</code>, <code>.json</code>, <code>.tsv</code>或<code>.csv</code><br />
+数据可以通过<code>site.data.数据文件名</code>访问，数据文件名不包括扩展名。<br />
+数据文件也可以放在<code>data_dir</code>的子文件夹，通过<code>site.data.子目录名</code>访问</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">&#123;% for org_hash in site.data.orgs %&#125;</span><br><span class="line">&#123;% assign org = org_hash[1] %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/&#123;&#123; org.username &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">      &#123;&#123; org.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    (&#123;&#123; org.members | size &#125;&#125; members)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="文件"><a class="markdownIt-Anchor" href="#文件"></a> 文件</h1>
+<p>Jekyll将给定的文档数据使用特定的网页模板渲染出来，生成相应的HTML文件。<br />
+网页模板是用HTML语言编写的HTML文件。<br />
+数据一般是Markdown语言编写的MD文件，通过一些配置，Jkeyll也可以直接将MD文件转换为HTML文件。</p>
+<p>Jekyll将文件分为静态文件和需要由Jekyll处理的文件。<br />
+需要由Jekyll处理的文件都要用YAML语言编写，文件内容需要是两个连续的YAML文档。用三个连字符<code>---</code>指示文档的开始。第一个文档（也叫前置数据Front Matter）用于设置预定义变量，这些预定义变量可以在渲染页面时被模板引擎使用，不需要设置也可以为空，第二个文档才是HTML文件或MD文件中的文字，这部分内容会被推送到该文档的<code>content</code>属性上。<br />
+因此一个由Jekyll处理的MD文件的样子如下所示：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">title:</span> <span class="number">0228</span><span class="string">日记</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="string">今天是个好天气</span></span><br></pre></td></tr></table></figure>
+<h1 id="前置数据"><a class="markdownIt-Anchor" href="#前置数据"></a> 前置数据</h1>
+<p>前置数据部分有一些预定义的全局变量：</p>
+<ul>
+<li><code>layout</code>：渲染此文件时使用的布局文件名（不包括扩展名），布局文件会在配置文件设置的<code>layouts_dir</code>目录中查找。</li>
+<li><code>permalink</code>：自定义此文件生成的HTML的URL。</li>
+<li><code>published</code>：当值为<code>false</code>此文件不会被渲染。</li>
+</ul>
+<p>post集合的预定义变量：</p>
+<ul>
+<li><code>date</code>：文章的发布日期，格式为<code>YYYY-MM-DD HH:MM:SS +/-TTTT</code>。设置这里的值会覆盖从文件名读取的时间。</li>
+<li><code>category</code>：文章所属的一个类别</li>
+<li><code>categories</code>：文章所属的多个类别，可以写成YAML序列，或者以空格分隔的字符串。类别和标签之间的区别在于，文章的类别可以通过文件路径自动读取，例如<code>movies/horror/_posts/2019-05-21-bride-of-chucky.markdown</code>的类别为<code>movies</code>和<code>horror</code>，而在变量中设置的类别也可以合并到生成的URL中，例如<code>movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html</code>，而标签则不能。</li>
+<li><code>tags</code>：与<code>categories</code>类似，可以将一个或多个标签添加到文章上，可以写成YAML序列，或者以空格分隔的字符串。</li>
+<li><code>excerpt_separator</code>：摘录分隔符，文章中分隔符之前的部分，将可以通过文章上的<code>excerpt</code>变量访问，例如<code>excerpt_separator: &lt;!--more--&gt;</code></li>
+</ul>
+<p>配置文件<code>_config.yml</code>中的<code>defaults</code>键用来定义各个目录下的文件的默认前置数据，以避免每次重复输入相同的前置数据。<br />
+<code>defaults</code>是一个映射组成的序列，作为其元素的映射有<code>scope</code>和<code>values</code>两个键值对：<code>defaults: [&#123;scope: &#123;path: &quot;projects&quot;, type: &quot;posts&quot;&#125;, values: &#123;layout: &quot;post_layout&quot;&#125;&#125;]</code>。<br />
+<code>scope.path</code>指定本条前置默认值应用于哪个文件夹下的文件，为空值时表示应用到项目下的所有文件。路径名可以有通配符<code>*</code>，例如<code>&quot;section/*/special-page.html&quot;</code>表示应用于<code>section</code>目录的子目录下的<code>special-page.html</code>文件。<br />
+<code>scope.type</code>是可选的，它的值是集合名称，用于指定本条前置默认值应用于哪个集合的数据。<br />
+<code>values</code>中的键值对是要定义的前置数据默认值。</p>
+<p>配置文件中<code>scope.path</code>指定的范围更具体的默认值，会覆盖范围不具体（如<code>&quot;&quot;</code>）的默认值。<br />
+文件中直接书写的前置数据会覆盖配置文件中设置的默认值。</p>
+<p>静态文件上无法书写前置，但可以通过<code>defaults</code>来设置默认值，例如</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">defaults:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;assets/img&quot;</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">image:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="静态文件-2"><a class="markdownIt-Anchor" href="#静态文件-2"></a> 静态文件</h1>
+<p>静态文件是不需要Jekyll处理的文件，存放它们的常见方法是在根目录创建一个文件夹来放置，例如<code>assets</code>。然后在网页中可以通过<code>/assets/a.jpg</code>来引用。</p>
+<h2 id="sassscss"><a class="markdownIt-Anchor" href="#sassscss"></a> Sass/SCSS</h2>
+<p>配置文件中<code>sass_dir</code>指定了在Sass中使用<code>@import</code>导入时所用的路径。<br />
+配置文件中<code>sass.style</code>用于指定Sass输出样式，例如<code>style: compressed</code></p>
+<p>Jekyll直接处理的Sass文件也必须有前置数据块（<code>@import</code>导入的则不需要）。<br />
+Jekyll会将Sass文件渲染为同名的CSS文件，例如<code>/assets/css/styles.scss</code>在渲染后会生成<code>/assets/css/style.css</code>文件。</p>
+<h1 id="集合-2"><a class="markdownIt-Anchor" href="#集合-2"></a> 集合</h1>
+<p>集合是用来将文档进行分组的。</p>
+<h2 id="添加集合"><a class="markdownIt-Anchor" href="#添加集合"></a> 添加集合</h2>
+<p>要增加一个集合，需要在根目录的<code>_config.yml</code>配置文件的<code>collections</code>中，添加一个映射元素，其键为集合的名字，其值为元数据。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">collections:</span></span><br><span class="line">  <span class="attr">staff_members:</span> <span class="comment"># 集合名</span></span><br><span class="line">    <span class="attr">people:</span> <span class="literal">true</span> <span class="comment"># 元数据</span></span><br><span class="line">    <span class="attr">output:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下集合中的元素不会自动创建HTML页面，只能通过集合对象的<code>content</code>属性访问到数据。要想自动创建HTML页面，需要添加元数据<code>output: true</code></p>
+<p>配置文件的<code>collections_dir</code>项指定了所有集合文件存放的根目录，例如<code>my_collections</code>。Jekyll会在查找<code>staff_members</code>集合时到<code>my_collections/_staff_members</code>文件夹中查找。即集合名前面加了下划线<code>_</code>。</p>
+<h2 id="文档排序"><a class="markdownIt-Anchor" href="#文档排序"></a> 文档排序</h2>
+<p>如果没有指定，则在默认情况下，当集合中的两个文档的前置数据具有<code>date</code>键时，会按照<code>date</code>属性排序。如果任何一个文档没有<code>date</code>键，则会按路径进行排序。</p>
+<p>要基于某个前置数据字段排序，可以在配置文件中集合的<code>sort_by</code>键中指定。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">collections:</span></span><br><span class="line">  <span class="attr">tutorials:</span></span><br><span class="line">    <span class="attr">sort_by:</span> <span class="string">lesson</span></span><br></pre></td></tr></table></figure>
+<p>也可以在配置文件中手动排序，只要文件名匹配，就按照指定的顺序排序，不管是不是在子目录里。没有指定顺序的文件将排在指定了顺序的文件之后。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">collections:</span></span><br><span class="line">  <span class="attr">tutorials:</span></span><br><span class="line">    <span class="attr">order:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">hello-world.md</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">introduction.md</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">basic-concepts.md</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">advanced-concepts.md</span></span><br></pre></td></tr></table></figure>
+<p>如果既设置了<code>sort_by</code>又设置了<code>order</code>，则<code>order</code>优先。</p>
+<h1 id="路径"><a class="markdownIt-Anchor" href="#路径"></a> 路径</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── about.md          # &#x3D;&gt; http:&#x2F;&#x2F;example.com&#x2F;about.html</span><br><span class="line">├── documentation     # folder containing pages</span><br><span class="line">│   └── doc1.md       # &#x3D;&gt; http:&#x2F;&#x2F;example.com&#x2F;documentation&#x2F;doc1.html</span><br><span class="line">├── design            # folder containing pages</span><br><span class="line">│   └── draft.md      # &#x3D;&gt; http:&#x2F;&#x2F;example.com&#x2F;design&#x2F;draft.html</span><br></pre></td></tr></table></figure>
+<h1 id="单独定义变量"><a class="markdownIt-Anchor" href="#单独定义变量"></a> 单独定义变量</h1>
+<p>可以<code>_data</code>文件夹中的YAML、JSON或CSV文件中读取定义的数据（变量）<br />
+例如数据文件<code>_data/navigation.yml</code><br />
+使用时可以通过<code>site.data.navigation</code>来访问。</p>
+<h1 id="基于md的页面"><a class="markdownIt-Anchor" href="#基于md的页面"></a> 基于md的页面</h1>
+<p>Markdown文件添加前置后，就可以自动创建页面。<br />
+例如<code>about.md</code></p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: default</span><br><span class="line">title: About</span><br><span class="line">---</span><br><span class="line"><span class="section"># About page</span></span><br><span class="line"></span><br><span class="line">This page tells you a little bit about me.</span><br></pre></td></tr></table></figure>
+<p>访问<code>about.html</code>就会自动用同名md渲染页面。</p>
+<h1 id="资源文件"><a class="markdownIt-Anchor" href="#资源文件"></a> 资源文件</h1>
+<p>根目录下这几个文件用于存放相关资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── assets</span><br><span class="line">│   ├── css</span><br><span class="line">│   ├── images</span><br><span class="line">│   └── js</span><br><span class="line">├── _sass</span><br></pre></td></tr></table></figure>
+<p>SCSS文件也要放在<code>assets/css</code>中，并且需要添加前置<code>---</code>。<br />
+Jekyll发现该文件后会渲染出同名的css文件，因此在其他页面，通过<code>href=&quot;/assets/css/styles.css&quot;</code>可以引用<code>styles.scss</code>生成的<code>styles.css</code>文件。<br />
+在<code>/assets/css/styles.scss</code>文件中，可以使用<code>@import &quot;main&quot;</code>语句导入其他SCSS文件。这里的导入语句会在根目录的<code>_sass</code>中查找<code>main.scss</code>文件，<code>main.scss</code>由于不需要直接被Jekyll处理，因此不需要加前置。</p>
+<h1 id="博客"><a class="markdownIt-Anchor" href="#博客"></a> 博客</h1>
+<p>博客文章位于<code>_posts</code>文件夹。<br />
+文章的文件名有固定的格式：日期、标题、扩展名。例如<code>_posts/2018-08-20-bananas.md</code>。<br />
+可以通过变量<code>page.title</code>、<code>page.date</code>访问到文件名中的日期和标题。</p>
+<p>根目录下创建<code>blog.html</code>来创建博客首页。<br />
+所有文章会在变量<code>site.posts</code>中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &#123;% for post in site.posts %&#125;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;h2&gt;&lt;a href&#x3D;&quot;&#123;&#123; post.url &#125;&#125;&quot;&gt;&#123;&#123; post.title &#125;&#125;&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;</span><br><span class="line">      &#123;&#123; post.excerpt &#125;&#125;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<p>post.url 由Jekyll自动设置为帖子的输出路径<br />
+post.title是从帖子文件名中拉出的，可以通过设置title在前边的内容来覆盖<br />
+post.excerpt 是默认情况下内容的第一段</p>
+<h1 id="集合-3"><a class="markdownIt-Anchor" href="#集合-3"></a> 集合</h1>
+<p>集合中的元素位于<code>_*collection_name*</code>文件夹，例如<code>_authors</code>，文件夹里为每个元素创建一个<code>md</code>文件作为页面。</p>
+<p>变量<code>site.authors</code>可以访问集合。集合元素的<code>content</code>是元素页面渲染内容。</p>
+<p>默认情况下集合元素文件不会渲染成页面。可以改变配置来使其渲染：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">collections:</span></span><br><span class="line">  <span class="attr">authors:</span></span><br><span class="line">    <span class="attr">output:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>同时要设置布局文件：<code>_layouts/author.html</code></p>
+<h1 id="默认前置"><a class="markdownIt-Anchor" href="#默认前置"></a> 默认前置</h1>
+<p>帖子、作者md文件中每个都要定义相同的布局变量十分麻烦，可以在<code>_config.yml</code>中进行默认配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">collections:</span></span><br><span class="line">  <span class="attr">authors:</span></span><br><span class="line">    <span class="attr">output:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">defaults:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">&quot;authors&quot;</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">layout:</span> <span class="string">&quot;author&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">&quot;posts&quot;</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">layout:</span> <span class="string">&quot;post&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">layout:</span> <span class="string">&quot;default&quot;</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">&quot;pages&quot;</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">layout:</span> <span class="string">&quot;my-site&quot;</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">scope:</span></span><br><span class="line">      <span class="attr">path:</span> <span class="string">&quot;projects&quot;</span></span><br><span class="line">      <span class="attr">type:</span> <span class="string">&quot;pages&quot;</span> <span class="comment"># previously `page` in Jekyll 2.2.</span></span><br><span class="line">    <span class="attr">values:</span></span><br><span class="line">      <span class="attr">layout:</span> <span class="string">&quot;project&quot;</span> <span class="comment"># overrides previous default layout</span></span><br><span class="line">      <span class="attr">author:</span> <span class="string">&quot;Mr. Hyde&quot;</span></span><br></pre></td></tr></table></figure>
+<p>不设置<code>type</code>字段它会给<code>path</code>路径（为空表示项目中的所有文件）下的文件添加默认前置。设置<code>type</code>字段为某个集合名使它只应用到属于该集合的元素文件。</p>
+<h1 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bundle init</span><br><span class="line">bundle add jekyll</span><br></pre></td></tr></table></figure>
+<p>创建Gemfile并添加jekyll依赖，同时锁定jekyll版本。<br />
+Gemfile中可以配置要使用的插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">source &#39;https:&#x2F;&#x2F;rubygems.org&#39;</span><br><span class="line"></span><br><span class="line">gem &#39;jekyll&#39;</span><br><span class="line"></span><br><span class="line">group :jekyll_plugins do</span><br><span class="line">  gem &#39;jekyll-sitemap&#39;</span><br><span class="line">  gem &#39;jekyll-feed&#39;</span><br><span class="line">  gem &#39;jekyll-seo-tag&#39;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>要在jekyll中使用插件，还需要在<code>_config.yml</code>中配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">jekyll-feed</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">jekyll-sitemap</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">jekyll-seo-tag</span></span><br></pre></td></tr></table></figure>
+<p>运行<code>bundle update</code>安装插件。<br />
+sitemap用于创建网站地图文件，以帮助搜索引擎搜索。它自动生成不需要任何操作。<br />
+feed为帖子创建RSS FEED。SEO-TAG添加元数据帮助SEO。它们需要在页面中使用<br />
+<code>&#123;% feed_meta %&#125;</code><br />
+<code>&#123;% seo %&#125;</code></p>
+<h2 id="开发环境"><a class="markdownIt-Anchor" href="#开发环境"></a> 开发环境</h2>
+<p>有时希望在开发环境输入内容，而生产环境不输出，可以用环境变量：<br />
+<code>JEKYLL_ENV=production bundle exec jekyll build</code><br />
+默认情况下JEKYLL_ENY是开发环境。<br />
+模板中使用<code>jekyll.environment</code>可以查看环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if jekyll.environment &#x3D;&#x3D; &quot;production&quot; %&#125;</span><br><span class="line">  &lt;script src&#x3D;&quot;my-analytics-script.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生产环境"><a class="markdownIt-Anchor" href="#生产环境"></a> 生产环境</h2>
+<p>最后一步是将站点放置到生产服务器上。最基本的方法是运行生产版本：<br />
+<code>JEKYLL_ENV=production bundle exec jekyll build</code></p>
+<p>并将其内容复制_site到您的服务器。</p>
+<p>更好的方法是使用CI 或3rd party来自动执行此过程。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/软件使用问题/Jekyll.html">https://rcocco.github.io/categories/计算机/软件使用问题/Jekyll.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/Hexo.html"><i class="fa fa-chevron-left">  </i><span>Hexo</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/Listary.html"><span>Listary</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="事件处理"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>事件处理 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.</span> <span class="toc-text"> 事件循环</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 事件处理器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E5%86%92%E6%B3%A1%E5%92%8C%E6%8D%95%E8%8E%B7"><span class="toc-number">3.</span> <span class="toc-text"> 传播(冒泡和捕获)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#event%E6%8E%A5%E5%8F%A3"><span class="toc-number">4.</span> <span class="toc-text"> Event接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text"> 键盘事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.2.</span> <span class="toc-text"> 鼠标事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text"> 滚动事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%84%A6%E7%82%B9%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.4.</span> <span class="toc-text"> 焦点事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.5.</span> <span class="toc-text"> 加载事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%96%E6%8B%BD%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.6.</span> <span class="toc-text"> 拖拽事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.7.</span> <span class="toc-text"> 触摸事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AA%E8%B4%B4%E6%9D%BF%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.8.</span> <span class="toc-text"> 剪贴板事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-worker%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.9.</span> <span class="toc-text"> Web Worker事件</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">事件处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-16</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/">文档对象模型</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>轮询：循环中不断去检测状态，基于判断执行和跳转指令。<br />
+中断：类似硬件实现的循环，CPU在每个指令周期结束后检测中断信号。<br />
+浏览器实现了类似中断服务程序的机制：事件处理器。</p>
+<span id="more"></span>
+<h1 id="事件循环"><a class="markdownIt-Anchor" href="#事件循环"></a> 事件循环</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script start&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve()</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;promise1&#x27;</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;promise2&#x27;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script end&#x27;</span>);</span><br><span class="line"><span class="comment">// script start，script end，promise1，promise2，setTimeout</span></span><br></pre></td></tr></table></figure>
+<p>事件循环将回调函数分为任务和微任务，每个线程（Web Worker）都有自己的事件循环。<br />
+setTimeout设置的回调函数是一个任务。任务之间，浏览器可以更新页面。<br />
+微任务通常用于安排需要在当前执行脚本结束后立即执行的事情，只要当前任务的JavaScript调用栈为空了，就会处理微任务。例如Promise的回调，一旦Promise完成，它就在微任务中排队等待回调函数执行。</p>
+<h1 id="事件处理器"><a class="markdownIt-Anchor" href="#事件处理器"></a> 事件处理器</h1>
+<p><code>addEventListener()</code>函数将回调函数<code>listener</code>注册到目标<code>target</code>的<code>type</code>事件上，当<code>type</code>事件发生时，事件处理器将调用<code>listener</code>。<br />
+常见的目标是<code>Element</code>，<code>Document</code>和<code>Window</code>，但是目标可以是支持事件的任何对象（例如<code>XMLHttpRequest</code>）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(type, listener [, options]);</span><br><span class="line">target.addEventListener(type, listener [, useCapture]);</span><br></pre></td></tr></table></figure>
+<p>参数<code>options</code>可用选项有：</p>
+<ul>
+<li><code>once</code>：布尔值。若为<code>true</code>，则表示<code>listener</code>最多调用一次，在调用一次后会自动取消注册。</li>
+<li><code>passive</code>：布尔值。若为<code>true</code>，则表示<code>listener</code>永远不会调用<code>preventDefault()</code>，浏览器无需等待回调函数执行完才确定是否执行默认行为，于是便可以并行进行默认行为与回调函数，一定程序上可以加速运行。此时即便调用浏览器也会忽略，同时在控制台报警。</li>
+</ul>
+<p>事件处理器会向回调函数<code>listener</code>传递一个实现了<code>Event</code>接口的参数，该参数描述了事件发生的相关信息，例如事件触发时鼠标的坐标、哪个按键等等。即便不显式接收参数，<code>window.event</code>全局对象也会在回调函数执行期间被绑定到该参数。</p>
+<p>也可以写在HTML元素的属性中，属性名为<code>onType</code>，例如<code>onclick</code>。其属性值是一个函数名称或函数表达式。这种形式的回调函数只能有一个。而上面<code>addEventListener()</code>可以对同一个事件注册多个回调函数，多个回调函数会按注册的顺序调用。</p>
+<p>另外，<code>addEventListener()</code>会将回调函数的<code>this</code>绑定到<code>target</code>上。</p>
+<p>当<code>type</code>事件发生时，<code>onclick</code>属性对应的函数会被执行。</p>
+<p>如果把表达式直接写在HTML元素的属性内，浏览器会构造一个函数表达式并赋给onclick，而<code>onclick</code>属性值会作为函数体，其内部操作形如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">target.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">eval</span>(target.getAttribute(<span class="string">&quot;onclick&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因此要写成<code>listener()</code>而不是<code>listener</code>，否则<code>eval(listener)</code>的值将是该函数，而不会执行函数。</p>
+<p>如果希望注册的回调函数只执行一次，可以这么写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">once</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">  button.removeEventListener(<span class="string">&quot;click&quot;</span>, once);</span><br><span class="line">&#125;</span><br><span class="line">button.addEventListener(<span class="string">&quot;click&quot;</span>, once);</span><br><span class="line"><span class="comment">// 或者利用表达式可命名，名字可以在函数内部使用这一规则</span></span><br><span class="line">button.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// do something;</span></span><br><span class="line">  button.removeEventListener(<span class="string">&quot;click&quot;</span>, foo);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="传播冒泡和捕获"><a class="markdownIt-Anchor" href="#传播冒泡和捕获"></a> 传播(冒泡和捕获)</h1>
+<p>Event bubbling and capture<br />
+当事件在一个具有父元素的元素上被触发时，事件对象会经过若干个事件阶段：<br />
+捕获阶段、目标阶段、冒泡阶段。<br />
+如果不支持某阶段，或者事件对象的传播已经停止，则会跳过该阶段。</p>
+<p>在捕获阶段：</p>
+<ul>
+<li>浏览器依次检查<code>window</code>、<code>document</code>、元素的最外层祖先(<code>&lt;html&gt;</code>)在捕获阶段是否注册了事件处理程序，如果是，则执行该事件处理程序。</li>
+<li>然后，找到该元素的子元素的第一个元素(<code>&lt;html&gt;</code>的第一个子元素)，然后做同样的事情。以此类推，直到到达实际选择的元素。</li>
+</ul>
+<p>在目标阶段：</p>
+<ul>
+<li>当事件传递到实际触发的元素时，称为目标阶段。</li>
+</ul>
+<p>在冒泡阶段：</p>
+<ul>
+<li>浏览器检查选择的元素在冒泡阶段是否注册了事件处理程序，如果是，则执行该事件处理程序。</li>
+<li>然后，找到它的父元素，做同样的事情。以此类推，直到到达<code>window</code></li>
+</ul>
+<p>在目标阶段，多个事件处理函数会按照注册顺序执行，不管注册的是捕获阶段处理程序还是冒泡阶段处理程序。<br />
+在非目标阶段，如果同时存在冒泡和捕获两种类型的事件处理程序，则捕获阶段首先执行，然后是冒泡阶段。</p>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/_v_images/20210108201319267_23455.png" alt="" width="621" /><br />
+现代浏览器中，所有事件处理程序默认都在冒泡阶段注册。要注册捕获阶段的事件处理程序，需要在<code>addEventListener()</code>时将第三个参数设为<code>true</code>。</p>
+<p>为什么要同时捕捉和冒泡呢？好吧，在糟糕的过去，浏览器的相互兼容性要比现在低得多，Netscape仅使用事件捕获，而Internet Explorer仅使用事件冒泡。当W3C决定尝试规范行为并达成共识时，他们最终使用了包含这两者的系统，这是一种现代浏览器的实现。</p>
+<p>在事件处理程序中，在传递进来的<code>event</code>参数上调用<code>stopPropagation()</code>方法可以停止继续传播（不再继续进行冒泡和捕获阶段），<code>event.stopImmdiatePropagation()</code>不再继续传播同时后续的事件处理程序也不执行。</p>
+<p>冒泡使得程序能够利用事件委托机制：一个元素有大量的子元素（如<code>&lt;ul&gt;</code>），不必在每个子元素上都注册事件处理程序，而只需在该元素上注册事件处理程序，因为冒泡会使事件从子元素传递到父元素上。</p>
+<h1 id="event接口"><a class="markdownIt-Anchor" href="#event接口"></a> Event接口</h1>
+<p><code>addEventLisener()</code>会将实现了<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>接口的对象传递给事件处理程序，实现了Event接口的对象表示一次事件</p>
+<p>事件名<code>type</code>与对应的接口如下：<br />
+<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a></p>
+<p><code>Event</code>接口有一些公共属性：</p>
+<ul>
+<li><code>target</code>属性指向事件触发时的对象。在事件委托时可以识别出原始触发的对象。</li>
+<li><code>currentTarget</code>属性指向当前事件处理程序对应的对象。可以使同一个事件处理程序既用于子元素又用于父元素。</li>
+<li><code>preventDefault()</code>方法阻止默认事件处理程序的执行，一个事件通常有默认的事件处理程序，例如点击链接后跳转到目标，默认事件处理程序会在所有注册的事件处理程序执行完后执行。某些浏览器会不允许阻止某些事件的默认行为，例如<code>Ctrl+w</code>关闭窗口快捷键。</li>
+</ul>
+<h2 id="键盘事件"><a class="markdownIt-Anchor" href="#键盘事件"></a> 键盘事件</h2>
+<p>KeyboardEvent是实现了Event接口的键盘事件，</p>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>keydown</code>：按下任何键都会触发该事件。</li>
+<li><code>keypress</code>：按下字符键（字母、数字和标点）会触发该事件。字母总是会被认为是大写。拥有单独的<code>charCode</code>属性。</li>
+<li><code>keyup</code>：释放键时会触发该事件。</li>
+</ul>
+<p>持续按住一个键会多次触发<code>keydown</code>和<code>keypress</code>。</p>
+<p>按键事件的目标是按键按下时，焦点所在的元素。如果没有特殊情况，可以将键盘事件处理程序注册到<code>window</code>对象上，因为事件最终一定会冒泡到<code>window</code>上。</p>
+<p>键盘事件的属性有：</p>
+<ul>
+<li><code>keyCode</code>：返回触发事件的键对应的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode">数字</a>。不建议使用此属性，更推荐使用<code>key</code>属性，但旧版浏览器可能没有实现<code>key</code>属性。</li>
+<li><code>key</code>：返回触发事件的键对应的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values">名字</a>。</li>
+<li><code>altKey</code>：返回一个表示Alt键是否按下的布尔值，若按下则为<code>true</code></li>
+<li><code>ctrlKey</code>：返回一个表示Ctrl键是否按下的布尔值，若按下则为<code>true</code></li>
+<li><code>shiftKey</code>：返回一个表示Shift键是否按下的布尔值，若按下则为<code>true</code></li>
+<li><code>metaKey</code>：返回一个表示<code>win(windows)/command(mac)</code>键是否按下的布尔值，若按下则为<code>true</code></li>
+</ul>
+<p>很多键盘在某些键一起按时不会触发所有键对应的事件，可以利用时间计算。</p>
+<h2 id="鼠标事件"><a class="markdownIt-Anchor" href="#鼠标事件"></a> 鼠标事件</h2>
+<p>MouseEvent是实现了Event接口的键盘事件，</p>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>mousedown</code>：当鼠标指针位于元素内部时，按下鼠标的任何按钮都会触发该事件。</li>
+<li><code>mouseup</code>：当鼠标指针位于元素内部时，释放鼠标的任何按钮都会触发该事件。</li>
+<li><code>click</code>：当鼠标指针位于元素内部时，每当先后触发了<code>mousedown</code>和<code>mouseup</code>后，就会触发该事件。如果<code>mousedown</code>和<code>mouseup</code>的<code>target</code>不同，则<code>click</code>会触发在它们同时冒泡的最近公共祖先上。</li>
+<li><code>dblclick</code>：当鼠标指针位于元素内部时，在一定时间内触发了两次<code>click</code>事件后（或者说触发了两次先后<code>mouedown</code>和<code>mouseup</code>），就会触发该事件。</li>
+<li><code>mousemove</code>：当鼠标指针位于元素内部时，鼠标移动则会触发该事件。</li>
+<li><code>mouseover</code>：当鼠标指针移动到元素的边界上，或者元素移动到鼠标指针下方时，触发该事件。</li>
+<li><code>mouseenter</code>：此事件不传播。当鼠标指针移动到元素或它的后代元素的边界，或者元素或其后代移动到鼠标指针下方时，触发该事件。当鼠标指针从元素移动到其后代元素上时不触发该事件。</li>
+<li><code>mouseout</code>：当鼠标指针从元素边界移出，或者移入元素的后代的边界时，触发该事件。</li>
+<li><code>mouseleave</code>：此事件不传播。当鼠标指针从一个元素及其所有后代元素的边界移出，或者当元素或其后代不再位于鼠标指针之下时，触发该事件。（具体而言，如果鼠标从父元素移动到由于定位而挨着它的子元素上，并不会触发该事件，因为没有从所有后代元素的边界移出；如果鼠标移动到由于定位而完全脱离父元素的子元素上，此时再移出子元素，会触发父元素的该事件。）</li>
+<li><code>wheel</code>：当旋转鼠标滚轮时，触发该事件。此事件替换了不建议使用的非标准<code>mousewheel</code>事件。与<code>scroll</code>不同，<code>wheel</code>的默认操作是特定于实现的，它不一定调度<code>scroll</code>。</li>
+</ul>
+<p>鼠标事件的属性有：</p>
+<ul>
+<li><code>button</code>：鼠标按下或释放的那个按钮所对应的数字，0为主按钮（通常是左），1为辅助按钮（通常是滚轮或中键），2为次要按钮（通常是右），3和4对应第4和第5个按钮（如果有）。对于不是由按下或释放鼠标键引起的事件，不会更新值，这种情况下0应该解释为未初始化值。</li>
+<li><code>buttons</code>：鼠标按下的一个或多个按钮对应的数字，0为未按下，1为主按钮，2为次要按钮，4为辅助按钮，8为第4个按钮，16为第5个按钮。其余数字对应多个按钮一起按下，例如3表示1+2（主按钮和次要按钮一起按）</li>
+<li><code>pagex</code>：相对于整个文档的左上角的横坐标。</li>
+<li><code>pageY</code>：相对于整个文档的左上角的纵坐标。</li>
+<li><code>clientX</code>：相对于视口左上角的横坐标。</li>
+<li><code>clientY</code>：相对于视口左上角的纵坐标。</li>
+<li><code>screenX</code>：相对于（显示器）屏幕左上角的横坐标。</li>
+<li><code>screenY</code>：相对于（显示器）屏幕左上角的纵坐标。</li>
+<li><code>relatedTarget</code>：次要目标。如果主要目标是进入某元素，则次要目标是刚刚离开的某元素；如果主要目标是离开某元素，则次要目标是刚刚进入的某元素。</li>
+</ul>
+<h2 id="滚动事件"><a class="markdownIt-Anchor" href="#滚动事件"></a> 滚动事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>scroll</code>：当视口或元素滚动时，触发该事件。</li>
+</ul>
+<p><code>preventDefault()</code>无法阻止滚动，因为事件处理器会在滚动后才调用注册的事件。</p>
+<h2 id="焦点事件"><a class="markdownIt-Anchor" href="#焦点事件"></a> 焦点事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>focus</code>：不传播。当元素获得焦点时，触发该事件。</li>
+<li><code>focusin</code>：传播。当元素获得焦点时，触发该事件。</li>
+<li><code>blur</code>：不传播。当元素失去焦点时，触发该事件。</li>
+<li><code>focusout</code>：传播。当元素失去焦点时，触发该事件。</li>
+</ul>
+<h2 id="加载事件"><a class="markdownIt-Anchor" href="#加载事件"></a> 加载事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>load</code>：不传播。当页面加载完成（所有资源包括CSS和图片等）时，触发该事件。它是<code>WINDOW</code>API的一部分，一般注册在<code>window</code>上。</li>
+<li><code>beforeunload</code>：不传播。当窗口、文档和资源“将要”被卸载时，触发该事件。此事件使得网页弹出一个确认对话框，询问用户是否真的要离开页面。它是<code>WINDOW</code>API的一部分，一般注册在<code>window</code>上。</li>
+<li><code>unload</code>：不传播。当窗口、文档和资源被卸载时（此时所有资源仍存在，但用户看不到任何东西，UI交互也无效），触发该事件。</li>
+<li><code>DOMContentLoaded</code>：当初始HTML加载完成（不管样式表、图片、子frame是否完成），触发该事件。它是<code>DOCUMENT</code>API的一部分，一般注册在<code>document</code>上。</li>
+<li><code>readystatechange</code>：当<code>document.readyState</code>变化时，触发该事件。<code>readyState</code>的值是以下三种之一：<code>loading</code>（表示文档正在加载）、<code>interactive</code>（表示文档已加载和解析完成，但仍在加载图像、样式表等资源，等同于<code>DOMContentLoaded</code>）、<code>complete</code>（表示文档和所有资源都已加载完成，等同于<code>load</code>）</li>
+<li><code>error</code>：不传播。当资源加载失败或不可用时，触发该事件。例如，脚本执行错误或图片无法找到。它是<code>ELEMENT</code>API的一部分，一般注册在替换元素上。</li>
+</ul>
+<h2 id="拖拽事件"><a class="markdownIt-Anchor" href="#拖拽事件"></a> 拖拽事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>drag</code>：当元素或者选中的文本被拖动时触发（每350毫秒触发一次），应用在被拖拽元素上</li>
+<li><code>dragend</code>：当拖动操作结束时触发（通过释放鼠标按钮或者按<code>ESC</code>键），应用在被拖拽元素上</li>
+<li><code>dragenter</code>：当一个被拖动的元素或者选中的文本进入一个有效的放置目标时触发，应用在目标元素上</li>
+<li><code>dragstart</code>：当用户开始拖动元素或者拖动选中文本时触发，应用在被拖拽元素上</li>
+<li><code>dragleave</code>：当拖动元素或者选中的文本离开有效的放置区域时触发，应用在目标元素上</li>
+<li><code>dragover</code>：当元素或者选中的文本被拖动到有效放置区域上方时触发（每几百毫秒触发一次），应用在目标元素上</li>
+<li><code>drop</code>：当元素或选中的文本在有效区域放置时触发，应用在目标元素上。</li>
+</ul>
+<p>拖拽事件的属性有：</p>
+<ul>
+<li><code>dataTransfer</code>：只读。存放拖拽操作的数据（作为DataTransfer对象）</li>
+</ul>
+<h2 id="触摸事件"><a class="markdownIt-Anchor" href="#触摸事件"></a> 触摸事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>touchstart</code>：当用户放置一个触摸点（手指或手写笔与目标界面相交的点）在触摸界面时，触发该事件。此事件的目标必须是一个元素。如果在此事件上调用了preventDefault方法，则该方法应防止由与同一激活触摸点相关联的任何触摸事件（包括鼠标事件或滚动）引起的任何默认操作。</li>
+<li><code>touchend</code>：当用户从触摸界面移除触摸点时（也包括触摸点物理上离开触摸界面的情况，例如从屏幕上拖出），触发该事件。此事件的目标必须是触摸点第一次被放置在触摸界面时开始的同一个元素，即便触摸点在期间已经移动到了目标元素的交互区域之外。移除的触摸点必须包含在<code>TouchEvent</code>的<code>changedTouches</code>属性中，并且不能包含在<code>touches</code>和<code>targetTouches</code>属性中。</li>
+<li><code>touchmove</code>：当用户将触摸点在触摸界面上移动时，触发该事件。此事件的目标必须是触摸点第一次被放置在触摸界面时开始的同一个元素，即便触摸点在期间已经移动到了目标元素的交互区域之外。事件触发的速率是由实现决定的。如果在活动触点的第一个touchmove事件上调用了preventDefault方法，则它应防止与同一活动触点相关联的任何touchmove事件（例如滚动）引起的任何默认操作。</li>
+<li><code>touchcancel</code>：当触摸点被以特定于实现的方式中断了（例如创建的触摸点过多），触发该事件。此事件的目标必须是触摸点第一次被放置在触摸界面时开始的同一个元素，即便触摸点在期间已经移动到了目标元素的交互区域之外。移除的触摸点必须包含在<code>TouchEvent</code>的<code>changedTouches</code>属性中，并且不能包含在<code>touches</code>和<code>targetTouches</code>属性中。</li>
+</ul>
+<p>触摸事件的属性有：</p>
+<ul>
+<li><code>changedTouches</code>：只读。是一个触摸点对象<code>Touch</code>列表。对于<code>touchstart</code>，它是当前事件激活的触摸点列表。对于<code>touchmove</code>，它是自从上一次事件后改变的触摸点列表。对于<code>touchend</code>，它是从触摸界面移除的触摸点列表。</li>
+</ul>
+<p>手机上的<code>click</code>事件有300毫秒延迟，因为浏览器在等待看这是不是一个双击事件，因为双击会触发放大。因此fastclick库将操作绑定到<code>touchend</code>上然后在同一元素上触发<code>click</code>事件来消除延迟。但是从Chrome 32（2014年）开始延迟就消失了，16年的IOS 9.3也修复了延迟。</p>
+<h2 id="剪贴板事件"><a class="markdownIt-Anchor" href="#剪贴板事件"></a> 剪贴板事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>copy</code>：当用户进行复制操作时，触发该事件。</li>
+<li><code>cut</code>：当用户进行剪切操作时，触发该事件。</li>
+<li><code>paste</code>：当用户进行粘贴操作时，触发该事件。</li>
+</ul>
+<p>剪贴板事件的属性有：</p>
+<ul>
+<li><code>clipboardData</code>：持有一个<code>DataTransfer</code>对象，其<code>items</code>和<code>files</code>属性可用于处理剪贴板中的多部分或非文本数据。<code>paste</code>事件通常使用<code>getData(format)</code>获取要粘贴的数据，其中<code>format</code>可以是<code>&quot;text&quot;</code>或<code>&quot;url&quot;</code>。<code>copy</code>和<code>cut</code>事件通常使用<code>setData(format, data)</code>方法将数据放到剪贴板</li>
+</ul>
+<h2 id="web-worker事件"><a class="markdownIt-Anchor" href="#web-worker事件"></a> Web Worker事件</h2>
+<p>会触发该事件的<code>type</code>有：</p>
+<ul>
+<li><code>message</code>：不传播。当worker收到信息时，触发该事件。</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/文档对象模型/事件处理.html">https://rcocco.github.io/categories/计算机/前端/文档对象模型/事件处理.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/DOM%E6%A6%82%E8%BF%B0.html"><i class="fa fa-chevron-left">  </i><span>DOM概述</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B.html"><span>浏览器对象模型</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="定位"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>定位 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%AE%9A%E4%BD%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 选择定位模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%92%E5%81%8F%E7%A7%BB%E5%9B%9B%E5%B1%9E%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text"> 盒偏移四属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%B1%82%E7%BA%A7"><span class="toc-number">3.</span> <span class="toc-text"> 堆叠层级</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text"> 绝对定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D"><span class="toc-number">5.</span> <span class="toc-text"> 固定定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number">6.</span> <span class="toc-text"> 相对定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B2%98%E6%BB%9E%E5%AE%9A%E4%BD%8D"><span class="toc-number">7.</span> <span class="toc-text"> 粘滞定位</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">定位</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-20</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="选择定位模式"><a class="markdownIt-Anchor" href="#选择定位模式"></a> 选择定位模式</h1>
+<p><code>position</code>属性设置元素在文档中的定位方式，即使用哪种CSS定位算法来计算元素盒的位置。<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>属性决定了定位元素的最终位置。<span id="more"></span></p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static | relative | absolute | sticky | fixed</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：static</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>用户代理可以把根元素的<code>position</code>视为<code>static</code>。</p>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>static</code>：元素根据文档的常规流定位。<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>和<code>z-index</code>属性不起作用。也叫做不定位。</li>
+<li><code>relative</code>：相对定位。盒的位置是根据常规流计算的（被称为常规流中的位置），然后盒相对于其常规位置偏移。当盒B为相对定位时，后面的盒的位置仍按照B没有偏移量来计算。</li>
+<li><code>absolute</code>：绝对定位。盒的位置（及可能的大小）由<code>top</code>，<code>right</code>，<code>bottom</code>和<code>left</code>                                                                                                                                                                                                                                                           属性指定，这些属性指定了相对于盒的包含块的偏移量。绝对定位的盒脱离了常规流，意味着它们不会影响后面兄弟元素的布局，而且，虽然绝对定位的盒有外边距，但它们不会与任何其它外边距合并。</li>
+<li><code>fixed</code>：固定定位。盒的位置根据<code>absolute</code>模型来计算，但同时相对于某些参照（reference）是固定的。如同<code>absolute</code>模型一样，盒的外边距不会与任何其它外边距合并。媒体类型为<code>screen</code>的情况下，该盒相对于视口固定，并且滚动时不会移动。</li>
+<li><code>sticky</code>：粘滞定位。盒的位置最初位于常规流中的位置，当盒接触粘滞定位矩形时，它就变成了固定定位，同时原来的位置保留。当继续滚动时，随着父元素离开视口，它才随之离开视口。</li>
+</ul>
+<h1 id="盒偏移四属性"><a class="markdownIt-Anchor" href="#盒偏移四属性"></a> 盒偏移四属性</h1>
+<p>如果元素的<code>position</code>属性有一个除<code>static</code>外的值，就说它是定位元素（positioned）。定位元素生成定位盒（positioned boxes），根据以下4个属性布局：<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;length&gt; | &lt;percentage&gt; | auto</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：定位元素</li>
+<li>百分数：相对于包含块的尺寸，具体见下。</li>
+<li>计算值：对于长度值，变为绝对长度；对于百分数值，指定的值；否则为auto</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>&lt;length&gt;</code>：相对于参考边向内的距离。允许为负值。</li>
+<li><code>&lt;percentage&gt;</code>：对于<code>left</code>和<code>right</code>是相对于包含块的宽度，<code>top</code>和<code>bottom</code>是相对于包含块的高度。对于粘滞定位，相对于scrollport的尺寸。允许为负值。</li>
+<li><code>auto</code>：表示没有约束，具体的含义取决于定位方式。</li>
+</ul>
+<p>负值可以把元素移动到包含块外面。</p>
+<h1 id="堆叠层级"><a class="markdownIt-Anchor" href="#堆叠层级"></a> 堆叠层级</h1>
+<p>对于定位元素，<code>z-index</code>属性指定了：</p>
+<ol>
+<li>当前堆叠上下文（stacking context）中，该盒的堆叠层级（stack level）</li>
+<li>该盒是否（应该）建立一个堆叠上下文</li>
+</ol>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">integer</span>&gt; | auto</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：定位元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+</ul>
+<p>属性值含义如下：</p>
+<ul>
+<li><code>auto</code>：该盒不建立新的本地堆叠上下文。当前堆叠上下文中生成的盒的堆叠层级与其父级盒的堆叠层级相同。</li>
+<li><code>&lt;integer&gt;</code>：数字表示当前堆叠上下文中生成的盒的堆叠层级。该盒还建立了一个本地堆叠上下文，并且在本地堆叠上下文中堆叠层级为0。这意味着后代的<code>z-index</code>不会与该元素外面元素的<code>z-index</code>进行比较。同时，如果想要子元素显示在定位元素的下面，需要设置子元素的堆叠层级小于0。</li>
+</ul>
+<h1 id="绝对定位"><a class="markdownIt-Anchor" href="#绝对定位"></a> 绝对定位</h1>
+<p><code>position: absolute</code>表示元素采用绝对定位。</p>
+<ul>
+<li>绝对定位的包含块是最近的<code>position</code>非<code>static</code>的祖先元素的 padding box，如果没有这样的祖先，则包含块是初始包含块。</li>
+<li>为了相对于某个元素来绝对定位，使用时通常把希望作为包含块的元素设为<code>position: relative</code>，而且不设置偏移。</li>
+<li>元素从文档常规流中删除，在页面布局中不会为它创建空间，即其他的元素布局时当它不存在。绝对定位的元素不围绕其他元素内容流动，内容也不围绕定位元素流动，这表明绝对定位的元素可能叠放到其他元素上，或者被其他元素覆盖。</li>
+<li>四个偏移属性表示元素的 margin box 边界相对于包含块边界向内的距离。当偏移属性为<code>auto</code>时，元素会位于静态位置，即<code>position: static</code>时的位置。</li>
+<li>多数情况下元素的<code>display</code>属性变为<code>block</code></li>
+<li>元素建立了新的块格式化上下文，外边距不会折叠、高度计算会考虑浮动元素，也不会因为两侧的浮动元素而缩小宽度。</li>
+</ul>
+<h1 id="固定定位"><a class="markdownIt-Anchor" href="#固定定位"></a> 固定定位</h1>
+<p><code>position: fixed</code>表示元素采用固定定位。</p>
+<ul>
+<li>固定定位的包含块是视口。</li>
+<li>元素从文档常规流中删除，在页面布局中不会为它创建空间，即其他的元素布局时当它不存在。</li>
+<li>四个偏移属性表示元素的 margin box 边界相对于包含块边界向内的距离。当偏移属性为<code>auto</code>时，元素会位于相对于视口的静态位置，即<code>position: static</code>时的位置。</li>
+<li>始终创建新的堆叠上下文。</li>
+</ul>
+<h1 id="相对定位"><a class="markdownIt-Anchor" href="#相对定位"></a> 相对定位</h1>
+<p><code>position: relative</code>表示元素采用相对定位。</p>
+<ul>
+<li>相对定位的包含块是其最近的块容器祖先的 content box，又或者最近的建立了格式化上下文的祖先（如<code>table</code>容器、<code>flex</code>容器、<code>grid</code>容器）的 content box，如果没有这样的祖先，包含块是初始包含块。</li>
+<li>元素在文档中保留其在常规流中的空间，其他的元素布局时就跟它在原位置一样。</li>
+<li>四个偏移属性相对它自己在常规流中的位置向内偏移，即偏移是指距离处于常规流中元素上下左右边界的偏移，因此<code>top</code>会使元素向下移动，<code>left</code>会使元素向右移动。更具体的规则如下：</li>
+</ul>
+<ol>
+<li><code>left</code>和<code>right</code>：
+<ul>
+<li>对于相对定位的元素，<code>left</code>和<code>right</code>水平移动盒，不会改变其大小。<code>left</code>把盒向右移，而<code>right</code>把盒向左移动。因为盒没有被分割或者拉伸，所以<code>left</code>或<code>right</code>的应用值总是（满足）：<code>left = -right</code></li>
+<li>如果<code>left</code>和<code>right</code>都是<code>auto</code>（各自的初始值），应用值为0（即盒待在原位置）</li>
+<li>如果<code>left</code>是<code>auto</code>，其应用值为负的<code>right</code>值（即盒向左移动<code>right</code>值）</li>
+<li>如果<code>right</code>被指定为<code>auto</code>，其应用值为负的<code>left</code>值</li>
+<li>如果<code>left</code>和<code>right</code>都不是<code>auto</code>，位置就被过度约束（over-constrained）了，它们（<code>left</code>和<code>right</code>）其中有一个会被忽略。如果包含块的<code>direction</code>属性是<code>ltr</code>，那么<code>left</code>有效，<code>right</code>变成-<code>left</code>（负的<code>left</code>）。如果包含块的<code>direction</code>属性是<code>rtl</code>，那么<code>right</code>有效，<code>left</code>被忽略</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> left == <span class="string">&#x27;auto&#x27;</span> <span class="keyword">and</span> right == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    right = <span class="number">0</span></span><br><span class="line"><span class="keyword">elif</span> left == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    left = -right</span><br><span class="line"><span class="keyword">elif</span> right == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    right = -left</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> direction == <span class="string">&#x27;ltr&#x27;</span>:</span><br><span class="line">        right = -left;</span><br><span class="line">    <span class="keyword">elif</span> direction == <span class="string">&#x27;rtl&#x27;</span>:</span><br><span class="line">        left = -right</span><br></pre></td></tr></table></figure>
+<p>示例 下列3条规则是等价的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.a8</span> &#123; <span class="attribute">position</span>: relative; <span class="attribute">direction</span>: ltr; <span class="attribute">left</span>: -<span class="number">1em</span>; <span class="attribute">right</span>: auto &#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.a8</span> &#123; <span class="attribute">position</span>: relative; <span class="attribute">direction</span>: ltr; <span class="attribute">left</span>: auto; <span class="attribute">right</span>: <span class="number">1em</span> &#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.a8</span> &#123; <span class="attribute">position</span>: relative; <span class="attribute">direction</span>: ltr; <span class="attribute">left</span>: -<span class="number">1em</span>; <span class="attribute">right</span>: <span class="number">5em</span> &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>top</code>和<code>bottom</code>属性会上下移动相对定位的元素，不会改变其大小。<code>top</code>把盒向下移，<code>bottom</code>向上移。因为盒没有被分割或者拉伸，所以<code>top</code>或<code>bottom</code>的应用值总是（满足）：<code>top = -bottom</code>。如果都是<code>auto</code>，它们的应用值就都是0。如果其中一个是<code>auto</code>，它会变成另一个的相反数。如果都不是<code>auto</code>，就忽略<code>bottom</code>（即<code>bottom</code>的应用值将是负的<code>top</code>值）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> top == <span class="string">&#x27;auto&#x27;</span> <span class="keyword">and</span> bottom == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    top = <span class="number">0</span></span><br><span class="line">    bottom = <span class="number">0</span></span><br><span class="line"><span class="keyword">elif</span> top == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    top = -bottom</span><br><span class="line"><span class="keyword">elif</span> bottom == <span class="string">&#x27;auto&#x27;</span>:</span><br><span class="line">    bottom = -top</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    bottom = -top</span><br></pre></td></tr></table></figure>
+<h1 id="粘滞定位"><a class="markdownIt-Anchor" href="#粘滞定位"></a> 粘滞定位</h1>
+<p><code>position: sticky</code>表示元素采用粘滞定位。</p>
+<ul>
+<li>相对定位的包含块是其最近的块容器祖先的 content box，又或者最近的建立了格式化上下文的祖先（如<code>table</code>容器、<code>flex</code>容器、<code>grid</code>容器）的 content box，如果没有这样的祖先，包含块是初始包含块。</li>
+<li>粘滞定位的元素最初被视为相对定位，直到它的边界接触了粘滞定位矩形，就会变成固定定位，同时原来的位置保留。但它不会离开包含块，因此继续滚动时，随着父元素离开视口，它也会随之离开视口。如果期间遇到下一个粘滞定位元素，它也会回到原来位置。</li>
+<li>四个偏移属性用于定义粘滞定位矩形，例如<code>top</code>定义的粘滞定位矩形上边是元素的 border box 顶边加<code>top</code>构成的边界。当某个方向为<code>auto</code>时，该方向不会触发粘滞。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201020212708257_14006.png" alt="" width="621" /></li>
+<li>能够做成手机QQ分组标题的滚动效果。分组标题永远在上方，滚动到下一个分组时，下一个分组标题在上方，之前的分组标题被带走。</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/定位.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/定位.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80.html"><i class="fa fa-chevron-left">  </i><span>弹性布局</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E6%B5%AE%E5%8A%A8.html"><span>浮动</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

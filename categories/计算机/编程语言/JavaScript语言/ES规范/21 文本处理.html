@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="21 文本处理"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>21 文本处理 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 21 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#211-string%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 21.1 String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2111-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 21.1.1 String构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21124-stringraw-template-substitutions"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 21.1.2.4 String.raw ( template , …substitutions )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211311-stringprototypematch-regexp"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 21.1.3.11 String.prototype.match ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypereplace-searchvalue-replacevalue"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113141-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-getsubstitutionmatched-str-position-captures-replacement"><span class="toc-number">1.1.1.3.1.</span> <span class="toc-text"> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypesearch-regexp"><span class="toc-number">1.1.1.4.</span> <span class="toc-text"> 21.1.3.15 String.prototype.search ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211317-stringprototypesplit-separator-limit"><span class="toc-number">1.1.1.5.</span> <span class="toc-text"> 21.1.3.17 String.prototype.split ( separator, limit )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21242-get-regexp-species"><span class="toc-number">1.1.1.6.</span> <span class="toc-text"> 21.2.4.2 get RegExp [ @@species ]</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">21 文本处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="21-文本处理"><a class="markdownIt-Anchor" href="#21-文本处理"></a> 21 文本处理</h1>
+<h2 id="211-string对象"><a class="markdownIt-Anchor" href="#211-string对象"></a> 21.1 String对象</h2>
+<h3 id="2111-string构造函数"><a class="markdownIt-Anchor" href="#2111-string构造函数"></a> 21.1.1 String构造函数</h3>
+<h4 id="21124-stringraw-template-substitutions"><a class="markdownIt-Anchor" href="#21124-stringraw-template-substitutions"></a> 21.1.2.4 String.raw ( template , …substitutions )</h4>
+<p>可以使用可变数量的参数来调用String.raw函数。 第一个参数是模板，剩余参数构成列表<code>substitutions</code>。 采取以下步骤：<span id="more"></span></p>
+<ol>
+<li>令<code>substitutions</code>为一个List，它由传递给该函数的所有参数组成，从第二个参数开始。 如果传递的参数少于两个，则列表为空。</li>
+<li>令<code>numberOfSubstitutions</code>为<code>substitutions</code>中的元素数量</li>
+<li>令<code>cooked</code>为<code>ToObject(template)</code></li>
+<li><code>ReturnIfAbrupt(cooked)</code></li>
+<li>令<code>raw</code>为<code>ToObject(Get(cooked, &quot;raw&quot;))</code></li>
+<li><code>ReturnIfAbrupt(raw)</code></li>
+<li>令<code>literalSegments</code>为<code>ToLength(Get(raw, &quot;length&quot;))</code></li>
+<li><code>ReturnIfAbrupt(literalSegments)</code></li>
+<li>如果<code>literalSegments ≤ 0</code>，返回空字符串</li>
+<li>令<code>stringElements</code>为一个新列表</li>
+<li>令<code>nextIndex</code>为<code>0</code></li>
+<li>重复执行：
+<ol>
+<li>令<code>nextKey</code>为<code>ToString(nextIndex)</code></li>
+<li>令<code>nextSeg</code>为<code>ToString(Get(raw, nextKey))</code></li>
+<li><code>ReturnIfAbrupt(nextSeg)</code></li>
+<li>将<code>nextSeg</code>的代码单元元素按顺序附加到<code>stringElements</code>的末尾</li>
+<li>如果<code>nextIndex + 1 = literalSegments</code>，则返回String值，该String值的代码单元为列表<code>stringElements</code>中按顺序的元素中。 如果<code>stringElements</code>没有元素，则返回空字符串。</li>
+<li>如果<code>nextIndex &lt; numberOfSubstitutions</code>，则令<code>next</code>为<code>substitutions[nextIndex]</code></li>
+<li>否则，令<code>next</code>为空字符串</li>
+<li>令<code>nextSub</code>为<code>ToString(next)</code></li>
+<li><code>ReturnIfAbrupt(nextSub)</code></li>
+<li>将<code>nextSub</code>的代码单元元素按顺序附加到<code>stringElements</code>的末尾</li>
+<li>令<code>nextIndex</code>为<code>nextIndex + 1</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="211311-stringprototypematch-regexp"><a class="markdownIt-Anchor" href="#211311-stringprototypematch-regexp"></a> 21.1.3.11 String.prototype.match ( regexp )</h4>
+<p>当使用参数<code>regexp</code>调用match方法时，将执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>如果<code>regexp</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>matcher</code>为<code>GetMethod(regexp, @@match)</code></li>
+<li><code>ReturnIfAbrupt(matcher)</code></li>
+<li>如果<code>matcher</code>不是<code>undefined</code>，则返回<code>Call(matcher, regexp, «‍O»)</code></li>
+</ol>
+</li>
+<li>令<code>S</code>为<code>ToString(O)</code></li>
+<li><code>ReturnIfAbrupt(S)</code></li>
+<li>令<code>rx</code>为<code>RegExpCreate(regexp, undefined)</code>（参见 21.2.3.2.3）</li>
+<li><code>ReturnIfAbrupt(rx)</code></li>
+<li>返回<code>Invoke(rx, @@match, «‍S»)</code></li>
+</ol>
+<p>注意：<code>match</code>函数是有意通用的； 它不需要其<code>this</code>值是String对象。 因此，可以将其转移到其他种类的对象中用作方法。</p>
+<h4 id="211314-stringprototypereplace-searchvalue-replacevalue"><a class="markdownIt-Anchor" href="#211314-stringprototypereplace-searchvalue-replacevalue"></a> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</h4>
+<p>当使用参数<code>searchValue</code>和<code>replaceValue</code>调用replace方法时，将执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>如果<code>searchValue</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>replacer</code>为<code>GetMethod(searchValue, @@replace)</code></li>
+<li><code>ReturnIfAbrupt(replacer)</code></li>
+<li>如果<code>replacer</code>不是<code>undefined</code>，则返回<code>Call(replacer, searchValue, «O, replaceValue»)</code></li>
+</ol>
+</li>
+<li>令<code>string</code>为<code>ToString(O)</code></li>
+<li><code>ReturnIfAbrupt(string)</code></li>
+<li>令<code>searchString</code>为<code>ToString(searchValue)</code></li>
+<li><code>ReturnIfAbrupt(searchString)</code></li>
+<li>令<code>functionalReplace</code>为<code>IsCallable(replaceValue)</code></li>
+<li>如果<code>functionalReplace</code>为<code>false</code>，则
+<ol>
+<li>令<code>replaceValue</code>为<code>ToString(replaceValue)</code></li>
+<li><code>ReturnIfAbrupt(replaceValue).</code></li>
+</ol>
+</li>
+<li>在<code>string</code>中搜索<code>searchString</code>的第一次出现，令<code>pos</code>为匹配的子字符串的第一个代码单元的索引，并令<code>matched</code>为<code>searchString</code>。 如果未找到<code>searchString</code>，则返回<code>string</code>。</li>
+<li>如果<code>functionalReplace</code>为<code>true</code>，则
+<ol>
+<li>令<code>replValue</code>为<code>Call(replaceValue, undefined,«matched, pos, string»)</code></li>
+<li>令<code>replStr</code>为<code>ToString(replValue)</code></li>
+<li><code>ReturnIfAbrupt(replStr)</code></li>
+</ol>
+</li>
+<li>否则，
+<ol>
+<li>令<code>captures</code>为空列表</li>
+<li>令<code>replStr</code>为<code>GetSubstitution(matched, string, pos, captures, replaceValue)</code></li>
+</ol>
+</li>
+<li>令<code>tailPos</code>为<code>pos</code>加<code>matched</code>中代码单元的数量</li>
+<li>令<code>newString</code>为由<code>string</code>、<code>replStr</code>的第一个<code>pos</code>代码单元，以及<code>string</code>中从索引<code>index</code>开始的尾随子串连接而成的字符串。如果<code>pos</code>为<code>0</code>，则连接的第一个元素将为空串。</li>
+<li>返回<code>newString</code></li>
+</ol>
+<p>注意：<code>replace</code>函数是有意通用的； 它不需要求其<code>this</code>值为String对象。 因此，可以将其转移到其他种类的对象中用作方法。</p>
+<h5 id="2113141-运行时语义-getsubstitutionmatched-str-position-captures-replacement"><a class="markdownIt-Anchor" href="#2113141-运行时语义-getsubstitutionmatched-str-position-captures-replacement"></a> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</h5>
+<h4 id="211315-stringprototypesearch-regexp"><a class="markdownIt-Anchor" href="#211315-stringprototypesearch-regexp"></a> 21.1.3.15 String.prototype.search ( regexp )</h4>
+<p>当使用参数<code>regexp</code>调用 search 方法时，将执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>如果<code>regexp</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>searcher</code>为<code>GetMethod(regexp, @@search)</code></li>
+<li><code>ReturnIfAbrupt(searcher)</code></li>
+<li>如果<code>searcher</code>不是<code>undefined</code>，则返回<code>Call(searcher, regexp, «O»)</code></li>
+</ol>
+</li>
+<li>令<code>string</code>为<code>ToString(O)</code></li>
+<li><code>ReturnIfAbrupt(string)</code></li>
+<li>令<code>rx</code>为<code>RegExpCreate(regexp, undefined)</code>（参见 21.2.3.2.3）</li>
+<li><code>ReturnIfAbrupt(rx)</code></li>
+<li>返回<code>Invoke(rx, @@search, «‍string»)</code></li>
+</ol>
+<p>注意：<code>search</code>函数是有意通用的； 它不需要求其<code>this</code>值为String对象。 因此，可以将其转移到其他种类的对象中用作方法。</p>
+<h4 id="211317-stringprototypesplit-separator-limit"><a class="markdownIt-Anchor" href="#211317-stringprototypesplit-separator-limit"></a> 21.1.3.17 String.prototype.split ( separator, limit )</h4>
+<p>返回一个Array对象，此对象转换为String的结果的子字符串已存储在其中。 通过从左到右搜索是否出现<code>separator</code>来确定子字符串。 这些出现不是返回数组中任何子字符串的一部分，而是用于划分字符串值。 <code>separator</code>的值可以是任何长度的字符串，也可以是具有<code>@@split</code>方法的对象，例如RegExp。</p>
+<p>调用split方法时，将执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
+<li><code>ReturnIfAbrupt(O)</code></li>
+<li>如果<code>separator</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>splitter</code>为<code>GetMethod(separator, @@split)</code></li>
+<li><code>ReturnIfAbrupt(splitter)</code></li>
+<li>如果<code>splitter</code>不是<code>undefined</code>，则返回<code>Call(splitter, separator, «O, limit»)</code></li>
+</ol>
+</li>
+<li>令<code>S</code>为<code>ToString(O)</code></li>
+<li><code>ReturnIfAbrupt(S)</code></li>
+<li>令<code>A</code>为<code>ArrayCreate(0)</code></li>
+<li>令<code>lengthA</code>为0</li>
+<li>如果<code>limit</code>为<code>undefined</code>，令<code>lim</code>为<code>2^53-1</code>，否则令<code>lim</code>为<code>ToLength(limit)</code></li>
+<li><code>ReturnIfAbrupt(lim)</code></li>
+<li>令<code>s</code>为<code>S</code>中元素的数量</li>
+<li>令<code>p = 0</code></li>
+<li>令<code>R</code>为<code>ToString(separator)</code></li>
+<li><code>ReturnIfAbrupt(R)</code></li>
+<li>如果<code>lim = 0</code>，返回<code>A</code></li>
+<li>如果<code>separator</code>为<code>undefined</code>，则
+<ol>
+<li>执行<code>CreateDataProperty(A, &quot;0&quot;, S)</code></li>
+<li>断言：上面的调用不会产生非常规完结</li>
+<li>返回<code>A</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="21242-get-regexp-species"><a class="markdownIt-Anchor" href="#21242-get-regexp-species"></a> 21.2.4.2 get RegExp [ @@species ]</h4>
+<p><code>RegExp[@@species]</code>是一个访问器属性，其<code>set</code>访问器函数为<code>undefined</code>，它的<code>get</code>访问器函数执行以下步骤：</p>
+<ol>
+<li>返回<code>this</code>值</li>
+</ol>
+<p>此函数的<code>name</code>属性值为<code>get [Symbol.species]</code></p>
+<p>注意：RegExp原型方法通常使用其<code>this</code>对象的构造函数来创建派生对象。 但是，子类构造函数可以通过重新定义其<code>@@species</code>属性来覆盖该默认行为。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/21 文本处理.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/21 文本处理.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/20%20%E6%95%B0%E5%AD%97%E5%92%8C%E6%97%A5%E6%9C%9F.html"><i class="fa fa-chevron-left">  </i><span>20 数字和日期</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/22%20%E7%B4%A2%E5%BC%95%E9%9B%86%E5%90%88.html"><span>22 索引集合</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="弹性布局"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>弹性布局 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text"> 名词解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text"> 弹性容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%85%83%E7%B4%A0"><span class="toc-number">4.</span> <span class="toc-text"> 弹性元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%AD%90%E5%85%83%E7%B4%A0"><span class="toc-number">4.1.</span> <span class="toc-text"> 绝对定位子元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%92%8C%E5%86%85%E8%BE%B9%E8%B7%9D"><span class="toc-number">4.2.</span> <span class="toc-text"> 外边距和内边距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#z-order"><span class="toc-number">4.3.</span> <span class="toc-text"> z-order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.4.</span> <span class="toc-text"> 显示顺序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8%E8%BD%B4"><span class="toc-number">5.</span> <span class="toc-text"> 弹性容器轴</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%BD%B4"><span class="toc-number">5.1.</span> <span class="toc-text"> 主轴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C"><span class="toc-number">5.2.</span> <span class="toc-text"> 换行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%BD%B4%E6%8D%A2%E8%A1%8C%E7%AE%80%E5%86%99"><span class="toc-number">5.3.</span> <span class="toc-text"> 主轴&#x2F;换行简写</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E9%BD%90"><span class="toc-number">6.</span> <span class="toc-text"> 对齐</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#auto%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">6.1.</span> <span class="toc-text"> auto外边距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%85%83%E7%B4%A0%E5%9C%A8%E4%B8%BB%E8%BD%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">6.2.</span> <span class="toc-text"> 弹性元素在主轴的空间分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%85%83%E7%B4%A0%E5%9C%A8%E4%BA%A4%E5%8F%89%E8%BD%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">6.3.</span> <span class="toc-text"> 弹性元素在交叉轴的空间分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E8%A1%8C%E5%9C%A8%E4%BA%A4%E5%8F%89%E8%BD%B4%E7%9A%84%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">6.4.</span> <span class="toc-text"> 弹性行在交叉轴的空间分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%AE%B9%E5%99%A8%E5%9F%BA%E7%BA%BF"><span class="toc-number">6.5.</span> <span class="toc-text"> 弹性容器基线</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%85%83%E7%B4%A0%E7%9A%84%E6%89%A9%E5%B1%95%E4%B8%8E%E6%94%B6%E7%BC%A9"><span class="toc-number">7.</span> <span class="toc-text"> 弹性元素的扩展与收缩</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#flex%E5%B1%9E%E6%80%A7"><span class="toc-number">7.1.</span> <span class="toc-text"> flex属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%A2%9E%E9%95%BF%E5%9B%A0%E5%AD%90"><span class="toc-number">7.2.</span> <span class="toc-text"> 弹性增长因子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E7%BC%A9%E5%87%8F%E5%9B%A0%E5%AD%90"><span class="toc-number">7.3.</span> <span class="toc-text"> 弹性缩减因子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%9F%BA%E5%87%86"><span class="toc-number">7.4.</span> <span class="toc-text"> 弹性基准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80%E7%AE%97%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text"> 弹性布局算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E8%AE%BE%E7%BD%AE"><span class="toc-number">8.1.</span> <span class="toc-text"> 初始设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9Aline-length"><span class="toc-number">8.2.</span> <span class="toc-text"> 确定Line Length</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E4%B8%BB%E5%B0%BA%E5%AF%B8"><span class="toc-number">8.3.</span> <span class="toc-text"> 确定主尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E4%BA%A4%E5%8F%89%E5%B0%BA%E5%AF%B8"><span class="toc-number">8.4.</span> <span class="toc-text"> 确定交叉尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%BD%B4%E5%AF%B9%E9%BD%90"><span class="toc-number">8.5.</span> <span class="toc-text"> 主轴对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BD%B4%E5%AF%B9%E9%BD%90"><span class="toc-number">8.6.</span> <span class="toc-text"> 交叉轴对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E5%BC%B9%E6%80%A7%E9%95%BF%E5%BA%A6"><span class="toc-number">8.7.</span> <span class="toc-text"> 确定弹性长度</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">弹性布局</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-14</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h1>
+<p>在弹性布局中，元素可以沿任意流方向布局，同时尺寸可以伸缩，既可以增加尺寸来占满未使用的空间，也可以收缩来避免溢出父元素。不管水平还是垂直对齐元素都十分容易。嵌套的弹性盒子（垂直方向弹性容器里面放水平方向弹性容器，又或者反过来）可以用来建立二维布局。</p>
+<span id="more"></span>
+<p>CSS 2.1定义了四种布局模式——根据盒子与兄弟、祖先盒子的关系来确定盒子的大小和位置的算法。</p>
+<ul>
+<li>块布局：用于布局文档。</li>
+<li>行内布局：用于布局文本。</li>
+<li>表格布局：用于以表格格式对2D数据进行布局。</li>
+<li>定位布局：用于非常明确的定位，而无需过多考虑文档中的其他元素。</li>
+</ul>
+<p>CSS Flexible Box Layout Module Level 1增加了第五种布局模式：弹性布局，用于布局更复杂的应用和网页。</p>
+<p>弹性布局表面上和块布局类似，但它缺少许多块布局中可用的更复杂的以文本或文档为中心的属性，例如<code>float</code>和<code>column</code>。作为回报，它获得了简单而强大的工具，可以按照Web应用程序和复杂网页经常需要的方式来分配空间和对齐内容。弹性容器的内容：</p>
+<ul>
+<li>
+<p>可以沿任意流方向（向左、向右、向上、向下）布局。</p>
+</li>
+<li>
+<p>可以改变显示顺序，即显示顺序独立于文档中的书写顺序。</p>
+</li>
+<li>
+<p>可以沿一个主轴线性布局，也可以沿交叉轴布置多行。</p>
+</li>
+<li>
+<p>可以根据可用空间伸缩自己的尺寸</p>
+</li>
+<li>
+<p>可以相对于容器对齐，也可以在secondary(cross)上对齐</p>
+</li>
+<li>
+<p>可以沿主轴动态折叠或展开，同时保持容器的交叉尺寸</p>
+</li>
+<li>
+<p>这些子元素不管是DOM节点、文本节点（不能是纯空白）还是生成内容，都称为弹性元素(flex item)。文本节点也在匿名弹性元素中，它从弹性容器继承所有能继承的属性，不能继承的属性取初始值。</p>
+</li>
+<li>
+<p>弹性容器中的绝对定位子元素也是弹性元素，但在确定其尺寸和位置时，将其视为弹性容器中唯一的弹性元素。</p>
+</li>
+<li>
+<p>只有直接子元素使用弹性盒布局，其他后代元素并不受影响。可以把子元素也变成一个弹性容器，这样子元素既是弹性元素，也是弹性容器。</p>
+</li>
+<li>
+<p>弹性盒的目的是实现一维内容分布，它最适合沿一个方向布置内容，虽然也可以实现二维排列，但这不是它设计的最初目的。</p>
+</li>
+<li>
+<p>弹性容器有一个主轴和一个交叉轴，弹性元素基于这两个轴放置。</p>
+</li>
+<li>
+<p>弹性元素的外边距不会折叠。</p>
+</li>
+</ul>
+<h1 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h1>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201106101136015_24498.png" alt="" width="621" /></p>
+<ul>
+<li>弹性容器(flex container)：<code>display</code>的计算值为<code>flex</code>或<code>inline-flex</code>的元素会生成弹性容器盒。<code>flex</code>生成块级弹性容器，<code>inline-flex</code>生成行内级弹性容器。</li>
+<li>弹性元素(flex items)：弹性容器中的流内孩子称为弹性元素，它们根据弹性布局模型放置。`</li>
+<li>主轴/主方向(main axis/main dimension)：弹性容器的主轴是弹性元素布局的基本轴。主轴在主方向延伸。</li>
+<li>主起边/主终边(main-start/main-end)：弹性元素被放置在容器内，从主起边开始放置，朝着主终边延伸。</li>
+<li>主尺寸/主尺寸属性(main size/main size property)：弹性容器或弹性元素的宽度或高度（取决于主方向）是该盒子的主尺寸。因此，它的主尺寸属性是<code>width</code>或<code>height</code>属性。同样，它的最小和最大主尺寸属性是<code>min-width</code>/<code>max-width</code>或<code>min-height</code>/<code>max-height</code>属性（取决于主方向），并确定其最小/最大主尺寸。</li>
+<li>交叉轴/交叉方向(cross axis/cross dimension)：垂直于主轴的轴叫做交叉轴。它沿着交叉方向延伸。</li>
+<li>交叉起边/交叉终边(cross-start/cross-end）：弹性行(flex lines)被弹性元素填满，同时被放置在容器内，从交叉起边开始放置，朝着交叉终边延伸。</li>
+<li>交叉尺寸/交叉尺寸属性(cross size/cross size property)：弹性容器或弹性元素的宽度或高度（取决于交叉方向）是该盒子的交叉尺寸。因此，它的交叉尺寸属性是<code>width</code>或<code>height</code>属性。同样，它的最小和最大交叉尺寸属性是<code>min-width</code>/<code>max-width</code>或<code>min-height</code>/<code>max-height</code>属性（取决于交叉方向），并确定其最小/最大交叉尺寸。</li>
+</ul>
+<h1 id="弹性容器"><a class="markdownIt-Anchor" href="#弹性容器"></a> 弹性容器</h1>
+<p>一个弹性容器会为它的内容建立一个新的弹性格式化上下文，这和建立块格式化上下文类似，除了使用弹性布局而不是块布局。例如，浮动不会侵入弹性容器，并且弹性容器的外边距也不会与它内容的外边距折叠。弹性容器是它内容的包含块，就像块容器一样。<code>overflow</code>属性适用于弹性容器。<br />
+弹性容器不是块容器，因此某些以块布局为前提设计的属性不适用于弹性布局。尤其是：</p>
+<ul>
+<li><code>float</code>和<code>clear</code>不会使弹性元素浮动或者生成间隙(clearance)，也不会使它成为流外元素。</li>
+<li><code>vertical-align</code>对弹性元素没有作用。</li>
+<li><code>::first-line</code>和<code>::first-letter</code>伪元素不能用于弹性容器，弹性容器也不会作为祖先元素的第一格式化行或第一个字母。</li>
+</ul>
+<h1 id="弹性元素"><a class="markdownIt-Anchor" href="#弹性元素"></a> 弹性元素</h1>
+<p>不严格的说，弹性元素是弹性容器中表示流内内容的盒子。<br />
+弹性容器的每个流内孩子都会成为弹性元素，匿名文本会被包装在一个匿名块容器弹性元素内。但是，如果整个匿名文本仅包含空白符（即可能受<code>white-space</code>属性影响的字符），则不会渲染（就好像文本节点设置了<code>display: none</code>一样）。<br />
+弹性元素之间没有<code>display: inline-block</code>之间的空白。<br />
+匿名弹性元素无法设置样式，它只会继承弹性容器的样式，不能继承的属性是初始值。<br />
+一个弹性元素会为它的内容建立一个独立的格式化上下文。然而，弹性元素自己是flex-level的盒子：它们参与容器的弹性格式化上下文，而不在块格式化上下文中。</p>
+<p>弹性元素是块级的，且<code>float</code>属性的计算值将为<code>none</code>，即不浮动。<br />
+绝对定位的弹性元素既受弹性容器的<code>justify-content</code>影响，又受自身的<code>align-self</code>影响。例如<code>align-self: center</code>将使它相对弹性容器的交叉轴居中。<br />
+对弹性元素来说，<code>min-width</code>的默认值是<code>auto</code>而不是0。如果设置的<code>min-width</code>小于<code>auto</code>的计算值，禁止换行的弹性元素宽度将比内容小，如果允许换行，弹性元素的宽度将正好放下内容，不会变的更窄。</p>
+<h2 id="绝对定位子元素"><a class="markdownIt-Anchor" href="#绝对定位子元素"></a> 绝对定位子元素</h2>
+<p>因为是流外的，一个弹性容器的绝对定位子元素不参与弹性布局。<br />
+确定弹性容器的绝对定位子元素的静态位置时，这个子元素就好像它是弹性容器中的唯一弹性元素，假设绝对定位子元素和弹性容器是它们使用大小的固定尺寸盒子。为此，<code>auto</code>的<code>margin</code>被视为0。<br />
+换句话说，弹性容器的绝对定位子元素的静态位置矩形是弹性容器的内容框(content box)。<br />
+因为上述原因，当你为弹性容器的绝对定位子元素设置<code>align-self: center</code>时，它会在弹性容器的交叉轴居中，因为它认为的弹性行是整个弹性容器的交叉轴。<br />
+类似的，当你为弹性容器设置<code>justify-content:center</code>时，也会使绝对定位子元素的静态位置在主轴居中。</p>
+<h2 id="外边距和内边距"><a class="markdownIt-Anchor" href="#外边距和内边距"></a> 外边距和内边距</h2>
+<p>相邻弹性元素的外边距不会折叠。<br />
+在考虑对齐或者空间分布时，一个弹性元素是以它的 margin box 作为基础对象的。<br />
+和块盒一样，弹性元素内外边距的百分数是相对于包含块宽度计算的。<br />
+<code>auto</code>的外边距会扩大来吸收相应方向的额外空间。这可以用于对齐，或者将相邻弹性元素推开。</p>
+<h2 id="z-order"><a class="markdownIt-Anchor" href="#z-order"></a> z-order</h2>
+<p>弹性元素的绘制和行内块元素完全相同，除了<code>order</code>会用修改过的文档顺序来代替原始文档顺序。并且即使<code>position</code>属性是<code>static</code>，<code>z-index</code>的非<code>auto</code>值也会创建一个堆叠上下文。（就像<code>position: relative</code>一样）<br />
+定位到弹性元素外部的后代仍然参与弹性元素建立的堆叠上下文。</p>
+<h2 id="显示顺序"><a class="markdownIt-Anchor" href="#显示顺序"></a> 显示顺序</h2>
+<p><code>order</code>属性可以修改单个弹性元素的显示顺序。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">integer</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：0</li>
+<li>适用于：弹性元素或弹性容器中绝对定位的子元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<p>取值表示一个序数组。<br />
+从最小的序数组开始，一直排到最大的序数组。<br />
+同一个序数组中的元素按其在源代码中的顺序显示。<br />
+要想比没有设置<code>order</code>属性的元素排的更前，只能把序数组设置的小于0，例如-1。</p>
+<h1 id="弹性容器轴"><a class="markdownIt-Anchor" href="#弹性容器轴"></a> 弹性容器轴</h1>
+<h2 id="主轴"><a class="markdownIt-Anchor" href="#主轴"></a> 主轴</h2>
+<p><code>flex-direction</code>属性控制排列弹性元素的主轴。弹性元素沿着主轴方向排列。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">row | row-reverse | column | column-reverse</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：row</li>
+<li>适用于：弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022150015895_9399.png" alt="" width="621" /></p>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>row</code>：与文字方向相同，对英语来说是从左到右。</li>
+<li><code>row-reverse</code>：与文字方向相反，对英语来说是从右到左。</li>
+<li><code>column</code>：对英语来说是从上到下。</li>
+<li><code>column-reverse</code>：对英语来说是从下到上。</li>
+</ul>
+<h2 id="换行"><a class="markdownIt-Anchor" href="#换行"></a> 换行</h2>
+<p>默认情况下，弹性容器是单行的，即便弹性元素在主轴上放不下，也不会换行或自行调整尺寸。如果通过<code>flex</code>属性设定允许弹性元素缩减尺寸，那就缩减尺寸，否则弹性元素将从容器中溢出。<br />
+<code>flex-wrap</code>属性允许弹性元素换行，当一条弹性行放不下时，创建新的弹性行变成多行或者多列，而不让弹性元素从容器中溢出或者缩减尺寸。<br />
+交叉轴是与主轴垂直的轴，对于水平书写的语言，交叉轴从上到下，对于垂直书写的语言，交叉轴从左到右。<br />
+新的弹性行沿交叉轴放置，所有弹性行占满整个交叉轴尺寸。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nowrap | wrap | wrap-reverse</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：nowrap</li>
+<li>适用于：弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>nowrap</code>：弹性元素以单行布局，禁止换行，这可能会导致弹性元素从容器中溢出。</li>
+<li><code>wrap</code>：如果容器在主轴的空间不足，可以换行。新一行沿交叉轴方向布置。</li>
+<li><code>wrap-reverse</code>：如果容器在主轴的空间不足，可以换行。新一行沿交叉轴的反方向布置。</li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022153614409_1000.png" alt="" width="621" /></p>
+<h2 id="主轴换行简写"><a class="markdownIt-Anchor" href="#主轴换行简写"></a> 主轴/换行简写</h2>
+<p><code>flex-flow</code>属性是<code>flex-direction</code>与<code>flex-wrap</code>的简写属性。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="string">&#x27;flex-direction&#x27;</span>&gt; || &lt;<span class="string">&#x27;flex-wrap&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：row nowrap</li>
+<li>适用于：弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022154612651_17860.png" alt="" width="621" /></p>
+<h1 id="对齐"><a class="markdownIt-Anchor" href="#对齐"></a> 对齐</h1>
+<p>默认情况下，不管<code>flex-flow</code>设为什么值，在弹性容器中放完全部弹性元素后留下的空白，始终出现在主轴终边与交叉轴终边的方向，但可以通过其他属性调整。<br />
+<code>justify-content</code>属性控制一行里的弹性元素在主轴上如何分布。<br />
+<code>align-content</code>属性控制弹性行在交叉轴上如何分布。<br />
+<code>align-items</code>属性定义各行里的弹性元素在交叉轴上如何分布。</p>
+<h2 id="auto外边距"><a class="markdownIt-Anchor" href="#auto外边距"></a> auto外边距</h2>
+<p>弹性元素上的<code>auto</code>外边距的作用和块流中的<code>auto</code>外边距类似：</p>
+<ul>
+<li>在计算flex bases和flexible lengths时，<code>auto</code>的<code>margin</code>被视为0</li>
+<li>在通过<code>justify-content</code>和<code>align-items</code>等属性对齐之前，该方向的任何正剩余空间会被分配给<code>auto</code>的外边距。注意，如果剩余空间被分配给了外边距，该方向的对齐属性会没有作用，因为外边距偷走了所有的剩余空间。</li>
+<li>溢出的弹性元素会忽略<code>auto</code>的外边距，并会在终边方向溢出。</li>
+</ul>
+<h2 id="弹性元素在主轴的空间分布"><a class="markdownIt-Anchor" href="#弹性元素在主轴的空间分布"></a> 弹性元素在主轴的空间分布</h2>
+<p><code>justify-content</code>属性控制每个弹性行里的弹性元素在主轴上如何分布。<br />
+这一步骤在flexible length和任何自动外边距之后进行。<br />
+多余的空白是指，当一行里弹性元素一个挨着一个放置，剩下的空白。如果允许换行，则空白是无法再放置下一个元素时，下一个元素移动到下一行后，本行剩下的空白。<br />
+不管如何调整空白，一行中的元素永远都是那些，该属性不会导致原本在某行的元素被移动到其他行。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;content-distribution&gt; | &lt;content-position&gt;</span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;content-distribution&gt; = space-between | space-around | space-evenly | stretch</span><br><span class="line">&lt;content-position&gt; = center | flex-start | flex-end</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：flex-start</li>
+<li>适用于：弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>flex-start</code>：弹性元素被打包作为一个整体放在该行的主起边。第一个弹性元素的主起边与该行的主起边对齐，之后每个弹性元素主起边与前一个弹性元素主终边对齐。</li>
+<li><code>flex-end</code>：弹性元素被打包作为一个整体放在主终边。最后一个弹性元素的主终边与该行的主终边对齐，之前每个弹性元素的主终边与后一个弹性元素的主起边对齐。</li>
+<li><code>center</code>：弹性元素被打包作为一个整体弹性行的中间位置。所有弹性元素作为整体的中点对应主轴的中点。后一个弹性元素的主起边与前一个弹性元素的主终边对齐，该行的主起边与第一个弹性元素的主起边之间的距离，和该行的主终边与最后一个弹性元素的主终边之间的距离，二者相等。（如果剩余空间是负的，元素会在两个方向等距离的溢出）</li>
+<li><code>space-between</code>：弹性元素在一行中均匀分布。如果剩余空间是负的或者该行只有一个弹性元素，值等同于<code>flex-start</code>。否则，第一个弹性元素的主起边与该行的主起边对齐，最后一个弹性元素的主终边与该行的主终边对齐，剩余空间均匀分布以使得相邻两个弹性元素的间距都是相同的。公式<code>gap_size = remain_space / (flex_item_number - 1)</code></li>
+<li><code>space-around</code>：如果剩余空间是负的或者该行只有一个弹性元素，值等同于<code>center</code>。否则，剩余空间均匀分布使得相邻两个弹性元素的间距都是相同的，但认为第一个元素和最后一个元素也是相邻的，即在一个主起边与主终边相连的环上均匀分布。效果是第一个弹性元素之前有空白，最后一个弹性元素之后有空白，且空白是相邻两个弹性元素间距的一半。公式<code>gap_size = remain_space / flex_item_number</code></li>
+<li><code>space-evenly</code>：如果剩余空间是负的或者该行只有一个弹性元素，值等同于<code>center</code>。否则，多余的空间均匀分布使得相邻两个弹性元素的间距都是相同的，第一个弹性元素到主轴开始位置也是间距，最后一个弹性元素到主轴结束位置也是间距。公式<code>gap_size = ramain_space / (flex_item_number + 1)</code></li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022155638757_10646.png" alt="" width="621" /><br />
+如果禁止弹性元素换行，该属性还影响溢出时弹性元素在主轴中的位置。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022163505948_27359.png" alt="" width="621" /></p>
+<h2 id="弹性元素在交叉轴的空间分布"><a class="markdownIt-Anchor" href="#弹性元素在交叉轴的空间分布"></a> 弹性元素在交叉轴的空间分布</h2>
+<p>所有弹性行的尺寸占满整个交叉轴，而在单个弹性行中，可以通过下列属性调整弹性元素在行中的位置。<br />
+<code>align-items</code>属性控制一行里的所有弹性元素在交叉轴上如何分布，包括匿名弹性元素。<br />
+<code>align-self</code>属性控制一行里某个特定的弹性元素在交叉轴上如何分布，它可以覆盖<code>align-items</code>的值。它不能用于弹性容器上，只能用在弹性元素上。匿名弹性元素的<code>align-self</code>永远与<code>align-items</code>相同。如果弹性元素交叉轴方向的外边距有任何一个是<code>auto</code>，则<code>align-self</code>属性不起作用。</p>
+<ol>
+<li><code>align-items</code></li>
+</ol>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：stretch</li>
+<li>适用于：弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<ol start="2">
+<li><code>align-self</code></li>
+</ol>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：弹性元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>auto</code>：使用弹性容器的<code>align-items</code>值。</li>
+<li><code>flex-start</code>：弹性元素的交叉起边与该行的交叉起边对齐。</li>
+<li><code>flex-end</code>：弹性元素的交叉终边与该行的交叉终边对齐。</li>
+<li><code>center</code>：弹性元素被放置在交叉轴在该行的中点（弹性元素margin box的中点与交叉轴在该行的中点对齐）。如果该行的交叉尺寸小于元素的交叉尺寸，则会在两个方向溢出相同距离。</li>
+<li><code>baseline</code>：这里的基线是指交叉轴方向的第一个基线。基线距离交叉轴起始方向最远的弹性元素维持<code>flex-start</code>，其他弹性元素的基线都与那个元素的基线对齐。如果该元素没有基线，就用交叉终边方向的边框对齐。</li>
+<li><code>stretch</code>：如果交叉尺寸属性的计算值是<code>auto</code>，并且交叉轴方向的外边距都不是<code>auto</code>，则弹性元素被拉伸。使得元素占满交叉轴穿过该行的距离。但如果设置了宽度或高度（包括最小/最大宽度或高度）等属性，这些属性优先，可能导致不拉伸。弹性元素的交叉起边 该行的交叉起边对齐。</li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022184036203_26102.png" alt="" width="621" /></p>
+<h2 id="弹性行在交叉轴的空间分布"><a class="markdownIt-Anchor" href="#弹性行在交叉轴的空间分布"></a> 弹性行在交叉轴的空间分布</h2>
+<p><code>align-content</code>属性控制当交叉轴上有多余空间时，弹性行在交叉轴上如何分布。<br />
+它只适用于分成多行显示的弹性容器，对只有一行的弹性容器没有影响。<br />
+多余的空白是指，当弹性行一个挨着一个放置，剩下的空白。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;content-distribution&gt; | &lt;content-position&gt;</span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;content-distribution&gt; = space-between | space-around | space-evenly | stretch</span><br><span class="line">&lt;content-position&gt; = center | flex-start | flex-end</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：stretch</li>
+<li>适用于：多行弹性容器</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>flex-start</code>：弹性行被打包放在弹性容器交叉轴的起始位置。第一行的交叉起边与弹性容器的交叉起边对齐，之后每个弹性行的交叉起边与前一个弹性行的交叉终边对齐。</li>
+<li><code>flex-end</code>：弹性行被打包放在弹性容器交叉轴的终止位置。最后一行的交叉终边与弹性容器的交叉终边对齐，之前每个弹性行的交叉终边与后一个弹性行的交叉起边对齐。</li>
+<li><code>center</code>：弹性行被打包放在弹性容器交叉轴的中间位置（打包的中点对应交叉轴的中点）。后一个弹性行的交叉起边与前一个弹性行的交叉终边对齐，同时第一行的交叉起边与弹性容器的交叉起边之间的距离，和最后一行的交叉终边与弹性容器的交叉终边之间的距离，二者相等。（如果剩余空间是负的，元素会在两个方向等距离的溢出）</li>
+<li><code>space-between</code>：弹性行在弹性容器中均匀分布。如果剩余空间是负的或者只有一个弹性行，值等同于<code>flex-start</code>。否则，第一个弹性行的交叉起边与弹性容器的交叉起边对齐，最后一个弹性行的交叉终边与弹性容器的交叉终边对齐，剩余空间均匀分布以使得相邻两个弹性行的间距都是相同的。公式<code>gap_size = remain_space / (flex_line_number - 1)</code>。</li>
+<li><code>space-around</code>：如果剩余空间是负的或者只有一个弹性行，值等同于<code>center</code>。否则，剩余空间均匀分布使得相邻两个弹性行的间距都是相同的，但认为第一行和最后一个行也是相邻的，即在一个交叉起边与交叉终边相连的环上均匀分布。效果是第一行之前有空白，最后一行之后有空白，且空白是相邻两个弹性行间距的一半。公式<code>gap_size = remain_space / flex_line_number</code></li>
+<li><code>space-evenly</code>：如果剩余空间是负的或者只有一个弹性行，值等同于<code>center</code>。否则，多余的空间均匀分布使得相邻两个弹性行的间距都是相同的，第一行到弹性容器的交叉起边也是间距，最后一行到弹性容器的交叉终边也是间距。公式<code>gap_size = ramain_space / (flex_line_number + 1)</code></li>
+<li><code>stretch</code>：拉伸弹性行以占满剩余空间。如果剩余空间是负的，值等同于<code>flex-start</code>，否则，剩余空间平均分配给所有弹性行，来增加它们的交叉尺寸。</li>
+</ul>
+<p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022191835959_26702.png" alt="" width="621" /></p>
+<h2 id="弹性容器基线"><a class="markdownIt-Anchor" href="#弹性容器基线"></a> 弹性容器基线</h2>
+<p>为了使弹性容器自身参与基线对齐（例如弹性容器自身又是外部弹性容器中的弹性元素），它需要提交最能代表其内容的基线位置。为此，按以下方式确定弹性容器的基线（在使用order重新排序，并考虑了<code>flex-direction</code>后）：</p>
+<ul>
+<li>第一个/最后一个主轴基线集：<br />
+当弹性容器的行内方向（水平书写模式就是水平方向）和主轴匹配时，它的基线按以下方式确定：</li>
+</ul>
+<ol>
+<li>如果在弹性容器的第一个弹性行或最后一个弹性行上的任何弹性元素参与基线对齐，弹性容器的第一/最后一个主轴基线集就由这些弹性元素的基线组成。</li>
+<li>否则，如果弹性容器有至少一个弹性元素，弹性容器的第一/最后一个主轴基线集就由第一个/最后一个弹性元素的基线组成。</li>
+<li>否则，弹性容器没有第一/最后一个主轴基线集，在需要时会根据对齐上下文规则合成一个。</li>
+</ol>
+<ul>
+<li>第一个/最后一个交叉轴基线集：<br />
+当弹性容器的行内方向（水平书写模式就是水平方向）和交叉轴匹配时，它的基线按以下方式确定：</li>
+</ul>
+<ol>
+<li>如果弹性容器有至少一个弹性元素，弹性容器的第一个/最后一个交叉轴基线集由第一个/最后一个弹性元素的基线组成（如果元素没有对应于弹性容器交叉轴的对齐基线，会由交叉轴终边方向的边框合成）</li>
+<li>否则，弹性容器没有第一/最后一个交叉轴基线集，在需要时会根据对齐上下文规则合成一个。</li>
+</ol>
+<p>在根据上述规则计算基线时，如果用来确定基线的盒有<code>overflow</code>属性并允许滚动，该盒必须被视为它滚动处于起始位置。<br />
+在确定单元格基线时，一个弹性容器提供基线，就和行框或表格行的做法一样。</p>
+<h1 id="弹性元素的扩展与收缩"><a class="markdownIt-Anchor" href="#弹性元素的扩展与收缩"></a> 弹性元素的扩展与收缩</h1>
+<p>弹性布局的关键特点就是能够使元素变得有弹性，能够改变它们的宽度/高度来填充主方向上的可用空间。这是通过<code>flex</code>属性进行的。<br />
+一个弹性容器会将剩余空间分配给它的弹性元素（根据它们自身的弹性增长因子）来占满整个容器，也会使弹性元素收缩（根据它们的弹性缩减因子）来防止溢出。<br />
+一个弹性元素只在<code>flex-grow</code>与<code>flex-shrink</code>均为0时才是完全无弹性的，其他时候都是有弹性的。</p>
+<h2 id="flex属性"><a class="markdownIt-Anchor" href="#flex属性"></a> flex属性</h2>
+<p><code>flex</code>属性指定了弹性增长因子、弹性缩减因子与弹性基准。<br />
+当一个盒子是弹性元素时，确定盒子的主尺寸要考虑<code>flex</code>属性值，而不是仅由主尺寸属性来确定。如果盒子不是弹性元素，则<code>flex</code>属性无效。<br />
+<code>flex</code>属性是<code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code>的简写属性。</p>
+<p>规范推荐使用简写属性，而不是单独的属性来设置弹性基准、增长因子与缩减因子。</p>
+<ul>
+<li>
+<p>取值语法：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">none | [ &lt;<span class="string">&#x27;flex-grow&#x27;</span>&gt; &lt;<span class="string">&#x27;flex-shrink&#x27;</span>&gt;? || &lt;<span class="string">&#x27;flex-basis&#x27;</span>&gt; ]</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始值：0 1 auto</p>
+</li>
+<li>
+<p>适用于：弹性元素</p>
+</li>
+<li>
+<p>计算值：指定的值</p>
+</li>
+<li>
+<p>继承性：否</p>
+</li>
+<li>
+<p>动画性：是</p>
+</li>
+<li>
+<p>如果声明了三个值：第一个值是<code>flex-grow</code>，第二个值是<code>flex-shrink</code>，第三个值是<code>flex-basis</code>。</p>
+<ul>
+<li><code>flex-grow</code>不写时默认为1。这和该单独属性的初始值并不一致。</li>
+<li><code>flex-shrink</code>：不写时默认为1。</li>
+<li><code>flex-basis</code>：不写时默认为0px。这和该单独属性的初始值并不一致。</li>
+</ul>
+</li>
+<li>
+<p>如果只声明一个值：</p>
+<ul>
+<li><code>&lt;number&gt;</code>：等价于<code>flex: &lt;number&gt; 1 0</code>，即该值被解释为<code>flex-grow</code>，<code>flex-shrink</code>被设为1，<code>flex-basis</code>被设为0px</li>
+<li><code>&lt;length-percentage&gt;</code>：等价于<code>flex: 1 1 &lt;length-percentage&gt;</code>，为0时必须写单位，否则会被解释为<code>&lt;flex-grow&gt;</code>。</li>
+<li>关键字：<code>none</code>或<code>auto</code>或<code>initial</code></li>
+</ul>
+</li>
+<li>
+<p>如果声明了两个值，第一个值必须是<code>&lt;number&gt;</code>，被解释为<code>flex-grow</code>，第二个值有两种情况：</p>
+<ul>
+<li><code>&lt;number&gt;</code>：等价于<code>flex: &lt;number&gt; &lt;number&gt; 0</code>，该值被解释为<code>flex-shrink</code>，且<code>flex-basis</code>被设为0</li>
+<li><code>&lt;length-percentage&gt;</code>：等价于<code>flex: &lt;number&gt; 1 &lt;length-percentage&gt;</code>，该值被解释为<code>flex-basis</code>，且<code>flex-shrink</code>被设为1</li>
+</ul>
+</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>initial</code>：等价于<code>flex: 0 1 auto</code>。元素尺寸由<code>width</code>和<code>height</code>属性决定。它会缩减尺寸以适合容器，但不会在有剩余空间时增长尺寸。</li>
+<li><code>auto</code>：等价于<code>flex: 1 1 auto</code>。元素尺寸由<code>width</code>和<code>height</code>属性决定。它会缩减尺寸以适合容器，也会在有剩余空间时增长尺寸。</li>
+<li><code>none</code>：等价于<code>flex: 0 0 auto</code>。元素尺寸由<code>width</code>和<code>height</code>属性决定。它不会缩减尺寸以适合容器，也不会在有剩余空间时增长尺寸。</li>
+</ul>
+<h2 id="弹性增长因子"><a class="markdownIt-Anchor" href="#弹性增长因子"></a> 弹性增长因子</h2>
+<p><code>flex-grow</code>属性用于设置弹性增长因子，取值范围是[0,+oo)。<br />
+该属性决定了在分配正的剩余空间时，元素相对于其余弹性元素应该增长多少。<br />
+<code>flew-grow: 1</code>的意思是，元素要求占用100%的剩余空间。如果一行中的弹性元素要求的剩余总空间超过了100%，这些要求的数字会被减少，但各要求之间的比例仍然保持。<br />
+因此，如果一行中有三个弹性元素设置了<code>flew-grow: 0.25</code>，意思是它们要求占用25%剩余空间。这会导致剩余空间中的25%仍然留着没被分配。<br />
+标准推荐使用整数，例如1和2，而非<code>0.33</code>和<code>0.67</code>来设置弹性增长因子。</p>
+<p>通常，剩余空间是弹性容器的主轴大小减去一行中所有弹性元素的尺寸剩下的空间。<br />
+当每个弹性元素的弹性基准都为0时，剩余空间是整个主轴的尺寸减去冻结的元素主尺寸。<br />
+每个弹性元素增加的大小为由公式给出：<br />
+<code>free_space * max(1, sum_unfrozen_flex_grow) * (flex_grow / sum_unfrozen_flex_grow)</code><br />
+可以看到当该行的<code>flex-grow</code>之和小于1时，用来分配的空间要小于实际剩余空间。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;number&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：0</li>
+<li>适用于：弹性元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<h2 id="弹性缩减因子"><a class="markdownIt-Anchor" href="#弹性缩减因子"></a> 弹性缩减因子</h2>
+<p><code>flex-shrink</code>属性用于设置弹性缩减因子，取值范围是[0,+oo)。<br />
+该属性决定了在分配负的剩余空间时，元素相对于其余弹性元素应该收缩多少。</p>
+<p>分配负空间时，做法和弹性增长因子类似，所有缩减因子求和然后看该元素的缩减因子占和的比例，但不同的是这里使用的是缩放的弹性缩减因子，即弹性缩减因子乘以弹性基础尺寸，而不是直接使用弹性缩减因子。这种做法可以使小的弹性元素不会在大的弹性元素之前收缩到0。</p>
+<p>默认情况下，弹性元素不会收缩的比最小内容尺寸还小（最长单词长度或者给定的固定主尺寸），要改变这个行为，可以设置<code>min-width</code>或<code>min-height</code>属性。</p>
+<p>弹性元素根据缩减因子以及元素的宽度按比例缩小，这里的宽度通常指元素内容不换行时的宽度。<br />
+剩余空间是不允许换行时弹性容器的主轴大小减去一行中所有弹性元素的尺寸“不足”的空间。<br />
+缩减的前提是缩减后的尺寸不能小于弹性元素的内容占用的尺寸，这样的元素不能缩小，无法缩小的弹性元素就跟没有设置弹性缩减因子一样。<br />
+每个弹性元素缩小的大小为由公式给出：<br />
+<code>width * (flex_shrink * ratio)</code><br />
+<code>ratio = lack_free_space / sum_unfrozen(width * flex_shrink)</code><br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201022205301175_13601.png" alt="" width="600" /></p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;number&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：1</li>
+<li>适用于：弹性元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<h2 id="弹性基准"><a class="markdownIt-Anchor" href="#弹性基准"></a> 弹性基准</h2>
+<p><code>flex-basis</code>属性设置了弹性基准，在根据弹性因子分配剩余空间之前，它是弹性元素的初始主尺寸。<br />
+它接受与<code>width</code>和<code>height</code>相同的属性值（除了属性值为<code>auto</code>时略有不同）以及<code>content</code>关键字（除Firefox外均不支持）。</p>
+<p>指明了如何应用弹性增长因子和弹性缩减因子。<br />
+该属性优先于<code>width</code>或<code>height</code>属性。<br />
+负值是无效的。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content | &lt;width&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：弹性元素</li>
+<li>百分数：相对于弹性容器的主尺寸计算</li>
+<li>计算值：指定的值，长度值为绝对长度</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值具体作用如下：</p>
+<ul>
+<li><code>auto</code>：计算值为主尺寸属性，即<code>width</code>或<code>height</code>。</li>
+<li><code>content</code>：等价于<code>flex-basis: auto; width: auto;</code></li>
+</ul>
+<p>首先根据<code>flex-basis</code>分配初始主尺寸，然后用弹性容器主尺寸减去弹性元素初始宽度之和计算剩余可分配空间，接着根据弹性增长或收缩因子增大或减小弹性元素，以使最终分配主尺寸之和等于弹性容器主尺寸。</p>
+<h1 id="弹性布局算法"><a class="markdownIt-Anchor" href="#弹性布局算法"></a> 弹性布局算法</h1>
+<p><a target="_blank" rel="noopener" href="https://drafts.csswg.org/css-flexbox-1/#algo-main-item">https://drafts.csswg.org/css-flexbox-1/#algo-main-item</a></p>
+<p>自己的理解：</p>
+<ol>
+<li>确定每个弹性元素的弹性基本尺寸和假定主尺寸</li>
+<li>一个接一个摆放在相同弹性行，直到加上下一个弹性元素的外部假定主尺寸(margin box)之后，超过了弹性容器的主尺寸，则生成新的弹性行，将该元素放在新的弹性行中。</li>
+<li>弹性元素主轴对齐、交叉轴对齐。</li>
+<li>计算可用空间（容器主尺寸减去弹性元素的外部假定主尺寸之和），根据剩余空间的正负进行缩放。</li>
+</ol>
+<h2 id="初始设置"><a class="markdownIt-Anchor" href="#初始设置"></a> 初始设置</h2>
+<ol>
+<li>如<a target="_blank" rel="noopener" href="https://drafts.csswg.org/css-flexbox-1/#flex-items">4 Flex Items</a>节所述生成匿名弹性元素</li>
+</ol>
+<h2 id="确定line-length"><a class="markdownIt-Anchor" href="#确定line-length"></a> 确定Line Length</h2>
+<ol start="2">
+<li>确定弹性元素在主轴和交叉轴方向的可用空间。对每个方向，如果弹性容器的内容框(content box)在该方向是确定的大小，就使用该大小；如果弹性容器的在该方向的大小受到<code>min-content</code>或<code>max-content</code>约束，则可用空间就是这个约束。否则，从弹性容器的可用空间中减去弹性容器的外边距、边框、内边距，然后使用这个值。（这可能导致一个无限值）<br />
+例如，一个浮动且尺寸<code>auto</code>的弹性容器中的弹性元素的可用空间为：
+<ul>
+<li>水平方向是弹性容器的包含块的宽度减去弹性容器的外边距、边框和内边距。</li>
+<li>垂直方向是无限的</li>
+</ul>
+</li>
+<li>为每个弹性元素确定弹性基本尺寸和假定的主尺寸
+<ol>
+<li>如果弹性元素具有确定的<code>flex-basis</code>，则它就是弹性基本尺寸。</li>
+<li>如果弹性元素有首选宽高比、<code>flex-basis: content</code>和确定的交叉尺寸，则根据交叉尺寸和弹性元素的宽高比来计算弹性基本尺寸。</li>
+<li>如果<code>flex-basis</code>是<code>content</code>或取决于其可用空间，并且弹性容器的尺寸受到<code>min-content</code>或<code>max-content</code>约束（例如执行自动表格布局时），则在该约束下调整元素尺寸。弹性基本尺寸就是元素的最终主尺寸。</li>
+<li>否则，如果<code>flex-basis</code>是<code>content</code>或取决于其可用空间，则可用主尺寸是无限的，并且弹性元素的行内轴平行于主轴，使用正交流中的盒规则来布局弹性元素。弹性基本尺寸是元素的<code>max-content</code>的主尺寸。注意：这种情况发生在，例如，在英文文档（水平书写模式）中有一个列弹性容器，给弹性容器又包含垂直日语（垂直书写模式）弹性元素。</li>
+<li>否则，使用<code>flex-basis</code>而不是主尺寸将元素的大小调整为可用空间，并将<code>content</code>值视为<code>max-content</code>。如果需要使用交叉尺寸来确定主尺寸（例如，当弹性元素的主尺寸在其块轴上）并且弹性元素的交叉尺寸是<code>auto</code>且不确定的，则在此计算中，将<code>fit-content</code>作为弹性元素的交叉尺寸 。 弹性基本尺寸是元素的最终主尺寸。</li>
+</ol>
+<ul>
+<li>确定弹性基本尺寸时，将忽略元素的最小和最大主尺寸（不会发生clamping）。 此外，在应用<code>box-sizing</code>时将内容框大小向下舍入为零的大小计算也将被忽略（例如，一个指定大小为零，内边距为正并且<code>box-sizing: border-box</code>的弹性元素的外部弹性基本尺寸为零，因此内部弹性基本尺寸为负）。</li>
+<li>假定的主尺寸是根据最小<code>min-width/height</code>和最大主尺寸<code>max-width/height</code>（并将内容框的尺寸向下舍入到0）来固定的元素的弹性基本尺寸</li>
+</ul>
+</li>
+<li>使用弹性容器参与的格式化上下文规则确定弹性容器的主尺寸。
+<ul>
+<li>块级弹性容器的自动块尺寸为其最大内容大小(max-content size)。</li>
+<li>块布局规范应应该定义此等效项，但尚不存在。</li>
+</ul>
+</li>
+</ol>
+<h2 id="确定主尺寸"><a class="markdownIt-Anchor" href="#确定主尺寸"></a> 确定主尺寸</h2>
+<ol start="5">
+<li>将弹性元素收集到弹性行中：
+<ol>
+<li>如果弹性容器是单行的，则将所有弹性元素收集到同一个伸缩行中。</li>
+<li>否则，从第一个未收集的元素开始，一个接一个地收集连续的元素，直到第一次遇到下一个收集的元素不适合弹性容器的内部主尺寸为止（或直到遇到强制中断，请参阅第10章“碎片化弹性布局”） 。 如果第一个未收集的项目不适合，则将其收集到该行中。</li>
+</ol>
+<ul>
+<li>对于此步骤，弹性元素的尺寸为其外部假定主尺寸(The margin-box size of a box.)（注意：这可以是负数。）</li>
+<li>重复直到所有弹性元素都收集到弹性行中。</li>
+<li>请注意，即使最后一个非零元素正好“填满”了该行，“收集尽可能多”的行也会将零大小的弹性元素收集到前一行的末尾。</li>
+</ul>
+</li>
+<li>确定所有弹性元素的弹性长度以找到它们的主尺寸。 请参阅第9.7节“确定弹性长度”。</li>
+</ol>
+<h2 id="确定交叉尺寸"><a class="markdownIt-Anchor" href="#确定交叉尺寸"></a> 确定交叉尺寸</h2>
+<ol start="7">
+<li>通过执行布局来确定每个元素的假定交叉尺寸，就好像它是一个流内块级盒子，具有主尺寸和给定的可用空间，将<code>auto</code>视为<code>fit-content</code>。</li>
+<li>计算每条弹性行的交叉尺寸。<br />
+如果弹性容器是单行的且具有确定的交叉尺寸，则弹性行的交叉尺寸就是弹性容器的内部交叉尺寸。<br />
+否则，对每个弹性行：
+<ol>
+<li>收集所有行内轴与主轴平行、<code>align-self</code>为<code>baseline</code>且交叉轴外边距均为非<code>auto</code>的弹性元素。找到每个元素的基线与其假定外部交叉起边之间的最大距离，和每个元素的基线与其假定外部交叉终边之间的最大距离，并将这两个值相加。</li>
+<li>在上一步未收集的所有元素中，找到最大的外部假定交叉尺寸。</li>
+<li>弹性行的交叉尺寸是前两个步骤中找到的数字和0中最大的那个值。<br />
+如果弹性容器是单行的，则将弹性行的交叉尺寸钳制在容器的最小和最大交叉尺寸之内。 请注意，如果更普遍地使用CSS 2.1的min / max-width / height定义，则此行为会自动消失。</li>
+</ol>
+</li>
+<li>处理<code>align-content: stretch</code>。 如果弹性容器的交叉尺寸是确定的、<code>align-content</code>是<code>stretch</code>，并且弹性行的交叉尺寸之和小于弹性容器的内部交叉尺寸，则为每条弹性行的交叉尺寸增加相等的量，以使它们的交叉尺寸之和正好等于弹性容器的内部交叉尺寸。</li>
+<li>折叠<code>visibility:collapse</code>元素。 如果有任何弹性元素具有<code>visibility:collapse</code>，请记下它们所在行的交叉尺寸作为元素的strut尺寸，然后从头开始重新布局。<br />
+在此第二轮布局中，当将元素收集到行中时，将折叠元素的主尺寸视为零。 对于该步骤之后的其余算法，请完全忽略折叠的元素（就像它们是<code>display: none</code>），除非在计算了弹性行的交叉尺寸之后，如果任何弹性行的交叉尺寸小于该行所有折叠元素中的最大strut尺寸，则将该行的交叉尺寸设为该strut尺寸。<br />
+在第二轮布局中跳过此步骤。</li>
+<li>确定每个弹性元素的交叉尺寸。 如果弹性元素具有<code>align-self: stretch</code>、交叉尺寸属性计算值为<code>auto</code>，并且其交叉轴边距都不是<code>auto</code>，则外部交叉尺寸是其弹性行的交叉尺寸，受到该元素的最小和最大交叉尺寸钳制。 否则，交叉尺寸是元素的假定交叉尺寸。<br />
+如果弹性元素的<code>align-self</code>为<code>stretch</code>，为它的内容重做布局，则将尺寸视为其确定的交叉尺寸，以便使用百分值尺寸的子元素解析。<br />
+请注意，即使弹性元素具有首选的宽高比，此步骤也不会影响主尺寸。</li>
+</ol>
+<h2 id="主轴对齐"><a class="markdownIt-Anchor" href="#主轴对齐"></a> 主轴对齐</h2>
+<ol start="12">
+<li>分配所有剩余的可用空间。对于每条弹性行：
+<ol>
+<li>如果剩余的可用空间为正，并且该行上至少有一个主轴外边距为<code>auto</code>，在这些外边距中平均分配可用空间。 否则，将所有<code>auto</code>外边距设置为零。</li>
+<li>用每个<code>justify-content</code>沿主轴对齐弹性元素。</li>
+</ol>
+</li>
+</ol>
+<h2 id="交叉轴对齐"><a class="markdownIt-Anchor" href="#交叉轴对齐"></a> 交叉轴对齐</h2>
+<ol start="13">
+<li>确定交叉轴<code>auto</code>外边距。 如果弹性元素具有<code>auto</code>外边距：
+<ul>
+<li>如果它的外部交叉尺寸（将<code>auto</code>外边距视为零）小于它所在弹性行的交叉尺寸，则将这些尺寸之差平均分配给<code>auto</code>外边距。</li>
+<li>否则，如果块起边或行内起边外边距（交叉轴上的那个）是自动的，则将其设置为零。 设置相反的外边距，以使该元素的外部交叉尺寸等于其弹性行的交叉尺寸。</li>
+</ul>
+</li>
+<li>如果每个弹性元素的交叉轴外边距都不是<code>auto</code>，则用每个<code>align-self</code>沿交叉轴对齐所有弹性元素。</li>
+<li>使用弹性容器参与的格式化上下文规则确定弹性容器的交叉尺寸。 如果需要基于内容的交叉尺寸，请使用弹性行交叉尺寸的总和。</li>
+<li>用每个<code>align-content</code>对齐所有弹性行。</li>
+</ol>
+<h2 id="确定弹性长度"><a class="markdownIt-Anchor" href="#确定弹性长度"></a> 确定弹性长度</h2>
+<p>要确定弹性行中元素的弹性长度：</p>
+<ol>
+<li>确定弹性因子。 加总行中所有元素的外部假定主尺寸。 如果总和小于弹性容器的内部主尺寸，则在该算法的其余部分中使用弹性增长因子； 否则，使用弹性收缩因子。</li>
+<li>弹性行中的每个元素都有一个目标主尺寸，最初设置为其弹性基本尺寸。 每个元素最初都是未冻结的，并且可能会冻结。注意：冻结后，元素的目标主尺寸不会改变。</li>
+<li>确定没有弹性的元素的尺寸。冻结，将其目标主尺寸设置为其假定主尺寸。
+<ul>
+<li>弹性因子为零的任何项目</li>
+<li>如果使用弹性增长因子：弹性基础尺寸大于其假定主尺寸的任何元素</li>
+<li>如果使用弹性收缩因子：弹性基础尺寸小于其假定主尺寸的任何元素</li>
+</ul>
+</li>
+<li>计算初始可用空间。 将行中所有元素的外部目标主尺寸相加，然后从弹性容器的内部主尺寸中减去该尺寸。</li>
+<li>循环：
+<ol>
+<li>检查弹性元素。 如果该行上的所有弹性元素都被冻结，则已经分配了可用空间； 退出此循环。</li>
+<li>与上面的初始可用空间一样，计算剩余可用空间。 如果未冻结的弹性元素的弹性因子之和小于1，则将初始可用空间乘以该总和。 如果该值小于剩余可用空间的大小，请将该值用作剩余可用空间。</li>
+<li>如果剩余的可用空间不为零，请与弹性因子成比例地分配：
+<ul>
+<li>如果使用弹性增长因子：对于该行中的每个未冻结元素，找到该元素的弹性增长因子与该行中所有未冻结元素的弹性增长因子之和的比率。 将元素的目标主尺寸设置为其弹性基准尺寸，再加上与该比率成比例的剩余可用空间的一部分</li>
+<li>如果使用弹性收缩因子：对于该行中的每个未冻结元素，将其弹性收缩因子乘以内部弹性基础尺寸，并将其记为缩放的(scaled)弹性收缩因子。 找到该元素的缩放后的弹性收缩因子与该行上所有未冻结项目的缩放后的弹性收缩因子之和的比率。 将元素的目标主尺寸设置为其弹性基准尺寸减去与该比率成比例的剩余可用空间的绝对值的一小部分。 请注意，这可能会导致负的内部主尺寸； 下一步将对其进行更正。</li>
+</ul>
+</li>
+<li>修正最小/最大冲突。 将每个非冻结元素的目标主尺寸按其最小和最大主尺寸进行钳制，并将其内容框的尺寸向下舍入为零。 如果元素的目标主尺寸缩小了，则是最大冲突。 如果元素的目标主尺寸变大了，则是最小冲突。</li>
+<li>冻结过度弹性的元素。 总违规是上一步∑（固定大小-未固定大小）的调整总和。 如果总违规是：
+<ul>
+<li>零：冻结所有元素</li>
+<li>正：冻结所有最小冲突元素</li>
+<li>负：冻结所有最大冲突元素</li>
+<li>注意：这将冻结至少一个元素，以确保循环不断进行并最终终止。</li>
+</ul>
+</li>
+<li>返回到此循环的开始。</li>
+</ol>
+</li>
+<li>将每个元素的主尺寸设置为其目标主尺寸。</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/弹性布局.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/弹性布局.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E6%94%AF%E6%8C%81%E6%9F%A5%E8%AF%A2.html"><i class="fa fa-chevron-left">  </i><span>支持查询</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%AE%9A%E4%BD%8D.html"><span>定位</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

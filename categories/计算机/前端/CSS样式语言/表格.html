@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="表格"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>表格 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 表题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%B9%E6%A1%86%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 边框模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E8%BE%B9%E6%A1%86%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text"> 分离边框模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%A0%BC%E9%97%B4%E8%B7%9D"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 单元格间距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%8D%95%E5%85%83%E6%A0%BC%E6%98%AF%E5%90%A6%E6%98%BE%E7%A4%BA"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 空单元格是否显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%E8%BE%B9%E6%A1%86%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text"> 折叠边框模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B0%BA%E5%AF%B8"><span class="toc-number">3.</span> <span class="toc-text"> 表格尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E5%AE%BD%E5%BA%A6%E5%B8%83%E5%B1%80"><span class="toc-number">3.1.</span> <span class="toc-text"> 固定宽度布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%AE%BD%E5%BA%A6%E5%B8%83%E5%B1%80"><span class="toc-number">3.2.</span> <span class="toc-text"> 自动宽度布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text"> 对齐方式</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">表格</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-19</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>表格元素和表格内部元素是两个不同的概念。<br />
+表格内部元素生成矩形框，有内容、内边距和边框，但是没有外边距。所以单元格之间的间距不能通过外边距调整。<br />
+一列单元格有相同的宽度，一行单元格有相同的高度，但是不同行的高度未必相同，不同列的宽度未必相同。</p>
+<span id="more"></span>
+<p>表格元素的显示类型为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span>    &#123;<span class="attribute">display</span>: table;&#125;</span><br><span class="line"><span class="selector-tag">tr</span>       &#123;<span class="attribute">display</span>: table-row;&#125;</span><br><span class="line"><span class="selector-tag">thead</span>    &#123;<span class="attribute">display</span>: table-header-group;&#125;</span><br><span class="line"><span class="selector-tag">tbody</span>    &#123;<span class="attribute">display</span>: table-row-group;&#125;</span><br><span class="line"><span class="selector-tag">tfoot</span>    &#123;<span class="attribute">display</span>: table-footer-group;&#125;</span><br><span class="line">col      &#123;<span class="attribute">display</span>: table-column;&#125;</span><br><span class="line">colgroup &#123;<span class="attribute">display</span>: table-column-group;&#125;</span><br><span class="line"><span class="selector-tag">td</span>, <span class="selector-tag">th</span>   &#123;<span class="attribute">display</span>: table-cell;&#125;</span><br><span class="line"><span class="selector-tag">caption</span>  &#123;<span class="attribute">display</span>: table-caption;&#125;</span><br></pre></td></tr></table></figure>
+<p>CSS中的表格模型是“行主导”的。创作人员在使用标记时会显式声明行，而列是从行中单元格的布局中衍生而来。即第一列由每行中第一个单元格组成，第二列由每行中第二个单元格组成。</p>
+<p>单元格可以同时属于两个上下文（行和列）。在CSS中，行和行组只能应用四个与表格无关的属性：<code>border</code>、<code>background</code>、<code>width</code>和<code>visibility</code>。<br />
+这四个属性应用于列上下文时有特殊规则：</p>
+<ul>
+<li><code>border</code>：仅当<code>border-collapse</code>属性的值为<code>collapse</code>时才能为列和列组设置边框。此时，根据折叠算法在列和列组中各单元格的边界处绘制边框。</li>
+<li><code>background</code>：仅当单元格及所在的行是透明背景时列和列组的背景才可见。</li>
+<li><code>width</code>：定义列和列组的最小宽度。列（或列组）中单元格的内容可能会迫使列变宽。</li>
+<li><code>visibility</code>：如果列或列组的<code>visibility</code>属性值为<code>collapse</code>，那么列或列组中的单元格不渲染。从折叠的列跨到其他列的单元格将被裁剪，好像从其他列跨到隐藏的列一样。此外，表格的总宽度将减去折叠的列所占的宽度。对列或列组而言，除了<code>hidden</code>之外，其他的<code>visibility</code>值将被忽略。</li>
+</ul>
+<p>表格分六个图层渲染，从上到下分别是单元格、行、行组、列、列组、表格，上面的图层将盖住下面的图层，这就是为什么行的背景会覆盖列的背景，因为它的图层在上面。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201015145211977_2875.png" alt="" width="621" /></p>
+<h1 id="表题"><a class="markdownIt-Anchor" href="#表题"></a> 表题</h1>
+<p>表题元素<code>&lt;caption&gt;</code>从<code>&lt;table&gt;</code>继承相关属性。<br />
+表格的边框外边界与表题的外边距外边界之间的间隔为1em，因为默认情况下表格的上外边距和标题的下外边距折叠了（对于<code>caption-side: top</code>的情况）。<br />
+表题的宽度由<code>&lt;table&gt;</code>元素中内容的宽度决定，<code>&lt;table&gt;</code>是表题元素的包含块。<br />
+多数情况下，表题可以像块级元素那样装饰。</p>
+<p><code>caption-side</code>属性用于设置表题元素<code>&lt;caption&gt;</code>放在表格上方还是下方。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top | bottom</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：top</li>
+<li>适用于：<code>display: table-caption</code>的元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<h1 id="边框模型"><a class="markdownIt-Anchor" href="#边框模型"></a> 边框模型</h1>
+<p>单元格有两种完全不同的边框模型：</p>
+<ul>
+<li>分离边框模型(separated border model)：相邻的单元格各自有独立的边框。</li>
+<li>折叠边框模型(collapsed border model)：相邻单元格共享同一个边框。视觉上单元格彼此紧挨着。</li>
+</ul>
+<p><code>border-collapse</code>属性用于设置应用哪种边框模型。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">collapse | separate</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：separate</li>
+<li>适用于：<code>display: table</code>或<code>display: table-inline</code>的元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<h2 id="分离边框模型"><a class="markdownIt-Anchor" href="#分离边框模型"></a> 分离边框模型</h2>
+<p>分离边框模型下，边框只能应用于单元格<code>&lt;th&gt;</code>或<code>&lt;td&gt;</code>，以及表格自身<code>&lt;table&gt;</code>。行，列，行组和列组没有边框（即，用户代理必须忽略这些元素的border属性）</p>
+<h3 id="单元格间距"><a class="markdownIt-Anchor" href="#单元格间距"></a> 单元格间距</h3>
+<p>使用分离边框模型时，可以通过<code>border-spacing</code>属性调整相邻单元格的 border box 之间、最外圈单元格与表格元素之间的间距。不论边框有多宽，间距总是这么大。这段间隔中，行，列，行组和列组的背景是不可见的，会让表格背景透出来。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;length&gt; &lt;length&gt;?</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：0</li>
+<li>适用于：<code>display: table</code>或<code>display: table-inline</code>的元素</li>
+<li>计算值：两个绝对长度</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>当指定一个值时，这个值既是相邻单元格之间的横向间距，也是纵向间距。<br />
+当指定两个值时，第一个值是横向间距，第二个值是纵向间距。</p>
+<p>注意适用元素，该属性要在<code>&lt;table&gt;</code>元素上声明，而不是在单元格上。</p>
+<h3 id="空单元格是否显示"><a class="markdownIt-Anchor" href="#空单元格是否显示"></a> 空单元格是否显示</h3>
+<p>使用分离边框模型时，可以通过<code>empty-cells</code>属性设置空单元格（没有内容，但空格、回车、制表符、换行除外）是否绘制边框和背景  。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show | hide</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：show</li>
+<li>适用于：<code>display: table-cell</code>的元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：是</li>
+<li>动画性：否</li>
+</ul>
+<p>属性值的具体作用如下：</p>
+<ul>
+<li><code>show</code>：绘制边框和背景。</li>
+<li><code>right</code>：不绘制边框和背景。</li>
+</ul>
+<h2 id="折叠边框模型"><a class="markdownIt-Anchor" href="#折叠边框模型"></a> 折叠边框模型</h2>
+<p>在折叠边框模型中，边框可以应用于单元格、行、行组、列、列组和表格自身。<br />
+<code>display: table</code>和<code>display: inline-table</code>的元素不能有内边距，可以有外边距。因此表格四周的边框与最外层单元格之间没有间隔。<br />
+单元格之间没有间隔，只会在假想的中线(grid line)处绘制一条折叠的边框。<br />
+外侧的边框超出了表格的宽度，表格的一半含在宽度内，另一半在外边距中。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201015154303346_5687.png" alt="" width="621" /><br />
+边框折叠规则：</p>
+<ol>
+<li>如果折叠的边框中有一条边框样式为<code>border-style: hidden</code>，则该边框具有最高优先级，该位置的边框会被隐藏。</li>
+<li>否则，较宽的边框比较窄的边框优先级高。</li>
+<li>否则（宽度相同），样式优先级高的边框优先级高，样式优先级从大到小为：double、solid、dashed、dotted、ridge、outset、groove、inset、none</li>
+<li>否则（宽度和样式相同），颜色取自下列元素，且优先级从大到小为：单元格、行、行组、列、列组、表格；如果同为行，例如上一行和下一行，则颜色取自离顶部和左边较远的边框。</li>
+</ol>
+<h1 id="表格尺寸"><a class="markdownIt-Anchor" href="#表格尺寸"></a> 表格尺寸</h1>
+<p>表格的宽度有两种确定方式：</p>
+<ul>
+<li>固定宽度布局</li>
+<li>自动宽度布局</li>
+</ul>
+<p>表格的高度自动计算。</p>
+<p><code>border-collapse</code>属性用于设置应用哪种宽度确定方式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | fixed</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：auto</li>
+<li>适用于：<code>display: table</code>或<code>display: table-inline</code>的元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<h2 id="固定宽度布局"><a class="markdownIt-Anchor" href="#固定宽度布局"></a> 固定宽度布局</h2>
+<ul>
+<li>如果列元素的<code>width</code>属性值不是<code>auto</code>，设定的就是整列的宽度。</li>
+<li>如果列的宽度为<code>auto</code>，但是表格第一行中位于这一列的单元格的<code>width</code>属性值不是<code>auto</code>，则这个单元格的宽度就是整列的宽度。如果这个单元格跨多列，则宽度平分到各列中。</li>
+<li>如果列的宽度仍是自动确定的，则由浏览器自动确定宽度，尽可能使各列宽度相等。</li>
+</ul>
+<p>表格的宽度将是表格<code>width</code>值与各列宽度之和中较大的那个。如果表格宽度比各列宽度之和大，则多余的宽度将增加到各列上。</p>
+<p>这种布局渲染速度快，因为列的宽度由表格第一行决定，后续各行中的单元格都与第一行确定的列宽度保持一致。</p>
+<p>为单元格设置的<code>width</code>值将被忽略，如果内容在单元格中放不下，可以用<code>overflow</code>属性决定内容可见、裁剪还是显示滚动条。</p>
+<h2 id="自动宽度布局"><a class="markdownIt-Anchor" href="#自动宽度布局"></a> 自动宽度布局</h2>
+<ol>
+<li>计算一列中每个单元格的最小宽度和最大宽度
+<ul>
+<li>确定显示内容最少需要多少宽度。在这个过程中，内容可以换行，但不能超出单元格框。如果为单元格设置了<code>width</code>值，而且比最小宽度大，那么单元格的最小宽度将被设为<code>width</code>值。如果单元格的<code>width</code>值为<code>auto</code>，那么单元格的最小宽度将被设为内容的最小宽度。</li>
+<li>最大宽度即不换行（强制换行除外，例如<code>&lt;br&gt;</code>）显示内容所需的宽度。</li>
+</ul>
+</li>
+<li>计算各列的最小宽度和最大宽度
+<ul>
+<li>列的最小宽度由那一列中单元格最小宽度值最大的那个确定。如果为列显式设定了<code>width</code>值，而且比列中每个单元格的最小宽度大，那么列的最小宽度被设为<code>width</code></li>
+<li>列的最大宽度等于那一列中单元格最大宽度值最大的那个。如果为列显式设定了<code>width</code>值，而且比列中每个单元格的最大宽度都大，那么列的最大宽度被设为<code>width</code>值。这两个行为即列的宽度将增大到与最宽的单元格相等。</li>
+</ul>
+</li>
+<li>如果单元格横跨多列，那么所跨的那几列的最小宽度之和必须等于单元格的最小宽度；同样，列的最大宽度之和也要等于横跨多列的单元格的最大宽度。用户代理应该把列宽度的变化平均分到所跨的各列中。</li>
+</ol>
+<h1 id="对齐方式"><a class="markdownIt-Anchor" href="#对齐方式"></a> 对齐方式</h1>
+<p>横向对齐单元格中的内容，使用<code>text-align</code>属性，单元格相当于块级框。<br />
+纵向对齐单元格中的内容，使用<code>vertical-align</code>属性，但应用到单元格上的作用与平时不同。</p>
+<ul>
+<li><code>top</code>：单元格中内容的顶部与行的顶部对齐。在跨行的单元格中，内容的顶部与所跨的第一行的顶部对齐。</li>
+<li><code>bottom</code>：单元格中内容的底部与行的底部对齐。在跨行的单元格中，内容的底部与所跨的最后一行的底部对齐。</li>
+<li><code>middle</code>：单元格中内容的中线与行的中线对齐。在跨行的单元格中，内容的中线与所跨各行整体的中线对齐。</li>
+<li><code>baseline</code>：单元格的基线与行的基线对齐。在跨行的单元格中，单元格的基线与所跨的第一行的基线对齐。行的基线由第一行文本的基线定义。</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/表格.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/表格.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%85%83%E7%B4%A0%E6%A1%86%E8%A3%85%E9%A5%B0.html"><i class="fa fa-chevron-left">  </i><span>元素框装饰</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%88%97%E8%A1%A8.html"><span>列表</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

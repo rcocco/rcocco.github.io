@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="视觉格式化模型"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>视觉格式化模型 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text"> 名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%A1%B5%E5%AA%92%E4%BD%93"><span class="toc-number">1.1.</span> <span class="toc-text"> 连续&#x2F;分页媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text"> 视口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E5%9D%97"><span class="toc-number">1.3.</span> <span class="toc-text"> 包含块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E6%B5%81"><span class="toc-number">2.</span> <span class="toc-text"> 常规流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">2.1.</span> <span class="toc-text"> 块格式化上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">2.2.</span> <span class="toc-text"> 行内格式化上下文</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E6%96%B9%E6%A1%88"><span class="toc-number">3.</span> <span class="toc-text"> 定位方案</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">视觉格式化模型</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-06</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>CSS中，视觉格式化模型(Visual Formatting Model)描述了用户代理如何处理文档树，以及如何在视觉媒体上显示。<br />
+在视觉格式化模型中，文档树中的每个元素根据盒模型生成零个或更多盒子（矩形框），这些盒子的布局受以下因素控制：</p>
+<ul>
+<li>盒子的尺寸和类型</li>
+<li>定位模式（常规流、浮动和绝对定位）</li>
+<li>文档树中元素之间的关系</li>
+<li>外部信息（例如视口大小、图片的固有尺寸等等）</li>
+</ul>
+<span id="more"></span>
+<p>视觉格式化模型中的大多数内容是在CSS2中定义的，CSS3也增加了一些内容，但你仍然可以在CSS3规范中看到许多对CSS2中定义的模型的引用。</p>
+<h1 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释"></a> 名词解释</h1>
+<h2 id="连续分页媒体"><a class="markdownIt-Anchor" href="#连续分页媒体"></a> 连续/分页媒体</h2>
+<p>连续媒体和分页媒体是CSS2定义的媒体组之一。<br />
+屏幕是典型的连续媒体，文档在屏幕上是连续的。<br />
+幻灯片，或者用打印模式查看的文档是典型的分页媒体，文档在这些媒体上是分成一页一页展示的。</p>
+<h2 id="视口"><a class="markdownIt-Anchor" href="#视口"></a> 视口</h2>
+<p>连续媒体的用户代理一般会给用户提供一个视口（屏幕上的一个窗口或者视图区域），用户通过它来浏览文档。如下图：橙色框中的是文档，黑色框是浏览器窗口，用户将黑色区域向下移动来浏览文档的全部内容。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201017153632667_19484.png" alt="" width="200" /><br />
+当视口尺寸发生变化时，用户代理可能会改变文档的布局。<br />
+当视口比渲染文档的画布区域小时，用户代理应该提供一种滚动机制。一个画布最多对应一个视口，但用户代理可能会渲染到多个画布上（即提供同一文档的不同视图）</p>
+<h2 id="包含块"><a class="markdownIt-Anchor" href="#包含块"></a> 包含块</h2>
+<p>元素（生成的）盒的位置和大小通常是根据一个特定矩形计算的，这个矩形叫做该元素的包含块。尽管每个盒子都相对于包含块确定位置，但它并不会被限制在包含块里，它可以溢出。元素的包含块的具体定义如下：</p>
+<ol>
+<li>根元素所在的包含块是一个被称为初始包含块的矩形。对于连续媒体，初始包含块的尺寸取自视口的尺寸，并且被固定在画布开始的位置（即把视口移到文档最前面时的位置）</li>
+<li>对于其它元素，如果该元素的<code>position</code>属性是<code>relative</code>或<code>static</code>或<code>sticky</code>，包含块由其最近的块容器祖先的 content box 边界，又或者最近的建立了格式化上下文的祖先（如<code>table</code>容器、<code>flex</code>容器、<code>grid</code>容器）的 content box 边界形成。</li>
+<li>如果元素的<code>position</code>属性是<code>fixed</code>，对于连续媒体，包含块由视口建立。</li>
+<li>如果元素的<code>position</code>属性是<code>absolute</code>，包含块由最近的建立了<strong>绝对定位包含块</strong>的祖先元素的 padding box 组成。（<code>position</code>属性非<code>static</code>，或<code>transform</code>属性非<code>none</code>，或<code>perspective</code>属性非<code>none</code>，或<code>will-change</code>属性值为<code>transform</code>或<code>perspective</code>，或<code>contain</code>属性值为<code>paint</code>会建立绝对定位包含块）</li>
+<li>如果没有这样的祖先元素，包含块就是初始包含块。</li>
+</ol>
+<h1 id="常规流"><a class="markdownIt-Anchor" href="#常规流"></a> 常规流</h1>
+<p>常规流指从左到右，从上到下的顺序显示。元素盒从左到右，从上到下摆放。多数元素都采用常规流动方式，除非元素浮动、定位、放入弹性盒或采用栅格布局了。<br />
+常规流中的盒属于一个格式化上下文，可能是块或是行内（格式化上下文），但不能两者都是。块级盒参与块格式化上下文。行内级盒参与行内格式化上下文。<br />
+格式化上下文是一块区域，这个区域内的内容会按照上下文规定的规则来进行布局。<br />
+通俗的说，常规流就是默认情况下文档中元素的布局。</p>
+<h2 id="块格式化上下文"><a class="markdownIt-Anchor" href="#块格式化上下文"></a> 块格式化上下文</h2>
+<p>在块格式化上下文中，盒在垂直方向一个接一个地放置，从包含块的顶部开始。两个兄弟盒之间的垂直距离由<code>margin</code>属性决定。同一个块格式化上下文中的相邻块级盒之间的垂直外边距会合并。<br />
+在块格式化上下文中，每个盒的左外边界（left outer edge）挨着包含块的左外边界（对于从右向左的格式化，右外边界挨着）。即使存在浮动（尽管一个盒的行框可能会因为浮动而收缩 译注：环绕浮动元素放置的行框比正常的行短一些），这也成立，除非该盒建立了一个新的块格式化上下文（这种情况下，该盒自身可能会因为浮动变窄，如下）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;float: left;&quot;</span>&gt;</span>bb<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;float:right;&quot;</span>&gt;</span>bb<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">style</span>=<span class="string">&quot;overflow: auto;&quot;</span>&gt;</span> qqqaaaaa <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果此时想令浮动元素和最高的兄弟元素（看起来）一样高，可以让父元素<code>overflow: hidden</code>同时建立新的块格式化上下文，然后给自己和所有兄弟元素加padding，最后给负外边距，使得父元素高度计算根据margin box。<br />
+下列情况会为其内容建立新的块格式化上下文：</p>
+<ul>
+<li>浮动元素</li>
+<li>绝对定位的元素</li>
+<li>非块盒的块容器（例如<code>inline-blocks</code>，<code>table-cells</code>和<code>table-captions</code>）</li>
+<li><code>overflow</code>不为<code>visible</code>的块盒（当该值已从根元素被传播到视口时除外）</li>
+<li><code>display: flow-root</code></li>
+</ul>
+<h2 id="行内格式化上下文"><a class="markdownIt-Anchor" href="#行内格式化上下文"></a> 行内格式化上下文</h2>
+<p>在行内格式化上下文中，盒是从包含块的顶部开始一个挨一个水平放置的。这些盒之间的水平外边距，边框和内边距都有效。盒可能会以不同的方式垂直对齐：以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。包含来自同一行的盒的矩形区域叫做行框。</p>
+<p>行框的宽度由包含块和浮动情况决定，行框的高度由行高的计算小节给出的规则决定</p>
+<p>行框总是足够高，能够容纳它包含的所有盒。然而，它可能比它所包含的最高的盒还要高（例如，如果盒是以基线对齐的）。当盒B的高度小于它所在的行框的高度时，行框中B的垂直对齐方式由<code>vertical-align</code>属性决定。当几个行内级盒在水平方向上不能共存于一个行框时，它们会被分到两个或多个垂直堆叠的 行框里。因此，一个段落就是一叠垂直堆叠的行框。行框没有垂直间隔地堆放（除非在其它地方有特别说明）并且它们不会重叠</p>
+<p>一般来说，一个行框的左边界挨着其包含块的左边界，右边界挨着其包含块的右边界。然而，浮动盒可能会跑到包含块边界与行框边界之间。因此，尽管同一个行内格式化上下文中的行框一般都有相同的宽度（即包含块的宽度），如果可用的水平空间因为浮动而减少了的话，它们的宽度就可能不同。同一个行内格式化上下文中的行框一般高度各不相同（例如，一行可能含有一个高图片，而其它的只含文本）</p>
+<p>当一行的行内级盒的总宽度小于它们所在的行框的宽度时，它们在行框里的水平分布由<code>text-align</code>属性决定。如果该属性值为<code>justify</code>，用户代理可能还会拉伸行内盒（不包括<code>inline-table</code>和<code>inline-block</code>盒）里的空格和单词</p>
+<p>当行内盒超出行框宽度时，它会被分成几个盒，并且这些盒会跨多行框分布。如果一个行内块无法分割（例如，如果该行内盒（只）含单一字符，或者特定语言的单词分隔规则不允许在该行内盒里分隔，或该行内盒受到了一个值为<code>nowrap</code>或者<code>pre</code>的<code>white-space</code>的影响），那么该行内盒会从行框溢出</p>
+<p>当一个行内盒被分割后，外边距，边框和内边距在发生分割的地方（或者在任何分割处，如果有多处的话）没有视觉效果</p>
+<p>同一个行框里的行内盒也可能因为双向（bidirectional）文本处理而被分割成几个盒</p>
+<p>当需要在行内格式化上下文中放置行内级内容时，创建一个行框。对于没有文本、没有保留空白符、没有（外边距、内边距和边框非0）的行内元素、，没有其它流内内容（例如，图片，行内块或行内表格），并且不以保留换行符结束的行框，在确定其内部元素的位置时必须被当做0高度行框；其他情况，必须当它不存在。</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">P</span>&gt;</span>Several <span class="tag">&lt;<span class="name">EM</span>&gt;</span>emphasized words<span class="tag">&lt;/<span class="name">EM</span>&gt;</span> appear</span><br><span class="line"><span class="tag">&lt;<span class="name">STRONG</span>&gt;</span>in this<span class="tag">&lt;/<span class="name">STRONG</span>&gt;</span> sentence, dear.<span class="tag">&lt;/<span class="name">P</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>P元素生成了一个含有5个行内盒的块盒，其中有3个是匿名的：</p>
+<ul>
+<li>Anonymous: “Several”</li>
+<li>EM: “emphasized words”</li>
+<li>Anonymous: “appear”</li>
+<li>STRONG: “in this”</li>
+<li>Anonymous: “sentence, dear.”</li>
+</ul>
+<p>为了格式化该段落，用户代理把5个盒排列（flows）在一个行框里。本例中，P元素生成的盒为行框建立了包含块。如果该包含块足够宽，所有行内盒都能放进一个行框里：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Several emphasized words appear in this sentence, dear.</span><br></pre></td></tr></table></figure>
+<p>如果不行，行内盒将被分割并跨行框分布。之前的段落可能被分成下面这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Several emphasized words appear</span><br><span class="line">in this sentence, dear.</span><br></pre></td></tr></table></figure>
+<p>或者像这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Several emphasized  </span><br><span class="line">words appear in this </span><br><span class="line">sentence, dear.</span><br></pre></td></tr></table></figure>
+<p>在之前的示例中，EM盒被分成了两个EM盒（叫它们&quot;split1&quot;和&quot;split2&quot;）。外边距，边框，内边距或文本修饰（text decorations）不会在split1后面和split2前面产生可见的效果<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201016211710736_19958.png" alt="" /></p>
+<ul>
+<li>外边距插在&quot;emphasized&quot;前面和&quot;words&quot;后面</li>
+<li>内边距插在&quot;emphasized&quot;的前面，上面和下面，以及&quot;words&quot;的后面，上面和下面，虚线边框也出现在这3个方向</li>
+</ul>
+<h1 id="定位方案"><a class="markdownIt-Anchor" href="#定位方案"></a> 定位方案</h1>
+<p>CSS中，一个盒可能会根据三种定位方案来布局：</p>
+<ol>
+<li>常规流。CSS中，常规流包括块级盒的块格式化、行内级盒的行内格式化、以及块级或行内级盒的相对或粘性定位。</li>
+<li>浮动。在浮动模型中，盒先根据常规流放置，然后从常规流中取出来并尽可能远地向左或向右移动。其他内容可能沿着浮动（盒）的一侧排列。</li>
+<li>绝对定位。在绝对定位模型中，一个盒会从常规流中全部移除（它不会影响后面的兄弟元素）并根据包含块确定位置。</li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/视觉格式化模型.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/视觉格式化模型.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E7%9B%92%E6%A8%A1%E5%9E%8B.html"><i class="fa fa-chevron-left">  </i><span>盒模型</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E8%A1%8C%E6%A1%86%E4%B8%8E%E5%AF%B9%E9%BD%90.html"><span>行框与对齐</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

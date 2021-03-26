@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="元素框装饰"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>元素框装饰 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E7%9B%92%E9%98%B4%E5%BD%B1"><span class="toc-number">1.</span> <span class="toc-text"> 元素盒阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93"><span class="toc-number">2.</span> <span class="toc-text"> 轮廓</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E6%A0%B7%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text"> 轮廓样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E5%AE%BD%E5%BA%A6"><span class="toc-number">2.2.</span> <span class="toc-text"> 轮廓宽度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E9%A2%9C%E8%89%B2"><span class="toc-number">2.3.</span> <span class="toc-text"> 轮廓颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%86%99%E5%B1%9E%E6%80%A7"><span class="toc-number">2.4.</span> <span class="toc-text"> 简写属性</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">元素框装饰</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-21</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="元素盒阴影"><a class="markdownIt-Anchor" href="#元素盒阴影"></a> 元素盒阴影</h1>
+<p><code>box-shadow</code>属性为元素框添加阴影。<span id="more"></span></p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">none | &lt;shadow&gt;<span class="comment">#</span></span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;shadow&gt; = inset? &amp;&amp; &lt;length&gt;&#123;2,4&#125; &amp;&amp; &lt;color&gt;?</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素，还可以应用到伪元素<code>::first-letter</code></li>
+<li>计算值：一个颜色加三个绝对长度</li>
+<li>继承性：绝对长度或指定的值</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值为<code>none</code>时没有阴影。<br />
+可以添加一个或多个阴影，彼此之间用逗号分隔。<br />
+每个阴影由一个可选的<code>inset</code>、2个长度值后跟2个可选的长度值，以及可选的颜色组成</p>
+<ul>
+<li><code>inset</code>表示阴影向盒内扩散，如果不指定该关键字，则默认向盒外扩散。</li>
+<li>颜色设定的是阴影的颜色，如果不设置将于文本颜色相同。</li>
+<li>前两个长度值是阴影离盒的距离，第一个长度值设定横向偏移，正的长度值向右偏，负的长度值向左偏；第二个长度值设定纵向偏移，正的长度值向下偏，负的长度值向上偏。</li>
+<li>可选的第三个长度值定义阴影的模糊半径。模糊半径是从阴影轮廓到模糊效果边界的距离。这个值越大越看不清阴影中的盒子的形状，会扩散成模糊的一片。不允许负值，默认情况为0，即阴影轮廓非常清晰。</li>
+<li>可选的第四个长度值是传播半径，正值导致阴影增大，负值导致阴影缩小。默认为0，此时阴影与元素同样大。</li>
+</ul>
+<h1 id="轮廓"><a class="markdownIt-Anchor" href="#轮廓"></a> 轮廓</h1>
+<p>轮廓和边框类似，一般画在边框外侧，但和边框也有区别：</p>
+<ol>
+<li>轮廓不占空间，它仅仅是视觉效果，不影响布局。</li>
+<li>轮廓可以不是矩形，也不可以不连续。<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/_v_images/20201011211955434_28998.png" alt="" width="621" /></li>
+<li>通常在元素处于<code>:focus</code>状态时才渲染轮廓</li>
+<li>轮廓只能作为四条边的整体设置，不能为单独一边设置轮廓</li>
+</ol>
+<h2 id="轮廓样式"><a class="markdownIt-Anchor" href="#轮廓样式"></a> 轮廓样式</h2>
+<p>轮廓的样式是指轮廓线条的类型，如单实线、双实线、虚线、雕刻风格线等等。<br />
+<code>outline-style</code>属性用于设置轮廓样式。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto | none | dotted | dashed | solid | double | groove | ridge | inset | outset</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：none</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：否</li>
+</ul>
+<p>轮廓和边框样式只有两处不同，其他都完全相同。</p>
+<ol>
+<li>轮廓没有<code>hidden</code></li>
+<li><code>auto</code>属性表示由用户代理自定义轮廓样式，既可以是其他样式的一种，也可以比其他样式更加华丽。</li>
+</ol>
+<h2 id="轮廓宽度"><a class="markdownIt-Anchor" href="#轮廓宽度"></a> 轮廓宽度</h2>
+<p>轮廓的宽度是指轮廓线条的粗细。<br />
+<code>outline-width</code>用于设置轮廓粗细。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;line-width&gt;</span><br><span class="line"><span class="built_in">where</span> </span><br><span class="line">&lt;line-width&gt; = &lt;length&gt; | thin | medium | thick</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：medium</li>
+<li>适用于：所有元素</li>
+<li>计算值：当轮廓样式为<code>none</code>时，计算值为0；否则为绝对长度。</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<p>属性值效果和边框宽度效果一样。</p>
+<h2 id="轮廓颜色"><a class="markdownIt-Anchor" href="#轮廓颜色"></a> 轮廓颜色</h2>
+<p><code>outline-color</code>属性用于指定轮廓颜色。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;color&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：currentColor</li>
+<li>适用于：所有元素</li>
+<li>计算值：指定的值</li>
+<li>继承性：否</li>
+<li>动画性：是</li>
+</ul>
+<p>还有一个<code>invert</code>属性值，表示反转颜色，但除了IE没有任何浏览器支持。</p>
+<h2 id="简写属性"><a class="markdownIt-Anchor" href="#简写属性"></a> 简写属性</h2>
+<p><code>outline</code>属性用于设置轮廓，它是<code>outline-style</code>、<code>outline-width</code>和<code>outline-color</code>的简写属性。</p>
+<ul>
+<li>取值语法：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ &lt;<span class="string">&#x27;outline-color&#x27;</span>&gt; || &lt;<span class="string">&#x27;outline-style&#x27;</span>&gt; || &lt;<span class="string">&#x27;outline-width&#x27;</span>&gt; ]</span><br></pre></td></tr></table></figure>
+</li>
+<li>初始值：和被简写的属性一样</li>
+<li>适用于：所有元素</li>
+<li>计算值：和被简写的属性一样</li>
+<li>继承性：否</li>
+<li>动画性：和被简写的属性一样</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/元素框装饰.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/元素框装饰.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E5%8A%A8%E7%94%BB.html"><i class="fa fa-chevron-left">  </i><span>动画</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E8%A1%A8%E6%A0%BC.html"><span>表格</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

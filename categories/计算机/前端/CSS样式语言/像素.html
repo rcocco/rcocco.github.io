@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="像素"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco2014@gmail.com"><meta name="copyright" content="rcocco"><title>像素 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E8%A7%86%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text"> 虚拟视口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%83%8F%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text"> 像素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%83%8F%E7%B4%A0%E5%AF%86%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text"> 像素密度</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">171</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">像素</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-12-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/">CSS样式语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p><a target="_blank" rel="noopener" href="https://web.dev/codelab-density-descriptors/">Use density descriptors</a><br />
+<a target="_blank" rel="noopener" href="https://cloudfour.com/thinks/responsive-images-101-part-3-srcset-display-density/">Srcset Display Density</a><br />
+<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19634463/what-is-an-srcset-attribute-in-img-tag-and-how-to-use-it">What is an srcset attribute in IMG tag and how to use it?</a><br />
+<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag">https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag</a></p>
+<h1 id="虚拟视口"><a class="markdownIt-Anchor" href="#虚拟视口"></a> 虚拟视口</h1>
+<p>移动设备渲染页面和电脑渲染页面的方式不同：</p>
+<span id="more"></span>
+<p>窄屏幕设备（如移动设备）会在一个虚拟窗口或视口中渲染页面，这个窗口或视口通常比屏幕宽；渲染完毕后，移动浏览器会缩小渲染的结果，以便在一屏内显示所有内容。然后用户可以移动、缩放以查看页面的不同区域。<br />
+例如，如果移动屏幕的宽度为640px，则可能会用980px的虚拟视口渲染页面，然后等比例缩小页面以使其完全容纳在640px的窗口大小。相当于渲染出一张980px的图片，然后等比例缩小，在移动或者缩放时不会重新布局。<br />
+很多手机的虚拟视口都是980px，因此一个主内容区为980px的页面在手机打开可以完全占满屏幕宽度。但同样的980px，手机屏幕的物理尺寸要比电脑屏幕的物理尺寸小得多。例如电脑上用30厘米来展示980px，而手机上7.4厘米展示980px。再比如一个300px的元素，它会被用虚拟视口980px展示，再放大缩小，即占用手机屏幕宽度的300/980=30%</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=1080, initial-scale=1&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>device-width在不同手机上值不一样，典型值360、415、425、390、320</p>
+<p>将<code>width</code>设置成设计稿的宽度，这样按照设计稿量出的字可能很大，例如100px，但同样可以直接写100px，让手机适应屏幕去缩放。即等比例的显示在不同尺寸的屏幕，就像一张照片。</p>
+<p>有的旧手机（如Android 5.0以下）不支持<code>width</code>写成数字值，只能写<code>device-width</code>。还想要等比例显示。把1080px宽度的设计稿缩放成1000px，在代码中写100vw就在各设备上是全宽。所有单位都用vw。问题是除非设计师直接按照1000px做，否则的话自行缩放后，量图片可能出问题。除非直接按原始比例，例如80px/1080px并保留足够的小数点。这种办法的缺点是计算起来很麻烦。<br />
+另一种方案是，令1080rem = 100vw，即令<code>html&#123; font-size: calc(100vw / 1080) &#125;;</code>，这样在设计稿中量出来是多少，写的就是多少rem。<br />
+如果连vw和meta viewport也不支持，可以用js读取window.innerwidth，令该值（如462px）等于100vw，除以设计稿宽度1080px。再设置html的font-size为<code>462/1080</code>。如果因为字体的像素数过小浏览器不支持，可以乘以10或者100倍。再在其他使用的地方缩小10倍或者100倍。</p>
+<p>对于以文字为主的网站，更希望是github的缩放效果，而不是等比例缩放。</p>
+<p>viewport声明：<br />
+<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code><br />
+只被手机浏览器识别。不被电脑浏览器识别。<br />
+它的作用是设定手机浏览器使用多宽的窗口（即初始包含块的宽度）来渲染页面<br />
+手机上页面一旦渲染，窗口的大小是不再发生变化的，双指缩放也不会让页面重新布局<br />
+手机在特定宽度的浏览器上渲染完成后会将结果正好铺满手机屏幕</p>
+<p>所有的手机都支持viewport的width写成device-width，该值在不同手机上不一样，典型的大小是360，415，425，390，320<br />
+一般来讲屏幕越大device-width实际生效的值也越大<br />
+安卓5.0以上支持将viewport的width写成具体数值，这样一来开发者就相当于面对了相同宽度的手机浏览器窗口。</p>
+<p>针对不同的网站设计，需要使用不同的方案：<br />
+网站想要像小米商城移动版一样，是不同手机上都是等比的，<br />
+如果网站用户的浏览器都支持将viewport的width写成具体数值，那么就直接将width写成视觉稿的宽度（不用带单位）<br />
+然后整个页面就用从视觉稿里量出来的数据配上px单位。<br />
+如果网站用户的浏览器有比较旧的，不支持将viewport的width写成数值，而只能写成device-width<br />
+我们想要的效果其实就是视觉稿宽度就是屏幕宽度<br />
+假设视觉稿宽度为X，则Xrem = 100vw<br />
+于是 html {font-size: calc(100vw / X)}<br />
+开始时使用视觉稿中量出来的尺寸配上rem单位即可。<br />
+但是，由于Chrome浏览器默认不支持小12px的字号，所以html元素的字号放大100倍<br />
+视觉稿中测量出来的数值则要缩小100倍再加上rem单位<br />
+更旧的浏览器甚至不支持calc/vw，所以使用js读取出窗口宽度的px单位的长度，然后计算出结果并设置到html元素上<br />
+小米商城就是这么做的<br />
+对于内容更多以文字为主，没有太多需要保持比例的布局的网站，如github的首页<br />
+那么直接将viewport设置为device-width，让不同手机有不同窗口宽度<br />
+使用流式布局风格+media query来实现。<br />
+对于布局想要保持比例，但文字内容跟屏幕大小呈正相关的网站<br />
+可以使用device-width，让文字保持默认大小即16px，那么空间越大字就越多<br />
+但页面的布局及元素的大小，依然使用rem等比缩放布局。</p>
+<p>？？？device-width 随屏幕变大而变大，代表缩放为 100% 时以 CSS 像素计量的屏幕宽度。<br />
+？？？<code>width=400</code>随屏幕变大，一行字里变多，而不是字变大。</p>
+<h1 id="像素"><a class="markdownIt-Anchor" href="#像素"></a> 像素</h1>
+<p>像素可以有很多含义：</p>
+<ul>
+<li>设备像素(Device pixe)：也叫物理像素(physical pixel)，设备上可以显示的最小颜色点</li>
+<li>逻辑像素(Logical pixel)：指定网格上特定位置的颜色的信息。这种类型的像素没有固有的物理尺寸。</li>
+<li>CSS像素(CSS pixel)：CSS规范将像素定义为物理测量单位。1像素= 1/96英寸。</li>
+</ul>
+<h1 id="像素密度"><a class="markdownIt-Anchor" href="#像素密度"></a> 像素密度</h1>
+<p>像素密度(Pixel density)，也叫屏幕密度(screen density)、显示密度(display density)。<br />
+是给定物理区域中的设备像素密度，单位通常是每英寸像素数(ppi)。<br />
+多年来，96ppi是一种非常常见的显示密度（因此CSS将像素定义为1/96英寸），从1980年代开始，它是Windows的默认分辨率。另外它还是CRT显示器的分辨率。<br />
+随着LED显示器在2000年开始普及，这种情况发生了变化，尤其是苹果在2010年推出Retina显示器。这些显示器的最小分辨率是192ppi，是常规显示器的两倍，192ppi/96ppi=2。<br />
+随着新显示技术的引入，设备像素的物理尺寸和形状(像素长宽比)开始变化，并且不再与CSS像素的尺寸相同。定义设备像素和CSS像素之间的关系需要导致了引入devicePixelRatio(设备像素比，有时也称为CSS像素比)，它是设备的显式密度与96ppi的比值，例如192ppi的机器上，devicePixelRatio是192ppi/96ppi=2.0，意味着1个CSS像素的大小等于2.0个显示像素。<br />
+目前大多数设备的设备像素比都在1.0到4.0之间，在控制台输入<code>window.devicePixelRatio</code>可以查看你的设备像素比，例如我的电脑上是<code>1.25</code>。</p>
+<p>为了让图片在高分辨率屏幕看起来最合适，有必要为不同的devicePixelRatio提供不同版本的图片。</p>
+<ul>
+<li>设备像素比为1.0，表示1个CSS像素用1个设备像素显示，在这样的机器上，一个CSS宽度为250px的<code>&lt;img&gt;</code>元素会看起来最合适，当源图片有250px宽</li>
+<li>设备像素比为2.0，表示1个CSS像素用2个设备像素显示，在这样的机器上，一个CSS宽度为250px的<code>&lt;img&gt;</code>元素会看起来最合适，当源图片有500px宽</li>
+<li>设备像素比为3.0，表示1个CSS像素用3个设备像素显示，在这样的机器上，一个CSS宽度为250px的<code>&lt;img&gt;</code>元素会看起来最合适，当源图片有750px宽</li>
+</ul>
+<p>图像编辑器或者操作系统给出的图片像素是逻辑像素。<br />
+对于更高分辨率和更大的屏幕的显示，你需要给出更大尺寸的图片，单纯放大较小的图片不能达到很好的效果，当然如果你没提供大尺寸图片浏览器还是会这么做。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;flower.jpg&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">srcset</span>=<span class="string">&quot;flower-1x.jpg 1x,</span></span></span><br><span class="line"><span class="tag"><span class="string">          flower-2x.jpg 2x,</span></span></span><br><span class="line"><span class="tag"><span class="string">          flower-3x.jpg 3x&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>1x，2x和3x都是密度描述符，它们告诉浏览器图像要用于的像素密度。这样可以避免浏览器需要下载图像来确定此信息。</li>
+<li>浏览器可以在以下三个图像之间进行选择：（flower-1x.jpg用于1.0像素密度的浏览器），flower-2x.jpg（用于2.0像素密度的浏览器）和flower-3x.jpg（用于3.0像素密度的浏览器）。</li>
+<li>flower.jpg是不支持的浏览器的后备图片 srcset。</li>
+</ul>
+<p>如何使用：</p>
+<ul>
+<li>使用devicePixelRatio和x单位写入密度描述符。例如，许多Retina屏幕（window.devicePixelRatio = 2）的密度描述符将写为2x。</li>
+<li>如果未提供密度描述符，则假定为1x。</li>
+<li>在文件名中包括密度描述符是一种常见的约定（这将有助于您跟踪文件），但这不是必需的。图片可以有任何文件名。</li>
+<li>无需包含sizes属性。该sizes属性仅与宽度描述符一起使用。</li>
+</ul>
+<p>问题是，如果提供了1x、2x、3x是不是还需要提供1.5x等变体？<br />
+假如1x是320px宽，最大的版本是5144px，是不是要从1x,2x,3x一直写到16x？</p>
+<p>Not to mention what happens when you start working with flexible images. Now you have multiple densities at multiple image breakpoints. And sometimes you’re repeating your image sources because 2x at a small size could be the same as 1x resolution at a larger image breakpoint.</p>
+<p>很快就会变得混乱。</p>
+<p>所以用宽度描述符：<br />
+宽度描述符的语法类似于显示密度描述符的语法。srcset属性的值是图像源和描述符的逗号分隔列表。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;flower.jpg&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">srcset</span>=<span class="string">&quot;flower-160.jpg 160w,</span></span></span><br><span class="line"><span class="tag"><span class="string">          flower-320.jpg 320w,</span></span></span><br><span class="line"><span class="tag"><span class="string">          flower-640.jpg 640w&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>把图片编辑器等看到的图像的宽度放在原来密度描述符的位置，加上<code>w</code></p>
+<p>使用宽度描述符时，将为浏览器提供图像列表及其真实宽度，以便它可以选择最佳来源。浏览器如何做到这一点？</p>
+<p>您的第一个直觉可能是说浏览器查看页面中元素的大小并将其与源大小列表进行比较。这是有道理的，但是选择的方式却不行。</p>
+<p>看，当浏览器开始下载图像时，它通常不知道页面中图像的大小。</p>
+<p>浏览器下载HTML之后不久，它会请求CSS和JavaScript。但是在完成CSS和JavaScript加载之前，浏览器开始下载图像。</p>
+<p>由于CSS和JavaScript都不完整，因此浏览器在下载图像时不知道页面的布局。而且，在不知道布局的情况下，它也不知道图像元素的大小。</p>
+<p>顺便说一句，这种预加载行为是为什么我们不能使用CSS或JavaScript解决内联响应图像的原因。当浏览器开始下载时，它们不可用。</p>
+<p>浏览器唯一知道的是视口的大小。一旦移去之前的显示密度描述符，所有内容都取决于视口的大小。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco2014@gmail.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/前端/CSS样式语言/像素.html">https://rcocco.github.io/categories/计算机/前端/CSS样式语言/像素.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9.html"><i class="fa fa-chevron-left">  </i><span>生成内容</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/CSS%E6%A0%B7%E5%BC%8F%E8%AF%AD%E8%A8%80/sass.html"><span>sass</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
