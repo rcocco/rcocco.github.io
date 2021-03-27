@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Disallow: /js/
+Disallow: /css/
+
+Sitemap: https://rcocco.github.io/sitemap.xml
