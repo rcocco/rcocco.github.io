@@ -20,7 +20,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#20-%E6%95%B0%E5%AD%97%E5%92%8C%E6%97%A5%E6%9C%9F"><span class="toc-number">1.</span> <span class="toc-text"> 20 数字和日期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#201-number%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 20.1 Number对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2011-number%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 20.1.1 Number构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20111-number-value"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 20.1.1.1 Number ( [ value ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#201213-numberparseint-string-radix"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 20.1.2.13 Number.parseInt ( string, radix )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#204-date%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 20.4 Date对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2041-date%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9A%E4%B9%89%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 20.4.1 Date对象和抽象操作的定义概述</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">172</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">20 数字和日期</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-30</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="20-数字和日期"><a class="markdownIt-Anchor" href="#20-数字和日期"></a> 20 数字和日期</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#20-%E6%95%B0%E5%AD%97%E5%92%8C%E6%97%A5%E6%9C%9F"><span class="toc-number">1.</span> <span class="toc-text"> 20 数字和日期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#201-number%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 20.1 Number对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2011-number%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 20.1.1 Number构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20111-number-value"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 20.1.1.1 Number ( [ value ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#201213-numberparseint-string-radix"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 20.1.2.13 Number.parseInt ( string, radix )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#204-date%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 20.4 Date对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2041-date%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9A%E4%B9%89%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 20.4.1 Date对象和抽象操作的定义概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20411-%E6%97%B6%E9%97%B4%E5%80%BC%E5%92%8C%E6%97%B6%E9%97%B4%E8%8C%83%E5%9B%B4"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 20.4.1.1 时间值和时间范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20142-%E5%A4%A9%E6%95%B0%E5%92%8C%E4%B8%80%E5%A4%A9%E5%86%85%E7%9A%84%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 20.1.4.2 天数和一天内的时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20413-%E5%B9%B4%E4%BB%BD"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 20.4.1.3 年份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20414-%E6%9C%88%E4%BB%BD"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 20.4.1.4 月份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20415-%E6%9C%88%E4%B8%AD%E7%9A%84%E6%97%A5%E6%9C%9F%E6%95%B0"><span class="toc-number">1.2.1.5.</span> <span class="toc-text"> 20.4.1.5 月中的日期数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20416-%E6%98%9F%E6%9C%9F"><span class="toc-number">1.2.1.6.</span> <span class="toc-text"> 20.4.1.6 星期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20417-localtza-t-isutc"><span class="toc-number">1.2.1.7.</span> <span class="toc-text"> 20.4.1.7 LocalTZA ( t, isUTC )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20418-localtime-t"><span class="toc-number">1.2.1.8.</span> <span class="toc-text"> 20.4.1.8 LocalTime ( t )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20419-utc-t"><span class="toc-number">1.2.1.9.</span> <span class="toc-text"> 20.4.1.9 UTC ( t )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204110-%E5%B0%8F%E6%97%B6%E5%88%86%E9%92%9F%E7%A7%92%E5%92%8C%E6%AF%AB%E7%A7%92"><span class="toc-number">1.2.1.10.</span> <span class="toc-text"> 20.4.1.10 小时,分钟,秒和毫秒</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204111-maketime-hour-min-sec-ms"><span class="toc-number">1.2.1.11.</span> <span class="toc-text"> 20.4.1.11 MakeTime ( hour, min, sec, ms )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204112-makeday-year-month-date"><span class="toc-number">1.2.1.12.</span> <span class="toc-text"> 20.4.1.12 MakeDay ( year, month, date )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204113-makedate-day-time"><span class="toc-number">1.2.1.13.</span> <span class="toc-text"> 20.4.1.13 MakeDate ( day, time )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204114-timeclip-time"><span class="toc-number">1.2.1.14.</span> <span class="toc-text"> 20.4.1.14 TimeClip ( time )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204115-%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.1.15.</span> <span class="toc-text"> 20.4.1.15 日期时间字符串格式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2041151-%E6%89%A9%E5%B1%95%E5%B9%B4"><span class="toc-number">1.2.1.15.1.</span> <span class="toc-text"> 20.4.1.15.1 扩展年</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2042-date%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 20.4.2 Date构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20421-date-year-month-date-hours-minutes-seconds-ms"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 20.4.2.1 Date ( year, month [ , date [ , hours [ , minutes [ , seconds [ , ms ] ] ] ] ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20422-date-value"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 20.4.2.2 Date ( value )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20423-date"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 20.4.2.3 Date ( )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2043-date%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 20.4.3 Date构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20431-datenow"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 20.4.3.1 Date.now()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20432-dateparse-string"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 20.4.3.2 Date.parse ( string )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20433-dateprototype"><span class="toc-number">1.2.3.3.</span> <span class="toc-text"> 20.4.3.3 Date.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20434-dateutc-year-month-date-hours-minutes-seconds-ms"><span class="toc-number">1.2.3.4.</span> <span class="toc-text"> 20.4.3.4 Date.UTC ( year [ , month [ , date [ , hours [ , minutes [ , seconds [ , ms ] ] ] ] ] ] )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2044-date%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 20.4.4 Date原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#20441-dateprototypeconstructor"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 20.4.4.1 Date.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20442-dateprototypegetdate"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 20.4.4.2 Date.prototype.getDate ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20443-dateprototypegetday"><span class="toc-number">1.2.4.3.</span> <span class="toc-text"> 20.4.4.3 Date.prototype.getDay ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20444-dateprototypegetfullyear"><span class="toc-number">1.2.4.4.</span> <span class="toc-text"> 20.4.4.4 Date.prototype.getFullYear ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20445-dateprototypegethours"><span class="toc-number">1.2.4.5.</span> <span class="toc-text"> 20.4.4.5 Date.prototype.getHours ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20446-dateprototypegetmilliseconds"><span class="toc-number">1.2.4.6.</span> <span class="toc-text"> 20.4.4.6 Date.prototype.getMilliseconds  ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20447-dateprototypegetminutes"><span class="toc-number">1.2.4.7.</span> <span class="toc-text"> 20.4.4.7 Date.prototype.getMinutes  ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20448-dateprototypegetmonth"><span class="toc-number">1.2.4.8.</span> <span class="toc-text"> 20.4.4.8 Date.prototype.getMonth   ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20449-dateprototypegetseconds"><span class="toc-number">1.2.4.9.</span> <span class="toc-text"> 20.4.4.9 Date.prototype.getSeconds ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204410-dateprototypegettime"><span class="toc-number">1.2.4.10.</span> <span class="toc-text"> 20.4.4.10 Date.prototype.getTime ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204411-dateprototypegettimezoneoffset"><span class="toc-number">1.2.4.11.</span> <span class="toc-text"> 20.4.4.11 Date.prototype.getTimezoneOffset  ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204412-dateprototypegetutcdate"><span class="toc-number">1.2.4.12.</span> <span class="toc-text"> 20.4.4.12 Date.prototype.getUTCDate  ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204420-dateprototypesetdate-date"><span class="toc-number">1.2.4.13.</span> <span class="toc-text"> 20.4.4.20 Date.prototype.setDate ( date )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#204420-dateprototypesetfullyear-year-month-date"><span class="toc-number">1.2.4.14.</span> <span class="toc-text"> 20.4.4.20 Date.prototype.setFullYear ( year [ , month [ , date ] ] )</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">173</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">20 数字和日期</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-03-31</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="20-数字和日期"><a class="markdownIt-Anchor" href="#20-数字和日期"></a> 20 数字和日期</h1>
 <h2 id="201-number对象"><a class="markdownIt-Anchor" href="#201-number对象"></a> 20.1 Number对象</h2>
 <h3 id="2011-number构造函数"><a class="markdownIt-Anchor" href="#2011-number构造函数"></a> 20.1.1 Number构造函数</h3>
 <p>Number构造函数是固有对象％Number％以及全局对象的Number属性的初始值。 当作为构造函数调用时，它将创建并初始化一个新的Number对象。 当Number作为函数而不是构造函数调用时，它将执行类型转换。</p>
@@ -42,6 +42,388 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h2 id="204-date对象"><a class="markdownIt-Anchor" href="#204-date对象"></a> 20.4 Date对象</h2>
 <h3 id="2041-date对象和抽象操作的定义概述"><a class="markdownIt-Anchor" href="#2041-date对象和抽象操作的定义概述"></a> 20.4.1 Date对象和抽象操作的定义概述</h3>
 <p>以下函数是操作时间值（在20.4.1.1中定义）的抽象操作。 请注意，在任何情况下，如果这些函数之一的任何参数为<code>NaN</code>，则结果将为<code>NaN</code>。</p>
+<h4 id="20411-时间值和时间范围"><a class="markdownIt-Anchor" href="#20411-时间值和时间范围"></a> 20.4.1.1 时间值和时间范围</h4>
+<p>ECMAScript中的时间计量类似于POSIX中的时间计量，特别是共享了外推格里历（公历）的定义：它开始于UTC时间的1970年1月1日午夜，每一天包含 86400 秒（每秒有1000毫秒）</p>
+<p>一个ECMAScript时间值是一个<code>Number</code>，可以是有限整数，表示精确到毫秒的某个特定时刻，也可以是<code>NaN</code>，表示不特定时间。如果一个时间值<code>s</code>是<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.439ex" xmlns="http://www.w3.org/2000/svg" width="33.688ex" height="1.971ex" role="img" focusable="false" viewBox="0 -677 14890.2 871"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(1222.2, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(2222.4, 0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(3444.7, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(4444.9, 0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(5667.1, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(6667.3, 0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500, 0)"></path></g><g data-mml-node="mo" transform="translate(8945.1, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(10000.9, 0)"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(11000.9, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(11445.6, 0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path></g><g data-mml-node="mo" transform="translate(12945.6, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(13390.2, 0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path></g></g></g></svg></mjx-container>（即等于<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.439ex" xmlns="http://www.w3.org/2000/svg" width="15.004ex" height="2.009ex" role="img" focusable="false" viewBox="0 -694 6631.8 888"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500, 0)"></path></g><g data-mml-node="mo" transform="translate(1000, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(1444.7, 0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path></g><g data-mml-node="mo" transform="translate(2944.7, 0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mn" transform="translate(3389.3, 0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path></g><g data-mml-node="mo" transform="translate(5111.6, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mi" transform="translate(6111.8, 0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g></svg></mjx-container>，其中<mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.023ex" xmlns="http://www.w3.org/2000/svg" width="1.176ex" height="1.593ex" role="img" focusable="false" viewBox="0 -694 520 704"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g></g></g></svg></mjx-container>是某个整数）的倍数，它表示从UTC天开始的时刻往后<code>d</code>个UTC天（负<code>d</code>表示往前）这样的时刻。每个其他的有限时间值<code>t</code>都是相对于最大的前一个这样的时间值<code>s</code>定义的，表示和<code>s</code>相同的UTC天内但往后<code>t-s</code>毫秒的时刻。</p>
+<p>时间值并没有考虑到UTC闰秒——没有表示正闰秒内的时刻的时间值，但有表示因为负闰秒而从UTC时间线上移除的时刻的时间值。但是，时间值的定义仍然可以与UTC分段对齐，仅在闰秒边界才是不连续的，在闰秒之外没有差异。</p>
+<p>一个<code>Number</code>值可以精确表示从<code>-9,007,199,254,740,992</code>到<code>9,007,199,254,740,992</code>的所有整数（20.1.2.8 和 20.1.2.6）。一个时间值支持从<code>-8,640,000,000,000,000</code>到<code>8,640,000,000,000,000</code>毫秒这样的稍小的范围。这就产生了支持的时间值的范围：相对于UTC时间1970年1月1日午夜起始的<code>-100,000,000</code>天到<code>100,000,000</code>天。</p>
+<p>UTC时间1970年1月1日午夜起始的确切时刻，使用时间值<code>+0</code>表示。</p>
+<p>注：公历中每400年包含97个闰年，也就是说平均每年 <code>365.2425</code> 天，即<code>31,556,952,000</code>毫秒。 因此，<code>Number</code>可以精确表示的最大范围（以毫秒为单位）相对于1970年，约为<code>-285,426</code>至<code>285,426</code>年。本节中指定的时间值所支持的较小范围相对于1970年约为<code>-273,790</code>至<code>273,790</code>年。</p>
+<h4 id="20142-天数和一天内的时间"><a class="markdownIt-Anchor" href="#20142-天数和一天内的时间"></a> 20.1.4.2 天数和一天内的时间</h4>
+<p>给定时间值<code>t</code>的天数为：<code>Day(t) = floor(t / msPerDay)</code><br />
+其中每天的毫秒数<code>msPerDay = 86400000</code><br />
+余数称为一天内的时间<code>TimeWithinDay(t) = t modulo msPerDay</code></p>
+<h4 id="20413-年份"><a class="markdownIt-Anchor" href="#20413-年份"></a> 20.4.1.3 年份</h4>
+<p>ECMAScript使用外推格里历将天数映射为年份，以及确定一年中的月份和日期。在此历法中，闰年是指（能被4整除且不能被100整除）或（能被400整除）的年份。第<code>y</code>年中的天数定义为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DaysInYear(y)</span><br><span class="line">    &#x3D; 365 if (y modulo 4) ≠ 0</span><br><span class="line">    &#x3D; 366 if (y modulo 4) &#x3D; 0 and (y modulo 100) ≠ 0</span><br><span class="line">    &#x3D; 365 if (y modulo 100) &#x3D; 0 and (y modulo 400) ≠ 0</span><br><span class="line">    &#x3D; 366 if (y modulo 400) &#x3D; 0</span><br></pre></td></tr></table></figure>
+<p>所有非闰年都有365天，每个月的天数和平常一样。闰年的2月多了一天。第<code>y</code>年第1天的天数由下列公式给出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DayFromYear(y) &#x3D; 365 × (y - 1970) + floor((y - 1969) &#x2F; 4) - floor((y - 1901) &#x2F; 100) + floor((y - 1601) &#x2F; 400)</span><br></pre></td></tr></table></figure>
+<p>一年开始的时间值为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TimeFromYear(y) &#x3D; msPerDay × DayFromYear(y)</span><br></pre></td></tr></table></figure>
+<p>通过下列公式从时间值确定年份：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">满足 TimeFromYear(y) ≤ t 的最大整数y（向正无穷舍入）</span><br></pre></td></tr></table></figure>
+<p>闰年函数对于闰年内的时间值返回1，否则返回0。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">InLeapYear(t)</span><br><span class="line">    &#x3D; 0 if DaysInYear(YearFromTime(t)) &#x3D; 365</span><br><span class="line">    &#x3D; 1 if DaysInYear(YearFromTime(t)) &#x3D; 366</span><br></pre></td></tr></table></figure>
+<h4 id="20414-月份"><a class="markdownIt-Anchor" href="#20414-月份"></a> 20.4.1.4 月份</h4>
+<p>月份由一个0到11之间（闭区间）的整数来标识。从时间值<code>t</code>到月份数的映射<code>MonthFromTime(t)</code>定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">MonthFromTime(t)</span><br><span class="line">    &#x3D; 0 if 0 ≤ DayWithinYear(t) &lt; 31</span><br><span class="line">    &#x3D; 1 if 31 ≤ DayWithinYear(t) &lt; 59 + InLeapYear(t)</span><br><span class="line">    &#x3D; 2 if 59 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 90 + InLeapYear(t)</span><br><span class="line">    &#x3D; 3 if 90 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 120 + InLeapYear(t)</span><br><span class="line">    &#x3D; 4 if 120 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 151 + InLeapYear(t)</span><br><span class="line">    &#x3D; 5 if 151 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 181 + InLeapYear(t)</span><br><span class="line">    &#x3D; 6 if 181 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 212 + InLeapYear(t)</span><br><span class="line">    &#x3D; 7 if 212 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 243 + InLeapYear(t)</span><br><span class="line">    &#x3D; 8 if 243 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 273 + InLeapYear(t)</span><br><span class="line">    &#x3D; 9 if 273 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 304 + InLeapYear(t)</span><br><span class="line">    &#x3D; 10 if 304 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 334 + InLeapYear(t)</span><br><span class="line">    &#x3D; 11 if 334 + InLeapYear(t) ≤ DayWithinYear(t) &lt; 365 + InLeapYear(t)</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DayWithinYear(t) &#x3D; Day(t) - DayFromYear(YearFromTime(t))</span><br></pre></td></tr></table></figure>
+<p>月份值<code>0</code>表示一月，<code>1</code>表示二月，以此类推，<code>11</code>表示12月。注意<code>MonthFromTime(0) = 0</code>，对应于1970年1月1日星期四。</p>
+<h4 id="20415-月中的日期数"><a class="markdownIt-Anchor" href="#20415-月中的日期数"></a> 20.4.1.5 月中的日期数</h4>
+<p>月中的日期数由一个1到31之间（闭区间）的整数来标识。从时间值<code>t</code>到日期数的映射<code>DateFromTime(t)</code>定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DateFromTime(t)</span><br><span class="line">    &#x3D; DayWithinYear(t) + 1 if MonthFromTime(t) &#x3D; 0</span><br><span class="line">    &#x3D; DayWithinYear(t) - 30 if MonthFromTime(t) &#x3D; 1</span><br><span class="line">    &#x3D; DayWithinYear(t) - 58 - InLeapYear(t) if MonthFromTime(t) &#x3D; 2</span><br><span class="line">    &#x3D; DayWithinYear(t) - 89 - InLeapYear(t) if MonthFromTime(t) &#x3D; 3</span><br><span class="line">    &#x3D; DayWithinYear(t) - 119 - InLeapYear(t) if MonthFromTime(t) &#x3D; 4</span><br><span class="line">    &#x3D; DayWithinYear(t) - 150 - InLeapYear(t) if MonthFromTime(t) &#x3D; 5</span><br><span class="line">    &#x3D; DayWithinYear(t) - 180 - InLeapYear(t) if MonthFromTime(t) &#x3D; 6</span><br><span class="line">    &#x3D; DayWithinYear(t) - 211 - InLeapYear(t) if MonthFromTime(t) &#x3D; 7</span><br><span class="line">    &#x3D; DayWithinYear(t) - 242 - InLeapYear(t) if MonthFromTime(t) &#x3D; 8</span><br><span class="line">    &#x3D; DayWithinYear(t) - 272 - InLeapYear(t) if MonthFromTime(t) &#x3D; 9</span><br><span class="line">    &#x3D; DayWithinYear(t) - 303 - InLeapYear(t) if MonthFromTime(t) &#x3D; 10</span><br><span class="line">    &#x3D; DayWithinYear(t) - 333 - InLeapYear(t) if MonthFromTime(t) &#x3D; 11</span><br></pre></td></tr></table></figure>
+<h4 id="20416-星期"><a class="markdownIt-Anchor" href="#20416-星期"></a> 20.4.1.6 星期</h4>
+<p>给定时间值<code>t</code>，对应的星期定义为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WeekDay(t) &#x3D; (Day(t) + 4) modulo 7</span><br></pre></td></tr></table></figure>
+<p>星期值<code>0</code>表示周日，<code>1</code>表示周一，以此类推，<code>6</code>表示周六。注意<code>WeekDay(0) = 4</code>，对应于1970年1月1日星期四。</p>
+<h4 id="20417-localtza-t-isutc"><a class="markdownIt-Anchor" href="#20417-localtza-t-isutc"></a> 20.4.1.7 LocalTZA ( t, isUTC )</h4>
+<p><code>LocalTZA( t, isUTC )</code>是一个由实现定义的算法，它以毫秒为单位返回当地的时区调整或偏移。当地的规定的统一标准时间或夏令时对<code>t</code>的影响应该以本节中指定的方式来确定结果。</p>
+<p>当<code>isUTC</code>为<code>true</code>时，<code>LocalTZA( t_&#123;UTC&#125;, true )</code>应该返回在时间值<code>t_&#123;UTC&#125;</code>所代表的时刻，以毫秒为单位的当地时区与 UTC 的偏移量。当这个结果被加到<code>t_&#123;UTC&#125;</code>后，它应该产生相应的Number值<code>t_&#123;local&#125;</code>。</p>
+<p>当<code>isUTC</code>为<code>false</code>时，<code>LocalTZA( t_&#123;local&#125;, false )</code>应该返回在以Number值<code>t_&#123;local&#125;</code>代表的时刻，以毫秒为单位的当地时区与 UTC 的偏移量。当从<code>t_&#123;local&#125;</code>中减去这个结果后，它应该产生相应的时间值<code>t_&#123;UTC&#125;</code>。</p>
+<p>输入<code>t</code>名义上是一个时间值，但可以是任何Number值。当<code>isUTC</code>为<code>false</code>，并且<code>t_&#123;local&#125;</code>代表的时间值已经在范围边界偏移到时间值范围之外时，就会出现这种情况。算法不能将<code>t_&#123;local&#125;</code>限制在时间值范围内，所以支持这种输入。</p>
+<p>当<code>t_local</code>代表在负时区转换时(例如当夏令时结束或时区偏移量因时区规则改变而减少时)重复多次的本地时间，或在正时区转换时(例如当夏令时开始或时区偏移量因时区规则改变而增加时)跳过的本地时间时，必须使用转换前的时区偏移量来解释<code>t_&#123;local&#125;</code>。</p>
+<p>如果一个实现不支持上面描述的转换，或者实现中没有时间<code>t</code>的政治规则，结果必须为<code>0</code>。</p>
+<p>注：建议实现者使用IANA时区数据库的时区信息https://www.iana.org/time-zones/。</p>
+<p>美国/纽约时间2017年11月5日 1:30 AM 重复了两次(倒退)，但必须解释为UTC-04的 1:30 AM，而不是UTC-05的1:30 AM。<code>LocalTZA(TimeClip(MakeDate(MakeDay(2017, 10, 5), MakeTime(1, 30, 0, 0))), false)</code>为<code>-4 × msPerHour</code></p>
+<p>美国/纽约时间2017年3月12日 2:30 AM不存在，但必须解释为UTC-05 2:30 AM（相当于UTC-04 3:30 AM）。<code>LocalTZA(TimeClip(MakeDate(MakeDay(2017, 2, 12), MakeTime(2, 30, 0, 0))), false)</code>为<code>-5 × msPerHour</code></p>
+<p>当地时区偏移值可以是正值或负值。</p>
+<h4 id="20418-localtime-t"><a class="markdownIt-Anchor" href="#20418-localtime-t"></a> 20.4.1.8 LocalTime ( t )</h4>
+<p>抽象操作<code>LocalTime</code>接受参数<code>t</code>，通过执行下面的步骤将<code>t</code>从UTC时间转换为当地时间</p>
+<ol>
+<li>返回<code>t + LocalTZA(t, true)</code></li>
+</ol>
+<p>注：当有重复时间时(如夏令时结束或时区调整减少)，两个不同的输入时间值<code>t_&#123;UTC&#125;</code>在负时区转换时被转换为相同的本地时间<code>t_&#123;local&#125;</code>。<br />
+<code>LocalTime(UTC(t_&#123;local&#125;))</code>不一定总是等于<code>t_&#123;local&#125;</code>。相应地，<code>UTC(LocalTime(t_&#123;UTC&#125;))</code>不一定总是等于<code>t_&#123;UTC&#125;</code>。</p>
+<h4 id="20419-utc-t"><a class="markdownIt-Anchor" href="#20419-utc-t"></a> 20.4.1.9 UTC ( t )</h4>
+<p>抽象操作<code>UTC</code>接受参数<code>t</code>，通过执行下面的步骤将<code>t</code>从当地时间转换为UTC时间</p>
+<ol>
+<li>返回<code>t - LocalTZA(t, false)</code></li>
+</ol>
+<p>注：<code>UTC(LocalTime(t_&#123;UTC&#125;))</code>不一定总是等于<code>t_&#123;UTC&#125;</code>。相应地，<code>LocalTime(UTC(t_&#123;local&#125;))</code>不一定总是等于<code>t_&#123;local&#125;</code>。</p>
+<h4 id="204110-小时分钟秒和毫秒"><a class="markdownIt-Anchor" href="#204110-小时分钟秒和毫秒"></a> 20.4.1.10 小时,分钟,秒和毫秒</h4>
+<p>以下抽象操作在分解时间值时很有用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HourFromTime(t) &#x3D; floor(t &#x2F; msPerHour) modulo HoursPerDay</span><br><span class="line">MinFromTime(t) &#x3D; floor(t &#x2F; msPerMinute) modulo MinutesPerHour</span><br><span class="line">SecFromTime(t) &#x3D; floor(t &#x2F; msPerSecond) modulo SecondsPerMinute</span><br><span class="line">msFromTime(t) &#x3D; t modulo msPerSecond</span><br></pre></td></tr></table></figure>
+<p>这里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HoursPerDay &#x3D; 24</span><br><span class="line">MinutesPerHour &#x3D; 60</span><br><span class="line">SecondsPerMinute &#x3D; 60</span><br><span class="line">msPerSecond &#x3D; 1000</span><br><span class="line">msPerMinute &#x3D; 60000 &#x3D; msPerSecond × SecondsPerMinute</span><br><span class="line">msPerHour &#x3D; 3600000 &#x3D; msPerMinute × MinutesPerHour</span><br></pre></td></tr></table></figure>
+<h4 id="204111-maketime-hour-min-sec-ms"><a class="markdownIt-Anchor" href="#204111-maketime-hour-min-sec-ms"></a> 20.4.1.11 MakeTime ( hour, min, sec, ms )</h4>
+<p>抽象操作<code>MakeTime</code>根据其四个参数计算毫秒数，这些参数必须是ECMAScript的Number值。 该操作执行下列过程：</p>
+<ol>
+<li>如果<code>hour</code>或<code>min</code>或<code>sec</code>或<code>ms</code>不是有限值，返回<code>NaN</code></li>
+<li>令<code>h</code>为! <code>ToInteger(hour)</code></li>
+<li>令<code>m</code>为! <code>ToInteger(min)</code></li>
+<li>令<code>s</code>为! <code>ToInteger(sec)</code></li>
+<li>令<code>milli</code>为! <code>ToInteger(ms)</code></li>
+<li>令<code>t</code>为<code>h * msPerHour + m * msPerMinute + s * msPerSecond + milli</code>，根据IEE754-2019规则执行运算（就像ECMAScript中的运算符<code>*</code>和<code>+</code>一样）</li>
+<li>返回<code>t</code></li>
+</ol>
+<h4 id="204112-makeday-year-month-date"><a class="markdownIt-Anchor" href="#204112-makeday-year-month-date"></a> 20.4.1.12 MakeDay ( year, month, date )</h4>
+<p>抽象操作<code>MakeDay</code>根据其三个参数计算天数，这些参数必须是ECMAScript的Number值。 该操作执行下列过程：</p>
+<ol>
+<li>如果<code>year</code>或<code>month</code>或<code>date</code>不是有限值，返回<code>NaN</code></li>
+<li>令<code>y</code>为! <code>ToInteger(year)</code></li>
+<li>令<code>m</code>为! <code>ToInteger(month)</code></li>
+<li>令<code>dt</code>为! <code>ToInteger(date)</code></li>
+<li>令<code>ym</code>为! <code>y + floor(m / 12)</code></li>
+<li>令<code>mn</code>为<code>m modulo 12</code></li>
+<li>找到一个值<code>t</code>使得<code>YearFromTime(t)</code>为<code>ym</code>且<code>MonthFromTime(t)</code>为<code>mn</code>且<code>DateFromTime(t)</code>为<code>1</code>。如果找不到这样的值（由于某些参数超出范围），则返回<code>NaN</code></li>
+<li>返回<code>Day(t) + dt - 1</code></li>
+</ol>
+<h4 id="204113-makedate-day-time"><a class="markdownIt-Anchor" href="#204113-makedate-day-time"></a> 20.4.1.13 MakeDate ( day, time )</h4>
+<p>抽象操作<code>MakeDate</code>根据其两个参数计算毫秒数，这些参数必须是ECMAScript的Number值。 该操作执行下列过程：</p>
+<ol>
+<li>如果<code>day</code>或<code>time</code>不是有限值，返回<code>NaN</code></li>
+<li>返回<code>day × msPerDay + time</code></li>
+</ol>
+<h4 id="204114-timeclip-time"><a class="markdownIt-Anchor" href="#204114-timeclip-time"></a> 20.4.1.14 TimeClip ( time )</h4>
+<p>抽象操作<code>TimeClip</code>根据其参数计算毫秒数，这些参数必须是ECMAScript的Number值。 该操作执行下列过程：</p>
+<ol>
+<li>如果<code>time</code>不是有限值，返回<code>NaN</code></li>
+<li>如果<code>abs(time) &gt; 8.64 * 10^15</code>，返回<code>NaN</code></li>
+<li>返回 ! <code>ToInteger(time)</code></li>
+</ol>
+<p>注：第4步的要点是，允许实现者选择时间值的内部表示方法，例如使用64位有符号整数或64位浮点数。根据不同的实现，这种内部表示法可以区分或不区分<code>-0</code>和<code>+0</code>。</p>
+<h4 id="204115-日期时间字符串格式"><a class="markdownIt-Anchor" href="#204115-日期时间字符串格式"></a> 20.4.1.15 日期时间字符串格式</h4>
+<p>ECMAScript在简化 ISO 8601日历日期扩展格式的基础上，定义了日期时间的字符串交换格式。其格式为：<code>YYYY-MM-DDTHH:mm:ss.sssZ</code></p>
+<ul>
+<li><code>YYYY</code>表示在公历中，从0000到9999的四位十进制数，或者是<code>&quot;+&quot;</code>或<code>&quot;-&quot;</code>后跟紧跟六位十进制数的扩展年</li>
+<li><code>-</code>（连字符）作为字面值<code>&quot;-&quot;</code>在字符串中出现两次。</li>
+<li><code>MM</code>是一年中的月份，从01（1月）到12（12月）的两位十进制数。</li>
+<li><code>DD</code> 是指月份中的第几号，从 01 到 31 的两位十进制数字。</li>
+<li><code>T</code> 作为字面值<code>&quot;T&quot;</code>出现在字符串中，表示时间元素的开始。</li>
+<li><code>HH</code>是指从午夜到现在已经过去的完整小时数，从00到24的两位十进制数。</li>
+<li><code>:</code>（冒号）作为字面值<code>&quot;:&quot;</code>在字符串中出现两次</li>
+<li><code>mm</code>是自小时开始后的经过的完整分钟数，从00到59的两位进制数字。</li>
+<li><code>ss</code>是自分钟开始后的经过的完整秒数，为00至59的两位十进制数字。</li>
+<li><code>.</code>（点）作为字面值<code>&quot;.&quot;</code>出现在字符串中</li>
+<li><code>sss</code>是自秒开始后的经过的完整毫秒数，为三位十进制数字。</li>
+<li><code>Z</code>是UTC偏移量的表示方法，指定为 <code>&quot;Z&quot;</code>（对于没有偏移量的UTC），又或者是 <code>&quot;+&quot;</code>或<code>&quot;-&quot;</code>后面跟着一个时间表达式<code>HH:mm</code>（分别表示当地时间在UTC之前或之后）的偏移量。</li>
+</ul>
+<p>此格式也包括只有日期的格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">YYYY</span><br><span class="line">YYYY-MM</span><br><span class="line">YYYY-MM-DD</span><br></pre></td></tr></table></figure>
+<p>它还包括 &quot;日期-时间 &quot;格式，它由上面只有日期的格式之一后面紧跟着是以下时间格式之一组成，并附加了一个可选的UTC偏移表示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">THH:mm</span><br><span class="line">THH:mm:ss</span><br><span class="line">THH:mm:ss.sss</span><br></pre></td></tr></table></figure>
+<p>含有越界或不符合要求的元素的字符串不是此格式的有效实例。</p>
+<p>注1：由于每天都是以午夜为起点和终点，所以可以用 <code>00:00</code> 和 <code>24:00</code> 这两个记号来区分可以与一个日期相关联的两个午夜。这意味着以下两个记号所指的时间点完全相同：<code>1995-02-04T24:00</code>和<code>1995-02-05T00:00</code>。将后一种形式解释为 &quot;一个日历日的结束 &quot; 符合ISO 8601，尽管该规范将其保留用于描述时间间隔，不允许在单个时间点的表示中使用。</p>
+<p>注2：目前还没有国际标准规定民用时区的缩写，如CET、EST等，有时甚至同一缩写用于两个截然不同的时区。为此，ISO 8601和这种格式都规定了时区偏移的数字表示。</p>
+<h5 id="2041151-扩展年"><a class="markdownIt-Anchor" href="#2041151-扩展年"></a> 20.4.1.15.1 扩展年</h5>
+<p>要涵盖从1970年1月1日(20.4.1.1)向前或向后约273,790年的全部时间值范围，需要表示0之前或9999之后的年份。ISO 8601允许扩大年份的表示范围，但只能由信息交换的伙伴双方同意。在简化的ECMAScript格式中，这种扩展的年份表示法应包含6位数字，并总是以<code>+</code>或<code>-</code>号为前缀。<code>0</code>年被认为是正数，因此前缀为<code>+</code>号。与【日期时间字符串格式】匹配的字符串，如果用扩展的年份表示时间值范围之外的时间实例，则会被<code>Date.parse</code>视为不可识别，并导致该函数返回<code>NaN</code>，而不会回到特定的实现行为或启发式方法。</p>
+<p>注：使用扩展年的日期时间值例子如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-271821-04-20T00:00:00Z    271822 B.C.</span><br><span class="line">-000001-01-01T00:00:00Z    2 B.C.</span><br><span class="line">+000000-01-01T00:00:00Z    1 B.C.</span><br><span class="line">+000001-01-01T00:00:00Z    1 A.D.</span><br><span class="line">+001970-01-01T00:00:00Z    1970 A.D.</span><br><span class="line">+002009-12-15T00:00:00Z    2009 A.D.</span><br><span class="line">+275760-09-13T00:00:00Z    275760 A.D.</span><br></pre></td></tr></table></figure>
+<h3 id="2042-date构造函数"><a class="markdownIt-Anchor" href="#2042-date构造函数"></a> 20.4.2 Date构造函数</h3>
+<p>Date构造函数：</p>
+<ul>
+<li>是固有对象<code>%Date%</code></li>
+<li>是全局对象的<code>&quot;Date&quot;</code>属性的初始值</li>
+<li>作为构造函数调用时创建并初始化一个新的Date对象</li>
+<li>作为函数而不是构造函数调用时，返回表示当前时间（UTC）的字符串</li>
+<li>是单个函数，但其行为是基于参数的数量和类型而重载的。</li>
+<li>被设计为可派生的。它可以被用作类定义的<code>extends</code>子句的值。打算继承指定的<code>Date</code>行为的子类构造函数必须包含对<code>Date</code>构造函数的<code>super</code>调用，以创建并初始化具有<code>[[DateValue]]</code>内部插槽的子类实例。</li>
+<li>有一个 <code>&quot;length&quot;</code>属性，其值为<code>7</code></li>
+</ul>
+<h4 id="20421-date-year-month-date-hours-minutes-seconds-ms"><a class="markdownIt-Anchor" href="#20421-date-year-month-date-hours-minutes-seconds-ms"></a> 20.4.2.1 Date ( year, month [ , date [ , hours [ , minutes [ , seconds [ , ms ] ] ] ] ] )</h4>
+<p>仅当使用至少两个参数调用<code>Date</code>构造函数时，此描述才适用。<br />
+调用<code>Date</code>函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>numberOfArgs</code>为传入的参数数量</li>
+<li>断言：<code>numberOfArgs ≥ 2</code></li>
+<li>如果<code>NewTarget</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>now</code>为表示当前时间值（UTC）的Number</li>
+<li>返回<code>ToDateString(now)</code></li>
+</ol>
+</li>
+<li>否则
+<ol>
+<li>令<code>y</code>为? <code>ToNumber(year)</code></li>
+<li>令<code>m</code>为? <code>ToNumber(month)</code></li>
+<li>如果<code>date</code>存在，令<code>dt</code>为? <code>ToNumber(date)</code>，否则令<code>dt</code>为<code>1</code></li>
+<li>如果<code>hours</code>存在，令<code>h</code>为? <code>ToNumber(hours)</code>，否则令<code>h</code>为<code>0</code></li>
+<li>如果<code>minutes</code>存在，令<code>min</code>为? <code>ToNumber(minutes)</code>，否则令<code>min</code>为<code>0</code></li>
+<li>如果<code>seconds</code>存在，令<code>s</code>为? <code>ToNumber(seconds)</code>，否则令<code>s</code>为<code>0</code></li>
+<li>如果<code>ms</code>存在，令<code>milli</code>为? <code>ToNumber(ms)</code>，否则令<code>milli</code>为<code>0</code></li>
+<li>如果<code>y</code>为<code>NaN</code>，令<code>yr</code>为<code>NaN</code></li>
+<li>否则：
+<ol>
+<li>令<code>yi</code>为! <code>ToInteger(y)</code></li>
+<li>如果<code>0 ≤ yi ≤ 99</code>，令<code>yr</code>为<code>1900 + yi</code>，否则令<code>yr</code>为<code>y</code></li>
+</ol>
+</li>
+<li>令<code>finalDate</code>为<code>MakeDate(MakeDay(yr, m, dt), MakeTime(h, min, s, milli))</code></li>
+<li>令<code>O</code>为? <code>OrdinaryCreateFromConstructor(NewTarget, &quot;%Date.prototype%&quot;, « [[DateValue]] »)</code></li>
+<li>将<code>O.[[DateValue]]</code>设为<code>TimeClip(UTC(finalDate))</code></li>
+<li>返回<code>O</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="20422-date-value"><a class="markdownIt-Anchor" href="#20422-date-value"></a> 20.4.2.2 Date ( value )</h4>
+<p>仅当使用一个参数调用<code>Date</code>构造函数时，此描述才适用。<br />
+调用<code>Date</code>函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>numberOfArgs</code>为传入的参数数量</li>
+<li>断言：<code>numberOfArgs = 1</code></li>
+<li>如果<code>NewTarget</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>now</code>为表示当前时间值（UTC）的Number</li>
+<li>返回<code>ToDateString(now)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>如果<code>Type(value)</code>为<code>Object</code>，并且<code>value</code>具有<code>[[DateValue]]</code>内部插槽，则令<code>tv</code>为<code>thisTimeValue(value)</code></li>
+<li>否则：
+<ol>
+<li>令<code>v</code>为? <code>ToPrimitive(value)</code></li>
+<li>如果<code>Type(v)</code>为<code>String</code>，则
+<ol>
+<li>断言：下一步永远不会返回非常规完结，因为<code>Type(v)</code>位<code>String</code></li>
+<li>令<code>tv</code>为将<code>v</code>作为日期解析的结果，和<code>parse</code>方法（20.4.3.2）的行为完全一样。</li>
+</ol>
+</li>
+<li>否则，令<code>tv</code>为? <code>ToNumber(v)</code></li>
+</ol>
+</li>
+<li>令<code>O</code>为? <code>OrdinaryCreateFromConstructor(NewTarget, &quot;%Date.prototype%&quot;, « [[DateValue]] »)</code></li>
+<li>将<code>O.[[DateValue]]</code>设为<code>TimeClip(tv)</code></li>
+<li>返回<code>O</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="20423-date"><a class="markdownIt-Anchor" href="#20423-date"></a> 20.4.2.3 Date ( )</h4>
+<p>仅当不使用参数调用<code>Date</code>构造函数时，此描述才适用。<br />
+调用<code>Date</code>函数时，将执行以下步骤：</p>
+<ol>
+<li>令<code>numberOfArgs</code>为传入的参数数量</li>
+<li>断言：<code>numberOfArgs = 0</code></li>
+<li>如果<code>NewTarget</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>now</code>为表示当前时间值（UTC）的Number</li>
+<li>返回<code>ToDateString(now)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>O</code>为? <code>OrdinaryCreateFromConstructor(NewTarget, &quot;%Date.prototype%&quot;, « [[DateValue]] »)</code></li>
+<li>将<code>O.[[DateValue]]</code>设为表示当前时间的时间值（UTC）</li>
+<li>返回<code>O</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="2043-date构造函数的属性"><a class="markdownIt-Anchor" href="#2043-date构造函数的属性"></a> 20.4.3 Date构造函数的属性</h3>
+<p>Date构造函数：</p>
+<ul>
+<li>有一个值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>有以下属性</li>
+</ul>
+<h4 id="20431-datenow"><a class="markdownIt-Anchor" href="#20431-datenow"></a> 20.4.3.1 Date.now()</h4>
+<p><code>now</code>函数返回一个Number值，该值是调用<code>now</code>那一刻的UTC日期和时间对应的时间值。</p>
+<h4 id="20432-dateparse-string"><a class="markdownIt-Anchor" href="#20432-dateparse-string"></a> 20.4.3.2 Date.parse ( string )</h4>
+<p><code>parse</code>函数对参数<code>string</code>应用<code>ToString</code>抽象操作。如果<code>ToString</code>的结果是非常规完结，则直接返回完结记录。否则，<code>parse</code>函数将结果的字符串解释为日期和时间；它返回一个对应于此日期和时间的UTC时间值（Number类型）。字符串可能被解释为当地时间、UTC时间或其他时区的时间，这取决于字符串的内容。该函数首先尝试根据【日期时间字符串格式】（20.4.1.15）中描述的格式解析字符串，包括扩展的年份。如果字符串不符合该格式，函数可能会返回到任何实现特定的启发式或实现特定的日期格式。无法识别或包含越界格式元素值的字符串应导致<code>Date.parse</code>返回<code>NaN</code>。</p>
+<p>如果字符串符合【日期时间字符串格式】，则用替代值代替缺失的格式元素。当<code>MM</code>或<code>DD</code>元素缺失时，使用 <code>&quot;01&quot;</code>。当<code>HH</code>、<code>mm</code>或<code>ss</code>元素缺失时，使用 <code>&quot;00&quot;</code>。当<code>ss</code>元素缺失时，使用 <code>&quot;000&quot;</code>。当UTC偏移表示不存在时，只有日期的格式被解释为UTC时间，而日期-时间格式被解释为当地时间。</p>
+<p>如果<code>x</code>是ECMAScript特定实现中毫秒量为零的任何Date对象，那么在该实现中，如果所引用的所有属性都有其初始值，那么以下所有表达式都应该产生相同的数值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x.valueOf()</span><br><span class="line"><span class="built_in">Date</span>.parse(x.toString())</span><br><span class="line"><span class="built_in">Date</span>.parse(x.toUTCString())</span><br><span class="line"><span class="built_in">Date</span>.parse(x.toISOString())</span><br></pre></td></tr></table></figure>
+<p>当然，表达式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.parse(x.toLocaleString())</span><br></pre></td></tr></table></figure>
+<p>它不需要产生与前面三个表达式相同的Number值，一般来说，当给定任何不符合【日期时间字符串格式】（20.4.1.15）的String值，并且在该实现中无法由<code>toString</code>或<code>toUTCString</code>方法产生时，<code>Date.parse</code>产生的值是依赖于实现的。</p>
+<h4 id="20433-dateprototype"><a class="markdownIt-Anchor" href="#20433-dateprototype"></a> 20.4.3.3 Date.prototype</h4>
+<p><code>Date.prototype</code>的初始值为<code>%Date.prototype%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h4 id="20434-dateutc-year-month-date-hours-minutes-seconds-ms"><a class="markdownIt-Anchor" href="#20434-dateutc-year-month-date-hours-minutes-seconds-ms"></a> 20.4.3.4 Date.UTC ( year [ , month [ , date [ , hours [ , minutes [ , seconds [ , ms ] ] ] ] ] ] )</h4>
+<p>当调用<code>UTC</code>函数时，执行以下步骤：</p>
+<ol>
+<li>令<code>y</code>为? <code>ToNumber(year)</code></li>
+<li>如果<code>month</code>存在，令<code>m</code>为? <code>ToNumber(month)</code>，否则令<code>m</code>为<code>0</code></li>
+<li>如果<code>date</code>存在，令<code>dt</code>为? <code>ToNumber(date)</code>，否则令<code>dt</code>为<code>1</code></li>
+<li>如果<code>hours</code>存在，令<code>h</code>为? <code>ToNumber(hours)</code>，否则令<code>h</code>为<code>0</code></li>
+<li>如果<code>minutes</code>存在，令<code>min</code>为? <code>ToNumber(minutes)</code>，否则令<code>min</code>为<code>0</code></li>
+<li>如果<code>seconds</code>存在，令<code>s</code>为? <code>ToNumber(seconds)</code>，否则令<code>s</code>为<code>0</code></li>
+<li>如果<code>ms</code>存在，令<code>milli</code>为? <code>ToNumber(ms)</code>，否则令<code>milli</code>为<code>0</code></li>
+<li>如果<code>y</code>为<code>NaN</code>，令<code>yr</code>为<code>NaN</code></li>
+<li>否则：
+<ol>
+<li>令<code>yi</code>为! <code>ToInteger(y)</code></li>
+<li>如果<code>0 ≤ yi ≤ 99</code>，令<code>yr</code>为<code>1900 + yi</code>，否则令<code>yr</code>为<code>y</code></li>
+</ol>
+</li>
+<li>返回<code>TimeClip(MakeDate(MakeDay(yr, m, dt), MakeTime(h, min, s, milli)))</code></li>
+</ol>
+<p><code>UTC</code>函数的<code>&quot;length&quot;</code>属性值为7。</p>
+<p>注：<code>UTC</code>函数与<code>Date</code>构造函数有两点不同：它以Number的形式返回一个时间值，而不是创建一个Date对象；它基于UTC而不是本地时间来解释参数。</p>
+<h3 id="2044-date原型对象的属性"><a class="markdownIt-Anchor" href="#2044-date原型对象的属性"></a> 20.4.4 Date原型对象的属性</h3>
+<p><code>Date</code>原型对象：</p>
+<ul>
+<li>是固有对象<code>%DatePrototype%</code></li>
+<li>是普通对象（ordinary object）</li>
+<li>不是<code>Date</code>实例，也没有<code>[[DateValue]]</code>内部插槽</li>
+<li>具有值为<code>%Object.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+</ul>
+<p>除非明确定义，否则下面定义的Date原型对象的方法不是通用的，传递给它们的<code>this</code>值必须是一个具有<code>[[DateValue]]</code>内部插槽且该插槽已初始化为时间值的对象。</p>
+<p>抽象操作<code>thisTimeValue(value)</code>执行以下步骤：</p>
+<ol>
+<li>如果<code>Type(value)</code>为<code>Object</code>，并且<code>value</code>具有<code>[[DateValue]]</code>内部插槽，则返回<code>value.[[DateValue]]</code></li>
+<li>抛出 TypeError 异常</li>
+</ol>
+<p>在以下关于Date原型对象属性的函数的描述中，短语&quot;this Date object &quot;指的是调用该函数的<code>this</code>值对应的对象。如果<code>this</code>值的类型不是<code>Object</code>，则会抛出TypeError异常。本规范中方法的短语 &quot;this time value &quot;指的是以调用方法的<code>this</code>值为参数传递给抽象操作<code>thisTimeValue</code>所返回的结果。</p>
+<h4 id="20441-dateprototypeconstructor"><a class="markdownIt-Anchor" href="#20441-dateprototypeconstructor"></a> 20.4.4.1 Date.prototype.constructor</h4>
+<p><code>Date.prototype.constructor</code>的初始值为<code>%Date%</code></p>
+<h4 id="20442-dateprototypegetdate"><a class="markdownIt-Anchor" href="#20442-dateprototypegetdate"></a> 20.4.4.2 Date.prototype.getDate ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>DateFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20443-dateprototypegetday"><a class="markdownIt-Anchor" href="#20443-dateprototypegetday"></a> 20.4.4.3 Date.prototype.getDay ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>WeekDay(LocalTime(t))</code></li>
+</ol>
+<h4 id="20444-dateprototypegetfullyear"><a class="markdownIt-Anchor" href="#20444-dateprototypegetfullyear"></a> 20.4.4.4 Date.prototype.getFullYear ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>YearFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20445-dateprototypegethours"><a class="markdownIt-Anchor" href="#20445-dateprototypegethours"></a> 20.4.4.5 Date.prototype.getHours ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>HourFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20446-dateprototypegetmilliseconds"><a class="markdownIt-Anchor" href="#20446-dateprototypegetmilliseconds"></a> 20.4.4.6 Date.prototype.getMilliseconds  ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>msFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20447-dateprototypegetminutes"><a class="markdownIt-Anchor" href="#20447-dateprototypegetminutes"></a> 20.4.4.7 Date.prototype.getMinutes  ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>MinFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20448-dateprototypegetmonth"><a class="markdownIt-Anchor" href="#20448-dateprototypegetmonth"></a> 20.4.4.8 Date.prototype.getMonth   ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>MonthFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="20449-dateprototypegetseconds"><a class="markdownIt-Anchor" href="#20449-dateprototypegetseconds"></a> 20.4.4.9 Date.prototype.getSeconds ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>SecFromTime(LocalTime(t))</code></li>
+</ol>
+<h4 id="204410-dateprototypegettime"><a class="markdownIt-Anchor" href="#204410-dateprototypegettime"></a> 20.4.4.10 Date.prototype.getTime ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>返回? <code>thisTimeValue(this值)</code></li>
+</ol>
+<h4 id="204411-dateprototypegettimezoneoffset"><a class="markdownIt-Anchor" href="#204411-dateprototypegettimezoneoffset"></a> 20.4.4.11 Date.prototype.getTimezoneOffset  ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>(t - LocalTime(t)) / msPerMinute</code></li>
+</ol>
+<h4 id="204412-dateprototypegetutcdate"><a class="markdownIt-Anchor" href="#204412-dateprototypegetutcdate"></a> 20.4.4.12 Date.prototype.getUTCDate  ( )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>是<code>NaN</code>，返回<code>NaN</code></li>
+<li>返回<code>DateFromTime(t)</code></li>
+</ol>
+<h4 id="204420-dateprototypesetdate-date"><a class="markdownIt-Anchor" href="#204420-dateprototypesetdate-date"></a> 20.4.4.20 Date.prototype.setDate ( date )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为<code>LocalTime(? thisTimeValue(this value))</code></li>
+<li>令<code>dt</code>为? <code>ToNumber(date)</code></li>
+<li>令<code>newDate</code>为<code>MakeDate(MakeDay(YearFromTime(t), MonthFromTime(t), dt), TimeWithinDay(t))</code></li>
+<li>令<code>u</code>为<code>TimeClip(UTC(newDate))</code></li>
+<li>将当前<code>this</code>值对应的<code>Date</code>对象的<code>[[DateValue]]</code>内部插槽设为<code>u</code></li>
+<li>返回<code>u</code></li>
+</ol>
+<h4 id="204420-dateprototypesetfullyear-year-month-date"><a class="markdownIt-Anchor" href="#204420-dateprototypesetfullyear-year-month-date"></a> 20.4.4.20 Date.prototype.setFullYear ( year [ , month [ , date ] ] )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>t</code>为? <code>thisTimeValue(this值)</code></li>
+<li>如果<code>t</code>为<code>NaN</code>，将<code>t</code>设为<code>+0</code>，否则将<code>t</code>设为<code>LocalTime(t)</code></li>
+<li>令<code>y</code>为? <code>ToNumber(year)</code></li>
+<li>如果<code>month</code>不存在，令<code>m</code>为<code>MonthFromTime(t)</code>，否则令<code>m</code>为? <code>ToNumber(month)</code></li>
+<li>如果<code>date</code>不存在，令<code>dt</code>为<code>DateFromTime(t)</code>，否则令<code>dt</code>为? <code>ToNumber(date)</code><br />
+Let newDate be MakeDate(MakeDay(y, m, dt), TimeWithinDay(t)).<br />
+Let u be TimeClip(UTC(newDate)).<br />
+Set the [[DateValue]] internal slot of this Date object to u.<br />
+Return u.</li>
+</ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/20 数字和日期.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/20 数字和日期.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/19%20%E5%9F%BA%E6%9C%AC%E5%AF%B9%E8%B1%A1.html"><i class="fa fa-chevron-left">  </i><span>19 基本对象</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/21%20%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86.html"><span>21 文本处理</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
   clientID: 'a2cb0efab90aafe77d70',
   clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
