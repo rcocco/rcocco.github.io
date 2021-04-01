@@ -20,39 +20,128 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 21 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#211-string%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 21.1 String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2111-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 21.1.1 String构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21124-stringraw-template-substitutions"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 21.1.2.4 String.raw ( template , …substitutions )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211311-stringprototypematch-regexp"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 21.1.3.11 String.prototype.match ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypereplace-searchvalue-replacevalue"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113141-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-getsubstitutionmatched-str-position-captures-replacement"><span class="toc-number">1.1.1.3.1.</span> <span class="toc-text"> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypesearch-regexp"><span class="toc-number">1.1.1.4.</span> <span class="toc-text"> 21.1.3.15 String.prototype.search ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211317-stringprototypesplit-separator-limit"><span class="toc-number">1.1.1.5.</span> <span class="toc-text"> 21.1.3.17 String.prototype.split ( separator, limit )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21242-get-regexp-species"><span class="toc-number">1.1.1.6.</span> <span class="toc-text"> 21.2.4.2 get RegExp [ @@species ]</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">173</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">21 文本处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-02-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="21-文本处理"><a class="markdownIt-Anchor" href="#21-文本处理"></a> 21 文本处理</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 21 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#211-string%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 21.1 String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2111-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 21.1.1 String构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21111-string-value"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 21.1.1.1 String ( value )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2112-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 21.1.2 String构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21121-stringfromcharcode-codeunits"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 21.1.2.1 String.fromCharCode ( …codeUnits )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21122-stringfromcodepoint-codepoints"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 21.1.2.2 String.fromCodePoint ( …codePoints )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21123-stringprototype"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 21.1.2.3 String.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21124-stringraw-template-substitutions"><span class="toc-number">1.1.2.4.</span> <span class="toc-text"> 21.1.2.4 String.raw ( template , …substitutions )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2113-string%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 21.1.3 String原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21131-stringprototypecharat-pos"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 21.1.3.1 String.prototype.charAt ( pos )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211311-stringprototypematch-regexp"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 21.1.3.11 String.prototype.match ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypereplace-searchvalue-replacevalue"><span class="toc-number">1.1.3.3.</span> <span class="toc-text"> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113141-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-getsubstitutionmatched-str-position-captures-replacement"><span class="toc-number">1.1.3.3.1.</span> <span class="toc-text"> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypesearch-regexp"><span class="toc-number">1.1.3.4.</span> <span class="toc-text"> 21.1.3.15 String.prototype.search ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211317-stringprototypesplit-separator-limit"><span class="toc-number">1.1.3.5.</span> <span class="toc-text"> 21.1.3.17 String.prototype.split ( separator, limit )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21242-get-regexp-species"><span class="toc-number">1.1.3.6.</span> <span class="toc-text"> 21.2.4.2 get RegExp [ @@species ]</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">174</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">21 文本处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="21-文本处理"><a class="markdownIt-Anchor" href="#21-文本处理"></a> 21 文本处理</h1>
 <h2 id="211-string对象"><a class="markdownIt-Anchor" href="#211-string对象"></a> 21.1 String对象</h2>
 <h3 id="2111-string构造函数"><a class="markdownIt-Anchor" href="#2111-string构造函数"></a> 21.1.1 String构造函数</h3>
+<p>String构造函数：</p>
+<ul>
+<li>是固有对象<code>%String%</code></li>
+<li>是全局对象的<code>&quot;String&quot;</code>属性的初始值</li>
+<li>作为构造函数调用时创建并初始化一个String对象</li>
+<li>作为函数而不是构造函数调用时执行类型转换</li>
+<li>被设计为可子类化的。 它可以用作类定义的extends子句的值。 打算继承指定String行为的子类构造函数必须包括对String构造函数的super调用，以使用[[StringData]]内部插槽创建和初始化子类实例。</li>
+</ul>
+<span id="more"></span>
+<h4 id="21111-string-value"><a class="markdownIt-Anchor" href="#21111-string-value"></a> 21.1.1.1 String ( value )</h4>
+<p>当使用参数<code>value</code>调用<code>String</code>时，执行以下步骤：</p>
+<ol>
+<li>如果<code>value</code>不存在，令<code>s</code>为空字符串</li>
+<li>否则：
+<ol>
+<li>如果<code>NewTarget</code>是<code>undefined</code>并且<code>Type(value)</code>是<code>Symbol</code>，返回<code>SymbolDescriptiveString(value)</code></li>
+<li>令<code>s</code>为? <code>ToString(value)</code></li>
+</ol>
+</li>
+<li>如果<code>NewTarget</code>是<code>undefined</code>，返回<code>s</code></li>
+<li>返回! <code>StringCreate(s, ? GetPrototypeFromConstructor(NewTarget, &quot;%String.prototype%&quot;))</code></li>
+</ol>
+<h3 id="2112-string构造函数的属性"><a class="markdownIt-Anchor" href="#2112-string构造函数的属性"></a> 21.1.2 String构造函数的属性</h3>
+<p>String构造函数</p>
+<ul>
+<li>有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>有以下属性：</li>
+</ul>
+<h4 id="21121-stringfromcharcode-codeunits"><a class="markdownIt-Anchor" href="#21121-stringfromcharcode-codeunits"></a> 21.1.2.1 String.fromCharCode ( …codeUnits )</h4>
+<p><code>String.fromCharCode</code>函数可以用任意数量的参数来调用，这些参数组成了剩余参数<code>codeUnits</code>。执行以下步骤：</p>
+<ol>
+<li>令<code>codeUnits</code>为包含所有参数的列表</li>
+<li>令<code>length</code>为<code>codeUnits</code>中的元素个数</li>
+<li>令<code>elements</code>为新的空列表</li>
+<li>令<code>nextIndex</code>为<code>0</code></li>
+<li>重复，只要<code>nextIndex &lt; length</code>
+<ol>
+<li>令<code>next</code>为<code>codeUnits[nextIndex]</code></li>
+<li>令<code>nextCU</code>为? <code>ToUint16(next)</code></li>
+<li>将<code>nextCU</code>添加到<code>elements</code>末尾</li>
+<li>将<code>nextIndex</code>设为<code>nextIndex + 1</code></li>
+</ol>
+</li>
+<li>返回一个字符串值，其代码单元为按照顺序的<code>elements</code>中的元素。如果<code>length</code>为0，则返回空字符串。</li>
+</ol>
+<p><code>fromCharCode</code>函数的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<h4 id="21122-stringfromcodepoint-codepoints"><a class="markdownIt-Anchor" href="#21122-stringfromcodepoint-codepoints"></a> 21.1.2.2 String.fromCodePoint ( …codePoints )</h4>
+<p><code>String.fromCodePoint</code>函数可以用任意数量的参数来调用，这些参数组成了剩余参数<code>codePoints</code>。执行以下步骤：</p>
+<ol>
+<li>令<code>codePoints</code>为包含所有参数的列表</li>
+<li>令<code>length</code>为<code>codePoints</code>中的元素个数</li>
+<li>令<code>elements</code>为新的空列表</li>
+<li>令<code>nextIndex</code>为<code>0</code></li>
+<li>重复，只要<code>nextIndex &lt; length</code>
+<ol>
+<li>令<code>next</code>为<code>codePoints[nextIndex]</code></li>
+<li>令<code>nextCP</code>为? <code>ToNumber(next)</code></li>
+<li>如果! <code>IsInteger(nextCP)</code>为<code>false</code>，抛出 RangeError 异常</li>
+<li>如果<code>nextCP &lt; 0</code>或<code>nextCP &gt; 0x10FFFF</code>，抛出 RangeError 异常</li>
+<li>将<code>UTF16Encoding(nextCP)</code>返回的元素添加到<code>elements</code>末尾</li>
+<li>将<code>nextIndex</code>设为<code>nextIndex + 1</code></li>
+</ol>
+</li>
+<li>返回一个字符串值，其代码单元为按照顺序的<code>elements</code>中的元素。如果<code>length</code>为0，则返回空字符串。</li>
+</ol>
+<p><code>fromCodePoint</code>函数的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<h4 id="21123-stringprototype"><a class="markdownIt-Anchor" href="#21123-stringprototype"></a> 21.1.2.3 String.prototype</h4>
+<p><code>String.prototype</code>的初始值为<code>%String.prototype%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
 <h4 id="21124-stringraw-template-substitutions"><a class="markdownIt-Anchor" href="#21124-stringraw-template-substitutions"></a> 21.1.2.4 String.raw ( template , …substitutions )</h4>
-<p>可以使用可变数量的参数来调用String.raw函数。 第一个参数是模板，剩余参数构成列表<code>substitutions</code>。 采取以下步骤：<span id="more"></span></p>
+<p>可以使用可变数量的参数来调用String.raw函数。 第一个参数是模板，剩余参数构成列表<code>substitutions</code>。 采取以下步骤：</p>
 <ol>
 <li>令<code>substitutions</code>为一个List，它由传递给该函数的所有参数组成，从第二个参数开始。 如果传递的参数少于两个，则列表为空。</li>
 <li>令<code>numberOfSubstitutions</code>为<code>substitutions</code>中的元素数量</li>
-<li>令<code>cooked</code>为<code>ToObject(template)</code></li>
-<li><code>ReturnIfAbrupt(cooked)</code></li>
-<li>令<code>raw</code>为<code>ToObject(Get(cooked, &quot;raw&quot;))</code></li>
-<li><code>ReturnIfAbrupt(raw)</code></li>
-<li>令<code>literalSegments</code>为<code>ToLength(Get(raw, &quot;length&quot;))</code></li>
-<li><code>ReturnIfAbrupt(literalSegments)</code></li>
+<li>令<code>cooked</code>为? <code>ToObject(template)</code></li>
+<li>令<code>raw</code>为? <code>ToObject(Get(cooked, &quot;raw&quot;))</code></li>
+<li>令<code>literalSegments</code>为? <code>LengthOfArrayLike(raw)</code></li>
 <li>如果<code>literalSegments ≤ 0</code>，返回空字符串</li>
 <li>令<code>stringElements</code>为一个新列表</li>
 <li>令<code>nextIndex</code>为<code>0</code></li>
 <li>重复执行：
 <ol>
-<li>令<code>nextKey</code>为<code>ToString(nextIndex)</code></li>
-<li>令<code>nextSeg</code>为<code>ToString(Get(raw, nextKey))</code></li>
-<li><code>ReturnIfAbrupt(nextSeg)</code></li>
+<li>令<code>nextKey</code>为! <code>ToString(nextIndex)</code></li>
+<li>令<code>nextSeg</code>为? <code>ToString(Get(raw, nextKey))</code></li>
 <li>将<code>nextSeg</code>的代码单元元素按顺序附加到<code>stringElements</code>的末尾</li>
-<li>如果<code>nextIndex + 1 = literalSegments</code>，则返回String值，该String值的代码单元为列表<code>stringElements</code>中按顺序的元素中。 如果<code>stringElements</code>没有元素，则返回空字符串。</li>
+<li>如果<code>nextIndex + 1 = literalSegments</code>，则返回String值，该String值的代码单元是<code>stringElements</code>列表中按顺序的元素。 如果<code>stringElements</code>没有元素，则返回空字符串。</li>
 <li>如果<code>nextIndex &lt; numberOfSubstitutions</code>，则令<code>next</code>为<code>substitutions[nextIndex]</code></li>
 <li>否则，令<code>next</code>为空字符串</li>
-<li>令<code>nextSub</code>为<code>ToString(next)</code></li>
-<li><code>ReturnIfAbrupt(nextSub)</code></li>
+<li>令<code>nextSub</code>为? <code>ToString(next)</code></li>
 <li>将<code>nextSub</code>的代码单元元素按顺序附加到<code>stringElements</code>的末尾</li>
 <li>令<code>nextIndex</code>为<code>nextIndex + 1</code></li>
 </ol>
 </li>
 </ol>
+<p>注：String.raw 是用于标签模板的标签函数 (12.3.11)。当这样调用时，第一个参数将是一个完整的模板对象，其余参数将包含替换值。</p>
+<h3 id="2113-string原型对象的属性"><a class="markdownIt-Anchor" href="#2113-string原型对象的属性"></a> 21.1.3 String原型对象的属性</h3>
+<p>String原型对象</p>
+<ul>
+<li>是固有对象<code>%StringPrototype%</code></li>
+<li>是String奇异对象，并且具有为这类对象指定的内部方法。</li>
+<li>具有值为空字符串的<code>[[StringData]]</code>内部插槽</li>
+<li>具有初始值为<code>0</code>的<code>&quot;length&quot;</code>属性，且特性为<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></li>
+<li>具有值为<code>%Object.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+</ul>
+<p>除非另有明确说明，否则下面定义的String原型对象的方法不是通用的，传递给它们的<code>this</code>值必须是一个String值，或者是一个具有已被初始化为String值的<code>[[StringData]]</code>内部插槽的对象。</p>
+<p>抽象操作<code>thisStringValue(value)</code>执行以下步骤：</p>
+<ol>
+<li>如果<code>Type(value)</code>是<code>String</code>，返回<code>value</code></li>
+<li>如果<code>Type(value)</code>是<code>Object</code>，并且<code>value</code>具有<code>[[StringData]]</code>内部插槽，则
+<ol>
+<li>令<code>s</code>为<code>value.[[StringData]]</code></li>
+<li>断言：<code>Type(s)</code>为<code>String</code></li>
+<li>返回<code>s</code></li>
+</ol>
+</li>
+<li>抛出 TypeError 异常</li>
+</ol>
+<h4 id="21131-stringprototypecharat-pos"><a class="markdownIt-Anchor" href="#21131-stringprototypecharat-pos"></a> 21.1.3.1 String.prototype.charAt ( pos )</h4>
+<p>注1：<a target="_blank" rel="noopener" href="https://262.ecma-international.org/#sec-string.prototype.charat">https://262.ecma-international.org/#sec-string.prototype.charat</a></p>
 <h4 id="211311-stringprototypematch-regexp"><a class="markdownIt-Anchor" href="#211311-stringprototypematch-regexp"></a> 21.1.3.11 String.prototype.match ( regexp )</h4>
 <p>当使用参数<code>regexp</code>调用match方法时，将执行以下步骤：</p>
 <ol>
