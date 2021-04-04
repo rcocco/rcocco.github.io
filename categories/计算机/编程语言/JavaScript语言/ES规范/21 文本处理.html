@@ -20,7 +20,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 21 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#211-string%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 21.1 String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2111-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 21.1.1 String构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21111-string-value"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 21.1.1.1 String ( value )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2112-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 21.1.2 String构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21121-stringfromcharcode-codeunits"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 21.1.2.1 String.fromCharCode ( …codeUnits )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21122-stringfromcodepoint-codepoints"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 21.1.2.2 String.fromCodePoint ( …codePoints )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21123-stringprototype"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 21.1.2.3 String.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21124-stringraw-template-substitutions"><span class="toc-number">1.1.2.4.</span> <span class="toc-text"> 21.1.2.4 String.raw ( template , …substitutions )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2113-string%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 21.1.3 String原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21131-stringprototypecharat-pos"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 21.1.3.1 String.prototype.charAt ( pos )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211311-stringprototypematch-regexp"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 21.1.3.11 String.prototype.match ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypereplace-searchvalue-replacevalue"><span class="toc-number">1.1.3.3.</span> <span class="toc-text"> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113141-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-getsubstitutionmatched-str-position-captures-replacement"><span class="toc-number">1.1.3.3.1.</span> <span class="toc-text"> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypesearch-regexp"><span class="toc-number">1.1.3.4.</span> <span class="toc-text"> 21.1.3.15 String.prototype.search ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211317-stringprototypesplit-separator-limit"><span class="toc-number">1.1.3.5.</span> <span class="toc-text"> 21.1.3.17 String.prototype.split ( separator, limit )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21242-get-regexp-species"><span class="toc-number">1.1.3.6.</span> <span class="toc-text"> 21.2.4.2 get RegExp [ @@species ]</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">174</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">21 文本处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="21-文本处理"><a class="markdownIt-Anchor" href="#21-文本处理"></a> 21 文本处理</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text"> 21 文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#211-string%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 21.1 String对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2111-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 21.1.1 String构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21111-string-value"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 21.1.1.1 String ( value )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2112-string%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 21.1.2 String构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21121-stringfromcharcode-codeunits"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 21.1.2.1 String.fromCharCode ( …codeUnits )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21122-stringfromcodepoint-codepoints"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 21.1.2.2 String.fromCodePoint ( …codePoints )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21123-stringprototype"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 21.1.2.3 String.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21124-stringraw-template-substitutions"><span class="toc-number">1.1.2.4.</span> <span class="toc-text"> 21.1.2.4 String.raw ( template , …substitutions )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2113-string%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 21.1.3 String原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21131-stringprototypecharat-pos"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 21.1.3.1 String.prototype.charAt ( pos )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21132-stringprototypecharcodeat-pos"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 21.1.3.2 String.prototype.charCodeAt ( pos )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21133-stringprototypecodepointat-pos"><span class="toc-number">1.1.3.3.</span> <span class="toc-text"> 21.1.3.3 String.prototype.codePointAt ( pos )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21134-stringprototypeconcat-args"><span class="toc-number">1.1.3.4.</span> <span class="toc-text"> 21.1.3.4 String.prototype.concat ( …args )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21135-stringprototypeconstructor"><span class="toc-number">1.1.3.5.</span> <span class="toc-text"> 21.1.3.5 String.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21136-stringprototypeendswith-searchstring-endposition"><span class="toc-number">1.1.3.6.</span> <span class="toc-text"> 21.1.3.6 String.prototype.endsWith ( searchString [ , endPosition ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21137-stringprototypeincludes-searchstring-position"><span class="toc-number">1.1.3.7.</span> <span class="toc-text"> 21.1.3.7 String.prototype.includes ( searchString [ , position ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21138-stringprototypeindexof-searchstring-position"><span class="toc-number">1.1.3.8.</span> <span class="toc-text"> 21.1.3.8 String.prototype.indexOf ( searchString [ , position ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21139-stringprototypelastindexof-searchstring-position"><span class="toc-number">1.1.3.9.</span> <span class="toc-text"> 21.1.3.9 String.prototype.lastIndexOf ( searchString [ , position ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211310-stringprototypelocalecompare-that-reserved1-reserved2"><span class="toc-number">1.1.3.10.</span> <span class="toc-text"> 21.1.3.10 String.prototype.localeCompare ( that [ , reserved1 [ , reserved2 ] ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211311-stringprototypematch-regexp"><span class="toc-number">1.1.3.11.</span> <span class="toc-text"> 21.1.3.11 String.prototype.match ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211312-stringprototypematchall-regexp"><span class="toc-number">1.1.3.12.</span> <span class="toc-text"> 21.1.3.12 String.prototype.matchAll ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211313-stringprototypenormalize-form"><span class="toc-number">1.1.3.13.</span> <span class="toc-text"> 21.1.3.13 String.prototype.normalize ( [ form ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypepadend-maxlength-fillstring"><span class="toc-number">1.1.3.14.</span> <span class="toc-text"> 21.1.3.14 String.prototype.padEnd ( maxLength [ , fillString ] )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypepadstart-maxlength-fillstring"><span class="toc-number">1.1.3.15.</span> <span class="toc-text"> 21.1.3.15 String.prototype.padStart ( maxLength [ , fillString ] )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113151-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-stringpad-o-maxlength-fillstring-placement"><span class="toc-number">1.1.3.15.1.</span> <span class="toc-text"> 21.1.3.15.1 运行时语义: StringPad ( O, maxLength, fillString, placement )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211316-stringprototyperepeat-count"><span class="toc-number">1.1.3.16.</span> <span class="toc-text"> 21.1.3.16 String.prototype.repeat ( count )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211314-stringprototypereplace-searchvalue-replacevalue"><span class="toc-number">1.1.3.17.</span> <span class="toc-text"> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2113141-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-getsubstitutionmatched-str-position-captures-replacement"><span class="toc-number">1.1.3.17.1.</span> <span class="toc-text"> 21.1.3.14.1 运行时语义: GetSubstitution(matched, str, position, captures, replacement)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211315-stringprototypesearch-regexp"><span class="toc-number">1.1.3.18.</span> <span class="toc-text"> 21.1.3.15 String.prototype.search ( regexp )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211317-stringprototypesplit-separator-limit"><span class="toc-number">1.1.3.19.</span> <span class="toc-text"> 21.1.3.17 String.prototype.split ( separator, limit )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#212-regexp%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 21.2 RegExp(正则表达式)对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2121-%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 21.2.1 模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2122-pattern%E8%AF%AD%E4%B9%89"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 21.2.2 Pattern语义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21221-%E8%AE%B0%E5%8F%B7"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 21.2.2.1 记号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2123-regexp%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 21.2.3 RegExp构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21231-regexp-pattern-flags"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 21.2.3.1 RegExp ( pattern, flags )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21232-regexp%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 21.2.3.2 RegExp构造函数的抽象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#212323-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-regexpcreate-p-f"><span class="toc-number">1.2.3.2.1.</span> <span class="toc-text"> 21.2.3.2.3 运行时语义: RegExpCreate ( P, F )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2124-regexp%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 21.2.4 RegExp构造函数属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21241-regexpprototype"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 21.2.4.1 RegExp.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21242-get-regexp-species"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 21.2.4.2 get RegExp [ @@species ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2125-regexp%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 21.2.5 RegExp原型对象属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21251-regexpprototypeconstructor"><span class="toc-number">1.2.5.1.</span> <span class="toc-text"> 21.2.5.1 RegExp.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21252-regexpprototypeexec-string"><span class="toc-number">1.2.5.2.</span> <span class="toc-text"> 21.2.5.2 RegExp.prototype.exec ( string )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#212521-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-regexpexec-r-s"><span class="toc-number">1.2.5.2.1.</span> <span class="toc-text"> 21.2.5.2.1 运行时语义: RegExpExec ( R, S )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#212522-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-regexpbuiltinexec-r-s"><span class="toc-number">1.2.5.2.2.</span> <span class="toc-text"> 21.2.5.2.2 运行时语义: RegExpBuiltinExec ( R, S )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21253-get-regexpprototypedotall"><span class="toc-number">1.2.5.3.</span> <span class="toc-text"> 21.2.5.3 get RegExp.prototype.dotAll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21254-get-regexpprototypeflags"><span class="toc-number">1.2.5.4.</span> <span class="toc-text"> 21.2.5.4 get RegExp.prototype.flags</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21255-get-regexpprototypeglobal"><span class="toc-number">1.2.5.5.</span> <span class="toc-text"> 21.2.5.5 get RegExp.prototype.global</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21256-get-regexpprototypeignorecase"><span class="toc-number">1.2.5.6.</span> <span class="toc-text"> 21.2.5.6 get RegExp.prototype.ignoreCase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21257-regexpprototype-match-string"><span class="toc-number">1.2.5.7.</span> <span class="toc-text"> 21.2.5.7 RegExp.prototype [ @@match ] ( string )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21258-regexpprototype-matchall-string"><span class="toc-number">1.2.5.8.</span> <span class="toc-text"> 21.2.5.8 RegExp.prototype [ @@matchAll ] ( string )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#212581-createregexpstringiterator-r-s-global-fullunicode"><span class="toc-number">1.2.5.8.1.</span> <span class="toc-text"> 21.2.5.8.1 CreateRegExpStringIterator ( R, S, global, fullUnicode )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#212510-regexpprototype-replace-string-replacevalue"><span class="toc-number">1.2.5.9.</span> <span class="toc-text"> 21.2.5.10 RegExp.prototype [ @@replace ] ( string, replaceValue )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2126-regexp%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 21.2.6 RegExp实例属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21261-lastindex"><span class="toc-number">1.2.6.1.</span> <span class="toc-text"> 21.2.6.1 lastIndex</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2127-regexp%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 21.2.7 RegExp字符串迭代器对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#21271-regexpstringiteratorprototype%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.7.1.</span> <span class="toc-text"> 21.2.7.1 %RegExpStringIteratorPrototype%对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#212711-regexpstringiteratorprototypenext"><span class="toc-number">1.2.7.1.1.</span> <span class="toc-text"> 21.2.7.1.1 %RegExpStringIteratorPrototype%.next ( )</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">175</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">21 文本处理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="21-文本处理"><a class="markdownIt-Anchor" href="#21-文本处理"></a> 21 文本处理</h1>
 <h2 id="211-string对象"><a class="markdownIt-Anchor" href="#211-string对象"></a> 21.1 String对象</h2>
 <h3 id="2111-string构造函数"><a class="markdownIt-Anchor" href="#2111-string构造函数"></a> 21.1.1 String构造函数</h3>
 <p>String构造函数：</p>
@@ -141,28 +141,246 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>抛出 TypeError 异常</li>
 </ol>
 <h4 id="21131-stringprototypecharat-pos"><a class="markdownIt-Anchor" href="#21131-stringprototypecharat-pos"></a> 21.1.3.1 String.prototype.charAt ( pos )</h4>
-<p>注1：<a target="_blank" rel="noopener" href="https://262.ecma-international.org/#sec-string.prototype.charat">https://262.ecma-international.org/#sec-string.prototype.charat</a></p>
-<h4 id="211311-stringprototypematch-regexp"><a class="markdownIt-Anchor" href="#211311-stringprototypematch-regexp"></a> 21.1.3.11 String.prototype.match ( regexp )</h4>
-<p>当使用参数<code>regexp</code>调用match方法时，将执行以下步骤：</p>
+<p>注1：返回一个单元素的String，包含将<code>this</code>对象转换为字符串后，在该字符串值的<code>pos</code>索引处的代码单元。如果在该索引处没有元素，结果是空字符串。结果是一个String值，而不是一个String对象。<br />
+如果<code>pos</code>是一个Number类型的整数值，那么<code>x.charAt(pos)</code>的结果等于<code>x.substring(pos, pos+1)</code>的结果。</p>
+<p>当使用参数<code>pos</code>调用<code>charAt</code>方法时，执行以下步骤：</p>
 <ol>
-<li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
-<li><code>ReturnIfAbrupt(O)</code></li>
-<li>如果<code>regexp</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>position</code>为? <code>ToInteger(pos)</code></li>
+<li>令<code>size</code>为<code>S</code>的长度</li>
+<li>如果<code>position &lt; 0</code>或<code>position ≥ size</code>，返回空字符串</li>
+<li>返回长度为1的字符串，包含<code>S</code>中的1个代码单元，即索引<code>position</code>位置的代码单元</li>
+</ol>
+<p>注2：<code>charAt</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21132-stringprototypecharcodeat-pos"><a class="markdownIt-Anchor" href="#21132-stringprototypecharcodeat-pos"></a> 21.1.3.2 String.prototype.charCodeAt ( pos )</h4>
+<p>注：返回一个Number(小于<code>2^16</code>的非负整数)，它是将<code>this</code>对象转换为字符串后，在字符串中<code>pos</code>索引处的代码单元的数值。如果在该索引处没有元素，则结果为<code>NaN</code>。</p>
+<p>当使用参数<code>pos</code>调用<code>charCodeAt</code>方法时，执行以下步骤：</p>
 <ol>
-<li>令<code>matcher</code>为<code>GetMethod(regexp, @@match)</code></li>
-<li><code>ReturnIfAbrupt(matcher)</code></li>
-<li>如果<code>matcher</code>不是<code>undefined</code>，则返回<code>Call(matcher, regexp, «‍O»)</code></li>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>position</code>为? <code>ToInteger(pos)</code></li>
+<li>令<code>size</code>为<code>S</code>的长度</li>
+<li>如果<code>position &lt; 0</code>或<code>position ≥ size</code>，返回<code>NaN</code></li>
+<li>返回Number类型值，这个值是字符串<code>S</code>中索引<code>position</code>位置的代码单元的数字值</li>
+</ol>
+<p>注2：<code>charCodeAt</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21133-stringprototypecodepointat-pos"><a class="markdownIt-Anchor" href="#21133-stringprototypecodepointat-pos"></a> 21.1.3.3 String.prototype.codePointAt ( pos )</h4>
+<p>返回一个小于或等于<code>0x10FFFF</code>的非负整数，该整数是将<code>this</code>对象转换为字符串后，从字符串中<code>pos</code>索引处开始的UTF-16代码点(6.1.4)。如果在该索引处没有元素，则结果是<code>undefined</code>。如果一个有效的UTF-16代理对不是从<code>pos</code>开始的，那么结果就是<code>pos</code>处的代码单位。</p>
+<p>当使用参数<code>pos</code>调用<code>codePointAt</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>position</code>为? <code>ToInteger(pos)</code></li>
+<li>令<code>size</code>为<code>S</code>的长度</li>
+<li>如果<code>position &lt; 0</code>或<code>position ≥ size</code>，返回<code>undefined</code></li>
+<li>令<code>cp</code>为 ! <code>CodePointAt(S, position)</code></li>
+<li>返回<code>cp.[[CodePoint]]</code></li>
+</ol>
+<p>注2：<code>codePointAt</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21134-stringprototypeconcat-args"><a class="markdownIt-Anchor" href="#21134-stringprototypeconcat-args"></a> 21.1.3.4 String.prototype.concat ( …args )</h4>
+<p>注1：当调用<code>concat</code>方法时，它返回被转为字符串值的<code>this</code>对象的代码单元，后跟每个参数被转换为字符串后的代码单元组成的字符串值。结果是一个String值，而不是一个String对象。</p>
+<p>当使用零个或多个参数调用<code>concat</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>args</code>为参数组成的列表</li>
+<li>令<code>R</code>为<code>S</code></li>
+<li>重复，只要<code>args</code>不为空
+<ol>
+<li>从<code>args</code>中删除第一个元素，并令<code>next</code>为这个元素的值</li>
+<li>令<code>nextString</code>为? <code>ToString(next)</code></li>
+<li>将<code>R</code>设为连接先前的<code>R</code>与<code>nextString</code>得到的字符串</li>
 </ol>
 </li>
-<li>令<code>S</code>为<code>ToString(O)</code></li>
-<li><code>ReturnIfAbrupt(S)</code></li>
-<li>令<code>rx</code>为<code>RegExpCreate(regexp, undefined)</code>（参见 21.2.3.2.3）</li>
-<li><code>ReturnIfAbrupt(rx)</code></li>
-<li>返回<code>Invoke(rx, @@match, «‍S»)</code></li>
+<li>返回<code>R</code></li>
 </ol>
-<p>注意：<code>match</code>函数是有意通用的； 它不需要其<code>this</code>值是String对象。 因此，可以将其转移到其他种类的对象中用作方法。</p>
+<p><code>concat</code>方法的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<p>注2：<code>concat</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21135-stringprototypeconstructor"><a class="markdownIt-Anchor" href="#21135-stringprototypeconstructor"></a> 21.1.3.5 String.prototype.constructor</h4>
+<p><code>String.prototype.constructor</code>的初始值为<code>%String%</code></p>
+<h4 id="21136-stringprototypeendswith-searchstring-endposition"><a class="markdownIt-Anchor" href="#21136-stringprototypeendswith-searchstring-endposition"></a> 21.1.3.6 String.prototype.endsWith ( searchString [ , endPosition ] )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>isRegExp</code>为? <code>IsRegExp(searchString)</code></li>
+<li>如果<code>isRegExp</code>为<code>true</code>，抛出 TypeError 异常</li>
+<li>令<code>searchStr</code>为? <code>ToString(searchString)</code></li>
+<li>令<code>len</code>为<code>S</code>的长度</li>
+<li>如果<code>endPosition</code>为<code>undefined</code>，令<code>pos</code>为<code>len</code>，否则令<code>pos</code>为? <code>ToInteger(endPosition)</code></li>
+<li>令<code>end</code>为<code>min(max(pos, 0), len)</code></li>
+<li>令<code>searchLength</code>为<code>searchStr</code>的长度</li>
+<li>令<code>start</code>为<code>end - searchLength</code></li>
+<li>如果<code>start</code>小于<code>0</code>，返回<code>false</code></li>
+<li>如果<code>S</code>的从<code>start</code>开始的代码单元序列，和<code>searchStr</code>的代码单元序列完全相同，返回<code>true</code></li>
+<li>否则，返回<code>false</code></li>
+</ol>
+<p>注1：如果<code>searchString</code>被转为字符串值的代码单元序列，和被转为字符串值的<code>this</code>对象的从<code>endPosition - length(this)</code>开始的代码单元序列完全相同，返回<code>true</code>，否则返回<code>false</code><br />
+注2：如果第一个参数是正则表达式，则抛出异常，以允许未来的版本定义接受这种参数值的扩展。<br />
+注3：<code>endsWith</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21137-stringprototypeincludes-searchstring-position"><a class="markdownIt-Anchor" href="#21137-stringprototypeincludes-searchstring-position"></a> 21.1.3.7 String.prototype.includes ( searchString [ , position ] )</h4>
+<p><code>includes</code>函数而接受两个参数：<code>searchString</code>和<code>position</code>，并执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>isRegExp</code>为? <code>IsRegExp(searchString)</code></li>
+<li>如果<code>isRegExp</code>为<code>true</code>，抛出 TypeError 异常</li>
+<li>令<code>searchStr</code>为? <code>ToString(searchString)</code></li>
+<li>令<code>pos</code>为? <code>ToInteger(position)</code></li>
+<li>断言：如果<code>position</code>是<code>undefined</code>，则<code>pos</code>为<code>0</code></li>
+<li>令<code>len</code>为<code>S</code>的长度</li>
+<li>令<code>start</code>为<code>min(max(pos, 0), len)</code></li>
+<li>令<code>searchLen</code>为<code>searchStr</code>的长度</li>
+<li>如果存在任何不小于<code>start</code>的整数<code>k</code>，使得<code>k + searchLen &lt;= len</code>，并且对于所有小于<code>searchLen</code>的非负整数<code>j</code>，<code>S</code>内索引<code>k+j</code>处的代码单元与<code>searchStr</code>内索引<code>j</code>处的代码单元相同，则返回<code>true</code>；但如果不存在这样的整数<code>k</code>，则返回<code>false</code>。</li>
+</ol>
+<p>注1：如果<code>this</code>对象转换成的字符串中，在大于等于<code>position</code>位置的一个或多个索引处出现了<code>searchString</code>子串，返回<code>true</code>；否则返回<code>false</code>。如果<code>position</code>为<code>undefined</code>，则假设为<code>0</code>，这样就可以搜索整个字符串。<br />
+注2：如果第一个参数是正则表达式，则抛出异常，以允许未来的版本定义接受这种参数值的扩展。<br />
+注3：<code>includes</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21138-stringprototypeindexof-searchstring-position"><a class="markdownIt-Anchor" href="#21138-stringprototypeindexof-searchstring-position"></a> 21.1.3.8 String.prototype.indexOf ( searchString [ , position ] )</h4>
+<p>注1：如果<code>this</code>对象转换成的字符串中，在大于等于<code>position</code>位置的一个或多个索引处出现了<code>searchString</code>子串，则返回最小的那个索引。否则，返回<code>-1</code>。如果<code>position</code>为<code>undefined</code>，则假设为<code>0</code>，这样就可以搜索整个字符串。</p>
+<p><code>indexOf</code>方法而接受两个参数：<code>searchString</code>和<code>position</code>，并执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>searchStr</code>为? <code>ToString(searchString)</code></li>
+<li>令<code>pos</code>为? <code>ToInteger(position)</code></li>
+<li>断言：如果<code>position</code>是<code>undefined</code>，则<code>pos</code>为<code>0</code></li>
+<li>令<code>len</code>为<code>S</code>的长度</li>
+<li>令<code>start</code>为<code>min(max(pos, 0), len)</code></li>
+<li>令<code>searchLen</code>为<code>searchStr</code>的长度</li>
+<li>返回可能的不小于<code>start</code>的最小整数<code>k</code>，它使得<code>k + searchLen &lt;= len</code>，并且对于所有小于<code>searchLen</code>的非负整数<code>j</code>，<code>S</code>内索引<code>k+j</code>处的代码单元与<code>searchStr</code>内索引<code>j</code>处的代码单元相同；但如果不存在这样的整数<code>k</code>，则返回<code>-1</code>。</li>
+</ol>
+<p>注2：<code>indexOf</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="21139-stringprototypelastindexof-searchstring-position"><a class="markdownIt-Anchor" href="#21139-stringprototypelastindexof-searchstring-position"></a> 21.1.3.9 String.prototype.lastIndexOf ( searchString [ , position ] )</h4>
+<p>注1：如果<code>this</code>对象转换成的字符串中，在小于等于<code>position</code>位置的一个或多个索引处往后出现了<code>searchString</code>子串，则返回最大的那个索引。否则，返回<code>-1</code>。如果<code>position</code>为<code>undefined</code>，则假设为字符串值的长度，这样就可以搜索整个字符串。</p>
+<p><code>lastIndexOf</code>方法而接受两个参数：<code>searchString</code>和<code>position</code>，并执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>searchStr</code>为? <code>ToString(searchString)</code></li>
+<li>令<code>numPos</code>为? <code>ToInteger(position)</code></li>
+<li>断言：如果<code>position</code>是<code>undefined</code>，则<code>numPos</code>为<code>NaN</code></li>
+<li>如果<code>numPos</code>为<code>NaN</code>，令<code>pos</code>为<code>+∞</code>，否则令<code>pos</code>为! <code>ToInteger(numPos)</code></li>
+<li>令<code>len</code>为<code>S</code>的长度</li>
+<li>令<code>start</code>为<code>min(max(pos, 0), len)</code></li>
+<li>令<code>searchLen</code>为<code>searchStr</code>的长度</li>
+<li>返回可能的不大于<code>start</code>的最大的非负整数<code>k</code>，它使得<code>k + searchLen &lt;= len</code>，并且对于所有小于<code>searchLen</code>的非负整数<code>j</code>，<code>S</code>内索引<code>k+j</code>处的代码单元与<code>searchStr</code>内索引<code>j</code>处的代码单元相同；但如果不存在这样的整数<code>k</code>，则返回<code>-1</code>。</li>
+</ol>
+<p>注2：<code>lastIndexOf</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="211310-stringprototypelocalecompare-that-reserved1-reserved2"><a class="markdownIt-Anchor" href="#211310-stringprototypelocalecompare-that-reserved1-reserved2"></a> 21.1.3.10 String.prototype.localeCompare ( that [ , reserved1 [ , reserved2 ] ] )</h4>
+<p>包含ECMA-402国际化API的ECMAScript实现必须实现ECMA-402规范中指定的<code>localeCompare</code>方法。如果一个ECMAScript实现不包括ECMA-402 API，则使用以下说明的<code>localeCompare</code>方法。</p>
+<p>当使用参数<code>that</code>调用<code>localeCompare</code>方法时，它将返回一个<code>NaN</code>以外的Number值，该Number表示<code>this</code>值（转换为字符串）与<code>that</code>值（转换为字符串）的地区敏感的字符串比较的结果。这两个字符串是<code>S</code>和<code>That</code>。这两个字符串的比较是以一种实现定义的方式进行的。其结果旨在按照主机默认地区指定的排序顺序对字符串值进行排序，当排序顺序中<code>S</code>在<code>That</code>前时返回负值，<code>S</code>等于<code>That</code>时为零，<code>S</code>在<code>That</code>之时为正。</p>
+<p>在执行比较之前，先执行以下步骤来准备字符串：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>That</code>为? <code>ToString(that)</code></li>
+</ol>
+<p>本方法可选的第二和第三参数的含义在ECMA-402规范中定义；不包含ECMA-402支持的实现不得给这些参数位置分配任何其他解释。</p>
+<p><code>localeCompare</code>方法，如果被视为两个参数<code>this</code>和<code>that</code>的函数，则是所有字符串值集合上的一致比较函数（如22.1.3.27所定义）。</p>
+<p>实际的返回值是由实现者定义的，以允许实现者在值中编码附加信息，但该函数必须在所有字符串上定义一个整体顺序。该函数必须将根据Unicode标准规范等价的字符串视为相同，并且在比较被认为规范等价的字符串时必须返回<code>0</code>。</p>
+<p>注1：<code>localeCompare</code>方法本身并不直接适合作为<code>Array.prototype.sort</code>的参数，因为后者需要两个参数的函数。你可以使用<code>(a, b)=&gt;String.prototype.localeCompare.call(a, b)</code>或<code>Function.prototype.call.bind(String.prototype.localeCompare)</code></p>
+<p>注2：这个函数的目的是依靠主机环境提供给ECMAScript环境的任何语言敏感的比较函数，并根据主机环境当前的地区规则进行比较。然而，无论主机提供的比较能力如何，该函数必须将根据Unicode标准规范等价的字符串视为相同。建议该函数不应尊重Unicode兼容性等价或分解。关于规范等价的定义和讨论，请参见Unicode标准第2章和第3章，以及Unicode标准附件#15，Unicode规范化形式(<a target="_blank" rel="noopener" href="https://unicode.org/reports/tr15/">https://unicode.org/reports/tr15/</a>)和Unicode技术说明#5，应用中的规范等价(<a target="_blank" rel="noopener" href="https://www.unicode.org/notes/tn5/">https://www.unicode.org/notes/tn5/</a>)。另见Unicode技术标准#10，Unicode整理算法（<a target="_blank" rel="noopener" href="https://unicode.org/reports/tr10/%EF%BC%89%E3%80%82">https://unicode.org/reports/tr10/）。</a></p>
+<p>注3：<code>localeCompare</code>函数是有意通用的；它不要求它的<code>this</code>值是一个String对象。因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="211311-stringprototypematch-regexp"><a class="markdownIt-Anchor" href="#211311-stringprototypematch-regexp"></a> 21.1.3.11 String.prototype.match ( regexp )</h4>
+<p>当使用参数<code>regexp</code>调用<code>match</code>方法时，将执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>如果<code>regexp</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>matcher</code>为? <code>GetMethod(regexp, @@match)</code></li>
+<li>如果<code>matcher</code>不是<code>undefined</code>，则<br />
+3. 返回? <code>Call(matcher, regexp, « O »)</code></li>
+</ol>
+</li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>rx</code>为? <code>RegExpCreate(regexp, undefined)</code></li>
+<li>返回? <code>Invoke(rx, @@match, « S »)</code></li>
+</ol>
+<p>注意：<code>match</code>函数是有意通用的； 它不需要其<code>this</code>值是String对象。 因此，它可以被转移到其他类型的对象上作为方法使用。</p>
+<h4 id="211312-stringprototypematchall-regexp"><a class="markdownIt-Anchor" href="#211312-stringprototypematchall-regexp"></a> 21.1.3.12 String.prototype.matchAll ( regexp )</h4>
+<p>将<code>this</code>值的字符串与regexp进行正则表达式匹配，并返回一个迭代器，每个迭代结果的值是一个包含匹配结果的Array对象，如果字符串不匹配，则返回<code>null</code>。</p>
+<p>当调用<code>matchAll</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>如果<code>regexp</code>既不是<code>undefined</code>也不是<code>null</code>，则
+<ol>
+<li>令<code>isRegExp</code>为? <code>IsRegExp(regexp)</code></li>
+<li>如果<code>isRegExp</code>为<code>true</code>，则
+<ol>
+<li>令<code>flags</code>为? <code>Get(regexp, &quot;flags&quot;)</code></li>
+<li>执行? <code>RequireObjectCoercible(flags)</code></li>
+<li>如果? <code>ToString(flags)</code>不包含<code>&quot;g&quot;</code>，抛出 TypeError 异常</li>
+</ol>
+</li>
+<li>令<code>matcher</code>为? <code>GetMethod(regexp, @@matchAll)</code></li>
+<li>如果<code>matcher</code>不是<code>undefined</code>，则返回? <code>Call(matcher, regexp, « O »)</code></li>
+</ol>
+</li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>rx</code>为? <code>RegExpCreate(regexp, &quot;g&quot;)</code></li>
+<li>返回? <code>Invoke(rx, @@matchAll, « S »)</code></li>
+</ol>
+<p>注1：<code>matchAll</code>函数是故意通用的，它不要求它的<code>this</code>值是一个String对象，因此，它可以转移到其他种类的对象上作为方法使用。<br />
+注2：与<code>String.prototype.split</code>类似，<code>String.prototype.matchAll</code>被设计为在不转变其输入的情况下典型地发挥作用。</p>
+<h4 id="211313-stringprototypenormalize-form"><a class="markdownIt-Anchor" href="#211313-stringprototypenormalize-form"></a> 21.1.3.13 String.prototype.normalize ( [ form ] )</h4>
+<p>当使用参数<code>form</code>调用<code>normalize</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>如果<code>form</code>是<code>undefined</code>，令<code>f</code>为<code>&quot;NFC&quot;</code></li>
+<li>否则，令<code>f</code>为? <code>ToString(form)</code></li>
+<li>如果<code>f</code>不是<code>&quot;NFC&quot;</code>, <code>&quot;NFD&quot;</code>, <code>&quot;NFKC&quot;</code>, 或<code>&quot;NFKD&quot;</code>之一，抛出 RangeError 异常</li>
+<li>令<code>ns</code>为将<code>S</code>归一化为在<a target="_blank" rel="noopener" href="https://unicode.org/reports/tr15/">此网页</a>中由<code>f</code>命名的归一化形式的结果的字符串值</li>
+<li>返回<code>ns</code></li>
+</ol>
+<p>注：<code>normalize</code>函数是有意通用的，它不要求它的<code>this</code>值是一个String对象。因此它可以转移到其他类型的对象上作为方法使用。</p>
+<h4 id="211314-stringprototypepadend-maxlength-fillstring"><a class="markdownIt-Anchor" href="#211314-stringprototypepadend-maxlength-fillstring"></a> 21.1.3.14 String.prototype.padEnd ( maxLength [ , fillString ] )</h4>
+<p>当调用<code>padEnd</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>返回? <code>StringPad(O, maxLength, fillString, end)</code></li>
+</ol>
+<h4 id="211315-stringprototypepadstart-maxlength-fillstring"><a class="markdownIt-Anchor" href="#211315-stringprototypepadstart-maxlength-fillstring"></a> 21.1.3.15 String.prototype.padStart ( maxLength [ , fillString ] )</h4>
+<p>当调用<code>padStart</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>返回? <code>StringPad(O, maxLength, fillString, start)</code></li>
+</ol>
+<h5 id="2113151-运行时语义-stringpad-o-maxlength-fillstring-placement"><a class="markdownIt-Anchor" href="#2113151-运行时语义-stringpad-o-maxlength-fillstring-placement"></a> 21.1.3.15.1 运行时语义: StringPad ( O, maxLength, fillString, placement )</h5>
+<p>当使用参数<code>O</code>、<code>maxLength</code>、<code>fillString</code>和<code>placement</code>调用抽象操作<code>StringPad</code>时，将执行以下步骤：</p>
+<ol>
+<li>断言：<code>placement</code>是<code>start</code>或<code>end</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>intMaxLength</code>为? <code>ToLength(maxLength)</code></li>
+<li>令<code>stringLength</code>为<code>S</code>的长度</li>
+<li>如果<code>intMaxLength</code>不大于<code>stringLength</code>，返回<code>S</code></li>
+<li>如果<code>fillString</code>为<code>undefined</code>，令<code>filler</code>为只包含单个代码单元<code>0x0020 (SPACE)</code>的字符串值</li>
+<li>否则，令<code>filler</code>为? <code>ToString(fillString)</code></li>
+<li>如果<code>filler</code>是空字符串，返回<code>S</code></li>
+<li>令<code>fillLen</code>为<code>intMaxLength - stringLength</code></li>
+<li>令<code>truncatedStringFiller</code>是由重复连接的<code>filler</code>截断到长度<code>fillLen</code>组成的字符串值。</li>
+<li>如果<code>placement</code>是<code>start</code>，返回连接<code>truncatedStringFiller</code>与<code>S</code>得到的字符串</li>
+<li>否则，返回连接<code>S</code>与<code>truncatedStringFiller</code>得到的字符串</li>
+</ol>
+<p>注1：参数<code>maxLength</code>将被固定，使其不能小于<code>S</code>的长度。<br />
+注2：参数<code>fillString</code>默认为空格（0x0020 SPACE）</p>
+<h4 id="211316-stringprototyperepeat-count"><a class="markdownIt-Anchor" href="#211316-stringprototyperepeat-count"></a> 21.1.3.16 String.prototype.repeat ( count )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>O</code>为? <code>RequireObjectCoercible(this值)</code></li>
+<li>令<code>S</code>为? <code>ToString(O)</code></li>
+<li>令<code>n</code>为? <code>ToInteger(count)</code></li>
+<li>如果<code>n &lt; 0</code>，抛出 RangeError 异常</li>
+<li>如果<code>n</code>是<code>+∞</code>，抛出 RangeError 异常</li>
+<li>如果<code>n</code>是<code>0</code>，返回空字符串</li>
+<li>返回由<code>S</code>的<code>n</code>个副本拼接而成的字符串值。</li>
+</ol>
+<p>注1：本方法创建由<code>this</code>对象的代码单元（转换为String）重复<code>count</code>次组成的字符串值。<br />
+注2：<code>repeat</code>函数是有意通用的；它不要求它的this值是一个String对象。因此，它可以转移到其他种类的对象上作为方法使用。</p>
 <h4 id="211314-stringprototypereplace-searchvalue-replacevalue"><a class="markdownIt-Anchor" href="#211314-stringprototypereplace-searchvalue-replacevalue"></a> 21.1.3.14 String.prototype.replace (searchValue, replaceValue )</h4>
-<p>当使用参数<code>searchValue</code>和<code>replaceValue</code>调用replace方法时，将执行以下步骤：</p>
+<p>当</p>
 <ol>
 <li>令<code>O</code>为<code>RequireObjectCoercible(this值)</code></li>
 <li><code>ReturnIfAbrupt(O)</code></li>
@@ -255,6 +473,99 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 </li>
 </ol>
+<h2 id="212-regexp正则表达式对象"><a class="markdownIt-Anchor" href="#212-regexp正则表达式对象"></a> 21.2 RegExp(正则表达式)对象</h2>
+<p>一个RegExp对象包含一个正则表达式和相关的标志。<br />
+注：正则表达式的形式和功能仿照Perl 5编程语言中的正则表达式。</p>
+<h3 id="2121-模式"><a class="markdownIt-Anchor" href="#2121-模式"></a> 21.2.1 模式</h3>
+<p><code>RegExp</code>构造函数将以下语法应用到输入的模式字符串中。如果语法不能将字符串解释为<code>Pattern</code>的扩展，就会出现错误。<br />
+语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">Pattern[U, N]::</span><br><span class="line">    Disjunction[?U, ?N]</span><br><span class="line"></span><br><span class="line">Disjunction[U, N]::</span><br><span class="line">    Alternative[?U, ?N]</span><br><span class="line">    Alternative[?U, ?N] | Disjunction[?U, ?N]</span><br><span class="line">Alternative[U, N]::</span><br><span class="line">    [empty]</span><br><span class="line">    Alternative[?U, ?N] Term[?U, ?N]</span><br><span class="line"></span><br><span class="line">Term[U, N]::</span><br><span class="line">    Assertion[?U, ?N]</span><br><span class="line">    Atom[?U, ?N]</span><br><span class="line">    Atom[?U, ?N] Quantifier</span><br><span class="line"></span><br><span class="line">Assertion[U, N]::</span><br><span class="line">    ^</span><br><span class="line">    $</span><br><span class="line">    \b</span><br><span class="line">    \B</span><br><span class="line">    (?&#x3D;Disjunction[?U, ?N])</span><br><span class="line">    (?!Disjunction[?U, ?N])</span><br><span class="line">    (?&lt;&#x3D;Disjunction[?U, ?N])</span><br><span class="line">    (?&lt;!Disjunction[?U, ?N])</span><br><span class="line"></span><br><span class="line">Quantifier::</span><br><span class="line">    QuantifierPrefix</span><br><span class="line">    QuantifierPrefix?</span><br><span class="line"></span><br><span class="line">QuantifierPrefix::</span><br><span class="line">    *</span><br><span class="line">    +</span><br><span class="line">    ?</span><br><span class="line">    &#123;DecimalDigits&#125;</span><br><span class="line">    &#123;DecimalDigits,&#125;</span><br><span class="line">    &#123;DecimalDigits, DecimalDigits&#125;</span><br><span class="line"></span><br><span class="line">Atom[U, N]::</span><br><span class="line">    PatternCharacter</span><br><span class="line">    .</span><br><span class="line">    \ AtomEscape[?U, ?N]</span><br><span class="line">    CharacterClass[?U]</span><br><span class="line">    (GroupSpecifier[?U] Disjunction[?U, ?N])</span><br><span class="line">    (?:Disjunction[?U, ?N])</span><br><span class="line"></span><br><span class="line">SyntaxCharacter::one of</span><br><span class="line">    ^ $ \ . * + ? ( ) [ ] &#123; &#125; |</span><br><span class="line"></span><br><span class="line">PatternCharacter::</span><br><span class="line">    SourceCharacterbut not SyntaxCharacter</span><br><span class="line"></span><br><span class="line">AtomEscape[U, N]::</span><br><span class="line">    DecimalEscape</span><br><span class="line">    CharacterClassEscape[?U]</span><br><span class="line">    CharacterEscape[?U]</span><br><span class="line">    [+N]kGroupName[?U]</span><br><span class="line"></span><br><span class="line">CharacterEscape[U]::</span><br><span class="line">    ControlEscape</span><br><span class="line">    c ControlLetter</span><br><span class="line">    0[lookahead ∉ DecimalDigit]</span><br><span class="line">    HexEscapeSequence</span><br><span class="line">    RegExpUnicodeEscapeSequence[?U]</span><br><span class="line">    IdentityEscape[?U]</span><br><span class="line"></span><br><span class="line">ControlEscape::one of</span><br><span class="line">    f n r t v</span><br><span class="line"></span><br><span class="line">ControlLetter::one of</span><br><span class="line">    a b c d e f g h i j k l m n o</span><br><span class="line">    p q r s t u v w x y z A B C D</span><br><span class="line">    E F G H I J K L M N O P Q R S</span><br><span class="line">    T U V W X Y Z</span><br><span class="line"></span><br><span class="line">GroupSpecifier[U]::</span><br><span class="line">    [empty]</span><br><span class="line">    ? GroupName[?U]</span><br><span class="line"></span><br><span class="line">GroupName[U]::</span><br><span class="line">    &lt;RegExpIdentifierName[?U]&gt;</span><br><span class="line"></span><br><span class="line">RegExpIdentifierName[U]::</span><br><span class="line">    RegExpIdentifierStart[?U]</span><br><span class="line">    RegExpIdentifierName[?U]RegExpIdentifierPart[?U]</span><br><span class="line"></span><br><span class="line">RegExpIdentifierStart[U]::</span><br><span class="line">    UnicodeIDStart</span><br><span class="line">    $</span><br><span class="line">    _</span><br><span class="line">    \RegExpUnicodeEscapeSequence[+U]</span><br><span class="line">    [~U]UnicodeLeadSurrogateUnicodeTrailSurrogate</span><br><span class="line"></span><br><span class="line">RegExpIdentifierPart[U]::</span><br><span class="line">    UnicodeIDContinue</span><br><span class="line">    $</span><br><span class="line">    \ RegExpUnicodeEscapeSequence[+U]</span><br><span class="line">    [~U]UnicodeLeadSurrogateUnicodeTrailSurrogate</span><br><span class="line">    &lt;ZWNJ&gt;</span><br><span class="line">    &lt;ZWJ&gt;</span><br><span class="line"></span><br><span class="line">RegExpUnicodeEscapeSequence[U]::</span><br><span class="line">    [+U]u LeadSurrogate \u TrailSurrogate</span><br><span class="line">    [+U]u LeadSurrogate</span><br><span class="line">    [+U]u TrailSurrogate</span><br><span class="line">    [+U]u NonSurrogate</span><br><span class="line">    [~U]u Hex4Digits</span><br><span class="line">    [+U]u &#123;CodePoint&#125;</span><br><span class="line"></span><br><span class="line">UnicodeLeadSurrogate::</span><br><span class="line">    any Unicode code point in the inclusive range</span><br><span class="line">    UnicodeTrailSurrogate</span><br><span class="line">    any Unicode code point in the inclusive range</span><br></pre></td></tr></table></figure>
+<p>每一个<code>\u TrailSurrogate</code>，如果相关<code>u LeadSurrogate</code>的选择不明确，应与最接近的可能的<code>u LeadSurrogate</code>相关联，否则将没有相应的<code>TrailSurrogate</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">LeadSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is in the inclusive range 0xD800 to 0xDBFF</span><br><span class="line"></span><br><span class="line">TrailSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is in the inclusive range 0xDC00 to 0xDFFF</span><br><span class="line"></span><br><span class="line">NonSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is not in the inclusive range 0xD800 to 0xDFFF</span><br><span class="line"></span><br><span class="line">IdentityEscape[U]::</span><br><span class="line">    [+U]SyntaxCharacter</span><br><span class="line">    [+U]&#x2F;</span><br><span class="line">    [~U]SourceCharacterbut not UnicodeIDContinue</span><br><span class="line"></span><br><span class="line">DecimalEscape::</span><br><span class="line">    NonZeroDigitDecimalDigitsopt[lookahead ∉ DecimalDigit]</span><br><span class="line">    CharacterClassEscape[U]::</span><br><span class="line">    d</span><br><span class="line">    D</span><br><span class="line">    s</span><br><span class="line">    S</span><br><span class="line">    w</span><br><span class="line">    W</span><br><span class="line">    [+U]p&#123;UnicodePropertyValueExpression&#125;</span><br><span class="line">    [+U]P&#123;UnicodePropertyValueExpression&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueExpression::</span><br><span class="line">    UnicodePropertyName &#x3D; UnicodePropertyValue</span><br><span class="line">    LoneUnicodePropertyNameOrValue</span><br><span class="line"></span><br><span class="line">UnicodePropertyName::</span><br><span class="line">    UnicodePropertyNameCharacters</span><br><span class="line"></span><br><span class="line">UnicodePropertyNameCharacters::</span><br><span class="line">    UnicodePropertyNameCharacter UnicodePropertyNameCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValue::</span><br><span class="line">    UnicodePropertyValueCharacters</span><br><span class="line"></span><br><span class="line">LoneUnicodePropertyNameOrValue::</span><br><span class="line">    UnicodePropertyValueCharacters</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueCharacters::</span><br><span class="line">    UnicodePropertyValueCharacter UnicodePropertyValueCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueCharacter::</span><br><span class="line">    UnicodePropertyNameCharacter</span><br><span class="line">    DecimalDigit</span><br><span class="line"></span><br><span class="line">UnicodePropertyNameCharacter::</span><br><span class="line">    ControlLetter</span><br><span class="line">    _</span><br><span class="line"></span><br><span class="line">CharacterClass[U]::</span><br><span class="line">    [[lookahead ≠ ^]ClassRanges[?U]]</span><br><span class="line">    [^ClassRanges[?U]]</span><br><span class="line"></span><br><span class="line">ClassRanges[U]::</span><br><span class="line">    [empty]</span><br><span class="line">    NonemptyClassRanges[?U]</span><br><span class="line"></span><br><span class="line">NonemptyClassRanges[U]::</span><br><span class="line">    ClassAtom[?U]</span><br><span class="line">    ClassAtom[?U] NonemptyClassRangesNoDash[?U]</span><br><span class="line">    ClassAtom[?U] - ClassAtom[?U] ClassRanges[?U]</span><br><span class="line"></span><br><span class="line">NonemptyClassRangesNoDash[U]::</span><br><span class="line">    ClassAtom[?U]</span><br><span class="line">    ClassAtomNoDash[?U] NonemptyClassRangesNoDash[?U]</span><br><span class="line">    ClassAtomNoDash[?U] - ClassAtom[?U] ClassRanges[?U]</span><br><span class="line"></span><br><span class="line">ClassAtom[U]::</span><br><span class="line">    -</span><br><span class="line">    ClassAtomNoDash[?U]</span><br><span class="line"></span><br><span class="line">ClassAtomNoDash[U]::</span><br><span class="line">    SourceCharacterbut not one of \ or ] or -</span><br><span class="line">    \ClassEscape[?U]</span><br><span class="line"></span><br><span class="line">ClassEscape[U]::</span><br><span class="line">    b</span><br><span class="line">    [+U]-</span><br><span class="line">    CharacterClassEscape[?U]</span><br><span class="line">    CharacterEscape[?U]</span><br></pre></td></tr></table></figure>
+<h3 id="2122-pattern语义"><a class="markdownIt-Anchor" href="#2122-pattern语义"></a> 21.2.2 Pattern语义</h3>
+<p>使用下面描述的过程将正则表达式模式转换为抽象闭包。只要结果相同，我们鼓励实现者使用比下面列出的算法更有效的算法。抽象闭包被用作RegExp对象的[[RegExpMatcher]]内部插槽的值。</p>
+<p>一个<code>Pattern</code>要么是BMP模式要么是Unicode模式，这取决于其关联的标志是否包含<code>u</code>。BMP模式匹配一个由16bit值序列组成的字符串，这些16bit值是基本多语言平面范围内的Unicode代码点。Unicode模式匹配一个由UTF-16编码的Unicode代码点组成的字符串。在描述BMP模式的行为时，&quot;字符 &quot;指的是一个单一的16位Unicode BMP代码点。在描述Unicode模式的行为时，&quot;字符 &quot;是指一个UTF-16编码的代码点（6.1.4）。无论在哪种情况下，&quot;字符值 &quot;都是指相应的未编码的代码点的数字值。</p>
+<p>Pattern的语法和语义被定义为，如果Pattern的源代码是一个SourceCharacter值的列表，其中每个SourceCharacter对应一个Unicode代码点。如果一个BMP模式包含一个非BMP SourceCharacter，那么整个模式将使用UTF-16编码，并且该编码的单个代码单元被用作列表的元素。</p>
+<p>注：例如，考虑一个在源文本中表示为单个非BMP字符U+1D11E（音乐符号G CLEF）的模式。作为Unicode模式，它将是一个由单个码点0x1D11E组成的单元素（字符）列表。然而，如果将其解释为BMP模式，则首先对其进行UTF-16编码，生成一个由代码单位0xD834和0xDD1E组成的双元素列表。<br />
+模式以 ECMAScript 字符串值的形式传递给 RegExp 构造函数，其中非 BMP 字符采用 UTF-16 编码。例如，以String值表示的单字符MUSICAL SYMBOL G CLEF模式，是一个长度为2的String，其元素是代码单元0xD834和0xDD1E。因此，如果将其处理为由两个图案字符组成的BMP图案，则无需对该字符串进行进一步的翻译。但是，要将其作为Unicode模式处理，必须使用UTF16DecodeSurrogatePair来生成一个由单个模式字符组成的List，即代码点U+1D11E。<br />
+实现可能不会实际执行UTF-16之间的这种翻译，但本规范的语义要求模式匹配的结果就像执行了这种翻译一样。</p>
+<h4 id="21221-记号"><a class="markdownIt-Anchor" href="#21221-记号"></a> 21.2.2.1 记号</h4>
+<p>下面的描述使用以下几号：</p>
+<ul>
+<li><code>Input</code>是由正则表达式模式所匹配的字符串的所有字符（按顺序）组成的列表。每个字符都是一个代码单元或代码点，这取决于所涉及的模式类型。<code>Input[n]</code>表示<code>Input</code>的第<code>n</code>个字符，其中<code>n</code>可以在<code>[0, InputLength)</code>之间。</li>
+<li><code>InputLength</code>是<code>Input</code>中的字符数量</li>
+<li><code>NcapturingParens</code>是指模式中左捕获小括号的总数（即<code>Atom::(GroupSpecifierDisjunction)</code>解析节点的总数）。左捕获小括号是任何<code>Atom::(GroupSpecifierDisjunction)</code>产生式所匹配的终结符<code>(</code>模式字符</li>
+<li>如果RegExp对象的<code>[[OriginalFlags]]</code>内部插槽包含<code>&quot;s&quot;</code>，则<code>DotAll</code>为<code>true</code>，否则为<code>false</code></li>
+</ul>
+<p>此外，下面的描述使用了以下内部数据结构。</p>
+<ul>
+<li>State是一个有序对<code>(endIndex, captures)</code>，其中<code>endIndex</code>是一个整数，<code>captures</code>是一个<code>NcapturingParens</code>值的列表。在正则表达式匹配算法中，State用来表示部分匹配状态。<code>endIndex</code>为<code>1</code>加上到目前为止模式匹配的最后一个输入字符的索引，而<code>captures</code>则保存着捕获括号的结果。<code>captures</code>的第<code>n</code>个元素要么是一个列表，代表第<code>n</code>组捕获小括号所得到的值，要么是<code>undefined</code>，如果还没有到达第<code>n</code>组捕获小括号，则为<code>undefined</code>。由于回溯，在匹配过程中，许多States可能在任何时候都在使用。</li>
+<li>Matcher是一个抽象的闭包，它接受两个参数：一个State和一个Continuation，并返回一个MatchResult结果。Matcher试图从State参数给出的中间状态开始，将模式的一个中间子模式（由闭包的捕获值指定）与Input进行匹配。Continuation参数应该是一个匹配模式其余部分的闭包。在匹配模式的子模式获得一个新的状态后，Matcher就会在这个新的状态上调用Continuation来测试模式的其余部分是否也能匹配。如果可以，Matcher就返回Continuation返回的状态；如果不可以，Matcher可以在其选择点尝试不同的选择，反复调用Continuation，直到成功或者用尽所有的可能性。</li>
+</ul>
+<h3 id="2123-regexp构造函数"><a class="markdownIt-Anchor" href="#2123-regexp构造函数"></a> 21.2.3 RegExp构造函数</h3>
+<p>RegExp构造函数：</p>
+<ul>
+<li>是固有对象<code>%RegExp%</code></li>
+<li>是全局对象<code>&quot;RegExp&quot;</code>属性的初始值</li>
+<li>当作为函数而不是构造函数调用时，创建并初始化一个新的RegExp对象。因此，函数调用 <code>RegExp(...)</code>等同于创建对象表达式<code>new RegExp(...)</code>，其参数相同。</li>
+<li>被设计成可以被子类化。它可以作为类定义的<code>extends</code>子句的值。想要继承指定的 RegExp行为的子类构造函数必须包含一个对RegExp构造函数的super调用，以创建和初始化具有必要内部插槽的子类实例。</li>
+</ul>
+<h4 id="21231-regexp-pattern-flags"><a class="markdownIt-Anchor" href="#21231-regexp-pattern-flags"></a> 21.2.3.1 RegExp ( pattern, flags )</h4>
+<p>执行以下步骤：</p>
+<ol>
+<li>令<code>patternIsRegExp</code>为? <code>IsRegExp(pattern)</code></li>
+<li>如果<code>NewTarget</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>newTarget</code>当前active函数对象</li>
+<li>如果<code>patternIsRegExp</code>为<code>true</code>且<code>flags</code>为<code>undefined</code>，则
+<ol>
+<li>令<code>patternConstructor</code>为? <code>Get(pattern, &quot;constructor&quot;)</code></li>
+<li>如果<code>SameValue(newTarget, patternConstructor)</code>为<code>true</code>，返回<code>pattern</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>否则，令<code>newTarget</code>为<code>NewTarget</code></li>
+<li>如果<code>Type(pattern)</code>是<code>Object</code>且<code>pattern</code>具有<code>[[RegExpMatcher]]</code>内部插槽，则
+<ol>
+<li>令<code>P</code>为<code>pattern.[[OriginalSource]]</code></li>
+<li>如果<code>flags</code>为<code>undefined</code>，令<code>F</code>为<code>pattern.[[OriginalFlags]]</code></li>
+<li>否则，令<code>F</code>为<code>flags</code></li>
+</ol>
+</li>
+<li>否则如果<code>patternIsRegExp</code>为<code>true</code>，则
+<ol>
+<li>令<code>P</code>为? <code>Get(pattern, &quot;source&quot;)</code></li>
+<li>如果<code>flags</code>为<code>undefined</code>，则令<code>F</code>为? <code>Get(pattern, &quot;flags&quot;)</code></li>
+<li>否则，令<code>F</code>为<code>flags</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>P</code>为<code>pattern</code></li>
+<li>令<code>F</code>为<code>flags</code></li>
+</ol>
+</li>
+<li>令<code>O</code>为? <code>RegExpAlloc(newTarget)</code></li>
+<li>返回? <code>RegExpInitialize(O, P, F)</code></li>
+</ol>
+<p>注：如果<code>pattern</code>是用StringLiteral提供的，那么在正则表达式处理String之前会进行常规的转义序列替换。 如果<code>pattern</code>必须包含一个转义序列才能被正则表达式识别，那么任何<code>U+005C(REVERSE SOLIDUS)</code>代码点必须在StringLiteral中转义，以防止它们在StringLiteral的内容形成时被删除。</p>
+<h4 id="21232-regexp构造函数的抽象操作"><a class="markdownIt-Anchor" href="#21232-regexp构造函数的抽象操作"></a> 21.2.3.2 RegExp构造函数的抽象操作</h4>
+<h5 id="212323-运行时语义-regexpcreate-p-f"><a class="markdownIt-Anchor" href="#212323-运行时语义-regexpcreate-p-f"></a> 21.2.3.2.3 运行时语义: RegExpCreate ( P, F )</h5>
+<p>当使用参数<code>P</code>和<code>F</code>调用抽象操作<code>RegExpCreate</code>时，执行以下步骤：</p>
+<ol>
+<li>令<code>obj</code>为? <code>RegExpAlloc(%RegExp%)</code></li>
+<li>返回? <code>RegExpInitialize(obj, P, F)</code></li>
+</ol>
+<h3 id="2124-regexp构造函数属性"><a class="markdownIt-Anchor" href="#2124-regexp构造函数属性"></a> 21.2.4 RegExp构造函数属性</h3>
+<p>RegExp 构造函数：</p>
+<ul>
+<li>具有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>具有下列属性：</li>
+</ul>
+<h4 id="21241-regexpprototype"><a class="markdownIt-Anchor" href="#21241-regexpprototype"></a> 21.2.4.1 RegExp.prototype</h4>
+<p><code>RegExp.prototype</code>的初始值为<code>%RegExp.prototype%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
 <h4 id="21242-get-regexp-species"><a class="markdownIt-Anchor" href="#21242-get-regexp-species"></a> 21.2.4.2 get RegExp [ @@species ]</h4>
 <p><code>RegExp[@@species]</code>是一个访问器属性，其<code>set</code>访问器函数为<code>undefined</code>，它的<code>get</code>访问器函数执行以下步骤：</p>
 <ol>
@@ -262,6 +573,395 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>此函数的<code>name</code>属性值为<code>get [Symbol.species]</code></p>
 <p>注意：RegExp原型方法通常使用其<code>this</code>对象的构造函数来创建派生对象。 但是，子类构造函数可以通过重新定义其<code>@@species</code>属性来覆盖该默认行为。</p>
+<h3 id="2125-regexp原型对象属性"><a class="markdownIt-Anchor" href="#2125-regexp原型对象属性"></a> 21.2.5 RegExp原型对象属性</h3>
+<p>RegExp 原型对象：</p>
+<ul>
+<li>是固有对象<code>%RegExpPrototype%</code></li>
+<li>是普通对象</li>
+<li>不是RegExp实例，没有<code>[[RegExpMatcher]]</code>内部插槽或RegExp实例的任何其他内部插槽</li>
+<li>具有<code>[[Prototype]]</code>内部插槽，且其值为<code>%Object.prototype%</code></li>
+</ul>
+<p>注：RegExp原型对象没有自己的<code>&quot;valueOf&quot;</code>属性；然而，它从Object原型对象继承了<code>&quot;valueOf&quot;</code>属性</p>
+<h4 id="21251-regexpprototypeconstructor"><a class="markdownIt-Anchor" href="#21251-regexpprototypeconstructor"></a> 21.2.5.1 RegExp.prototype.constructor</h4>
+<p><code>RegExp.prototype.constructor</code>的初始值为<code>%RegExp%</code></p>
+<h4 id="21252-regexpprototypeexec-string"><a class="markdownIt-Anchor" href="#21252-regexpprototypeexec-string"></a> 21.2.5.2 RegExp.prototype.exec ( string )</h4>
+<p>根据正则表达式对<code>string</code>进行正则表达式匹配，并返回一个包含匹配结果的Array对象，如果不匹配则返回<code>null</code></p>
+<p>搜索字符串<code>ToString(string)</code>以寻找正则表达式模式的出现，如下所示：</p>
+<ol>
+<li>令<code>R</code>为<code>this</code>值</li>
+<li>执行? <code>RequireInternalSlot(R, [[RegExpMatcher]])</code></li>
+<li>令<code>S</code>为? <code>ToString(string)</code></li>
+<li>返回? <code>RegExpBuiltinExec(R, S)</code></li>
+</ol>
+<h5 id="212521-运行时语义-regexpexec-r-s"><a class="markdownIt-Anchor" href="#212521-运行时语义-regexpexec-r-s"></a> 21.2.5.2.1 运行时语义: RegExpExec ( R, S )</h5>
+<p>抽象操作<code>RegExpExec</code>接受参数<code>R</code>和<code>S</code>并执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(R)</code>是<code>Object</code></li>
+<li>断言：<code>Type(S)</code>是<code>String</code></li>
+<li>令<code>exec</code>为? <code>Get(R, &quot;exec&quot;)</code></li>
+<li>如果<code>IsCallable(exec)</code>为<code>true</code>，则
+<ol>
+<li>令<code>result</code>为? <code>Call(exec, R, « S »)</code></li>
+<li>如果<code>Type(result)</code>既不是<code>Object</code>也不是<code>Null</code>，抛出TypeError异常</li>
+<li>返回<code>result</code></li>
+</ol>
+</li>
+<li>执行? <code>RequireInternalSlot(R, [[RegExpMatcher]])</code></li>
+<li>返回? <code>RegExpBuiltinExec(R, S)</code></li>
+</ol>
+<p>注：如果找不到可调用的 <code>&quot;exec&quot;</code>属性，该算法就会回到尝试使用内置的 RegExp 匹配算法。这为以前版本的代码提供了兼容的行为，在以前版本中，大多数使用正则表达式的内置算法都不执行 <code>&quot;exec&quot;</code> 的动态属性查找。</p>
+<h5 id="212522-运行时语义-regexpbuiltinexec-r-s"><a class="markdownIt-Anchor" href="#212522-运行时语义-regexpbuiltinexec-r-s"></a> 21.2.5.2.2 运行时语义: RegExpBuiltinExec ( R, S )</h5>
+<p>抽象操作<code>RegExpBuiltinExec</code>接受参数<code>R</code>和<code>S</code>并执行以下步骤：</p>
+<ol>
+<li>断言：<code>R</code>是初始化过的RegExp实例</li>
+<li>断言：<code>Type(S)</code>是<code>String</code></li>
+<li>令<code>length</code>为<code>S</code>中代码单元的数量</li>
+<li>令<code>lastIndex</code>为? <code>ToLength(? Get(R, &quot;lastIndex&quot;))</code></li>
+<li>令<code>flags</code>为<code>R.[[OriginalFlags]]</code></li>
+<li>如果<code>flags</code>包含<code>&quot;g&quot;</code>，令<code>global</code>为<code>true</code>，否则令<code>global</code>为<code>false</code></li>
+<li>如果<code>flags</code>包含<code>&quot;y&quot;</code>，令<code>sticky</code>为<code>true</code>，否则令<code>sticky</code>为<code>false</code></li>
+<li>如果<code>global</code>为<code>false</code>且<code>sticky</code>也为<code>false</code>，将<code>lastIndex</code>设为<code>0</code></li>
+<li>令<code>matcher</code>为<code>R.[[RegExpMatcher]]</code></li>
+<li>如果<code>flags</code>包含<code>&quot;u&quot;</code>，令<code>fullUnicode</code>为<code>true</code>，否则令<code>fullUnicode</code>为<code>false</code></li>
+<li>令<code>matchSucceeded</code>为<code>false</code></li>
+<li>重复，只要<code>matchSucceeded</code>为<code>false</code>
+<ol>
+<li>如果<code>lastIndex &gt; length</code>，则
+<ol>
+<li>如果<code>global</code>为<code>true</code>或<code>sticky</code>为<code>true</code>，则执行? <code>Set(R, &quot;lastIndex&quot;, 0, true)</code></li>
+<li>返回<code>null</code></li>
+</ol>
+</li>
+<li>令<code>r</code>为<code>matcher(S, lastIndex)</code></li>
+<li>如果<code>r</code>为<code>failure</code>，则
+<ol>
+<li>如果<code>sticky</code>为<code>true</code>，则
+<ol>
+<li>执行? <code>Set(R, &quot;lastIndex&quot;, 0, true)</code></li>
+<li>返回<code>null</code></li>
+</ol>
+</li>
+<li>将<code>lastIndex</code>设为<code>AdvanceStringIndex(S, lastIndex, fullUnicode)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>r</code>是State</li>
+<li>将<code>matchSucceeded</code>设为<code>true</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>令<code>e</code>为<code>r</code>的<code>endIndex</code>值</li>
+<li>如果<code>fullUnicode</code>为<code>true</code>，则
+<ol>
+<li><code>e</code>是从<code>S</code>派生的输入字符列表中的索引，由<code>matcher</code>匹配。令<code>eUTF</code>为<code>S</code>中对应于<code>Input</code>的元素<code>e</code>处字符的最小索引。如果<code>e</code>大于或等于<code>Input</code>中的元素数，那么<code>eUTF</code>就是<code>S</code>中代码单位的数量。</li>
+<li>将<code>e</code>设为<code>eUTF</code></li>
+</ol>
+</li>
+<li>如果<code>global</code>为<code>true</code>或<code>sticky</code>为<code>true</code>，则执行? <code>Set(R, &quot;lastIndex&quot;, e, true)</code></li>
+<li>令<code>n</code>为<code>r</code>的<code>captures</code>列表中的元素数量（它和21.2.2.1的<code>NcapturingParens</code>值相同)</li>
+<li>断言：<code>n &lt; 2^32 - 1</code></li>
+<li>令<code>A</code>为! <code>ArrayCreate(n + 1)</code></li>
+<li>断言：<code>A</code>的<code>&quot;length&quot;</code>属性值为<code>n + 1</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, &quot;index&quot;, lastIndex)</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, &quot;input&quot;, S)</code></li>
+<li>令<code>matchedSubstr</code>为匹配的字符串（即<code>S</code>的<code>[lastIndex, e)</code>之间的部分。）</li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, &quot;0&quot;, matchedSubstr)</code></li>
+<li>如果<code>R</code>包含任何<code>GroupName</code>，则令<code>groups</code>为<code>OrdinaryObjectCreate(null)</code></li>
+<li>否则令<code>groups</code>为<code>undefined</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, &quot;groups&quot;, groups)</code></li>
+<li>对<code>(0, n]</code>之间的整数<code>i</code>，执行：
+<ol>
+<li>令<code>captureI</code>为<code>r</code>的<code>captures</code>列表的第<code>i</code>个元素</li>
+<li>如果<code>captureI</code>为<code>undefined</code>，令<code>capturedValue</code>为<code>undefined</code></li>
+<li>否则如果<code>fullUnicode</code>为<code>true</code>，则
+<ol>
+<li>断言：<code>captureI</code>为代码点的列表</li>
+<li>令<code>capturedValue</code>为! <code>UTF16Encode(captureI)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>fullUnicode</code>为<code>false</code></li>
+<li>断言：<code>captureI</code>为代码单元的列表</li>
+<li>令<code>capturedValue</code>由<code>captureI</code>的代码单元组成的字符串值</li>
+</ol>
+</li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, ! ToString(i), capturedValue)</code></li>
+<li>如果<code>R</code>的第<code>i</code>个捕获组是用<code>GroupName</code>定义的，则
+<ol>
+<li>令<code>s</code>为对应于<code>RegExpIdentifierName</code>的字符串值</li>
+<li>执行! <code>CreateDataPropertyOrThrow(groups, s, capturedValue)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>返回<code>A</code></li>
+</ol>
+<h4 id="21253-get-regexpprototypedotall"><a class="markdownIt-Anchor" href="#21253-get-regexpprototypedotall"></a> 21.2.5.3 get RegExp.prototype.dotAll</h4>
+<p><code>RegExp.prototype.dotAll</code>是一个访问器属性，其<code>set</code>访问器函数是<code>undefined</code>。它的<code>get</code>访问器函数执行以下步骤：</p>
+<ol>
+<li>令<code>R</code>为<code>this</code>值</li>
+<li>如果<code>Type(R)</code>不为<code>Object</code>，抛出 TypeError 异常</li>
+<li>如果<code>R</code>没有<code>[[OriginalFlags]]</code>内部插槽，则
+<ol>
+<li>如果<code>SameValue(R, %RegExp.prototype%)</code>为<code>true</code>，返回<code>undefined</code></li>
+<li>否则，抛出 TypeError 异常</li>
+</ol>
+</li>
+<li>令<code>flags</code>为<code>R.[[OriginalFlags]]</code></li>
+<li>如果<code>flags</code>包含代码单元<code>0x0073 (LATIN SMALL LETTER S)</code>，返回<code>true</code></li>
+<li>返回<code>false</code></li>
+</ol>
+<h4 id="21254-get-regexpprototypeflags"><a class="markdownIt-Anchor" href="#21254-get-regexpprototypeflags"></a> 21.2.5.4 get RegExp.prototype.flags</h4>
+<p><code>RegExp.prototype.flags</code>是一个访问器属性，其<code>set</code>访问器函数是<code>undefined</code>。它的<code>get</code>访问器函数执行以下步骤：</p>
+<ol>
+<li>令<code>R</code>为<code>this</code>值</li>
+<li>如果<code>Type(R)</code>不为<code>Object</code>，抛出 TypeError 异常</li>
+<li>令<code>result</code>为空字符串</li>
+<li>令<code>global</code>为! <code>ToBoolean(? Get(R, &quot;global&quot;))</code></li>
+<li>如果<code>global</code>为<code>true</code>，将代码单元<code>0x0067 (LATIN SMALL LETTER G)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>令<code>ignoreCase</code>为! <code>ToBoolean(? Get(R, &quot;ignoreCase&quot;))</code></li>
+<li>如果<code>ignoreCase</code>为<code>true</code>，将代码单元<code>0x0069 (LATIN SMALL LETTER I)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>令<code>multiline</code>为! <code>ToBoolean(? Get(R, &quot;multiline&quot;))</code></li>
+<li>如果<code>multiline</code>为<code>true</code>，将代码单元<code>0x006D (LATIN SMALL LETTER M)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>令<code>dotAll</code>为! <code>ToBoolean(? Get(R, &quot;dotAll&quot;))</code></li>
+<li>如果<code>dotAll</code>为<code>true</code>，将代码单元<code>0x0073 (LATIN SMALL LETTER S)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>令<code>unicode</code>为! <code>ToBoolean(? Get(R, &quot;unicode&quot;))</code></li>
+<li>如果<code>unicode</code>为<code>true</code>，将代码单元<code>0x0075 (LATIN SMALL LETTER U)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>令<code>sticky</code>为! <code>ToBoolean(? Get(R, &quot;sticky&quot;))</code></li>
+<li>如果<code>sticky</code>为<code>true</code>，将代码单元<code>0x0079 (LATIN SMALL LETTER Y)</code>作为<code>result</code>最后一个代码单元添加到<code>result</code>上。</li>
+<li>返回<code>result</code></li>
+</ol>
+<h4 id="21255-get-regexpprototypeglobal"><a class="markdownIt-Anchor" href="#21255-get-regexpprototypeglobal"></a> 21.2.5.5 get RegExp.prototype.global</h4>
+<h4 id="21256-get-regexpprototypeignorecase"><a class="markdownIt-Anchor" href="#21256-get-regexpprototypeignorecase"></a> 21.2.5.6 get RegExp.prototype.ignoreCase</h4>
+<h4 id="21257-regexpprototype-match-string"><a class="markdownIt-Anchor" href="#21257-regexpprototype-match-string"></a> 21.2.5.7 RegExp.prototype [ @@match ] ( string )</h4>
+<p>当使用参数<code>string</code>调用<code>@@match</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>rx</code>为<code>this</code>值</li>
+<li>如果<code>Type(rx)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>令<code>S</code>为? <code>ToString(string)</code></li>
+<li>令<code>global</code>为! <code>ToBoolean(? Get(rx, &quot;global&quot;))</code></li>
+<li>如果<code>global</code>为<code>false</code>，则返回? <code>RegExpExec(rx, S)</code></li>
+<li>否则：
+<ol>
+<li>断言：<code>global</code>为<code>true</code></li>
+<li>令<code>fullUnicode</code>为! <code>ToBoolean(? Get(rx, &quot;unicode&quot;))</code></li>
+<li>执行? <code>Set(rx, &quot;lastIndex&quot;, 0, true)</code></li>
+<li>令<code>A</code>为! <code>ArrayCreate(0)</code></li>
+<li>令<code>n</code>为<code>0</code></li>
+<li>重复：
+<ol>
+<li>令<code>result</code>为? <code>RegExpExec(rx, S)</code></li>
+<li>如果<code>result</code>为<code>null</code>，则
+<ol>
+<li>如果<code>n = 0</code>，返回<code>null</code></li>
+<li>返回<code>A</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>matchStr</code>为? <code>ToString(? Get(result, &quot;0&quot;))</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(A, ! ToString(n), matchStr)</code></li>
+<li>如果<code>matchStr</code>是空字符串，则
+<ol>
+<li>令<code>thisIndex</code>为? <code>ToLength(? Get(rx, &quot;lastIndex&quot;))</code></li>
+<li>令<code>nextIndex</code>为<code>AdvanceStringIndex(S, thisIndex, fullUnicode)</code></li>
+<li>执行? <code>Set(rx, &quot;lastIndex&quot;, nextIndex, true)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>将<code>n</code>设为<code>n + 1</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>此函数的<code>&quot;name&quot;</code>属性的值为<code>&quot;[Symbol.match]&quot;</code></p>
+<p><code>IsRegExp</code>抽象操作使用<code>@@match</code>属性来识别具有正则表达式基本行为的对象。如果没有<code>@@match</code>属性，或者存在这样一个属性，但强制转为布尔值不为<code>true</code>，则表明该对象不打算作为正则表达式对象使用。</p>
+<h4 id="21258-regexpprototype-matchall-string"><a class="markdownIt-Anchor" href="#21258-regexpprototype-matchall-string"></a> 21.2.5.8 RegExp.prototype [ @@matchAll ] ( string )</h4>
+<p>当使用参数<code>string</code>调用<code>@@matchAll</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>R</code>为<code>this</code>值</li>
+<li>如果<code>Type(R)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>令<code>S</code>为? <code>ToString(string)</code></li>
+<li>令<code>C</code>为? <code>SpeciesConstructor(R, %RegExp%)</code></li>
+<li>令<code>flags</code>为? <code>ToString(? Get(R, &quot;flags&quot;))</code></li>
+<li>令<code>matcher</code>为 ?<code>Construct(C, « R, flags »)</code></li>
+<li>令<code>lastIndex</code>为? <code>ToLength(? Get(R, &quot;lastIndex&quot;))</code></li>
+<li>执行? <code>Set(matcher, &quot;lastIndex&quot;, lastIndex, true)</code></li>
+<li>如果<code>flags</code>包含<code>&quot;g&quot;</code>，令<code>global</code>为<code>true</code></li>
+<li>否则，令<code>global</code>为<code>false</code></li>
+<li>如果<code>flags</code>包含<code>&quot;u&quot;</code>，令<code>fullUnicode</code>为<code>true</code></li>
+<li>否则，令<code>fullUnicode</code>为<code>false</code></li>
+<li>返回! <code>CreateRegExpStringIterator(matcher, S, global, fullUnicode)</code></li>
+</ol>
+<p>此函数的<code>&quot;name&quot;</code>属性的值为<code>&quot;[Symbol.matchAll]&quot;</code></p>
+<h5 id="212581-createregexpstringiterator-r-s-global-fullunicode"><a class="markdownIt-Anchor" href="#212581-createregexpstringiterator-r-s-global-fullunicode"></a> 21.2.5.8.1 CreateRegExpStringIterator ( R, S, global, fullUnicode )</h5>
+<p>抽象操作<code>CreateRegExpStringIterator</code>用来创建这样的迭代器(<code>iterator</code>)对象。它执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(S)</code>是<code>String</code></li>
+<li>断言：<code>Type(global)</code>是<code>Boolean</code></li>
+<li>断言：<code>Type(fullUnicode)</code>是<code>Boolean</code></li>
+<li>令<code>iterator</code>为<code>OrdinaryObjectCreate(%RegExpStringIteratorPrototype%, « [[IteratingRegExp]], [[IteratedString]], [[Global]], [[Unicode]], [[Done]] »)</code></li>
+<li>将<code>iterator.[[IteratingRegExp]]</code>设为<code>R</code></li>
+<li>将<code>iterator.[[IteratedString]]</code>设为<code>S</code></li>
+<li>将<code>iterator.[[Global]]</code>设为<code>global</code></li>
+<li>将<code>iterator.[[Unicode]]</code>设为<code>fullUnicode</code></li>
+<li>将<code>iterator.[[Done]]</code>设为<code>false</code></li>
+<li>返回<code>iterator</code></li>
+</ol>
+<h4 id="212510-regexpprototype-replace-string-replacevalue"><a class="markdownIt-Anchor" href="#212510-regexpprototype-replace-string-replacevalue"></a> 21.2.5.10 RegExp.prototype [ @@replace ] ( string, replaceValue )</h4>
+<p>当使用参数<code>string</code>和<code>replaceValue</code>调用<code>@@replace</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>rx</code>为<code>this</code>值</li>
+<li>如果<code>Type(rx)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>令<code>S</code>为 ? <code>ToString(string)</code></li>
+<li>令<code>lengthS</code>为<code>S</code>的代码单元的数量</li>
+<li>令<code>functionalReplace</code>为<code>IsCallable(replaceValue)</code></li>
+<li>如果<code>functionalReplace</code>为<code>false</code>，则将<code>replaceValue</code>设为? <code>ToString(replaceValue)</code></li>
+<li>令<code>global</code>为 ! <code>ToBoolean(? Get(rx, &quot;global&quot;))</code></li>
+<li>如果<code>global</code>为<code>true</code>，则
+<ol>
+<li>令<code>fullUnicode</code>为! <code>ToBoolean(? Get(rx, &quot;unicode&quot;))</code></li>
+<li>执行 ? <code>Set(rx, &quot;lastIndex&quot;, 0, true)</code></li>
+</ol>
+</li>
+<li>令<code>results</code>为一个新的空列表</li>
+<li>令<code>done</code>为<code>false</code></li>
+<li>重复，只要<code>done</code>为<code>false</code>
+<ol>
+<li>令<code>result</code>为? <code>RegExpExec(rx, S)</code></li>
+<li>如果<code>result</code>为<code>null</code>，将<code>done</code>设为<code>true</code></li>
+<li>否则：
+<ol>
+<li>将<code>result</code>添加到<code>results</code>末尾</li>
+<li>如果<code>global</code>为<code>false</code>，将<code>done</code>设为<code>true</code></li>
+<li>否则：
+<ol>
+<li>令<code>matchStr</code>为 ? <code>ToString(? Get(result, &quot;0&quot;))</code></li>
+<li>如果<code>matchStr</code>为空字符串，则
+<ol>
+<li>令<code>thisIndex</code>为? <code>ToLength(? Get(rx, &quot;lastIndex&quot;))</code></li>
+<li>令<code>nextIndex</code>为<code>AdvanceStringIndex(S, thisIndex, fullUnicode)</code></li>
+<li>执行? <code>Set(rx, &quot;lastIndex&quot;, nextIndex, true)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>令<code>accumulatedResult</code>为空字符串</li>
+<li>令<code>nextSourcePosition</code>为<code>0</code></li>
+<li>对<code>results</code>中的每个<code>result</code>，执行：
+<ol>
+<li>令<code>nCaptures</code>为? <code>LengthOfArrayLike(result)</code></li>
+<li>将<code>nCaptures</code>设为<code>max(nCaptures - 1, 0)</code></li>
+<li>令<code>matched</code>为? <code>ToString(? Get(result, &quot;0&quot;))</code></li>
+<li>令<code>matchLength</code>为<code>matched</code>的代码单元的数量</li>
+<li>令<code>position</code>为 ? <code>ToInteger(? Get(result, &quot;index&quot;))</code></li>
+<li>将<code>position</code>设为<code>max(min(position, lengthS), 0)</code></li>
+<li>令<code>n</code>为<code>1</code></li>
+<li>令<code>captures</code>为新的空列表</li>
+<li>重复，只要<code>n ≤ nCaptures</code>
+<ol>
+<li>令<code>capN</code>为? <code>Get(result, ! ToString(n))</code></li>
+<li>如果<code>capN</code>不为<code>undefined</code>则将<code>capN</code>设为? <code>ToString(capN)</code></li>
+<li>将<code>capN</code>添加到<code>captures</code>末尾</li>
+<li>将<code>n</code>设为<code>n + 1</code></li>
+</ol>
+</li>
+<li>令<code>namedCaptures</code>为? <code>Get(result, &quot;groups&quot;)</code></li>
+<li>如果<code>functionalReplace</code>为<code>true</code>，则
+<ol>
+<li>令<code>replacerArgs</code>为<code>« matched »</code></li>
+<li>将<code>captures</code>中的元素按照列表顺序添加到<code>replacerArgs</code>列表的末尾</li>
+<li>将<code>position</code>和<code>S</code>添加到<code>replacerArgs</code></li>
+<li>如果<code>namedCaptures</code>不为<code>undefined</code>，则将<code>namedCaptures</code>添加到<code>replacerArgs</code>末尾</li>
+<li>令<code>replValue</code>为? <code>Call(replaceValue, undefined, replacerArgs)</code></li>
+<li>令<code>replacement</code>为? <code>ToString(replValue)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>如果<code>namedCaptures</code>不为<code>undefined</code>，则将<code>namedCaptures</code>设为? <code>ToObject(namedCaptures)</code></li>
+<li>令<code>replacement</code>为 ? <code>GetSubstitution(matched, S, position, captures, namedCaptures, replaceValue)</code></li>
+</ol>
+</li>
+<li>如果<code>position ≥ nextSourcePosition</code>，则
+<ol>
+<li>注：<code>position</code>通常不应该向后移动。如果出现这种情况，则表明一个没有正确实现的RegExp子类或使用访问器触发的副作用来改变<code>rx</code>的全局标志或其他特性。在这种情况下，相应的替换将被忽略。</li>
+<li>将<code>accumulatedResult</code>设为下列字符串连接的结果：<code>accumulatedResult</code>的当前值、<code>S</code>的从<code>[nextSourcePosition, position)</code>的代码单元组成的子串、<code>replacement</code></li>
+<li>将<code>nextSourcePosition</code>设为<code>position + matchLength</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>如果<code>nextSourcePosition ≥ lengthS</code>，返回<code>accumulatedResult</code></li>
+<li>返回下列字符串连接的结果：<code>accumulatedResult</code>、S的从<code>nextSourcePosition</code>开始到最后一个代码单元组成的子串</li>
+</ol>
+<p>此函数的<code>&quot;name&quot;</code>属性值为<code>&quot;[Symbol.replace]&quot;</code></p>
+<h3 id="2126-regexp实例属性"><a class="markdownIt-Anchor" href="#2126-regexp实例属性"></a> 21.2.6 RegExp实例属性</h3>
+<p>RegExp 实例是普通对象，它继承了正则表达式原型对象的属性。RegExp实例有内部插槽<code>[[RegExpMatcher]]</code>、<code>[[OriginalSource]]</code>和<code>[[OriginalFlags]]</code>。<code>[[RegExpMatcher]]</code>内部插槽的值是RegExp对象模式的抽象闭包表示。</p>
+<p>注：在ECMAScript 2015之前，RegExp实例被规定具有自有数据属性 <code>&quot;source&quot;</code>、<code>&quot;global&quot;</code>、<code>&quot;ignoreCase&quot;</code>和 <code>&quot;multiline&quot;</code>。这些属性现在被指定为<code>RegExp.prototype</code>的访问器属性。</p>
+<p>RegExp实例也具有以下属性：</p>
+<h4 id="21261-lastindex"><a class="markdownIt-Anchor" href="#21261-lastindex"></a> 21.2.6.1 lastIndex</h4>
+<p><code>&quot;lastIndex&quot;</code>属性的值指定了开始下一次匹配的字符串索引。当使用时，它被强制为一个整数（见21.2.5.2.2）。此属性具有特性<code>&#123; [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h3 id="2127-regexp字符串迭代器对象"><a class="markdownIt-Anchor" href="#2127-regexp字符串迭代器对象"></a> 21.2.7 RegExp字符串迭代器对象</h3>
+<p>RegExp字符串迭代器是一个对象，它表示一个特定的字符串实例对象的迭代，与特定的RegExp实例对象进行匹配。RegExp字符串迭代器对象没有一个命名的构造函数，而是通过调用特定的RegExp实例对象的方法来创建。</p>
+<h4 id="21271-regexpstringiteratorprototype对象"><a class="markdownIt-Anchor" href="#21271-regexpstringiteratorprototype对象"></a> 21.2.7.1 %RegExpStringIteratorPrototype%对象</h4>
+<p><code>%RegExpStringIteratorPrototype%</code>对象：</p>
+<ul>
+<li>具有被所有RegExp字符串迭代器对象继承的属性</li>
+<li>是普通对象</li>
+<li>具有<code>[[Prototype]]</code>内部插槽，且其值为<code>%IteratorPrototype%</code></li>
+<li>具有下列属性：</li>
+</ul>
+<h5 id="212711-regexpstringiteratorprototypenext"><a class="markdownIt-Anchor" href="#212711-regexpstringiteratorprototypenext"></a> 21.2.7.1.1 %RegExpStringIteratorPrototype%.next ( )</h5>
+<ol>
+<li>令<code>O</code>为<code>this</code>值</li>
+<li>如果<code>Type(O)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>如果<code>O</code>不具有所有RegExp字符串迭代器对象（见 21.2.7.2）要具有的内部插槽，抛出 TypeError 异常</li>
+<li>如果<code>O.[[Done]]</code>为<code>true</code>，则返回! <code>CreateIterResultObject(undefined, true)</code></li>
+<li>令<code>R</code>为<code>O.[[IteratingRegExp]]</code></li>
+<li>令<code>S</code>为<code>O.[[IteratedString]]</code></li>
+<li>令<code>global</code>为<code>O.[[Global]]</code></li>
+<li>令<code>fullUnicode</code>为<code>O.[[Unicode]]</code></li>
+<li>令<code>match</code>为? <code>RegExpExec(R, S)</code></li>
+<li>如果<code>match</code>为<code>null</code>，则
+<ol>
+<li>将<code>O.[[Done]]</code>设为<code>true</code></li>
+<li>返回! <code>CreateIterResultObject(undefined, true)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>如果<code>global</code>为<code>true</code>，则
+<ol>
+<li>令<code>matchStr</code>为? <code>ToString(? Get(match, &quot;0&quot;))</code></li>
+<li>如果<code>matchStr</code>是空字符串，则
+<ol>
+<li>令<code>thisIndex</code>为? <code>ToLength(? Get(R, &quot;lastIndex&quot;))</code></li>
+<li>令<code>nextIndex</code>为! <code>AdvanceStringIndex(S, thisIndex, fullUnicode)</code></li>
+<li>执行 ? <code>Set(R, &quot;lastIndex&quot;, nextIndex, true)</code></li>
+</ol>
+</li>
+<li>返回 ! <code>CreateIterResultObject(match, false)</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>将<code>O.[[Done]]</code>设为<code>true</code></li>
+<li>返回 ! <code>CreateIterResultObject(match, false)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/21 文本处理.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/21 文本处理.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/20%20%E6%95%B0%E5%AD%97%E5%92%8C%E6%97%A5%E6%9C%9F.html"><i class="fa fa-chevron-left">  </i><span>20 数字和日期</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/22%20%E7%B4%A2%E5%BC%95%E9%9B%86%E5%90%88.html"><span>22 索引集合</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
   clientID: 'a2cb0efab90aafe77d70',
   clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
