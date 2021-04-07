@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Symbol"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco@qq.com"><meta name="copyright" content="rcocco"><title>Symbol | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2f232b8a2af9088714735280ce974c8b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-193110637-1', 'auto');
+ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAsymbol"><span class="toc-number">1.</span> <span class="toc-text"> 创建Symbol</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96symbol%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text"> 获取Symbol描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tostring"><span class="toc-number">3.</span> <span class="toc-text"> toString ( )</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#symboltostringtag"><span class="toc-number">4.</span> <span class="toc-text"> [ Symbol.toStringTag ]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#valueof"><span class="toc-number">5.</span> <span class="toc-text"> valueOf ( )</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#symboltoprimitive-hint"><span class="toc-number">6.</span> <span class="toc-text"> [ Symbol.toPrimitive ] ( hint )</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E5%B1%80symbol%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-number">7.</span> <span class="toc-text"> 全局Symbol注册表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%B7%BB%E5%8A%A0symbol"><span class="toc-number">7.1.</span> <span class="toc-text"> 获取&#x2F;添加Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%B3%E8%81%94%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">7.2.</span> <span class="toc-text"> 获取关联字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E5%90%8Dsymbol"><span class="toc-number">8.</span> <span class="toc-text"> 知名Symbol</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">179</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">Symbol</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="创建symbol"><a class="markdownIt-Anchor" href="#创建symbol"></a> 创建Symbol</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>(description)</span><br></pre></td></tr></table></figure>
+<p>创建一个独一无二的Symbol对象，其描述为<code>description</code>。描述只用来对人起到提示作用，不具有区分Symbol的功能，两个相同描述的Symbol是完全不同的对象。<br />
+如果没有传递<code>description</code>或<code>description</code>为<code>undefined</code>，则其描述就是<code>undefined</code>。<br />
+当使用<code>new</code>调用时抛出 TypeError 异常。</p>
+<span id="more"></span>
+<h1 id="获取symbol描述"><a class="markdownIt-Anchor" href="#获取symbol描述"></a> 获取Symbol描述</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.prototype.description</span><br></pre></td></tr></table></figure>
+<p><code>description</code>是一个get访问器属性，只能通过Symbol实例访问，不能通过原型对象访问。<br />
+其属性值是<code>undefined</code>或一个描述字符串。</p>
+<h1 id="tostring"><a class="markdownIt-Anchor" href="#tostring"></a> toString ( )</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.prototype.toString()</span><br></pre></td></tr></table></figure>
+<p>返回一个形如<code>&quot;Symbol(描述)&quot;</code>的字符串。当描述为<code>undefined</code>时会返回<code>&quot;Symbol()&quot;</code></p>
+<p>具体实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> desc = <span class="built_in">this</span>.description;</span><br><span class="line">  <span class="keyword">if</span>(desc === <span class="literal">undefined</span>) desc = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`Symbol(<span class="subst">$&#123;desc&#125;</span>)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="symboltostringtag"><a class="markdownIt-Anchor" href="#symboltostringtag"></a> [ Symbol.toStringTag ]</h1>
+<p>返回字符串<code>&quot;Symbol&quot;</code></p>
+<h1 id="valueof"><a class="markdownIt-Anchor" href="#valueof"></a> valueOf ( )</h1>
+<h1 id="symboltoprimitive-hint"><a class="markdownIt-Anchor" href="#symboltoprimitive-hint"></a> [ Symbol.toPrimitive ] ( hint )</h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.prototype.valueOf()</span><br><span class="line"><span class="built_in">Symbol</span>.prototype[<span class="built_in">Symbol</span>.toPrimitive](hint) <span class="comment">// hint被忽略</span></span><br></pre></td></tr></table></figure>
+<p>返回当前Symbol对象。</p>
+<h1 id="全局symbol注册表"><a class="markdownIt-Anchor" href="#全局symbol注册表"></a> 全局Symbol注册表</h1>
+<p>全局Symbol注册表是一个ECMAScript内置的列表，列表中每个元素具有两个字段：<code>[[Key]]</code>字段是一个字符串，<code>[[Symbol]]</code>字段是一个Symbol值。<br />
+全局Symbol注册表被所有Realm（范围，可以理解为作用域）共享，你无法直接访问到列表本身，只能通过<code>Symbol.for</code>或<code>Symbol.keyFor</code>来操作列表元素。</p>
+<h2 id="获取添加symbol"><a class="markdownIt-Anchor" href="#获取添加symbol"></a> 获取/添加Symbol</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.for(key)</span><br></pre></td></tr></table></figure>
+<p>在全局Symbol注册表中查找<code>[[Key]]</code>为<code>key</code>的Symbol值，如果找到则返回该Symbol。<br />
+如果没有找到，则创建一个新Symbol，其描述为<code>key</code>，将新创建的Symbol添加到全局Symbol注册表，最后返回这个新创建的Symbol。</p>
+<p>具体实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.for = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stringKey = ToString(key);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> e <span class="keyword">of</span> GlobalSymbolRegistry) &#123;</span><br><span class="line">    <span class="keyword">if</span>(e.[[Key]] === stringKey) <span class="keyword">return</span> e.[[<span class="built_in">Symbol</span>]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> newSymbol = <span class="built_in">Symbol</span>(stringKey);</span><br><span class="line">  e.push( &#123; [[Key]]: stringKey, [[<span class="built_in">Symbol</span>]]: newSymbol &#125; );</span><br><span class="line">  <span class="keyword">return</span> newSymbol;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="获取关联字符串"><a class="markdownIt-Anchor" href="#获取关联字符串"></a> 获取关联字符串</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.keyFor(symbol)</span><br></pre></td></tr></table></figure>
+<p>在全局Symbol注册表中查找<code>[[Symbol]]</code>为<code>symbol</code>的<code>[[Key]]</code>值，如果找到则返回该<code>[[Key]]</code>字符串。<br />
+如果没有找到，则返回<code>undefined</code>。</p>
+<p>具体实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Symbol</span>.keyFor = <span class="function"><span class="keyword">function</span>(<span class="params">sym</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> sym !== <span class="string">&#x27;symbol&#x27;</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">const</span> e <span class="keyword">of</span> GlobalSymbolRegistry) &#123;</span><br><span class="line">    <span class="keyword">if</span>(e.[[<span class="built_in">Symbol</span>]] === sym) <span class="keyword">return</span> e.[[Key]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="知名symbol"><a class="markdownIt-Anchor" href="#知名symbol"></a> 知名Symbol</h1>
+<p>ECMAScript定义了一批知名Symbol，它们经常被用于作为对象的某些特殊方法或值的属性键，可以有效避免属性键的冲突。所有知名Symbol都是<code>Symbol</code>构造函数对象的属性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">知名Symbol</th>
+<th style="text-align:left">值和目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Symbol.asyncIterator</code></td>
+<td style="text-align:left">一个方法，返回默认的异步迭代器。被<code>for-await-of</code>语句调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.hasInstance</code></td>
+<td style="text-align:left">一个方法，用于确定对象是否是某构造函数的实例，被<code>instanceof</code>运算符调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.isConcatSpreadable</code></td>
+<td style="text-align:left">一个布尔值，若为<code>true</code>，表示一个对象应该通过<code>Array.prototype.concat</code>展平其数组元素</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.iterator</code></td>
+<td style="text-align:left">一个方法，返回默认迭代器，被<code>for-of</code>语句调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.match</code></td>
+<td style="text-align:left">一个正则表达式方法，被<code>String.prototype.match</code>调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.matchAll</code></td>
+<td style="text-align:left">一个正则表达式方法，返回迭代器。被<code>String.prototype.matchAll</code>调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.replace</code></td>
+<td style="text-align:left">一个正则表达式方法，被<code>String.prototype.replace</code>调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.search</code></td>
+<td style="text-align:left">一个正则表达式方法，被<code>String.prototype.search</code>调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.species</code></td>
+<td style="text-align:left">一个构造函数，用于创建派生对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.split</code></td>
+<td style="text-align:left">一个正则表达式方法，被<code>String.prototype.split</code>调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.toPrimitive</code></td>
+<td style="text-align:left">一个方法，用于将对象转为原始值，被<code>ToPrimitive</code>抽象操作调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.toStringTag</code></td>
+<td style="text-align:left">一个字符串，用于创建对象的默认字符串描述，被<code>Object.prototype.toString</code>方法使用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>Symbol.unscopables</code></td>
+<td style="text-align:left">一个对象，该对象的属性不会出现在关联对象的<code>with</code>环境绑定中。</td>
+</tr>
+</tbody>
+</table>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/Symbol.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/Symbol.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%B8%83%E5%B0%94%E5%80%BC.html"><i class="fa fa-chevron-left">  </i><span>布尔值</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E6%95%B0%E5%AD%97.html"><span>数字</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
