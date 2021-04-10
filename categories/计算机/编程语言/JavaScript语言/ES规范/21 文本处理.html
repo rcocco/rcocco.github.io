@@ -29,7 +29,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>是全局对象的<code>&quot;String&quot;</code>属性的初始值</li>
 <li>作为构造函数调用时创建并初始化一个String对象</li>
 <li>作为函数而不是构造函数调用时执行类型转换</li>
-<li>被设计为可子类化的。 它可以用作类定义的extends子句的值。 打算继承指定String行为的子类构造函数必须包括对String构造函数的super调用，以使用[[StringData]]内部插槽创建和初始化子类实例。</li>
+<li>被设计为可子类化的。 它可以用作类定义的extends子句的值。 打算继承指定String行为的子类构造函数必须包括对String构造函数的super调用，以使用[[StringData]]内部槽创建和初始化子类实例。</li>
 </ul>
 <span id="more"></span>
 <h4 id="21111-string-value"><a class="markdownIt-Anchor" href="#21111-string-value"></a> 21.1.1.1 String ( value )</h4>
@@ -48,7 +48,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h3 id="2112-string构造函数的属性"><a class="markdownIt-Anchor" href="#2112-string构造函数的属性"></a> 21.1.2 String构造函数的属性</h3>
 <p>String构造函数</p>
 <ul>
-<li>有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部槽</li>
 <li>有以下属性：</li>
 </ul>
 <h4 id="21121-stringfromcharcode-codeunits"><a class="markdownIt-Anchor" href="#21121-stringfromcharcode-codeunits"></a> 21.1.2.1 String.fromCharCode ( …codeUnits )</h4>
@@ -123,15 +123,15 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ul>
 <li>是固有对象<code>%StringPrototype%</code></li>
 <li>是String奇异对象，并且具有为这类对象指定的内部方法。</li>
-<li>具有值为空字符串的<code>[[StringData]]</code>内部插槽</li>
+<li>具有值为空字符串的<code>[[StringData]]</code>内部槽</li>
 <li>具有初始值为<code>0</code>的<code>&quot;length&quot;</code>属性，且特性为<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></li>
-<li>具有值为<code>%Object.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>具有值为<code>%Object.prototype%</code>的<code>[[Prototype]]</code>内部槽</li>
 </ul>
-<p>除非另有明确说明，否则下面定义的String原型对象的方法不是通用的，传递给它们的<code>this</code>值必须是一个String值，或者是一个具有已被初始化为String值的<code>[[StringData]]</code>内部插槽的对象。</p>
+<p>除非另有明确说明，否则下面定义的String原型对象的方法不是通用的，传递给它们的<code>this</code>值必须是一个String值，或者是一个具有已被初始化为String值的<code>[[StringData]]</code>内部槽的对象。</p>
 <p>抽象操作<code>thisStringValue(value)</code>执行以下步骤：</p>
 <ol>
 <li>如果<code>Type(value)</code>是<code>String</code>，返回<code>value</code></li>
-<li>如果<code>Type(value)</code>是<code>Object</code>，并且<code>value</code>具有<code>[[StringData]]</code>内部插槽，则
+<li>如果<code>Type(value)</code>是<code>Object</code>，并且<code>value</code>具有<code>[[StringData]]</code>内部槽，则
 <ol>
 <li>令<code>s</code>为<code>value.[[StringData]]</code></li>
 <li>断言：<code>Type(s)</code>为<code>String</code></li>
@@ -669,7 +669,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>此函数的<code>&quot;name&quot;</code>属性值为<code>&quot;[Symbol.iterator]&quot;</code></p>
 <h3 id="2114-string实例属性"><a class="markdownIt-Anchor" href="#2114-string实例属性"></a> 21.1.4 String实例属性</h3>
-<p>String实例是String奇异对象，并具有为这类对象指定的内部方法。String实例继承了String原型对象的属性。String实例也有一个<code>[[StringData]]</code>内部插槽。</p>
+<p>String实例是String奇异对象，并具有为这类对象指定的内部方法。String实例继承了String原型对象的属性。String实例也有一个<code>[[StringData]]</code>内部槽。</p>
 <p>String实例有一个 <code>&quot;length&quot;</code>属性，以及一组以整数为索引名的可枚举属性。</p>
 <h4 id="21141-length"><a class="markdownIt-Anchor" href="#21141-length"></a> 21.1.4.1 length</h4>
 <p>该字符串对象所代表的字符串值中的元素数。<br />
@@ -684,7 +684,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>每一个<code>\u TrailSurrogate</code>，如果相关<code>u LeadSurrogate</code>的选择不明确，应与最接近的可能的<code>u LeadSurrogate</code>相关联，否则将没有相应的<code>TrailSurrogate</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">LeadSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is in the inclusive range 0xD800 to 0xDBFF</span><br><span class="line"></span><br><span class="line">TrailSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is in the inclusive range 0xDC00 to 0xDFFF</span><br><span class="line"></span><br><span class="line">NonSurrogate::</span><br><span class="line">    Hex4Digitsbut only if the SV of Hex4Digits is not in the inclusive range 0xD800 to 0xDFFF</span><br><span class="line"></span><br><span class="line">IdentityEscape[U]::</span><br><span class="line">    [+U]SyntaxCharacter</span><br><span class="line">    [+U]&#x2F;</span><br><span class="line">    [~U]SourceCharacterbut not UnicodeIDContinue</span><br><span class="line"></span><br><span class="line">DecimalEscape::</span><br><span class="line">    NonZeroDigitDecimalDigitsopt[lookahead ∉ DecimalDigit]</span><br><span class="line">    CharacterClassEscape[U]::</span><br><span class="line">    d</span><br><span class="line">    D</span><br><span class="line">    s</span><br><span class="line">    S</span><br><span class="line">    w</span><br><span class="line">    W</span><br><span class="line">    [+U]p&#123;UnicodePropertyValueExpression&#125;</span><br><span class="line">    [+U]P&#123;UnicodePropertyValueExpression&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueExpression::</span><br><span class="line">    UnicodePropertyName &#x3D; UnicodePropertyValue</span><br><span class="line">    LoneUnicodePropertyNameOrValue</span><br><span class="line"></span><br><span class="line">UnicodePropertyName::</span><br><span class="line">    UnicodePropertyNameCharacters</span><br><span class="line"></span><br><span class="line">UnicodePropertyNameCharacters::</span><br><span class="line">    UnicodePropertyNameCharacter UnicodePropertyNameCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValue::</span><br><span class="line">    UnicodePropertyValueCharacters</span><br><span class="line"></span><br><span class="line">LoneUnicodePropertyNameOrValue::</span><br><span class="line">    UnicodePropertyValueCharacters</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueCharacters::</span><br><span class="line">    UnicodePropertyValueCharacter UnicodePropertyValueCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">UnicodePropertyValueCharacter::</span><br><span class="line">    UnicodePropertyNameCharacter</span><br><span class="line">    DecimalDigit</span><br><span class="line"></span><br><span class="line">UnicodePropertyNameCharacter::</span><br><span class="line">    ControlLetter</span><br><span class="line">    _</span><br><span class="line"></span><br><span class="line">CharacterClass[U]::</span><br><span class="line">    [[lookahead ≠ ^]ClassRanges[?U]]</span><br><span class="line">    [^ClassRanges[?U]]</span><br><span class="line"></span><br><span class="line">ClassRanges[U]::</span><br><span class="line">    [empty]</span><br><span class="line">    NonemptyClassRanges[?U]</span><br><span class="line"></span><br><span class="line">NonemptyClassRanges[U]::</span><br><span class="line">    ClassAtom[?U]</span><br><span class="line">    ClassAtom[?U] NonemptyClassRangesNoDash[?U]</span><br><span class="line">    ClassAtom[?U] - ClassAtom[?U] ClassRanges[?U]</span><br><span class="line"></span><br><span class="line">NonemptyClassRangesNoDash[U]::</span><br><span class="line">    ClassAtom[?U]</span><br><span class="line">    ClassAtomNoDash[?U] NonemptyClassRangesNoDash[?U]</span><br><span class="line">    ClassAtomNoDash[?U] - ClassAtom[?U] ClassRanges[?U]</span><br><span class="line"></span><br><span class="line">ClassAtom[U]::</span><br><span class="line">    -</span><br><span class="line">    ClassAtomNoDash[?U]</span><br><span class="line"></span><br><span class="line">ClassAtomNoDash[U]::</span><br><span class="line">    SourceCharacterbut not one of \ or ] or -</span><br><span class="line">    \ClassEscape[?U]</span><br><span class="line"></span><br><span class="line">ClassEscape[U]::</span><br><span class="line">    b</span><br><span class="line">    [+U]-</span><br><span class="line">    CharacterClassEscape[?U]</span><br><span class="line">    CharacterEscape[?U]</span><br></pre></td></tr></table></figure>
 <h3 id="2122-pattern语义"><a class="markdownIt-Anchor" href="#2122-pattern语义"></a> 21.2.2 Pattern语义</h3>
-<p>使用下面描述的过程将正则表达式模式转换为抽象闭包。只要结果相同，我们鼓励实现者使用比下面列出的算法更有效的算法。抽象闭包被用作RegExp对象的[[RegExpMatcher]]内部插槽的值。</p>
+<p>使用下面描述的过程将正则表达式模式转换为抽象闭包。只要结果相同，我们鼓励实现者使用比下面列出的算法更有效的算法。抽象闭包被用作RegExp对象的[[RegExpMatcher]]内部槽的值。</p>
 <p>一个<code>Pattern</code>要么是BMP模式要么是Unicode模式，这取决于其关联的标志是否包含<code>u</code>。BMP模式匹配一个由16bit值序列组成的字符串，这些16bit值是基本多语言平面范围内的Unicode代码点。Unicode模式匹配一个由UTF-16编码的Unicode代码点组成的字符串。在描述BMP模式的行为时，&quot;字符 &quot;指的是一个单一的16位Unicode BMP代码点。在描述Unicode模式的行为时，&quot;字符 &quot;是指一个UTF-16编码的代码点（6.1.4）。无论在哪种情况下，&quot;字符值 &quot;都是指相应的未编码的代码点的数字值。</p>
 <p>Pattern的语法和语义被定义为，如果Pattern的源代码是一个SourceCharacter值的列表，其中每个SourceCharacter对应一个Unicode代码点。如果一个BMP模式包含一个非BMP SourceCharacter，那么整个模式将使用UTF-16编码，并且该编码的单个代码单元被用作列表的元素。</p>
 <p>注：例如，考虑一个在源文本中表示为单个非BMP字符U+1D11E（音乐符号G CLEF）的模式。作为Unicode模式，它将是一个由单个码点0x1D11E组成的单元素（字符）列表。然而，如果将其解释为BMP模式，则首先对其进行UTF-16编码，生成一个由代码单位0xD834和0xDD1E组成的双元素列表。<br />
@@ -696,7 +696,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li><code>Input</code>是由正则表达式模式所匹配的字符串的所有字符（按顺序）组成的列表。每个字符都是一个代码单元或代码点，这取决于所涉及的模式类型。<code>Input[n]</code>表示<code>Input</code>的第<code>n</code>个字符，其中<code>n</code>可以在<code>[0, InputLength)</code>之间。</li>
 <li><code>InputLength</code>是<code>Input</code>中的字符数量</li>
 <li><code>NcapturingParens</code>是指模式中左捕获小括号的总数（即<code>Atom::(GroupSpecifierDisjunction)</code>解析节点的总数）。左捕获小括号是任何<code>Atom::(GroupSpecifierDisjunction)</code>产生式所匹配的终结符<code>(</code>模式字符</li>
-<li>如果RegExp对象的<code>[[OriginalFlags]]</code>内部插槽包含<code>&quot;s&quot;</code>，则<code>DotAll</code>为<code>true</code>，否则为<code>false</code></li>
+<li>如果RegExp对象的<code>[[OriginalFlags]]</code>内部槽包含<code>&quot;s&quot;</code>，则<code>DotAll</code>为<code>true</code>，否则为<code>false</code></li>
 </ul>
 <p>此外，下面的描述使用了以下内部数据结构。</p>
 <ul>
@@ -709,7 +709,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>是固有对象<code>%RegExp%</code></li>
 <li>是全局对象<code>&quot;RegExp&quot;</code>属性的初始值</li>
 <li>当作为函数而不是构造函数调用时，创建并初始化一个新的RegExp对象。因此，函数调用 <code>RegExp(...)</code>等同于创建对象表达式<code>new RegExp(...)</code>，其参数相同。</li>
-<li>被设计成可以被子类化。它可以作为类定义的<code>extends</code>子句的值。想要继承指定的 RegExp行为的子类构造函数必须包含一个对RegExp构造函数的super调用，以创建和初始化具有必要内部插槽的子类实例。</li>
+<li>被设计成可以被子类化。它可以作为类定义的<code>extends</code>子句的值。想要继承指定的 RegExp行为的子类构造函数必须包含一个对RegExp构造函数的super调用，以创建和初始化具有必要内部槽的子类实例。</li>
 </ul>
 <h4 id="21231-regexp-pattern-flags"><a class="markdownIt-Anchor" href="#21231-regexp-pattern-flags"></a> 21.2.3.1 RegExp ( pattern, flags )</h4>
 <p>执行以下步骤：</p>
@@ -727,7 +727,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 </li>
 <li>否则，令<code>newTarget</code>为<code>NewTarget</code></li>
-<li>如果<code>Type(pattern)</code>是<code>Object</code>且<code>pattern</code>具有<code>[[RegExpMatcher]]</code>内部插槽，则
+<li>如果<code>Type(pattern)</code>是<code>Object</code>且<code>pattern</code>具有<code>[[RegExpMatcher]]</code>内部槽，则
 <ol>
 <li>令<code>P</code>为<code>pattern.[[OriginalSource]]</code></li>
 <li>如果<code>flags</code>为<code>undefined</code>，令<code>F</code>为<code>pattern.[[OriginalFlags]]</code></li>
@@ -761,7 +761,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h3 id="2124-regexp构造函数属性"><a class="markdownIt-Anchor" href="#2124-regexp构造函数属性"></a> 21.2.4 RegExp构造函数属性</h3>
 <p>RegExp 构造函数：</p>
 <ul>
-<li>具有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部插槽</li>
+<li>具有值为<code>%Function.prototype%</code>的<code>[[Prototype]]</code>内部槽</li>
 <li>具有下列属性：</li>
 </ul>
 <h4 id="21241-regexpprototype"><a class="markdownIt-Anchor" href="#21241-regexpprototype"></a> 21.2.4.1 RegExp.prototype</h4>
@@ -779,8 +779,8 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ul>
 <li>是固有对象<code>%RegExpPrototype%</code></li>
 <li>是普通对象</li>
-<li>不是RegExp实例，没有<code>[[RegExpMatcher]]</code>内部插槽或RegExp实例的任何其他内部插槽</li>
-<li>具有<code>[[Prototype]]</code>内部插槽，且其值为<code>%Object.prototype%</code></li>
+<li>不是RegExp实例，没有<code>[[RegExpMatcher]]</code>内部槽或RegExp实例的任何其他内部槽</li>
+<li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%Object.prototype%</code></li>
 </ul>
 <p>注：RegExp原型对象没有自己的<code>&quot;valueOf&quot;</code>属性；然而，它从Object原型对象继承了<code>&quot;valueOf&quot;</code>属性</p>
 <h4 id="21251-regexpprototypeconstructor"><a class="markdownIt-Anchor" href="#21251-regexpprototypeconstructor"></a> 21.2.5.1 RegExp.prototype.constructor</h4>
@@ -905,7 +905,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ol>
 <li>令<code>R</code>为<code>this</code>值</li>
 <li>如果<code>Type(R)</code>不为<code>Object</code>，抛出 TypeError 异常</li>
-<li>如果<code>R</code>没有<code>[[OriginalFlags]]</code>内部插槽，则
+<li>如果<code>R</code>没有<code>[[OriginalFlags]]</code>内部槽，则
 <ol>
 <li>如果<code>SameValue(R, %RegExp.prototype%)</code>为<code>true</code>，返回<code>undefined</code></li>
 <li>否则，抛出 TypeError 异常</li>
@@ -1128,13 +1128,13 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ol>
 <li>令<code>R</code>为<code>this</code>值</li>
 <li>如果<code>Type(R)</code>不为<code>Object</code>，抛出 TypeError 异常</li>
-<li>如果<code>R</code>没有<code>[[OriginalFlags]]</code>内部插槽，则
+<li>如果<code>R</code>没有<code>[[OriginalFlags]]</code>内部槽，则
 <ol>
 <li>如果<code>SameValue(R, %RegExp.prototype%)</code>为<code>true</code>，返回<code>&quot;(?:)&quot;</code></li>
 <li>否则，抛出 TypeError 异常</li>
 </ol>
 </li>
-<li>断言：<code>R</code>有<code>[[OriginalFlags]]</code>内部插槽</li>
+<li>断言：<code>R</code>有<code>[[OriginalFlags]]</code>内部槽</li>
 <li>令<code>src</code>为<code>R.[[OriginalSource]]</code></li>
 <li>令<code>flags</code>为<code>R.[[OriginalFlags]]</code></li>
 <li>返回<code>EscapeRegExpPattern(src, flags)</code></li>
@@ -1237,7 +1237,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>注：返回的String具有<code>RegularExpressionLiteral</code>的形式，该形式求值为另一个具有与此对象相同行为的RegExp对象。</p>
 <h4 id="212517-get-regexpprototypeunicode"><a class="markdownIt-Anchor" href="#212517-get-regexpprototypeunicode"></a> 21.2.5.17 get RegExp.prototype.unicode</h4>
 <h3 id="2126-regexp实例属性"><a class="markdownIt-Anchor" href="#2126-regexp实例属性"></a> 21.2.6 RegExp实例属性</h3>
-<p>RegExp 实例是普通对象，它继承了正则表达式原型对象的属性。RegExp实例有内部插槽<code>[[RegExpMatcher]]</code>、<code>[[OriginalSource]]</code>和<code>[[OriginalFlags]]</code>。<code>[[RegExpMatcher]]</code>内部插槽的值是RegExp对象模式的抽象闭包表示。</p>
+<p>RegExp 实例是普通对象，它继承了正则表达式原型对象的属性。RegExp实例有内部槽<code>[[RegExpMatcher]]</code>、<code>[[OriginalSource]]</code>和<code>[[OriginalFlags]]</code>。<code>[[RegExpMatcher]]</code>内部槽的值是RegExp对象模式的抽象闭包表示。</p>
 <p>注：在ECMAScript 2015之前，RegExp实例被规定具有自有数据属性 <code>&quot;source&quot;</code>、<code>&quot;global&quot;</code>、<code>&quot;ignoreCase&quot;</code>和 <code>&quot;multiline&quot;</code>。这些属性现在被指定为<code>RegExp.prototype</code>的访问器属性。</p>
 <p>RegExp实例也具有以下属性：</p>
 <h4 id="21261-lastindex"><a class="markdownIt-Anchor" href="#21261-lastindex"></a> 21.2.6.1 lastIndex</h4>
@@ -1249,14 +1249,14 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ul>
 <li>具有被所有RegExp字符串迭代器对象继承的属性</li>
 <li>是普通对象</li>
-<li>具有<code>[[Prototype]]</code>内部插槽，且其值为<code>%IteratorPrototype%</code></li>
+<li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%IteratorPrototype%</code></li>
 <li>具有下列属性：</li>
 </ul>
 <h5 id="212711-regexpstringiteratorprototypenext"><a class="markdownIt-Anchor" href="#212711-regexpstringiteratorprototypenext"></a> 21.2.7.1.1 %RegExpStringIteratorPrototype%.next ( )</h5>
 <ol>
 <li>令<code>O</code>为<code>this</code>值</li>
 <li>如果<code>Type(O)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
-<li>如果<code>O</code>不具有所有RegExp字符串迭代器对象（见 21.2.7.2）要具有的内部插槽，抛出 TypeError 异常</li>
+<li>如果<code>O</code>不具有所有RegExp字符串迭代器对象（见 21.2.7.2）要具有的内部槽，抛出 TypeError 异常</li>
 <li>如果<code>O.[[Done]]</code>为<code>true</code>，则返回! <code>CreateIterResultObject(undefined, true)</code></li>
 <li>令<code>R</code>为<code>O.[[IteratingRegExp]]</code></li>
 <li>令<code>S</code>为<code>O.[[IteratedString]]</code></li>

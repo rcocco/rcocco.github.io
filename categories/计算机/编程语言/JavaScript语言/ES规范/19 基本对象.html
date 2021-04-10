@@ -34,7 +34,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回<code>ToObject(value)</code></li>
 </ol>
 <h3 id="1912-object构造函数的属性"><a class="markdownIt-Anchor" href="#1912-object构造函数的属性"></a> 19.1.2 Object构造函数的属性</h3>
-<p>Object构造函数的<code>[[Prototype]]</code>内部插槽的值是固有对象<code>％FunctionPrototype％</code>。<br />
+<p>Object构造函数的<code>[[Prototype]]</code>内部槽的值是固有对象<code>％FunctionPrototype％</code>。<br />
 除了<code>length</code>属性（其值为1）之外，Object构造函数还具有以下属性：</p>
 <h4 id="19121-objectassign-target-sources"><a class="markdownIt-Anchor" href="#19121-objectassign-target-sources"></a> 19.1.2.1 Object.assign ( target, …sources )</h4>
 <p>assign函数用于将所有可枚举的自有属性的值从一个或多个源对象复制到目标对象。 调用assign函数时，将执行以下步骤：</p>
@@ -135,7 +135,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <h3 id="1913-object原型对象的属性"><a class="markdownIt-Anchor" href="#1913-object原型对象的属性"></a> 19.1.3 Object原型对象的属性</h3>
 <p>Object原型对象是固有对象％ObjectPrototype％。 Object原型对象是一个普通对象(ordinary  object)</p>
-<p>Object原型对象的[[Prototype]]内部插槽的值为null，[[Extensible]]内部插槽的初始值为true。</p>
+<p>Object原型对象的[[Prototype]]内部槽的值为null，[[Extensible]]内部槽的初始值为true。</p>
 <h4 id="19131-objectprototypeconstructor"><a class="markdownIt-Anchor" href="#19131-objectprototypeconstructor"></a> 19.1.3.1 Object.prototype.constructor</h4>
 <p><code>Object.prototype.constructor</code>的初始值为固有对象<code>%Object%</code></p>
 <h4 id="19132-objectprototypehasownproperty-v"><a class="markdownIt-Anchor" href="#19132-objectprototypehasownproperty-v"></a> 19.1.3.2 Object.prototype.hasOwnProperty ( V )</h4>
@@ -197,13 +197,13 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li><code>ReturnIfAbrupt(isArray)</code></li>
 <li>If<code>isArray</code>为<code>true</code>，令<code>builtinTag</code>为<code>&quot;Array&quot;</code></li>
 <li>Else if <code>O</code>为奇异String对象，令<code>builtinTag</code>为<code>&quot;String&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[ParameterMap]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;Arguments&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[ParameterMap]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;Arguments&quot;</code></li>
 <li>Else if <code>O</code>有<code>[[Call]]</code>内部方法，令<code>builtinTag</code>为<code>&quot;Function&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[ErrorData]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;Error&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[BooleanData]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;Boolean&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[NumberData]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;Number&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[DateValue]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;Date&quot;</code></li>
-<li>Else if <code>O</code>有<code>[[RegExpMatcher]]</code>内部插槽，令<code>builtinTag</code>为<code>&quot;RegExp&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[ErrorData]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;Error&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[BooleanData]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;Boolean&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[NumberData]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;Number&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[DateValue]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;Date&quot;</code></li>
+<li>Else if <code>O</code>有<code>[[RegExpMatcher]]</code>内部槽，令<code>builtinTag</code>为<code>&quot;RegExp&quot;</code></li>
 <li>Else 令<code>builtinTag</code>为<code>&quot;Object&quot;</code></li>
 <li>令<code>tag</code>为<code>Get (O, @@toStringTag)</code></li>
 <li><code>ReturnIfAbrupt(tag)</code></li>
@@ -211,7 +211,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回字符串，该字符串是<code>&quot;[object &quot;</code>，<code>tag</code>和<code>&quot;]&quot;</code>连接的结果。</li>
 </ol>
 <p>此函数是固有对象<code>%ObjProto_toString%</code></p>
-<p>注意：从历史上看，此函数有时用于访问<code>[[Class]]</code>内部插槽的String值，该值在本规范的先前版本中用作各种内置对象的标称类型标记。 上面对<code>toString</code>的定义保留了与使用<code>toString</code>来测试那些特定种类的内置对象的旧代码的兼容性。 它没有为其他类型的内置或程序定义的对象提供可靠的类型测试机制。 另外，程序可以使用<code>@@toStringTag</code>，这将使此类旧式测试的可靠性无效。</p>
+<p>注意：从历史上看，此函数有时用于访问<code>[[Class]]</code>内部槽的String值，该值在本规范的先前版本中用作各种内置对象的标称类型标记。 上面对<code>toString</code>的定义保留了与使用<code>toString</code>来测试那些特定种类的内置对象的旧代码的兼容性。 它没有为其他类型的内置或程序定义的对象提供可靠的类型测试机制。 另外，程序可以使用<code>@@toStringTag</code>，这将使此类旧式测试的可靠性无效。</p>
 <h4 id="19137-objectprototypevalueof"><a class="markdownIt-Anchor" href="#19137-objectprototypevalueof"></a> 19.1.3.7 Object.prototype.valueOf ( )</h4>
 <p>调用<code>valueOf</code>方法时，将执行以下步骤：</p>
 <ol>
@@ -231,7 +231,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回一个新的唯一Symbol值，其[[Description]]值为<code>descString</code></li>
 </ol>
 <h3 id="1942-symbol构造函数的属性"><a class="markdownIt-Anchor" href="#1942-symbol构造函数的属性"></a> 19.4.2 Symbol构造函数的属性</h3>
-<p>Symbol构造函数的[[Prototype]]内部插槽的值是固有对象％FunctionPrototype％（19.2.3）。<br />
+<p>Symbol构造函数的[[Prototype]]内部槽的值是固有对象％FunctionPrototype％（19.2.3）。<br />
 除了<code>length</code>属性（其值为<code>0</code>）之外，Symbol构造函数还具有以下属性：</p>
 <h4 id="19421-symbolfor-key"><a class="markdownIt-Anchor" href="#19421-symbolfor-key"></a> 19.4.2.1 Symbol.for ( key )</h4>
 <p>当使用参数<code>key</code>调用Symbol.for时，它将执行以下步骤：</p>
@@ -296,8 +296,8 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>否则：
 <ol>
 <li>如果<code>Type(s)</code>不是<code>Object</code>，抛出<code>TypeError</code>异常</li>
-<li>如果<code>s</code>没有[[SymbolData]]内部插槽，抛出<code>TypeError</code>异常</li>
-<li>令<code>sym</code>为<code>s</code>的[[SymbolData]]内部插槽的值</li>
+<li>如果<code>s</code>没有[[SymbolData]]内部槽，抛出<code>TypeError</code>异常</li>
+<li>令<code>sym</code>为<code>s</code>的[[SymbolData]]内部槽的值</li>
 </ol>
 </li>
 <li>返回<code>SymbolDescriptiveString(sym)</code></li>

@@ -425,19 +425,19 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </tr>
 <tr>
 <td style="text-align:left">Boolean</td>
-<td style="text-align:left">返回一个新的Boolean对象，其[[BooleanData]]内部插槽被设置为<code>argument</code>的值。关于Boolean对象的描述，请参见19.3</td>
+<td style="text-align:left">返回一个新的Boolean对象，其[[BooleanData]]内部槽被设置为<code>argument</code>的值。关于Boolean对象的描述，请参见19.3</td>
 </tr>
 <tr>
 <td style="text-align:left">Number</td>
-<td style="text-align:left">返回一个新的Number对象，其[[NumberData]]内部插槽被设置为<code>argument</code>的值。关于NumberBoolean对象的描述，请参见20.1</td>
+<td style="text-align:left">返回一个新的Number对象，其[[NumberData]]内部槽被设置为<code>argument</code>的值。关于NumberBoolean对象的描述，请参见20.1</td>
 </tr>
 <tr>
 <td style="text-align:left">String</td>
-<td style="text-align:left">返回一个新的String对象，其[[BooleanData]]内部插槽被设置为<code>argument</code>的值。关于String对象的描述，请参见21.1</td>
+<td style="text-align:left">返回一个新的String对象，其[[BooleanData]]内部槽被设置为<code>argument</code>的值。关于String对象的描述，请参见21.1</td>
 </tr>
 <tr>
 <td style="text-align:left">Symbol</td>
-<td style="text-align:left">返回一个新的Symbol对象，其[[SymbolData]]内部插槽被设置为<code>argument</code>的值。关于Symbol对象的描述，请参见19.4</td>
+<td style="text-align:left">返回一个新的Symbol对象，其[[SymbolData]]内部槽被设置为<code>argument</code>的值。关于Symbol对象的描述，请参见19.4</td>
 </tr>
 <tr>
 <td style="text-align:left">Object</td>
@@ -525,8 +525,8 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>argument</code>是数组奇异对象，返回<code>true</code></li>
 <li>如果<code>argument</code>是代理奇异对象，则
 <ol>
-<li>如果<code>argument</code>的[[ProxyHandler]]内部插槽的值为<code>null</code>，抛出TypeError异常</li>
-<li>令<code>target</code>为<code>argument</code>的[[ProxyTarget]]内部插槽的值</li>
+<li>如果<code>argument</code>的[[ProxyHandler]]内部槽的值为<code>null</code>，抛出TypeError异常</li>
+<li>令<code>target</code>为<code>argument</code>的[[ProxyTarget]]内部槽的值</li>
 <li>返回<code>IsArray(target)</code></li>
 </ol>
 </li>
@@ -578,7 +578,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>令<code>isRegExp</code>为<code>Get(argument, @@match)</code></li>
 <li><code>ReturnIfAbrupt(isRegExp)</code></li>
 <li>如果<code>isRegExp</code>不是undefined，返回<code>ToBoolean(isRegExp)</code></li>
-<li>如果<code>argument</code>有[[RegExpMatcher]]内部插槽，返回<code>true</code></li>
+<li>如果<code>argument</code>有[[RegExpMatcher]]内部槽，返回<code>true</code></li>
 <li>返回<code>false</code></li>
 </ol>
 <h3 id="729-samevaluex-y"><a class="markdownIt-Anchor" href="#729-samevaluex-y"></a> 7.2.9 SameValue(x, y)</h3>
@@ -854,9 +854,9 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>抽象操作OrdinaryHasInstance实现用于确定对象O是否从构造函数C提供的实例对象继承路径继承的默认算法。该抽象操作执行以下步骤：</p>
 <ol>
 <li>如果<code>IsCallable(C)</code>为<code>false</code>，返回<code>false</code></li>
-<li>如果<code>C</code>有<code>[[BoundTargetFunction]]</code>内部插槽，则
+<li>如果<code>C</code>有<code>[[BoundTargetFunction]]</code>内部槽，则
 <ol>
-<li>令<code>BC</code>为<code>C</code>的<code>[[BoundTargetFunction]]</code>内部插槽的值</li>
+<li>令<code>BC</code>为<code>C</code>的<code>[[BoundTargetFunction]]</code>内部槽的值</li>
 <li>返回<code>InstanceofOperator(O,BC)</code> (见 12.9.4)</li>
 </ol>
 </li>

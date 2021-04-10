@@ -326,13 +326,13 @@ pass</p>
 <li>令<code>env</code>为新的词法环境</li>
 <li>令<code>envRec</code>为不包含绑定的新的函数式环境记录</li>
 <li>将<code>envRec.[[FunctionObject]]</code>设为<code>F</code></li>
-<li>如果<code>F</code>的<code>[[ThisMode]]</code>内部插槽为<code>lexical</code>，将<code>envRec.[[thisBindingStatus]]</code>设为<code>&quot;lexical&quot;</code></li>
+<li>如果<code>F</code>的<code>[[ThisMode]]</code>内部槽为<code>lexical</code>，将<code>envRec.[[thisBindingStatus]]</code>设为<code>&quot;lexical&quot;</code></li>
 <li>否则，将<code>envRec.[[thisBindingStatus]]</code>设为<code>&quot;uninitialized&quot;</code></li>
-<li>令<code>home</code>为<code>F</code>的<code>[[HomeObject]]</code>内部插槽的值</li>
+<li>令<code>home</code>为<code>F</code>的<code>[[HomeObject]]</code>内部槽的值</li>
 <li>将<code>envRec.[[HomeObject]]</code>设为<code>home</code></li>
 <li>将<code>envRec.[[NewTarget]]</code>设为<code>newTarget</code></li>
 <li>将<code>env</code>的环境记录设为<code>envRec</code></li>
-<li>将<code>env</code>的外部词法环境引用设为<code>F</code>的<code>[[Environment]]</code>内部插槽的值</li>
+<li>将<code>env</code>的外部词法环境引用设为<code>F</code>的<code>[[Environment]]</code>内部槽的值</li>
 <li>返回<code>env</code></li>
 </ol>
 <h4 id="8125-newglobalenvironment-g"><a class="markdownIt-Anchor" href="#8125-newglobalenvironment-g"></a> 8.1.2.5 NewGlobalEnvironment ( G )</h4>

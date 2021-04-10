@@ -20,22 +20,36 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#18-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text"> 18 全局对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#181-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%80%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 18.1 全局对象的值属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1811-infinity"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 18.1.1 Infinity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1812-nan"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 18.1.2 NaN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1813-undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 18.1.3 undefined</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#182-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 18.2 全局对象的函数属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1821-eval-x"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 18.2.1 eval (x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1822-isfinite-number"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 18.2.2 isFinite (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1823-isnan-number"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 18.2.3 isNaN (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1824-parsefloat-string"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 18.2.4 parseFloat (string)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1825-parseint-string-radix"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 18.2.5 parseInt (string , radix)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18315-number"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 18.3.15 Number ( . . . )</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">179</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">18 全局对象</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="18-全局对象"><a class="markdownIt-Anchor" href="#18-全局对象"></a> 18 全局对象</h1>
-<p>唯一的全局对象是在控制流进入任何执行上下文之前创建的。</p>
-<p>全局对象没有[[Construct]]内部方法，不能在new运算符中将全局对象作为构造函数。</p>
-<p>全局对象没有[[Call]]内部方法，不能将全局对象作为函数调用。</p>
-<p>全局对象的[[Prototype]]内部插槽的值取决于实现。</p>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#18-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text"> 18 全局对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#181-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%80%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 18.1 全局对象的值属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1811-globalthis"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 18.1.1 globalThis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1811-infinity"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 18.1.1 Infinity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1812-nan"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 18.1.2 NaN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1813-undefined"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 18.1.3 undefined</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#182-%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text"> 18.2 全局对象的函数属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1821-eval-x"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 18.2.1 eval (x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1822-isfinite-number"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 18.2.2 isFinite (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1823-isnan-number"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 18.2.3 isNaN (number)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1824-parsefloat-string"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 18.2.4 parseFloat (string)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1825-parseint-string-radix"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 18.2.5 parseInt (string , radix)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1826-uri%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 18.2.6 URI处理函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#18261-uri%E8%AF%AD%E6%B3%95%E5%92%8C%E8%AF%AD%E4%B9%89"><span class="toc-number">1.2.6.1.</span> <span class="toc-text"> 18.2.6.1 URI语法和语义</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#182611-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89encode-string-unescapedset"><span class="toc-number">1.2.6.1.1.</span> <span class="toc-text"> 18.2.6.1.1 运行时语义:Encode ( string, unescapedSet )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#182612-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-decode-string-reservedset"><span class="toc-number">1.2.6.1.2.</span> <span class="toc-text"> 18.2.6.1.2 运行时语义: Decode ( string, reservedSet )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18262-decodeuri-encodeduri"><span class="toc-number">1.2.6.2.</span> <span class="toc-text"> 18.2.6.2 decodeURI ( encodedURI )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18263-decodeuricomponent-encodeduricomponent"><span class="toc-number">1.2.6.3.</span> <span class="toc-text"> 18.2.6.3 decodeURIComponent ( encodedURIComponent )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18264-encodeuri-uri"><span class="toc-number">1.2.6.4.</span> <span class="toc-text"> 18.2.6.4 encodeURI ( uri )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18265-encodeuricomponent-uricomponent"><span class="toc-number">1.2.6.5.</span> <span class="toc-text"> 18.2.6.5 encodeURIComponent ( uriComponent )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18315-number"><span class="toc-number">1.2.7.</span> <span class="toc-text"> 18.3.15 Number ( . . . )</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">179</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">18 全局对象</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="18-全局对象"><a class="markdownIt-Anchor" href="#18-全局对象"></a> 18 全局对象</h1>
+<p>全局对象：</p>
+<ul>
+<li>是在控制流进入任何执行上下文之前创建的。</li>
+<li>没有[[Construct]]内部方法，不能在new运算符中将全局对象作为构造函数使用。</li>
+<li>没有[[Call]]内部方法，不能将全局对象作为函数调用。</li>
+<li>具有[[Prototype]]内部槽，其值取决于实现。</li>
+<li>除了本规范中定义的属性之外，全局对象还可以具有其他宿主定义的属性。 这可能包括一个值为全局对象本身的属性。 例如，在HTML文档对象模型中，全局对象的<code>window</code>属性是全局对象本身。</li>
+</ul>
 <span id="more"></span>
-<p>除了本规范中定义的属性之外，全局对象还可以具有其他宿主定义的属性。 这可能包括一个值为全局对象本身的属性。 例如，在HTML文档对象模型中，全局对象的window属性是全局对象本身。</p>
 <h2 id="181-全局对象的值属性"><a class="markdownIt-Anchor" href="#181-全局对象的值属性"></a> 18.1 全局对象的值属性</h2>
+<h3 id="1811-globalthis"><a class="markdownIt-Anchor" href="#1811-globalthis"></a> 18.1.1 globalThis</h3>
+<p>在Realm记录<code>realm</code>中，全局对象的<code>&quot;globalThis&quot;</code>属性的初始值是<code>real.[[GlobalEnv]]'s EnvironmentRecord's [[GlobalThisValue]]</code></p>
+<p>此属性具有特性<code>&#123; [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
 <h3 id="1811-infinity"><a class="markdownIt-Anchor" href="#1811-infinity"></a> 18.1.1 Infinity</h3>
-<p><code>Infinity</code>的值为<code>+∞</code>（参见 6.1.6）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<p><code>Infinity</code>的值为<code>+∞</code>（参见 6.1.6.1）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
 <h3 id="1812-nan"><a class="markdownIt-Anchor" href="#1812-nan"></a> 18.1.2 NaN</h3>
-<p><code>NaN</code>的值为<code>NaN</code>（参见 6.1.6）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<p><code>NaN</code>的值为<code>NaN</code>（参见 6.1.6.1）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
 <h3 id="1813-undefined"><a class="markdownIt-Anchor" href="#1813-undefined"></a> 18.1.3 undefined</h3>
 <p><code>undefined</code>的值为<code>undefined</code>（参见 6.1.1）。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
 <h2 id="182-全局对象的函数属性"><a class="markdownIt-Anchor" href="#182-全局对象的函数属性"></a> 18.2 全局对象的函数属性</h2>
 <h3 id="1821-eval-x"><a class="markdownIt-Anchor" href="#1821-eval-x"></a> 18.2.1 eval (x)</h3>
+<p><code>eval</code>函数是固有对象<code>%eval%</code>。当使用参数<code>x</code>调用<code>eval</code>函数时候，执行以下步骤：</p>
+<ol>
+<li>断言：执行上下文栈至少有两个元素</li>
+<li>令<code>callerContext</code>为执行上下文栈从栈顶数的第二个元素</li>
+<li>令<code>callerRealm</code>为<code>callerContext</code>的<code>Realm</code></li>
+<li>返回? <code>PerformEval(x, callerRealm, false, false)</code></li>
+</ol>
+<p>注：如果调用上下文正在计算形式化参数初始化器，或者调用上下文的代码或eval代码是严格模式代码，那么eval代码就不能在调用eval的调用上下文的变量环境中实例化变量或函数绑定。相反，这样的绑定会被实例化在一个新的<code>VariableEnvironment</code>中，这个<code>VariableEnvironment</code>只对eval代码开放。由let、const或类声明引入的绑定总是被实例化在一个新的<code>LexicalEnvironment</code>中。</p>
 <h3 id="1822-isfinite-number"><a class="markdownIt-Anchor" href="#1822-isfinite-number"></a> 18.2.2 isFinite (number)</h3>
 <p>isFinite函数是固有对象％isFinite％。 当使用一个参数x调用isFinite函数时，将执行以下步骤：</p>
 <ol>
@@ -108,6 +122,149 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回<code>sign × number</code></li>
 </ol>
 <p>注意：parseInt只能将字符串的开头部分解释为整数值； 它会忽略无法解释为整数符号的一部分的任何代码单元，并且不会给出任何此类代码单元被忽略的指示。</p>
+<h3 id="1826-uri处理函数"><a class="markdownIt-Anchor" href="#1826-uri处理函数"></a> 18.2.6 URI处理函数</h3>
+<p>统一资源标识符(Uniform Resource Identifiers)，或URIs是字符串，用来标识互联网上的资源（如网页或文件），以及访问它们的传输协议（如HTTP或FTP）。除了18.2.6.2、18.2.6.3、18.2.6.4和18.2.6.5中描述的对URI进行编码和解码的函数外，ECMAScript语言本身并没有提供任何使用URI的支持。</p>
+<p>注：许多ECMAScript的实现提供了额外的功能和方法来操作网页；这些功能超出了本标准的范围。</p>
+<h4 id="18261-uri语法和语义"><a class="markdownIt-Anchor" href="#18261-uri语法和语义"></a> 18.2.6.1 URI语法和语义</h4>
+<p>一个URI是由一系列由组件分隔符分隔的组件组成。一般的形式是：<br />
+<code>Scheme : First / Second ; Third ? Fourth</code></p>
+<p>其中名称代表组件，而<code>&quot;:&quot;</code>、<code>&quot;/&quot;</code>、<code>&quot;;&quot;</code>和<code>&quot;?&quot;</code>则保留作为分隔符使用。<code>encodeURI</code>和<code>decodeURI</code>函数用于处理完整的URI；它们假定URI中任何保留的代码单元都有特殊的含义，因此不进行编码。<code>encodeURIComponent</code>和<code>decodeURIComponent</code>函数用于处理URI的单个组件部分；它们假定任何保留的代码单元都代表文本，因此必须进行编码，以便当组件是完整URI的一部分时，它们不会被解释为保留的代码单元。</p>
+<p>下面的词法规定了编码URI的形式。<br />
+语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">uri:::</span><br><span class="line">    uriCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">uriCharacters:::</span><br><span class="line">    uriCharacte ruriCharacters&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">uriCharacter:::</span><br><span class="line">    uriReserved</span><br><span class="line">    uriUnescaped</span><br><span class="line">    uriEscaped</span><br><span class="line"></span><br><span class="line">uriReserved:::one of</span><br><span class="line">    ; &#x2F; ? : @ &amp; &#x3D; + $ ,</span><br><span class="line"></span><br><span class="line">uriUnescaped:::</span><br><span class="line">    uriAlpha</span><br><span class="line">    DecimalDigit</span><br><span class="line">    uriMark</span><br><span class="line"></span><br><span class="line">uriEscaped:::</span><br><span class="line">    % HexDigit HexDigit</span><br><span class="line"></span><br><span class="line">uriAlpha:::one of</span><br><span class="line">    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br><span class="line"></span><br><span class="line">uriMark:::one of</span><br><span class="line">    - _ . ! ~ * &#39; ( )</span><br></pre></td></tr></table></figure>
+<p>正则版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uriReserved &#x3D; [;&#x2F;?:@&amp;&#x3D;+$]</span><br><span class="line">uriUnescaped &#x3D; [a-zA-Z0-9_.!~*&#39;()-]</span><br><span class="line">uriAlpha &#x3D; [a-zA-Z]</span><br><span class="line">DecimalDigit &#x3D; [0-9]</span><br><span class="line">uriMark &#x3D; [-_.!~*&#39;()]</span><br></pre></td></tr></table></figure>
+<p>注：上述语法基于RFC 2396，并不反映最近的RFC 3986引入的变化。<br />
+运行时语义：<br />
+当要包含在URI中的代码单元没有被列在上面，或者不打算具有被赋予保留代码单元的特殊含义时，必须对该代码单元进行编码。代码单元被转换为其UTF-8编码，代理对首先从UTF-16转换为相应的码点值。(请注意，对于[0，127]范围内的代码单元，这将导致具有相同值的单个八位字节)。然后将产生的八位字节序列转换为一个字符串，每个八位字节用<code>&quot;%xx&quot;</code>形式的转义序列表示。</p>
+<h5 id="182611-运行时语义encode-string-unescapedset"><a class="markdownIt-Anchor" href="#182611-运行时语义encode-string-unescapedset"></a> 18.2.6.1.1 运行时语义:Encode ( string, unescapedSet )</h5>
+<p>编码和转义过程由抽象操作<code>Encode</code>描述，接受两个字符串参数<code>string</code>和<code>unescapedSet</code>。</p>
+<ol>
+<li>令<code>strLen</code>为<code>string</code>中代码单元的数量</li>
+<li>令<code>R</code>为空字符串</li>
+<li>令<code>k</code>为<code>0</code></li>
+<li>重复：
+<ol>
+<li>如果<code>k</code>等于<code>strLen</code>，返回<code>R</code></li>
+<li>令<code>C</code>为<code>string</code>中索引为<code>k</code>的代码单元</li>
+<li>如果<code>C</code>在<code>unescapedSet</code>中，则
+<ol>
+<li>将<code>k</code>设为<code>k + 1</code></li>
+<li>将<code>R</code>设为连接字符串：先前的<code>R</code>值、<code>C</code>的结果</li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>cp</code>为! <code>CodePointAt(string, k)</code></li>
+<li>如果<code>cp.[[IsUnpairedSurrogate]]</code>为<code>true</code>，抛出URIError 异常</li>
+<li>将<code>k</code>设为<code>k + cp.[[CodeUnitCount]]</code></li>
+<li>令<code>Octets</code>为一个列表，元素是通过对<code>cp.[[CodePoint]]</code>进行UTF-8转换产生的8bit数</li>
+<li>对<code>Octets</code>中的每个元素<code>octet</code>，按照列表顺序执行：
+<ol>
+<li>将<code>R</code>设为连接下列字符串的结果：
+<ul>
+<li>先前的<code>R</code>值</li>
+<li><code>&quot;%&quot;</code></li>
+<li><code>octet</code>的字符串表示，格式为两位大写16进制数，不足两位就在左侧补0。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="182612-运行时语义-decode-string-reservedset"><a class="markdownIt-Anchor" href="#182612-运行时语义-decode-string-reservedset"></a> 18.2.6.1.2 运行时语义: Decode ( string, reservedSet )</h5>
+<p>解码和转义过程由抽象操作<code>Decode</code>描述，接受两个字符串参数<code>string</code>和<code>reservedSet</code>。</p>
+<ol>
+<li>令<code>strLen</code>为<code>string</code>中代码单元的数量</li>
+<li>令<code>R</code>为空字符串</li>
+<li>令<code>k</code>为<code>0</code></li>
+<li>重复：
+<ol>
+<li>如果<code>k</code>等于<code>strLen</code>，返回<code>R</code></li>
+<li>令<code>C</code>为<code>string</code>中索引为<code>k</code>的代码单元</li>
+<li>如果<code>C</code>不是代码单元<code>0x0025 (PERCENT SIGN)</code>，则令 <code>S</code>为只包含代码单元<code>C</code>的字符串值</li>
+<li>否则：
+<ol>
+<li>令<code>start</code>为<code>k</code></li>
+<li>如果<code>k+2 &gt;= strlen</code>，抛出 URIError 异常</li>
+<li>如果<code>string</code>中索引为<code>k + 1</code>和<code>k + 2</code>的代码单元不表示十六进制数字，抛出 URIError 异常</li>
+<li>令<code>B</code>为索引为<code>k + 1</code>和<code>k + 2</code>的代码单元表示的8bit数值</li>
+<li>将<code>k</code>设为<code>k+2</code></li>
+<li>如果<code>B</code>的最高有效位是<code>0</code>，则
+<ol>
+<li>令<code>C</code>为值为<code>B</code>的代码单元</li>
+<li>如果<code>C</code>不在<code>reservedSet</code>中，则令<code>S</code>为只包含代码单元<code>C</code>的字符串</li>
+<li>否则令<code>S</code>为<code>string</code>从索引<code>index</code>到索引<code>k</code>（不包含）的子串</li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>B</code>的最高有效位是<code>1</code></li>
+<li>令<code>n</code>为使得<code>(B &lt;&lt; n) &amp; 0x80</code>等于<code>0</code>的最小非负整数</li>
+<li>如果<code>n</code>等于<code>1</code>或<code>n</code>大于等于<code>4</code>，抛出 URIError 异常</li>
+<li>令<code>Octets</code>为大小为<code>n</code>的8bit整数的列表</li>
+<li>将<code>Octets[0]</code>设为<code>B</code></li>
+<li>如果<code>k + (3 × (n - 1))</code>大于等于<code>strLen</code>，抛出 URIError 异常</li>
+<li>令<code>j</code>为<code>1</code></li>
+<li>重复，只要<code>j &lt; n</code>
+<ol>
+<li>将<code>k</code>设为<code>k + 1</code></li>
+<li>如果<code>string</code>中索引为<code>k</code>的代码单元不是<code>0x0025 (PERCENT SIGN)</code>，抛出 URIError 异常</li>
+<li>如果<code>string</code>中索引为<code>k+1</code>和<code>k+2</code>的代码单元不表示十六进制数，抛出 URIError 异常</li>
+<li>令<code>B</code>为索引<code>k+1</code>和<code>k+2</code>处的十六进制数字表示的8bit值</li>
+<li>如果<code>B</code>的高两位不是<code>10</code>，抛出 URIError 异常</li>
+<li>将<code>k</code>设为<code>k + 2</code></li>
+<li>将<code>Octets[j]</code>设为<code>B</code></li>
+<li>将<code>j</code>设为<code>j + 1</code></li>
+</ol>
+</li>
+<li>如果<code>Octets</code>不包含一个有效的UTF-8编码的Unicode代码点，抛出 URIError 异常</li>
+<li>令<code>V</code>为通过对<code>Octets</code>进行UTF-8转换产生的值，即从<code>octets</code>转为21-bit数</li>
+<li>令<code>S</code>为字符串值，其编码单元依次是<code>UTF16Encoding(V)</code>中的元素。</li>
+</ol>
+</li>
+<li>将<code>R</code>设为连接字符串：<code>R</code>的先前值、<code>S</code>的结果</li>
+<li>将<code>k</code>设为<code>k + 1</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="18262-decodeuri-encodeduri"><a class="markdownIt-Anchor" href="#18262-decodeuri-encodeduri"></a> 18.2.6.2 decodeURI ( encodedURI )</h4>
+<p><code>decodeURI</code>函数计算一个URI的新版本，其中每个转义序列和可能由encodeURI函数引入的UTF-8编码都被它所代表的码点的UTF-16编码所取代。不能由 encodeURI 引入的转义序列不会被替换。<br />
+<code>decodeURI</code>函数是固有对象<code>%decodeURI%</code>，当使用参数<code>encodedURI</code>调用函数<code>decodeURI</code>时，执行以下步骤：</p>
+<ol>
+<li>令<code>uriString</code>为? <code>ToString(encodedURI)</code></li>
+<li>令<code>reservedURISet</code>为一个包含<code>uriReserved</code>中每个代码单元与<code>#</code>的字符串（<code>&quot;;/?:@&amp;=+$#&quot;</code>）</li>
+<li>返回? <code>Decode(uriString, reservedURISet)</code></li>
+</ol>
+<h4 id="18263-decodeuricomponent-encodeduricomponent"><a class="markdownIt-Anchor" href="#18263-decodeuricomponent-encodeduricomponent"></a> 18.2.6.3 decodeURIComponent ( encodedURIComponent )</h4>
+<p><code>decodeURIComponent</code>函数计算了一个URI的新版本，在这个新版本中，每个转义序列和可能由<code>encodeURIComponent</code>函数引入的UTF-8编码都被它所代表的码点的UTF-16编码所取代。</p>
+<p><code>decodeURIComponent</code>函数是固有对象<code>%decodeURIComponent%</code>。当以一个参数<code>encodedURIComponent</code>调用<code>decodeURIComponent</code>函数时，会采取以下步骤。</p>
+<ol>
+<li>令<code>componentString</code>为? <code>ToString(encodedURIComponent)</code></li>
+<li>令<code>reservedURIComponentSet</code>为空字符串</li>
+<li>返回? <code>Decode(componentString, reservedURIComponentSet)</code></li>
+</ol>
+<h4 id="18264-encodeuri-uri"><a class="markdownIt-Anchor" href="#18264-encodeuri-uri"></a> 18.2.6.4 encodeURI ( uri )</h4>
+<p>encodeURI函数计算了UTF-16编码（6.1.4）URI的新版本，其中某些码点的每一个实例都被代表码点UTF-8编码的一个、两个、三个或四个转义序列取代。<br />
+encodeURI函数是固有对象<code>%encodeURI%</code>。当使用参数<code>uri</code>调用encodeURI 函数时，执行以下步骤：</p>
+<ol>
+<li>令<code>uriString</code>为? <code>ToString(uri)</code></li>
+<li>令<code>unescapedURISet</code>为一个包含<code>uriReserved</code>（<code>;/?:@&amp;=+$</code>）和<code>uriUnescaped</code>（<code>a-zA-Z0-9_.!~*'()-</code>）中每个代码单元与<code>#</code>的字符串</li>
+<li>返回? <code>Decode(uriString, reservedURISet)</code></li>
+</ol>
+<h4 id="18265-encodeuricomponent-uricomponent"><a class="markdownIt-Anchor" href="#18265-encodeuricomponent-uricomponent"></a> 18.2.6.5 encodeURIComponent ( uriComponent )</h4>
+<p><code>encodeURIComponent</code>函数计算UTF-16编码（6.1.4）URI的新版本，其中某些码点的每个实例都被代表码点UTF-8编码的一个、两个、三个或四个转义序列取代。</p>
+<p><code>encodeURIComponent</code>函数是固有对象<code>%encodeURIComponent%</code>。当使用参数<code>uriComponent</code>调用 <code>encodeURIComponent</code> 函数时，采取以下步骤。</p>
+<ol>
+<li>令<code>componentString</code>为? <code>ToString(uriComponent)</code></li>
+<li>令<code>unescapedURIComponentSet</code>为一个包含<code>uriUnescaped</code>（<code>a-zA-Z0-9_.!~*'()-</code>）中代码单元的字符串</li>
+<li>返回? <code>Encode(componentString, unescapedURIComponentSet)</code></li>
+</ol>
 <h3 id="18315-number"><a class="markdownIt-Anchor" href="#18315-number"></a> 18.3.15 Number ( . . . )</h3>
 <p>参见 20.1.1</p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/18 全局对象.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/18 全局对象.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/14%20%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB.html"><i class="fa fa-chevron-left">  </i><span>14 函数和类</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/19%20%E5%9F%BA%E6%9C%AC%E5%AF%B9%E8%B1%A1.html"><span>19 基本对象</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({

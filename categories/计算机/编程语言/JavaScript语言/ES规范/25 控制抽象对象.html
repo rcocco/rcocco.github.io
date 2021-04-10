@@ -197,32 +197,32 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ol>
 <li>令<code>alreadyResolved</code>为一个新的记录<code>&#123; [[value]]: false &#125;</code></li>
 <li>令<code>resolve</code>为Promise Resolve Functions(25.4.1.3.2)中定义的内置函数对象</li>
-<li>将<code>resolve</code>的<code>[[Promise]]</code>内部插槽设为<code>promise</code></li>
-<li>将<code>resolve</code>的<code>[[AlreadyResolved]]</code>内部插槽设为<code>alreadyResolved</code></li>
+<li>将<code>resolve</code>的<code>[[Promise]]</code>内部槽设为<code>promise</code></li>
+<li>将<code>resolve</code>的<code>[[AlreadyResolved]]</code>内部槽设为<code>alreadyResolved</code></li>
 <li>令<code>reject</code>为Promise Reject Functions (25.4.1.3.1)中定义的内置函数对象</li>
-<li>将<code>reject</code>的<code>[[Promise]]</code>内部插槽设为<code>promise</code></li>
-<li>将<code>reject</code>的<code>[[AlreadyResolved]]</code>内部插槽设为<code>alreadyResolved</code></li>
+<li>将<code>reject</code>的<code>[[Promise]]</code>内部槽设为<code>promise</code></li>
+<li>将<code>reject</code>的<code>[[AlreadyResolved]]</code>内部槽设为<code>alreadyResolved</code></li>
 <li>返回一个新记录<code>&#123; [[Resolve]]: resolve, [[Reject]]: reject &#125;</code></li>
 </ol>
 <h5 id="254131-promise-reject函数"><a class="markdownIt-Anchor" href="#254131-promise-reject函数"></a> 25.4.1.3.1 Promise Reject函数</h5>
-<p>promise reject函数是有<code>[[Promise]]</code>和<code>[[AlreadyResolved]]</code>内部插槽的匿名内置函数。<br />
+<p>promise reject函数是有<code>[[Promise]]</code>和<code>[[AlreadyResolved]]</code>内部槽的匿名内置函数。<br />
 当使用参数<code>reason</code>调用promise reject函数<code>F</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>F</code>有一个值为<code>Object</code>类型的<code>[[Promise]]</code>内部插槽</li>
-<li>令<code>promise</code>为<code>F</code>的<code>[[Promise]]</code>内部插槽的值</li>
-<li>令<code>alreadyResolved</code>为<code>F</code>的<code>[[AlreadyResolved]]</code>内部插槽的值</li>
+<li>断言：<code>F</code>有一个值为<code>Object</code>类型的<code>[[Promise]]</code>内部槽</li>
+<li>令<code>promise</code>为<code>F</code>的<code>[[Promise]]</code>内部槽的值</li>
+<li>令<code>alreadyResolved</code>为<code>F</code>的<code>[[AlreadyResolved]]</code>内部槽的值</li>
 <li>如果<code>alreadyResolved.[[value]]</code>为<code>true</code>，返回<code>undefined</code></li>
 <li>将<code>alreadyResolved.[[value]]</code>设为<code>true</code></li>
 <li>返回<code>RejectPromise(promise, reason)</code></li>
 </ol>
 <p>promise reject函数的<code>length</code>属性值为<code>1</code></p>
 <h5 id="254132-promise-resolve函数"><a class="markdownIt-Anchor" href="#254132-promise-resolve函数"></a> 25.4.1.3.2 Promise Resolve函数</h5>
-<p>promise resolve函数是有<code>[[Promise]]</code>和<code>[[AlreadyResolved]]</code>内部插槽的匿名内置函数。<br />
+<p>promise resolve函数是有<code>[[Promise]]</code>和<code>[[AlreadyResolved]]</code>内部槽的匿名内置函数。<br />
 当使用参数<code>resolution</code>调用promise resolve函数<code>F</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>F</code>有一个值为<code>Object</code>类型的<code>[[Promise]]</code>内部插槽</li>
-<li>令<code>promise</code>为<code>F</code>的<code>[[Promise]]</code>内部插槽的值</li>
-<li>令<code>alreadyResolved</code>为<code>F</code>的<code>[[AlreadyResolved]]</code>内部插槽的值</li>
+<li>断言：<code>F</code>有一个值为<code>Object</code>类型的<code>[[Promise]]</code>内部槽</li>
+<li>令<code>promise</code>为<code>F</code>的<code>[[Promise]]</code>内部槽的值</li>
+<li>令<code>alreadyResolved</code>为<code>F</code>的<code>[[AlreadyResolved]]</code>内部槽的值</li>
 <li>如果<code>alreadyResolved.[[value]]</code>为<code>true</code>，返回<code>undefined</code></li>
 <li>将<code>alreadyResolved.[[value]]</code>设为<code>true</code></li>
 <li>如果<code>SameValue(resolution, promise)</code>为<code>true</code>，则：
@@ -243,12 +243,12 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h4 id="25414-fulfillpromise-promise-value"><a class="markdownIt-Anchor" href="#25414-fulfillpromise-promise-value"></a> 25.4.1.4 FulfillPromise ( promise, value)</h4>
 <p>当使用参数<code>promise</code>和<code>value</code>调用<code>FulfillPromise</code>抽象操作时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值为<code>&quot;pending&quot;</code></li>
-<li>令<code>reactions</code>为<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部插槽的值</li>
-<li>将<code>promise</code>的<code>[[PromiseResult]]</code>内部插槽的值设为<code>value</code></li>
-<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部插槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部插槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值设为<code>&quot;fulfilled&quot;</code></li>
+<li>断言：<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;pending&quot;</code></li>
+<li>令<code>reactions</code>为<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值</li>
+<li>将<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值设为<code>value</code></li>
+<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值设为<code>undefined</code></li>
+<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值设为<code>undefined</code></li>
+<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值设为<code>&quot;fulfilled&quot;</code></li>
 <li>返回<code>TriggerPromiseReactions(reactions, value)</code></li>
 </ol>
 <h4 id="25415-newpromisecapability-c"><a class="markdownIt-Anchor" href="#25415-newpromisecapability-c"></a> 25.4.1.5 NewPromiseCapability ( C )</h4>
@@ -258,7 +258,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>注：假定<code>C</code>是支持Promise构造函数的参数约定的构造函数 (见 25.4.3.1).</li>
 <li>令<code>promiseCapability</code>为新的<code>PromiseCapability &#123; [[Promise]]: undefined, [[Resolve]]: undefined, [[Reject]]: undefined &#125;</code></li>
 <li>令<code>executor</code>为 GetCapabilitiesExecutor Functions (25.4.1.5.1) 中定义的内置函数对象</li>
-<li>将<code>executor</code>的<code>[[Capability]]</code>内部插槽的值设为<code>promiseCapability</code></li>
+<li>将<code>executor</code>的<code>[[Capability]]</code>内部槽的值设为<code>promiseCapability</code></li>
 <li>令<code>promise</code>为<code>Construct(C, «executor»)</code></li>
 <li><code>ReturnIfAbrupt(promise)</code></li>
 <li>如果<code>IsCallable(promiseCapability.[[Resolve]])</code>为<code>false</code>，抛出 TypeError 异常</li>
@@ -268,11 +268,11 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>注：此抽象操作支持Promise子类化，因为它在以与Promise构造函数相同的方式调用传递的执行程序函数参数的任何构造函数上都是通用的。 它用于将Promise构造函数的静态方法推广到任何子类。</p>
 <h5 id="254151-getcapabilitiesexecutor函数"><a class="markdownIt-Anchor" href="#254151-getcapabilitiesexecutor函数"></a> 25.4.1.5.1 GetCapabilitiesExecutor函数</h5>
-<p>GetCapabilitiesExecutor 函数是有<code>[[Capability]]</code>内部插槽的匿名内置函数。<br />
+<p>GetCapabilitiesExecutor 函数是有<code>[[Capability]]</code>内部槽的匿名内置函数。<br />
 当使用参数<code>resolve</code>和<code>reject</code>调用GetCapabilitiesExecutor 函数<code>F</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>F</code>有一个值为<code>PromiseCapability</code>记录的<code>[[Capability]]</code>内部插槽</li>
-<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capability]]</code>内部插槽的值</li>
+<li>断言：<code>F</code>有一个值为<code>PromiseCapability</code>记录的<code>[[Capability]]</code>内部槽</li>
+<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capability]]</code>内部槽的值</li>
 <li>如果<code>promiseCapability.[[Resolve]]</code>不为<code>undefined</code>，抛出 TypeError 异常</li>
 <li>如果<code>promiseCapability.[[Reject]]</code>不为<code>undefined</code>，抛出 TypeError 异常</li>
 <li>将<code>promiseCapability.[[Resolve]]</code>设为<code>resolve</code></li>
@@ -284,18 +284,18 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>抽象操作<code>IsPromise</code>在一个对象上检查其是否是promise类型</p>
 <ol>
 <li>如果<code>Type(x)</code>不是<code>Object</code>，返回<code>false</code></li>
-<li>如果<code>x</code>没有<code>[[PromiseState]]</code>内部插槽，返回<code>false</code></li>
+<li>如果<code>x</code>没有<code>[[PromiseState]]</code>内部槽，返回<code>false</code></li>
 <li>返回<code>true</code></li>
 </ol>
 <h4 id="25417-rejectpromise-promise-reason"><a class="markdownIt-Anchor" href="#25417-rejectpromise-promise-reason"></a> 25.4.1.7 RejectPromise ( promise, reason)</h4>
 <p>当使用参数<code>promise</code>和<code>reason</code>调用抽象操作<code>RejectPromise</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值为<code>&quot;pending&quot;</code></li>
-<li>令<code>reactions</code>为<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部插槽的值</li>
-<li>将<code>promise</code>的<code>[[PromiseResult]]</code>内部插槽的值设为<code>reason</code></li>
-<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部插槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部插槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值设为<code>&quot;rejected&quot;</code></li>
+<li>断言：<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;pending&quot;</code></li>
+<li>令<code>reactions</code>为<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值</li>
+<li>将<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值设为<code>reason</code></li>
+<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值设为<code>undefined</code></li>
+<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值设为<code>undefined</code></li>
+<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值设为<code>&quot;rejected&quot;</code></li>
 <li>返回<code>TriggerPromiseReactions(reactions, reason)</code></li>
 </ol>
 <h4 id="25418-triggerpromisereactions-reactions-argument"><a class="markdownIt-Anchor" href="#25418-triggerpromisereactions-reactions-argument"></a> 25.4.1.8 TriggerPromiseReactions ( reactions, argument )</h4>
@@ -351,9 +351,9 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>IsCallable(executor)</code>为<code>false</code>，抛出 TypeError 异常</li>
 <li>令<code>promise</code>为<code>OrdinaryCreateFromConstructor(NewTarget, &quot;%PromisePrototype%&quot;, «‍[[PromiseState]], [[PromiseResult]], [[PromiseFulfillReactions]], [[PromiseRejectReactions]]» )</code></li>
 <li><code>ReturnIfAbrupt(promise)</code></li>
-<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值设为<code>&quot;pending&quot;</code></li>
-<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部插槽的值设为一个新的空列表</li>
-<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部插槽的值设为一个新的空列表</li>
+<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值设为<code>&quot;pending&quot;</code></li>
+<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值设为一个新的空列表</li>
+<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值设为一个新的空列表</li>
 <li>令<code>resolvingFunctions</code>为<code>CreateResolvingFunctions(promise)</code></li>
 <li>令<code>completion</code>为<code>Call(executor, undefined, «resolvingFunctions.[[Resolve]], resolvingFunctions.[[Reject]]»)</code></li>
 <li>如果<code>completion</code>是非常规完结，则
@@ -369,7 +369,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>传递给<code>executor</code>函数的<code>reject</code>函数接受一个参数。<code>executor</code>函数的代码最终可能会调用<code>reject</code>函数来指示关联的Promise对象被拒绝了，并且永远不会兑现。传递给<code>reject</code>函数的参数用作promise的拒绝值，通常是一个<code>Error</code>对象。</p>
 <p>Promise构造函数传递给<code>executor</code>函数的<code>resolve</code>和<code>reject</code>函数具有实际确定和拒绝关联的promise的能力。 子类可能具有不同的构造函数行为，这些构造函数将传入自定义值以进行确定和拒绝。</p>
 <h3 id="2544-promise构造函数的属性"><a class="markdownIt-Anchor" href="#2544-promise构造函数的属性"></a> 25.4.4 Promise构造函数的属性</h3>
-<p><code>Promise</code>构造函数的<code>[[Prototype]]</code>内部插槽的值是固有对象<code>%FunctionPrototype%</code> (19.2.3)</p>
+<p><code>Promise</code>构造函数的<code>[[Prototype]]</code>内部槽的值是固有对象<code>%FunctionPrototype%</code> (19.2.3)</p>
 <p>除了值为<code>1</code>的<code>length</code>属性，Promise构造函数还有以下属性：</p>
 <h4 id="25441-promiseall-iterable"><a class="markdownIt-Anchor" href="#25441-promiseall-iterable"></a> 25.4.4.1 Promise.all ( iterable )</h4>
 <p><code>all</code>函数返回一个新的promise，这个新的promise使用传递的若干promise组成的兑现值数组来兑现，又或者使用传递的若干promise中第一个拒绝的promise的reason来拒绝。当运行此算法时，它将传递的可迭代对象的所有元素解析为Promise。</p>
@@ -427,11 +427,11 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>将<code>undefined</code>添加到<code>values</code></li>
 <li>令<code>nextPromise</code>为<code>Invoke(constructor, &quot;resolve&quot;, «‍nextValue»). ReturnIfAbrupt(nextPromise )</code></li>
 <li>令<code>resolveElement</code>为 Promise.all Resolve Element Functions中定义的内置函数</li>
-<li>将<code>resolveElement</code>的<code>[[AlreadyCalled]]</code>内部插槽设为<code>Record &#123;[[value]]: false &#125;</code></li>
-<li>将<code>resolveElement</code>的<code>[[Index]]</code>内部插槽设为<code>index</code></li>
-<li>将<code>resolveElement</code>的<code>[[Values]]</code>内部插槽设为<code>values</code></li>
-<li>将<code>resolveElement</code>的<code>[[Capabilities]]</code>内部插槽设为<code>resultCapability</code></li>
-<li>将<code>resolveElement</code>的<code>[[RemainingElements]]</code>内部插槽设为<code>remainingElementsCount</code></li>
+<li>将<code>resolveElement</code>的<code>[[AlreadyCalled]]</code>内部槽设为<code>Record &#123;[[value]]: false &#125;</code></li>
+<li>将<code>resolveElement</code>的<code>[[Index]]</code>内部槽设为<code>index</code></li>
+<li>将<code>resolveElement</code>的<code>[[Values]]</code>内部槽设为<code>values</code></li>
+<li>将<code>resolveElement</code>的<code>[[Capabilities]]</code>内部槽设为<code>resultCapability</code></li>
+<li>将<code>resolveElement</code>的<code>[[RemainingElements]]</code>内部槽设为<code>remainingElementsCount</code></li>
 <li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] + 1</code></li>
 <li>令<code>result</code>为<code>Invoke(nextPromise, &quot;then&quot;, «‍resolveElement, resultCapability.[[Reject]]»)</code></li>
 <li><code>ReturnIfAbrupt(result)</code></li>
@@ -440,16 +440,16 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </li>
 </ol>
 <h5 id="254412-promiseall-resolve-element-functions"><a class="markdownIt-Anchor" href="#254412-promiseall-resolve-element-functions"></a> 25.4.4.1.2 Promise.all Resolve Element Functions</h5>
-<p>Promise.all resolve element 函数是匿名内置函数，用来解决特定的 Promise.all 元素。每个 Promise.all resolve element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部插槽。</p>
+<p>Promise.all resolve element 函数是匿名内置函数，用来解决特定的 Promise.all 元素。每个 Promise.all resolve element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部槽。</p>
 <p>当使用参数<code>x</code>调用Promise.all resolve element函数<code>F</code>时，执行以下步骤：</p>
 <ol>
-<li>令<code>alreadyCalled</code>为<code>F</code>的<code>[[AlreadyCalled]]</code>内部插槽的值</li>
+<li>令<code>alreadyCalled</code>为<code>F</code>的<code>[[AlreadyCalled]]</code>内部槽的值</li>
 <li>如果<code>alreadyCalled.[[value]]</code>为<code>true</code>，返回<code>undefined</code></li>
 <li>将<code>alreadyCalled.[[value]]</code>设为<code>true</code></li>
-<li>令<code>index</code>为<code>F</code>的<code>[[Index]]</code>内部插槽的值</li>
-<li>令<code>values</code>为<code>F</code>的<code>[[Values]]</code>内部插槽的值</li>
-<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capabilities]]</code>内部插槽的值</li>
-<li>令<code>remainingElementsCount</code>为<code>F</code>的<code>[[RemainingElements]]</code>内部插槽的值</li>
+<li>令<code>index</code>为<code>F</code>的<code>[[Index]]</code>内部槽的值</li>
+<li>令<code>values</code>为<code>F</code>的<code>[[Values]]</code>内部槽的值</li>
+<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capabilities]]</code>内部槽的值</li>
+<li>令<code>remainingElementsCount</code>为<code>F</code>的<code>[[RemainingElements]]</code>内部槽的值</li>
 <li>将<code>values[index]</code>设为<code>x</code></li>
 <li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] - 1</code></li>
 <li>如果<code>remainingElementsCount.[[value]]</code>为<code>0</code>
@@ -551,7 +551,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>此函数的<code>name</code>属性值为<code>&quot;get [Symbol.species]&quot;</code></p>
 <p>注：Promise原型方法通常使用其<code>this</code>对象的构造函数来创建派生对象。 但是，子类构造函数可以通过重新定义其<code>@@species</code>属性来覆盖该默认行为。</p>
 <h3 id="2545-promise原型对象的属性"><a class="markdownIt-Anchor" href="#2545-promise原型对象的属性"></a> 25.4.5 Promise原型对象的属性</h3>
-<p>Promise原型对象是固有对象<code>%PromisePrototype%</code>。Promise原型对象的<code>[[Prototype]]</code>内部插槽的值是固有对象<code>%ObjectPrototype%</code> (19.1.3)。Promise原型对象是一个普通对象。 它没有[[PromiseState]]内部插槽或Promise实例的任何其他内部插槽。</p>
+<p>Promise原型对象是固有对象<code>%PromisePrototype%</code>。Promise原型对象的<code>[[Prototype]]</code>内部槽的值是固有对象<code>%ObjectPrototype%</code> (19.1.3)。Promise原型对象是一个普通对象。 它没有[[PromiseState]]内部槽或Promise实例的任何其他内部槽。</p>
 <h4 id="25451-promiseprototypecatch-onrejected"><a class="markdownIt-Anchor" href="#25451-promiseprototypecatch-onrejected"></a> 25.4.5.1 Promise.prototype.catch ( onRejected )</h4>
 <p>当使用参数<code>onRejected</code>调用<code>catch</code>方法时，执行以下步骤：</p>
 <ol>
@@ -580,21 +580,21 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>IsCallable(onRejected)</code>为<code>false</code>，则令<code>onRejected</code>为<code>&quot;Thrower&quot;</code></li>
 <li>令<code>fulfillReaction</code>为<code>PromiseReaction &#123; [[Capabilities]]: resultCapability, [[Handler]]: onFulfilled &#125;</code></li>
 <li>令<code>rejectReaction</code>为<code>PromiseReaction &#123; [[Capabilities]]: resultCapability, [[Handler]]: onRejected&#125;</code></li>
-<li>如果<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值为<code>&quot;pending&quot;</code>：
+<li>如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;pending&quot;</code>：
 <ol>
-<li>将<code>fulfillReaction</code>添加到<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部插槽（值为一个列表）的最后一个元素</li>
-<li>将<code>rejectReaction</code>添加到<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部插槽（值为一个列表）的最后一个元素</li>
+<li>将<code>fulfillReaction</code>添加到<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽（值为一个列表）的最后一个元素</li>
+<li>将<code>rejectReaction</code>添加到<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽（值为一个列表）的最后一个元素</li>
 </ol>
 </li>
-<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值为<code>&quot;fulfilled&quot;</code>，则
+<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;fulfilled&quot;</code>，则
 <ol>
-<li>令<code>value</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部插槽的值</li>
+<li>令<code>value</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值</li>
 <li>执行<code>EnqueueJob(&quot;PromiseJobs&quot;, PromiseReactionJob, «‍fulfillReaction, value»)</code></li>
 </ol>
 </li>
-<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部插槽的值为<code>&quot;rejected&quot;</code>，则
+<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;rejected&quot;</code>，则
 <ol>
-<li>令<code>reason</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部插槽的值</li>
+<li>令<code>reason</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值</li>
 <li>执行<code>EnqueueJob(&quot;PromiseJobs&quot;, PromiseReactionJob, «‍rejectReaction, reason»)</code></li>
 </ol>
 </li>
@@ -604,12 +604,12 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p><code>@@toStringTag</code>属性的初始值为字符串<code>&quot;Promise&quot;</code><br />
 此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
 <h3 id="2546-promise实例的属性"><a class="markdownIt-Anchor" href="#2546-promise实例的属性"></a> 25.4.6 Promise实例的属性</h3>
-<p>Promise实例是从Promise原型对象（固有对象<code>%PromisePrototype%</code>）继承属性的普通对象。 最初使用表59中描述的内部插槽创建Promise实例。</p>
-<p>表59：Promise实例的内部插槽</p>
+<p>Promise实例是从Promise原型对象（固有对象<code>%PromisePrototype%</code>）继承属性的普通对象。 最初使用表59中描述的内部槽创建Promise实例。</p>
+<p>表59：Promise实例的内部槽</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">内部插槽</th>
+<th style="text-align:left">内部槽</th>
 <th style="text-align:left">描述</th>
 </tr>
 </thead>

@@ -111,7 +111,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>否则如果<code>IsConstructor(superclass)</code>为<code>false</code>，抛出 TypeError 异常</li>
 <li>否则：
 <ol>
-<li>如果<code>superclass</code>有<code>[[FunctionKind]]</code>内部插槽，且其值为<code>&quot;generator&quot;</code>，则抛出 TypeError 异常</li>
+<li>如果<code>superclass</code>有<code>[[FunctionKind]]</code>内部槽，且其值为<code>&quot;generator&quot;</code>，则抛出 TypeError 异常</li>
 <li>令<code>protoParent</code>为<code>Get(superclass, &quot;prototype&quot;)</code></li>
 <li><code>ReturnIfAbrupt(protoParent)</code></li>
 <li>如果<code>Type(protoParent)</code>既不是<code>Object</code>也不是<code>Null</code>，抛出 TypeError 异常</li>
@@ -133,7 +133,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>令<code>constructorInfo</code>为使用参数<code>proto</code>和<code>constructorParent</code>作为可选的<code>functionPrototype</code>参数对<code>constructor</code>执行<code>DefineMethod</code>的结果。</li>
 <li>断言：<code>constructorInfo</code>不是非常规完结</li>
 <li>令<code>F</code>为<code>constructorInfo.[[closure]]</code></li>
-<li>如果<code>ClassHeritage&#123;opt&#125;</code>存在，将<code>F</code>的<code>[[ConstructorKind]]</code>内部插槽设为<code>&quot;derived&quot;</code></li>
+<li>如果<code>ClassHeritage&#123;opt&#125;</code>存在，将<code>F</code>的<code>[[ConstructorKind]]</code>内部槽设为<code>&quot;derived&quot;</code></li>
 <li>执行<code>MakeConstructor(F, false, proto)</code></li>
 <li>执行<code>MakeClassConstructor(F)</code></li>
 <li>执行<code>CreateMethodProperty(proto, &quot;constructor&quot;, F)</code></li>
