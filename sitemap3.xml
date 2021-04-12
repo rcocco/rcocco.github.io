@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/22%20%E7%B4%A2%E5%BC%95%E9%9B%86%E5%90%88.html</loc>
+    
+    <lastmod>2021-04-12</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84.html</loc>
+    
+    <lastmod>2021-04-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/JavaScript%E5%9F%BA%E7%A1%80.html</loc>
     
     <lastmod>2021-04-11</lastmod>
     
@@ -19,20 +33,6 @@
     <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81.html</loc>
     
     <lastmod>2021-04-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/22%20%E7%B4%A2%E5%BC%95%E9%9B%86%E5%90%88.html</loc>
-    
-    <lastmod>2021-04-10</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rcocco.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/JavaScript%E5%9F%BA%E7%A1%80.html</loc>
-    
-    <lastmod>2021-04-10</lastmod>
     
   </url>
   
@@ -1257,7 +1257,7 @@
 
   <url>
     <loc>https://rcocco.github.io/</loc>
-    <lastmod>2021-04-11</lastmod>
+    <lastmod>2021-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
