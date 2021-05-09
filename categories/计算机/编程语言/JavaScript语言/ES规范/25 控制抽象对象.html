@@ -20,10 +20,10 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#25-%E6%8E%A7%E5%88%B6%E6%8A%BD%E8%B1%A1%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text"> 25 控制抽象对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#251-%E8%BF%AD%E4%BB%A3"><span class="toc-number">1.1.</span> <span class="toc-text"> 25.1 迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2511-%E5%85%AC%E5%85%B1%E8%BF%AD%E4%BB%A3%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 25.1.1 公共迭代接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25111-iterable%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 25.1.1.1 Iterable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25112-iterator%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 25.1.1.2 Iterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25113-iteratorresult%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 25.1.1.3 IteratorResult接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2512-iteratorprototype%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 25.1.2 %IteratorPrototype%对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25121-iteratorprototype-iterator"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 25.1.2.1 %IteratorPrototype% [ @@iterator ] ( )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#252-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 25.2 生成器函数对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#256-promise%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text"> 25.6 Promise对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2561-promise%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 25.6.1 Promise抽象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25611-promisecapability%E8%AE%B0%E5%BD%95"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 25.6.1.1 PromiseCapability记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256111-ifabruptrejectpromise-value-capability"><span class="toc-number">1.3.1.1.1.</span> <span class="toc-text"> 25.6.1.1.1 IfAbruptRejectPromise ( value, capability )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25612-promisereaction%E8%AE%B0%E5%BD%95"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 25.6.1.2 PromiseReaction记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25613-createresolvingfunctions-promise"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> 25.6.1.3 CreateResolvingFunctions ( promise )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256131-promise-reject%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.1.3.1.</span> <span class="toc-text"> 25.6.1.3.1 Promise Reject函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256132-promise-resolve%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.1.3.2.</span> <span class="toc-text"> 25.6.1.3.2 Promise Resolve函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25614-fulfillpromise-promise-value"><span class="toc-number">1.3.1.4.</span> <span class="toc-text"> 25.6.1.4 FulfillPromise ( promise, value)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25615-newpromisecapability-c"><span class="toc-number">1.3.1.5.</span> <span class="toc-text"> 25.6.1.5 NewPromiseCapability ( C )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#254151-getcapabilitiesexecutor%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.1.5.1.</span> <span class="toc-text"> 25.4.1.5.1 GetCapabilitiesExecutor函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25416-ispromise-x"><span class="toc-number">1.3.1.6.</span> <span class="toc-text"> 25.4.1.6 IsPromise ( x )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25417-rejectpromise-promise-reason"><span class="toc-number">1.3.1.7.</span> <span class="toc-text"> 25.4.1.7 RejectPromise ( promise, reason)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25418-triggerpromisereactions-reactions-argument"><span class="toc-number">1.3.1.8.</span> <span class="toc-text"> 25.4.1.8 TriggerPromiseReactions ( reactions, argument )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2542-promise-jobs"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 25.4.2 Promise Jobs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25421-promisereactionjob-reaction-argument"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 25.4.2.1 PromiseReactionJob ( reaction, argument )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#promiseresolvethenablejob-promisetoresolve-thenable-then"><span class="toc-number">1.3.2.2.</span> <span class="toc-text"> PromiseResolveThenableJob ( promiseToResolve, thenable, then)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2563-promise%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 25.6.3 Promise构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25631-promise-executor"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> 25.6.3.1 Promise ( executor )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2544-promise%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 25.4.4 Promise构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25441-promiseall-iterable"><span class="toc-number">1.3.4.1.</span> <span class="toc-text"> 25.4.4.1 Promise.all ( iterable )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#254411-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89performpromiseall-iteratorrecord-constructor-resultcapability"><span class="toc-number">1.3.4.1.1.</span> <span class="toc-text"> 25.4.4.1.1 运行时语义:PerformPromiseAll( iteratorRecord, constructor, resultCapability)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#254412-promiseall-resolve-element-functions"><span class="toc-number">1.3.4.1.2.</span> <span class="toc-text"> 25.4.4.1.2 Promise.all Resolve Element Functions</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25442-promiseprototype"><span class="toc-number">1.3.4.2.</span> <span class="toc-text"> 25.4.4.2 Promise.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25443-promiserace-iterable"><span class="toc-number">1.3.4.3.</span> <span class="toc-text"> 25.4.4.3 Promise.race ( iterable )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#254431-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89performpromiserace-iteratorrecord-promisecapability-c"><span class="toc-number">1.3.4.3.1.</span> <span class="toc-text"> 25.4.4.3.1 运行时语义:PerformPromiseRace ( iteratorRecord, promiseCapability, C )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25444-promisereject-r"><span class="toc-number">1.3.4.4.</span> <span class="toc-text"> 25.4.4.4 Promise.reject ( r )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25445-promiseresolve-x"><span class="toc-number">1.3.4.5.</span> <span class="toc-text"> 25.4.4.5 Promise.resolve ( x )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25446-get-promise-species"><span class="toc-number">1.3.4.6.</span> <span class="toc-text"> 25.4.4.6 get Promise [ @@species ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2545-promise%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 25.4.5 Promise原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25451-promiseprototypecatch-onrejected"><span class="toc-number">1.3.5.1.</span> <span class="toc-text"> 25.4.5.1 Promise.prototype.catch ( onRejected )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25452-promiseprototypeconstructor"><span class="toc-number">1.3.5.2.</span> <span class="toc-text"> 25.4.5.2 Promise.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25453-promiseprototypethen-onfulfilled-onrejected"><span class="toc-number">1.3.5.3.</span> <span class="toc-text"> 25.4.5.3 Promise.prototype.then ( onFulfilled , onRejected )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#254531-performpromisethen-promise-onfulfilled-onrejected-resultcapability"><span class="toc-number">1.3.5.3.1.</span> <span class="toc-text"> 25.4.5.3.1 PerformPromiseThen ( promise, onFulfilled, onRejected, resultCapability )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25454-promiseprototype-tostringtag"><span class="toc-number">1.3.5.4.</span> <span class="toc-text"> 25.4.5.4 Promise.prototype [ @@toStringTag ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2546-promise%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 25.4.6 Promise实例的属性</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">179</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">25 控制抽象对象</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-04-14</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="25-控制抽象对象"><a class="markdownIt-Anchor" href="#25-控制抽象对象"></a> 25 控制抽象对象</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#25-%E6%8E%A7%E5%88%B6%E6%8A%BD%E8%B1%A1%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text"> 25 控制抽象对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#251-%E8%BF%AD%E4%BB%A3"><span class="toc-number">1.1.</span> <span class="toc-text"> 25.1 迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2511-%E5%85%AC%E5%85%B1%E8%BF%AD%E4%BB%A3%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 25.1.1 公共迭代接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25111-iterable%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 25.1.1.1 Iterable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25112-iterator%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> 25.1.1.2 Iterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25113-iteratorresult%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> 25.1.1.3 IteratorResult接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2512-iteratorprototype%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 25.1.2 %IteratorPrototype%对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25121-iteratorprototype-iterator"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 25.1.2.1 %IteratorPrototype% [ @@iterator ] ( )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#252-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 25.2 生成器函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2521-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 25.2.1 生成器函数的构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25211-generatorfunction-p1-p2-pn-body"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 25.2.1.1 GeneratorFunction ( p1, p2, … , pn, body )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2522-%E7%94%9F%E6%88%90%E5%99%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 25.2.2 生成器构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25221-generatorfunctionlength"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 25.2.2.1 GeneratorFunction.length</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25222-generatorfunctionprototype"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 25.2.2.2 GeneratorFunction.prototype</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2523-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 25.2.3 生成器函数原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25231-generatorfunctionprototypeconstructor"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 25.2.3.1 GeneratorFunction.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25232-generatorfunctionprototypeprototype"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 25.2.3.2 GeneratorFunction.prototype.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25233-generatorfunctionprototype-tostringtag"><span class="toc-number">1.2.3.3.</span> <span class="toc-text"> 25.2.3.3 GeneratorFunction.prototype [ @@toStringTag ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2524-%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 25.2.4 生成器函数实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25241-length"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 25.2.4.1 length</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25242-name"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 25.2.4.2 name</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25243-prototype"><span class="toc-number">1.2.4.3.</span> <span class="toc-text"> 25.2.4.3 prototype</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#254-%E7%94%9F%E6%88%90%E5%99%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text"> 25.4 生成器对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2541-%E7%94%9F%E6%88%90%E5%99%A8%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 25.4.1 生成器原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25411-generatorprototypeconstructor"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 25.4.1.1 Generator.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25412-generatorprototypenext-value"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 25.4.1.2 Generator.prototype.next ( value )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25413-generatorprototypereturn-value"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> 25.4.1.3 Generator.prototype.return ( value )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25414-generatorprototypethrow-exception"><span class="toc-number">1.3.1.4.</span> <span class="toc-text"> 25.4.1.4 Generator.prototype.throw ( exception )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25415-generatorprototype-tostringtag"><span class="toc-number">1.3.1.5.</span> <span class="toc-text"> 25.4.1.5 Generator.prototype [ @@toStringTag ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2542-%E7%94%9F%E6%88%90%E5%99%A8%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 25.4.2 生成器实例的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2543-%E7%94%9F%E6%88%90%E5%99%A8%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 25.4.3 生成器抽象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25431-generatorstart-generator-generatorbody"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> 25.4.3.1 GeneratorStart ( generator, generatorBody )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25432-generatorvalidate-generator"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> 25.4.3.2 GeneratorValidate ( generator )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25433-generatorresume-generator-value"><span class="toc-number">1.3.3.3.</span> <span class="toc-text"> 25.4.3.3 GeneratorResume ( generator, value )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25434-generatorresumeabrupt-generator-abruptcompletion"><span class="toc-number">1.3.3.4.</span> <span class="toc-text"> 25.4.3.4 GeneratorResumeAbrupt ( generator, abruptCompletion )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25435-getgeneratorkind"><span class="toc-number">1.3.3.5.</span> <span class="toc-text"> 25.4.3.5 GetGeneratorKind ( )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25436-generatoryield-iternextobj"><span class="toc-number">1.3.3.6.</span> <span class="toc-text"> 25.4.3.6 GeneratorYield ( iterNextObj )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#256-promise%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.</span> <span class="toc-text"> 25.6 Promise对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2561-promise%E6%8A%BD%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 25.6.1 Promise抽象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25611-promisecapability%E8%AE%B0%E5%BD%95"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 25.6.1.1 PromiseCapability记录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256111-ifabruptrejectpromise-value-capability"><span class="toc-number">1.4.1.1.1.</span> <span class="toc-text"> 25.6.1.1.1 IfAbruptRejectPromise ( value, capability )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25612-promisereaction%E8%AE%B0%E5%BD%95"><span class="toc-number">1.4.1.2.</span> <span class="toc-text"> 25.6.1.2 PromiseReaction记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25613-createresolvingfunctions-promise"><span class="toc-number">1.4.1.3.</span> <span class="toc-text"> 25.6.1.3 CreateResolvingFunctions ( promise )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256131-promise-reject%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.1.3.1.</span> <span class="toc-text"> 25.6.1.3.1 Promise Reject函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256132-promise-resolve%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.1.3.2.</span> <span class="toc-text"> 25.6.1.3.2 Promise Resolve函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25614-fulfillpromise-promise-value"><span class="toc-number">1.4.1.4.</span> <span class="toc-text"> 25.6.1.4 FulfillPromise ( promise, value)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25615-newpromisecapability-c"><span class="toc-number">1.4.1.5.</span> <span class="toc-text"> 25.6.1.5 NewPromiseCapability ( C )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256151-getcapabilitiesexecutor%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.1.5.1.</span> <span class="toc-text"> 25.6.1.5.1 GetCapabilitiesExecutor函数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25616-ispromise-x"><span class="toc-number">1.4.1.6.</span> <span class="toc-text"> 25.6.1.6 IsPromise ( x )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25617-rejectpromise-promise-reason"><span class="toc-number">1.4.1.7.</span> <span class="toc-text"> 25.6.1.7 RejectPromise ( promise, reason)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25618-triggerpromisereactions-reactions-argument"><span class="toc-number">1.4.1.8.</span> <span class="toc-text"> 25.6.1.8 TriggerPromiseReactions ( reactions, argument )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25619-hostpromiserejectiontracker-promise-operation"><span class="toc-number">1.4.1.9.</span> <span class="toc-text"> 25.6.1.9 HostPromiseRejectionTracker ( promise, operation )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2562-promise-jobs"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 25.6.2 Promise Jobs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25621-newpromisereactionjob-reaction-argument"><span class="toc-number">1.4.2.1.</span> <span class="toc-text"> 25.6.2.1 NewPromiseReactionJob ( reaction, argument )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25622-newpromiseresolvethenablejob-promisetoresolve-thenable-then"><span class="toc-number">1.4.2.2.</span> <span class="toc-text"> 25.6.2.2 NewPromiseResolveThenableJob ( promiseToResolve, thenable, then)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2563-promise%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 25.6.3 Promise构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25631-promise-executor"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 25.6.3.1 Promise ( executor )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2564-promise%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 25.6.4 Promise构造函数的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25641-promiseall-iterable"><span class="toc-number">1.4.4.1.</span> <span class="toc-text"> 25.6.4.1 Promise.all ( iterable )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256411-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89performpromiseall-iteratorrecord-constructor-resultcapability"><span class="toc-number">1.4.4.1.1.</span> <span class="toc-text"> 25.6.4.1.1 运行时语义:PerformPromiseAll( iteratorRecord, constructor, resultCapability)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256412-promiseall-resolve-element-functions"><span class="toc-number">1.4.4.1.2.</span> <span class="toc-text"> 25.6.4.1.2 Promise.all Resolve Element Functions</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25642-promiseallsettled-iterable"><span class="toc-number">1.4.4.2.</span> <span class="toc-text"> 25.6.4.2 Promise.allSettled ( iterable )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256421-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-performpromiseallsettled-iteratorrecord-constructor-resultcapability"><span class="toc-number">1.4.4.2.1.</span> <span class="toc-text"> 25.6.4.2.1 运行时语义: PerformPromiseAllSettled ( iteratorRecord, constructor, resultCapability )</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256422-promiseallsettled-resolve-element-functions"><span class="toc-number">1.4.4.2.2.</span> <span class="toc-text"> 25.6.4.2.2 Promise.allSettled Resolve Element Functions</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256423-promiseallsettled-reject-element-functions"><span class="toc-number">1.4.4.2.3.</span> <span class="toc-text"> 25.6.4.2.3 Promise.allSettled Reject Element Functions</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25643-promiseprototype"><span class="toc-number">1.4.4.3.</span> <span class="toc-text"> 25.6.4.3 Promise.prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25644-promiserace-iterable"><span class="toc-number">1.4.4.4.</span> <span class="toc-text"> 25.6.4.4 Promise.race ( iterable )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256441-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-performpromiserace-iteratorrecord-constructor-resultcapability"><span class="toc-number">1.4.4.4.1.</span> <span class="toc-text"> 25.6.4.4.1 运行时语义: PerformPromiseRace ( iteratorRecord, constructor, resultCapability )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25645-promisereject-r"><span class="toc-number">1.4.4.5.</span> <span class="toc-text"> 25.6.4.5 Promise.reject ( r )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25646-promiseresolve-x"><span class="toc-number">1.4.4.6.</span> <span class="toc-text"> 25.6.4.6 Promise.resolve ( x )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256461-promiseresolve-c-x"><span class="toc-number">1.4.4.6.1.</span> <span class="toc-text"> 25.6.4.6.1 PromiseResolve ( C, x )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25647-get-promise-species"><span class="toc-number">1.4.4.7.</span> <span class="toc-text"> 25.6.4.7 get Promise [ @@species ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2565-promise%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.4.5.</span> <span class="toc-text"> 25.6.5 Promise原型对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#25651-promiseprototypecatch-onrejected"><span class="toc-number">1.4.5.1.</span> <span class="toc-text"> 25.6.5.1 Promise.prototype.catch ( onRejected )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25652-promiseprototypeconstructor"><span class="toc-number">1.4.5.2.</span> <span class="toc-text"> 25.6.5.2 Promise.prototype.constructor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25653-promiseprototypefinally-onfinally"><span class="toc-number">1.4.5.3.</span> <span class="toc-text"> 25.6.5.3 Promise.prototype.finally ( onFinally )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256531-then-finally-functions"><span class="toc-number">1.4.5.3.1.</span> <span class="toc-text"> 25.6.5.3.1 Then Finally Functions</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#256532-catch-finally-functions"><span class="toc-number">1.4.5.3.2.</span> <span class="toc-text"> 25.6.5.3.2 Catch Finally Functions</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25654-promiseprototypethen-onfulfilled-onrejected"><span class="toc-number">1.4.5.4.</span> <span class="toc-text"> 25.6.5.4 Promise.prototype.then ( onFulfilled , onRejected )</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#256541-performpromisethen-promise-onfulfilled-onrejected-resultcapability"><span class="toc-number">1.4.5.4.1.</span> <span class="toc-text"> 25.6.5.4.1 PerformPromiseThen ( promise, onFulfilled, onRejected, resultCapability )</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25655-promiseprototype-tostringtag"><span class="toc-number">1.4.5.5.</span> <span class="toc-text"> 25.6.5.5 Promise.prototype [ @@toStringTag ]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2566-promise%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 25.6.6 Promise实例的属性</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">183</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">25 控制抽象对象</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="25-控制抽象对象"><a class="markdownIt-Anchor" href="#25-控制抽象对象"></a> 25 控制抽象对象</h1>
 <h2 id="251-迭代"><a class="markdownIt-Anchor" href="#251-迭代"></a> 25.1 迭代</h2>
 <h3 id="2511-公共迭代接口"><a class="markdownIt-Anchor" href="#2511-公共迭代接口"></a> 25.1.1 公共迭代接口</h3>
-<p>接口是一组属性键，其对应的值符合特定的规范。 任何提供接口规范所描述的所有属性的对象都符合该接口。一个接口不是由一个单独的对象来表示的。可能有许多单独实现的对象符合任何接口。一个单独的对象可能符合多个接口。</p>
+<p>接口是一组属性键，其对应的值符合特定的规范。 提供了接口规范描述的全部属性的对象，称为此对象符合该接口。一个接口不是由一个单独的对象来表示的。可能有许多单独实现的对象符合任何接口。一个单独的对象可能符合多个接口。</p>
 <span id="more"></span>
 <h4 id="25111-iterable接口"><a class="markdownIt-Anchor" href="#25111-iterable接口"></a> 25.1.1.1 Iterable接口</h4>
 <p>Iterable接口包含表65中描述的属性：</p>
@@ -59,7 +59,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <tr>
 <td style="text-align:left"><code>next</code></td>
 <td style="text-align:left">返回IteratorResult对象的函数。</td>
-<td style="text-align:left">返回的对象必须符合IteratorResult接口。 如果对Iterator的<code>next</code>方法的上一次调用返回了<code>done</code>属性为<code>true</code>的IteratorResult对象，则对该对象的<code>next</code>方法的所有后续调用也应返回其<code>done</code>属性为<code>true</code>的IteratorResult对象。 但是，此要求不是强制的。</td>
+<td style="text-align:left">返回的对象必须符合IteratorResult接口。 如果对Iterator的<code>next</code>方法的前一次调用返回了<code>done</code>属性为<code>true</code>的IteratorResult对象，则对该对象的<code>next</code>方法的所有后续调用也应返回其<code>done</code>属性为<code>true</code>的IteratorResult对象。 但是，此要求不是强制的。</td>
 </tr>
 </tbody>
 </table>
@@ -102,7 +102,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <tr>
 <td style="text-align:left"><code>done</code></td>
 <td style="text-align:left"><code>true</code>或<code>false</code></td>
-<td style="text-align:left">这是迭代器<code>next</code>方法调用的结果状态。 如果到达迭代器的末尾，则<code>done</code>为<code>true</code>。 如果未达到末尾，则<code>done</code>为<code>false</code>，并且可以使用值。 如果<code>done</code>属性（自有的或继承的）不存在，则认为该属性的值为<code>false</code>。</td>
+<td style="text-align:left">这是迭代器<code>next</code>方法调用的结果状态。 如果到达迭代器的终点，则<code>done</code>为<code>true</code>。 如果未达到终点，则<code>done</code>为<code>false</code>，并且可以使用值。 如果<code>done</code>属性（自有的或继承的）不存在，则认为该属性的值为<code>false</code>。</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>value</code></td>
@@ -117,7 +117,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%Object.prototype%</code></li>
 <li>是普通对象</li>
 </ul>
-<p>本规范中定义的所有实现<code>Iterator</code>接口的对象也都继承自<code>%IteratorPrototype%</code>。ECMAScript代码也可以定义继承自<code>%IteratorPrototype%</code>的对象。<code>%IteratorPrototype%</code>对象提供了一个可以添加适用于所有迭代器对象的附加方法的地方。</p>
+<p>本规范中定义的所有实现<code>Iterator</code>接口的对象也都继承自<code>%IteratorPrototype%</code>。ECMAScript代码也可以定义继承自<code>%IteratorPrototype%</code>的对象（但不能通过类定义的<code>extends</code>子句，因为<code>%IteratorPrototype%</code>不是构造函数）。<code>%IteratorPrototype%</code>对象提供了一个可以添加适用于所有迭代器对象的附加方法的地方。</p>
 <p>以下表达式是ECMAScript代码访问<code>%IteratorPrototype%</code>对象的一种方式：<br />
 <code>Object.getPrototypeOf(Object.getPrototypeOf([][Symbol.iterator]()))</code></p>
 <h4 id="25121-iteratorprototype-iterator"><a class="markdownIt-Anchor" href="#25121-iteratorprototype-iterator"></a> 25.1.2.1 %IteratorPrototype% [ @@iterator ] ( )</h4>
@@ -127,6 +127,234 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>此函数的<code>&quot;name&quot;</code>属性的值为<code>&quot;[Symbol.iterator]&quot;</code></p>
 <h2 id="252-生成器函数对象"><a class="markdownIt-Anchor" href="#252-生成器函数对象"></a> 25.2 生成器函数对象</h2>
+<p>生成器函数(GeneratorFunction)对象是通常通过计算产生式<code>GeneratorDeclarations</code>、<code>GeneratorExpressions</code>和<code>GeneratorMethods</code>创建的函数。它们也可以通过调用固有的<code>%GeneratorFunction%</code>来创建。</p>
+<p>图5：生成器对象的关系<br />
+<img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/_v_images/20210430173041258_27908.png" alt="" width="621" /></p>
+<h3 id="2521-生成器函数的构造函数"><a class="markdownIt-Anchor" href="#2521-生成器函数的构造函数"></a> 25.2.1 生成器函数的构造函数</h3>
+<p>生成器函数的构造函数：</p>
+<ul>
+<li>是固有对象<code>%GeneratorFunction%</code></li>
+<li>当作为函数而不是构造函数调用时，将创建并初始化一个新的GeneratorFunction对象。因此，函数调用 <code>GeneratorFunction (...)</code> 等同于使用相同参数的对象创建表达式 <code>new GeneratorFunction (...)</code></li>
+<li>被设计为可被子类化。它可以被用作类定义中的<code>extends</code>子句的值。打算继承指定的<code>GeneratorFunction</code>行为的子类构造函数必须包括对<code>GeneratorFunction</code>构造函数的<code>super</code>调用，以便用<code>GeneratorFunction</code>内置行为所需的内部槽来创建和初始化子类实例。所有用于定义生成器函数对象的ECMAScript语法形式都直接创建<code>GeneratorFunction</code>的实例。没有任何语法方法可以创建<code>GeneratorFunction</code>子类的实例。</li>
+</ul>
+<h4 id="25211-generatorfunction-p1-p2-pn-body"><a class="markdownIt-Anchor" href="#25211-generatorfunction-p1-p2-pn-body"></a> 25.2.1.1 GeneratorFunction ( p1, p2, … , pn, body )</h4>
+<p>最后一个参数指定了生成器函数的主体（可执行代码）；前面的所有参数都指定了形式参数。</p>
+<p>当用参数<code>p1</code>, <code>p2</code>, …, <code>pn</code>, <code>body</code>（其中<code>n</code>可能是<code>0</code>，即没有 <code>&quot;p&quot;</code>参数，而且<code>body</code>也可能没有提供）调用<code>GeneratorFunction</code>函数时，会执行以下步骤：</p>
+<ol>
+<li>令<code>C</code>为激活的函数对象</li>
+<li>令<code>args</code>为通过<code>[[Call]]</code>或<code>[[Construct]]</code>传递给此函数的参数列表(argumentsList)</li>
+<li>返回? <code>CreateDynamicFunction(C, NewTarget, generator, args)</code></li>
+</ol>
+<p>注：见 19.2.1.1 的注</p>
+<h3 id="2522-生成器构造函数的属性"><a class="markdownIt-Anchor" href="#2522-生成器构造函数的属性"></a> 25.2.2 生成器构造函数的属性</h3>
+<p>生成器构造函数：</p>
+<ul>
+<li>是继承自<code>Function</code>构造函数的标准内置函数对象</li>
+<li>具有<code>[[Prototype]]</code>内部槽，其值为<code>%Function%</code></li>
+<li>具有<code>&quot;name&quot;</code>属性，其值为<code>&quot;GeneratorFunction&quot;</code></li>
+<li>具有下列属性：</li>
+</ul>
+<h4 id="25221-generatorfunctionlength"><a class="markdownIt-Anchor" href="#25221-generatorfunctionlength"></a> 25.2.2.1 GeneratorFunction.length</h4>
+<p>这是一个值为<code>1</code>的数据属性。此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h4 id="25222-generatorfunctionprototype"><a class="markdownIt-Anchor" href="#25222-generatorfunctionprototype"></a> 25.2.2.2 GeneratorFunction.prototype</h4>
+<p><code>GeneratorFunction.prototype</code>的初始值为<code>%Generator%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h3 id="2523-生成器函数原型对象的属性"><a class="markdownIt-Anchor" href="#2523-生成器函数原型对象的属性"></a> 25.2.3 生成器函数原型对象的属性</h3>
+<p>生成器函数原型对象：</p>
+<ul>
+<li>是普通对象</li>
+<li>不是函数对象，没有<code>[[ECMAScriptCode]]</code>内部槽，也没有表27和表73列出的任何内部槽</li>
+<li>是<code>%GeneratorFunction%</code>的<code>&quot;prototype&quot;</code>属性的值</li>
+<li>是固有对象<code>%Generator%</code>（见图2）</li>
+<li>具有<code>[[Prototype]]</code>内部槽，其值为<code>%Function.prototype%</code></li>
+</ul>
+<h4 id="25231-generatorfunctionprototypeconstructor"><a class="markdownIt-Anchor" href="#25231-generatorfunctionprototypeconstructor"></a> 25.2.3.1 GeneratorFunction.prototype.constructor</h4>
+<p><code>GeneratorFunction.prototype.constructor</code>的初始值为<code>%GeneratorFunction%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h4 id="25232-generatorfunctionprototypeprototype"><a class="markdownIt-Anchor" href="#25232-generatorfunctionprototypeprototype"></a> 25.2.3.2 GeneratorFunction.prototype.prototype</h4>
+<p><code>GeneratorFunction.prototype.prototype</code>的值为固有对象<code>%Generator.prototype%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h4 id="25233-generatorfunctionprototype-tostringtag"><a class="markdownIt-Anchor" href="#25233-generatorfunctionprototype-tostringtag"></a> 25.2.3.3 GeneratorFunction.prototype [ @@toStringTag ]</h4>
+<p><code>@@toStringTag</code>属性的初始值是字符串<code>&quot;GeneratorFunction&quot;</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h3 id="2524-生成器函数实例"><a class="markdownIt-Anchor" href="#2524-生成器函数实例"></a> 25.2.4 生成器函数实例</h3>
+<p>每个生成器函数实例都是ECMAScript函数对象，并具有表27列出的内部槽。所有实例的<code>[[IsClassConstructor]]</code>内部槽的值都是<code>false</code>。<br />
+每个生成器函数实例具有下列自有属性：</p>
+<h4 id="25241-length"><a class="markdownIt-Anchor" href="#25241-length"></a> 25.2.4.1 length</h4>
+<p>19.2.4.1中给出的关于Function实例的<code>&quot;length&quot;</code>属性的规范也适用于<code>GeneratorFunction</code>实例。</p>
+<h4 id="25242-name"><a class="markdownIt-Anchor" href="#25242-name"></a> 25.2.4.2 name</h4>
+<p>19.2.4.2中给出的关于Function实例的<code>&quot;name&quot;</code>属性的规范也适用于<code>GeneratorFunction</code>实例。</p>
+<h4 id="25243-prototype"><a class="markdownIt-Anchor" href="#25243-prototype"></a> 25.2.4.3 prototype</h4>
+<p>每当一个GeneratorFunction实例被创建时，另一个普通对象也被创建，它是生成器函数 <code>&quot;prototype&quot;</code>属性的初始值。当使用<code>[[Call]]</code>调用生成器函数对象时，<code>prototype</code>属性的值被用来初始化新创建的生成器对象的<code>[[Prototype]]</code>内部槽。<br />
+此属性具有特性<code>&#123; [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<p>注：与Function实例不同，作为GeneratorFunction的<code>&quot;prototype&quot;</code>属性值的对象并没有一个 值是GeneratorFunction实例的<code>&quot;constructor&quot;</code>属性。</p>
+<h2 id="254-生成器对象"><a class="markdownIt-Anchor" href="#254-生成器对象"></a> 25.4 生成器对象</h2>
+<p>一个生成器(Generator)对象是一个生成器函数的实例，它实现了<code>Iterator</code>和<code>Iterable</code>接口。<br />
+生成器实例直接从创建该实例的生成器函数的<code>&quot;prototype&quot;</code>属性值的对象继承属性。生成器实例间接地从生成器原型的固有属性<code>%Generator.prototype%</code>继承属性。</p>
+<h3 id="2541-生成器原型对象的属性"><a class="markdownIt-Anchor" href="#2541-生成器原型对象的属性"></a> 25.4.1 生成器原型对象的属性</h3>
+<p>生成器原型对象：</p>
+<ul>
+<li>是固有对象<code>%GeneratorPrototype%</code></li>
+<li>是<code>%Generator%</code>（即<code>GeneratorFunction.prototype</code>）的<code>&quot;prototype&quot;</code>属性的初始值</li>
+<li>是普通对象</li>
+<li>不是生成器实例，没有<code>[[GeneratorState]]</code>内部槽</li>
+<li>有<code>[[Prototype]]</code>内部槽，且其值为<code>%IteratorPrototype%</code></li>
+<li>具有被所有生成器实例间接继承的属性</li>
+</ul>
+<h4 id="25411-generatorprototypeconstructor"><a class="markdownIt-Anchor" href="#25411-generatorprototypeconstructor"></a> 25.4.1.1 Generator.prototype.constructor</h4>
+<p><code>Generator.prototype.constructor</code>的初始值为<code>%Generator%</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h4 id="25412-generatorprototypenext-value"><a class="markdownIt-Anchor" href="#25412-generatorprototypenext-value"></a> 25.4.1.2 Generator.prototype.next ( value )</h4>
+<p><code>next</code>方法执行以下步骤：</p>
+<ol>
+<li>令<code>g</code>为<code>this</code>值</li>
+<li>返回? <code>GeneratorResume(g, value)</code></li>
+</ol>
+<h4 id="25413-generatorprototypereturn-value"><a class="markdownIt-Anchor" href="#25413-generatorprototypereturn-value"></a> 25.4.1.3 Generator.prototype.return ( value )</h4>
+<p><code>return</code>方法执行以下步骤：</p>
+<ol>
+<li>令<code>g</code>为<code>this</code>值</li>
+<li>令<code>C</code>为完结记录<code>&#123; [[Type]]: return, [[Value]]: value, [[Target]]: empty &#125;</code></li>
+<li>返回? <code>GeneratorResumeAbrupt(g, C)</code></li>
+</ol>
+<h4 id="25414-generatorprototypethrow-exception"><a class="markdownIt-Anchor" href="#25414-generatorprototypethrow-exception"></a> 25.4.1.4 Generator.prototype.throw ( exception )</h4>
+<p><code>throw</code>方法执行以下步骤：</p>
+<ol>
+<li>令<code>g</code>为<code>this</code>值</li>
+<li>令<code>C</code>为完结记录<code>&#123; [[Type]]: throw, [[Value]]: exception, [[Target]]: empty &#125;</code></li>
+<li>返回? <code>GeneratorResumeAbrupt(g, C)</code></li>
+</ol>
+<h4 id="25415-generatorprototype-tostringtag"><a class="markdownIt-Anchor" href="#25415-generatorprototype-tostringtag"></a> 25.4.1.5 Generator.prototype [ @@toStringTag ]</h4>
+<p><code>@@toStringTag</code>属性的初始值是字符串<code>&quot;Generator&quot;</code><br />
+此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h3 id="2542-生成器实例的属性"><a class="markdownIt-Anchor" href="#2542-生成器实例的属性"></a> 25.4.2 生成器实例的属性</h3>
+<p>生成器实例最初是以表73中描述的内部槽创建的。</p>
+<p>表73：生成器实例的内部槽</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部槽</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[GeneratorState]]</td>
+<td style="text-align:left">生成器的当前执行状态，可能的值有<code>undefined</code>, <code>suspendedStart</code>, <code>suspendedYield</code>, <code>executing</code>和<code>completed</code></td>
+</tr>
+<tr>
+<td style="text-align:left">[[GeneratorContext]]</td>
+<td style="text-align:left">在执行该生成器的代码时使用的执行上下文</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2543-生成器抽象操作"><a class="markdownIt-Anchor" href="#2543-生成器抽象操作"></a> 25.4.3 生成器抽象操作</h3>
+<h4 id="25431-generatorstart-generator-generatorbody"><a class="markdownIt-Anchor" href="#25431-generatorstart-generator-generatorbody"></a> 25.4.3.1 GeneratorStart ( generator, generatorBody )</h4>
+<p>接受参数<code>generator</code>和<code>generatorBody</code>的抽象操作<code>GeneratorStart</code>执行以下步骤：</p>
+<ol>
+<li>断言：<code>generator.[[GeneratorState]]</code>的值为<code>undefined</code></li>
+<li>令<code>genContext</code>为运行中的执行上下文</li>
+<li>将<code>genContext</code>的Generator组件设为<code>generator</code></li>
+<li>设置<code>genContext</code>的代码计算状态，使得恢复对该执行上下文的计算时，执行以下步骤：
+<ol>
+<li>令<code>result</code>为计算<code>generatorBody</code>的结果</li>
+<li>断言：如果在这里返回，则<code>generator</code>要么抛出异常，要么执行一个隐式或显式的<code>return</code></li>
+<li>从执行上下文栈中删除<code>genContext</code>，并且将执行上下文栈的栈顶恢复成运行中的执行上下文</li>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>completed</code></li>
+<li>一旦生成器进入<code>completed</code>状态，它就永远不会离开，其相关的执行环境也不会恢复。任何与<code>generator</code>相关的执行状态在此时都可以被丢弃。</li>
+<li>如果<code>result.[[Type]]</code>为<code>normal</code>，令<code>resultValue</code>为<code>undefined</code></li>
+<li>否则如果<code>result.[[Type]]</code>为<code>return</code>，令<code>resultValue</code>为<code>result.[[Value]]</code></li>
+<li>否则：
+<ol>
+<li>断言：<code>result.[[Type]]</code>为<code>throw</code></li>
+<li>返回<code>Completion(result)</code></li>
+</ol>
+</li>
+<li>返回<code>CreateIterResultObject(resultValue, true)</code></li>
+</ol>
+</li>
+<li>将<code>generator.[[GeneratorContext]]</code>设为<code>genContext</code></li>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>suspendedStart</code></li>
+<li>返回<code>NormalCompletion(undefined)</code></li>
+</ol>
+<h4 id="25432-generatorvalidate-generator"><a class="markdownIt-Anchor" href="#25432-generatorvalidate-generator"></a> 25.4.3.2 GeneratorValidate ( generator )</h4>
+<p>抽象操作<code>GeneratorValidate</code>接受参数<code>generator</code>并执行以下步骤：</p>
+<ol>
+<li>执行? <code>RequireInternalSlot(generator, [[GeneratorState]])</code></li>
+<li>断言：<code>generator</code>也具有<code>[[GeneratorContext]]</code>内部槽</li>
+<li>令<code>state</code>为<code>generator.[[GeneratorState]]</code></li>
+<li>如果<code>state</code>为<code>executing</code>，抛出 TypeError 异常</li>
+<li>返回<code>state</code></li>
+</ol>
+<h4 id="25433-generatorresume-generator-value"><a class="markdownIt-Anchor" href="#25433-generatorresume-generator-value"></a> 25.4.3.3 GeneratorResume ( generator, value )</h4>
+<p>抽象操作<code>GeneratorResume</code>接受参数<code>generator</code>和<code>value</code>并执行以下步骤：</p>
+<ol>
+<li>令<code>state</code>为? <code>GeneratorValidate(generator)</code></li>
+<li>如果<code>state</code>为<code>completed</code>，返回<code>CreateIterResultObject(undefined, true)</code></li>
+<li>断言：<code>state</code>要么是<code>suspendedStart</code>，要么是<code>suspendedYield</code></li>
+<li>令<code>genContext</code>为<code>generator.[[GeneratorContext]]</code></li>
+<li>令<code>methodContext</code>为运行中的执行上下文</li>
+<li>暂停<code>methodContext</code></li>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>executing</code></li>
+<li>将<code>genContext</code>推送到执行上下文栈。<code>genContext</code>现在是运行中的执行上下文</li>
+<li>恢复暂停的<code>genContext</code>的计算，使用<code>NormalCompletion(value)</code>作为暂停该计算的操作的结果。令<code>result</code>为恢复的计算所返回的完结记录</li>
+<li>断言：当在这里返回时，<code>genContext</code>已经被从执行上下文栈移除了，同时<code>methodContext</code>现在是运行中的执行上下文</li>
+<li>返回<code>Completion(result)</code></li>
+</ol>
+<h4 id="25434-generatorresumeabrupt-generator-abruptcompletion"><a class="markdownIt-Anchor" href="#25434-generatorresumeabrupt-generator-abruptcompletion"></a> 25.4.3.4 GeneratorResumeAbrupt ( generator, abruptCompletion )</h4>
+<p>抽象操作<code>GeneratorResumeAbrupt</code>接受参数<code>generator</code>和<code>abruptCompletion</code>并执行以下步骤：</p>
+<ol>
+<li>令<code>state</code>为? <code>GeneratorValidate(generator)</code></li>
+<li>如果<code>state</code>为<code>suspendedStart</code>，则：
+<ol>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>completed</code></li>
+<li>一旦生成器进入<code>completed</code>状态，它就永远不会离开，其相关的执行环境也不会恢复。任何与<code>generator</code>相关的执行状态在此时都可以被丢弃。</li>
+<li>将<code>state</code>设为<code>completed</code></li>
+</ol>
+</li>
+<li>如果<code>state</code>为<code>completed</code>，则：
+<ol>
+<li>如果<code>abruptCompletion.[[Type]]</code>为<code>return</code>，则返回<code>CreateIterResultObject(abruptCompletion.[[Value]], true)</code></li>
+<li>返回<code>Completion(abruptCompletion)</code></li>
+</ol>
+</li>
+<li>断言：<code>state</code>是<code>suspendedYield</code></li>
+<li>令<code>genContext</code>为<code>generator.[[GeneratorContext]]</code></li>
+<li>令<code>methodContext</code>为运行中的执行上下文</li>
+<li>暂停<code>methodContext</code></li>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>executing</code></li>
+<li>将<code>genContext</code>推送到执行上下文栈。<code>genContext</code>现在是运行中的执行上下文</li>
+<li>恢复暂停的<code>genContext</code>的计算，使用<code>abruptCompletion</code>作为暂停该计算的操作的结果。令<code>result</code>为恢复的计算所返回的完结记录。</li>
+<li>断言：当在这里返回时，<code>genContext</code>已经被从执行上下文栈移除了，同时<code>methodContext</code>现在是运行中的执行上下文</li>
+<li>返回<code>Completion(result)</code></li>
+</ol>
+<h4 id="25435-getgeneratorkind"><a class="markdownIt-Anchor" href="#25435-getgeneratorkind"></a> 25.4.3.5 GetGeneratorKind ( )</h4>
+<ol>
+<li>令<code>genContext</code>为运行中的执行上下文</li>
+<li>如果<code>genContext</code>没有<code>Generator</code>组件，返回<code>non-generator</code></li>
+<li>令<code>generator</code>为<code>genContext</code>的<code>Generator</code>组件</li>
+<li>如果<code>generator</code>有<code>[[AsyncGeneratorState]]</code>内部槽，返回<code>async</code></li>
+<li>否则，返回<code>sync</code></li>
+</ol>
+<h4 id="25436-generatoryield-iternextobj"><a class="markdownIt-Anchor" href="#25436-generatoryield-iternextobj"></a> 25.4.3.6 GeneratorYield ( iterNextObj )</h4>
+<p>抽象操作<code>GeneratorYield</code>接受参数<code>iterNextObj</code>并执行以下步骤：</p>
+<ol>
+<li>断言：<code>iterNextObj</code>是一个实现了<code>IteratorResult</code>接口的对象</li>
+<li>令<code>genContext</code>为运行中的执行上下文</li>
+<li>断言：<code>genContext</code>是一个<code>generator</code>的执行上下文</li>
+<li>令<code>generator</code>为<code>genContext</code>的<code>Generator</code>组件的值</li>
+<li>断言：<code>GetGeneratorKind()</code>为<code>sync</code></li>
+<li>将<code>generator.[[GeneratorState]]</code>设为<code>suspendedYield</code></li>
+<li>从执行上下文栈中移除<code>genContext</code>，并将执行上下文栈的栈顶恢复为运行中的执行上下文</li>
+<li>设置<code>genContext</code>的代码计算状态，使得使用完结记录<code>resumptionValue</code>恢复计算时，执行以下步骤：
+<ol>
+<li>返回<code>resumptionValue</code></li>
+<li>注：这将返回到最初调用该抽象操作的YieldExpression的计算</li>
+</ol>
+</li>
+<li>返回<code>NormalCompletion(iterNextObj)</code></li>
+<li>注：这将返回到最早恢复计算<code>genContext</code>的操作的计算</li>
+</ol>
 <h2 id="256-promise对象"><a class="markdownIt-Anchor" href="#256-promise对象"></a> 25.6 Promise对象</h2>
 <p>Promise是一个对象，它被用作延迟（可能还是异步）计算的最终结果的占位符。</p>
 <p>任何Promise对象均处于以下三种互斥状态之一：已兑现(fulfilled)，已拒绝(rejected)和待定(pending)：</p>
@@ -217,7 +445,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h4 id="25613-createresolvingfunctions-promise"><a class="markdownIt-Anchor" href="#25613-createresolvingfunctions-promise"></a> 25.6.1.3 CreateResolvingFunctions ( promise )</h4>
 <p>当使用参数<code>promise</code>执行CreateResolvingFunctions时，将执行以下步骤：</p>
 <ol>
-<li>令<code>alreadyResolved</code>为一个新的记录<code>&#123; [[value]]: false &#125;</code></li>
+<li>令<code>alreadyResolved</code>为一个新的记录<code>&#123; [[Value]]: false &#125;</code></li>
 <li>令<code>stepsResolve</code>为 Promise Resolve Functions (25.6.1.3.2)中定义的算法步骤</li>
 <li>令<code>resolve</code>为! <code>CreateBuiltinFunction(stepsResolve, « [[Promise]], [[AlreadyResolved]] »)</code></li>
 <li>将<code>resolve</code>的<code>[[Promise]]</code>内部槽设为<code>promise</code></li>
@@ -270,7 +498,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h4 id="25614-fulfillpromise-promise-value"><a class="markdownIt-Anchor" href="#25614-fulfillpromise-promise-value"></a> 25.6.1.4 FulfillPromise ( promise, value)</h4>
 <p>当使用参数<code>promise</code>和<code>value</code>调用<code>FulfillPromise</code>抽象操作时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>promise.[[PromiseState]]</code>值为<code>&quot;pending&quot;</code></li>
+<li>断言：<code>promise.[[PromiseState]]</code>值为<code>pending</code></li>
 <li>令<code>reactions</code>为<code>promise.[[PromiseFulfillReactions]]</code></li>
 <li>将<code>promise.[[PromiseResult]]</code>设为<code>value</code></li>
 <li>将<code>promise.[[PromiseFulfillReactions]]</code>设为<code>undefined</code></li>
@@ -294,80 +522,124 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回 <code>promiseCapability</code></li>
 </ol>
 <p>注：此抽象操作支持Promise子类化，因为它在以与Promise构造函数相同的方式调用传递的执行程序函数参数的任何构造函数上都是通用的。 它用于将Promise构造函数的静态方法推广到任何子类。</p>
-<h5 id="254151-getcapabilitiesexecutor函数"><a class="markdownIt-Anchor" href="#254151-getcapabilitiesexecutor函数"></a> 25.4.1.5.1 GetCapabilitiesExecutor函数</h5>
+<h5 id="256151-getcapabilitiesexecutor函数"><a class="markdownIt-Anchor" href="#256151-getcapabilitiesexecutor函数"></a> 25.6.1.5.1 GetCapabilitiesExecutor函数</h5>
 <p>GetCapabilitiesExecutor 函数是有<code>[[Capability]]</code>内部槽的匿名内置函数。<br />
-当使用参数<code>resolve</code>和<code>reject</code>调用GetCapabilitiesExecutor 函数<code>F</code>时，执行以下步骤：</p>
+当使用参数<code>resolve</code>和<code>reject</code>调用<code>GetCapabilitiesExecutor</code>函数时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>F</code>有一个值为<code>PromiseCapability</code>记录的<code>[[Capability]]</code>内部槽</li>
-<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capability]]</code>内部槽的值</li>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>断言：<code>F</code>有一个<code>[[Capability]]</code>内部槽，其值为<code>PromiseCapability</code>记录</li>
+<li>令<code>promiseCapability</code>为<code>F.[[Capability]]</code></li>
 <li>如果<code>promiseCapability.[[Resolve]]</code>不为<code>undefined</code>，抛出 TypeError 异常</li>
 <li>如果<code>promiseCapability.[[Reject]]</code>不为<code>undefined</code>，抛出 TypeError 异常</li>
 <li>将<code>promiseCapability.[[Resolve]]</code>设为<code>resolve</code></li>
 <li>将<code>promiseCapability.[[Reject]]</code>设为<code>reject</code></li>
 <li>返回<code>undefined</code></li>
 </ol>
-<p>GetCapabilitiesExecutor函数的<code>length</code>属性值为<code>2</code></p>
-<h4 id="25416-ispromise-x"><a class="markdownIt-Anchor" href="#25416-ispromise-x"></a> 25.4.1.6 IsPromise ( x )</h4>
+<p><code>GetCapabilitiesExecutor</code>函数的<code>length</code>属性值为<code>2</code></p>
+<h4 id="25616-ispromise-x"><a class="markdownIt-Anchor" href="#25616-ispromise-x"></a> 25.6.1.6 IsPromise ( x )</h4>
 <p>抽象操作<code>IsPromise</code>在一个对象上检查其是否是promise类型</p>
 <ol>
 <li>如果<code>Type(x)</code>不是<code>Object</code>，返回<code>false</code></li>
 <li>如果<code>x</code>没有<code>[[PromiseState]]</code>内部槽，返回<code>false</code></li>
 <li>返回<code>true</code></li>
 </ol>
-<h4 id="25417-rejectpromise-promise-reason"><a class="markdownIt-Anchor" href="#25417-rejectpromise-promise-reason"></a> 25.4.1.7 RejectPromise ( promise, reason)</h4>
+<h4 id="25617-rejectpromise-promise-reason"><a class="markdownIt-Anchor" href="#25617-rejectpromise-promise-reason"></a> 25.6.1.7 RejectPromise ( promise, reason)</h4>
 <p>当使用参数<code>promise</code>和<code>reason</code>调用抽象操作<code>RejectPromise</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;pending&quot;</code></li>
-<li>令<code>reactions</code>为<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值</li>
-<li>将<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值设为<code>reason</code></li>
-<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值设为<code>undefined</code></li>
-<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值设为<code>&quot;rejected&quot;</code></li>
+<li>断言：<code>promise.[[PromiseState]]</code>的值为<code>pending</code></li>
+<li>令<code>reactions</code>为<code>promise.[[PromiseRejectReactions]]</code>的值</li>
+<li>将<code>promise.[[PromiseResult]]</code>的值设为<code>reason</code></li>
+<li>将<code>promise.[[PromiseFulfillReactions]]</code>的值设为<code>undefined</code></li>
+<li>将<code>promise.[[PromiseRejectReactions]]</code>的值设为<code>undefined</code></li>
+<li>将<code>promise.[[PromiseState]]</code>的值设为<code>rejected</code></li>
+<li>如果<code>promise.[[PromiseIsHandled]]</code>为<code>false</code>，执行<code>HostPromiseRejectionTracker(promise, &quot;reject&quot;)</code></li>
 <li>返回<code>TriggerPromiseReactions(reactions, reason)</code></li>
 </ol>
-<h4 id="25418-triggerpromisereactions-reactions-argument"><a class="markdownIt-Anchor" href="#25418-triggerpromisereactions-reactions-argument"></a> 25.4.1.8 TriggerPromiseReactions ( reactions, argument )</h4>
-<p>抽象操作<code>TriggerPromiseReactions</code>接受<code>PromiseReactionRecords</code>的集合，并为每个记录入队一个新的<code>Job</code>。 每个这样的<code>Job</code>都会处理<code>PromiseReactionRecord</code>的<code>[[Handler]]</code>，如果<code>[[Handler]]</code>是一个函数，则调用它传递给定的参数。</p>
+<h4 id="25618-triggerpromisereactions-reactions-argument"><a class="markdownIt-Anchor" href="#25618-triggerpromisereactions-reactions-argument"></a> 25.6.1.8 TriggerPromiseReactions ( reactions, argument )</h4>
+<p>抽象操作<code>TriggerPromiseReactions</code>接受<code>PromiseReactionRecords</code>的集合，并为每个记录入队一个新的<code>Job</code>。 每个这样的<code>Job</code>都会处理<code>PromiseReactionRecord</code>的<code>[[Type]]</code>和<code>[[Handler]]</code>，如果<code>[[Handler]]</code>是一个函数，则用给定的参数调用它。如果<code>[[Handler]]</code>是<code>undefined</code>，行为取决于<code>[[Type]]</code></p>
 <ol>
 <li>对<code>reactions</code>中的每个<code>reaction</code>，按照原始插入顺序，执行：
 <ol>
-<li>执行<code>EnqueueJob(&quot;PromiseJobs&quot;, PromiseReactionJob, «‍reaction, argument»)</code></li>
+<li>令<code>job</code>为<code>NewPromiseReactionJob(reaction, argument)</code></li>
+<li>执行<code>HostEnqueuePromiseJob(job.[[Job]], job.[[Realm]])</code></li>
 </ol>
 </li>
 <li>返回<code>undefined</code></li>
 </ol>
-<h3 id="2542-promise-jobs"><a class="markdownIt-Anchor" href="#2542-promise-jobs"></a> 25.4.2 Promise Jobs</h3>
-<h4 id="25421-promisereactionjob-reaction-argument"><a class="markdownIt-Anchor" href="#25421-promisereactionjob-reaction-argument"></a> 25.4.2.1 PromiseReactionJob ( reaction, argument )</h4>
-<p>接受参数<code>reaction</code>和<code>argument</code>的任务<code>PromiseReactionJob</code>将适当的处理程序应用于incoming值，并使用该处理程序的返回值来确定或拒绝与该处理程序相关联的派生promise。</p>
+<h4 id="25619-hostpromiserejectiontracker-promise-operation"><a class="markdownIt-Anchor" href="#25619-hostpromiserejectiontracker-promise-operation"></a> 25.6.1.9 HostPromiseRejectionTracker ( promise, operation )</h4>
+<p><code>HostPromiseRejectionTracker</code>是一个实现定义的抽象操作，它允许主机环境跟踪Promise的拒绝。</p>
+<p><code>HostPromiseRejectionTracker</code>的实现必须在所有情况下正常完结。<code>HostPromiseRejectionTracker</code>的默认实现是无条件地返回一个空的正常完结。</p>
+<p>注1：<code>HostPromiseRejectionTracker</code>在两种情况下被调用：</p>
+<ul>
+<li>当一个promise在没有任何处理程序的情况下被拒绝时，使用<code>&quot;reject&quot;</code>作为参数<code>operation</code>来调用它。</li>
+<li>当一个处理程序第一次被添加到一个被拒绝的promise中时，使用<code>&quot;handle&quot;</code>作为参数<code>operation</code>来调用它。<br />
+<code>HostPromiseRejectionTracker</code>的典型实现可能会尝试通知开发者未处理的拒绝，同时也会小心地通知他们，如果这种先前的通知后来因新的处理程序被附加而失效。</li>
+</ul>
+<p>注2：如果<code>operation</code>是 <code>&quot;handle&quot;</code>，实现不应该以干扰垃圾回收的方式持有对promise的引用。如果<code>operation</code>是 <code>&quot;reject&quot;</code>，实现可以持有对promise的引用，因为预计拒绝将是罕见的，并且不在热代码路径上。</p>
+<h3 id="2562-promise-jobs"><a class="markdownIt-Anchor" href="#2562-promise-jobs"></a> 25.6.2 Promise Jobs</h3>
+<h4 id="25621-newpromisereactionjob-reaction-argument"><a class="markdownIt-Anchor" href="#25621-newpromisereactionjob-reaction-argument"></a> 25.6.2.1 NewPromiseReactionJob ( reaction, argument )</h4>
+<p>抽象操作<code>NewPromiseReactionJob</code>接受两个参数：<code>reaction</code>和<code>argument</code>，返回一个新的Job抽象闭包，该闭包将适当的处理程序应用于incoming值，并使用处理程序的返回值来解决或拒绝与该处理程序关联的派生promise。它执行以下步骤：</p>
 <ol>
-<li>断言：<code>reaction</code>是<code>PromiseReaction</code>记录</li>
-<li>令<code>promiseCapability</code>为<code>reaction.[[Capabilities]]</code></li>
+<li>令<code>job</code>为一个新的Job抽象闭包，该闭包不接受参数，捕获<code>reaction</code>和<code>argument</code>，并在调用时执行以下步骤：
+<ol>
+<li>断言：<code>reaction</code>为一个新的<code>PromiseReaction</code>记录</li>
+<li>令<code>promiseCapability</code>为<code>reaction.[[Capability]]</code></li>
+<li>令<code>type</code>为<code>reaction.[[Type]]</code></li>
 <li>令<code>handler</code>为<code>reaction.[[Handler]]</code></li>
-<li>如果<code>handler</code>是<code>&quot;Identity&quot;</code>，令<code>handlerResult</code>为<code>NormalCompletion(argument)</code></li>
-<li>否则如果 <code>handler</code>是<code>&quot;Thrower&quot;</code>，令<code>handlerResult</code>为<code>Completion&#123;[[type]]: throw, [[value]]: argument, [[target]]: empty&#125;</code></li>
-<li>否则，令<code>handlerResult</code>为<code>Call(handler, undefined, «argument»)</code></li>
-<li>如果<code>handlerResult</code>是非常规完结，则
+<li>如果<code>handler</code>为<code>undefined</code>，则：
 <ol>
-<li>令<code>status</code>为<code>Call(promiseCapability.[[Reject]], undefined, «handlerResult.[[value]]»)</code></li>
-<li><code>NextJob Completion(status)</code></li>
+<li>如果<code>type</code>是<code>Fulfill</code>，令<code>handlerResult</code>为<code>NormalCompletion(argument)</code></li>
+<li>否则，
+<ol>
+<li>断言：<code>type</code>为<code>Reject</code></li>
+<li>令<code>handlerResult</code>为<code>ThrowCompletion(argument)</code></li>
 </ol>
 </li>
-<li>令<code>status</code>为<code>Call(promiseCapability.[[Resolve]], undefined, «handlerResult.[[value]]»)</code></li>
-<li><code>NextJob Completion(status)</code></li>
 </ol>
-<h4 id="promiseresolvethenablejob-promisetoresolve-thenable-then"><a class="markdownIt-Anchor" href="#promiseresolvethenablejob-promisetoresolve-thenable-then"></a> PromiseResolveThenableJob ( promiseToResolve, thenable, then)</h4>
-<p>接受参数<code>promiseToResolve</code>、<code>thenable</code>和<code>then</code>的任务<code>PromiseResolveThenableJob</code>执行以下步骤：</p>
+</li>
+<li>否则， 令<code>handlerResult</code>为<code>Call(handler, undefined, « argument »)</code></li>
+<li>如果<code>promiseCapability</code>为<code>undefined</code>，则：
+<ol>
+<li>断言：<code>handlerResult</code>不是非常规完结</li>
+<li>返回<code>NormalCompletion(empty)</code></li>
+</ol>
+</li>
+<li>如果<code>handlerResult</code>是非常规完结，则令<code>status</code>为<code>Call(promiseCapability.[[Reject]], undefined, « handlerResult.[[Value]] »)</code></li>
+<li>否则，令<code>status</code>为<code>Call(promiseCapability.[[Resolve]], undefined, « handlerResult.[[Value]] »)</code></li>
+<li>返回<code>Completion(status)</code></li>
+</ol>
+</li>
+<li>令<code>handlerRealm</code>为<code>null</code></li>
+<li>如果<code>reaction.[[Handler]]</code>不是<code>undefined</code>，则：
+<ol>
+<li>令<code>getHandlerRealmResult</code>为<code>GetFunctionRealm(reaction</code>[[Handler]]).</li>
+<li>如果<code>getHandlerRealmResult</code>是常规完结，则将<code>handlerRealm</code>设为<code>getHandlerRealmResult.[[Value]]</code></li>
+</ol>
+</li>
+<li>返回记录<code>&#123; [[Job]]: job, [[Realm]]: handlerRealm &#125;</code></li>
+</ol>
+<h4 id="25622-newpromiseresolvethenablejob-promisetoresolve-thenable-then"><a class="markdownIt-Anchor" href="#25622-newpromiseresolvethenablejob-promisetoresolve-thenable-then"></a> 25.6.2.2 NewPromiseResolveThenableJob ( promiseToResolve, thenable, then)</h4>
+<p>抽象操作<code>NewPromiseResolveThenableJob</code>接受三个参数：<code>promiseToResolve</code>、<code>thenable</code>和<code>then</code>，并执行以下步骤：</p>
+<ol>
+<li>令<code>job</code>为一个新的Job抽象闭包，该闭包不接受参数，捕获<code>promiseToResolve</code>、<code>thenable</code>和<code>then</code>，并在调用时执行以下步骤：
 <ol>
 <li>令<code>resolvingFunctions</code>为<code>CreateResolvingFunctions(promiseToResolve)</code></li>
 <li>令<code>thenCallResult</code>为<code>Call(then, thenable, «resolvingFunctions.[[Resolve]], resolvingFunctions.[[Reject]]»)</code></li>
-<li>如果<code>thenCallResult</code>是非常规完结
+<li>如果<code>thenCallResult</code>是非常规完结，则
 <ol>
 <li>令<code>status</code>为<code>Call(resolvingFunctions.[[Reject]], undefined, «thenCallResult.[[value]]»)</code></li>
-<li><code>NextJob Completion(status)</code></li>
+<li>返回<code>Completion(status)</code></li>
 </ol>
 </li>
-<li><code>NextJob Completion(thenCallResult)</code></li>
+<li>返回<code>Completion(thenCallResult)</code></li>
 </ol>
-<p>注：此任务使用提供的thenable及其<code>then</code>方法来确定给定的promise。 此过程必须作为任务进行，以确保对所有周围代码的计算完成后，再对then方法进行计算。</p>
+</li>
+<li>令<code>getThenRealmResult</code>为<code>GetFunctionRealm(then)</code></li>
+<li>如果<code>getThenRealmResult</code>是常规完结，则令<code>thenRealm</code>为<code>getThenRealmResult.[[Value]]</code></li>
+<li>否则，令<code>thenRealm</code>为<code>null</code></li>
+<li>返回记录<code>&#123; [[Job]]: job, [[Realm]]: thenRealm &#125;</code></li>
+</ol>
+<p>注：此Job使用提供的thenable及其<code>then</code>方法来解决给定的promise。 此过程必须作为Job进行，以确保对所有周围代码的计算完成后，再对then方法进行计算。</p>
 <h3 id="2563-promise构造函数"><a class="markdownIt-Anchor" href="#2563-promise构造函数"></a> 25.6.3 Promise构造函数</h3>
 <p>Promise构造函数：</p>
 <ul>
@@ -383,257 +655,454 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>NewTarget</code>为<code>undefined</code>，抛出 TypeError 异常</li>
 <li>如果<code>IsCallable(executor)</code>为<code>false</code>，抛出 TypeError 异常</li>
 <li>令<code>promise</code>为<code>OrdinaryCreateFromConstructor(NewTarget, &quot;%PromisePrototype%&quot;, «‍[[PromiseState]], [[PromiseResult]], [[PromiseFulfillReactions]], [[PromiseRejectReactions]]» )</code></li>
-<li><code>ReturnIfAbrupt(promise)</code></li>
-<li>将<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值设为<code>&quot;pending&quot;</code></li>
-<li>将<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽的值设为一个新的空列表</li>
-<li>将<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽的值设为一个新的空列表</li>
+<li>将<code>promise.[[PromiseState]]</code>的值设为<code>pending</code></li>
+<li>将<code>promise.[[PromiseFulfillReactions]]</code>的值设为一个新的空列表</li>
+<li>将<code>promise.[[PromiseRejectReactions]]</code>的值设为一个新的空列表</li>
+<li>将<code>promise.[[PromiseIsHandled]]</code>的值设为<code>false</code></li>
 <li>令<code>resolvingFunctions</code>为<code>CreateResolvingFunctions(promise)</code></li>
 <li>令<code>completion</code>为<code>Call(executor, undefined, «resolvingFunctions.[[Resolve]], resolvingFunctions.[[Reject]]»)</code></li>
 <li>如果<code>completion</code>是非常规完结，则执行? <code>Call(resolvingFunctions.[[Reject]], undefined, «completion.[[value]]»)</code></li>
 <li>返回<code>promise</code></li>
 </ol>
-<p>注：<code>executor</code>参数必须是一个函数对象。 调用该函数以初始化和报告此Promise对象表示的可能延迟的操作的完成。 <code>executor</code>接受两个参数：<code>resolve</code>和<code>reject</code>。 这两个函数被<code>executor</code>函数使用，以便报告延迟计算将来的完成或者失败。从<code>executor</code>函数返回并不意味着延迟的动作已经完成，它仅表示接受了一个请求——未来会执行该延迟动作。</p>
+<p>注：<code>executor</code>参数必须是一个函数对象。 调用该函数以初始化和报告此Promise对象所表示的延迟操作的完成。 <code>executor</code>接受两个参数：<code>resolve</code>和<code>reject</code>。 这两个函数被<code>executor</code>函数使用，以便报告延迟计算最终完成或者失败。从<code>executor</code>函数返回并不意味着延迟的动作已经完成，它仅表示接受了一个请求：未来会执行该延迟动作。</p>
 <p>传递给<code>executor</code>函数的<code>resolve</code>函数接受一个参数。<code>executor</code>函数的代码最终可能会调用<code>resolve</code>函数来指示它希望解决关联的Promise对象。传递给<code>resolve</code>函数的参数表示延迟动作的最终值，可以是实际的兑现值，也可以是另一个Promise对象（当它兑现时则提供该值）</p>
 <p>传递给<code>executor</code>函数的<code>reject</code>函数接受一个参数。<code>executor</code>函数的代码最终可能会调用<code>reject</code>函数来指示关联的Promise对象被拒绝了，并且永远不会兑现。传递给<code>reject</code>函数的参数用作promise的拒绝值，通常是一个<code>Error</code>对象。</p>
 <p>Promise构造函数传递给<code>executor</code>函数的<code>resolve</code>和<code>reject</code>函数具有实际确定和拒绝关联的promise的能力。 子类可能具有不同的构造函数行为，这些构造函数将传入自定义值以进行确定和拒绝。</p>
-<h3 id="2544-promise构造函数的属性"><a class="markdownIt-Anchor" href="#2544-promise构造函数的属性"></a> 25.4.4 Promise构造函数的属性</h3>
-<p><code>Promise</code>构造函数的<code>[[Prototype]]</code>内部槽的值是固有对象<code>%FunctionPrototype%</code> (19.2.3)</p>
-<p>除了值为<code>1</code>的<code>length</code>属性，Promise构造函数还有以下属性：</p>
-<h4 id="25441-promiseall-iterable"><a class="markdownIt-Anchor" href="#25441-promiseall-iterable"></a> 25.4.4.1 Promise.all ( iterable )</h4>
+<h3 id="2564-promise构造函数的属性"><a class="markdownIt-Anchor" href="#2564-promise构造函数的属性"></a> 25.6.4 Promise构造函数的属性</h3>
+<p><code>Promise</code>构造函数：</p>
+<ul>
+<li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%Function.prototype%</code></li>
+<li>具有以下属性：</li>
+</ul>
+<h4 id="25641-promiseall-iterable"><a class="markdownIt-Anchor" href="#25641-promiseall-iterable"></a> 25.6.4.1 Promise.all ( iterable )</h4>
 <p><code>all</code>函数返回一个新的promise，这个新的promise使用传递的若干promise组成的兑现值数组来兑现，又或者使用传递的若干promise中第一个拒绝的promise的reason来拒绝。当运行此算法时，它将传递的可迭代对象的所有元素解析为Promise。</p>
 <ol>
 <li>令<code>C</code>为<code>this</code>值</li>
-<li>如果<code>Type(C)</code>不为<code>Object</code>，抛出 TypeError 异常</li>
-<li>令<code>S</code>为<code>Get(C, @@species)</code></li>
-<li><code>ReturnIfAbrupt(S)</code></li>
-<li>如果<code>S</code>既不是<code>undefined</code>也不是<code>null</code>，令<code>C</code>为<code>S</code></li>
-<li>令<code>promiseCapability</code>为<code>NewPromiseCapability(C)</code></li>
-<li><code>ReturnIfAbrupt(promiseCapability)</code></li>
-<li>令<code>iterator</code>为<code>GetIterator(iterable)</code></li>
-<li><code>IfAbruptRejectPromise(iterator, promiseCapability)</code></li>
-<li>令<code>iteratorRecord</code>为<code>Record &#123;[[iterator]]: iterator, [[done]]: false&#125;</code></li>
+<li>令<code>promiseCapability</code>为? <code>NewPromiseCapability(C)</code></li>
+<li>令<code>iteratorRecord</code>为<code>GetIterator(iterable)</code></li>
+<li><code>IfAbruptRejectPromise(iteratorRecord, promiseCapability)</code></li>
 <li>令<code>result</code>为<code>PerformPromiseAll(iteratorRecord, C, promiseCapability)</code></li>
-<li>如果<code>result</code>是非常规完结
+<li>如果<code>result</code>是非常规完结，则：
 <ol>
-<li>如果<code>iteratorRecord.[[done]]</code>为<code>false</code>，令<code>result</code>为<code>IteratorClose(iterator, result)</code></li>
+<li>如果<code>iteratorRecord.[[Done]]</code>为<code>false</code>，将<code>result</code>设为<code>IteratorClose(iterator, result)</code></li>
 <li><code>IfAbruptRejectPromise(result, promiseCapability)</code></li>
 </ol>
 </li>
 <li>返回<code>Completion(result)</code></li>
 </ol>
+<p>此函数是固有对象<code>%Promise_all%</code></p>
 <p>注：<code>all</code>函数要求其<code>this</code>值是支持Promise构造函数的参数约定的构造函数。</p>
-<h5 id="254411-运行时语义performpromiseall-iteratorrecord-constructor-resultcapability"><a class="markdownIt-Anchor" href="#254411-运行时语义performpromiseall-iteratorrecord-constructor-resultcapability"></a> 25.4.4.1.1 运行时语义:PerformPromiseAll( iteratorRecord, constructor, resultCapability)</h5>
+<h5 id="256411-运行时语义performpromiseall-iteratorrecord-constructor-resultcapability"><a class="markdownIt-Anchor" href="#256411-运行时语义performpromiseall-iteratorrecord-constructor-resultcapability"></a> 25.6.4.1.1 运行时语义:PerformPromiseAll( iteratorRecord, constructor, resultCapability)</h5>
 <p>当使用参数<code>iteratorRecord</code>、<code>constructor</code>和<code>resultCapability</code>调用抽象操作<code>PerformPromiseAll</code>时，执行以下步骤：</p>
 <ol>
-<li>断言：<code>constructor</code>是构造函数</li>
+<li>断言：<code>IsConstructor(constructor)</code>为<code>true</code></li>
 <li>断言：<code>resultCapability</code>是<code>PromiseCapability</code>记录</li>
 <li>令<code>values</code>为一个新的空列表</li>
-<li>令<code>remainingElementsCount</code>为新的记录<code>Record &#123; [[value]]: 1 &#125;</code></li>
+<li>令<code>remainingElementsCount</code>为记录<code>Record &#123; [[value]]: 1 &#125;</code></li>
+<li>令<code>promiseResolve</code>为? <code>Get(constructor, &quot;resolve&quot;)</code></li>
+<li>如果! <code>IsCallable(promiseResolve)</code>为<code>false</code>，抛出 TypeError 异常</li>
 <li>令<code>index</code>为<code>0</code></li>
 <li>重复：
 <ol>
-<li>令<code>next</code>为<code>IteratorStep(iteratorRecord.[[iterator]])</code></li>
-<li>如果<code>next</code>是非常规完结，将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
+<li>令<code>next</code>为<code>IteratorStep(iteratorRecord)</code></li>
+<li>如果<code>next</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
 <li><code>ReturnIfAbrupt(next)</code></li>
 <li>如果<code>next</code>为<code>false</code>
 <ol>
-<li>将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
-<li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] − 1</code></li>
-<li>如果<code>remainingElementsCount.[[value]]</code>为<code>0</code>
+<li>将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
+<li>将<code>remainingElementsCount.[[Value]]</code>设为<code>remainingElementsCount.[[Value]] − 1</code></li>
+<li>如果<code>remainingElementsCount.[[Value]]</code>为<code>0</code>，则：
 <ol>
-<li>令<code>valuesArray</code>为<code>CreateArrayFromList(values)</code></li>
-<li>令<code>resolveResult</code>为<code>Call(resultCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
-<li><code>ReturnIfAbrupt(resolveResult)</code></li>
+<li>令<code>valuesArray</code>为! <code>CreateArrayFromList(values)</code></li>
+<li>执行? <code>Call(resultCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
 </ol>
 </li>
 <li>返回<code>resultCapability.[[Promise]]</code></li>
 </ol>
 </li>
 <li>令<code>nextValue</code>为<code>IteratorValue(next)</code></li>
-<li>如果<code>nextValue</code>是非常规完结，将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
+<li>如果<code>nextValue</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
 <li><code>ReturnIfAbrupt(nextValue)</code></li>
 <li>将<code>undefined</code>添加到<code>values</code></li>
-<li>令<code>nextPromise</code>为<code>Invoke(constructor, &quot;resolve&quot;, «‍nextValue»). ReturnIfAbrupt(nextPromise )</code></li>
-<li>令<code>resolveElement</code>为 Promise.all Resolve Element Functions中定义的内置函数</li>
-<li>将<code>resolveElement</code>的<code>[[AlreadyCalled]]</code>内部槽设为<code>Record &#123;[[value]]: false &#125;</code></li>
-<li>将<code>resolveElement</code>的<code>[[Index]]</code>内部槽设为<code>index</code></li>
-<li>将<code>resolveElement</code>的<code>[[Values]]</code>内部槽设为<code>values</code></li>
-<li>将<code>resolveElement</code>的<code>[[Capabilities]]</code>内部槽设为<code>resultCapability</code></li>
-<li>将<code>resolveElement</code>的<code>[[RemainingElements]]</code>内部槽设为<code>remainingElementsCount</code></li>
+<li>令<code>nextPromise</code>为? <code>Call(promiseResolve, constructor, « nextValue »)</code></li>
+<li>令<code>steps</code>为<code>Promise.all</code> Resolve Element函数 定义的算法步骤</li>
+<li>令<code>resolveElement</code>为! <code>CreateBuiltinFunction(steps, « [[AlreadyCalled]], [[Index]], [[Values]], [[Capability]], [[RemainingElements]] »)</code></li>
+<li>将<code>resolveElement.[[AlreadyCalled]]</code>设为记录<code>&#123;[[value]]: false &#125;</code></li>
+<li>将<code>resolveElement.[[Index]]</code>设为<code>index</code></li>
+<li>将<code>resolveElement.[[Values]]</code>设为<code>values</code></li>
+<li>将<code>resolveElement.[[Capabilities]]</code>设为<code>resultCapability</code></li>
+<li>将<code>resolveElement.[[RemainingElements]]</code>设为<code>remainingElementsCount</code></li>
 <li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] + 1</code></li>
-<li>令<code>result</code>为<code>Invoke(nextPromise, &quot;then&quot;, «‍resolveElement, resultCapability.[[Reject]]»)</code></li>
-<li><code>ReturnIfAbrupt(result)</code></li>
+<li>令<code>result</code>为? <code>Invoke(nextPromise, &quot;then&quot;, «‍resolveElement, resultCapability.[[Reject]]»)</code></li>
 <li>将<code>index</code>设为<code>index + 1</code></li>
 </ol>
 </li>
 </ol>
-<h5 id="254412-promiseall-resolve-element-functions"><a class="markdownIt-Anchor" href="#254412-promiseall-resolve-element-functions"></a> 25.4.4.1.2 Promise.all Resolve Element Functions</h5>
-<p>Promise.all resolve element 函数是匿名内置函数，用来解决特定的 Promise.all 元素。每个 Promise.all resolve element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部槽。</p>
-<p>当使用参数<code>x</code>调用Promise.all resolve element函数<code>F</code>时，执行以下步骤：</p>
+<h5 id="256412-promiseall-resolve-element-functions"><a class="markdownIt-Anchor" href="#256412-promiseall-resolve-element-functions"></a> 25.6.4.1.2 Promise.all Resolve Element Functions</h5>
+<p><code>Promise.all</code> resolve element 函数是匿名内置函数，用来解决特定的 <code>Promise.all</code> 元素。每个 <code>Promise.all</code> resolve element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部槽。</p>
+<p>当使用参数<code>x</code>调用<code>Promise.all</code> resolve element函数<code>F</code>时，执行以下步骤：</p>
 <ol>
-<li>令<code>alreadyCalled</code>为<code>F</code>的<code>[[AlreadyCalled]]</code>内部槽的值</li>
-<li>如果<code>alreadyCalled.[[value]]</code>为<code>true</code>，返回<code>undefined</code></li>
-<li>将<code>alreadyCalled.[[value]]</code>设为<code>true</code></li>
-<li>令<code>index</code>为<code>F</code>的<code>[[Index]]</code>内部槽的值</li>
-<li>令<code>values</code>为<code>F</code>的<code>[[Values]]</code>内部槽的值</li>
-<li>令<code>promiseCapability</code>为<code>F</code>的<code>[[Capabilities]]</code>内部槽的值</li>
-<li>令<code>remainingElementsCount</code>为<code>F</code>的<code>[[RemainingElements]]</code>内部槽的值</li>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>令<code>alreadyCalled</code>为<code>F.[[AlreadyCalled]]</code></li>
+<li>如果<code>alreadyCalled.[[Value]]</code>为<code>true</code>，返回<code>undefined</code></li>
+<li>将<code>alreadyCalled.[[Value]]</code>设为<code>true</code></li>
+<li>令<code>index</code>为<code>F.[[Index]]</code></li>
+<li>令<code>values</code>为<code>F.[[Values]]</code></li>
+<li>令<code>promiseCapability</code>为<code>F.[[Capabilities]]</code></li>
+<li>令<code>remainingElementsCount</code>为<code>F.[[RemainingElements]]</code></li>
 <li>将<code>values[index]</code>设为<code>x</code></li>
-<li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] - 1</code></li>
-<li>如果<code>remainingElementsCount.[[value]]</code>为<code>0</code>
+<li>将<code>remainingElementsCount.[[Value]]</code>设为<code>remainingElementsCount.[[Value]] - 1</code></li>
+<li>如果<code>remainingElementsCount.[[Value]]</code>为<code>0</code>
 <ol>
-<li>令<code>valuesArray</code>为<code>CreateArrayFromList(values)</code></li>
-<li>返回<code>Call(promiseCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
+<li>令<code>valuesArray</code>为! <code>CreateArrayFromList(values)</code></li>
+<li>返回? <code>Call(promiseCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
 </ol>
 </li>
 <li>返回<code>undefined</code></li>
 </ol>
-<p>Promise.all resolve element 函数的<code>length</code>属性值为<code>1</code></p>
-<h4 id="25442-promiseprototype"><a class="markdownIt-Anchor" href="#25442-promiseprototype"></a> 25.4.4.2 Promise.prototype</h4>
-<p><code>Promise.prototype</code>的初始值是固有对象<code>%PromisePrototype%</code>（25.4.5）</p>
-<p>该属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
-<h4 id="25443-promiserace-iterable"><a class="markdownIt-Anchor" href="#25443-promiserace-iterable"></a> 25.4.4.3 Promise.race ( iterable )</h4>
-<p>race函数返回一个新的promise，该新promise以和传递的第一个确定的Promise相同的方式确定。当运行此算法时，它将传递的可迭代对象的所有元素确定为Promise。</p>
+<p><code>Promise.all</code> resolve element 函数的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<h4 id="25642-promiseallsettled-iterable"><a class="markdownIt-Anchor" href="#25642-promiseallsettled-iterable"></a> 25.6.4.2 Promise.allSettled ( iterable )</h4>
+<p>allSettled函数返回一个使用promise状态快照的数组兑现的promise，但只有在所有的原始promise都被确定之后，也就是说，要么被兑现，要么被拒绝。在运行这个算法时，它将传递的可迭代对象的所有元素解析为promise。</p>
 <ol>
 <li>令<code>C</code>为<code>this</code>值</li>
-<li>如果<code>Type(C)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
-<li>令<code>S</code>为<code>Get(C, @@species)</code></li>
-<li><code>ReturnIfAbrupt(S)</code></li>
-<li>如果<code>S</code>既不是<code>undefined</code>也不是<code>null</code>，令<code>C</code>为<code>S</code></li>
-<li>令<code>promiseCapability</code>为<code>NewPromiseCapability(C)</code></li>
-<li><code>ReturnIfAbrupt(promiseCapability)</code></li>
-<li>令<code>iterator</code>为<code>GetIterator(iterable)</code></li>
-<li><code>IfAbruptRejectPromise(iterator, promiseCapability)</code></li>
-<li>令<code>iteratorRecord</code>为<code>Record &#123;[[iterator]]: iterator, [[done]]: false&#125;</code></li>
-<li>令<code>result</code>为<code>PerformPromiseRace(iteratorRecord, promiseCapability, C)</code></li>
+<li>令<code>promiseCapability</code>为? <code>NewPromiseCapability(C)</code></li>
+<li>令<code>iteratorRecord</code>为<code>GetIterator(iterable)</code></li>
+<li><code>IfAbruptRejectPromise(iteratorRecord, promiseCapability)</code></li>
+<li>令<code>result</code>为<code>PerformPromiseAllSettled(iteratorRecord, C, promiseCapability)</code></li>
 <li>如果<code>result</code>是非常规完结，则：
 <ol>
-<li>如果<code>iteratorRecord.[[done]]</code>为<code>false</code>，令<code>result</code>为<code>IteratorClose(iterator,result)</code></li>
+<li>如果<code>iteratorRecord.[[Done]]</code>为<code>false</code>，将<code>result</code>设为<code>IteratorClose(iteratorRecord, result)</code></li>
 <li><code>IfAbruptRejectPromise(result, promiseCapability)</code></li>
 </ol>
 </li>
 <li>返回<code>Completion(result)</code></li>
 </ol>
-<p>注1：如果参数<code>iterable</code>为空，或者iterable中的所有promise均未确定，则此方法返回的待定的promise将永远不会被确定。<br />
-注2：race 函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数。它也期望它的<code>this</code>值提供<code>resolve</code>方法。</p>
-<h5 id="254431-运行时语义performpromiserace-iteratorrecord-promisecapability-c"><a class="markdownIt-Anchor" href="#254431-运行时语义performpromiserace-iteratorrecord-promisecapability-c"></a> 25.4.4.3.1 运行时语义:PerformPromiseRace ( iteratorRecord, promiseCapability, C )</h5>
-<p>当使用参数<code>iteratorRecord</code>，<code>promiseCapability</code>和<code>C</code>调用抽象操作<code>PerformPromiseRace</code>时，执行以下步骤：</p>
+<p>注：<code>allSettled</code>函数要求其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数。</p>
+<h5 id="256421-运行时语义-performpromiseallsettled-iteratorrecord-constructor-resultcapability"><a class="markdownIt-Anchor" href="#256421-运行时语义-performpromiseallsettled-iteratorrecord-constructor-resultcapability"></a> 25.6.4.2.1 运行时语义: PerformPromiseAllSettled ( iteratorRecord, constructor, resultCapability )</h5>
+<p>当使用参数<code>iteratorRecord</code>、<code>constructor</code>、<code>resultCapability</code>调用抽象操作<code>PerformPromiseAllSettled</code>时，执行以下步骤：</p>
 <ol>
+<li>断言：! <code>IsConstructor(constructor)</code>为<code>true</code></li>
+<li>断言：<code>resultCapability</code>是<code>PromiseCapability</code>记录</li>
+<li>令<code>values</code>为一个新的空列表</li>
+<li>令<code>remainingElementsCount</code>为记录<code>Record &#123; [[value]]: 1 &#125;</code></li>
+<li>令<code>index</code>为<code>0</code></li>
+<li>令<code>promiseResolve</code>为? <code>Get(constructor, &quot;resolve&quot;)</code></li>
+<li>如果! <code>IsCallable(promiseResolve)</code>为<code>false</code>，抛出 TypeError 异常</li>
 <li>重复：
 <ol>
-<li>令<code>next</code>为<code>IteratorStep(iteratorRecord.[[iterator]])</code></li>
-<li>如果<code>next</code>是非常规完结，将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
+<li>令<code>next</code>为<code>IteratorStep(iteratorRecord)</code></li>
+<li>如果<code>next</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
 <li><code>ReturnIfAbrupt(next)</code></li>
-<li>如果<code>next</code>为<code>false</code>，则
+<li>如果<code>next</code>为<code>false</code>
 <ol>
-<li>将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
-<li>返回<code>promiseCapability.[[Promise]]</code></li>
+<li>将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
+<li>将<code>remainingElementsCount.[[Value]]</code>设为<code>remainingElementsCount.[[Value]] − 1</code></li>
+<li>如果<code>remainingElementsCount.[[Value]]</code>为<code>0</code>，则：
+<ol>
+<li>令<code>valuesArray</code>为! <code>CreateArrayFromList(values)</code></li>
+<li>执行? <code>Call(resultCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
+</ol>
+</li>
+<li>返回<code>resultCapability.[[Promise]]</code></li>
 </ol>
 </li>
 <li>令<code>nextValue</code>为<code>IteratorValue(next)</code></li>
-<li>如果<code>nextValue</code>是非常规完结，将<code>iteratorRecord.[[done]]</code>设为<code>true</code></li>
+<li>如果<code>nextValue</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
 <li><code>ReturnIfAbrupt(nextValue)</code></li>
-<li>令<code>nextPromise</code>为<code>Invoke(C, &quot;resolve&quot;, «‍nextValue»)</code></li>
-<li><code>ReturnIfAbrupt(nextPromise)</code></li>
-<li>令<code>result</code>为<code>Invoke(nextPromise, &quot;then&quot;, «‍promiseCapability.[[Resolve]], promiseCapability.[[Reject]]»)</code></li>
-<li><code>ReturnIfAbrupt(result)</code></li>
+<li>将<code>undefined</code>添加到<code>values</code></li>
+<li>令<code>nextPromise</code>为? <code>Call(promiseResolve, constructor, « nextValue »)</code></li>
+<li>令<code>steps</code>为<code>Promise.allSettled</code> Resolve Element函数 定义的算法步骤</li>
+<li>令<code>resolveElement</code>为! <code>CreateBuiltinFunction(steps, « [[AlreadyCalled]], [[Index]], [[Values]], [[Capability]], [[RemainingElements]] »)</code></li>
+<li>令<code>alreadyCalled</code>为记录<code>&#123; [[Value]]: false &#125;</code></li>
+<li>将<code>resolveElement.[[AlreadyCalled]]</code>设为<code>alreadyCalled</code></li>
+<li>将<code>resolveElement.[[Index]]</code>设为<code>index</code></li>
+<li>将<code>resolveElement.[[Values]]</code>设为<code>values</code></li>
+<li>将<code>resolveElement.[[Capabilities]]</code>设为<code>resultCapability</code></li>
+<li>将<code>resolveElement.[[RemainingElements]]</code>设为<code>remainingElementsCount</code></li>
+<li>令<code>rejectSteps</code>为<code>Promise.allSettled</code> Reject Element函数 定义的算法步骤</li>
+<li>令<code>rejectElement</code>为! <code>CreateBuiltinFunction(rejectSteps, « [[AlreadyCalled]], [[Index]], [[Values]], [[Capability]], [[RemainingElements]] »)</code></li>
+<li>将<code>rejectElement.[[AlreadyCalled]]</code>设为<code>alreadyCalled</code></li>
+<li>将<code>rejectElement.[[Index]]</code>设为<code>index</code></li>
+<li>将<code>rejectElement.[[Values]]</code>设为<code>values</code></li>
+<li>将<code>rejectElement.[[Capabilities]]</code>设为<code>resultCapability</code></li>
+<li>将<code>rejectElement.[[RemainingElements]]</code>设为<code>remainingElementsCount</code></li>
+<li>将<code>remainingElementsCount.[[value]]</code>设为<code>remainingElementsCount.[[value]] + 1</code></li>
+<li>令<code>result</code>为? <code>Invoke(nextPromise, &quot;then&quot;, «‍resolveElement, rejectElement»)</code></li>
+<li>将<code>index</code>设为<code>index + 1</code></li>
 </ol>
 </li>
 </ol>
-<h4 id="25444-promisereject-r"><a class="markdownIt-Anchor" href="#25444-promisereject-r"></a> 25.4.4.4 Promise.reject ( r )</h4>
+<h5 id="256422-promiseallsettled-resolve-element-functions"><a class="markdownIt-Anchor" href="#256422-promiseallsettled-resolve-element-functions"></a> 25.6.4.2.2 Promise.allSettled Resolve Element Functions</h5>
+<p><code>Promise.allSettled</code> resolve element 函数是匿名内置函数，用来解决特定的 <code>Promise.allSettled</code> 元素。每个 <code>Promise.allSettled</code> resolve element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部槽。</p>
+<p>当使用参数<code>x</code>调用<code>Promise.allSettled</code> resolve element函数<code>F</code>时，执行以下步骤：</p>
+<ol>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>令<code>alreadyCalled</code>为<code>F.[[AlreadyCalled]]</code></li>
+<li>如果<code>alreadyCalled.[[Value]]</code>为<code>true</code>，返回<code>undefined</code></li>
+<li>将<code>alreadyCalled.[[Value]]</code>设为<code>true</code></li>
+<li>令<code>index</code>为<code>F.[[Index]]</code></li>
+<li>令<code>values</code>为<code>F.[[Values]]</code></li>
+<li>令<code>promiseCapability</code>为<code>F.[[Capabilities]]</code></li>
+<li>令<code>remainingElementsCount</code>为<code>F.[[RemainingElements]]</code></li>
+<li>令<code>obj</code>为! <code>OrdinaryObjectCreate(%Object.prototype%)</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(obj, &quot;status&quot;, &quot;fulfilled&quot;)</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(obj, &quot;value&quot;, x)</code></li>
+<li>将<code>values[index]</code>设为<code>obj</code></li>
+<li>将<code>remainingElementsCount.[[Value]]</code>设为<code>remainingElementsCount.[[Value]] - 1</code></li>
+<li>如果<code>remainingElementsCount.[[Value]]</code>为<code>0</code>
+<ol>
+<li>令<code>valuesArray</code>为! <code>CreateArrayFromList(values)</code></li>
+<li>返回? <code>Call(promiseCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
+</ol>
+</li>
+<li>返回<code>undefined</code></li>
+</ol>
+<p><code>Promise.allSettled</code> resolve element 函数的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<h5 id="256423-promiseallsettled-reject-element-functions"><a class="markdownIt-Anchor" href="#256423-promiseallsettled-reject-element-functions"></a> 25.6.4.2.3 Promise.allSettled Reject Element Functions</h5>
+<p><code>Promise.allSettled</code> reject element 函数是匿名内置函数，用来拒绝特定的 <code>Promise.allSettled</code> 元素。每个 <code>Promise.allSettled</code> reject element 函数有<code>[[Index]]</code>, <code>[[Values]]</code>, <code>[[Capabilities]]</code>, <code>[[RemainingElements]]</code>, 和 <code>[[AlreadyCalled]]</code>内部槽。</p>
+<p>当使用参数<code>x</code>调用<code>Promise.allSettled</code> reject element函数<code>F</code>时，执行以下步骤：</p>
+<ol>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>令<code>alreadyCalled</code>为<code>F.[[AlreadyCalled]]</code></li>
+<li>如果<code>alreadyCalled.[[Value]]</code>为<code>true</code>，返回<code>undefined</code></li>
+<li>将<code>alreadyCalled.[[Value]]</code>设为<code>true</code></li>
+<li>令<code>index</code>为<code>F.[[Index]]</code></li>
+<li>令<code>values</code>为<code>F.[[Values]]</code></li>
+<li>令<code>promiseCapability</code>为<code>F.[[Capabilities]]</code></li>
+<li>令<code>remainingElementsCount</code>为<code>F.[[RemainingElements]]</code></li>
+<li>令<code>obj</code>为! <code>OrdinaryObjectCreate(%Object.prototype%)</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(obj, &quot;status&quot;, &quot;rejected&quot;)</code></li>
+<li>执行! <code>CreateDataPropertyOrThrow(obj, &quot;reason&quot;, x)</code></li>
+<li>将<code>values[index]</code>设为<code>obj</code></li>
+<li>将<code>remainingElementsCount.[[Value]]</code>设为<code>remainingElementsCount.[[Value]] - 1</code></li>
+<li>如果<code>remainingElementsCount.[[Value]]</code>为<code>0</code>
+<ol>
+<li>令<code>valuesArray</code>为! <code>CreateArrayFromList(values)</code></li>
+<li>返回? <code>Call(promiseCapability.[[Resolve]], undefined, «valuesArray»)</code></li>
+</ol>
+</li>
+<li>返回<code>undefined</code></li>
+</ol>
+<p><code>Promise.allSettled</code> reject element 函数的<code>&quot;length&quot;</code>属性值为<code>1</code></p>
+<h4 id="25643-promiseprototype"><a class="markdownIt-Anchor" href="#25643-promiseprototype"></a> 25.6.4.3 Promise.prototype</h4>
+<p><code>Promise.prototype</code>的初始值是固有对象<code>%Promise.prototype%</code></p>
+<p>该属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false &#125;</code></p>
+<h4 id="25644-promiserace-iterable"><a class="markdownIt-Anchor" href="#25644-promiserace-iterable"></a> 25.6.4.4 Promise.race ( iterable )</h4>
+<p>race函数返回一个新的promise，该新promise以和传递的第一个确定的Promise相同的方式确定。当运行此算法时，它将传递的可迭代对象的所有元素解析为Promise。</p>
+<ol>
+<li>令<code>C</code>为<code>this</code>值</li>
+<li>令<code>promiseCapability</code>为? <code>NewPromiseCapability(C)</code></li>
+<li>令<code>iteratorRecord</code>为<code>GetIterator(iterable)</code></li>
+<li><code>IfAbruptRejectPromise(iteratorRecord, promiseCapability)</code></li>
+<li>令<code>result</code>为<code>PerformPromiseRace(iteratorRecord, C, promiseCapability)</code></li>
+<li>如果<code>result</code>是非常规完结，则：
+<ol>
+<li>如果<code>iteratorRecord.[[Done]]</code>为<code>false</code>，将<code>result</code>设为<code>IteratorClose(iterator,result)</code></li>
+<li><code>IfAbruptRejectPromise(result, promiseCapability)</code></li>
+</ol>
+</li>
+<li>返回<code>Completion(result)</code></li>
+</ol>
+<p>注1：如果参数<code>iterable</code>为空，或者iterable中的所有promise都不会被确定，则此方法返回的待定的promise将永远不会被确定。<br />
+注2：race 函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数。它也期望它的<code>this</code>值提供<code>resolve</code>方法。</p>
+<h5 id="256441-运行时语义-performpromiserace-iteratorrecord-constructor-resultcapability"><a class="markdownIt-Anchor" href="#256441-运行时语义-performpromiserace-iteratorrecord-constructor-resultcapability"></a> 25.6.4.4.1 运行时语义: PerformPromiseRace ( iteratorRecord, constructor, resultCapability )</h5>
+<p>当使用参数<code>iteratorRecord</code>，<code>constructor</code>和<code>resultCapability</code>调用抽象操作<code>PerformPromiseRace</code>时，执行以下步骤：</p>
+<ol>
+<li>断言：<code>IsConstructor(constructor)</code>为<code>true</code></li>
+<li>断言：<code>resultCapability</code>是<code>PromiseCapability</code>记录</li>
+<li>令<code>promiseResolve</code>为? <code>Get(constructor, &quot;resolve&quot;)</code></li>
+<li>如果! <code>IsCallable(promiseResolve)</code>为<code>false</code>，抛出 TypeError 异常</li>
+<li>重复：
+<ol>
+<li>令<code>next</code>为<code>IteratorStep(iteratorRecord)</code></li>
+<li>如果<code>next</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
+<li><code>ReturnIfAbrupt(next)</code></li>
+<li>如果<code>next</code>为<code>false</code>，则：
+<ol>
+<li>将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
+<li>返回<code>resultCapability.[[Promise]]</code></li>
+</ol>
+</li>
+<li>令<code>nextValue</code>为<code>IteratorValue(next)</code></li>
+<li>如果<code>nextValue</code>是非常规完结，将<code>iteratorRecord.[[Done]]</code>设为<code>true</code></li>
+<li><code>ReturnIfAbrupt(nextValue)</code></li>
+<li>令<code>nextPromise</code>为? <code>Call(promiseResolve, constructor, « nextValue »)</code></li>
+<li>执行? <code>Invoke(nextPromise, &quot;then&quot;, « resultCapability.[[Resolve]], resultCapability.[[Reject]] »)</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="25645-promisereject-r"><a class="markdownIt-Anchor" href="#25645-promisereject-r"></a> 25.6.4.5 Promise.reject ( r )</h4>
 <p>reject函数返回一个新的promise，该promise被传递的参数拒绝。</p>
 <ol>
 <li>令<code>C</code>为<code>this</code>值</li>
-<li>如果<code>Type(C)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
-<li>令<code>promiseCapability</code>为<code>NewPromiseCapability(C)</code></li>
-<li><code>ReturnIfAbrupt(promiseCapability)</code></li>
-<li>令<code>rejectResult</code>为<code>Call(promiseCapability.[[Reject]], undefined, «r»)</code></li>
-<li><code>ReturnIfAbrupt(rejectResult)</code></li>
+<li>令<code>promiseCapability</code>为? <code>NewPromiseCapability(C)</code></li>
+<li>执行<code>Call(promiseCapability.[[Reject]], undefined, «r»)</code></li>
 <li>返回<code>promiseCapability.[[Promise]]</code></li>
 </ol>
-<p>注：reject函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数</p>
-<h4 id="25445-promiseresolve-x"><a class="markdownIt-Anchor" href="#25445-promiseresolve-x"></a> 25.4.4.5 Promise.resolve ( x )</h4>
-<p>resolve函数返回使用传递的参数解决的新promise，或者，如果参数是此构造函数产生的promise，则返回参数本身。</p>
+<p>此函数是固有对象<code>%Promise_reject%</code></p>
+<p>注：<code>reject</code> 函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数</p>
+<h4 id="25646-promiseresolve-x"><a class="markdownIt-Anchor" href="#25646-promiseresolve-x"></a> 25.6.4.6 Promise.resolve ( x )</h4>
+<p><code>resolve</code>函数要么返回一个使用传递的参数解决的新Promise，要么返回参数本身（如果参数是由这个构造函数产生的Promise）</p>
 <ol>
 <li>令<code>C</code>为<code>this</code>值</li>
 <li>如果<code>Type(C)</code>不为<code>Object</code>，抛出 <code>TypeError</code> 异常</li>
+<li>返回? <code>PromiseResolve(C, x)</code></li>
+</ol>
+<p>此函数是固有对象<code>%Promise_resolve%</code></p>
+<p>注：<code>resolve</code> 函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数</p>
+<h5 id="256461-promiseresolve-c-x"><a class="markdownIt-Anchor" href="#256461-promiseresolve-c-x"></a> 25.6.4.6.1 PromiseResolve ( C, x )</h5>
+<p>抽象操作<code>PromiseResolve</code>，接受一个构造函数<code>C</code>、一个值<code>x</code>，返回一个使用<code>x</code>解决的新Promise</p>
+<ol>
+<li>断言：<code>Type(C)</code>是<code>Object</code></li>
 <li>如果<code>IsPromise(x)</code>为<code>true</code>：
 <ol>
-<li>令<code>xConstructor</code>为<code>Get(x, &quot;constructor&quot;)</code></li>
-<li><code>ReturnIfAbrupt(xConstructor)</code></li>
+<li>令<code>xConstructor</code>为? <code>Get(x, &quot;constructor&quot;)</code></li>
 <li>如果<code>SameValue(xConstructor, C)</code>为<code>true</code>，返回<code>x</code></li>
 </ol>
 </li>
-<li>令<code>promiseCapability</code>为<code>NewPromiseCapability(C)</code></li>
-<li><code>ReturnIfAbrupt(promiseCapability)</code></li>
-<li>令<code>resolveResult</code>为<code>Call(promiseCapability.[[Resolve]], undefined, «x»)</code></li>
-<li><code>ReturnIfAbrupt(resolveResult)</code></li>
+<li>令<code>promiseCapability</code>为? <code>NewPromiseCapability(C)</code></li>
+<li>执行? <code>Call(promiseCapability.[[Resolve]], undefined, «x»)</code></li>
 <li>返回<code>promiseCapability.[[Promise]]</code></li>
 </ol>
-<p>注：resolve 函数期望其<code>this</code>值是一个支持Promise构造函数的参数约定的构造函数</p>
-<h4 id="25446-get-promise-species"><a class="markdownIt-Anchor" href="#25446-get-promise-species"></a> 25.4.4.6 get Promise [ @@species ]</h4>
+<h4 id="25647-get-promise-species"><a class="markdownIt-Anchor" href="#25647-get-promise-species"></a> 25.6.4.7 get Promise [ @@species ]</h4>
 <p><code>Promise[@@species]</code>是一个访问器属性，其set访问器函数为<code>undefined</code>，它的get访问器函数执行以下步骤：</p>
 <ol>
 <li>返回<code>this</code>值</li>
 </ol>
 <p>此函数的<code>name</code>属性值为<code>&quot;get [Symbol.species]&quot;</code></p>
 <p>注：Promise原型方法通常使用其<code>this</code>对象的构造函数来创建派生对象。 但是，子类构造函数可以通过重新定义其<code>@@species</code>属性来覆盖该默认行为。</p>
-<h3 id="2545-promise原型对象的属性"><a class="markdownIt-Anchor" href="#2545-promise原型对象的属性"></a> 25.4.5 Promise原型对象的属性</h3>
-<p>Promise原型对象是固有对象<code>%PromisePrototype%</code>。Promise原型对象的<code>[[Prototype]]</code>内部槽的值是固有对象<code>%ObjectPrototype%</code> (19.1.3)。Promise原型对象是一个普通对象。 它没有[[PromiseState]]内部槽或Promise实例的任何其他内部槽。</p>
-<h4 id="25451-promiseprototypecatch-onrejected"><a class="markdownIt-Anchor" href="#25451-promiseprototypecatch-onrejected"></a> 25.4.5.1 Promise.prototype.catch ( onRejected )</h4>
+<h3 id="2565-promise原型对象的属性"><a class="markdownIt-Anchor" href="#2565-promise原型对象的属性"></a> 25.6.5 Promise原型对象的属性</h3>
+<p>Promise原型对象：</p>
+<ul>
+<li>是固有对象<code>%PromisePrototype%</code></li>
+<li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%Object.prototype%</code></li>
+<li>是一个普通对象</li>
+<li>它没有<code>[[PromiseState]]</code>内部槽或Promise实例的任何其他内部槽。</li>
+</ul>
+<h4 id="25651-promiseprototypecatch-onrejected"><a class="markdownIt-Anchor" href="#25651-promiseprototypecatch-onrejected"></a> 25.6.5.1 Promise.prototype.catch ( onRejected )</h4>
 <p>当使用参数<code>onRejected</code>调用<code>catch</code>方法时，执行以下步骤：</p>
 <ol>
 <li>令<code>promise</code>为<code>this</code>值</li>
-<li>返回<code>Invoke(promise, &quot;then&quot;, «‍undefined, onRejected»)</code></li>
+<li>返回? <code>Invoke(promise, &quot;then&quot;, «‍undefined, onRejected»)</code></li>
 </ol>
-<h4 id="25452-promiseprototypeconstructor"><a class="markdownIt-Anchor" href="#25452-promiseprototypeconstructor"></a> 25.4.5.2 Promise.prototype.constructor</h4>
-<p><code>Promise.prototype.constructor</code>的初始值是固有对象<code>%Promise%</code></p>
-<h4 id="25453-promiseprototypethen-onfulfilled-onrejected"><a class="markdownIt-Anchor" href="#25453-promiseprototypethen-onfulfilled-onrejected"></a> 25.4.5.3 Promise.prototype.then ( onFulfilled , onRejected )</h4>
+<h4 id="25652-promiseprototypeconstructor"><a class="markdownIt-Anchor" href="#25652-promiseprototypeconstructor"></a> 25.6.5.2 Promise.prototype.constructor</h4>
+<p><code>Promise.prototype.constructor</code>的初始值是<code>%Promise%</code></p>
+<h4 id="25653-promiseprototypefinally-onfinally"><a class="markdownIt-Anchor" href="#25653-promiseprototypefinally-onfinally"></a> 25.6.5.3 Promise.prototype.finally ( onFinally )</h4>
+<p>当使用参数<code>onFinally</code>调用<code>finally</code>方法时，执行以下步骤：</p>
+<ol>
+<li>令<code>promise</code>为<code>this</code>值</li>
+<li>如果<code>Type(promise)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
+<li>令<code>C</code>为? <code>SpeciesConstructor(promise, %Promise%)</code></li>
+<li>断言：<code>IsConstructor(C)</code>为<code>true</code></li>
+<li>如果<code>IsCallable(onFinally)</code>为<code>false</code>，则：
+<ol>
+<li>令<code>thenFinally</code>为<code>onFinally</code></li>
+<li>令<code>catchFinally</code>为<code>onFinally</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>stepsThenFinally</code>为 Then Finally Functions 中定义的算法步骤</li>
+<li>令<code>thenFinally</code>为! <code>CreateBuiltinFunction(stepsThenFinally, « [[Constructor]], [[OnFinally]] »)</code></li>
+<li>将<code>thenFinally.[[Constructor]]</code>设为<code>C</code></li>
+<li>将<code>thenFinally.[[OnFinally]]</code>设为<code>onFinally</code></li>
+<li>令<code>stepsCatchFinally</code>为 Catch Finally Functions 中定义的算法步骤</li>
+<li>令<code>catchFinally</code>为! <code>CreateBuiltinFunction(stepsCatchFinally, « [[Constructor]], [[OnFinally]] »)</code></li>
+<li>将<code>catchFinally.[[Constructor]]</code>设为<code>C</code></li>
+<li>将<code>catchFinally.[[OnFinally]]</code>设为<code>onFinally</code></li>
+</ol>
+</li>
+<li>返回? <code>Invoke(promise, &quot;then&quot;, « thenFinally, catchFinally »)</code></li>
+</ol>
+<h5 id="256531-then-finally-functions"><a class="markdownIt-Anchor" href="#256531-then-finally-functions"></a> 25.6.5.3.1 Then Finally Functions</h5>
+<p>Then Finally 函数是具有<code>[[Constructor]]</code>内部槽和<code>[[OnFinally]]</code>内部槽的匿名内置函数。<code>[[Constructor]]</code>内部槽的值是一个类Promise构造函数对象，<code>[[OnFinally]]</code>内部槽的值是一个函数对象。</p>
+<p>当使用参数<code>value</code>调用 Then Finally 函数时，执行以下步骤：</p>
+<ol>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>令<code>onFinally</code>为<code>F.[[OnFinally]]</code></li>
+<li>断言：<code>IsCallable(onFinally)</code>为<code>true</code></li>
+<li>令<code>result</code>为? <code>Call(onFinally, undefined)</code></li>
+<li>令<code>C</code>为<code>F.[[Constructor]]</code></li>
+<li>断言：<code>IsConstructor(C)</code>为<code>true</code></li>
+<li>令<code>promise</code>为? <code>PromiseResolve(C, result)</code></li>
+<li>令<code>valueThunk</code>等同于一个返回<code>value</code>的函数</li>
+<li>返回? <code>Invoke(promise, &quot;then&quot;, « valueThunk »)</code></li>
+</ol>
+<p>Then Finally函数的<code>&quot;length&quot;</code>属性为<code>1</code></p>
+<h5 id="256532-catch-finally-functions"><a class="markdownIt-Anchor" href="#256532-catch-finally-functions"></a> 25.6.5.3.2 Catch Finally Functions</h5>
+<p>Catch Finally 函数是具有<code>[[Constructor]]</code>内部槽和<code>[[OnFinally]]</code>内部槽的匿名内置函数。<code>[[Constructor]]</code>内部槽的值是一个类Promise构造函数对象，<code>[[OnFinally]]</code>内部槽的值是一个函数对象。</p>
+<p>当使用参数<code>reason</code>调用 Catch Finally 函数时，执行以下步骤：</p>
+<ol>
+<li>令<code>F</code>为当前激活的函数对象</li>
+<li>令<code>onFinally</code>为<code>F.[[OnFinally]]</code></li>
+<li>断言：<code>IsCallable(onFinally)</code>为<code>true</code></li>
+<li>令<code>result</code>为? <code>Call(onFinally, undefined)</code></li>
+<li>令<code>C</code>为<code>F.[[Constructor]]</code></li>
+<li>断言：<code>IsConstructor(C)</code>为<code>true</code></li>
+<li>令<code>promise</code>为? <code>PromiseResolve(C, result)</code></li>
+<li>令<code>thrower</code>等同于一个抛出<code>reason</code>的函数</li>
+<li>返回? <code>Invoke(promise, &quot;then&quot;, « thrower »)</code></li>
+</ol>
+<p>Catch Finally函数的<code>&quot;length&quot;</code>属性为<code>1</code></p>
+<h4 id="25654-promiseprototypethen-onfulfilled-onrejected"><a class="markdownIt-Anchor" href="#25654-promiseprototypethen-onfulfilled-onrejected"></a> 25.6.5.4 Promise.prototype.then ( onFulfilled , onRejected )</h4>
 <p>当使用参数<code>onFulfilled</code>和<code>onRejected</code>调用<code>then</code>方法时，执行以下步骤：</p>
 <ol>
 <li>令<code>promise</code>为<code>this</code>值</li>
 <li>如果<code>IsPromise(promise)</code>为<code>false</code>，抛出 TypeError 异常</li>
-<li>令 <code>C</code> 为<code>SpeciesConstructor(promise, %Promise%)</code></li>
-<li><code>ReturnIfAbrupt(C)</code></li>
-<li>令<code>resultCapability</code>为<code>NewPromiseCapability(C)</code></li>
-<li><code>ReturnIfAbrupt(resultCapability)</code></li>
+<li>令 <code>C</code> 为? <code>SpeciesConstructor(promise, %Promise%)</code></li>
+<li>令<code>resultCapability</code>为? <code>NewPromiseCapability(C)</code></li>
 <li>返回<code>PerformPromiseThen(promise, onFulfilled, onRejected, resultCapability)</code></li>
 </ol>
-<h5 id="254531-performpromisethen-promise-onfulfilled-onrejected-resultcapability"><a class="markdownIt-Anchor" href="#254531-performpromisethen-promise-onfulfilled-onrejected-resultcapability"></a> 25.4.5.3.1 PerformPromiseThen ( promise, onFulfilled, onRejected, resultCapability )</h5>
-<p>抽象操作<code>PerformPromiseThen</code>使用<code>onFulfilled</code>和<code>onRejected</code>作为确定操作在<code>promise</code>上执行“ then”操作。 结果是<code>resultCapability</code>的promise。</p>
+<p>此函数是固有对象<code>%PromiseProto_then%</code></p>
+<h5 id="256541-performpromisethen-promise-onfulfilled-onrejected-resultcapability"><a class="markdownIt-Anchor" href="#256541-performpromisethen-promise-onfulfilled-onrejected-resultcapability"></a> 25.6.5.4.1 PerformPromiseThen ( promise, onFulfilled, onRejected, resultCapability )</h5>
+<p>抽象操作<code>PerformPromiseThen</code>使用<code>onFulfilled</code>和<code>onRejected</code>作为解决动作在<code>promise</code>上执行“ then”操作。如果传递了<code>resultCapability</code>，那么结果将通过更新<code>resultCapability</code>的Promise来存储（如果没有传递，那么PerformPromiseThen就会被一个规范内部的操作所调用，其结果并不重要）</p>
 <ol>
 <li>断言：<code>IsPromise(promise)</code>为<code>true</code></li>
+<li>如果<code>resultCapability</code>存在，则：
+<ol>
 <li>断言：<code>resultCapability</code>是<code>PromiseCapability</code>记录</li>
-<li>如果<code>IsCallable(onFulfilled)</code>为<code>false</code>，则令<code>onFulfilled</code>为<code>&quot;Identity&quot;</code></li>
-<li>如果<code>IsCallable(onRejected)</code>为<code>false</code>，则令<code>onRejected</code>为<code>&quot;Thrower&quot;</code></li>
-<li>令<code>fulfillReaction</code>为<code>PromiseReaction &#123; [[Capabilities]]: resultCapability, [[Handler]]: onFulfilled &#125;</code></li>
-<li>令<code>rejectReaction</code>为<code>PromiseReaction &#123; [[Capabilities]]: resultCapability, [[Handler]]: onRejected&#125;</code></li>
-<li>如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;pending&quot;</code>：
-<ol>
-<li>将<code>fulfillReaction</code>添加到<code>promise</code>的<code>[[PromiseFulfillReactions]]</code>内部槽（值为一个列表）的最后一个元素</li>
-<li>将<code>rejectReaction</code>添加到<code>promise</code>的<code>[[PromiseRejectReactions]]</code>内部槽（值为一个列表）的最后一个元素</li>
 </ol>
 </li>
-<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;fulfilled&quot;</code>，则
+<li>否则：
 <ol>
-<li>令<code>value</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值</li>
-<li>执行<code>EnqueueJob(&quot;PromiseJobs&quot;, PromiseReactionJob, «‍fulfillReaction, value»)</code></li>
+<li>将<code>resultCapability</code>设为<code>undefined</code></li>
 </ol>
 </li>
-<li>否则如果<code>promise</code>的<code>[[PromiseState]]</code>内部槽的值为<code>&quot;rejected&quot;</code>，则
+<li>如果<code>IsCallable(onFulfilled)</code>为<code>false</code>，则令<code>onFulfilled</code>为<code>&quot;undefined&quot;</code></li>
+<li>如果<code>IsCallable(onRejected)</code>为<code>false</code>，则令<code>onRejected</code>为<code>&quot;undefined&quot;</code></li>
+<li>令<code>fulfillReaction</code>为<code>PromiseReaction &#123; [[Capability]]: resultCapability, [[Type]]: Fulfill, [[Handler]]: onFulfilled &#125;</code></li>
+<li>令<code>rejectReaction</code>为<code>PromiseReaction &#123; [[Capability]]: resultCapability, [[Type]]: Reject, [[Handler]]: onRejected &#125;</code></li>
+<li>如果<code>promise.[[PromiseState]]</code>的值为<code>pending</code>，则：
 <ol>
-<li>令<code>reason</code>为<code>promise</code>的<code>[[PromiseResult]]</code>内部槽的值</li>
-<li>执行<code>EnqueueJob(&quot;PromiseJobs&quot;, PromiseReactionJob, «‍rejectReaction, reason»)</code></li>
+<li>将<code>fulfillReaction</code>作为最后一个元素添加到列表<code>promise.[[PromiseFulfillReactions]]</code></li>
+<li>将<code>rejectReaction</code>作为最后一个元素添加到列表<code>promise.[[PromiseRejectReactions]]</code></li>
 </ol>
 </li>
-<li>返回<code>resultCapability.[[Promise]]</code></li>
+<li>否则如果<code>promise.[[PromiseState]]</code>的值为<code>fulfilled</code>，则
+<ol>
+<li>令<code>value</code>为<code>promise.[[PromiseResult]]</code></li>
+<li>令<code>fulfillJob</code>为<code>NewPromiseReactionJob(fulfillReaction, value)</code></li>
+<li>执行<code>HostEnqueuePromiseJob(fulfillJob.[[Job]], fulfillJob.[[Realm]])</code></li>
 </ol>
-<h4 id="25454-promiseprototype-tostringtag"><a class="markdownIt-Anchor" href="#25454-promiseprototype-tostringtag"></a> 25.4.5.4 Promise.prototype [ @@toStringTag ]</h4>
-<p><code>@@toStringTag</code>属性的初始值为字符串<code>&quot;Promise&quot;</code><br />
-此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
-<h3 id="2546-promise实例的属性"><a class="markdownIt-Anchor" href="#2546-promise实例的属性"></a> 25.4.6 Promise实例的属性</h3>
-<p>Promise实例是从Promise原型对象（固有对象<code>%PromisePrototype%</code>）继承属性的普通对象。 最初使用表59中描述的内部槽创建Promise实例。</p>
-<p>表59：Promise实例的内部槽</p>
+</li>
+<li>否则：
+<ol>
+<li>断言：<code>promise.[[PromiseState]]</code>的值为<code>rejected</code></li>
+<li>令<code>reason</code>为<code>promise.[[PromiseResult]]</code></li>
+<li>如果<code>promise.[[PromiseIsHandled]]</code>为<code>false</code>，执行<code>HostPromiseRejectionTracker(promise, &quot;handle&quot;)</code></li>
+<li>令<code>rejectJob</code>为<code>NewPromiseReactionJob(rejectReaction, reason)</code></li>
+<li>执行<code>HostEnqueuePromiseJob(rejectJob.[[Job]], rejectJob.[[Realm]])</code></li>
+</ol>
+</li>
+<li>如果<code>resultCapability</code>为<code>undefined</code>，则返回<code>undefined</code></li>
+<li>否则返回<code>resultCapability.[[Promise]]</code></li>
+</ol>
+<h4 id="25655-promiseprototype-tostringtag"><a class="markdownIt-Anchor" href="#25655-promiseprototype-tostringtag"></a> 25.6.5.5 Promise.prototype [ @@toStringTag ]</h4>
+<p><code>@@toStringTag</code>属性的初始值为字符串<code>&quot;Promise&quot;</code></p>
+<p>此属性具有特性<code>&#123; [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true &#125;</code></p>
+<h3 id="2566-promise实例的属性"><a class="markdownIt-Anchor" href="#2566-promise实例的属性"></a> 25.6.6 Promise实例的属性</h3>
+<p>Promise实例是从Promise原型对象（固有对象<code>%Promise.prototype%</code>）继承属性的普通对象。 Promise实例最初是以表78中描述的内部槽创建的。</p>
+<p>表78：Promise实例的内部槽</p>
 <table>
 <thead>
 <tr>
@@ -644,19 +1113,23 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <tbody>
 <tr>
 <td style="text-align:left">[[PromiseState]]</td>
-<td style="text-align:left">一个字符串值，用于控制promise将如何响应其then方法的传入调用。可能的值为<code>&quot;pending&quot;</code>、<code>&quot;fulfilled&quot;</code>和<code>&quot;rejected&quot;</code></td>
+<td style="text-align:left">可能的值为<code>pending</code>、<code>fulfilled</code>和<code>rejected</code>其中之一，用于控制promise将如何响应其将来的then方法的调用。</td>
 </tr>
 <tr>
 <td style="text-align:left">[[PromiseResult]]</td>
-<td style="text-align:left">promise的确定或拒绝值（如果有）。只在<code>[[PromiseState]]</code>不为<code>pending</code>时有意义。</td>
+<td style="text-align:left">promise的兑现或拒绝值（如果有）。只在<code>[[PromiseState]]</code>不为<code>pending</code>时有意义。</td>
 </tr>
 <tr>
 <td style="text-align:left">[[PromiseFulfillReactions]]</td>
-<td style="text-align:left">一个<code>PromiseReaction</code>记录列表，当promise从<code>&quot;pending&quot;</code>状态转换为<code>&quot;fulfilled&quot;</code>状态时进行处理</td>
+<td style="text-align:left">一个<code>PromiseReaction</code>记录列表，当promise从<code>pending</code>状态转换为<code>fulfilled</code>状态时进行处理</td>
 </tr>
 <tr>
 <td style="text-align:left">[[PromiseRejectReactions]]</td>
-<td style="text-align:left">一个<code>PromiseReaction</code>记录列表，当promise从<code>&quot;pending&quot;</code>状态转换为<code>&quot;rejected&quot;</code>状态时进行处理</td>
+<td style="text-align:left">一个<code>PromiseReaction</code>记录列表，当promise从<code>pending</code>状态转换为<code>rejected</code>状态时进行处理</td>
+</tr>
+<tr>
+<td style="text-align:left">[[PromiseIsHandled]]</td>
+<td style="text-align:left">一个布尔值，表示promise是否曾经有一个兑现或拒绝处理程序，用于跟踪未处理的拒绝</td>
 </tr>
 </tbody>
 </table>
