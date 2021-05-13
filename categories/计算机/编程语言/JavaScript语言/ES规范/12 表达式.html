@@ -20,25 +20,28 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 12 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#121-%E6%A0%87%E8%AF%86%E7%AC%A6identifiers"><span class="toc-number">1.1.</span> <span class="toc-text"> 12.1 标识符(Identifiers)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1211-%E9%9D%99%E6%80%81%E8%AF%AD%E4%B9%89%E6%97%A9%E6%9C%9F%E9%94%99%E8%AF%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 12.1.1 静态语义:早期错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1215-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E7%BB%91%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 12.1.5 运行时语义:绑定初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1216-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 12.1.6 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#122-%E5%9F%BA%E6%9C%AC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 12.2 基本表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1222-this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 12.2.2 this关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12221-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 12.2.2.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1223-%E6%A0%87%E8%AF%86%E7%AC%A6%E5%BC%95%E7%94%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 12.2.3 标识符引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1224-%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 12.2.4 字面值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1225-%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 12.2.5 数组初始化器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12251-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-arrayaccumulation"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 12.2.5.1 运行时语义: ArrayAccumulation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12252-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 12.2.5.2 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1226-%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 12.2.6 对象初始化器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12268-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.5.1.</span> <span class="toc-text"> 12.2.6.8 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12269-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89propertydefinitionevaluation"><span class="toc-number">1.2.5.2.</span> <span class="toc-text"> 12.2.6.9 运行时语义:PropertyDefinitionEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1229-%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 12.2.9 模板字面值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12291-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-templatestrings"><span class="toc-number">1.2.6.1.</span> <span class="toc-text"> 12.2.9.1 运行时语义: TemplateStrings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12292-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-argumentlistevaluation"><span class="toc-number">1.2.6.2.</span> <span class="toc-text"> 12.2.9.2 运行时语义: ArgumentListEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12293-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-gettemplateobject-templateliteral"><span class="toc-number">1.2.6.3.</span> <span class="toc-text"> 12.2.9.3 运行时语义: GetTemplateObject ( templateLiteral )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#123-%E5%B7%A6%E4%BE%A7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 12.3 左侧表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1232-%E5%B1%9E%E6%80%A7%E8%AE%BF%E9%97%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 12.3.2 属性访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1233-new%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 12.3.3 new操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12331-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 12.3.3.1 运行时语义:计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#123311-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89evaluatenewconstructproduction-arguments"><span class="toc-number">1.3.2.1.1.</span> <span class="toc-text"> 12.3.3.1.1 运行时语义:EvaluateNew(constructProduction, arguments)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1234-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 12.3.4 函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12341-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> 12.3.4.1 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12343-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89evaluatedirectcall-func-thisvalue-arguments-tailposition"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> 12.3.4.3 运行时语义:EvaluateDirectCall( func, thisValue, arguments, tailPosition )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1235-super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 12.3.5 super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12351-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.4.1.</span> <span class="toc-text"> 12.3.5.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1236-%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 12.3.6 参数列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12361-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89argumentlistevaluation"><span class="toc-number">1.3.5.1.</span> <span class="toc-text"> 12.3.6.1 运行时语义:ArgumentListEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1239-%E5%8F%AF%E9%80%89%E9%93%BE"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 12.3.9 可选链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13391-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.6.1.</span> <span class="toc-text"> 13.3.9.1 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13392-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89chainevaluation"><span class="toc-number">1.3.6.2.</span> <span class="toc-text"> 13.3.9.2 运行时语义:ChainEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12311-%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.3.7.</span> <span class="toc-text"> 12.3.11 标签模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#123111-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.7.1.</span> <span class="toc-text"> 12.3.11.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12312-meta%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.8.</span> <span class="toc-text"> 12.3.12 Meta属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#123121-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.8.1.</span> <span class="toc-text"> 12.3.12.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#124-%E6%9B%B4%E6%96%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text"> 12.4 更新表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1244-%E5%90%8E%E7%BC%80%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 12.4.4 后缀递增运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12441-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 12.4.4.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#125-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.</span> <span class="toc-text"> 12.5 一元运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1254-delete%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 12.5.4 delete运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12542-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.1.1.</span> <span class="toc-text"> 12.5.4.2 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1255-void%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 12.5.5 void运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12551-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.2.1.</span> <span class="toc-text"> 12.5.5.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1256-typeof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 12.5.6 typeof 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12561-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.3.1.</span> <span class="toc-text"> 12.5.6.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1257-%E5%89%8D%E7%BC%80%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.4.</span> <span class="toc-text"> 12.5.7 前缀递增运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12571-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.4.1.</span> <span class="toc-text"> 12.5.7.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1259-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.5.</span> <span class="toc-text"> 12.5.9 一元+运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12591-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.5.1.</span> <span class="toc-text"> 12.5.9.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12510-%E4%B8%80%E5%85%83-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.6.</span> <span class="toc-text"> 12.5.10 一元-运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#125101-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.6.1.</span> <span class="toc-text"> 12.5.10.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12511-%E6%8C%89%E4%BD%8D%E5%8F%96%E5%8F%8D%E8%BF%90%E7%AE%97~"><span class="toc-number">1.5.7.</span> <span class="toc-text"> 12.5.11 按位取反运算(~)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#125111-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.7.1.</span> <span class="toc-text"> 12.5.11.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12512-%E9%80%BB%E8%BE%91%E9%9D%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.8.</span> <span class="toc-text"> 12.5.12 逻辑非运算符(!)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#125121-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.8.1.</span> <span class="toc-text"> 12.5.12.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#126-%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.6.</span> <span class="toc-text"> 12.6 指数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1263-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 12.6.3 运行时语义:计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12734-%E5%BA%94%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.6.1.1.</span> <span class="toc-text"> 12.7.3.4 应用**运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#126-%E4%B9%98%E6%80%A7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text"> 12.6 乘性运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1263-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97-2"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 12.6.3 运行时语义:计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12631-%E5%BA%94%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.1.</span> <span class="toc-text"> 12.6.3.1 应用*运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12632-%E5%BA%94%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.2.</span> <span class="toc-text"> 12.6.3.2 应用&#x2F;运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12633-%E5%BA%94%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.1.3.</span> <span class="toc-text"> 12.6.3.3 应用%运算符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#127-%E5%8A%A0%E6%80%A7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.</span> <span class="toc-text"> 12.7 加性运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1273-%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 12.7.3 加法运算符(+)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12731-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.8.1.1.</span> <span class="toc-text"> 12.7.3.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1274-%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6-"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 12.7.4 减法运算符(-)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12741-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.8.2.1.</span> <span class="toc-text"> 12.7.4.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1275-%E5%AF%B9%E6%95%B0%E5%AD%97%E5%BA%94%E7%94%A8%E5%8A%A0%E6%80%A7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 12.7.5 对数字应用加性运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#128-%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text"> 12.8 移位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1283-%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.1.</span> <span class="toc-text"> 12.8.3 左移运算符(&lt;&lt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12831-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.1.1.</span> <span class="toc-text"> 12.8.3.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1284-%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.2.</span> <span class="toc-text"> 12.8.4 有符号右移运算符(&gt;&gt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12841-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.2.1.</span> <span class="toc-text"> 12.8.4.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1285-%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.3.</span> <span class="toc-text"> 12.8.5 无符号右移运算符(&gt;&gt;&gt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12851-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.3.1.</span> <span class="toc-text"> 12.8.5.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#129-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text"> 12.9 关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1293-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.10.1.</span> <span class="toc-text"> 12.9.3 运行时语义: 计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1294-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-instanceofoperatoro-c"><span class="toc-number">1.10.2.</span> <span class="toc-text"> 12.9.4 运行时语义: InstanceofOperator(O, C)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1210-%E7%9B%B8%E7%AD%89%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.</span> <span class="toc-text"> 12.10 相等运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12103-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.11.1.</span> <span class="toc-text"> 12.10.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1211-%E4%BA%8C%E5%85%83%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.12.</span> <span class="toc-text"> 12.11 二元位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12113-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.12.1.</span> <span class="toc-text"> 12.11.3 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1212-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.13.</span> <span class="toc-text"> 12.12 二元逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12123-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.13.1.</span> <span class="toc-text"> 12.12.3 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1213-%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.14.</span> <span class="toc-text"> 12.13 条件运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12133-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.14.1.</span> <span class="toc-text"> 12.13.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1214-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.15.</span> <span class="toc-text"> 12.14 赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12144-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.15.1.</span> <span class="toc-text"> 12.14.4 运行时语义:计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12155-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.15.2.</span> <span class="toc-text"> 12.15.5 解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#121552-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89destructuringassignmentevaluation"><span class="toc-number">1.15.2.1.</span> <span class="toc-text"> 12.15.5.2 运行时语义:DestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121553-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-propertydestructuringassignmentevaluation"><span class="toc-number">1.15.2.2.</span> <span class="toc-text"> 12.15.5.3 运行时语义: PropertyDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121554-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-restdestructuringassignmentevaluation"><span class="toc-number">1.15.2.3.</span> <span class="toc-text"> 12.15.5.4 运行时语义: RestDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121555-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89iteratordestructuringassignmentevaluation"><span class="toc-number">1.15.2.4.</span> <span class="toc-text"> 12.15.5.5 运行时语义:IteratorDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121456-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89keyeddestructuringassignmentevaluation"><span class="toc-number">1.15.2.5.</span> <span class="toc-text"> 12.14.5.6 运行时语义:KeyedDestructuringAssignmentEvaluation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1215-%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.16.</span> <span class="toc-text"> 12.15 逗号运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12153-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.16.1.</span> <span class="toc-text"> 12.15.3 运行时语义:计算</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">183</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">12 表达式</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-09</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="12-表达式"><a class="markdownIt-Anchor" href="#12-表达式"></a> 12 表达式</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text"> 12 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#121-%E6%A0%87%E8%AF%86%E7%AC%A6identifiers"><span class="toc-number">1.1.</span> <span class="toc-text"> 12.1 标识符(Identifiers)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1215-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E7%BB%91%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 12.1.5 运行时语义:绑定初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1216-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 12.1.6 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#122-%E5%9F%BA%E6%9C%AC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 12.2 基本表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1222-this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 12.2.2 this关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12221-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 12.2.2.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1223-%E6%A0%87%E8%AF%86%E7%AC%A6%E5%BC%95%E7%94%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 12.2.3 标识符引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1224-%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 12.2.4 字面值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1225-%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 12.2.5 数组初始化器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12251-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-arrayaccumulation"><span class="toc-number">1.2.4.1.</span> <span class="toc-text"> 12.2.5.1 运行时语义: ArrayAccumulation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12252-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.4.2.</span> <span class="toc-text"> 12.2.5.2 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1226-%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 12.2.6 对象初始化器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12268-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.5.1.</span> <span class="toc-text"> 12.2.6.8 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12269-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89propertydefinitionevaluation"><span class="toc-number">1.2.5.2.</span> <span class="toc-text"> 12.2.6.9 运行时语义:PropertyDefinitionEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1229-%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E5%80%BC"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 12.2.9 模板字面值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12291-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-templatestrings"><span class="toc-number">1.2.6.1.</span> <span class="toc-text"> 12.2.9.1 运行时语义: TemplateStrings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12292-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-argumentlistevaluation"><span class="toc-number">1.2.6.2.</span> <span class="toc-text"> 12.2.9.2 运行时语义: ArgumentListEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12293-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-gettemplateobject-templateliteral"><span class="toc-number">1.2.6.3.</span> <span class="toc-text"> 12.2.9.3 运行时语义: GetTemplateObject ( templateLiteral )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#123-%E5%B7%A6%E4%BE%A7%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 12.3 左侧表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1232-%E5%B1%9E%E6%80%A7%E8%AE%BF%E9%97%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 12.3.2 属性访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1235-new%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 12.3.5 new操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12351-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 12.3.5.1 运行时语义:计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#123511-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89evaluatenewconstructproduction-arguments"><span class="toc-number">1.3.2.1.1.</span> <span class="toc-text"> 12.3.5.1.1 运行时语义:EvaluateNew(constructProduction, arguments)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1234-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 12.3.4 函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12341-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.3.1.</span> <span class="toc-text"> 12.3.4.1 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12343-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89evaluatedirectcall-func-thisvalue-arguments-tailposition"><span class="toc-number">1.3.3.2.</span> <span class="toc-text"> 12.3.4.3 运行时语义:EvaluateDirectCall( func, thisValue, arguments, tailPosition )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1235-super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 12.3.5 super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12351-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97-2"><span class="toc-number">1.3.4.1.</span> <span class="toc-text"> 12.3.5.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1236-%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 12.3.6 参数列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12361-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89argumentlistevaluation"><span class="toc-number">1.3.5.1.</span> <span class="toc-text"> 12.3.6.1 运行时语义:ArgumentListEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1239-%E5%8F%AF%E9%80%89%E9%93%BE"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 12.3.9 可选链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13391-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.6.1.</span> <span class="toc-text"> 13.3.9.1 运行时语义:计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13392-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89chainevaluation"><span class="toc-number">1.3.6.2.</span> <span class="toc-text"> 13.3.9.2 运行时语义:ChainEvaluation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12311-%E6%A0%87%E7%AD%BE%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.3.7.</span> <span class="toc-text"> 12.3.11 标签模板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#123111-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.7.1.</span> <span class="toc-text"> 12.3.11.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12312-meta%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.8.</span> <span class="toc-text"> 12.3.12 Meta属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#123121-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.8.1.</span> <span class="toc-text"> 12.3.12.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#124-%E6%9B%B4%E6%96%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text"> 12.4 更新表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1244-%E5%90%8E%E7%BC%80%E9%80%92%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 12.4.4 后缀递增运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12441-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 12.4.4.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#125-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.</span> <span class="toc-text"> 12.5 一元运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1253-delete%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 12.5.3 delete运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12532-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.1.1.</span> <span class="toc-text"> 12.5.3.2 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1254-void%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 12.5.4 void运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12541-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.2.1.</span> <span class="toc-text"> 12.5.4.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1255-typeof-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 12.5.5 typeof 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12551-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.3.1.</span> <span class="toc-text"> 12.5.5.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1256-%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.4.</span> <span class="toc-text"> 12.5.6 一元+运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12561-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.4.1.</span> <span class="toc-text"> 12.5.6.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1257-%E4%B8%80%E5%85%83-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.5.</span> <span class="toc-text"> 12.5.7 一元-运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12571-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.5.1.</span> <span class="toc-text"> 12.5.7.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1258-%E6%8C%89%E4%BD%8D%E5%8F%96%E5%8F%8D%E8%BF%90%E7%AE%97~"><span class="toc-number">1.5.6.</span> <span class="toc-text"> 12.5.8 按位取反运算(~)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12581-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.6.1.</span> <span class="toc-text"> 12.5.8.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1259-%E9%80%BB%E8%BE%91%E9%9D%9E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.5.7.</span> <span class="toc-text"> 12.5.9 逻辑非运算符(!)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12591-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.5.7.1.</span> <span class="toc-text"> 12.5.9.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#126-%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.6.</span> <span class="toc-text"> 12.6 指数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1263-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 12.6.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#127-%E4%B9%98%E6%80%A7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text"> 12.7 乘性运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1273-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 12.7.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#128-%E5%8A%A0%E6%80%A7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.</span> <span class="toc-text"> 12.8 加性运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1283-%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 12.8.3 加法运算符(+)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12831-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.8.1.1.</span> <span class="toc-text"> 12.8.3.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1284-%E5%87%8F%E6%B3%95%E8%BF%90%E7%AE%97%E7%AC%A6-"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 12.8.4 减法运算符(-)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12841-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.8.2.1.</span> <span class="toc-text"> 12.8.4.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#129-%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text"> 12.9 移位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1293-%E5%B7%A6%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.1.</span> <span class="toc-text"> 12.9.3 左移运算符(&lt;&lt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12931-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.1.1.</span> <span class="toc-text"> 12.9.3.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1294-%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.2.</span> <span class="toc-text"> 12.9.4 有符号右移运算符(&gt;&gt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12941-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.2.1.</span> <span class="toc-text"> 12.9.4.1 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1295-%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.3.</span> <span class="toc-text"> 12.9.5 无符号右移运算符(&gt;&gt;&gt;)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12951-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.9.3.1.</span> <span class="toc-text"> 12.9.5.1 运行时语义:计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1210-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text"> 12.10 关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12103-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.10.1.</span> <span class="toc-text"> 12.10.3 运行时语义: 计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12104-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-instanceofoperatorv-target"><span class="toc-number">1.10.2.</span> <span class="toc-text"> 12.10.4 运行时语义: InstanceofOperator(V, target)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1211-%E7%9B%B8%E7%AD%89%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.11.</span> <span class="toc-text"> 12.11 相等运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12113-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.11.1.</span> <span class="toc-text"> 12.11.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1212-%E4%BA%8C%E5%85%83%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.12.</span> <span class="toc-text"> 12.12 二元位运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12123-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.12.1.</span> <span class="toc-text"> 12.12.3 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1213-%E4%BA%8C%E5%85%83%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.13.</span> <span class="toc-text"> 12.13 二元逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12133-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-%E8%AE%A1%E7%AE%97"><span class="toc-number">1.13.1.</span> <span class="toc-text"> 12.13.3 运行时语义: 计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1214-%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.14.</span> <span class="toc-text"> 12.14 条件运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12143-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.14.1.</span> <span class="toc-text"> 12.14.3 运行时语义:计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1215-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.15.</span> <span class="toc-text"> 12.15 赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12154-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.15.1.</span> <span class="toc-text"> 12.15.4 运行时语义:计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12155-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.15.2.</span> <span class="toc-text"> 12.15.5 解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#121552-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89destructuringassignmentevaluation"><span class="toc-number">1.15.2.1.</span> <span class="toc-text"> 12.15.5.2 运行时语义:DestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121553-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-propertydestructuringassignmentevaluation"><span class="toc-number">1.15.2.2.</span> <span class="toc-text"> 12.15.5.3 运行时语义: PropertyDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121554-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89-restdestructuringassignmentevaluation"><span class="toc-number">1.15.2.3.</span> <span class="toc-text"> 12.15.5.4 运行时语义: RestDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121555-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89iteratordestructuringassignmentevaluation"><span class="toc-number">1.15.2.4.</span> <span class="toc-text"> 12.15.5.5 运行时语义:IteratorDestructuringAssignmentEvaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#121456-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89keyeddestructuringassignmentevaluation"><span class="toc-number">1.15.2.5.</span> <span class="toc-text"> 12.14.5.6 运行时语义:KeyedDestructuringAssignmentEvaluation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1216-%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.16.</span> <span class="toc-text"> 12.16 逗号运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12163-%E8%BF%90%E8%A1%8C%E6%97%B6%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97"><span class="toc-number">1.16.1.</span> <span class="toc-text"> 12.16.3 运行时语义:计算</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">185</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">12 表达式</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-13</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="12-表达式"><a class="markdownIt-Anchor" href="#12-表达式"></a> 12 表达式</h1>
 <h2 id="121-标识符identifiers"><a class="markdownIt-Anchor" href="#121-标识符identifiers"></a> 12.1 标识符(Identifiers)</h2>
 <p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">IdentifierReference[Yield] :</span><br><span class="line">	Identifier</span><br><span class="line">	[~Yield] yield</span><br><span class="line"></span><br><span class="line">BindingIdentifier[Yield] :</span><br><span class="line">	Identifier</span><br><span class="line">	[~Yield] yield</span><br><span class="line"></span><br><span class="line">LabelIdentifier[Yield] :</span><br><span class="line">	Identifier</span><br><span class="line">	[~Yield] yield</span><br><span class="line"></span><br><span class="line">Identifier :</span><br><span class="line">	IdentifierName but not ReservedWord</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">IdentifierReference[Yield, Await]:</span><br><span class="line">    Identifier</span><br><span class="line">    [~Yield] yield</span><br><span class="line">    [~Await] await</span><br><span class="line"></span><br><span class="line">BindingIdentifier[Yield, Await]:</span><br><span class="line">    Identifier</span><br><span class="line">    yield</span><br><span class="line">    await</span><br><span class="line"></span><br><span class="line">LabelIdentifier[Yield, Await]:</span><br><span class="line">    Identifier</span><br><span class="line">    [~Yield] yield</span><br><span class="line">    [~Await] await</span><br><span class="line"></span><br><span class="line">Identifier:</span><br><span class="line">    IdentifierName but not ReservedWord</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h3 id="1211-静态语义早期错误"><a class="markdownIt-Anchor" href="#1211-静态语义早期错误"></a> 12.1.1 静态语义:早期错误</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingIdentifier : Identifier</span><br></pre></td></tr></table></figure>
+<p>注：语法中允许使用 <code>yield</code> 和 <code>await</code> 作为 <code>BindingIdentifier</code>，在下面的静态语义中禁止使用，以禁止在下列情况中自动插入分号：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span></span><br><span class="line"><span class="keyword">await</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="1215-运行时语义绑定初始化"><a class="markdownIt-Anchor" href="#1215-运行时语义绑定初始化"></a> 12.1.5 运行时语义:绑定初始化</h3>
-<p>接受参数<code>value</code>和<code>environment</code>。<br />
-参见：13.3.3.5 和 13.7.5.9</p>
-<p>注意：为<code>environment</code>传递<code>undefined</code>，表示应该使用<code>PutValue</code>操作来赋予初始化值。var语句和某些非严格函数的形式参数列表就是这种情况（请参见9.2.12）。在那些情况下，计算初始化语句(initializer)之前，词法绑定会提升和预初始化。</p>
+<p>接受参数<code>value</code>和<code>environment</code>。</p>
+<p>注意：为<code>environment</code>传递<code>undefined</code>，表示应该使用<code>PutValue</code>操作来赋予初始值。对于<code>var</code>语句和一些非严格的函数的形式参数列表就是这种情况（见9.2.10）。在这些情况下，在计算初始化器之前，词法绑定被提升并预先初始化。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingIdentifier : Identifier</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>name</code>为<code>Identifier</code>的字符串值</li>
-<li>返回<code>InitializeBoundName( name, value, environment)</code></li>
+<li>返回? <code>InitializeBoundName( name, value, environment)</code></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingIdentifier : yield</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingIdentifier : <span class="keyword">yield</span></span><br></pre></td></tr></table></figure>
 <ol>
-<li>返回<code>InitializeBoundName(&quot;yield&quot;, value, environment)</code></li>
+<li>返回? <code>InitializeBoundName(&quot;yield&quot;, value, environment)</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingIdentifier : <span class="keyword">await</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>返回? <code>InitializeBoundName(&quot;await&quot;, value, environment)</code></li>
 </ol>
 <h3 id="1216-运行时语义计算"><a class="markdownIt-Anchor" href="#1216-运行时语义计算"></a> 12.1.6 运行时语义:计算</h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IdentifierReference : Identifier</span><br></pre></td></tr></table></figure>
@@ -62,7 +65,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h4 id="12221-运行时语义计算"><a class="markdownIt-Anchor" href="#12221-运行时语义计算"></a> 12.2.2.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrimaryExpression : <span class="built_in">this</span></span><br></pre></td></tr></table></figure>
 <ol>
-<li>返回<code>ResolveThisBinding( )</code></li>
+<li>返回? <code>ResolveThisBinding( )</code></li>
 </ol>
 <h3 id="1223-标识符引用"><a class="markdownIt-Anchor" href="#1223-标识符引用"></a> 12.2.3 标识符引用</h3>
 <p>见12.1的IdentifierReference</p>
@@ -253,8 +256,8 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <p>同理，下面两者的行为是相同的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CallExpression . IdentifierName</span><br><span class="line">CallExpression [ &lt;identifier-name-string&gt; ]</span><br></pre></td></tr></table></figure>
 <p>这里<code>&lt;identifier-name-string&gt;</code>是计算<code>IdentifierName</code>的<code>StringValue</code>的结果</p>
-<h3 id="1233-new操作符"><a class="markdownIt-Anchor" href="#1233-new操作符"></a> 12.3.3 new操作符</h3>
-<h4 id="12331-运行时语义计算"><a class="markdownIt-Anchor" href="#12331-运行时语义计算"></a> 12.3.3.1 运行时语义:计算</h4>
+<h3 id="1235-new操作符"><a class="markdownIt-Anchor" href="#1235-new操作符"></a> 12.3.5 new操作符</h3>
+<h4 id="12351-运行时语义计算"><a class="markdownIt-Anchor" href="#12351-运行时语义计算"></a> 12.3.5.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NewExpression : <span class="keyword">new</span> NewExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>返回<code>EvaluateNew(NewExpression, empty)</code></li>
@@ -263,7 +266,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <ol>
 <li>返回<code>EvaluateNew(MemberExpression, Arguments)</code></li>
 </ol>
-<h5 id="123311-运行时语义evaluatenewconstructproduction-arguments"><a class="markdownIt-Anchor" href="#123311-运行时语义evaluatenewconstructproduction-arguments"></a> 12.3.3.1.1 运行时语义:EvaluateNew(constructProduction, arguments)</h5>
+<h5 id="123511-运行时语义evaluatenewconstructproduction-arguments"><a class="markdownIt-Anchor" href="#123511-运行时语义evaluatenewconstructproduction-arguments"></a> 12.3.5.1.1 运行时语义:EvaluateNew(constructProduction, arguments)</h5>
 <p>抽象操作<code>EvaluateNew</code>接受参数<code>ConstructProduction</code>和<code>arguments</code>，并执行以下步骤：</p>
 <ol>
 <li>断言：<code>constructProduction</code>是<code>NewExpression</code>或<code>MemberExpression</code></li>
@@ -338,7 +341,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回<code>result</code></li>
 </ol>
 <h3 id="1235-super关键字"><a class="markdownIt-Anchor" href="#1235-super关键字"></a> 12.3.5 super关键字</h3>
-<h4 id="12351-运行时语义计算"><a class="markdownIt-Anchor" href="#12351-运行时语义计算"></a> 12.3.5.1 运行时语义:计算</h4>
+<h4 id="12351-运行时语义计算-2"><a class="markdownIt-Anchor" href="#12351-运行时语义计算-2"></a> 12.3.5.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SuperProperty : <span class="built_in">super</span> [ Expression ]</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>propertyNameReference</code>为计算<code>Expression</code>的结果</li>
@@ -465,18 +468,16 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PostfixExpression : LeftHandSideExpression ++</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lhs</code>为计算<code>LeftHandSideExpression</code>的结果</li>
-<li>令<code>oldValue</code>为<code>ToNumber(GetValue(lhs))</code></li>
-<li><code>ReturnIfAbrupt(oldValue)</code></li>
-<li>令<code>newValue</code>为<code>oldValue</code>加<code>1</code>得到的结果，使用与<code>+</code>运算符相同的规则（请参见12.7.5）。</li>
-<li>令<code>status</code>为<code>PutValue(lhs, newValue)</code></li>
-<li><code>ReturnIfAbrupt(status)</code></li>
+<li>令<code>oldValue</code>为? <code>ToNumeric(GetValue(lhs))</code></li>
+<li>令<code>newValue</code>为! <code>Type(oldvalue)::add(oldValue, Type(oldValue)::unit)</code></li>
+<li>执行? <code>PutValue(lhs, newValue)</code></li>
 <li>返回<code>oldValue</code></li>
 </ol>
 <h2 id="125-一元运算符"><a class="markdownIt-Anchor" href="#125-一元运算符"></a> 12.5 一元运算符</h2>
 <p>语法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression[Yield] :</span><br><span class="line">	UpdateExpression[?Yield, ?Await]</span><br><span class="line">	<span class="keyword">delete</span> UnaryExpression[?Yield]</span><br><span class="line">	<span class="keyword">void</span> UnaryExpression[?Yield]</span><br><span class="line">	<span class="keyword">typeof</span> UnaryExpression[?Yield]</span><br><span class="line">	+ UnaryExpression[?Yield]</span><br><span class="line">	- UnaryExpression[?Yield]</span><br><span class="line">	~ UnaryExpression[?Yield]</span><br><span class="line">	! UnaryExpression[?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="1254-delete运算符"><a class="markdownIt-Anchor" href="#1254-delete运算符"></a> 12.5.4 delete运算符</h3>
-<h4 id="12542-运行时语义计算"><a class="markdownIt-Anchor" href="#12542-运行时语义计算"></a> 12.5.4.2 运行时语义:计算</h4>
+<h3 id="1253-delete运算符"><a class="markdownIt-Anchor" href="#1253-delete运算符"></a> 12.5.3 delete运算符</h3>
+<h4 id="12532-运行时语义计算"><a class="markdownIt-Anchor" href="#12532-运行时语义计算"></a> 12.5.3.2 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : <span class="keyword">delete</span> UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>ref</code>为计算<code>UnaryExpression</code>的结果</li>
@@ -491,34 +492,32 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>IsPropertyReference(ref)</code>为<code>true</code>，则：
 <ol>
 <li>如果<code>IsSuperReference(ref)</code>，抛出ReferenceError异常</li>
-<li>令<code>baseObj</code>为<code>ToObject(GetBase(ref))</code></li>
-<li>断言：<code>baseObj</code>不是非常规完结</li>
-<li>令<code>deleteStatus</code>为<code>baseObj.[[Delete]](GetReferencedName(ref))</code></li>
-<li><code>ReturnIfAbrupt(deleteStatus)</code></li>
+<li>令<code>baseObj</code>为! <code>ToObject(GetBase(ref))</code></li>
+<li>令<code>deleteStatus</code>为? <code>baseObj.[[Delete]](GetReferencedName(ref))</code></li>
 <li>如果<code>deleteStatus</code>为<code>false</code>，并且<code>IsStrictReference(ref)</code>为<code>true</code>，抛出TypeError异常</li>
 <li>返回<code>deleteStatus</code></li>
 </ol>
 </li>
-<li>否则<code>ref</code>是一个环境记录绑定的引用：
+<li>否则：
 <ol>
+<li>断言：<code>ref</code>是一个环境记录绑定的引用</li>
 <li>令<code>bindings</code>为<code>GetBase(ref)</code></li>
-<li>返回<code>bindings.DeleteBinding(GetReferencedName(ref))</code></li>
+<li>返回? <code>bindings.DeleteBinding(GetReferencedName(ref))</code></li>
 </ol>
 </li>
 </ol>
 <p>注意：当delete运算符出现在严格模式代码中时，如果其UnaryExpression是对变量，函数参数或函数名称的直接引用，则将引发SyntaxError异常。 此外，如果delete运算符出现在严格模式代码中，并且要删除的属性具有特性<code>&#123; [[Configurable]]: false &#125;</code>，则会引发TypeError异常。</p>
-<h3 id="1255-void运算符"><a class="markdownIt-Anchor" href="#1255-void运算符"></a> 12.5.5 void运算符</h3>
-<h4 id="12551-运行时语义计算"><a class="markdownIt-Anchor" href="#12551-运行时语义计算"></a> 12.5.5.1 运行时语义:计算</h4>
+<h3 id="1254-void运算符"><a class="markdownIt-Anchor" href="#1254-void运算符"></a> 12.5.4 void运算符</h3>
+<h4 id="12541-运行时语义计算"><a class="markdownIt-Anchor" href="#12541-运行时语义计算"></a> 12.5.4.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : <span class="keyword">void</span> UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>status</code>为<code>GetValue(expr)</code></li>
-<li><code>ReturnIfAbrupt(status)</code></li>
+<li>执行? <code>GetValue(expr)</code></li>
 <li>返回<code>undefined</code></li>
 </ol>
 <p>注意：即使不使用GetValue，也必须调用它，因为它可能会有明显的副作用。</p>
-<h3 id="1256-typeof-运算符"><a class="markdownIt-Anchor" href="#1256-typeof-运算符"></a> 12.5.6 typeof 运算符</h3>
-<h4 id="12561-运行时语义计算"><a class="markdownIt-Anchor" href="#12561-运行时语义计算"></a> 12.5.6.1 运行时语义:计算</h4>
+<h3 id="1255-typeof-运算符"><a class="markdownIt-Anchor" href="#1255-typeof-运算符"></a> 12.5.5 typeof 运算符</h3>
+<h4 id="12551-运行时语义计算"><a class="markdownIt-Anchor" href="#12551-运行时语义计算"></a> 12.5.5.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : <span class="keyword">typeof</span> UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>val</code>为计算<code>UnaryExpression</code>的结果</li>
@@ -527,8 +526,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>如果<code>IsUnresolvableReference(val)</code>为<code>true</code>，返回<code>&quot;undefined&quot;</code></li>
 </ol>
 </li>
-<li>令<code>val</code>为<code>GetValue(val)</code></li>
-<li><code>ReturnIfAbrupt(val)</code></li>
+<li>令<code>val</code>为? <code>GetValue(val)</code></li>
 <li>根据表35返回一个字符串</li>
 </ol>
 <table>
@@ -564,71 +562,52 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <td style="text-align:left">“symbol”</td>
 </tr>
 <tr>
-<td style="text-align:left">Object (ordinary但没有实现[[Call]])</td>
-<td style="text-align:left">“object”</td>
+<td style="text-align:left">BigInt</td>
+<td style="text-align:left">“bigint”</td>
 </tr>
 <tr>
-<td style="text-align:left">Object (standard exotic但没有实现[[Call]])</td>
+<td style="text-align:left">Object (没有实现[[Call]])</td>
 <td style="text-align:left">“object”</td>
 </tr>
 <tr>
 <td style="text-align:left">Object (实现了[[Call]])</td>
 <td style="text-align:left">“function”</td>
 </tr>
-<tr>
-<td style="text-align:left">Object (non-standard exotic但没有实现[[Call]])</td>
-<td style="text-align:left">由实现定义，但不能是&quot;undefined&quot;, “boolean”, “function”, “number”, “symbol&quot;或&quot;string”</td>
-</tr>
 </tbody>
 </table>
-<p>注意：不建议为non-standard exotic对象定义新的<code>typeof</code>结果值。 如果可能，应将<code>&quot;object&quot;</code>用于此类对象。</p>
-<h3 id="1257-前缀递增运算符"><a class="markdownIt-Anchor" href="#1257-前缀递增运算符"></a> 12.5.7 前缀递增运算符</h3>
-<h4 id="12571-运行时语义计算"><a class="markdownIt-Anchor" href="#12571-运行时语义计算"></a> 12.5.7.1 运行时语义:计算</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : ++ UnaryExpression</span><br></pre></td></tr></table></figure>
-<ol>
-<li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>oldValue</code>为<code>ToNumber(GetValue(expr))</code></li>
-<li><code>ReturnIfAbrupt(oldValue)</code></li>
-<li>令<code>newValue</code>为<code>oldValue</code>加<code>1</code>得到的结果，使用与<code>+</code>运算符相同的规则（请参见12.7.5）。</li>
-<li>令<code>status</code>为<code>PutValue(expr, newValue)</code></li>
-<li><code>ReturnIfAbrupt(status)</code></li>
-<li>返回<code>newValue</code></li>
-</ol>
-<h3 id="1259-一元运算符"><a class="markdownIt-Anchor" href="#1259-一元运算符"></a> 12.5.9 一元+运算符</h3>
+<h3 id="1256-一元运算符"><a class="markdownIt-Anchor" href="#1256-一元运算符"></a> 12.5.6 一元+运算符</h3>
 <p>注意：一元<code>+</code>运算符将其操作数转换为<code>Number</code>类型。</p>
-<h4 id="12591-运行时语义计算"><a class="markdownIt-Anchor" href="#12591-运行时语义计算"></a> 12.5.9.1 运行时语义:计算</h4>
+<h4 id="12561-运行时语义计算"><a class="markdownIt-Anchor" href="#12561-运行时语义计算"></a> 12.5.6.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : + UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>返回<code>ToNumber(GetValue(expr))</code></li>
+<li>返回? <code>ToNumber(? GetValue(expr))</code></li>
 </ol>
-<h3 id="12510-一元-运算符"><a class="markdownIt-Anchor" href="#12510-一元-运算符"></a> 12.5.10 一元-运算符</h3>
+<h3 id="1257-一元-运算符"><a class="markdownIt-Anchor" href="#1257-一元-运算符"></a> 12.5.7 一元-运算符</h3>
 <p>注意：一元<code>-</code>运算符将其操作数转换为<code>Number</code>类型，然后取负。 对<code>+0</code>取负产生<code>-0</code>，对<code>-0</code>取负产生<code>+0</code>。</p>
-<h4 id="125101-运行时语义计算"><a class="markdownIt-Anchor" href="#125101-运行时语义计算"></a> 12.5.10.1 运行时语义:计算</h4>
+<h4 id="12571-运行时语义计算"><a class="markdownIt-Anchor" href="#12571-运行时语义计算"></a> 12.5.7.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : - UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>oldValue</code>为<code>ToNumber(GetValue(expr))</code></li>
-<li><code>ReturnIfAbrupt(oldValue)</code></li>
-<li>如果<code>oldValue</code>为<code>NaN</code>，返回<code>NaN</code></li>
-<li>返回对<code>oldValue</code>取负的结果； 也就是说，计算一个具有相同模但符号相反的<code>Number</code>。</li>
+<li>令<code>oldValue</code>为? <code>ToNumeric(? GetValue(expr))</code></li>
+<li>令<code>T</code>为<code>Type(oldValue)</code></li>
+<li>返回! <code>T::unaryMinus(oldValue)</code></li>
 </ol>
-<h3 id="12511-按位取反运算~"><a class="markdownIt-Anchor" href="#12511-按位取反运算~"></a> 12.5.11 按位取反运算(~)</h3>
-<h4 id="125111-运行时语义计算"><a class="markdownIt-Anchor" href="#125111-运行时语义计算"></a> 12.5.11.1 运行时语义:计算</h4>
+<h3 id="1258-按位取反运算~"><a class="markdownIt-Anchor" href="#1258-按位取反运算~"></a> 12.5.8 按位取反运算(~)</h3>
+<h4 id="12581-运行时语义计算"><a class="markdownIt-Anchor" href="#12581-运行时语义计算"></a> 12.5.8.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : ~ UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>oldValue</code>为<code>ToInt32(GetValue(expr))</code></li>
-<li><code>ReturnIfAbrupt(oldValue)</code></li>
-<li>返回对<code>oldValue</code>应用按位取反的结果。 结果是一个32位有符号整数。</li>
+<li>令<code>oldValue</code>为? <code>ToNumeric(? GetValue(expr))</code></li>
+<li>令<code>T</code>为<code>Type(oldValue)</code></li>
+<li>返回! <code>T::bitwiseNOT(oldValue)</code></li>
 </ol>
-<h3 id="12512-逻辑非运算符"><a class="markdownIt-Anchor" href="#12512-逻辑非运算符"></a> 12.5.12 逻辑非运算符(!)</h3>
-<h4 id="125121-运行时语义计算"><a class="markdownIt-Anchor" href="#125121-运行时语义计算"></a> 12.5.12.1 运行时语义:计算</h4>
+<h3 id="1259-逻辑非运算符"><a class="markdownIt-Anchor" href="#1259-逻辑非运算符"></a> 12.5.9 逻辑非运算符(!)</h3>
+<h4 id="12591-运行时语义计算"><a class="markdownIt-Anchor" href="#12591-运行时语义计算"></a> 12.5.9.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnaryExpression : ! UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>expr</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>oldValue</code>为<code>ToBoolean(GetValue(expr))</code></li>
-<li><code>ReturnIfAbrupt(oldValue)</code></li>
+<li>令<code>oldValue</code>为! <code>ToBoolean(? GetValue(expr))</code></li>
 <li>如果<code>oldValue</code>为<code>true</code>，返回<code>false</code></li>
 <li>返回<code>true</code></li>
 </ol>
@@ -639,253 +618,160 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExponentiationExpression : UpdateExpression ** ExponentiationExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>left</code>为计算<code>UpdateExpression</code>的结果</li>
-<li>令<code>leftValue</code>为<code>GetValue(left)</code></li>
+<li>令<code>leftValue</code>为? <code>GetValue(left)</code></li>
 <li>令<code>right</code>为计算<code>ExponentiationExpression</code>的结果</li>
-<li>令<code>rightValue</code>为<code>GetValue(right)</code></li>
-<li>令<code>base</code>为<code>ToNumber(leftValue)</code></li>
-<li>令<code>exponent</code>为<code>ToNumber(rightValue)</code></li>
-<li>返回将12.7.3.4中指定的<code>**</code>运算符应用到<code>base</code>和<code>exponent</code>的结果。</li>
+<li>令<code>rightValue</code>为? <code>GetValue(right)</code></li>
+<li>令<code>base</code>为? <code>ToNumeric(leftValue)</code></li>
+<li>令<code>exponent</code>为? <code>ToNumeric(rightValue)</code></li>
+<li>如果<code>Type(base)</code>和<code>Type(exponent)</code>不同，抛出 TypeError 异常。</li>
+<li>返回? <code>Type(base)::exponentiate(base, exponent)</code></li>
 </ol>
-<h4 id="12734-应用运算符"><a class="markdownIt-Anchor" href="#12734-应用运算符"></a> 12.7.3.4 应用**运算符</h4>
-<p>返回一个与实现有关的<code>base</code>的<code>exponent</code>次幂的结果的近似值。</p>
-<ul>
-<li>如果<code>exponent</code>为<code>NaN</code>，结果为<code>NaN</code></li>
-<li>如果<code>exponent</code>为<code>+0</code>，结果为1，即使<code>base</code>为<code>NaN</code></li>
-<li>如果<code>exponent</code>为<code>-0</code>，结果为1，即使<code>base</code>为<code>NaN</code></li>
-<li>如果<code>base</code>为<code>NaN</code>并且<code>exponent</code>为非零，结果为<code>NaN</code></li>
-<li>如果<code>abs(base) &gt; 1</code>并且<code>exponent</code>为<code>+∞</code>，结果为<code>+∞</code></li>
-<li>如果<code>abs(base) &gt; 1</code>并且<code>exponent</code>为<code>-∞</code>，结果为<code>+0</code></li>
-<li>如果<code>abs(base)</code>为<code>1</code>并且<code>exponent</code>为<code>+∞</code>，结果为<code>NaN</code></li>
-<li>如果<code>abs(base)</code>为<code>1</code>并且<code>exponent</code>为<code>-∞</code>，结果为<code>NaN</code></li>
-<li>如果<code>abs(base) &lt; 1</code>并且<code>exponent</code>为<code>+∞</code>，结果为<code>+0</code></li>
-<li>如果<code>abs(base) &lt; 1</code>并且<code>exponent</code>为<code>-∞</code>，结果为<code>+∞</code></li>
-<li>如果<code>base</code>为<code>+∞</code>并且<code>exponent &gt; 0</code>，结果为<code>+∞</code></li>
-<li>如果<code>base</code>为<code>+∞</code>并且<code>exponent &lt; 0</code>，结果为<code>+0</code></li>
-<li>如果<code>base</code>为<code>-∞</code>并且<code>exponent &gt; 0</code>并且<code>exponent</code>是奇数，结果为<code>-∞</code></li>
-<li>如果<code>base</code>为<code>-∞</code>并且<code>exponent &gt; 0</code>并且<code>exponent</code>不是奇数，结果为<code>+∞</code></li>
-<li>如果<code>base</code>为<code>-∞</code>并且<code>exponent &lt; 0</code>并且<code>exponent</code>是奇数，结果为<code>-0</code></li>
-<li>如果<code>base</code>为<code>-∞</code>并且<code>exponent &lt; 0</code>并且<code>exponent</code>不是奇数，结果为<code>+0</code></li>
-<li>如果<code>base</code>为<code>+0</code>并且<code>exponent &gt; 0</code>，结果为<code>+0</code></li>
-<li>如果<code>base</code>为<code>+0</code>并且<code>exponent &lt; 0</code>，结果为<code>+∞</code></li>
-<li>如果<code>base</code>为<code>-0</code>并且<code>exponent &gt; 0</code>并且<code>exponent</code>是奇数，结果为<code>-0</code></li>
-<li>如果<code>base</code>为<code>-0</code>并且<code>exponent &gt; 0</code>并且<code>exponent</code>不是奇数，结果为<code>+0</code></li>
-<li>如果<code>base</code>为<code>-0</code>并且<code>exponent &lt; 0</code>并且<code>exponent</code>是奇数，结果为<code>-∞</code></li>
-<li>如果<code>base</code>为<code>-0</code>并且<code>exponent &lt; 0</code>并且<code>exponent</code>不是奇数，结果为<code>+∞</code></li>
-<li>如果<code>base &lt; 0</code>并且<code>base</code>为有限值并且<code>exponent</code>为有限值并且<code>exponent</code>不是整数，结果为<code>NaN</code></li>
-</ul>
-<p>注意：当<code>base</code>为<code>1</code>或<code>-1</code>，并且<code>exponent</code>为<code>+Infinity</code>或<code>-Infinity</code>时，<code>base ** exponent</code>的结果与IEEE 754-2008不同。ECMAScript的第一版为此操作指定了<code>NaN</code>结果，而IEEE 754-2008的更高版本则指定了<code>1</code>。出于兼容性原因，保留了历史ECMAScript行为。</p>
-<h2 id="126-乘性运算符"><a class="markdownIt-Anchor" href="#126-乘性运算符"></a> 12.6 乘性运算符</h2>
+<h2 id="127-乘性运算符"><a class="markdownIt-Anchor" href="#127-乘性运算符"></a> 12.7 乘性运算符</h2>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MultiplicativeExpression[Yield] :</span><br><span class="line">	UnaryExpression[?Yield]</span><br><span class="line">	MultiplicativeExpression[?Yield] MultiplicativeOperator UnaryExpression[?Yield]</span><br><span class="line"></span><br><span class="line">MultiplicativeOperator : one of</span><br><span class="line">	* &#x2F; %</span><br></pre></td></tr></table></figure>
-<h3 id="1263-运行时语义计算-2"><a class="markdownIt-Anchor" href="#1263-运行时语义计算-2"></a> 12.6.3 运行时语义:计算</h3>
+<h3 id="1273-运行时语义计算"><a class="markdownIt-Anchor" href="#1273-运行时语义计算"></a> 12.7.3 运行时语义:计算</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MultiplicativeExpression : MultiplicativeExpression MultiplicativeOperator UnaryExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>left</code>为计算<code>MultiplicativeExpression</code>的结果</li>
-<li>令<code>leftValue</code>为<code>GetValue(left)</code></li>
-<li><code>ReturnIfAbrupt(leftValue)</code></li>
+<li>令<code>leftValue</code>为? <code>GetValue(left)</code></li>
 <li>令<code>right</code>为计算<code>UnaryExpression</code>的结果</li>
-<li>令<code>rightValue</code>为<code>GetValue(right)</code></li>
-<li>令<code>lnum</code>为<code>ToNumber(leftValue)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToNumber(rightValue)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>返回对<code>lnum</code>和<code>rnum</code>应用12.6.3.1, 12.6.3.2 或 12.6.3.3中指定的<code>MultiplicativeOperator (*, /, or %)</code>的结果</li>
-</ol>
-<h4 id="12631-应用运算符"><a class="markdownIt-Anchor" href="#12631-应用运算符"></a> 12.6.3.1 应用*运算符</h4>
-<p><code>* MultiplicativeOperator</code>执行乘法，产生其操作数的乘积。 乘法是可交换的。 由于有限的精度，乘法在ECMAScript中并不总是可结合的。</p>
-<p>浮点乘法的结果受IEEE 754-2008二进制双精度算法的规则支配：</p>
+<li>令<code>rightValue</code>为? <code>GetValue(right)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(leftValue)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rightValue)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出 TypeError 异常</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>如果<code>MultiplicativeOperator</code>为<code>*</code>，返回<code>T::multiply(lnum, rnum)</code></li>
+<li>如果<code>MultiplicativeOperator</code>为<code>/</code>，返回<code>T::divide(lnum, rnum)</code></li>
+<li>否则：
 <ol>
-<li>如果任一操作数为NaN，则结果为NaN。</li>
-<li>如果两个操作数具有相同的符号，则结果的符号为正；如果两个操作数具有不同的符号，则结果为负。</li>
-<li>无穷大乘以零会导致NaN。</li>
-<li>无穷大与无穷大相乘会导致无穷大。 符号由上面已经陈述的规则确定。</li>
-<li>无穷大与非零有限值的乘积导致有符号无穷大。 符号由上面已经陈述的规则确定。</li>
-<li>在其余情况下，不涉及无穷大或NaN时，将使用IEEE 754-2008最近舍入模式计算乘积并将其舍入为最接近的可表示值。 如果模太大而无法表示，那么结果将是无穷大的适当符号。 如果模太小而无法表示，则结果为适当符号的零。 ECMAScript语言需要支持IEEE 754-2008定义的渐进式下溢。</li>
+<li>断言：<code>MultiplicativeOperator</code>为<code>%</code></li>
+<li>返回<code>T::remainder(lnum, rnum)</code></li>
 </ol>
-<h4 id="12632-应用运算符"><a class="markdownIt-Anchor" href="#12632-应用运算符"></a> 12.6.3.2 应用/运算符</h4>
-<p><code>/ MultiplicativeOperator</code>执行除法，产生其操作数的商。 左边的操作数是被除数，右边的操作数是除数。 ECMAScript不执行整数除法。 所有除法运算的操作数和结果均为双精度浮点数。 除法结果由IEEE 754-2008算法的规范确定：</p>
-<ol>
-<li>如果任一操作数为NaN，则结果为NaN。</li>
-<li>如果两个操作数具有相同的符号，则结果的符号为正；如果两个操作数具有不同的符号，则结果为负。</li>
-<li>无穷大除以无穷大会得到NaN。</li>
-<li>无穷大除以零会导致无穷大。符号由上述规则确定。</li>
-<li>无穷大除以非零有限值会导致有符号无穷大。符号由上述规则确定。</li>
-<li>有限值除以无穷大将得出零。符号由上述规则确定。</li>
-<li>将零除以零会产生NaN；将零除以任何其他有限值将得出零，其符号由上述规则确定。</li>
-<li>非零有限值除以零会导致有符号无穷大。该标志由上述规则确定。</li>
-<li>在其余情况下，既不涉及无穷大，也不涉及零，也不涉及NaN，则使用IEEE 754-2008舍入到最接近模式计算商并舍入到最接近的可表示值。如果模太大而无法表示，则操作会溢出；结果就是适当符号的无穷大。如果模太小而无法表示，则操作会下溢，并且结果为适当符号的零。 ECMAScript语言需要支持IEEE 754-2008定义的渐进式下溢。</li>
+</li>
 </ol>
-<h4 id="12633-应用运算符"><a class="markdownIt-Anchor" href="#12633-应用运算符"></a> 12.6.3.3 应用%运算符</h4>
-<p><code>% MultiplicativeOperator</code>从隐含的除法运算中得到余数； 左操作数是被除数，右操作数是除数。</p>
-<p>注意：在C和C++中，取余运算符仅接受整数操作数。 在ECMAScript中，它也接受浮点操作数。</p>
-<p>由％运算符计算的浮点余数运算的结果与IEEE 754-2008定义的“余数”运算不同。 IEEE 754-2008“余数”运算从舍入除法而不是截断除法计算余数，因此其行为与通常的整数余数运算符的行为不相似。 相反，ECMAScript语言在浮点运算上定义了％，其行为类似于Java整数余数运算符； 可以将其与C库函数fmod进行比较。</p>
-<p>ECMAScript浮点余数运算的结果由IEEE算术规则确定：</p>
-<ol>
-<li>如果任一操作数为NaN，则结果为NaN。</li>
-<li>结果的符号等于被除数的符号。</li>
-<li>如果被除数是无穷大，或者除数是零，或者两者都是，则结果为NaN。</li>
-<li>如果被除数是有限的，并且除数是无穷大，则结果等于被除数。</li>
-<li>如果被除数为零，并且除数为非零且有限，则结果与被除数相同。</li>
-<li>在其余情况下，既不涉及无穷大，也不涉及零，也不涉及NaN，则被除数n和除数d的浮点余数r由数学关系<code>r = n − (d × q)</code>定义，其中q 是一个整数，仅当n / d为负时才为负，而只有当n / d为正时才为正，并且其大小应尽可能大，而不会超过n和d的真数学商。 使用IEEE 754-2008最近舍入模式计算r并舍入到最接近的可表示值。</li>
-</ol>
-<h2 id="127-加性运算符"><a class="markdownIt-Anchor" href="#127-加性运算符"></a> 12.7 加性运算符</h2>
+<h2 id="128-加性运算符"><a class="markdownIt-Anchor" href="#128-加性运算符"></a> 12.8 加性运算符</h2>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AdditiveExpression[Yield] :</span><br><span class="line">	MultiplicativeExpression[?Yield]</span><br><span class="line">	AdditiveExpression[?Yield] + MultiplicativeExpression[?Yield]</span><br><span class="line">	AdditiveExpression[?Yield] - MultiplicativeExpression[?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="1273-加法运算符"><a class="markdownIt-Anchor" href="#1273-加法运算符"></a> 12.7.3 加法运算符(+)</h3>
+<h3 id="1283-加法运算符"><a class="markdownIt-Anchor" href="#1283-加法运算符"></a> 12.8.3 加法运算符(+)</h3>
 <p>加法运算符执行字符串连接或数字加法。</p>
-<h4 id="12731-运行时语义计算"><a class="markdownIt-Anchor" href="#12731-运行时语义计算"></a> 12.7.3.1 运行时语义:计算</h4>
+<h4 id="12831-运行时语义计算"><a class="markdownIt-Anchor" href="#12831-运行时语义计算"></a> 12.8.3.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AdditiveExpression : AdditiveExpression + MultiplicativeExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>AdditiveExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>MultiplicativeExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lprim</code>为<code>ToPrimitive(lval)</code></li>
-<li><code>ReturnIfAbrupt(lprim)</code></li>
-<li>令<code>rprim</code>为<code>ToPrimitive(rval)</code></li>
-<li><code>ReturnIfAbrupt(rprim)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lprim</code>为? <code>ToPrimitive(lval)</code></li>
+<li>令<code>rprim</code>为? <code>ToPrimitive(rval)</code></li>
 <li>如果<code>Type(lprim)</code>为<code>String</code>或者<code>Type(rprim)</code>为<code>String</code>，则
 <ol>
-<li>令<code>lstr</code>为<code>ToString(lprim)</code></li>
-<li><code>ReturnIfAbrupt(lstr)</code></li>
-<li>令<code>rstr</code>为<code>ToString(rprim)</code></li>
-<li><code>ReturnIfAbrupt(rstr)</code></li>
+<li>令<code>lstr</code>为? <code>ToString(lprim)</code></li>
+<li>令<code>rstr</code>为? <code>ToString(rprim)</code></li>
 <li>返回由<code>lstr</code>和<code>rstr</code>连接而成的字符串</li>
 </ol>
 </li>
-<li>令<code>lnum</code>为<code>ToNumber(lprim)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToNumber(rprim)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>返回对<code>lnum</code>和<code>rnum</code>应用加法运算符的结果。参见12.7.5下面的注。</li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lprim)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rprim)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出 TypeError 异常。</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>返回<code>T::add(lnum ,rnum)</code></li>
 </ol>
-<p>注1：在第7步和第9步中对ToPrimitive的调用中未提供任何提示。除Date对象外，所有标准对象在处理时将其当做提示<code>Number</code>。 Date对象在处理时当做提示<code>String</code>。奇异对象可能以其他方式处理缺失的提示。</p>
-<p>注2：步骤11与抽象关系比较算法（7.2.11）的步骤5不同，它使用逻辑或运算而不是逻辑与运算。</p>
-<h3 id="1274-减法运算符-"><a class="markdownIt-Anchor" href="#1274-减法运算符-"></a> 12.7.4 减法运算符(-)</h3>
-<h4 id="12741-运行时语义计算"><a class="markdownIt-Anchor" href="#12741-运行时语义计算"></a> 12.7.4.1 运行时语义:计算</h4>
+<p>注1：在第5步和第6步中对ToPrimitive的调用中未提供任何提示。除Date对象外，所有标准对象在处理时将其当做提示<code>Number</code>。 Date对象在处理时当做提示<code>String</code>。奇异对象可能以其他方式处理缺失的提示。</p>
+<p>注2：步骤7与抽象关系比较算法（7.2.14）的步骤3不同，它使用逻辑或运算而不是逻辑与运算。</p>
+<h3 id="1284-减法运算符-"><a class="markdownIt-Anchor" href="#1284-减法运算符-"></a> 12.8.4 减法运算符(-)</h3>
+<h4 id="12841-运行时语义计算"><a class="markdownIt-Anchor" href="#12841-运行时语义计算"></a> 12.8.4.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AdditiveExpression : AdditiveExpression - MultiplicativeExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>AdditiveExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>MultiplicativeExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lnum</code>为<code>ToNumber(lval)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToNumber(rval)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>返回对<code>lnum</code>和<code>rnum</code>应用减法运算符的结果。参见12.7.5下面的注。</li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lval)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rval)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出 TypeError 异常。</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>返回<code>T::subtract(lnum ,rnum)</code></li>
 </ol>
-<h3 id="1275-对数字应用加性运算符"><a class="markdownIt-Anchor" href="#1275-对数字应用加性运算符"></a> 12.7.5 对数字应用加性运算符</h3>
-<p>当将<code>+</code>运算符应用于两个数字类型的操作数时，它们将执行加法运算，从而产生操作数之和。 <code>-</code>运算符执行减法运算，产生两个数字操作数的差。</p>
-<p>加法是可交换的运算，但并不总是可结合的。</p>
-<p>加法的结果使用IEEE 754-2008二进制双精度算法的规则确定：</p>
-<ul>
-<li>如果任一操作数为<code>NaN</code>，则结果为<code>NaN</code>。</li>
-<li>两个相反符号的无穷大之和为<code>NaN</code></li>
-<li>两个相同符号的无穷大之和为该符号的无穷大。</li>
-<li>无穷大与有限值之和等于该符号的无穷大</li>
-<li>两个负零之和为<code>-0</code>。两个正零或两个符号相反的零的和为<code>+0</code></li>
-<li>零和非零有限值之和等于该非零操作数</li>
-<li>模相同符号相反的两个非零有限值的和为<code>+0</code></li>
-<li>在其余情况下，既不涉及无穷大，也不涉及零，也不涉及NaN，并且操作数具有相同的符号或有不同的模，则使用IEEE 754-2008最近舍入计算出和并舍入到最接近的可表示值。如果模太大而无法表示，则操作会溢出，结果将是适当符号的无穷大。 ECMAScript语言需要支持IEEE 754-2008定义的渐进式下溢。</li>
-</ul>
-<p>注：当<code>-</code>运算符应用于两个数字类型的操作数时，将执行减法运算，从而产生其操作数之差； 左边的操作数是被减数，右边的操作数是减数。 给定数字操作数a和b，<code>a-b</code>永远与<code>a+(-b)</code>的结果相同</p>
-<h2 id="128-移位运算符"><a class="markdownIt-Anchor" href="#128-移位运算符"></a> 12.8 移位运算符</h2>
+<h2 id="129-移位运算符"><a class="markdownIt-Anchor" href="#129-移位运算符"></a> 12.9 移位运算符</h2>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ShiftExpression[Yield] :</span><br><span class="line">	AdditiveExpression[?Yield]</span><br><span class="line">	ShiftExpression[?Yield] &lt;&lt; AdditiveExpression[?Yield]</span><br><span class="line">	ShiftExpression[?Yield] &gt;&gt; AdditiveExpression[?Yield]</span><br><span class="line">	ShiftExpression[?Yield] &gt;&gt;&gt; AdditiveExpression[?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="1283-左移运算符"><a class="markdownIt-Anchor" href="#1283-左移运算符"></a> 12.8.3 左移运算符(&lt;&lt;)</h3>
+<h3 id="1293-左移运算符"><a class="markdownIt-Anchor" href="#1293-左移运算符"></a> 12.9.3 左移运算符(&lt;&lt;)</h3>
 <p>注意：在左侧操作数上按右侧操作数指定的量执行左移运算。</p>
-<h4 id="12831-运行时语义计算"><a class="markdownIt-Anchor" href="#12831-运行时语义计算"></a> 12.8.3.1 运行时语义:计算</h4>
+<h4 id="12931-运行时语义计算"><a class="markdownIt-Anchor" href="#12931-运行时语义计算"></a> 12.9.3.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ShiftExpression : ShiftExpression &lt;&lt; AdditiveExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>AdditiveExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lnum</code>为<code>ToInt32(lval)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToUint32(rval)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>令<code>shiftCount</code>为截取<code>rnum</code>最低<code>5</code>位（<code>rnum module 32</code>）的结果，即计算<code>rnum &amp; 0x1F</code></li>
-<li>返回将<code>lnum</code>左移<code>shiftCount</code>位得到的结果。此结果是32位有符号整数。</li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lval)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rval)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出<code>TypeError</code>异常。</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>返回<code>T::leftShift(lnum, rnum)</code></li>
 </ol>
-<h3 id="1284-有符号右移运算符"><a class="markdownIt-Anchor" href="#1284-有符号右移运算符"></a> 12.8.4 有符号右移运算符(&gt;&gt;)</h3>
+<h3 id="1294-有符号右移运算符"><a class="markdownIt-Anchor" href="#1294-有符号右移运算符"></a> 12.9.4 有符号右移运算符(&gt;&gt;)</h3>
 <p>注意：在左侧操作数上按右侧操作数指定的量执行符号填充的右移运算。</p>
-<h4 id="12841-运行时语义计算"><a class="markdownIt-Anchor" href="#12841-运行时语义计算"></a> 12.8.4.1 运行时语义:计算</h4>
+<h4 id="12941-运行时语义计算"><a class="markdownIt-Anchor" href="#12941-运行时语义计算"></a> 12.9.4.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ShiftExpression : ShiftExpression &gt;&gt; AdditiveExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>AdditiveExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lnum</code>为<code>ToInt32(lval)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToUint32(rval)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>令<code>shiftCount</code>为截取<code>rnum</code>最低<code>5</code>位（<code>rnum module 32</code>）的结果，即计算<code>rnum &amp; 0x1F</code></li>
-<li>返回将<code>lnum</code>进行符号扩展右移<code>shiftCount</code>位得到的结果。最高有效位被传播。结果是32位有符号整数。</li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lval)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rval)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出<code>TypeError</code>异常。</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>返回<code>T::signedRightShift(lnum, rnum)</code></li>
 </ol>
-<h3 id="1285-无符号右移运算符"><a class="markdownIt-Anchor" href="#1285-无符号右移运算符"></a> 12.8.5 无符号右移运算符(&gt;&gt;&gt;)</h3>
+<h3 id="1295-无符号右移运算符"><a class="markdownIt-Anchor" href="#1295-无符号右移运算符"></a> 12.9.5 无符号右移运算符(&gt;&gt;&gt;)</h3>
 <p>注意：在左侧操作数上按右侧操作数指定的量执行<code>0</code>填充的右移运算。</p>
-<h4 id="12851-运行时语义计算"><a class="markdownIt-Anchor" href="#12851-运行时语义计算"></a> 12.8.5.1 运行时语义:计算</h4>
+<h4 id="12951-运行时语义计算"><a class="markdownIt-Anchor" href="#12951-运行时语义计算"></a> 12.9.5.1 运行时语义:计算</h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ShiftExpression : ShiftExpression &gt;&gt;&gt; AdditiveExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>AdditiveExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lnum</code>为<code>ToUInt32(lval)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToUint32(rval)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>令<code>shiftCount</code>为截取<code>rnum</code>最低<code>5</code>位（<code>rnum module 32</code>）的结果，即计算<code>rnum &amp; 0x1F</code></li>
-<li>返回将<code>lnum</code>进行<code>0</code>填充右移<code>shiftCount</code>位得到的结果。腾空的位使用<code>0</code>填充。结果是32位无符号整数。</li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lval)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rval)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出<code>TypeError</code>异常。</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>返回<code>T::unsignedRightShift(lnum, rnum)</code></li>
 </ol>
-<h2 id="129-关系运算符"><a class="markdownIt-Anchor" href="#129-关系运算符"></a> 12.9 关系运算符</h2>
+<h2 id="1210-关系运算符"><a class="markdownIt-Anchor" href="#1210-关系运算符"></a> 12.10 关系运算符</h2>
 <p>注意：计算关系运算符的结果始终是布尔类型，反映了运算符命名的关系是否在它的两个操作数之间成立。</p>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression[In, Yield] :</span><br><span class="line">	ShiftExpression[?Yield]</span><br><span class="line">	RelationalExpression[?In, ?Yield] &lt; ShiftExpression[?Yield]</span><br><span class="line">	RelationalExpression[?In, ?Yield] &gt; ShiftExpression[?Yield]</span><br><span class="line">	RelationalExpression[?In, ?Yield] &lt;&#x3D; ShiftExpression[? Yield]</span><br><span class="line">	RelationalExpression[?In, ?Yield] &gt;&#x3D; ShiftExpression[?Yield]</span><br><span class="line">	RelationalExpression[?In, ?Yield] instanceof ShiftExpression[?Yield]</span><br><span class="line">	[+In] RelationalExpression[In, ?Yield] in ShiftExpression[?Yield]</span><br></pre></td></tr></table></figure>
 <p>注意：为了避免将关系表达式中的<code>in</code>运算符与for语句中的<code>in</code>运算符混淆，需要使用<code>[In]</code>语法参数。</p>
-<h3 id="1293-运行时语义-计算"><a class="markdownIt-Anchor" href="#1293-运行时语义-计算"></a> 12.9.3 运行时语义: 计算</h3>
+<h3 id="12103-运行时语义-计算"><a class="markdownIt-Anchor" href="#12103-运行时语义-计算"></a> 12.10.3 运行时语义: 计算</h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression &lt; ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li>令<code>r</code>为执行抽象关系比较<code>lval &lt; rval</code>的结果（见7.2.11）</li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>r</code>为执行抽象关系比较<code>lval &lt; rval</code>的结果（见7.2.14）</li>
+<li><code>ReturnIfAbrupt(r)</code></li>
 <li>如果<code>r</code>为<code>undefined</code>，返回<code>false</code>，否则，返回<code>r</code></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression &gt; ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
 <li>令<code>r</code>为使用参数<code>LeftFirst = false</code>执行抽象关系比较<code>rval &lt; lval</code>的结果</li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
+<li><code>ReturnIfAbrupt(r)</code></li>
 <li>如果<code>r</code>为<code>undefined</code>，返回<code>false</code>，否则，返回<code>r</code></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression &lt;= ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
 <li>令<code>r</code>为使用参数<code>LeftFirst = false</code>执行抽象关系比较<code>rval &lt; lval</code>的结果</li>
 <li><code>ReturnIfAbrupt(rval)</code></li>
 <li>如果<code>r</code>为<code>true</code>或<code>undefined</code>，返回<code>false</code>，否则，返回<code>true</code></li>
@@ -893,10 +779,9 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression &gt;= ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
 <li>令<code>r</code>为执行抽象关系比较<code>lval &lt; rval</code>的结果</li>
 <li><code>ReturnIfAbrupt(rval)</code></li>
 <li>如果<code>r</code>为<code>true</code>或<code>undefined</code>，返回<code>false</code>，否则，返回<code>true</code></li>
@@ -904,40 +789,35 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression instanceof ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>返回<code>InstanceofOperator(lval, rval)</code></li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>返回? <code>InstanceofOperator(lval, rval)</code></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RelationalExpression : RelationalExpression <span class="keyword">in</span> ShiftExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>RelationalExpression</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为？ <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>ShiftExpression</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
+<li>令<code>rval</code>为？ <code>GetValue(rref)</code></li>
 <li>如果<code>Type(rval)</code>不是<code>Object</code>，抛出 TypeError 异常</li>
-<li>返回<code>HasProperty(rval, ToPropertyKey(lval))</code></li>
+<li>返回? <code>HasProperty(rval, ? ToPropertyKey(lval))</code></li>
 </ol>
-<h3 id="1294-运行时语义-instanceofoperatoro-c"><a class="markdownIt-Anchor" href="#1294-运行时语义-instanceofoperatoro-c"></a> 12.9.4 运行时语义: InstanceofOperator(O, C)</h3>
-<p>抽象操作InstanceofOperator(O，C)实现了通用算法，该算法用于确定对象<code>O</code>是否从构造函数<code>C</code>定义的继承路径继承。此抽象操作执行以下步骤：</p>
+<h3 id="12104-运行时语义-instanceofoperatorv-target"><a class="markdownIt-Anchor" href="#12104-运行时语义-instanceofoperatorv-target"></a> 12.10.4 运行时语义: InstanceofOperator(V, target)</h3>
+<p>抽象操作<code>InstanceofOperator(V, target)</code>实现了确定ECMAScript值<code>V</code>是否是<code>target</code>对象的实例的通用算法，办法是查阅目标对象的<code>@@hasinstance</code>方法，如果没有，则确定<code>target</code>的 <code>&quot;prototype&quot;</code> 属性值是否存在于<code>V</code>的原型链中。此抽象操作执行以下步骤：</p>
 <ol>
-<li>如果<code>Type(C)</code>不是<code>Object</code>，抛出<code>TypeError</code>异常</li>
-<li>令<code>instOfHandler</code>为<code>GetMethod(C,@@hasInstance)</code></li>
-<li><code>ReturnIfAbrupt(instOfHandler)</code></li>
-<li>如果<code>instOfHandler</code>不是<code>undefined</code>，则返回<code>ToBoolean(Call(instOfHandler, C, «O»))</code></li>
-<li>如果<code>IsCallable(C)</code>为<code>false</code>，抛出<code>TypeError</code>异常</li>
-<li>返回<code>OrdinaryHasInstance(C, O)</code></li>
+<li>如果<code>Type(target)</code>不是<code>Object</code>，抛出<code>TypeError</code>异常</li>
+<li>令<code>instOfHandler</code>为? <code>GetMethod(C,@@hasInstance)</code></li>
+<li>如果<code>instOfHandler</code>不是<code>undefined</code>，则返回! <code>ToBoolean(? Call(instOfHandler, target, «V»))</code></li>
+<li>如果<code>IsCallable(target)</code>为<code>false</code>，抛出<code>TypeError</code>异常</li>
+<li>返回<code>OrdinaryHasInstance(target, V)</code></li>
 </ol>
-<p>注意：步骤5和6提供了与ECMAScript以前版本的兼容性，以前版本未使用<code>@@hasInstance</code>方法来定义<code>instanceof</code>操作符的语义。如果函数对象未定义或继承<code>@@hasInstance</code>，则它将使用默认的<code>instanceof</code>语义。</p>
-<h2 id="1210-相等运算符"><a class="markdownIt-Anchor" href="#1210-相等运算符"></a> 12.10 相等运算符</h2>
+<p>注意：步骤4和5提供了与ECMAScript以前版本的兼容性，以前版本未使用<code>@@hasInstance</code>方法来定义<code>instanceof</code>操作符的语义。如果函数对象未定义或继承<code>@@hasInstance</code>，则它将使用默认的<code>instanceof</code>语义。</p>
+<h2 id="1211-相等运算符"><a class="markdownIt-Anchor" href="#1211-相等运算符"></a> 12.11 相等运算符</h2>
 <p>注：计算相等运算符的结果始终是布尔类型，反映了该运算符命名的关系是否在其两个操作数之间成立。</p>
 <p>语法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">EqualityExpression[In, Yield] :</span><br><span class="line">	RelationalExpression[?In, ?Yield]</span><br><span class="line">	EqualityExpression[?In, ?Yield] == RelationalExpression[?In, ?Yield]</span><br><span class="line">	EqualityExpression[?In, ?Yield] != RelationalExpression[?In, ?Yield]</span><br><span class="line">	EqualityExpression[?In, ?Yield] === RelationalExpression[?In, ?Yield]</span><br><span class="line">	EqualityExpression[?In, ?Yield] !== RelationalExpression[?In, ?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="12103-运行时语义计算"><a class="markdownIt-Anchor" href="#12103-运行时语义计算"></a> 12.10.3 运行时语义:计算</h3>
+<h3 id="12113-运行时语义计算"><a class="markdownIt-Anchor" href="#12113-运行时语义计算"></a> 12.11.3 运行时语义:计算</h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EqualityExpression : EqualityExpression == RelationalExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>EqualityExpression</code>的结果</li>
@@ -982,7 +862,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>注1：给定以上相等性定义：</p>
 <ul>
-<li>可以通过<code>&quot;&quot; + a == &quot;&quot; + b</code>强制进行字符串比较</li>
+<li>可以通过<code>`$&#123;a&#125;` == `$&#123;b&#125;`</code>强制进行字符串比较</li>
 <li>可以通过<code>+a == +b</code>强制进行数字比较</li>
 <li>可以通过<code>!a == !b</code>强制进行布尔比较</li>
 </ul>
@@ -997,29 +877,34 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li><code>new String(&quot;a&quot;) == new String(&quot;a&quot;)</code>为<code>false</code></li>
 </ul>
 <p>注4：字符串比较对代码单元值的序列使用简单的相等性测试。 没有尝试使用更复杂的，面向语义的字符或字符串相等性定义以及Unicode规范中定义的整理顺序。 因此，根据Unicode标准规范相等的字符串值可以测试为不相等。 实际上，该算法假定两个字符串都已经处于规范化形式。</p>
-<h2 id="1211-二元位运算符"><a class="markdownIt-Anchor" href="#1211-二元位运算符"></a> 12.11 二元位运算符</h2>
+<h2 id="1212-二元位运算符"><a class="markdownIt-Anchor" href="#1212-二元位运算符"></a> 12.12 二元位运算符</h2>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BitwiseANDExpression[In, Yield] :</span><br><span class="line">	EqualityExpression[?In, ?Yield]</span><br><span class="line">	BitwiseANDExpression[?In, ?Yield] &amp; EqualityExpression[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">BitwiseXORExpression[In, Yield] :</span><br><span class="line">	BitwiseANDExpression[?In, ?Yield]</span><br><span class="line">	BitwiseXORExpression[?In, ?Yield] ^ BitwiseANDExpression[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">BitwiseORExpression[In, Yield] :</span><br><span class="line">	BitwiseXORExpression[?In, ?Yield]</span><br><span class="line">	BitwiseORExpression[?In, ?Yield] | BitwiseXORExpression[?In, ?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="12113-运行时语义-计算"><a class="markdownIt-Anchor" href="#12113-运行时语义-计算"></a> 12.11.3 运行时语义: 计算</h3>
+<h3 id="12123-运行时语义-计算"><a class="markdownIt-Anchor" href="#12123-运行时语义-计算"></a> 12.12.3 运行时语义: 计算</h3>
 <p>产生式<code>A : A @ B</code>中<code>@</code>是上面产生式中的位运算符之一，它的计算过程如下：</p>
 <ol>
 <li>令<code>lref</code>为计算<code>A</code>的结果</li>
-<li>令<code>lval</code>为<code>GetValue(lref)</code></li>
-<li><code>ReturnIfAbrupt(lval)</code></li>
+<li>令<code>lval</code>为? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>B</code>的结果</li>
-<li>令<code>rval</code>为<code>GetValue(rref)</code></li>
-<li><code>ReturnIfAbrupt(rval)</code></li>
-<li>令<code>lnum</code>为<code>ToInt32(lval)</code></li>
-<li><code>ReturnIfAbrupt(lnum)</code></li>
-<li>令<code>rnum</code>为<code>ToInt32(rval)</code></li>
-<li><code>ReturnIfAbrupt(rnum)</code></li>
-<li>返回对<code>lnum</code>和<code>rnum</code>应用位运算符<code>@</code>的结果。此结果是一个32位有符号整数。</li>
+<li>令<code>rval</code>为? <code>GetValue(rref)</code></li>
+<li>令<code>lnum</code>为? <code>ToNumeric(lval)</code></li>
+<li>令<code>rnum</code>为? <code>ToNumeric(rval)</code></li>
+<li>如果<code>Type(lnum)</code>与<code>Type(rnum)</code>不同，抛出 TypeError 异常</li>
+<li>令<code>T</code>为<code>Type(lnum)</code></li>
+<li>如果<code>@</code>为<code>&amp;</code>，返回<code>T::bitwiseAND(lnum, rnum)</code></li>
+<li>如果<code>@</code>为<code>|</code>，返回<code>T::bitwiseOR(lnum, rnum)</code></li>
+<li>否则：
+<ol>
+<li>断言：<code>@</code>为<code>^</code></li>
+<li>返回<code>T::bitwiseXOR(lnum, rnum)</code></li>
 </ol>
-<h2 id="1212-二元逻辑运算符"><a class="markdownIt-Anchor" href="#1212-二元逻辑运算符"></a> 12.12 二元逻辑运算符</h2>
+</li>
+</ol>
+<h2 id="1213-二元逻辑运算符"><a class="markdownIt-Anchor" href="#1213-二元逻辑运算符"></a> 12.13 二元逻辑运算符</h2>
 <p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression[In, Yield] :</span><br><span class="line">	BitwiseORExpression[?In, ?Yield]</span><br><span class="line">	LogicalANDExpression[?In, ?Yield] &amp;&amp; BitwiseORExpression[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">LogicalORExpression[In, Yield] :</span><br><span class="line">	LogicalANDExpression[?In, ?Yield]</span><br><span class="line">	LogicalORExpression[?In, ?Yield] || LogicalANDExpression[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">CoalesceExpression[In, Yield, Await]:</span><br><span class="line">    CoalesceExpressionHead[?In, ?Yield, ?Await]??BitwiseORExpression[?In, ?Yield, ?Await]</span><br><span class="line"></span><br><span class="line">CoalesceExpressionHead[In, Yield, Await]:</span><br><span class="line">    CoalesceExpression[?In, ?Yield, ?Await]</span><br><span class="line">    BitwiseORExpression[?In, ?Yield, ?Await]</span><br><span class="line"></span><br><span class="line">ShortCircuitExpression[In, Yield, Await]:</span><br><span class="line">    LogicalORExpression[?In, ?Yield, ?Await]</span><br><span class="line">    CoalesceExpression[?In, ?Yield, ?Await]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression :</span><br><span class="line">	BitwiseORExpression</span><br><span class="line">	LogicalANDExpression &amp;&amp; BitwiseORExpression</span><br><span class="line"></span><br><span class="line">LogicalORExpression :</span><br><span class="line">	LogicalANDExpression</span><br><span class="line">	LogicalORExpression || LogicalANDExpression</span><br><span class="line"></span><br><span class="line">CoalesceExpression:</span><br><span class="line">    CoalesceExpressionHead ?? BitwiseORExpression</span><br><span class="line"></span><br><span class="line">CoalesceExpressionHead:</span><br><span class="line">    CoalesceExpression</span><br><span class="line">    BitwiseORExpression</span><br><span class="line"></span><br><span class="line">ShortCircuitExpression:</span><br><span class="line">    LogicalORExpression</span><br><span class="line">    CoalesceExpression</span><br></pre></td></tr></table></figure>
 <p>注意：由<code>&amp;&amp;</code>或<code>||</code>运算符产生的值不一定是<code>Boolean</code>类型。 产生的值将始终是两个操作数表达式的值之一。</p>
-<h3 id="12123-运行时语义-计算"><a class="markdownIt-Anchor" href="#12123-运行时语义-计算"></a> 12.12.3 运行时语义: 计算</h3>
+<h3 id="12133-运行时语义-计算"><a class="markdownIt-Anchor" href="#12133-运行时语义-计算"></a> 12.13.3 运行时语义: 计算</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression:</span><br><span class="line">    LogicalANDExpression &amp;&amp; BitwiseORExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>LogicalANDExpression</code>的结果</li>
@@ -1052,11 +937,11 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </li>
 <li>否则，返回<code>lval</code></li>
 </ol>
-<h2 id="1213-条件运算符"><a class="markdownIt-Anchor" href="#1213-条件运算符"></a> 12.13 条件运算符</h2>
+<h2 id="1214-条件运算符"><a class="markdownIt-Anchor" href="#1214-条件运算符"></a> 12.14 条件运算符</h2>
 <p>语法</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ConditionalExpression[In, Yield] :</span><br><span class="line">	LogicalORExpression[?In, ?Yield]</span><br><span class="line">	LogicalORExpression[?In,?Yield] ? AssignmentExpression[In, ?Yield] : AssignmentExpression[?In, ?Yield]</span><br></pre></td></tr></table></figure>
 <p>注：ECMAScript中的ConditionalExpression的语法与C和Java中的略有不同，后者分别允许第二个子表达式为Expression，但将第三个表达式限制为ConditionalExpression。 ECMAScript中这种差异的动机是允许赋值表达式由条件的任一分支支配，并消除以逗号表达式为中心表达式的令人困惑且相当无用的情况。</p>
-<h3 id="12133-运行时语义计算"><a class="markdownIt-Anchor" href="#12133-运行时语义计算"></a> 12.13.3 运行时语义:计算</h3>
+<h3 id="12143-运行时语义计算"><a class="markdownIt-Anchor" href="#12143-运行时语义计算"></a> 12.14.3 运行时语义:计算</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConditionalExpression : LogicalORExpression ? AssignmentExpression : AssignmentExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>LogicalORExpression</code>的结果</li>
@@ -1075,11 +960,11 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 </li>
 </ol>
-<h2 id="1214-赋值运算符"><a class="markdownIt-Anchor" href="#1214-赋值运算符"></a> 12.14 赋值运算符</h2>
+<h2 id="1215-赋值运算符"><a class="markdownIt-Anchor" href="#1215-赋值运算符"></a> 12.15 赋值运算符</h2>
 <p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AssignmentExpression[In, Yield] :</span><br><span class="line">	ConditionalExpression[?In, ?Yield]</span><br><span class="line">	[+Yield] YieldExpression[?In]</span><br><span class="line">	ArrowFunction[?In, ?Yield]</span><br><span class="line">	LeftHandSideExpression[?Yield] &#x3D; AssignmentExpression[?In, ?Yield]</span><br><span class="line">	LeftHandSideExpression[?Yield] AssignmentOperator AssignmentExpression[?In, ?Yield]</span><br><span class="line"></span><br><span class="line">AssignmentOperator : one of</span><br><span class="line">	*&#x3D; &#x2F;&#x3D; %&#x3D; +&#x3D; -&#x3D; &lt;&lt;&#x3D; &gt;&gt;&#x3D; &gt;&gt;&gt;&#x3D; &amp;&#x3D; ^&#x3D; |&#x3D;</span><br></pre></td></tr></table></figure>
-<h3 id="12144-运行时语义计算"><a class="markdownIt-Anchor" href="#12144-运行时语义计算"></a> 12.14.4 运行时语义:计算</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssignmentExpression[In, Yield] : LeftHandSideExpression[?Yield] &#x3D; AssignmentExpression[?In, ?Yield]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AssignmentExpression :</span><br><span class="line">	ConditionalExpression</span><br><span class="line">	[+Yield] YieldExpression</span><br><span class="line">	ArrowFunction</span><br><span class="line">	AsyncArrowFunction</span><br><span class="line">	LeftHandSideExpression &#x3D; AssignmentExpression</span><br><span class="line">	LeftHandSideExpression AssignmentOperator AssignmentExpression</span><br><span class="line"></span><br><span class="line">AssignmentOperator : one of</span><br><span class="line">	*&#x3D; &#x2F;&#x3D; %&#x3D; +&#x3D; -&#x3D; &lt;&lt;&#x3D; &gt;&gt;&#x3D; &gt;&gt;&gt;&#x3D; &amp;&#x3D; ^&#x3D; |&#x3D; **&#x3D;</span><br></pre></td></tr></table></figure>
+<h3 id="12154-运行时语义计算"><a class="markdownIt-Anchor" href="#12154-运行时语义计算"></a> 12.15.4 运行时语义:计算</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssignmentExpression : LeftHandSideExpression &#x3D; AssignmentExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>如果<code>LeftHandSideExpression</code>既不是<code>ObjectLiteral</code>也不是<code>ArrayLiteral</code>，则
 <ol>
@@ -1124,7 +1009,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h3 id="12155-解构赋值"><a class="markdownIt-Anchor" href="#12155-解构赋值"></a> 12.15.5 解构赋值</h3>
 <p>补充语法</p>
 <p>在某些情况下，在处理产生式<code>AssignmentExpression : LeftHandSideExpression = AssignmentExpression</code>时，以下语法用于完善<code>LeftHandSideExpression</code>的解释。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">AssignmentPattern[Yield] :</span><br><span class="line">	ObjectAssignmentPattern[?Yield]</span><br><span class="line">	ArrayAssignmentPattern[?Yield]</span><br><span class="line"></span><br><span class="line">ObjectAssignmentPattern[Yield] :</span><br><span class="line">	&#123; &#125;</span><br><span class="line">	&#123; AssignmentPropertyList[?Yield] &#125;</span><br><span class="line">	&#123; AssignmentPropertyList[?Yield] , &#125;</span><br><span class="line">	&#123; AssignmentPropertyList[?Yield, ?Await] , AssignmentRestProperty[?Yield, ?Await]opt &#125;</span><br><span class="line"></span><br><span class="line">ArrayAssignmentPattern[Yield] :</span><br><span class="line">	[ Elision&#123;opt&#125; AssignmentRestElement[?Yield]opt ]</span><br><span class="line">	[ AssignmentElementList[?Yield] ]</span><br><span class="line">	[ AssignmentElementList[?Yield] , Elision&#123;opt&#125; AssignmentRestElement[?Yield]opt ]</span><br><span class="line"></span><br><span class="line">AssignmentRestProperty[Yield, Await]:</span><br><span class="line">    ... DestructuringAssignmentTarget[?Yield, ?Await]</span><br><span class="line"></span><br><span class="line">AssignmentPropertyList[Yield] :</span><br><span class="line">	AssignmentProperty[?Yield]</span><br><span class="line">	AssignmentPropertyList[?Yield] , AssignmentProperty[?Yield]</span><br><span class="line"></span><br><span class="line">AssignmentElementList[Yield] :</span><br><span class="line">	AssignmentElisionElement[?Yield]</span><br><span class="line">	AssignmentElementList[?Yield] , AssignmentElisionElement[?Yield]</span><br><span class="line"></span><br><span class="line">AssignmentElisionElement[Yield] :</span><br><span class="line">	Elision&#123;opt&#125; AssignmentElement[?Yield]</span><br><span class="line"></span><br><span class="line">AssignmentProperty[Yield] :</span><br><span class="line">	IdentifierReference[?Yield] Initializer[In,?Yield]opt</span><br><span class="line">	PropertyName : AssignmentElement[?Yield]</span><br><span class="line"></span><br><span class="line">AssignmentElement[Yield] :</span><br><span class="line">	DestructuringAssignmentTarget[?Yield] Initializer[In,?Yield]opt</span><br><span class="line"></span><br><span class="line">AssignmentRestElement[Yield] :</span><br><span class="line">	... DestructuringAssignmentTarget[?Yield]</span><br><span class="line"></span><br><span class="line">DestructuringAssignmentTarget[Yield] :</span><br><span class="line">	LeftHandSideExpression[?Yield]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">AssignmentPattern :</span><br><span class="line">	ObjectAssignmentPattern</span><br><span class="line">	ArrayAssignmentPattern</span><br><span class="line"></span><br><span class="line">ObjectAssignmentPattern :</span><br><span class="line">	&#123; &#125;</span><br><span class="line">	&#123; AssignmentRestProperty &#125;</span><br><span class="line">	&#123; AssignmentPropertyList &#125;</span><br><span class="line">	&#123; AssignmentPropertyList , AssignmentRestProperty&#123;opt&#125; &#125;</span><br><span class="line"></span><br><span class="line">ArrayAssignmentPattern :</span><br><span class="line">	[ Elision&#123;opt&#125; AssignmentRestElement&#123;opt&#125; ]</span><br><span class="line">	[ AssignmentElementList ]</span><br><span class="line">	[ AssignmentElementList , Elision&#123;opt&#125; AssignmentRestElement&#123;opt&#125; ]</span><br><span class="line"></span><br><span class="line">AssignmentRestProperty :</span><br><span class="line">    ... DestructuringAssignmentTarget</span><br><span class="line"></span><br><span class="line">AssignmentPropertyList :</span><br><span class="line">	AssignmentProperty</span><br><span class="line">	AssignmentPropertyList , AssignmentProperty</span><br><span class="line"></span><br><span class="line">AssignmentElementList :</span><br><span class="line">	AssignmentElisionElement</span><br><span class="line">	AssignmentElementList , AssignmentElisionElement</span><br><span class="line"></span><br><span class="line">AssignmentElisionElement :</span><br><span class="line">	Elision&#123;opt&#125; AssignmentElement</span><br><span class="line"></span><br><span class="line">AssignmentProperty :</span><br><span class="line">	IdentifierReference Initializer&#123;opt&#125;</span><br><span class="line">	PropertyName : AssignmentElement</span><br><span class="line"></span><br><span class="line">AssignmentElement :</span><br><span class="line">	DestructuringAssignmentTarget Initializer&#123;opt&#125;</span><br><span class="line"></span><br><span class="line">AssignmentRestElement :</span><br><span class="line">	... DestructuringAssignmentTarget</span><br><span class="line"></span><br><span class="line">DestructuringAssignmentTarget :</span><br><span class="line">	LeftHandSideExpression</span><br></pre></td></tr></table></figure>
 <h4 id="121552-运行时语义destructuringassignmentevaluation"><a class="markdownIt-Anchor" href="#121552-运行时语义destructuringassignmentevaluation"></a> 12.15.5.2 运行时语义:DestructuringAssignmentEvaluation</h4>
 <p>接受参数<code>value</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectAssignmentPattern : &#123;&#125;</span><br></pre></td></tr></table></figure>
@@ -1410,16 +1295,16 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </li>
 <li>返回? <code>PutValue(lref, rhsValue)</code></li>
 </ol>
-<h2 id="1215-逗号运算符"><a class="markdownIt-Anchor" href="#1215-逗号运算符"></a> 12.15 逗号运算符</h2>
+<h2 id="1216-逗号运算符"><a class="markdownIt-Anchor" href="#1216-逗号运算符"></a> 12.16 逗号运算符</h2>
 <p>语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Expression[In, Yield] :</span><br><span class="line">	AssignmentExpression[?In, ?Yield]</span><br><span class="line">	Expression[?In, ?Yield] , AssignmentExpression[?In, ?Yield]</span><br></pre></td></tr></table></figure>
-<h3 id="12153-运行时语义计算"><a class="markdownIt-Anchor" href="#12153-运行时语义计算"></a> 12.15.3 运行时语义:计算</h3>
+<h3 id="12163-运行时语义计算"><a class="markdownIt-Anchor" href="#12163-运行时语义计算"></a> 12.16.3 运行时语义:计算</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expression : Expression , AssignmentExpression</span><br></pre></td></tr></table></figure>
 <ol>
 <li>令<code>lref</code>为计算<code>Expression</code>的结果</li>
-<li><code>ReturnIfAbrupt(GetValue(lref))</code></li>
+<li>执行? <code>GetValue(lref)</code></li>
 <li>令<code>rref</code>为计算<code>AssignmentExpression</code>的结果</li>
-<li>返回<code>GetValue(rref)</code></li>
+<li>返回? <code>GetValue(rref)</code></li>
 </ol>
 <p>注：即使不使用GetValue，也必须调用它，因为它可能会有明显的副作用。</p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/12 表达式.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/ES规范/12 表达式.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/11%20%E8%AF%8D%E6%B3%95.html"><i class="fa fa-chevron-left">  </i><span>11 词法</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/13%20%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%A3%B0%E6%98%8E.html"><span>13 语句和声明</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
