@@ -20,7 +20,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%99%AE%E9%80%9A%E5%92%8C%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.</span> <span class="toc-text"> 9 普通和奇异对象行为</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E6%99%AE%E9%80%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%86%85%E9%83%A8%E6%A7%BD"><span class="toc-number">1.1.</span> <span class="toc-text"> 9.1 普通对象的内部方法和内部槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#911-getprototypeof"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 9.1.1 [[GetPrototypeOf]] ( )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#914-preventextensions"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 9.1.4 [[PreventExtensions]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9141-ordinarypreventextensions-o"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 9.1.4.1 OrdinaryPreventExtensions ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#915-getownproperty"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 9.1.5 [[GetOwnProperty]] §</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9151-ordinarygetownproperty-o-p"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 9.1.5.1 OrdinaryGetOwnProperty (O, P)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#916-defineownproperty-p-desc"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 9.1.6 [[DefineOwnProperty]] (P, Desc)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9161-ordinarydefineownproperty-o-p-desc"><span class="toc-number">1.1.4.1.</span> <span class="toc-text"> 9.1.6.1 OrdinaryDefineOwnProperty (O, P, Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9163-validateandapplypropertydescriptor-o-p-extensible-desc-current"><span class="toc-number">1.1.4.2.</span> <span class="toc-text"> 9.1.6.3 ValidateAndApplyPropertyDescriptor (O, P, extensible, Desc, current)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#917-hasproperty"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 9.1.7 [[HasProperty]] §</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9171-ordinaryhasproperty-o-p"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 9.1.7.1 OrdinaryHasProperty (O, P)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#918-get-p-receiver"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 9.1.8 [[Get]] ( P, Receiver )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9181-ordinaryget-o-p-receiver"><span class="toc-number">1.1.6.1.</span> <span class="toc-text"> 9.1.8.1 OrdinaryGet ( O, P, Receiver )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#919-set-p-v-receiver"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 9.1.9 [[Set]] ( P, V, Receiver )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9191-ordinaryset-o-p-v-receiver"><span class="toc-number">1.1.7.1.</span> <span class="toc-text"> 9.1.9.1 OrdinarySet ( O, P, V, Receiver )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9192-ordinarysetwithowndescriptor-o-p-v-receiver-owndesc"><span class="toc-number">1.1.7.2.</span> <span class="toc-text"> 9.1.9.2 OrdinarySetWithOwnDescriptor ( O, P, V, Receiver, ownDesc )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9110-delete"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 9.1.10 [[Delete]] §</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9111-enumerate"><span class="toc-number">1.1.9.</span> <span class="toc-text"> 9.1.11 [[Enumerate]] ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9111-ownpropertykeys"><span class="toc-number">1.1.10.</span> <span class="toc-text"> 9.1.11 [[OwnPropertyKeys]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#91111-ordinaryownpropertykeys-o"><span class="toc-number">1.1.10.1.</span> <span class="toc-text"> 9.1.11.1 OrdinaryOwnPropertyKeys ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9112-ordinaryobjectcreate-proto-additionalinternalslotslist"><span class="toc-number">1.1.11.</span> <span class="toc-text"> 9.1.12 OrdinaryObjectCreate ( proto [ , additionalInternalSlotsList ] )</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 9.2 函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#921-call-thisargument-argumentslist"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 9.2.1 [[Call]] ( thisArgument, argumentsList)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9211-prepareforordinarycall-f-newtarget"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 9.2.1.1 PrepareForOrdinaryCall( F, newTarget )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#922-construct-argumentslist-newtarget"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 9.2.2 [[Construct]] ( argumentsList, newTarget)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#93-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text"> 9.3 内置函数对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#94-%E5%86%85%E7%BD%AE%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E5%92%8C%E6%8F%92%E6%A7%BD"><span class="toc-number">1.4.</span> <span class="toc-text"> 9.4 内置奇异对象的内部方法和插槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#942-%E6%95%B0%E7%BB%84%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 9.4.2 数组奇异对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#944-%E5%8F%82%E6%95%B0%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 9.4.4 参数奇异对象</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">185</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">9 普通和奇异对象行为</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-13</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="9-普通和奇异对象行为"><a class="markdownIt-Anchor" href="#9-普通和奇异对象行为"></a> 9 普通和奇异对象行为</h1>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E6%99%AE%E9%80%9A%E5%92%8C%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.</span> <span class="toc-text"> 9 普通和奇异对象行为</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#91-%E6%99%AE%E9%80%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%86%85%E9%83%A8%E6%A7%BD"><span class="toc-number">1.1.</span> <span class="toc-text"> 9.1 普通对象的内部方法和内部槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#911-getprototypeof"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 9.1.1 [[GetPrototypeOf]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9111-ordinarygetprototypeof-o"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 9.1.1.1 OrdinaryGetPrototypeOf ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#912-setprototypeof-v"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 9.1.2 [[SetPrototypeOf]] ( V )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9121-ordinarysetprototypeof-o-v"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 9.1.2.1 OrdinarySetPrototypeOf ( O, V )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#913-isextensible"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 9.1.3 [[IsExtensible]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9131-ordinaryisextensible-o"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 9.1.3.1 OrdinaryIsExtensible ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#914-preventextensions"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 9.1.4 [[PreventExtensions]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9141-ordinarypreventextensions-o"><span class="toc-number">1.1.4.1.</span> <span class="toc-text"> 9.1.4.1 OrdinaryPreventExtensions ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#915-getownproperty"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 9.1.5 [[GetOwnProperty]] §</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9151-ordinarygetownproperty-o-p"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 9.1.5.1 OrdinaryGetOwnProperty (O, P)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#916-defineownproperty-p-desc"><span class="toc-number">1.1.6.</span> <span class="toc-text"> 9.1.6 [[DefineOwnProperty]] (P, Desc)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9161-ordinarydefineownproperty-o-p-desc"><span class="toc-number">1.1.6.1.</span> <span class="toc-text"> 9.1.6.1 OrdinaryDefineOwnProperty (O, P, Desc)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9163-validateandapplypropertydescriptor-o-p-extensible-desc-current"><span class="toc-number">1.1.6.2.</span> <span class="toc-text"> 9.1.6.3 ValidateAndApplyPropertyDescriptor (O, P, extensible, Desc, current)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#917-hasproperty"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 9.1.7 [[HasProperty]] §</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9171-ordinaryhasproperty-o-p"><span class="toc-number">1.1.7.1.</span> <span class="toc-text"> 9.1.7.1 OrdinaryHasProperty (O, P)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#918-get-p-receiver"><span class="toc-number">1.1.8.</span> <span class="toc-text"> 9.1.8 [[Get]] ( P, Receiver )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9181-ordinaryget-o-p-receiver"><span class="toc-number">1.1.8.1.</span> <span class="toc-text"> 9.1.8.1 OrdinaryGet ( O, P, Receiver )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#919-set-p-v-receiver"><span class="toc-number">1.1.9.</span> <span class="toc-text"> 9.1.9 [[Set]] ( P, V, Receiver )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9191-ordinaryset-o-p-v-receiver"><span class="toc-number">1.1.9.1.</span> <span class="toc-text"> 9.1.9.1 OrdinarySet ( O, P, V, Receiver )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9192-ordinarysetwithowndescriptor-o-p-v-receiver-owndesc"><span class="toc-number">1.1.9.2.</span> <span class="toc-text"> 9.1.9.2 OrdinarySetWithOwnDescriptor ( O, P, V, Receiver, ownDesc )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9110-delete"><span class="toc-number">1.1.10.</span> <span class="toc-text"> 9.1.10 [[Delete]] §</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9111-enumerate"><span class="toc-number">1.1.11.</span> <span class="toc-text"> 9.1.11 [[Enumerate]] ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9111-ownpropertykeys"><span class="toc-number">1.1.12.</span> <span class="toc-text"> 9.1.11 [[OwnPropertyKeys]] ( )</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#91111-ordinaryownpropertykeys-o"><span class="toc-number">1.1.12.1.</span> <span class="toc-text"> 9.1.11.1 OrdinaryOwnPropertyKeys ( O )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9112-ordinaryobjectcreate-proto-additionalinternalslotslist"><span class="toc-number">1.1.13.</span> <span class="toc-text"> 9.1.12 OrdinaryObjectCreate ( proto [ , additionalInternalSlotsList ] )</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#92-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text"> 9.2 函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#921-call-thisargument-argumentslist"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 9.2.1 [[Call]] ( thisArgument, argumentsList)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9211-prepareforordinarycall-f-newtarget"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 9.2.1.1 PrepareForOrdinaryCall( F, newTarget )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9212-ordinarycallbindthis-f-calleecontext-thisargument"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 9.2.1.2 OrdinaryCallBindThis ( F, calleeContext, thisArgument )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9213-ordinarycallevaluatebody-f-argumentslist"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 9.2.1.3 OrdinaryCallEvaluateBody ( F, argumentsList )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#922-construct-argumentslist-newtarget"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 9.2.2 [[Construct]] ( argumentsList, newTarget)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#93-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text"> 9.3 内置函数对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#94-%E5%86%85%E7%BD%AE%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95%E5%92%8C%E6%A7%BD"><span class="toc-number">1.4.</span> <span class="toc-text"> 9.4 内置奇异对象的内部方法和槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#941-%E7%BB%91%E5%AE%9A%E5%87%BD%E6%95%B0%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 9.4.1 绑定函数奇异对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9411-call-thisargument-argumentslist"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 9.4.1.1 [[Call]] ( thisArgument, argumentsList )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9412-construct-argumentslist-newtarget"><span class="toc-number">1.4.1.2.</span> <span class="toc-text"> 9.4.1.2 [[Construct]] ( argumentsList, newTarget )</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9413-boundfunctioncreate-targetfunction-boundthis-boundargs"><span class="toc-number">1.4.1.3.</span> <span class="toc-text"> 9.4.1.3 BoundFunctionCreate ( targetFunction, boundThis, boundArgs )</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#942-%E6%95%B0%E7%BB%84%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 9.4.2 数组奇异对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#944-%E5%8F%82%E6%95%B0%E5%A5%87%E5%BC%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 9.4.4 参数奇异对象</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">185</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">9 普通和奇异对象行为</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-18</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="9-普通和奇异对象行为"><a class="markdownIt-Anchor" href="#9-普通和奇异对象行为"></a> 9 普通和奇异对象行为</h1>
 <h2 id="91-普通对象的内部方法和内部槽"><a class="markdownIt-Anchor" href="#91-普通对象的内部方法和内部槽"></a> 9.1 普通对象的内部方法和内部槽</h2>
 <p>所有普通对象都有一个称为<code>[[Prototype]]</code>的内部槽。 此内部槽的值要么是<code>null</code>要么是一个对象，用于实现继承。 <code>[[Prototype]]</code>对象的数据属性被继承（并作为子对象的属性可见），用于get访问，但不用于set访问。访问器属性对于get访问和set访问都会继承的。</p>
 <p>每个普通对象都有一个布尔值的<code>[[Extensible]]</code>内部槽，用来实现6.1.7.3中规定的与扩展性相关的内部方法不变性。也就是说，一旦一个对象的<code>[[Extensible]]</code>内部槽的值被设置为<code>false</code>，就不再允许向该对象添加属性，也不允许修改该对象的<code>[[Prototype]]</code>内部槽的值，之后也不能将<code>[[Extensible]]</code>的值改为<code>true</code>。</p>
@@ -29,7 +29,53 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <h3 id="911-getprototypeof"><a class="markdownIt-Anchor" href="#911-getprototypeof"></a> 9.1.1 [[GetPrototypeOf]] ( )</h3>
 <p>调用<code>O</code>的<code>[[GetProtototypeOf]]</code>内部方法时，将执行以下步骤：</p>
 <ol>
-<li>返回<code>O</code>的<code>[[Prototype]]</code>内部槽的值</li>
+<li>返回! <code>OrdinaryGetPrototypeOf(O)</code></li>
+</ol>
+<h4 id="9111-ordinarygetprototypeof-o"><a class="markdownIt-Anchor" href="#9111-ordinarygetprototypeof-o"></a> 9.1.1.1 OrdinaryGetPrototypeOf ( O )</h4>
+<p>使用参数<code>O</code>调用<code>OrdinaryGetPrototypeOf</code>抽象操作时，将执行以下步骤：</p>
+<ol>
+<li>返回<code>O.[[Prototype]]</code></li>
+</ol>
+<h3 id="912-setprototypeof-v"><a class="markdownIt-Anchor" href="#912-setprototypeof-v"></a> 9.1.2 [[SetPrototypeOf]] ( V )</h3>
+<p>当使用参数<code>V</code>调用<code>O</code>的<code>[[GetProtototypeOf]]</code>内部方法时，将执行以下步骤：</p>
+<ol>
+<li>返回! <code>OrdinarySetPrototypeOf(O, V)</code></li>
+</ol>
+<h4 id="9121-ordinarysetprototypeof-o-v"><a class="markdownIt-Anchor" href="#9121-ordinarysetprototypeof-o-v"></a> 9.1.2.1 OrdinarySetPrototypeOf ( O, V )</h4>
+<p>使用参数 对象<code>O</code>和值<code>V</code>调用<code>OrdinarySetPrototypeOf</code>抽象操作时，将执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(V)</code>要么是<code>Object</code>要么是<code>Null</code></li>
+<li>令<code>current</code>为<code>O.[[Prototype]]</code></li>
+<li>如果<code>SameValue(V, current)</code>为<code>true</code>，返回<code>true</code></li>
+<li>令<code>extensible</code>为<code>O.[[Extensible]]</code></li>
+<li>如果<code>extensible</code>为<code>false</code>，返回<code>false</code></li>
+<li>令<code>p</code>为<code>V</code></li>
+<li>令<code>done</code>为<code>false</code></li>
+<li>重复，只要<code>done</code>为<code>false</code>
+<ol>
+<li>如果<code>p</code>为<code>null</code>，将<code>done</code>为<code>true</code></li>
+<li>否则如果<code>SameValue(p, O)</code>为<code>true</code>，返回<code>false</code></li>
+<li>否则：
+<ol>
+<li>如果<code>p.[[GetPrototypeOf]]</code>不是9.1.1节定义的普通对象内部方法，将<code>done</code>设为<code>true</code></li>
+<li>否则，将<code>p</code>设为<code>p.[[Prototype]]</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>将<code>O.[[Prototype]]</code>设为<code>V</code></li>
+<li>返回<code>true</code></li>
+</ol>
+<p>注：第8步的循环保证了在任何只包括使用<code>[[GetPrototypeOf]]</code>和<code>[[SetPrototypeOf]]</code>的普通对象定义的原型链中不会出现循环。</p>
+<h3 id="913-isextensible"><a class="markdownIt-Anchor" href="#913-isextensible"></a> 9.1.3 [[IsExtensible]] ( )</h3>
+<p>调用<code>O</code>的<code>[[IsExtensible]]</code>内部方法时，将执行以下步骤：</p>
+<ol>
+<li>返回! <code>OrdinaryIsExtensible(O)</code></li>
+</ol>
+<h4 id="9131-ordinaryisextensible-o"><a class="markdownIt-Anchor" href="#9131-ordinaryisextensible-o"></a> 9.1.3.1 OrdinaryIsExtensible ( O )</h4>
+<p>使用参数<code>O</code>调用<code>OrdinaryIsExtensible</code>抽象操作时，将执行以下步骤：</p>
+<ol>
+<li>返回<code>O.[[Extensible]]</code></li>
 </ol>
 <h3 id="914-preventextensions"><a class="markdownIt-Anchor" href="#914-preventextensions"></a> 9.1.4 [[PreventExtensions]] ( )</h3>
 <p>当调用<code>O</code>的内部方法<code>[[PreventExtensions]]</code>时，执行以下步骤：</p>
@@ -300,11 +346,80 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 <p>注：尽管<code>OrdinaryObjectCreate</code>只是调用<code>MakeBasicObject</code>，但它的使用传达了创建一个普通对象的意图，而不是一个奇异对象。因此，在本规范中，它不被任何随后修改对象内部方法的算法所调用，这些算法会使结果变得非普通。创建奇异对象的操作直接调用<code>MakeBasicObject</code>。</p>
 <h2 id="92-函数对象"><a class="markdownIt-Anchor" href="#92-函数对象"></a> 9.2 函数对象</h2>
+<p>ECMAScript函数对象封装了包围在词法环境内的参数化ECMAScript代码，并支持该代码的动态计算。ECMAScript函数对象是一个普通的对象，具有和其他普通对象一样的内部槽和内部方法。ECMAScript函数对象的代码可以是严格模式代码（10.2.1）或非严格模式代码。一个代码为严格模式代码的ECMAScript函数对象被称为严格函数。一个代码不是严格模式代码的函数被称为非严格函数。</p>
+<p>除了<code>[[Extensible]]</code>和<code>[[Prototype]]</code>之外，ECMAScript函数对象还具有表27中所列的内部槽。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部槽</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[Environment]]</td>
+<td style="text-align:left">词法环境</td>
+<td style="text-align:left">包围该函数的词汇环境。在计算函数代码时作为外部环境使用。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[FormalParameters]]</td>
+<td style="text-align:left">解析结点</td>
+<td style="text-align:left">定义函数形式参数列表的源文本的根解析结点</td>
+</tr>
+<tr>
+<td style="text-align:left">[[ECMAScriptCode]]</td>
+<td style="text-align:left">解析结点</td>
+<td style="text-align:left">定义函数体的源文本的根解析结点</td>
+</tr>
+<tr>
+<td style="text-align:left">[[ConstructorKind]]</td>
+<td style="text-align:left"><code>base/derived</code></td>
+<td style="text-align:left">该函数是否为派生类构造函数</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Realm]]</td>
+<td style="text-align:left">Realm记录</td>
+<td style="text-align:left">创建该函数的Realm，该Realm提供在计算该函数时访问的任何固有对象</td>
+</tr>
+<tr>
+<td style="text-align:left">[[ScriptOrModule]]</td>
+<td style="text-align:left">脚本记录或模块记录</td>
+<td style="text-align:left">创建该函数的脚本或模块</td>
+</tr>
+<tr>
+<td style="text-align:left">[[ThisMode]]</td>
+<td style="text-align:left"><code>lexical/strict/global</code></td>
+<td style="text-align:left">定义了在函数的形式参数和代码体中如何解释<code>this</code>引用。<code>lexical</code>意味着<code>this</code>指的是一个包围函数的词法环境的<code>this</code>值。<code>strict</code>意味着<code>this</code>值完全按照函数调用提供的方式使用。<code>global</code>意味着<code>this</code>值为<code>undefined</code>被解释为对全局对象的引用。</td>
+</tr>
+<tr>
+<td style="text-align:left">[[Strict]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">严格函数为<code>true</code>，非严格函数为<code>false</code></td>
+</tr>
+<tr>
+<td style="text-align:left">[[HomeObject]]</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">如果函数使用<code>super</code>，则它是一个对象，其<code>[[GetPrototypeOf]]</code>提供了<code>super</code>属性查找开始的对象</td>
+</tr>
+<tr>
+<td style="text-align:left">[[SourceText]]</td>
+<td style="text-align:left">Unicode代码点序列</td>
+<td style="text-align:left">定义了该函数的源文本</td>
+</tr>
+<tr>
+<td style="text-align:left">[[IsClassConstructor]]</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">表示该函数是否是一个类构造函数。如果为<code>true</code>，调用该函数的<code>[[Call]]</code>将立即抛出一个TypeError异常）</td>
+</tr>
+</tbody>
+</table>
+<p>所有ECMAScript函数对象都有这里定义的<code>[[Call]]</code>内部方法。此外，同时也是构造函数的ECMAScript函数有<code>[[Construct]]</code>内部方法。</p>
 <h3 id="921-call-thisargument-argumentslist"><a class="markdownIt-Anchor" href="#921-call-thisargument-argumentslist"></a> 9.2.1 [[Call]] ( thisArgument, argumentsList)</h3>
 <p>使用参数<code>thisArgument</code>和<code>argumentsList</code>（ECMAScript语言值的列表）来调用ECMAScript函数对象<code>F</code>的<code>[[Call]]</code>内部方法。 执行以下步骤：</p>
 <ol>
 <li>断言：<code>F</code>是ECMAScript函数对象</li>
-<li>如果<code>F</code>的<code>[[FunctionKind]]</code>内部槽为<code>&quot;classConstructor&quot;</code>，抛出 TypeError 异常</li>
+<li>如果<code>F.[[IsClassConstructor]]</code>为<code>true</code>，抛出 TypeError 异常</li>
 <li>令<code>callerContext</code>为运行中的执行上下文</li>
 <li>令<code>calleeContext</code>为<code>PrepareForOrdinaryCall(F, undefined)</code></li>
 <li>断言：<code>calleeContext</code>现在是运行中的执行上下文</li>
@@ -315,6 +430,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li><code>ReturnIfAbrupt(result)</code></li>
 <li>返回<code>NormalCompletion(undefined)</code></li>
 </ol>
+<p>注：当<code>calleeContext</code>在步骤8中从执行上下文栈中被移除时，如果它被暂停并被保留以便以后由可访问的生成器对象恢复，那么它一定不会被销毁。</p>
 <h4 id="9211-prepareforordinarycall-f-newtarget"><a class="markdownIt-Anchor" href="#9211-prepareforordinarycall-f-newtarget"></a> 9.2.1.1 PrepareForOrdinaryCall( F, newTarget )</h4>
 <p>当使用函数对象<code>F</code>和ECMAScript语言值<code>newTarget</code>调用抽象操作<code>PrepareForOrdinaryCall</code>时，将执行以下步骤：</p>
 <ol>
@@ -324,13 +440,50 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>将<code>calleeContext</code>的<code>Function</code>设为<code>F</code></li>
 <li>令<code>calleeRealm</code>为<code>F</code>的<code>[[Realm]]</code>内部槽的值</li>
 <li>将<code>calleeContext</code>的<code>Realm</code>设为<code>calleeRealm</code></li>
+<li>将<code>calleeContext</code>的<code>ScriptOrModule</code>设为<code>F.[[ScriptOrModule]]</code></li>
 <li>令<code>localEnv</code>为<code>NewFunctionEnvironment(F, newTarget)</code></li>
 <li>将<code>calleeContext</code>的<code>LexicalEnvironment</code>设为<code>localEnv</code></li>
 <li>将<code>calleeContext</code>的<code>VariableEnvironment</code>设为<code>localEnv</code></li>
 <li>如果<code>callerContext</code>尚未暂停，则暂停<code>callerContext</code></li>
-<li>将<code>calleeContext</code>放入执行上下文栈，现在<code>calleeContext</code>是运行中的执行上下文</li>
+<li>将<code>calleeContext</code>推入执行上下文栈，现在<code>calleeContext</code>是运行中的执行上下文</li>
 <li>注意此后产生的任何异常对象都与<code>calleeRealm</code>相关联。</li>
 <li>返回<code>calleeContext</code></li>
+</ol>
+<h4 id="9212-ordinarycallbindthis-f-calleecontext-thisargument"><a class="markdownIt-Anchor" href="#9212-ordinarycallbindthis-f-calleecontext-thisargument"></a> 9.2.1.2 OrdinaryCallBindThis ( F, calleeContext, thisArgument )</h4>
+<p>当使用参数 函数对象<code>F</code>，执行上下文<code>calleeContext</code>和ECMAScript值<code>thisArgument</code>调用抽象操作<code>OrdinaryCallBindThis</code>时，执行以下步骤：</p>
+<ol>
+<li>令<code>thisMode</code>为<code>F.[[ThisMode]]</code></li>
+<li>如果<code>thisMode</code>为<code>lexical</code>，返回<code>NormalCompletion(undefined)</code></li>
+<li>令<code>calleeRealm</code>为<code>F.[[Realm]]</code></li>
+<li>令<code>localEnv</code>为<code>calleeContext</code>的<code>LexicalEnvironment</code></li>
+<li>如果<code>thisMode</code>为<code>strict</code>，令<code>thisValue</code>为<code>thisArgument</code></li>
+<li>否则：
+<ol>
+<li>如果<code>thisArgument</code>为<code>undefined</code>或<code>null</code>，则：
+<ol>
+<li>令<code>globalEnv</code>为<code>calleeRealm.[[GlobalEnv]]</code></li>
+<li>令<code>globalEnvRec</code>为<code>globalEnv</code>的<code>EnvironmentRecord</code></li>
+<li>断言：<code>globalEnvRec</code>是全局环境记录</li>
+<li>令<code>thisValue</code>为<code>globalEnvRec.[[GlobalThisValue]]</code></li>
+</ol>
+</li>
+<li>否则：
+<ol>
+<li>令<code>thisValue</code>为! <code>ToObject(thisArgument)</code></li>
+<li>注：<code>ToObject</code>使用<code>calleeRealm</code>产生包装对象</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>令<code>envRec</code>为<code>localEnv</code>的<code>EnvironmentRecord</code></li>
+<li>断言：<code>envRec</code>是函数环境记录</li>
+<li>断言：下一步永远不会返回非常规完结，因为<code>envRec.[[ThisBindingStatus]]</code>还没有<code>initialized</code></li>
+<li>返回<code>envRec.BindThisValue(thisValue)</code></li>
+</ol>
+<h4 id="9213-ordinarycallevaluatebody-f-argumentslist"><a class="markdownIt-Anchor" href="#9213-ordinarycallevaluatebody-f-argumentslist"></a> 9.2.1.3 OrdinaryCallEvaluateBody ( F, argumentsList )</h4>
+<p>当使用参数 函数对象<code>F</code>、列表<code>argumentsList</code>调用抽象操作<code>OrdinaryCallEvaluateBody</code>时，执行以下步骤：</p>
+<ol>
+<li>返回使用<code>F</code>和<code>argumentsList</code>作为参数的<code>F.[[ECMAScriptCode]]</code>解析代码的<code>EvaluateBody</code>的结果</li>
 </ol>
 <h3 id="922-construct-argumentslist-newtarget"><a class="markdownIt-Anchor" href="#922-construct-argumentslist-newtarget"></a> 9.2.2 [[Construct]] ( argumentsList, newTarget)</h3>
 <p>使用参数<code>argumentsList</code>和<code>newTarget</code>调用ECMAScript函数对象<code>F</code>的<code>[[Construct]]</code>内部方法。 <code>argumentsList</code>是一个可能为空的ECMAScript语言值列表。 采取以下步骤：</p>
@@ -341,29 +494,98 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>令<code>kind</code>为<code>F</code>的<code>[[ConstructorKind]]</code>内部槽</li>
 <li>如果<code>kind</code>为<code>&quot;base&quot;</code>，则
 <ol>
-<li>令<code>thisArgument</code>为<code>OrdinaryCreateFromConstructor(newTarget, &quot;%ObjectPrototype%&quot;)</code></li>
-<li><code>ReturnIfAbrupt(thisArgument)</code></li>
+<li>令<code>thisArgument</code>为? <code>OrdinaryCreateFromConstructor(newTarget, &quot;%ObjectPrototype%&quot;)</code></li>
 </ol>
 </li>
 <li>令<code>calleeContext</code>为<code>PrepareForOrdinaryCall(F, newTarget)</code></li>
 <li>断言：<code>calleeContext</code>现在是运行中的执行上下文</li>
 <li>如果<code>kind</code>为<code>&quot;base&quot;</code>，执行<code>OrdinaryCallBindThis(F, calleeContext, thisArgument)</code></li>
 <li>令<code>constructorEnv</code>为<code>calleeContext</code>的<code>LexicalEnvironment</code></li>
-<li>令<code>envRec</code>为<code>constructorEnv</code>的环境记录</li>
+<li>令<code>envRec</code>为<code>constructorEnv</code>的<code>EnvironmentRecord</code></li>
 <li>令<code>result</code>为<code>OrdinaryCallEvaluateBody(F, argumentsList)</code></li>
 <li>从执行上下文栈中移除<code>calleeContext</code>，然后将<code>callerContext</code>恢复为运行中的执行上下文</li>
-<li>如果<code>result.[[type]]</code>为<code>return</code>，则
+<li>如果<code>result.[[Type]]</code>为<code>return</code>，则
 <ol>
-<li>如果<code>Type(result.[[value]])</code>为<code>Object</code>，返回<code>NormalCompletion(result.[[value]])</code></li>
+<li>如果<code>Type(result.[[Value]])</code>为<code>Object</code>，返回<code>NormalCompletion(result.[[Value]])</code></li>
 <li>如果<code>kind</code>为<code>&quot;base&quot;</code>，返回<code>NormalCompletion(thisArgument)</code></li>
-<li>如果<code>result.[[value]]</code>不是<code>undefined</code>，抛出 TypeError 异常</li>
+<li>如果<code>result.[[Value]]</code>不是<code>undefined</code>，抛出 TypeError 异常</li>
 </ol>
 </li>
 <li>否则，<code>ReturnIfAbrupt(result)</code></li>
-<li>返回<code>envRec.GetThisBinding()</code></li>
+<li>返回? <code>envRec.GetThisBinding()</code></li>
 </ol>
 <h2 id="93-内置函数对象"><a class="markdownIt-Anchor" href="#93-内置函数对象"></a> 9.3 内置函数对象</h2>
-<h2 id="94-内置奇异对象的内部方法和插槽"><a class="markdownIt-Anchor" href="#94-内置奇异对象的内部方法和插槽"></a> 9.4 内置奇异对象的内部方法和插槽</h2>
+<h2 id="94-内置奇异对象的内部方法和槽"><a class="markdownIt-Anchor" href="#94-内置奇异对象的内部方法和槽"></a> 9.4 内置奇异对象的内部方法和槽</h2>
+<p>本规范定义了几种内置的奇异对象。除了一些特殊情况，这些对象的行为通常与普通对象类似。下面的奇异对象使用普通对象的内部方法，除非下面有明确的规定。</p>
+<h3 id="941-绑定函数奇异对象"><a class="markdownIt-Anchor" href="#941-绑定函数奇异对象"></a> 9.4.1 绑定函数奇异对象</h3>
+<p>一个绑定函数奇异对象是一个包装另一个函数对象的奇异对象。一个绑定函数奇异对象是可调用的（它有一个<code>[[Call]]</code>内部方法，也可能有一个<code>[[Construct]]</code>内部方法）。调用一个绑定函数奇异对象通常会导致对其包装的函数的调用。</p>
+<p>如果一个对象的<code>[[Call]]</code>和（如果适用）<code>[[Construct]]</code>内部方法使用以下实现，并且它的其他基本内部方法使用 9.1 中的定义，那么它就是一个绑定函数奇异对象。这些方法通过<code>BoundFunctionCreate</code> 安装。</p>
+<p>绑定函数奇异对象没有表27中列出的ECMAScript函数对象的内部槽。相反，除了<code>[[Prototype]]</code>和<code>[[Extensible]]</code>之外，它们还有表28中所列的内部槽：</p>
+<p>表28：绑定函数奇异对象的内部槽</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内部槽</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">[[BoundTargetFunction]]</td>
+<td style="text-align:left">可调用对象</td>
+<td style="text-align:left">包装的函数对象</td>
+</tr>
+<tr>
+<td style="text-align:left">[[BoundThis]]</td>
+<td style="text-align:left">任意类型</td>
+<td style="text-align:left">这个值在调用封装的函数时，总是作为<code>this</code>值传递</td>
+</tr>
+<tr>
+<td style="text-align:left">[[BoundArguments]]</td>
+<td style="text-align:left">任意类型的列表</td>
+<td style="text-align:left">一个值的列表，其元素被用作对包装函数的任何调用的第一个参数。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="9411-call-thisargument-argumentslist"><a class="markdownIt-Anchor" href="#9411-call-thisargument-argumentslist"></a> 9.4.1.1 [[Call]] ( thisArgument, argumentsList )</h4>
+<p>当使用<code>bind</code>函数创建的绑定函数奇异对象<code>F</code>的<code>[[Call]]</code>内部方法被使用参数<code>thisArgument</code>和<code>argumentsList</code>（ECMAScript语言值的列表）调用时，会执行以下步骤：</p>
+<ol>
+<li>令<code>target</code>为<code>F.[[BoundTargetFunction]]</code></li>
+<li>令<code>boundThis</code>为<code>F.[[BoundThis]]</code></li>
+<li>令<code>boundArgs</code>为<code>F.[[BoundArguments]]</code></li>
+<li>令<code>args</code>为一个新的列表，包含<code>boundArgs</code>中按顺序的所有元素，然后是<code>argumentsList</code>中按顺序的所有元素</li>
+<li>返回? <code>Call(target, boundThis, args)</code></li>
+</ol>
+<h4 id="9412-construct-argumentslist-newtarget"><a class="markdownIt-Anchor" href="#9412-construct-argumentslist-newtarget"></a> 9.4.1.2 [[Construct]] ( argumentsList, newTarget )</h4>
+<p>当使用<code>bind</code>函数创建的绑定函数奇异对象<code>F</code>的<code>[[Construct]]</code>内部方法被使用参数<code>argumentsList</code>和<code>newTarget</code>调用时，会执行以下步骤：</p>
+<ol>
+<li>令<code>target</code>为<code>F.[[BoundTargetFunction]]</code></li>
+<li>断言：<code>IsConstructor(target)</code>为<code>true</code></li>
+<li>令<code>boundArgs</code>为<code>F.[[BoundArguments]]</code></li>
+<li>令<code>args</code>为一个新的列表，包含<code>boundArgs</code>中按顺序的所有元素，然后是<code>argumentsList</code>中按顺序的所有元素</li>
+<li>如果<code>SameValue(F, newTarget)</code>为<code>true</code>，将<code>newTarget</code>设为<code>target</code></li>
+<li>返回? <code>Construct(target, args, newTarget)</code></li>
+</ol>
+<h4 id="9413-boundfunctioncreate-targetfunction-boundthis-boundargs"><a class="markdownIt-Anchor" href="#9413-boundfunctioncreate-targetfunction-boundthis-boundargs"></a> 9.4.1.3 BoundFunctionCreate ( targetFunction, boundThis, boundArgs )</h4>
+<p>使用参数<code>targetFunction</code>、<code>boundThis</code>和<code>boundArgs</code>调用抽象操作<code>BoundFunctionCreate</code>来指定创建新的绑定函数奇异对象。它执行以下步骤：</p>
+<ol>
+<li>断言：<code>Type(targetFunction)</code>为<code>Object</code></li>
+<li>令<code>proto</code>为? <code>targetFunction.[[GetPrototypeOf]]()</code></li>
+<li>令<code>internalSlotsList</code>为表28中列出的内部槽，加上<code>[[Prototype]]</code>和<code>[[Extensible]]</code></li>
+<li>令<code>obj</code>为! <code>MakeBasicObject(internalSlotsList)</code></li>
+<li>将<code>obj.[[Prototype]]</code>设为<code>proto</code></li>
+<li>将<code>obj.[[Call]]</code>设为 9.4.1.1 中描述的内容</li>
+<li>如果<code>IsConstructor(targetFunction)</code>为<code>true</code>，则：
+<ol>
+<li>将<code>obj.[[Construct]]</code>设为 9.4.1.2 中描述的内容</li>
+</ol>
+</li>
+<li>将<code>obj.[[BoundTargetFunction]]</code>设为<code>targetFunction</code></li>
+<li>将<code>obj.[[BoundThis]]</code>设为<code>boundThis</code></li>
+<li>将<code>obj.[[BoundArguments]]</code>设为<code>boundArgs</code></li>
+<li>返回<code>obj</code></li>
+</ol>
 <h3 id="942-数组奇异对象"><a class="markdownIt-Anchor" href="#942-数组奇异对象"></a> 9.4.2 数组奇异对象</h3>
 <p>一个Array对象是一个奇异对象，它对数组索引属性键（请参见6.1.7）进行特殊处理。属性名称是数组索引的属性也称为元素。每个Array对象都有一个<code>length</code>属性，该属性的值始终是一个小于<code>2^32</code>的非负整数。<code>length</code>属性的值在数值上大于每个属性名为数组索引的自有属性的名称，每当创建或更改Array对象的自有属性时，都会根据需要调整其他属性以保持该不变性。具体来说，每当添加一个属性名为数组索引的自有属性时，如果需要，则将<code>length</code>属性的值更改为比该数组索引的数值大一的值；并且，只要更改<code>length</code>属性的值，就会删除每个属性名为整数索引且属性名代表的数字不小于新长度的自有属性。此约束仅适用于Array对象的自有属性，不会受到（可能）从其原型继承的<code>length</code>或数组索引属性的影响。</p>
 <p>注意：一个字符串属性名<code>P</code>是一个数组索引，当且仅当<code>ToString(ToUint32(P))</code>等于<code>P</code>，并且<code>ToUint32(P)</code>不等于<code>2^32-1</code></p>
