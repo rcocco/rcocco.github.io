@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="函数"><meta name="keywords" content=""><meta name="author" content="rcocco,rcocco@qq.com"><meta name="copyright" content="rcocco"><title>函数 | rcocco's Blog</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2f232b8a2af9088714735280ce974c8b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-193110637-1', 'auto');
+ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  hexoVersion: '5.4.0'
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 函数概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text"> 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E6%A7%BD"><span class="toc-number">1.2.</span> <span class="toc-text"> 内部槽</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text"> 内部方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 创建函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 通过函数定义语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text"> 通过箭头函数表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87function%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text"> 通过Function构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87bind%E5%87%BD%E6%95%B0"><span class="toc-number">2.4.</span> <span class="toc-text"> 通过bind函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text"> 函数参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text"> 形式参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%8F%82%E6%95%B0%E5%AF%B9%E8%B1%A1arguments"><span class="toc-number">3.2.</span> <span class="toc-text"> 实际参数对象arguments</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text"> 函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E8%B0%83%E7%94%A8"><span class="toc-number">4.1.</span> <span class="toc-text"> 普通调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E8%B0%83%E7%94%A8"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 参数列表调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E8%B0%83%E7%94%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 模板调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call%E5%92%8Capply%E8%B0%83%E7%94%A8"><span class="toc-number">4.1.3.</span> <span class="toc-text"> call和apply调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text"> 构造函数调用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text"> 相关表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#this%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">5.1.</span> <span class="toc-text"> this表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#newtarget%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text"> new.target表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%8B%E5%8D%B3%E8%B0%83%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8Fiife"><span class="toc-number">5.3.</span> <span class="toc-text"> 立即调用的函数表达式IIFE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text"> 尾调用优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">7.</span> <span class="toc-text"> 闭包</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">186</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">函数</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="函数概述"><a class="markdownIt-Anchor" href="#函数概述"></a> 函数概述</h1>
+<p>函数是具有<code>[[Call]]</code>内部方法的对象，函数对象封装了一段参数化的ECMAScript代码，这段代码可以在之后被执行，并且可以为其传递参数。</p>
+<h2 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h2>
+<ul>
+<li>函数对象具有<code>&quot;name&quot;</code>属性，它的值是一个用来描述该函数的字符串。没有描述信息时它是空字符串，对于匿名函数它是<code>&quot;anonymous&quot;</code>，对于绑定函数它有<code>bound</code>前缀，对于访问器函数它有<code>get</code>或<code>set</code>前缀。</li>
+<li>函数对象具有<code>&quot;length&quot;</code>属性，它的值是一个整数，表示函数所期望的典型参数的数量。但调用函数时传递的参数数量不必遵循这个值，传递不同数量的参数实际行为取决于函数。</li>
+<li>非严格模式的函数对象具有<code>&quot;caller&quot;</code>属性，属性值平时为<code>null</code>，当某个函数对象内部调用此函数对象时，<code>caller</code>的属性值为调用它的函数对象。</li>
+</ul>
+<h2 id="内部槽"><a class="markdownIt-Anchor" href="#内部槽"></a> 内部槽</h2>
+<ul>
+<li>函数对象具有<code>[[Environment]]</code>内部槽，它的值被用作函数执行时的创建的词法环境的外部环境，通常是创建函数对象时的词法环境。</li>
+<li>函数对象具有<code>[[Strict]]</code>内部槽，它的值是一个布尔值，<code>true</code>表示该函数是一个严格函数，函数代码需要在严格模式下执行，<code>false</code>表示该函数是一个非严格函数。</li>
+<li>函数对象具有<code>[[FormalParameters]]</code>内部槽，它用来存储函数的形式参数相关信息。</li>
+<li>函数对象具有<code>[[ECMAScriptCode]]</code>内部槽，它用来存储函数所封装的代码。</li>
+</ul>
+<h2 id="内部方法"><a class="markdownIt-Anchor" href="#内部方法"></a> 内部方法</h2>
+<p>所有函数对象都具有<code>[[Call]]</code>内部方法，在函数被调用时执行。<br />
+作为构造函数的对象还具有<code>[[Construct]]</code>内部方法，当作为构造函数调用时执行。</p>
+<p>在执行<code>[[Call]]</code>或<code>[[Construct]]</code>时，会创建新的词法环境（包括<code>LexicalEnvironment</code>词法环境和<code>VariableEnvironment</code>词法环境），并将这两个词法环境的外部词法环境设为函数对象的<code>[[Environment]]</code>内部槽的值。当执行完毕后，又会恢复之前的词法环境。</p>
+<h1 id="创建函数"><a class="markdownIt-Anchor" href="#创建函数"></a> 创建函数</h1>
+<h2 id="通过函数定义语法"><a class="markdownIt-Anchor" href="#通过函数定义语法"></a> 通过函数定义语法</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 标识符 (<span class="params">形式参数列表</span>) </span>&#123; 函数体 &#125;</span><br><span class="line"><span class="comment">// 函数表达式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 可选的标识符 (<span class="params">形式参数列表</span>) </span>&#123; 函数体 &#125;</span><br></pre></td></tr></table></figure>
+<p>函数的形式参数列表是以逗号分隔的形式参数，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空形式参数列表</span></span><br><span class="line">( )</span><br><span class="line"><span class="comment">// 多个形式参数用逗号分隔</span></span><br><span class="line">(形式参数<span class="number">1</span> , 形式参数<span class="number">2</span>)</span><br><span class="line"><span class="comment">// 只有剩余形式参数的形式参数列表</span></span><br><span class="line">( 剩余形式参数 )</span><br><span class="line"><span class="comment">// 剩余形式参数是可选的，但必须是最后一个形式参数</span></span><br><span class="line">(形式参数<span class="number">1</span> , 形式参数<span class="number">2</span>, 剩余形式参数)</span><br></pre></td></tr></table></figure>
+<p>每个形式参数有下列形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 形式参数</span></span><br><span class="line">标识符</span><br><span class="line">标识符 = 默认值</span><br><span class="line">解构绑定</span><br><span class="line">解构绑定 = 默认值</span><br><span class="line"><span class="comment">// 剩余形式参数</span></span><br><span class="line">...标识符</span><br><span class="line">...解构绑定</span><br></pre></td></tr></table></figure>
+<p>函数定义语法执行下列过程：</p>
+<ul>
+<li>如果有<code>标识符</code>：
+<ol>
+<li>创建一个原型为<code>Function.prototype</code>的函数对象<code>F</code>，将<code>F.[[Environment]]</code>设为运行中的执行上下文的词法环境</li>
+<li>为函数对象<code>F</code>添加<code>F.[[Construct]]</code>内部槽，使其能够作为构造函数调用</li>
+<li>为函数对象<code>F</code>添加<code>prototype</code>属性，属性值是一个原型为<code>Object.prototype</code>的对象</li>
+<li>在当前<code>VariableEnvironment</code>词法环境创建一个名为<code>标识符</code>的<code>var</code>变量，其值为函数对象<code>F</code>（这个过程在当前词法环境创建时就会执行，而不会等到运行到函数定义语法所在行才执行，因此后定义的函数，在当前词法环境开头就可以使用）</li>
+</ol>
+</li>
+<li>如果有<code>可选的标识符</code>：
+<ol>
+<li>创建一个新词法环境<code>funcEnv</code>，其外部词法环境为运行中的执行上下文的词法环境</li>
+<li>创建一个原型为<code>Function.prototype</code>的函数对象<code>F</code>，将<code>F.[[Environment]]</code>设为<code>funcEnv</code></li>
+<li>为函数对象<code>F</code>添加<code>F.[[Construct]]</code>内部槽，使其能够作为构造函数调用</li>
+<li>为函数对象<code>F</code>添加<code>prototype</code>属性，属性值是一个原型为<code>Object.prototype</code>的对象</li>
+<li>在词法环境<code>funcEnv</code>中创建<code>const</code>变量<code>可选的标识符</code>，将其初始化为函数对象<code>F</code></li>
+<li>返回函数对象<code>F</code></li>
+</ol>
+</li>
+<li>如果没有<code>可选的标识符</code>：
+<ol>
+<li>创建一个原型为<code>Function.prototype</code>的函数对象<code>F</code>，将<code>F.[[Environment]]</code>设为运行中的执行上下文的词法环境</li>
+<li>为函数对象<code>F</code>添加<code>F.[[Construct]]</code>内部槽，使其能够作为构造函数调用</li>
+<li>为函数对象<code>F</code>添加<code>prototype</code>属性，属性值是一个原型为<code>Object.prototype</code>的对象</li>
+<li>返回函数对象<code>F</code>，</li>
+</ol>
+</li>
+</ul>
+<h2 id="通过箭头函数表达式"><a class="markdownIt-Anchor" href="#通过箭头函数表达式"></a> 通过箭头函数表达式</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">标识符 =&gt; 表达式</span><br><span class="line">标识符 =&gt; &#123; 函数体 &#125;</span><br><span class="line">(形式参数列表) =&gt; 表达式</span><br><span class="line">(形式参数列表) =&gt; &#123; 函数体 &#125;</span><br></pre></td></tr></table></figure>
+<p>箭头函数表达式语法执行下列过程：</p>
+<ol>
+<li>创建一个原型为<code>Function.prototype</code>的函数对象<code>F</code>，将<code>F.[[Environment]]</code>设为运行中的执行上下文的词法环境</li>
+<li>注意：箭头函数对象没有<code>[[Construct]]</code>内部槽，不能作为构造函数调用</li>
+<li>注意：箭头函数对象没有<code>prototype</code>属性</li>
+<li>返回函数对象<code>F</code></li>
+</ol>
+<p>注：</p>
+<ul>
+<li><code>标识符</code>或<code>(形式参数列表)</code>，与箭头<code>=&gt;</code>之间不能有行结束符</li>
+<li>箭头<code>=&gt;</code>左侧的<code>标识符</code>会被当做形式参数列表：<code>(标识符)</code>，也就是只有一个形式参数</li>
+<li>箭头<code>=&gt;</code>右侧的<code>表达式</code>会被当做函数体：<code>&#123; return 表达式 &#125;</code></li>
+<li>箭头函数<code>F</code>中的<code>arguments</code>、<code>super</code>、<code>this</code>、<code>new.target</code>会被解析为<code>F.[[Environment]]</code>词法环境中的标识符，也就是箭头函数对象创建时的词法环境。</li>
+</ul>
+<h2 id="通过function构造函数"><a class="markdownIt-Anchor" href="#通过function构造函数"></a> 通过Function构造函数</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>(任意个形式参数, 任意个形式参数, ... , 函数体)</span><br></pre></td></tr></table></figure>
+<p>使用与不使用<code>new</code>调用的效果一样。</p>
+<p>调用<code>Function</code>函数会创建一个函数对象，执行过程如下：</p>
+<ol>
+<li>将每个参数使用<code>ToString</code>抽象操作转为字符串</li>
+<li>获取要创建的函数的形式参数列表<code>argList</code>：
+<ul>
+<li>如果<code>Function</code>的参数个数为<code>0</code>或<code>1</code>，则<code>argList</code>为空形式参数列表<code>()</code></li>
+<li>否则，<code>Function</code>的参数个数大于等于<code>2</code>，将除了最后一个参数以外的参数使用逗号连接起来，组成形式参数列表<code>(argList)</code></li>
+</ul>
+</li>
+<li>获取要创建的函数的函数体<code>body</code>：
+<ul>
+<li>如果<code>Function</code>的参数个数为<code>0</code>，则<code>body</code>为空函数体<code>&#123;&#125;</code></li>
+<li>否则，<code>Function</code>的参数个数大于等于<code>1</code>，最后一个参数就是函数体的内容，即<code>&#123;最后一个参数&#125;</code></li>
+</ul>
+</li>
+<li>创建一个原型为<code>Function.prototype</code>的函数对象<code>F</code>，其形式参数列表为<code>argList</code>，函数体为<code>body</code>，将<code>F.[[Environment]]</code>设为全局词法环境</li>
+<li>为函数对象<code>F</code>添加<code>F.[[Construct]]</code>内部槽，使其能够作为构造函数调用</li>
+<li>为函数对象<code>F</code>添加<code>prototype</code>属性，属性值是一个原型为<code>Object.prototype</code>的对象</li>
+<li>返回<code>F</code></li>
+</ol>
+<p>注：根据以上规则，对于每个作为形式参数的参数字符串，其字符串内容可以是单个形式参数，也可以是用逗号分隔的多个形式参数，例如下面三种效果都是一样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;return a+b+c&quot;</span>);</span><br><span class="line"><span class="built_in">Function</span>(<span class="string">&quot;a, b, c&quot;</span>, <span class="string">&quot;return a+b+c&quot;</span>);</span><br><span class="line"><span class="built_in">Function</span>(<span class="string">&quot;a,b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;return a+b+c&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="通过bind函数"><a class="markdownIt-Anchor" href="#通过bind函数"></a> 通过bind函数</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind(thisArgument, 实际参数列表)</span><br></pre></td></tr></table></figure>
+<p><code>bind</code>函数会创建【绑定函数对象】，一个绑定函数对象包装了另一个函数对象。绑定函数对象也是可调用的，调用绑定函数对象将导致对它包装的函数对象的调用。<br />
+绑定函数对象的<code>name</code>属性字符串有前缀<code>bound</code>。<br />
+绑定函数对象没有<code>prototype</code>属性。</p>
+<p>绑定函数对象具有下列三个内部槽：</p>
+<ul>
+<li><code>[[BoundTargetFunction]]</code>：它保存包装的函数对象</li>
+<li><code>[[BoundThis]]</code>：它保存在调用时传递给包装函数对象的<code>thisArgument</code></li>
+<li><code>[[BoundArguments]]</code>：它保存在调用时传递给包装函数对象的参数</li>
+</ul>
+<p>其实现类似于：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">thisArgument, ...args</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> boundTargetFunction = <span class="built_in">this</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> boundTargetFunction != <span class="string">&#x27;function&#x27;</span>)</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">  <span class="keyword">const</span> boundThis = thisArgument;</span><br><span class="line">  <span class="keyword">const</span> boundArguments = args;</span><br><span class="line">  <span class="keyword">const</span> F = <span class="function"><span class="keyword">function</span>(<span class="params">...argumentsList</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">new</span>.target === <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> boundTargetFunction.call(boundThis,</span><br><span class="line">             ...boundArguments, ...argumentsList);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> boundTargetFunction(...boundArguments, ...argumentsList);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们以下面的代码为例说明绑定函数的特点：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o1 = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params">...args</span>) </span>&#123; <span class="built_in">console</span>.log(<span class="built_in">this</span>, args); &#125;</span><br><span class="line"><span class="keyword">let</span> F1 = F.bind(o1, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">/*  F1.[[BoundTargetFunction]] = F</span></span><br><span class="line"><span class="comment"> *  F1.[[BoundThis]] = o1</span></span><br><span class="line"><span class="comment"> *  F1.[[BoundArguments]] = [1,2]</span></span><br><span class="line"><span class="comment"> *  F1 = (...args) =&gt; F.call(o1, ...[1,2], ...args)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> o2 = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> F2 = F1.bind(o2, <span class="number">3</span>, <span class="number">4</span>);</span><br><span class="line"><span class="comment">/*  F2.[[BoundTargetFunction]] = F1</span></span><br><span class="line"><span class="comment"> *  F2.[[BoundThis]] = o2</span></span><br><span class="line"><span class="comment"> *  F2.[[BoundArguments]] = [3,4]</span></span><br><span class="line"><span class="comment"> *  F2 = (...args) =&gt; F1.call(o2, ...[3,4], ...args)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">F2(<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"><span class="comment">/* F2(5,6) =&gt; F1.call(o2, ...[3,4], ...[5,6])</span></span><br><span class="line"><span class="comment"> *         =&gt; F.call(o1, ...[1,2], ...[3,4,5,6])</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>只有<code>[[BoundTargetFunction]]</code>是非箭头、非绑定函数时，<code>[[BoundThis]]</code>才有意义，其他情况<code>[[BoundThis]]</code>会被忽略，原因是：
+<ul>
+<li>当<code>[[BoundTargetFunction]]</code>为箭头函数时，由于调用箭头函数时传递的<code>thisArgument</code>会被忽略，因此通过<code>[[BoundTargetFunction]].call(thisArgument)</code>传递的<code>thisArgument</code>也被忽略了。</li>
+<li>当<code>[[BoundTargetFunction]]</code>为绑定函数时，<code>[[BoundTargetFunction]].call(thisArgument)</code>将<code>thisArgument</code>传递给了另一个绑定函数，但另一个绑定函数并没有使用它自己的<code>this</code>值，而是用了它的<code>[[BoundThis]]</code>，因此<code>thisArgument</code>也被忽略了。</li>
+</ul>
+</li>
+<li>将绑定函数作为构造函数调用，等价于对包装函数进行构造函数调用，调用时会忽略<code>[[BoundThis]]</code>。</li>
+<li>连续调用<code>F.bind(thisA, argA).bind(thisB, argB)</code>得到的绑定函数，在通过<code>F(argC)</code>调用包装函数时，其<code>thisArgument</code>为第一次调用传递的<code>thisA</code>，而参数为按照调用<code>bind</code>顺序传递的<code>argA</code>和<code>argB</code>，再加上本次调用传递的<code>argC</code>。根据这一特点，可以实现为函数<code>F</code>固定靠前面的参数。</li>
+</ul>
+<h1 id="函数参数"><a class="markdownIt-Anchor" href="#函数参数"></a> 函数参数</h1>
+<p>函数的形式参数是指函数定义时的参数，函数的实际参数是指函数调用时传递的值。<br />
+实际参数个数可能大于、小于或等于形式参数的个数。</p>
+<h2 id="形式参数"><a class="markdownIt-Anchor" href="#形式参数"></a> 形式参数</h2>
+<p>在执行函数时，对于形式参数列表中的每个形式参数，按照顺序执行下列操作：</p>
+<ul>
+<li>如果<code>形式参数</code>是<code>标识符</code>，则在当前作用域创建名为<code>标识符</code>的<code>let</code>变量。
+<ul>
+<li>如果函数调用时对应顺序的实际参数<code>value</code>存在，且不为<code>undefined</code>：
+<ul>
+<li>用<code>value</code>初始化该变量。</li>
+</ul>
+</li>
+<li>如果函数调用时对应顺序的实际参数<code>value</code>不存在，或者存在但值为<code>undefined</code>:
+<ul>
+<li>如果<code>形式参数</code>没有<code>默认值</code>，则用<code>undefined</code>初始化该变量。</li>
+<li>如果<code>形式参数</code>有<code>默认值</code>，则用<code>默认值</code>初始化该变量。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果<code>形式参数</code>是<code>解构绑定</code>：
+<ul>
+<li>如果函数调用时对应顺序的实际参数<code>value</code>存在，且不为<code>undefined</code>：
+<ul>
+<li>用<code>value</code>作为解构绑定的关联对象，进行解构绑定操作。</li>
+</ul>
+</li>
+<li>如果函数调用时对应顺序的实际参数<code>value</code>不存在，或者存在但值为<code>undefined</code>:
+<ul>
+<li>如果<code>形式参数</code>没有<code>默认值</code>，则抛出异常。</li>
+<li>如果<code>形式参数</code>有<code>默认值</code>，则用<code>默认值</code>作为解构绑定的关联对象，进行解构绑定操作。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果形式参数是<code>...标识符</code>，则在当前作用域创建名为<code>标识符</code>的<code>let</code>变量。
+<ol>
+<li>用一个空数组初始化该变量。</li>
+<li>如果函数调用时的实际参数还没有处理完，则将剩余值依次添加到该数组中。</li>
+</ol>
+</li>
+<li>如果参数是<code>...解构绑定</code>：
+<ol>
+<li>创建一个空数组</li>
+<li>如果函数调用时传递的值还没有处理完，则将剩余值依次添加到该数组中</li>
+<li>将这个数组作为解构绑定的关联对象，进行解构绑定操作</li>
+</ol>
+</li>
+</ul>
+<p>注：形式参数的<code>默认值</code>可以是它之前的<code>形式参数</code>的<code>标识符</code>，但不能是它之后的<code>形式参数</code>的<code>标识符</code>，因为前面的参数对应的<code>let</code>变量已经被初始化过，而后面的还没有初始化。<br />
+<code>默认值</code>不能引用函数体中的变量，因为在计算形式参数列表时，函数体还没有开始计算。</p>
+<h2 id="实际参数对象arguments"><a class="markdownIt-Anchor" href="#实际参数对象arguments"></a> 实际参数对象arguments</h2>
+<p>如果函数对象满足所有下列条件：</p>
+<ul>
+<li>不是箭头函数</li>
+<li>形式参数名中没有<code>arguments</code></li>
+<li>形式参数中有默认值，或者【形式参数中没有默认值，并且函数体中没有通过<code>let/const</code>声明的名为<code>arguments</code>的变量，也没有名为<code>arguments</code>的函数声明】</li>
+</ul>
+<p>则在处理参数列表之前，会先创建一个名为<code>arguments</code>的变量，严格模式下它是一个<code>const</code>变量，非严格模式下它是一个<code>let</code>变量。变量值是一个对象，称为实际参数对象。实际参数对象有两种：</p>
+<ul>
+<li>非映射的实际参数对象：
+<ul>
+<li>是一个类数组对象，由函数调用时的实际参数组成。</li>
+<li>是可迭代的</li>
+<li>具有名为<code>callee</code>的访问器属性，当进行<code>get</code>或<code>set</code>访问时抛出异常</li>
+</ul>
+</li>
+<li>映射的实际参数对象：
+<ul>
+<li>是一个类数组对象，由函数调用时的实际参数组成。</li>
+<li>具有隐含的<code>[[ParameterMap]]</code>内部槽，其值是一个对象，对象的每个属性都是访问器属性，属性键为形式参数<code>name</code>在形式参数列表中的索引（索引需要小于实参个数），<code>get</code>访问器函数用于获取函数执行时的词法环境下的<code>name</code>变量，<code>set</code>访问器用于设置函数执行时的词法环境下的<code>name</code>变量。</li>
+<li>在对实际参数对象进行<code>get</code>或<code>set</code>访问时，会先查看<code>[[ParameterMap]]</code>内部槽是否有对应属性，如果有，则访问<code>[[ParameterMap]]</code>内部槽中的属性。如果没有，才访问实际参数对象的属性。</li>
+<li>是可迭代的</li>
+<li>具有名为<code>callee</code>的数据属性，其值为当前函数对象。</li>
+</ul>
+</li>
+</ul>
+<p>注：也就是说，对于形式参数和实际参数的索引的交集，对应的参数都将产生映射，即获取/修改<code>arguments</code>变量，与获取/修改这些形式参数创建的变量是同步的，一方的修改将影响另一方。</p>
+<ul>
+<li>如果满足下列条件中任何一个，则创建的<code>arguments</code>变量的属性值是非映射的实际参数对象：
+<ul>
+<li>函数是严格模式函数</li>
+<li>函数形式参数中有默认值</li>
+<li>函数形式参数中有剩余形式参数</li>
+<li>函数形式参数中有解构绑定</li>
+</ul>
+</li>
+<li>否则，创建的<code>arguments</code>变量的属性值是映射的实际参数对象。此时函数一定是非严格模式，形式参数没有默认值，没有剩余形式参数，也没有解构绑定。</li>
+</ul>
+<h1 id="函数调用"><a class="markdownIt-Anchor" href="#函数调用"></a> 函数调用</h1>
+<h2 id="普通调用"><a class="markdownIt-Anchor" href="#普通调用"></a> 普通调用</h2>
+<p>函数调用有下列形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">返回函数对象的表达式(实际参数列表)</span><br><span class="line">返回函数对象的表达式 <span class="string">`模板字面值`</span></span><br><span class="line">返回函数对象的表达式.call(thisArgument, 实际参数列表)</span><br><span class="line">返回函数对象的表达式.apply(thisArgument, 实际参数组成的类数组对象)</span><br></pre></td></tr></table></figure>
+<p>前两种形式会隐式的传递<code>thisArgument</code>，以用于函数执行时确定<code>this</code>表达式的值，具体内容参见下文【this表达式】。<br />
+函数调用表达式返回一个ECMAScript值，该值是函数体内<code>return</code>语句的值。如果没有<code>return</code>语句，则返回值是<code>undefined</code>。</p>
+<h3 id="参数列表调用"><a class="markdownIt-Anchor" href="#参数列表调用"></a> 参数列表调用</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回函数对象的表达式(实际参数列表)</span><br></pre></td></tr></table></figure>
+<p>函数调用的实际参数列表是以逗号分隔的实际参数，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空实际参数列表</span></span><br><span class="line">( )</span><br><span class="line"><span class="comment">// 多个实际参数用逗号分隔</span></span><br><span class="line">(实际参数<span class="number">1</span> , 实际参数<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>每个实际参数有下列形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表达式</span><br><span class="line">...可迭代对象</span><br></pre></td></tr></table></figure>
+<p><code>表达式</code>的含义是将<code>表达式</code>作为值传递给函数。<br />
+<code>...可迭代对象</code>的含义是可迭代对象的所有迭代值传递给函数。</p>
+<h3 id="模板调用"><a class="markdownIt-Anchor" href="#模板调用"></a> 模板调用</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回函数对象的表达式 <span class="string">`模板字面值`</span></span><br></pre></td></tr></table></figure>
+<p>这种方式使用模板字面值来传递实际参数。<br />
+第一个实际参数是一个数组（为方便下文指代，将其命名为<code>TemplateObject</code>），从第二个实际参数开始，每个实际参数都是模板中插值表达式<code>$&#123;表达式&#125;</code>的计算结果。</p>
+<p><code>TemplateObject</code>数组的元素是模板字面值的子字符串，子字符串是将插值表达式看作分隔符得到的，有<code>n</code>个插值表达式，就有<code>n+1</code>个子串（如果插值表达式在首尾则可能分隔出空串）。这些子串中的转义序列会被替换成它所表示的字符。</p>
+<p><code>TemplateObject</code>数组还有一个名为<code>raw</code>的属性，它也是一个保存模板字面值的子字符串的数组，不同的是，这些子串中的转义序列不会被替换成它所表示的字符，即输入<code>\n</code>，子串中保存的就是字符反斜杠<code>\</code>和字符<code>n</code>。</p>
+<p>通过子字符串和插值表达式就可以还原模板字符串本身，它们的顺序是子串1，或 子串1、插值1、子串2。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">zipTag1</span>(<span class="params">strings, ...expressions</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = strings[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; expressions.length; i++) &#123;</span><br><span class="line">    result += expressions[i] + strings[i + <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">zipTag2</span>(<span class="params">strings, ...expressions</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> expressions.reduce(<span class="function">(<span class="params">prevVal, curVal, curIndex</span>)=&gt;</span> prevVal + curVal + strings[curIndex + <span class="number">1</span>], strings[<span class="number">0</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="call和apply调用"><a class="markdownIt-Anchor" href="#call和apply调用"></a> call和apply调用</h3>
+<p>函数对象的原型上具有下列方法，这两个方法可以调用它们的<code>this</code>值对应的函数对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call(thisArgument, 实际参数列表)</span><br><span class="line"><span class="built_in">Function</span>.prototype.apply(thisArgument, 实际参数组成的类数组对象)</span><br></pre></td></tr></table></figure>
+<p><code>thisArgument</code>是调用函数对象时所传递的<code>thisArgument</code>值。<br />
+除了<code>thisArgument</code>之外，<code>call</code>方法要求和参数列表调用一样传递实际参数。而<code>apply</code>方法要求将传递的实际参数变为类数组对象传递给它。</p>
+<p>以下是根据<code>this</code>表达式规则对这两个函数的模拟，除了【函数是严格模式且<code>thisArgument</code>为<code>null</code>】这种情况外它都和原版一致，因为无法通过用户代码实现<code>this</code>为<code>null</code>的情况，这里将其用<code>thisArgument</code>为<code>undefined</code>替代。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call = <span class="function"><span class="keyword">function</span>(<span class="params">thisArgument, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> func = <span class="built_in">this</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> func != <span class="string">&#x27;function&#x27;</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">  <span class="keyword">if</span>(thisArgument === <span class="literal">null</span> || thisArgument === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> func(...args);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> randomPropKey = <span class="built_in">Math</span>.random();</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> thisArgument == <span class="string">&#x27;object&#x27;</span> || <span class="keyword">typeof</span> thisArgument == <span class="string">&#x27;function&#x27;</span>)&#123;</span><br><span class="line">    <span class="built_in">Object</span>.prototype[randomPropKey] = func;</span><br><span class="line">    <span class="keyword">let</span> result = thisArgument[randomPropKey](...args);</span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">Object</span>.prototype[randomPropKey];</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    thisArgument.__proto__[randomPropKey]= func;</span><br><span class="line">    <span class="keyword">let</span> result = thisArgument[randomPropKey](...args);</span><br><span class="line">    <span class="keyword">delete</span> thisArgument.__proto__[randomPropKey];</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Function</span>.prototype.apply = <span class="function"><span class="keyword">function</span>(<span class="params">thisArgument, argArray</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> func = <span class="built_in">this</span>;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> func != <span class="string">&#x27;function&#x27;</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">  <span class="keyword">if</span>(argArray === <span class="literal">null</span> || argArray === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> func.call(thisArgument);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> argArray != <span class="string">&#x27;object&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> argArray != <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> len = +argArray.length;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">Object</span>.is(len, <span class="literal">NaN</span>) || len === <span class="number">0</span> || len === -<span class="literal">Infinity</span>) &#123;</span><br><span class="line">    len = +<span class="number">0</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(len === +<span class="literal">Infinity</span>) &#123;</span><br><span class="line">    len = <span class="number">2</span>**<span class="number">53</span> - <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    len = <span class="built_in">Math</span>.min( <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.abs(len)), <span class="number">2</span>**<span class="number">53</span> - <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> argList = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    argList += <span class="string">&quot;, argArray[&quot;</span>+i+<span class="string">&quot;]&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="built_in">eval</span>(<span class="string">&quot;func.call(thisArgument&quot;</span>+argList+<span class="string">&quot;)&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="构造函数调用"><a class="markdownIt-Anchor" href="#构造函数调用"></a> 构造函数调用</h2>
+<p>函数调用有下列形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 返回函数对象的表达式(实际参数列表)</span><br><span class="line"><span class="built_in">Reflect</span>.construct()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>new</code>调用时传递的<code>thisArgument</code>：
+<ul>
+<li>当函数对象<code>F</code>的<code>prototype</code>属性值是对象时，<code>thisArgument</code>为一个原型为<code>F.prototype</code>的新对象。</li>
+<li>否则，函数对象<code>F</code>的<code>prototype</code>属性值不是对象，则<code>thisArgument</code>为一个原型为<code>Object.prototype</code>的新对象。</li>
+</ul>
+</li>
+<li><code>new</code>调用的返回值：
+<ul>
+<li>当调用函数对象<code>F</code>的返回值是一个对象时，返回该对象。</li>
+<li>否则，返回值不是对象，则返回<code>thisArgument</code></li>
+</ul>
+</li>
+</ul>
+<p>其实现类似于：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = <span class="keyword">new</span> F(arg1, arg2);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">new</span>(<span class="params">F, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> proto = F.prototype;</span><br><span class="line">  <span class="keyword">if</span>(Type(proto) != <span class="string">&#x27;Object&#x27;</span>)</span><br><span class="line">    proto = <span class="built_in">Object</span>.prototype;</span><br><span class="line">  <span class="keyword">let</span> thisArgument = <span class="built_in">Object</span>.create(proto);</span><br><span class="line">  <span class="keyword">let</span> result = F.call(thisArgument, ...args);</span><br><span class="line">  <span class="keyword">if</span>(Type(result) == <span class="string">&#x27;Object&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> thisArgument;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="相关表达式"><a class="markdownIt-Anchor" href="#相关表达式"></a> 相关表达式</h1>
+<h2 id="this表达式"><a class="markdownIt-Anchor" href="#this表达式"></a> this表达式</h2>
+<p>在函数词法环境之外，<code>this</code>表达式返回全局对象<code>globalThis</code>。<br />
+在函数词法环境之内，<code>this</code>表达式的值取决于函数的形式、严格模式以及函数是如何调用的：</p>
+<ul>
+<li>若函数是箭头函数，则<code>this</code>表达式的值是箭头函数对象创建时的词法环境的<code>this</code></li>
+<li>若函数不是箭头函数：
+<ul>
+<li>若函数是严格模式：函数调用时传递的<code>thisArgument</code>是什么，函数词法环境的<code>this</code>就是什么</li>
+<li>若函数不是严格模式：
+<ul>
+<li>若函数调用时传递的<code>thisArgument</code>是<code>null</code>或<code>undefined</code>，则函数词法环境的<code>this</code>是全局对象<code>globalThis</code></li>
+<li>否则，函数调用时传递的<code>thisArgument</code>不是<code>null</code>也不是<code>undefined</code>，函数词法环境的<code>this</code>是<code>ToObject(thisArgument)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>函数调用总共有四种，<code>call</code>和<code>apply</code>调用会通过参数传递<code>thisArgument</code>，而参数列表调用和模板调用会根据<code>返回函数对象的表达式</code>的类型来传递<code>thisArgument</code>。</p>
+<ul>
+<li>如果<code>返回函数对象的表达式</code>计算结果是引用类型：
+<ul>
+<li>若引用的基值是<code>Null</code>和<code>Undefined</code>之外的ECMAScript语言类型，则<code>thisArgument</code>就是引用的基值</li>
+<li>若引用的基值是词法环境：
+<ul>
+<li>如果该词法环境是<code>with</code>语句的词法环境时，则<code>thisArgument</code>是<code>with</code>语句的关联对象</li>
+<li>否则，<code>thisArgument</code>是<code>undefined</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>否则：<code>thisArgument</code>是<code>undefined</code></li>
+</ul>
+<p><code>返回函数对象的表达式</code>的计算结果只在下列情况是引用：</p>
+<ul>
+<li><code>表达式.标识符</code>，引用的基值为<code>表达式</code>的计算结果</li>
+<li><code>表达式1[表达式2]</code>，引用的基值为<code>表达式1</code>的计算结果</li>
+<li><code>标识符</code>，引用的基值是<code>标识符</code>所在的词法环境</li>
+<li><code>表达式 ?. 标识符</code>，引用的基值为<code>表达式</code>计算结果</li>
+<li><code>表达式1 ?. [表达式2]</code>，引用的基值为<code>表达式1</code>计算结果</li>
+</ul>
+<p>圆括号运算符不会影响计算结果的类型，因此如果表达式的计算结果是引用，为这个表达式加圆括号后仍然是引用。</p>
+<p>以网上的一些代码为例，例子1：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">  color: <span class="string">&#x27;blue&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line">sayColor();</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为[sayColor]</span></span><br><span class="line"><span class="comment"> * 其形式为[标识符]</span></span><br><span class="line"><span class="comment"> * 计算结果是引用，基值为标识符所在词法环境，即全局词法环境</span></span><br><span class="line"><span class="comment"> * 由于全局词法环境不是with语句的词法环境</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为undefined</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象sayColor不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成全局对象globalThis</span></span><br><span class="line"><span class="comment"> * 输出globalThis.color为red</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">o.sayColor = sayColor;</span><br><span class="line">o.sayColor();</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为[o.sayColor]</span></span><br><span class="line"><span class="comment"> * 其形式为[表达式.标识符]</span></span><br><span class="line"><span class="comment"> * 计算结果是引用，基值为[表达式]的计算结果，即对象o</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为o</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象sayColor不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成ToObject(o)还是o</span></span><br><span class="line"><span class="comment"> * 输出o.color为blue</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p>例子2：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  value: <span class="number">2</span>,</span><br><span class="line">  bar: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo.bar());</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为[foo.bar]</span></span><br><span class="line"><span class="comment"> * 其形式为[表达式.标识符]</span></span><br><span class="line"><span class="comment"> * 计算结果是引用，基值为[表达式]的计算结果，即对象foo</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为foo</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象bar不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成ToObject(foo)还是foo</span></span><br><span class="line"><span class="comment"> * 输出foo.value为2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">console</span>.log((foo.bar)());</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为(foo.bar)</span></span><br><span class="line"><span class="comment"> * 圆括号不影响结果类型，因此形式为[表达式.标识符]</span></span><br><span class="line"><span class="comment"> * 计算结果是引用，基值为[表达式]的计算结果，即对象foo</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为undefined</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象bar不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成ToObject(foo)还是foo</span></span><br><span class="line"><span class="comment"> * 输出foo.value为2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">console</span>.log((foo.bar = foo.bar)());</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为(foo.bar = foo.bar)</span></span><br><span class="line"><span class="comment"> * 圆括号不影响结果类型，因此形式为[op1 = op2]</span></span><br><span class="line"><span class="comment"> * 计算结果不是引用</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为undefined</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象bar不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成全局对象globalThis</span></span><br><span class="line"><span class="comment"> * 输出globalThis.value为2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">false</span> || foo.bar)());</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为(false || foo.bar)</span></span><br><span class="line"><span class="comment"> * 圆括号不影响结果类型，因此形式为[op1 || op2]</span></span><br><span class="line"><span class="comment"> * 计算结果不是引用</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为undefined</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象bar不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成全局对象globalThis</span></span><br><span class="line"><span class="comment"> * 输出globalThis.value为2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">console</span>.log((foo.bar, foo.bar)());</span><br><span class="line"><span class="comment">/* [返回函数对象的表达式]为(foo.bar, foo.bar)</span></span><br><span class="line"><span class="comment"> * 圆括号不影响结果类型，因此形式为[op1 , op2]</span></span><br><span class="line"><span class="comment"> * 计算结果不是引用</span></span><br><span class="line"><span class="comment"> * 所以thisArgument为undefined</span></span><br><span class="line"><span class="comment"> * 同时由于函数对象bar不是严格函数</span></span><br><span class="line"><span class="comment"> * 所以函数词法环境的this变成全局对象globalThis</span></span><br><span class="line"><span class="comment"> * 输出globalThis.value为2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="newtarget表达式"><a class="markdownIt-Anchor" href="#newtarget表达式"></a> new.target表达式</h2>
+<p>在函数词法环境之外，<code>new.target</code>表达式抛出异常。<br />
+在函数词法环境之内，<code>new.target</code>表达式的值取决于函数的调用类型：</p>
+<ul>
+<li>当对函数<code>F</code>进行构造函数调用时，<code>new.target</code>为构造函数对象<code>F</code>，也就是<code>[[Construct]]</code>内部方法的<code>newTarget</code>参数。</li>
+<li>否则，对函数<code>F</code>进行普通调用时，<code>new.target</code>为<code>undefined</code></li>
+</ul>
+<p>可以通过该表达式来阻止对某些函数进行构造函数调用，使其变成不允许实例化的构造函数。</p>
+<h2 id="立即调用的函数表达式iife"><a class="markdownIt-Anchor" href="#立即调用的函数表达式iife"></a> 立即调用的函数表达式IIFE</h2>
+<p>立即调用的函数表达式，IIFE(Immediately Invoked Function Expression)。它是指在定义函数表达式时直接调用函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(函数表达式)()</span><br></pre></td></tr></table></figure>
+<p>在ECMAScript 6所规定的<code>LexicalEnvironment</code>词法环境（块作用域）出现之前，立即调用的函数表达式常用于模拟块作用域。原因如下：</p>
+<ul>
+<li>立即调用的函数表达式不会在当前词法环境创建任何变量</li>
+<li>执行立即调用的函数表达式时，创建了新的词法环境，其外部环境为立即调用的函数表达式所在的词法环境</li>
+<li>执行完立即调用的函数表达式后，销毁了创建的词法环境，并恢复之前的词法环境</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">5</span>;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// Uncaught ReferenceError: i is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(i)</span><br></pre></td></tr></table></figure>
+<p>一个更复杂的例子是用IIFE模拟ES6的for语句中<code>let</code>声明的情况，每次循环创建新词法作用域：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接使用var导致每轮循环的i是同一个</span></span><br><span class="line"><span class="comment">// 输出5,5,5,5,5</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用let每轮循环创建新的作用域和新的i</span></span><br><span class="line"><span class="comment">// 输出1,2,3,4,5</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用IIFE为每轮循环创建新的作用域和新的i</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 这里的形式参数i遮盖了外层var定义的i</span></span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 不正确的使用IIFE创建新作用域</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 创建了新作用域，但当前作用域没有i</span></span><br><span class="line">    <span class="comment">// 这里的i是闭包捕获的var定义的i</span></span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;)();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在第四种不正确的形式中，尽管使用了IIFE，也创建了新作用域，但这里引用的变量<code>i</code>仍然是<code>for</code>语句中<code>var</code>声明的变量<code>i</code>，而不是每次循环引用不同的变量<code>i</code>。<br />
+要正确使用IIFE，需要将IIFE中的形式参数命名为<code>i</code>，以便遮挡<code>for</code>语句中<code>var</code>声明的<code>i</code>，然后在每轮循环时，将<code>i</code>的值作为实际参数传给IIFE。</p>
+<h1 id="尾调用优化"><a class="markdownIt-Anchor" href="#尾调用优化"></a> 尾调用优化</h1>
+<p>尾调用是指某个函数代码内执行的最后一条语句是<code>目标函数调用</code>或<code>return 目标函数调用</code>的情况。<br />
+ECMAScript 6 规定了对于满足特定条件的尾调用的优化机制：在调用目标函数之前，会从执行上下文栈中弹出运行中的执行上下文，释放与当前执行的函数执行上下文相关的任何暂存的内部资源，然后再执行目标函数。</p>
+<p>尾调用优化在满足所有下列条件时触发：</p>
+<ul>
+<li>当前执行的函数是严格模式函数</li>
+<li>当前执行的函数不是生成器函数、异步函数、异步生成器函数、箭头函数</li>
+<li>目标函数中没有引用当前执行函数的词法环境中的变量</li>
+</ul>
+<p>尽管尾调用优化是ECMAScript规范的一部分，但多年来几乎没有浏览器实现了尾调用优化。</p>
+<h1 id="闭包"><a class="markdownIt-Anchor" href="#闭包"></a> 闭包</h1>
+<p>闭包是指引用了<code>[[Environment]]</code>内部槽对应词法环境中的变量的函数。</p>
+<ul>
+<li>如果函数不是闭包，它只访问一个词法环境（函数执行时创建的词法环境），函数执行完毕后可以释放该词法环境。</li>
+<li>如果函数是一个闭包，它同时访问着两个或两个以上的词法环境，函数执行完毕后执行释放函数执行时创建的词法环境，不能释放其他词法环境，因为这些词法环境中的变量在下一次执行函数时仍然要被引用。</li>
+</ul>
+<p>由于每个函数内都有自己的<code>this</code>表达式，闭包函数通常无法直接访问到<code>[[Environment]]</code>词法环境中的<code>this</code>，要解决这个问题，可以使用下列方法：</p>
+<ul>
+<li>将闭包函数写为箭头函数，使得闭包函数内的<code>this</code>引用创建箭头函数时词法环境的<code>this</code></li>
+<li>在<code>[[Environment]]</code>中，创建其他变量（例如<code>self</code>）保存<code>this</code>值，然后在闭包函数中引用该变量</li>
+<li>对闭包函数使用<code>bind</code>创建绑定<code>this</code>值的绑定函数对象，后续使用该绑定函数对象而不直接使用闭包函数</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:rcocco@qq.com">rcocco</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/函数.html">https://rcocco.github.io/categories/计算机/编程语言/JavaScript语言/函数.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://rcocco.github.io">rcocco's Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%AF%B9%E8%B1%A1.html"><i class="fa fa-chevron-left">  </i><span>对象</span></a></div><div class="next-post pull-right"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%AD%97%E7%AC%A6%E4%B8%B2.html"><span>字符串</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'a2cb0efab90aafe77d70',
+  clientSecret: '4ab6a1536933e9a284900f708bef988ffb8c152f',
+  repo: 'gitalk_comments',
+  owner: 'rcocco',
+  admin: 'rcocco',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
