@@ -20,13 +20,13 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text"> 生成器函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text"> 创建生成器函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 通过生成器函数定义语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87generatorfunction%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 通过%GeneratorFunction%构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%82%E5%81%9C%E6%88%96%E7%BB%93%E6%9D%9F"><span class="toc-number">1.3.</span> <span class="toc-text"> 暂停或结束</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text"> 生成器对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">2.1.</span> <span class="toc-text"> 内部属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text"> 方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text"> 常见用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%BA%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.1.</span> <span class="toc-text"> 作为可迭代对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E9%80%92%E5%BD%92"><span class="toc-number">3.2.</span> <span class="toc-text"> 实现递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text"> 基于可迭代对象创建迭代器</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">186</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">生成器</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-22</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="生成器函数"><a class="markdownIt-Anchor" href="#生成器函数"></a> 生成器函数</h1>
-<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
-<p>生成器函数是一种特殊的函数，生成器函数代码中的<code>yield</code>表达式可以暂停执行函数，并为外部代码（使得生成器函数恢复执行的代码）返回一个值，被暂停的生成器函数也可以在之后恢复执行。在恢复执行生成器函数时，外部代码可以修改导致暂停的<code>yield</code>表达式的值。<br />
-生成器函数返回一个生成器对象，一个生成器对象表示对生成器函数代码的一次执行。</p>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 生成器函数概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 创建生成器函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text"> 通过生成器函数定义语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87generatorfunction%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text"> 通过%GeneratorFunction%构造函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text"> 调用生成器函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E9%83%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.</span> <span class="toc-text"> 生成器对象的内部属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 生成器对象的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%93%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.3.</span> <span class="toc-text"> 函数体中的特殊表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text"> 常见用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%BA%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.1.</span> <span class="toc-text"> 作为可迭代对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E9%80%92%E5%BD%92"><span class="toc-number">4.2.</span> <span class="toc-text"> 实现递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">4.3.</span> <span class="toc-text"> 基于可迭代对象创建迭代器</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">187</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">生成器</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-24</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="生成器函数概述"><a class="markdownIt-Anchor" href="#生成器函数概述"></a> 生成器函数概述</h1>
+<p>生成器函数是原型为<code>%Generator%</code>的函数对象，具有函数对象所拥有的内部槽和属性，但它不能作为构造函数调用。它虽然有<code>prototype</code>属性，但这个<code>prototype</code>对象并没有<code>constructor</code>属性。<br />
+和普通函数的区别在于，生成器函数代码中的<code>yield</code>表达式将使生成器函数暂停执行，并为外部代码（使得生成器函数恢复执行的代码）返回一个值。<br />
+用户可以在之后任何时间，通过生成器对象使被暂停的生成器函数恢复执行。在恢复执行生成器函数时，外部代码可以修改导致暂停的<code>yield</code>表达式的值。</p>
 <span id="more"></span>
-<h2 id="创建生成器函数"><a class="markdownIt-Anchor" href="#创建生成器函数"></a> 创建生成器函数</h2>
-<h3 id="通过生成器函数定义语法"><a class="markdownIt-Anchor" href="#通过生成器函数定义语法"></a> 通过生成器函数定义语法</h3>
+<h1 id="创建生成器函数"><a class="markdownIt-Anchor" href="#创建生成器函数"></a> 创建生成器函数</h1>
+<h2 id="通过生成器函数定义语法"><a class="markdownIt-Anchor" href="#通过生成器函数定义语法"></a> 通过生成器函数定义语法</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 生成器函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> * 标识符 (<span class="params">形式参数列表</span>) </span>&#123;生成器函数体&#125;</span><br><span class="line"><span class="comment">// 生成器函数表达式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> * 可选的标识符 (<span class="params">形式参数列表</span>) </span>&#123;生成器函数体&#125;</span><br></pre></td></tr></table></figure>
 <p>生成器函数定义语法执行下列过程：</p>
 <ul>
@@ -57,7 +57,7 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </ol>
 </li>
 </ul>
-<h3 id="通过generatorfunction构造函数"><a class="markdownIt-Anchor" href="#通过generatorfunction构造函数"></a> 通过%GeneratorFunction%构造函数</h3>
+<h2 id="通过generatorfunction构造函数"><a class="markdownIt-Anchor" href="#通过generatorfunction构造函数"></a> 通过%GeneratorFunction%构造函数</h2>
 <p><code>%GeneratorFunction%</code>没有能够直接访问的全局属性，可以通过下列方式间接访问：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>)</span>&#123;&#125;).__proto__.constructor</span><br></pre></td></tr></table></figure>
 <p>使用时：</p>
@@ -84,8 +84,44 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 <li>返回<code>F</code></li>
 </ol>
 <p><img src="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/_v_images/20210430225208731_2092.png" alt="" width="621" /></p>
-<h2 id="暂停或结束"><a class="markdownIt-Anchor" href="#暂停或结束"></a> 暂停或结束</h2>
-<p>与普通函数代码相比，生成器函数代码中有三种<code>yield</code>表达式具有特殊作用：</p>
+<h1 id="调用生成器函数"><a class="markdownIt-Anchor" href="#调用生成器函数"></a> 调用生成器函数</h1>
+<p>生成器函数不能作为构造函数调用，调用生成器函数会返回一个<strong>生成器对象</strong>，一个生成器对象表示对生成器函数的一次执行过程，同一个生成器函数可以同时创建多个生成器对象，表示对生成器函数的多次执行过程，每一个生成器对象都是独立的。但生成器函数的<code>[[Environment]]</code>内部槽只有一个，因此所有生成器对象（执行过程）共享相同的外部词法环境。<br />
+生成器对象所表示的执行过程中的<code>this</code>，取决于调用生成器函数（来创建生成器对象）时传递的<code>thisArgument</code>，与生成器对象是如何调用的无关。</p>
+<p>生成器对象的原型，就是生成器函数的<code>prototype</code>属性对应的对象。</p>
+<p>从执行上下文的角度看，生成器函数在执行时遇到<code>yield</code>会暂停函数执行上下文，在用户手动调用<code>next</code>、<code>return</code>、<code>throw</code>等方法时才会恢复执行被暂停的执行上下文。<br />
+之所以要将生成器函数的一次执行过程封装为一个生成器对象，是因为用户很可能不会在本次生成器函数执行并暂停后，立即恢复刚刚执行的生成器函数，而可能又执行了几次生成器函数后，才恢复这个之前被暂停的生成器函数。<br />
+因此，必须让用户能够控制每一次的执行过程。</p>
+<h2 id="生成器对象的内部属性"><a class="markdownIt-Anchor" href="#生成器对象的内部属性"></a> 生成器对象的内部属性</h2>
+<p>生成器对象具有两个内部属性：</p>
+<ul>
+<li><code>GeneratorState</code>：指示生成器的当前执行状态，可能的值有<code>suspendedStart</code>（尚未执行过）, <code>suspendedYield</code>（已暂停执行）, <code>executing</code>（正在执行）和<code>completed</code>（已执行完）</li>
+<li><code>GeneratorContext</code>：在执行该生成器的代码时使用的执行上下文</li>
+</ul>
+<p>每个新创建的生成器对象最初的状态都是<code>suspendedStart</code>。</p>
+<h2 id="生成器对象的方法"><a class="markdownIt-Anchor" href="#生成器对象的方法"></a> 生成器对象的方法</h2>
+<p>生成器对象实现了<code>Iterable</code>和<code>Iterator</code>接口，具有<code>next</code>、<code>return</code>和<code>throw</code>方法，调用这三个方法可以使生成器函数继续执行或者结束生成器函数的执行过程。</p>
+<ul>
+<li>调用生成器对象的<code>next(val)</code>：
+<ul>
+<li>如果生成器的状态是<code>completed</code>，则返回<code>&#123;value: undefined, done: true&#125;</code></li>
+<li>如果生成器状态是<code>suspendedStart</code>，则恢复执行生成器函数，然后返回生成器函数代码所返回的值。</li>
+<li>否则（此时状态是<code>suspendedYield</code>），为暂停生成器函数的<code>yield</code>表达式（如果存在）赋予<code>val</code>值，然后恢复执行生成器函数，最后返回生成器函数代码所返回的值。</li>
+</ul>
+</li>
+<li>调用生成器对象的<code>return(val)</code>：
+<ul>
+<li>将生成器的状态修改为<code>completed</code>，使得生成器函数的执行过程结束，然后返回<code>&#123;value: val, done:true&#125;</code>。</li>
+</ul>
+</li>
+<li>调用生成器对象的<code>throw(err)</code>：
+<ul>
+<li>如果生成器状态是<code>suspendedStart</code>或<code>completed</code>，则结束执行生成器函数，并将生成器的状态修改为<code>completed</code>。最后<code>throw</code>函数将抛出异常<code>err</code></li>
+<li>否则（此时状态是<code>suspendedYield</code>），在暂停生成器函数的<code>yield</code>表达式的位置，抛出异常<code>err</code>，然后恢复执行生成器函数，最后返回生成器函数代码所返回的值。</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数体中的特殊表达式"><a class="markdownIt-Anchor" href="#函数体中的特殊表达式"></a> 函数体中的特殊表达式</h2>
+<p>与普通函数代码相比，生成器函数代码中有三种<code>yield</code>表达式，以及<code>return</code>和<code>throw</code>语句具有特殊作用：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">yield</span>;</span><br><span class="line"><span class="keyword">yield</span> 表达式;</span><br><span class="line"><span class="keyword">yield</span> * 可迭代对象;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>在执行到<code>yield</code>时，会暂停执行生成器函数，并将生成器的状态修改为<code>suspendedYield</code>，然后为外部代码返回<code>IteratorResult</code>对象<code>&#123;value: undefined, done:false&#125;</code>。</li>
@@ -114,38 +150,6 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
 </li>
 <li>在执行到<code>return 表达式</code>语句时（包括执行完函数后隐式的<code>return undefined</code>），会结束执行生成器函数，并将生成器的状态修改为<code>completed</code>，然后为外部代码返回<code>IteratorResult</code>对象<code>&#123;value: 表达式值, done:true&#125;</code></li>
 <li>在执行到<code>throw</code>语句时，如果异常没有处理，则会结束执行生成器函数，并将生成器的状态修改为<code>completed</code>，然后为外部代码抛出异常。如果异常处理了，则继续执行生成器函数。</li>
-</ul>
-<h1 id="生成器对象"><a class="markdownIt-Anchor" href="#生成器对象"></a> 生成器对象</h1>
-<p>生成器对象是调用生成器函数（不能通过<code>new</code>调用）返回的对象，一个生成器对象表示对生成器函数的一次执行过程，同一个生成器函数可以同时创建多个生成器对象，表示对生成器函数的多次执行过程，每一个生成器对象都是独立的。但生成器函数的闭包只有一个，因此所有生成器对象（执行过程）共享相同的闭包。<br />
-生成器对象的原型，就是生成器函数的<code>prototype</code>属性对应的对象。</p>
-<h2 id="内部属性"><a class="markdownIt-Anchor" href="#内部属性"></a> 内部属性</h2>
-<p>生成器对象具有两个内部属性：</p>
-<ul>
-<li><code>GeneratorState</code>：指示生成器的当前执行状态，可能的值有<code>suspendedStart</code>（尚未执行过）, <code>suspendedYield</code>（已暂停执行）, <code>executing</code>（正在执行）和<code>completed</code>（已执行完）</li>
-<li><code>GeneratorContext</code>：在执行该生成器的代码时使用的执行上下文</li>
-</ul>
-<p>每个新创建的生成器对象最初的状态都是<code>suspendedStart</code>。</p>
-<h2 id="方法"><a class="markdownIt-Anchor" href="#方法"></a> 方法</h2>
-<p>生成器对象实现了<code>Iterable</code>和<code>Iterator</code>接口，具有<code>next</code>、<code>return</code>和<code>throw</code>方法，调用这三个方法可以使生成器函数继续执行或者结束生成器函数的执行过程。</p>
-<ul>
-<li>调用生成器对象的<code>next(val)</code>：
-<ul>
-<li>如果生成器的状态是<code>completed</code>，则返回<code>&#123;value: undefined, done: true&#125;</code></li>
-<li>如果生成器状态是<code>suspendedStart</code>，则恢复执行生成器函数，然后返回生成器函数代码所返回的值。</li>
-<li>否则（此时状态是<code>suspendedYield</code>），为暂停生成器函数的<code>yield</code>表达式（如果存在）赋予<code>val</code>值，然后恢复执行生成器函数，最后返回生成器函数代码所返回的值。</li>
-</ul>
-</li>
-<li>调用生成器对象的<code>return(val)</code>：
-<ul>
-<li>将生成器的状态修改为<code>completed</code>，使得生成器函数的执行过程结束，然后返回<code>&#123;value: val, done:true&#125;</code>。</li>
-</ul>
-</li>
-<li>调用生成器对象的<code>throw(err)</code>：
-<ul>
-<li>如果生成器状态是<code>suspendedStart</code>或<code>completed</code>，则结束执行生成器函数，并将生成器的状态修改为<code>completed</code>。最后<code>throw</code>函数将抛出异常<code>err</code></li>
-<li>否则（此时状态是<code>suspendedYield</code>），在暂停生成器函数的<code>yield</code>表达式的位置，抛出异常<code>err</code>，然后恢复执行生成器函数，最后返回生成器函数代码所返回的值。</li>
-</ul>
-</li>
 </ul>
 <h1 id="常见用法"><a class="markdownIt-Anchor" href="#常见用法"></a> 常见用法</h1>
 <h2 id="作为可迭代对象"><a class="markdownIt-Anchor" href="#作为可迭代对象"></a> 作为可迭代对象</h2>
