@@ -20,43 +20,749 @@ ga('send', 'pageview');</script><meta http-equiv="Cache-Control" content="no-tra
     noSupport: '浏览器不支持'
   },
   hexoVersion: '5.4.0'
-} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">191</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">27</span></a></div></div></div><nav id="nav" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="site-info"><div id="site-title">rcocco's Blog</div><div id="site-sub-title"></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/rcocco" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-github fa"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%BC%82%E6%AD%A5%E7%94%9F%E6%88%90%E5%99%A8.html">异步生成器</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-31</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="异步生成器函数概述"><a class="markdownIt-Anchor" href="#异步生成器函数概述"></a> 异步生成器函数概述</h1>
-<p>异步生成器函数是原型为<code>%AsyncGenerator%</code>的函数对象，具有函数对象所拥有的内部槽和属性，但它不能作为构造函数调用。它虽然有<code>prototype</code>属性，但这个<code>prototype</code>对象并没有<code>constructor</code>属性。<br />
-和生成器函数的区别在于：异步生成器函数返回的都是Promise而非直接的<code>IteratorResult</code>对象。而且除了第一次调用<code>next()</code>启动生成器之外，调用<code>next()</code>、<code>return()</code>或<code>throw()</code>时通常不会立刻执行异步生成器，而是会将这些调用添加到<code>AsyncGeneratorQueue</code>队列，在执行上下文为空时才执行。<br />
-和异步函数的区别在于：异步函数开始执行后，执行上下文切换的过程是自动的。而异步生成器函数开始执行后，它的某些执行上下文切换过程是可控的，取决于<code>AsyncGeneratorQueue</code>队列中的请求，例如只调用过一次<code>next()</code>，那么请求队列中只有一个<code>next()</code>，因此当异步生成器函数执行到第一个<code>yield</code>表达式时就会暂停，在下一个请求出现之前，不会自动切换回异步生成器函数的执行上下文。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%BC%82%E6%AD%A5%E7%94%9F%E6%88%90%E5%99%A8.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/25%20%E6%8E%A7%E5%88%B6%E6%8A%BD%E8%B1%A1%E5%AF%B9%E8%B1%A1.html">25 控制抽象对象</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-28</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="25-控制抽象对象"><a class="markdownIt-Anchor" href="#25-控制抽象对象"></a> 25 控制抽象对象</h1>
-<h2 id="251-迭代"><a class="markdownIt-Anchor" href="#251-迭代"></a> 25.1 迭代</h2>
-<h3 id="2511-公共迭代接口"><a class="markdownIt-Anchor" href="#2511-公共迭代接口"></a> 25.1.1 公共迭代接口</h3>
-<p>接口是一组属性键，其对应的值符合特定的规范。 提供了接口规范描述的全部属性的对象，称为此对象符合该接口。一个接口不是由一个单独的对象来表示的。可能有许多单独实现的对象符合任何接口。一个单独的对象可能符合多个接口。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/25%20%E6%8E%A7%E5%88%B6%E6%8A%BD%E8%B1%A1%E5%AF%B9%E8%B1%A1.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/14%20%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB.html">14 函数和类</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="14-函数和类"><a class="markdownIt-Anchor" href="#14-函数和类"></a> 14 函数和类</h1>
-<p>注意：各种ECMAScript语言元素导致创建ECMAScript函数对象（9.2）。 对此类函数的计算始于其[[Call]]内部方法（9.2.1）的执行。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/14%20%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E7%94%9F%E6%88%90%E5%99%A8.html">生成器</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="生成器函数概述"><a class="markdownIt-Anchor" href="#生成器函数概述"></a> 生成器函数概述</h1>
-<p>生成器函数是原型为<code>%Generator%</code>的函数对象，具有函数对象所拥有的内部槽和属性，但它不能作为构造函数调用。它虽然有<code>prototype</code>属性，但这个<code>prototype</code>对象并没有<code>constructor</code>属性。<br />
-和普通函数的区别在于，生成器函数代码中的<code>yield</code>表达式将使生成器函数暂停执行，并为外部代码（使得生成器函数恢复执行的代码）返回一个值。<br />
-用户可以在之后任何时间，通过生成器对象使被暂停的生成器函数恢复执行。在恢复执行生成器函数时，外部代码可以修改导致暂停的<code>yield</code>表达式的值。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E7%94%9F%E6%88%90%E5%99%A8.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0.html">异步函数</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-27</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="异步函数概述"><a class="markdownIt-Anchor" href="#异步函数概述"></a> 异步函数概述</h1>
-<p>异步函数是原型为<code>%AsyncFunction.prototype%</code>的函数对象，具有函数对象所拥有的内部槽和属性，但它不能作为构造函数调用，也没有<code>prototype</code>属性。<br />
-和普通函数的区别在于，异步函数代码中的<code>await</code>表达式将使异步函数暂停执行，并将<code>await</code>右侧的值传入<code>Promise.resolve</code>来得到一个Promise对象，在这个Promise对象被解决或拒绝后，将会恢复执行异步函数，并将<code>await</code>表达式的值设为Promise对象的结果值。</p>
-<p>异步函数与生成器函数都能够暂停执行，它们的区别在于：</p>
+} </script><meta name="generator" content="Hexo 5.4.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="false"><div class="author-info"><div class="author-info__avatar text-center"><img src="/avatar.jpg"></div><div class="author-info__name text-center">rcocco</div><div class="author-info__description text-center">personal blog</div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/rcocco">我的Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">203</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">29</span></a></div></div></div><nav id="nav" style="background-image: url(/bg.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">rcocco's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">首页</a><a class="site-page" href="/archives">归档</a><a class="site-page" href="/categories">分类</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="site-info"><div id="site-title">rcocco's Blog</div><div id="site-sub-title"></div><div id="site-social-icons"><a class="social-icon" href="https://github.com/rcocco" target="_blank" rel="noreferrer noopener nofollow"><i class="fa-github fa"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/React.html">React</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a></span><div class="content"><h1 id="react元素"><a class="markdownIt-Anchor" href="#react元素"></a> React元素</h1>
+<p>React元素是构成React应用的最小砖块。React元素类似于DOM元素，它也有元素类型、元素属性、子元素，主要区别在于：</p>
 <ul>
-<li>生成器函数的恢复执行需要用户手动控制。</li>
-<li>异步函数的恢复执行是自动的，什么时候恢复取决于<code>await</code>表达式创建的Promise对象何时解决或拒绝。</li>
-</ul></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E8%BF%AD%E4%BB%A3%E5%99%A8.html">迭代器</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-26</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h1>
-<p>迭代器是对遍历的抽象，比起常见的基于索引的循环，迭代器的优点是不需要了解被遍历对象的数据结构，只需要关心被遍历的值。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/%E8%BF%AD%E4%BB%A3%E5%99%A8.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/13%20%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%A3%B0%E6%98%8E.html">13 语句和声明</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-26</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="13-语句和声明"><a class="markdownIt-Anchor" href="#13-语句和声明"></a> 13 语句和声明</h1>
-<p>语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Statement[Yield, Return] :</span><br><span class="line">	BlockStatement</span><br><span class="line">	VariableStatement[?Yield]</span><br><span class="line">	EmptyStatement</span><br><span class="line">	ExpressionStatement[?Yield]</span><br><span class="line">	IfStatement</span><br><span class="line">	BreakableStatement</span><br><span class="line">	ContinueStatement[?Yield]</span><br><span class="line">	BreakStatement[?Yield]</span><br><span class="line">	[+Return] ReturnStatement[?Yield]</span><br><span class="line">	WithStatement</span><br><span class="line">	LabelledStatement</span><br><span class="line">	ThrowStatement[?Yield]</span><br><span class="line">	TryStatement</span><br><span class="line">	DebuggerStatement</span><br><span class="line"></span><br><span class="line">Declaration[Yield] :</span><br><span class="line">	HoistableDeclaration[?Yield]</span><br><span class="line">	ClassDeclaration[?Yield]</span><br><span class="line">	LexicalDeclaration</span><br><span class="line"></span><br><span class="line">HoistableDeclaration[Yield, Default] :</span><br><span class="line">	FunctionDeclaration[?Yield,?Default]</span><br><span class="line">	GeneratorDeclaration[?Yield, ?Default]</span><br><span class="line">	AsyncFunctionDeclaration[?Yield, ?Await, ?Default]</span><br><span class="line">    AsyncGeneratorDeclaration[?Yield, ?Await, ?Default]</span><br><span class="line"></span><br><span class="line">BreakableStatement[Yield, Return] :</span><br><span class="line">	IterationStatement</span><br><span class="line">	SwitchStatement</span><br></pre></td></tr></table></figure></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/13%20%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%A3%B0%E6%98%8E.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/6%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%80%BC.html">6 数据类型和值</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-24</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="6-ecmascript数据类型和值"><a class="markdownIt-Anchor" href="#6-ecmascript数据类型和值"></a> 6 ECMAScript数据类型和值</h1>
-<p>本规范中的算法操作的值都有一个关联的类型。可能的值类型正是本节中定义的那些。类型被进一步细分为ECMAScript语言类型和规范类型。</p>
-<p>在本规范中，记号 &quot;<code>Type(x)</code>&quot;被用作 &quot;<code>x</code>的类型 &quot;的缩写，其中 &quot;类型 &quot;指的是本节中定义的ECMAScript语言和规范类型。当术语 &quot;<code>empty</code> &quot;被用来命名一个值时，它相当于说 “没有任何类型的值”。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/6%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%80%BC.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/Promise.html">Promise</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-23</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h1>
-<p>Promise表示一个异步计算结果的占位符。<br />
-Promise具有四个内部属性：状态、结果、兑现时的响应列表、拒绝时的响应列表。<br />
-以及两个内部方法：<code>resolve</code>和<code>reject</code></p>
-<h2 id="状态"><a class="markdownIt-Anchor" href="#状态"></a> 状态</h2>
-<p>状态有三种：</p>
+<li>React元素开销比DOM元素小得多，因为React元素只有元素类型、元素属性、子元素等少数简单的属性。</li>
+<li>React元素是不可变对象，一旦创建就不能再修改。具体而言，React元素的所有属性，以及当这些属性是对象时，这些对象的属性，还有对象的属性的属性等等深层的属性，都是不可配置、不可修改的。</li>
+</ul></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/React.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/5%20Ranges.html">5 Ranges</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/">DOM</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/">DOM标准</a></span><div class="content"><h1 id="5-范围"><a class="markdownIt-Anchor" href="#5-范围"></a> 5 范围</h1>
+<h2 id="51-dom-ranges介绍"><a class="markdownIt-Anchor" href="#51-dom-ranges介绍"></a> 5.1 DOM Ranges介绍</h2>
+<p><code>StaticRange</code>和<code>Range</code>对象（范围）代表了一个结点树中的一系列内容。每个范围都有一个开始(start)和一个结束(end)，它们是边界点。边界点是由结点和偏移量组成的元组。换句话说，一个范围代表一个结点树内两个边界点之间的一段内容。</p>
+<p>范围在编辑中经常被用来选择和复制内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">└─Element: p</span><br><span class="line">  ├─Element: &lt;img src&#x3D;&quot;insanity-wolf&quot; alt&#x3D;&quot;Little-endian BOM; decode as big-endian!&quot;&gt;</span><br><span class="line">  ├─Text:  CSS 2.1 syndata is </span><br><span class="line">  ├─Element: &lt;em&gt;</span><br><span class="line">  │ └─Text: awesome</span><br><span class="line">  └─Text: !</span><br></pre></td></tr></table></figure>
+<p>在上面的结点树中，可以用一个范围来表示 <code>&quot;syndata is awes&quot;</code> 这个序列。假设将<code>p</code>元素赋给<code>p</code>，<code>em</code>元素赋给<code>em</code>，这将按如下方式进行：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> range = <span class="keyword">new</span> Range(),</span><br><span class="line">    firstText = p.childNodes[<span class="number">1</span>],</span><br><span class="line">    secondText = em.firstChild</span><br><span class="line">range.setStart(firstText, <span class="number">9</span>) <span class="comment">// do not forget the leading space</span></span><br><span class="line">range.setEnd(secondText, <span class="number">4</span>)</span><br><span class="line"><span class="comment">// range now stringifies to the aforementioned quote</span></span><br></pre></td></tr></table></figure>
+<p>注意：上面结点树中的<code>src</code>和<code>alt</code>等属性不能用范围表示。范围只对结点有用。</p>
+<p>与<code>StaticRange</code>对象不同，<code>Range</code>对象会受到结点树变化的影响。因此，它们也被称为实时范围。这样的变化不会使它们失效，并将试图确保它仍然代表同一块内容。必要的是，当它所代表的部分内容被修改时，一个实时范围本身可能作为结点树的变化的一部分被修改。</p>
+<p>注意：详见insert和remove算法，normalize()方法，以及replace data和split算法。</p>
+<p>响应节点树的变化而更新实时范围可能很昂贵。对于每个结点树的变化，所有受影响的<code>Range</code>对象都需要被更新。即使应用程序对一些实时范围不感兴趣，当变化发生时，它仍然必须耗费维持它们是最新的成本。</p>
+<p><code>StaticRange</code>对象是一个轻量级的范围，当节点树发生变化时不会更新。因此，它不需要像实时范围那样承担维护成本。</p>
+<h2 id="52-边界点"><a class="markdownIt-Anchor" href="#52-边界点"></a> 5.2 边界点</h2>
+<p>边界点是一个由结点和偏移量（一个非负整数）组成的元组。</p>
+<p>注意：一个正确的边界点的偏移量将在0和边界点的结点的length之间，闭区间。</p>
+<p>一个边界点（结点A、偏移A），相对于另一个边界点（结点B、偏移B）的位置是在前面(before)、相同(equal)，还是在之后(after)，取决于以下步骤：</p>
+<ol>
+<li>断言：<code>nodeA</code>和<code>nodeB</code>有相同的根</li>
+<li>如果<code>nodeA</code>是<code>nodeB</code>，则当<code>offsetA</code>是<code>offsetB</code>时返回<code>euqal</code>，当<code>offsetA</code>小于<code>offsetB</code>时返回<code>before</code>，当<code>offsetA</code>大于<code>offsetB</code>时返回<code>after</code></li>
+<li>如果<code>nodeA</code>在<code>nodeB</code>的后面，则当(<code>nodeB</code>, <code>offsetB</code>)相对于(<code>nodeA</code>, <code>offsetA</code>)的位置为<code>before</code>，则返回<code>after</code>，若位置为<code>after</code>，则返回<code>before</code></li>
+<li>如果<code>nodeA</code>是<code>nodeB</code>的祖先：
+<ol>
+<li>令<code>child</code>为<code>nodeB</code></li>
+<li>只要<code>child</code>不是<code>nodeA</code>的孩子，就将<code>child</code>设为它的父结点</li>
+<li>如果<code>child</code>的索引小于<code>offsetA</code>，则返回<code>after</code></li>
+</ol>
+</li>
+<li>返回<code>before</code></li>
+</ol>
+<h2 id="53-abstractrange接口"><a class="markdownIt-Anchor" href="#53-abstractrange接口"></a> 5.3 AbstractRange接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface AbstractRange &#123;</span><br><span class="line">  readonly attribute Node startContainer;</span><br><span class="line">  readonly attribute unsigned long startOffset;</span><br><span class="line">  readonly attribute Node endContainer;</span><br><span class="line">  readonly attribute unsigned long endOffset;</span><br><span class="line">  readonly attribute boolean collapsed;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>实现了<code>AbstractRange</code>接口的对象通常称为范围(ranges)</p>
+<p>一个范围有两个关联的边界点——开始(start)和结束(end)</p>
+<p>为方便起见，一个范围的开始结点是指它的开始边界点的结点，开始偏移是指它的开始边界点的偏移。结束结点是指它的结束边界点的结点，结束偏移是指它的结束边界点的偏移。</p>
+<p>一个范围是折叠的，当它的开始结点和结束结点相同，且开始偏移和结束偏移相同。<br />
+——————<br />
+对于Web开发者：<br />
+<code>node = range . startContainer</code><br />
+返回<code>range</code>的开始结点</p>
+<p><code>offset = range . startOffset</code><br />
+返回<code>range</code>的开始偏移</p>
+<p><code>node = range . endContainer</code><br />
+返回<code>range</code>的结束结点</p>
+<p><code>offset = range . endOffset</code><br />
+返回<code>range</code>的结束偏移</p>
+<p><code>collapsed = range . collapsed</code><br />
+当<code>range</code>是折叠的时返回<code>true</code>，否则返回<code>false</code><br />
+——————</p>
+<h2 id="54-staticrange接口"><a class="markdownIt-Anchor" href="#54-staticrange接口"></a> 5.4 StaticRange接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dictionary StaticRangeInit &#123;</span><br><span class="line">  required Node startContainer;</span><br><span class="line">  required unsigned long startOffset;</span><br><span class="line">  required Node endContainer;</span><br><span class="line">  required unsigned long endOffset;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface StaticRange : AbstractRange &#123;</span><br><span class="line">  constructor(StaticRangeInit init);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>——————<br />
+对于Web开发者：<br />
+<code>staticRange = new StaticRange(init)</code><br />
+返回一个新范围对象，当结点树发生变化时它不会更新<br />
+——————<br />
+<code>new StaticRange(init)</code>构造函数执行下列步骤：</p>
+<ol>
+<li>如果<code>init[&quot;startContainer&quot;]</code>或<code>init[&quot;endContainer&quot;]</code>是<code>DocumentType</code>或<code>Attr</code>结点，则抛出<code>&quot;InvalidNodeTypeError&quot;</code>DOMException</li>
+<li>将当前对象的开始边界点设为<code>(init[&quot;startContainer&quot;], init[&quot;startOffset&quot;])</code>，结束边界点设为<code>(init[&quot;endContainer&quot;], init[&quot;endOffset&quot;])</code></li>
+</ol>
+<h2 id="55-interface-range"><a class="markdownIt-Anchor" href="#55-interface-range"></a> 5.5. Interface Range</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface Range : AbstractRange &#123;</span><br><span class="line">  constructor();</span><br><span class="line"></span><br><span class="line">  readonly attribute Node commonAncestorContainer;</span><br><span class="line"></span><br><span class="line">  undefined setStart(Node node, unsigned long offset);</span><br><span class="line">  undefined setEnd(Node node, unsigned long offset);</span><br><span class="line">  undefined setStartBefore(Node node);</span><br><span class="line">  undefined setStartAfter(Node node);</span><br><span class="line">  undefined setEndBefore(Node node);</span><br><span class="line">  undefined setEndAfter(Node node);</span><br><span class="line">  undefined collapse(optional boolean toStart &#x3D; false);</span><br><span class="line">  undefined selectNode(Node node);</span><br><span class="line">  undefined selectNodeContents(Node node);</span><br><span class="line"></span><br><span class="line">  const unsigned short START_TO_START &#x3D; 0;</span><br><span class="line">  const unsigned short START_TO_END &#x3D; 1;</span><br><span class="line">  const unsigned short END_TO_END &#x3D; 2;</span><br><span class="line">  const unsigned short END_TO_START &#x3D; 3;</span><br><span class="line">  short compareBoundaryPoints(unsigned short how, Range sourceRange);</span><br><span class="line"></span><br><span class="line">  [CEReactions] undefined deleteContents();</span><br><span class="line">  [CEReactions, NewObject] DocumentFragment extractContents();</span><br><span class="line">  [CEReactions, NewObject] DocumentFragment cloneContents();</span><br><span class="line">  [CEReactions] undefined insertNode(Node node);</span><br><span class="line">  [CEReactions] undefined surroundContents(Node newParent);</span><br><span class="line"></span><br><span class="line">  [NewObject] Range cloneRange();</span><br><span class="line">  undefined detach();</span><br><span class="line"></span><br><span class="line">  boolean isPointInRange(Node node, unsigned long offset);</span><br><span class="line">  short comparePoint(Node node, unsigned long offset);</span><br><span class="line"></span><br><span class="line">  boolean intersectsNode(Node node);</span><br><span class="line"></span><br><span class="line">  stringifier;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>实现了<code>Range</code>接口的对象通常称为实时范围。</p>
+<p>修改树的算法（特别是插入、删除、替换数据和分割算法）会修改与该树关联的实时范围。</p>
+<p>实时范围的根是指它的开始结点的根。</p>
+<p>一个结点<code>node</code>被包含在一个实时范围中，当<code>node</code>的根是范围的根，且<code>(node, 0)</code>在范围的开始结点之后(after)，且<code>(node, node的长度)</code>在范围的结束结点之前(before)</p>
+<p>一个结点<code>node</code>被部分包含在一个实时范围中，当它是实时范围的开始结点的包含祖先，且不是结束结点。或者正好相反。</p>
+<p>注意：一些事实可以帮助更好地理解这些定义。</p>
 <ul>
-<li><code>pending</code>：待定，表示异步计算正在进行，结果还没有出来。</li>
-<li><code>fulfilled</code>：已兑现，表示异步计算已正常完成，并得到了计算结果。</li>
-<li><code>rejected</code>：已拒绝，表示异步计算过程出现了异常，计算中止，得到中止的原因。</li>
+<li>人们认为在实时范围内的内容包括所有被包含的结点，加上可能是开始结点和结束结点的一些内容，如果这些结点是<code>Text</code>、<code>ProcessingInstruction</code>或<code>Comment</code>节点。</li>
+<li>被包含在实时范围内的节点通常不是连续的，因为被包含的结点的父结点并不总是被包含的。</li>
+<li>然而，被包含结点的后代是被包含的，如果两个兄弟被包含，位于它们之间的任何兄弟也被包含。</li>
+<li>一个实时范围的开始结点和结束结点永远不会被包含。</li>
+<li>第一个被包含的结点（如果有的话）总是在开始结点之后，最后一个被包含的结点总是等于(equal)或早于(before)结束结点的最后一个后代。</li>
+<li>当且仅当开始结点和结束结点不同时，存在一个部分包含的结点。</li>
+<li><code>commonAncestorContainer</code>属性值既不包含也不部分包含。</li>
+<li>如果开始结点是结束结点的祖先，公共包含祖先将是开始结点。它的孩子中有且只有一个是部分包含的。其他孩子是被包含的，当且仅当它在这个部分包含孩子之前(precedes)。如果结束结点是开始结点的祖先，则情况相反。</li>
+<li>如果开始结点不是结束节点的包含祖先，反过来也不是，则公共包含祖先将与它们都不同。它的孩子中有且只有两个是部分包含的，其他孩子是被包含的，当且仅当它在这两个部分包含孩子之间。</li>
 </ul>
-<p>每个Promise最初都是<code>pending</code>待定状态，<code>pending</code>待定状态的Promise可以转换为<code>fulfilled</code>已兑现状态或<code>rejected</code>已拒绝状态二者之一，一旦转换就不可变化。<br />
-Promise不一定会进行这种转换，它也可能一直卡在<code>pending</code>状态。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/Promise.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/8%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html">8 可执行代码和执行上下文</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-05-23</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="8-可执行代码与执行上下文"><a class="markdownIt-Anchor" href="#8-可执行代码与执行上下文"></a> 8 可执行代码与执行上下文</h1>
-<h2 id="81-词法环境"><a class="markdownIt-Anchor" href="#81-词法环境"></a> 8.1 词法环境</h2>
-<p>词法环境是一种规范类型，用于定义标识符与特定变量和函数在 ECMAScript 代码的词法嵌套结构上关联关系。一个词法环境由一个环境记录和一个可能为空的外部词法环境引用组成。通常一个词法环境与ECMAScript代码的某些特定语法结构相关联，如<code>FunctionDeclaration</code>、<code>BlockStatement</code>或<code>TryStatement</code>的<code>Catch</code>子句，每次计算这些代码时都会创建一个新的词法环境。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/8%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%92%8C%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html#more">阅读更多</a><hr></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fa fa-chevron-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+<p>——————<br />
+对于Web开发者：<br />
+<code>range = new Range()</code><br />
+返回一个新的实时范围<br />
+——————<br />
+<code>new Range()</code>构造函数会设置开始结点和结束结点为<code>(当前全局对象关联的Document, 0)</code></p>
+<p>——————<br />
+对于Web开发者：<br />
+<code>container = range . commonAncestorContainer</code><br />
+返回离<code>Doducment</code>最远的结点，该结点是范围的开始结点和结束结点的祖先。<br />
+——————<br />
+<code>commonAncestorContainer</code>getter步骤为：</p>
+<ol>
+<li>令<code>container</code>为开始结点</li>
+<li>只要<code>container</code>不是结束结点的包含祖先，就令<code>container</code>为<code>container</code>的父结点</li>
+<li>返回<code>container</code></li>
+</ol>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/4%20Nodes.html">4 Nodes</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/">DOM</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/">DOM标准</a></span><div class="content"><h1 id="4-结点"><a class="markdownIt-Anchor" href="#4-结点"></a> 4 结点</h1>
+<h2 id="41-dom介绍"><a class="markdownIt-Anchor" href="#41-dom介绍"></a> 4.1 DOM介绍</h2>
+<p>在其原始意义上，<code>&quot;The DOM&quot;</code>是一个用于访问和操作文档（特别是HTML和XML文档）的API。在本规范中，术语 &quot;文档&quot;被用于任何基于标记的资源，从短的静态文档到长的文章或带有丰富多媒体的报告，以及完全成熟的互动应用程序。</p>
+<p>每个这样的文档都被表示为一个结点树。树中的一些结点可以有子结点，而另一些结点则始终是叶子结点。</p>
+<p>为了说明这一点，考虑下面这个HTML文档</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">class</span>=<span class="string">e</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>Aliens?<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span>Why yes.<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它表示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">└─Document</span><br><span class="line">  ├─Doctype: html</span><br><span class="line">  └─Element: html class&#x3D;&quot;e&quot;</span><br><span class="line">    ├─Element: head</span><br><span class="line">    │ └─Element: title</span><br><span class="line">    │   └─Text: Aliens?</span><br><span class="line">    ├─Text: ⏎</span><br><span class="line">    └─Element: body</span><br><span class="line">      └─Text: Why yes.⏎</span><br></pre></td></tr></table></figure>
+<p>请注意，由于HTML解析器的magic，并非所有的ASCII空白都变成了文本结点，但总体概念是清楚的。标记进去了，结点树出来了。</p>
+<p>注意：最优秀的<a target="_blank" rel="noopener" href="https://software.hixie.ch/utilities/js/live-dom-viewer/">Live DOM Viewer</a>可以用来更详细地探讨这个问题。</p>
+<h2 id="42-结点树"><a class="markdownIt-Anchor" href="#42-结点树"></a> 4.2 结点树</h2>
+<p><code>Document</code>、<code>DocumentType</code>、<code>DocumentFragment</code>、<code>Element</code>、<code>Text</code>、<code>ProcessingInstruction</code>和<code>Comment</code>对象（简称为结点）参与到一棵树中，简称为结点树。</p>
+<p>结点树的约束如下，表示为结点类型和其允许的子结点之间的关系。</p>
+<ul>
+<li><code>Document</code>：按树顺序
+<ol>
+<li>零个或多个<code>ProcessingInstruction</code>或<code>Comment</code>结点</li>
+<li>一个可选的<code>DocumentType</code>结点</li>
+<li>零个或多个<code>ProcessingInstruction</code>或<code>Comment</code>结点</li>
+<li>一个可选的<code>Element</code>结点</li>
+<li>零个或多个<code>ProcessingInstruction</code>或<code>Comment</code>结点</li>
+</ol>
+</li>
+<li><code>DocumentFragment</code></li>
+<li><code>Element</code>：
+<ol>
+<li>零个或多个<code>Element</code>,<code>Text</code>, <code>ProcessingInstruction</code>或<code>Comment</code>结点</li>
+</ol>
+</li>
+<li><code>DocumentType</code></li>
+<li><code>Text</code></li>
+<li><code>ProcessingInstruction</code></li>
+<li><code>Comment</code>
+<ol>
+<li>无</li>
+</ol>
+</li>
+</ul>
+<p>要确定一个结点<code>node</code>的长度，请打开节点：</p>
+<ul>
+<li><code>DocumentType</code>
+<ol>
+<li>零</li>
+</ol>
+</li>
+<li><code>Text</code></li>
+<li><code>ProcessingInstruction</code></li>
+<li><code>Comment</code>
+<ol>
+<li>它的<code>data</code>的长度</li>
+</ol>
+</li>
+<li>其他结点
+<ol>
+<li>它的孩子的数量</li>
+</ol>
+</li>
+</ul>
+<p>如果一个结点的长度为零，则视为空结点。</p>
+<h3 id="421-文档树"><a class="markdownIt-Anchor" href="#421-文档树"></a> 4.2.1 文档树</h3>
+<p>文档树是根为<code>Document</code>结点的结点树。</p>
+<p>一个<code>Document</code>结点的<strong>文档元素</strong>是父结点为此<code>Document</code>结点的<code>Element</code>结点，如果存在的话。否则为<code>null</code></p>
+<p>注意：根据结点树的限制，只能有一个这样的元素。</p>
+<p>如果一个<code>Element</code>结点的根是<code>Document</code>结点，则称这个<code>Element</code>结点在一个文档树中。</p>
+<p>如果一个<code>Element</code>结点在一个文档树中，则称这个<code>Element</code>结点在文档中。注意：术语【在文档中】不应该再被使用，它表明使用它的标准还没有更新影子树。</p>
+<h3 id="422-影子树"><a class="markdownIt-Anchor" href="#422-影子树"></a> 4.2.2 影子树</h3>
+<p>影子树是根为<strong>影子根</strong>的结点树</p>
+<p>影子根总是通过它的宿主连接到另一个结点树。因此，一棵影子树永远不是单独的。影子根的宿主的结点树有时被称为光树。</p>
+<p>注意：一棵影子树对应的光树本身也可以是一棵影子树。</p>
+<p>如果一个<code>Element</code>结点的包含影子根是一个<code>Document</code>结点，那么它就是连接(connected)的。</p>
+<h4 id="4221-槽"><a class="markdownIt-Anchor" href="#4221-槽"></a> 4.2.2.1 槽</h4>
+<p>影子树包含零个或多个作为槽(slot)的<code>Element</code>结点。</p>
+<p>注意：槽只能通过HTML的<code>slot</code>元素创建</p>
+<p>槽有关联的<code>name</code>（字符串），除非另有说明，否则它是空串。</p>
+<p>注意：影子树中按照树顺序的第一个<code>name</code>为空字符串的槽，有时被称为 “默认槽”。</p>
+<p>一个槽有一个关联的分配结点（一个<code>slottables</code>列表）。 除非另有说明，否则为空。</p>
+<h4 id="4222-slottables"><a class="markdownIt-Anchor" href="#4222-slottables"></a> 4.2.2.2 Slottables</h4>
+<p><code>Element</code>和<code>Text</code>结点是<code>slottables</code></p>
+<p>注意：一个槽也可以是<code>slottable</code></p>
+<p><code>slottable</code>有关联的<code>name</code>（字符串），除非另有说明，否则它是空串。</p>
+<p><code>slottable</code>有关联的分配槽（<code>null</code>或<code>slot</code>）。 除非另有说明，否则为空。 如果分配的槽非<code>null</code>，则<code>slottable</code>是已分配的。</p>
+<h3 id="424-mixin-nonelementparentnode"><a class="markdownIt-Anchor" href="#424-mixin-nonelementparentnode"></a> 4.2.4 Mixin NonElementParentNode</h3>
+<p>Web兼容性阻止了<code>getElementById()</code>方法在<code>Element</code>元素上的暴露（因此也阻止了<code>ParentNode</code>）。</p>
+<p>interface mixin类似于partial interface，都是用于组合多个接口。区别在于定义interface mixin后需要includes这个接口才生效，而partial interface是直接生效的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface mixin NonElementParentNode &#123;</span><br><span class="line">  Element? getElementById(DOMString elementId);</span><br><span class="line">&#125;;</span><br><span class="line">Document includes NonElementParentNode;</span><br><span class="line">DocumentFragment includes NonElementParentNode;</span><br></pre></td></tr></table></figure>
+<p>——————<br />
+对于Web开发者：<br />
+<code>node . getElementById(elementId)</code><br />
+返回<code>node</code>的后代中<code>ID</code>为<code>elementID</code>的第一个<code>Element</code>结点。<br />
+——————</p>
+<p><code>getElementById(elementId)</code>方法的步骤是，按树顺序，返回<code>this</code>的后代中第一个<code>ID</code>为<code>elementId</code>的元素；如果没有这样的元素，则为<code>null</code>。</p>
+<h3 id="425-mixin-documentorshadowroot"><a class="markdownIt-Anchor" href="#425-mixin-documentorshadowroot"></a> 4.2.5 Mixin DocumentOrShadowRoot</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface mixin DocumentOrShadowRoot &#123;</span><br><span class="line">&#125;;</span><br><span class="line">Document includes DocumentOrShadowRoot;</span><br><span class="line">ShadowRoot includes DocumentOrShadowRoot;</span><br></pre></td></tr></table></figure>
+<p>注意：<code>DocumentOrShadowRoot</code> mixin期望被其他想要定义<code>Document</code>结点和影子根之间共享的API的标准所使用。</p>
+<h3 id="426-mixin-parentnode"><a class="markdownIt-Anchor" href="#426-mixin-parentnode"></a> 4.2.6 Mixin ParentNode</h3>
+<p>为了将<code>nodes</code>转换为<code>node</code>，给定<code>nodes</code>和<code>document</code>，执行以下步骤：</p>
+<ol>
+<li>令<code>node</code>为<code>null</code></li>
+<li>将<code>nodes</code>中的每个字符串替换为一个新的<code>data</code>为此字符串，<code>node document</code>为<code>document</code>的文本结点</li>
+<li>如果<code>nodes</code>包含一个结点，将<code>node</code>设为此结点</li>
+<li>否则，将<code>node</code>设为一个新的<code>DocumentFragment</code>，其<code>node document</code>为<code>document</code>，然后将<code>nodes</code>中的每个<code>node</code>（如果有）append到它里面。</li>
+<li>返回<code>node</code></li>
+</ol>
+<p>如果[SameObject]扩展属性出现在一个只读属性上，那么它表明当在一个给定的对象上获得该属性的值时，必须始终返回相同的值。[SameObject] 扩展属性必须不接受任何参数。<br />
+[Unscopable]表示with它的时候该属性不会作为标识符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">interface mixin ParentNode &#123;</span><br><span class="line">  [SameObject] readonly attribute HTMLCollection children;</span><br><span class="line">  readonly attribute Element? firstElementChild;</span><br><span class="line">  readonly attribute Element? lastElementChild;</span><br><span class="line">  readonly attribute unsigned long childElementCount;</span><br><span class="line"></span><br><span class="line">  [CEReactions, Unscopable] undefined prepend((Node or DOMString)... nodes);</span><br><span class="line">  [CEReactions, Unscopable] undefined append((Node or DOMString)... nodes);</span><br><span class="line">  [CEReactions, Unscopable] undefined replaceChildren((Node or DOMString)... nodes);</span><br><span class="line"></span><br><span class="line">  Element? querySelector(DOMString selectors);</span><br><span class="line">  [NewObject] NodeList querySelectorAll(DOMString selectors);</span><br><span class="line">&#125;;</span><br><span class="line">Document includes ParentNode;</span><br><span class="line">DocumentFragment includes ParentNode;</span><br><span class="line">Element includes ParentNode;</span><br></pre></td></tr></table></figure>
+<p>——————<br />
+对于Web开发者：<br />
+<code>collection = node . children</code><br />
+返回子<code>Element</code>结点。</p>
+<p><code>element = node . firstElementChild</code><br />
+返回第一个子<code>Element</code>结点，否则为<code>null</code></p>
+<p><code>element = node . lastElementChild</code><br />
+返回最后一个子<code>Element</code>结点，否则为<code>null</code></p>
+<p><code>node . prepend(nodes)</code><br />
+将<code>nodes</code>插入到<code>node</code>的第一个孩子之前，同时将<code>nodes</code>中的字符串替换为相同的<code>Text</code>结点。如果违反了节点树的约束，抛出一个 “HierarchyRequestError” DOMException异常</p>
+<p><code>node . append(nodes)</code><br />
+将<code>nodes</code>插入到<code>node</code>的最后一个孩子之后，同时将<code>nodes</code>中的字符串替换为相同的<code>Text</code>结点。如果违反了节点树的约束，抛出一个 “HierarchyRequestError” DOMException异常</p>
+<p><code>node . replaceChildren(nodes)</code><br />
+用<code>nodes</code>替换<code>node</code>的所有孩子，同时将<code>nodes</code>中的字符串替换为相同的<code>Text</code>结点。如果违反了节点树的约束，抛出一个 “HierarchyRequestError” DOMException异常</p>
+<p><code>node . querySelector(selectors)</code><br />
+返回<code>node</code>后代中与选择器匹配的第一个<code>Element</code>结点</p>
+<p><code>node . querySelectorAll(selectors)</code><br />
+返回<code>node</code>的后代中与选择器匹配的所有<code>Element</code>结点<br />
+——————<br />
+<code>children</code>getter会返回一个根植于<code>this</code>的<code>HTMLCollection</code>集合，该集合只匹配子<code>Element</code>结点</p>
+<p><code>firstElementChild</code>getter返回第一个孩子，这个孩子是<code>Element</code>结点。否则为<code>null</code></p>
+<p><code>lastElementChild</code>getter返回最后一个孩子，这个孩子是<code>Element</code>结点。否则为<code>null</code></p>
+<p><code>childElementCount</code>getter返回<code>this</code>的孩子的中<code>Element</code>结点的数量</p>
+<p><code>prepend(nodes)</code>方法：</p>
+<ol>
+<li>令<code>node</code>为用给定<code>nodes</code>和<code>this</code>的结点文档(node document)执行将nodes转为node的结果</li>
+<li>Pre-insert <code>node</code> into <code>this</code> before <code>this</code>’s first child.</li>
+</ol>
+<p><code>replaceChildren(nodes)</code>方法：</p>
+<ol>
+<li>令<code>node</code>为用给定<code>nodes</code>和<code>this</code>的结点文档(node document)执行将nodes转为node的结果</li>
+<li>Ensure <code>pre-insertion validity</code> of <code>node</code> into <code>this</code> before null.</li>
+<li><code>Replace all</code> with <code>node</code> within <code>this</code></li>
+</ol>
+<p><code>querySelector(selectors)</code>方法会返回在<code>this</code>上用<code>selectors</code>执行<code>scope-match a selectors string</code>的第一个结果，如果结果不是空列表的话。否则，返回<code>null</code></p>
+<p><code>querySelectorAll(selectors)</code>方法会返回在<code>this</code>上用<code>selectors</code>执行<code>scope-match a selectors string</code>的<code>static</code>结果。</p>
+<h3 id="428-mixin-childnode"><a class="markdownIt-Anchor" href="#428-mixin-childnode"></a> 4.2.8 Mixin ChildNode</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface mixin ChildNode &#123;</span><br><span class="line">  [CEReactions, Unscopable] undefined before((Node or DOMString)... nodes);</span><br><span class="line">  [CEReactions, Unscopable] undefined after((Node or DOMString)... nodes);</span><br><span class="line">  [CEReactions, Unscopable] undefined replaceWith((Node or DOMString)... nodes);</span><br><span class="line">  [CEReactions, Unscopable] undefined remove();</span><br><span class="line">&#125;;</span><br><span class="line">DocumentType includes ChildNode;</span><br><span class="line">Element includes ChildNode;</span><br><span class="line">CharacterData includes ChildNode;</span><br></pre></td></tr></table></figure>
+<h3 id="429-mixin-slottable"><a class="markdownIt-Anchor" href="#429-mixin-slottable"></a> 4.2.9 Mixin Slottable</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface mixin Slottable &#123;</span><br><span class="line">  readonly attribute HTMLSlotElement? assignedSlot;</span><br><span class="line">&#125;;</span><br><span class="line">Element includes Slottable;</span><br><span class="line">Text includes Slottable;</span><br></pre></td></tr></table></figure>
+<h3 id="4210-旧式集合-nodelist和htmlcollection"><a class="markdownIt-Anchor" href="#4210-旧式集合-nodelist和htmlcollection"></a> 4.2.10 旧式集合: NodeList和HTMLCollection</h3>
+<p>一个集合是表示结点的列表的对象。一个集合可以是<code>live</code>的，也可以是<code>static</code>的。除非另有说明，一个集合必须是<code>live</code>的。</p>
+<p>如果一个集合是<code>live</code>的，那么该对象上的特性和方法必须对实际的基础数据，而不是数据的快照进行操作</p>
+<p>当一个集合被创建时，一个过滤器和一个根与它相关联。</p>
+<p>然后，集合表示以集合的根为根的子树的视图，只包含与给定的过滤器相匹配的结点。该视图是线性结构的。如果没有相反的具体要求，集合中的结点必须按树顺序排序。</p>
+<h4 id="42101-nodelist接口"><a class="markdownIt-Anchor" href="#42101-nodelist接口"></a> 4.2.10.1 NodeList接口</h4>
+<p><code>NodeList</code>对象是一个结点的集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface NodeList &#123;</span><br><span class="line">  getter Node? item(unsigned long index);</span><br><span class="line">  readonly attribute unsigned long length;</span><br><span class="line">  iterable&lt;Node&gt;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="42102-htmlcollection接口"><a class="markdownIt-Anchor" href="#42102-htmlcollection接口"></a> 4.2.10.2 HTMLCollection接口</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window, LegacyUnenumerableNamedProperties]</span><br><span class="line">interface HTMLCollection &#123;</span><br><span class="line">  readonly attribute unsigned long length;</span><br><span class="line">  getter Element? item(unsigned long index);</span><br><span class="line">  getter Element? namedItem(DOMString name);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>HTMLCollection</code>对象是一个<code>Element</code>结点的集合</p>
+<p>注意：<code>HTMLCollection</code>是一个我们无法摆脱的历史文物。我们当然欢迎开发者继续使用它，但新的API标准设计者不应该使用它（使用IDL中的<code>sequence&lt;T&gt;</code>代替）。</p>
+<h2 id="43-变化观察者"><a class="markdownIt-Anchor" href="#43-变化观察者"></a> 4.3 变化观察者</h2>
+<p>每个<code>similar-origin window agent</code>都有一个变化观察者微任务排队(mutation observer microtask queued)（它是一个布尔值），最初是<code>false</code>。[HTML]</p>
+<p>每个<code>similar-origin window agent</code>也有变化观察者(mutation observers)（一组零个或多个<code>MutationObserver</code>对象），最初为空。</p>
+<h3 id="431-mutationobserver接口"><a class="markdownIt-Anchor" href="#431-mutationobserver接口"></a> 4.3.1 MutationObserver接口</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface MutationObserver &#123;</span><br><span class="line">  constructor(MutationCallback callback);</span><br><span class="line"></span><br><span class="line">  undefined observe(Node target, optional MutationObserverInit options &#x3D; &#123;&#125;);</span><br><span class="line">  undefined disconnect();</span><br><span class="line">  sequence&lt;MutationRecord&gt; takeRecords();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">callback MutationCallback &#x3D; undefined (sequence&lt;MutationRecord&gt; mutations, MutationObserver observer);</span><br><span class="line"></span><br><span class="line">dictionary MutationObserverInit &#123;</span><br><span class="line">  boolean childList &#x3D; false;</span><br><span class="line">  boolean attributes;</span><br><span class="line">  boolean characterData;</span><br><span class="line">  boolean subtree &#x3D; false;</span><br><span class="line">  boolean attributeOldValue;</span><br><span class="line">  boolean characterDataOldValue;</span><br><span class="line">  sequence&lt;DOMString&gt; attributeFilter;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>一个<code>MutationObserver</code>对象可以用于观察结点树的变化。</p>
+<p>每个<code>MutationObserver</code>对象都有这些相关概念。</p>
+<ul>
+<li>一个创建时的<code>callback</code>集。</li>
+<li>一个结点列表（结点的列表），它最初为空。</li>
+<li>一个记录队列（由零个或多个<code>MutationRecord</code>对象组成的队列），最初为空。</li>
+</ul>
+<h3 id="433-mutationrecord接口"><a class="markdownIt-Anchor" href="#433-mutationrecord接口"></a> 4.3.3 MutationRecord接口</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface MutationRecord &#123;</span><br><span class="line">  readonly attribute DOMString type;</span><br><span class="line">  [SameObject] readonly attribute Node target;</span><br><span class="line">  [SameObject] readonly attribute NodeList addedNodes;</span><br><span class="line">  [SameObject] readonly attribute NodeList removedNodes;</span><br><span class="line">  readonly attribute Node? previousSibling;</span><br><span class="line">  readonly attribute Node? nextSibling;</span><br><span class="line">  readonly attribute DOMString? attributeName;</span><br><span class="line">  readonly attribute DOMString? attributeNamespace;</span><br><span class="line">  readonly attribute DOMString? oldValue;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="44-node接口"><a class="markdownIt-Anchor" href="#44-node接口"></a> 4.4 Node接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface Node : EventTarget &#123;</span><br><span class="line">  const unsigned short ELEMENT_NODE &#x3D; 1;</span><br><span class="line">  const unsigned short ATTRIBUTE_NODE &#x3D; 2;</span><br><span class="line">  const unsigned short TEXT_NODE &#x3D; 3;</span><br><span class="line">  const unsigned short CDATA_SECTION_NODE &#x3D; 4;</span><br><span class="line">  const unsigned short ENTITY_REFERENCE_NODE &#x3D; 5; &#x2F;&#x2F; legacy</span><br><span class="line">  const unsigned short ENTITY_NODE &#x3D; 6; &#x2F;&#x2F; legacy</span><br><span class="line">  const unsigned short PROCESSING_INSTRUCTION_NODE &#x3D; 7;</span><br><span class="line">  const unsigned short COMMENT_NODE &#x3D; 8;</span><br><span class="line">  const unsigned short DOCUMENT_NODE &#x3D; 9;</span><br><span class="line">  const unsigned short DOCUMENT_TYPE_NODE &#x3D; 10;</span><br><span class="line">  const unsigned short DOCUMENT_FRAGMENT_NODE &#x3D; 11;</span><br><span class="line">  const unsigned short NOTATION_NODE &#x3D; 12; &#x2F;&#x2F; legacy</span><br><span class="line">  readonly attribute unsigned short nodeType;</span><br><span class="line">  readonly attribute DOMString nodeName;</span><br><span class="line"></span><br><span class="line">  readonly attribute USVString baseURI;</span><br><span class="line"></span><br><span class="line">  readonly attribute boolean isConnected;</span><br><span class="line">  readonly attribute Document? ownerDocument;</span><br><span class="line">  Node getRootNode(optional GetRootNodeOptions options &#x3D; &#123;&#125;);</span><br><span class="line">  readonly attribute Node? parentNode;</span><br><span class="line">  readonly attribute Element? parentElement;</span><br><span class="line">  boolean hasChildNodes();</span><br><span class="line">  [SameObject] readonly attribute NodeList childNodes;</span><br><span class="line">  readonly attribute Node? firstChild;</span><br><span class="line">  readonly attribute Node? lastChild;</span><br><span class="line">  readonly attribute Node? previousSibling;</span><br><span class="line">  readonly attribute Node? nextSibling;</span><br><span class="line"></span><br><span class="line">  [CEReactions] attribute DOMString? nodeValue;</span><br><span class="line">  [CEReactions] attribute DOMString? textContent;</span><br><span class="line">  [CEReactions] undefined normalize();</span><br><span class="line"></span><br><span class="line">  [CEReactions, NewObject] Node cloneNode(optional boolean deep &#x3D; false);</span><br><span class="line">  boolean isEqualNode(Node? otherNode);</span><br><span class="line">  boolean isSameNode(Node? otherNode); &#x2F;&#x2F; legacy alias of &#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">  const unsigned short DOCUMENT_POSITION_DISCONNECTED &#x3D; 0x01;</span><br><span class="line">  const unsigned short DOCUMENT_POSITION_PRECEDING &#x3D; 0x02;</span><br><span class="line">  const unsigned short DOCUMENT_POSITION_FOLLOWING &#x3D; 0x04;</span><br><span class="line">  const unsigned short DOCUMENT_POSITION_CONTAINS &#x3D; 0x08;</span><br><span class="line">  const unsigned short DOCUMENT_POSITION_CONTAINED_BY &#x3D; 0x10;</span><br><span class="line">  const unsigned short DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC &#x3D; 0x20;</span><br><span class="line">  unsigned short compareDocumentPosition(Node other);</span><br><span class="line">  boolean contains(Node? other);</span><br><span class="line"></span><br><span class="line">  DOMString? lookupPrefix(DOMString? namespace);</span><br><span class="line">  DOMString? lookupNamespaceURI(DOMString? prefix);</span><br><span class="line">  boolean isDefaultNamespace(DOMString? namespace);</span><br><span class="line"></span><br><span class="line">  [CEReactions] Node insertBefore(Node node, Node? child);</span><br><span class="line">  [CEReactions] Node appendChild(Node node);</span><br><span class="line">  [CEReactions] Node replaceChild(Node node, Node child);</span><br><span class="line">  [CEReactions] Node removeChild(Node child);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary GetRootNodeOptions &#123;</span><br><span class="line">  boolean composed &#x3D; false;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>Node</code>是一个抽象的接口，并不作为结点存在。它被所有结点（Document、DocumentType、DocumentFragment、Element、Text、ProcessingInstruction和Comment）使用。</p>
+<p>每个结点都有一个关联的结点文档(node document)，它是一个<code>Document</code>结点，在创建时设置。</p>
+<p>注意：一个结点的结点文档可以通过<code>adopt</code>算法来改变。</p>
+<p>结点的<code>get the parent</code>算法，给定一个<code>event</code>，如果结点是已分配的，则返回结点的分配槽；否则返回结点的父节点。</p>
+<p>注意：每个结点都有一个注册观察者列表(registered observer list)</p>
+<h2 id="45-document接口"><a class="markdownIt-Anchor" href="#45-document接口"></a> 4.5 Document接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface Document : Node &#123;</span><br><span class="line">  constructor();</span><br><span class="line"></span><br><span class="line">  [SameObject] readonly attribute DOMImplementation implementation;</span><br><span class="line">  readonly attribute USVString URL;</span><br><span class="line">  readonly attribute USVString documentURI;</span><br><span class="line">  readonly attribute DOMString compatMode;</span><br><span class="line">  readonly attribute DOMString characterSet;</span><br><span class="line">  readonly attribute DOMString charset; &#x2F;&#x2F; legacy alias of .characterSet</span><br><span class="line">  readonly attribute DOMString inputEncoding; &#x2F;&#x2F; legacy alias of .characterSet</span><br><span class="line">  readonly attribute DOMString contentType;</span><br><span class="line"></span><br><span class="line">  readonly attribute DocumentType? doctype;</span><br><span class="line">  readonly attribute Element? documentElement;</span><br><span class="line">  HTMLCollection getElementsByTagName(DOMString qualifiedName);</span><br><span class="line">  HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);</span><br><span class="line">  HTMLCollection getElementsByClassName(DOMString classNames);</span><br><span class="line"></span><br><span class="line">  [CEReactions, NewObject] Element createElement(DOMString localName, optional (DOMString or ElementCreationOptions) options &#x3D; &#123;&#125;);</span><br><span class="line">  [CEReactions, NewObject] Element createElementNS(DOMString? namespace, DOMString qualifiedName, optional (DOMString or ElementCreationOptions) options &#x3D; &#123;&#125;);</span><br><span class="line">  [NewObject] DocumentFragment createDocumentFragment();</span><br><span class="line">  [NewObject] Text createTextNode(DOMString data);</span><br><span class="line">  [NewObject] CDATASection createCDATASection(DOMString data);</span><br><span class="line">  [NewObject] Comment createComment(DOMString data);</span><br><span class="line">  [NewObject] ProcessingInstruction createProcessingInstruction(DOMString target, DOMString data);</span><br><span class="line"></span><br><span class="line">  [CEReactions, NewObject] Node importNode(Node node, optional boolean deep &#x3D; false);</span><br><span class="line">  [CEReactions] Node adoptNode(Node node);</span><br><span class="line"></span><br><span class="line">  [NewObject] Attr createAttribute(DOMString localName);</span><br><span class="line">  [NewObject] Attr createAttributeNS(DOMString? namespace, DOMString qualifiedName);</span><br><span class="line"></span><br><span class="line">  [NewObject] Event createEvent(DOMString interface); &#x2F;&#x2F; legacy</span><br><span class="line"></span><br><span class="line">  [NewObject] Range createRange();</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; NodeFilter.SHOW_ALL &#x3D; 0xFFFFFFFF</span><br><span class="line">  [NewObject] NodeIterator createNodeIterator(Node root, optional unsigned long whatToShow &#x3D; 0xFFFFFFFF, optional NodeFilter? filter &#x3D; null);</span><br><span class="line">  [NewObject] TreeWalker createTreeWalker(Node root, optional unsigned long whatToShow &#x3D; 0xFFFFFFFF, optional NodeFilter? filter &#x3D; null);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface XMLDocument : Document &#123;&#125;;</span><br><span class="line"></span><br><span class="line">dictionary ElementCreationOptions &#123;</span><br><span class="line">  DOMString is;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="49-element接口"><a class="markdownIt-Anchor" href="#49-element接口"></a> 4.9 Element接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;Window]</span><br><span class="line">interface Element : Node &#123;</span><br><span class="line">  readonly attribute DOMString? namespaceURI;</span><br><span class="line">  readonly attribute DOMString? prefix;</span><br><span class="line">  readonly attribute DOMString localName;</span><br><span class="line">  readonly attribute DOMString tagName;</span><br><span class="line"></span><br><span class="line">  [CEReactions] attribute DOMString id;</span><br><span class="line">  [CEReactions] attribute DOMString className;</span><br><span class="line">  [SameObject, PutForwards&#x3D;value] readonly attribute DOMTokenList classList;</span><br><span class="line">  [CEReactions, Unscopable] attribute DOMString slot;</span><br><span class="line"></span><br><span class="line">  boolean hasAttributes();</span><br><span class="line">  [SameObject] readonly attribute NamedNodeMap attributes;</span><br><span class="line">  sequence&lt;DOMString&gt; getAttributeNames();</span><br><span class="line">  DOMString? getAttribute(DOMString qualifiedName);</span><br><span class="line">  DOMString? getAttributeNS(DOMString? namespace, DOMString localName);</span><br><span class="line">  [CEReactions] undefined setAttribute(DOMString qualifiedName, DOMString value);</span><br><span class="line">  [CEReactions] undefined setAttributeNS(DOMString? namespace, DOMString qualifiedName, DOMString value);</span><br><span class="line">  [CEReactions] undefined removeAttribute(DOMString qualifiedName);</span><br><span class="line">  [CEReactions] undefined removeAttributeNS(DOMString? namespace, DOMString localName);</span><br><span class="line">  [CEReactions] boolean toggleAttribute(DOMString qualifiedName, optional boolean force);</span><br><span class="line">  boolean hasAttribute(DOMString qualifiedName);</span><br><span class="line">  boolean hasAttributeNS(DOMString? namespace, DOMString localName);</span><br><span class="line"></span><br><span class="line">  Attr? getAttributeNode(DOMString qualifiedName);</span><br><span class="line">  Attr? getAttributeNodeNS(DOMString? namespace, DOMString localName);</span><br><span class="line">  [CEReactions] Attr? setAttributeNode(Attr attr);</span><br><span class="line">  [CEReactions] Attr? setAttributeNodeNS(Attr attr);</span><br><span class="line">  [CEReactions] Attr removeAttributeNode(Attr attr);</span><br><span class="line"></span><br><span class="line">  ShadowRoot attachShadow(ShadowRootInit init);</span><br><span class="line">  readonly attribute ShadowRoot? shadowRoot;</span><br><span class="line"></span><br><span class="line">  Element? closest(DOMString selectors);</span><br><span class="line">  boolean matches(DOMString selectors);</span><br><span class="line">  boolean webkitMatchesSelector(DOMString selectors); &#x2F;&#x2F; legacy alias of .matches</span><br><span class="line"></span><br><span class="line">  HTMLCollection getElementsByTagName(DOMString qualifiedName);</span><br><span class="line">  HTMLCollection getElementsByTagNameNS(DOMString? namespace, DOMString localName);</span><br><span class="line">  HTMLCollection getElementsByClassName(DOMString classNames);</span><br><span class="line"></span><br><span class="line">  [CEReactions] Element? insertAdjacentElement(DOMString where, Element element); &#x2F;&#x2F; legacy</span><br><span class="line">  undefined insertAdjacentText(DOMString where, DOMString data); &#x2F;&#x2F; legacy</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary ShadowRootInit &#123;</span><br><span class="line">  required ShadowRootMode mode;</span><br><span class="line">  boolean delegatesFocus &#x3D; false;</span><br><span class="line">  SlotAssignmentMode slotAssignment &#x3D; &quot;named&quot;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/JavaScript%E5%9F%BA%E7%A1%80.html">JavaScript基础</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h1>
+<p>通常所说的JavaScript实现包括三部分：</p>
+<ol>
+<li>核心（ECMAScript）：由ECMA-262定义并提供核心功能</li>
+<li>文档对象模型（DOM）：提供与网页内容交互的方法和接口</li>
+<li>浏览器对象模型（BOM）：提供与浏览器交互的方法和接口</li>
+</ol></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/JavaScript%E5%9F%BA%E7%A1%80.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/TypeScript.html">TypeScript</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-11</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a></span><div class="content"><h1 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h1>
+<p>TypeScript是JavaScript的超集，任何合法的JavaScript代码都是合法的TypeScript代码。</p>
+<p>TypeScript的目的是为JavaScript提供静态类型检查，使得JavaScript更加清晰明确。你可以将TypeScript当成静态类型版本的JavaScript，它的独有语法类似于Java和C#。</p>
+<p>TypeScript的代码无法直接运行，必须要编译为JavaScript，编译通过后TypeScript中的独有语法例如类型声明等都会消失，因此TypeScript无法检查代码运行时的任何问题。</p></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/TypeScript.html#more">阅读更多</a><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/2%20%E4%BA%8B%E4%BB%B6.html">2 事件</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-08</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/">DOM</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/">DOM标准</a></span><div class="content"><h1 id="2-事件"><a class="markdownIt-Anchor" href="#2-事件"></a> 2 事件</h1>
+<h2 id="21-dom事件介绍"><a class="markdownIt-Anchor" href="#21-dom事件介绍"></a> 2.1 DOM事件介绍</h2>
+<p>在整个web平台中，事件被派发(发送)到对象来表示某个事情的发生，如网络活动或用户交互。这些对象实现了<code>EventTarget</code>接口，因此可以通过调用<code>addEventListener()</code>添加事件监听器来观察事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj.addEventListener(<span class="string">&quot;load&quot;</span>, imgFetched)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">imgFetched</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// great success</span></span><br><span class="line">  …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>事件监听器可以通过调用<code>removeEventListener()</code>方法并传递相同的参数来删除。</p>
+<p>另外，事件监听器可以通过传递<code>AbortSignal</code>到<code>addEventListener()</code>并在拥有该信号的控制器上调用<code>abort()</code>来删除。</p>
+<p>事件也是对象，并且实现了<code>Event</code>接口（或一个派生接口）。在上面的例子中，<code>ev</code>是事件。<code>ev</code>被作为参数传递给事件监听器的回调（通常是一个JavaScript函数，如上所示）。事件监听器键入事件的<code>type</code>属性值（上例中的 <code>&quot;load&quot;</code>）。事件的<code>target</code>属性值返回事件被派发到的对象（上面的<code>obj</code>）。</p>
+<p>尽管事件通常由用户代理派发，作为用户交互或完成某些任务的结果，但应用程序可以通过使用通常被称为合成事件的方式来自行派发事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add an appropriate event listener</span></span><br><span class="line">obj.addEventListener(<span class="string">&quot;cat&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123; process(e.detail) &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// create and dispatch the event</span></span><br><span class="line"><span class="keyword">var</span> event = <span class="keyword">new</span> CustomEvent(<span class="string">&quot;cat&quot;</span>, &#123;<span class="string">&quot;detail&quot;</span>:&#123;<span class="string">&quot;hazcheeseburger&quot;</span>:<span class="literal">true</span>&#125;&#125;)</span><br><span class="line">obj.dispatchEvent(event)</span><br></pre></td></tr></table></figure>
+<p>除了信号，事件有时也被用来让应用程序控制一个操作的下一步发生什么。例如，作为表单提交的一部分，一个<code>type</code>属性值为 <code>&quot;submit&quot;</code>的事件被派发。如果这个事件的<code>preventDefault()</code>方法被调用，表单提交将被终止。希望通过应用程序派发的事件（合成事件）利用这一功能的应用程序可以利用<code>dispatchEvent()</code>方法的返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(obj.dispatchEvent(event)) &#123;</span><br><span class="line">  <span class="comment">// event was not canceled, time for some magic</span></span><br><span class="line">  …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当一个事件被派发到一个参与了树的对象（例如，一个元素）时，它也可以到达该对象的祖先上的事件监听器。实际上，首先会按照树顺序，调用该对象的所有包含祖先的捕获(captrue)为<code>true</code>的事件监听器。然后，如果事件的<code>bubbles</code>为<code>true</code>，则会按照逆序树顺序，调用该对象的所有包含祖先的捕获为<code>false</code>的事件监听器。</p>
+<p>让我们来看看事件在树中如何工作的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;title&gt;Boring example&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;Hello &lt;span id=x&gt;world&lt;<span class="regexp">/span&gt;!&lt;/</span>p&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">     debug(e.target, e.currentTarget, e.eventPhase)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">document</span>.addEventListener(<span class="string">&quot;hey&quot;</span>, test, &#123;<span class="attr">capture</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">   <span class="built_in">document</span>.body.addEventListener(<span class="string">&quot;hey&quot;</span>, test)</span><br><span class="line">   <span class="keyword">var</span> ev = <span class="keyword">new</span> Event(<span class="string">&quot;hey&quot;</span>, &#123;<span class="attr">bubbles</span>:<span class="literal">true</span>&#125;)</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">&quot;x&quot;</span>).dispatchEvent(ev)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><code>debug</code>函数将被调用两次。每一次时事件的<code>target</code>特性值都是span元素。第一次<code>currentTarget</code>特性的值是文档，第二次是body元素。 <code>eventPhase</code>特性的值从<code>CAPTURING_PHASE</code>切换到<code>BUBBLING_PHASE</code>。如果为span元素注册了一个事件监听器，<code>eventPhase</code>属性的值将是<code>AT_TARGET</code>。</p>
+<h2 id="22-event-接口"><a class="markdownIt-Anchor" href="#22-event-接口"></a> 2.2 Event 接口</h2>
+<p>Event构造器在主线程(window)、Worker、AudioWorklet中可用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;(Window,Worker,AudioWorklet)]</span><br><span class="line">interface Event &#123;</span><br><span class="line">  constructor(DOMString type, optional EventInit eventInitDict &#x3D; &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  readonly attribute DOMString type;</span><br><span class="line">  readonly attribute EventTarget? target;</span><br><span class="line">  readonly attribute EventTarget? srcElement; &#x2F;&#x2F; legacy</span><br><span class="line">  readonly attribute EventTarget? currentTarget;</span><br><span class="line">  sequence&lt;EventTarget&gt; composedPath();</span><br><span class="line"></span><br><span class="line">  const unsigned short NONE &#x3D; 0;</span><br><span class="line">  const unsigned short CAPTURING_PHASE &#x3D; 1;</span><br><span class="line">  const unsigned short AT_TARGET &#x3D; 2;</span><br><span class="line">  const unsigned short BUBBLING_PHASE &#x3D; 3;</span><br><span class="line">  readonly attribute unsigned short eventPhase;</span><br><span class="line"></span><br><span class="line">  undefined stopPropagation();</span><br><span class="line">           attribute boolean cancelBubble; &#x2F;&#x2F; legacy alias of .stopPropagation()</span><br><span class="line">  undefined stopImmediatePropagation();</span><br><span class="line"></span><br><span class="line">  readonly attribute boolean bubbles;</span><br><span class="line">  readonly attribute boolean cancelable;</span><br><span class="line">           attribute boolean returnValue;  &#x2F;&#x2F; legacy</span><br><span class="line">  undefined preventDefault();</span><br><span class="line">  readonly attribute boolean defaultPrevented;</span><br><span class="line">  readonly attribute boolean composed;</span><br><span class="line"></span><br><span class="line">  [LegacyUnforgeable] readonly attribute boolean isTrusted;</span><br><span class="line">  readonly attribute DOMHighResTimeStamp timeStamp;</span><br><span class="line"></span><br><span class="line">  undefined initEvent(DOMString type, optional boolean bubbles &#x3D; false, optional boolean cancelable &#x3D; false); &#x2F;&#x2F; legacy</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary EventInit &#123;</span><br><span class="line">  boolean bubbles &#x3D; false;</span><br><span class="line">  boolean cancelable &#x3D; false;</span><br><span class="line">  boolean composed &#x3D; false;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>一个<code>Event</code>对象简称为事件(event)。它允许发出信号，表明某些事情已经发生，例如，一个图像已经完成下载。</p>
+<p>潜在的事件目标(potential event target)是<code>null</code>或者一个<code>EventTarget</code>对象。</p>
+<p>一个事件有一个关联的<code>target</code>(潜在的事件目标)，除非另有说明，否则它是<code>null</code>。</p>
+<p>一个事件有一个关联的<code>relatedTarget</code>(潜在的事件目标)，除非另有说明，否则它是<code>null</code>。</p>
+<p>注意：其他规范使用<code>relatedTarget</code>来定义<code>realtedTarget</code>特性。[UIEVENTS]</p>
+<p>一个事件有一个关联的<code>touch target list</code>(零个或多个潜在的事件目标组成的列表)，除非另有说明，否则它是空列表。</p>
+<p><code>touch target list</code>是专门用于定义<code>TouchEvent</code>接口和相关接口的。[TOUCH-EVENTS]</p>
+<p>一个事件有一个关联的<code>path</code>。<code>path</code>是一个<code>structs</code>的列表。每个<code>struct</code>由调用目标invocation target（<code>EventTarget</code>对象）、影子树中的调用目标invocation-target-in-shadow-tree（布尔值）、影子调整目标shadow-adjusted target（潜在事件目标）、relatedTarget（潜在事件目标）、touch target list（潜在事件目标列表）、封闭树根root-of-closed-tree（布尔值）和封闭树槽slot-in-closed-tree（布尔值）组成。一个<code>path</code>最初是空列表。</p>
+<p>——————<br />
+对于Web开发者：<br />
+<code>event = new Event(type [, eventInitDict])</code><br />
+返回一个新event，其<code>type</code>特性被设为参数<code>type</code>。<code>eventInitDict</code>参数允许通过同名的对象成员设置<code>bubbles</code>和<code>cancelable</code>特性</p>
+<p><code>event . type</code><br />
+返回event的类型，例如<code>&quot;click&quot;</code>、<code>&quot;hashchange&quot;</code>或<code>&quot;submit&quot;</code></p>
+<p><code>event . target</code><br />
+返回事件派发的对象(target)</p>
+<p><code>event . currentTarget</code><br />
+返回一个对象，其事件监听器的回调目前正被调用</p>
+<p><code>event . composedPath()</code><br />
+返回事件的<code>path</code>的调用目标(invocation target)对象（也就是将调用监听器的对象），但影子树中任何影子根的<code>mode</code>为<code>&quot;closed&quot;</code>，且不能从事件的<code>currentTarget</code>到达的结点除外</p>
+<p><code>event . eventPhase</code><br />
+返回事件的阶段，值是<code>NONE</code>, <code>CAPTURING_PHASE</code>, <code>AT_TARGET</code>和 <code>BUBBLING_PHASE</code>其中之一。</p>
+<p><code>event . stopPropagation()</code><br />
+当在树中派发时，调用这个方法可以防止事件到达除当前对象以外的任何对象。</p>
+<p><code>event . stopImmediatePropagation()</code><br />
+调用这个方法可以防止事件在当前的事件监听器运行结束后，到达任何注册过的事件监听器（也就是说当前对象的其他监听器），当在一个树中派发时，也会防止事件到达任何其他对象。</p>
+<p><code>event . bubbles</code><br />
+根据事件的初始化方式，返回<code>true</code>或<code>false</code>。如果事件会以逆序的树顺序通过其target的祖先，则为<code>true</code>；否则为<code>false</code>。</p>
+<p><code>event . cancelable</code><br />
+根据事件的初始化方式，返回<code>true</code>或<code>false</code>。它的返回值并不总是有意义的，但是<code>true</code>可以表示在事件被派发的过程中，部分操作可以通过调用<code>preventDefault()</code>方法来取消。</p>
+<p><code>event . preventDefault()</code><br />
+如果在<code>cancelable</code>特性值为<code>true</code>时调用，并且在执行事件的监听器时，<code>passive</code>被设为<code>false</code>，则向导致事件被派发的操作发出信号表明它需要被取消。</p>
+<p><code>event . defaultPrevented</code><br />
+如果<code>preventDefault()</code>被成功调用，返回<code>true</code>表示已取消；否则返回<code>false</code>。</p>
+<p><code>event . composed</code><br />
+根据事件的初始化方式，返回<code>true</code>或<code>false</code>。如果事件经过一个<code>ShadowRoot</code>结点的监听器，且这个结点是target的根，则返回<code>true</code>，否则返回<code>false</code>。</p>
+<p><code>event . isTrusted</code><br />
+如果事件是由用户代理派发的，返回<code>true</code>，否则返回<code>false</code></p>
+<p><code>event . timeStamp</code><br />
+以相对于时间原点(time origin)测量的毫秒数形式返回事件的时间戳。<br />
+——————</p>
+<p><code>type</code>特性必须返回它被初始化的值。当一个事件被创建时，该特性必须被初始化为空字符串。</p>
+<p><code>target</code> getter步骤会返回Event接口的<code>target</code></p>
+<p><code>srcElement</code>getter步骤会返回Event接口的<code>target</code></p>
+<p><code>currentTarget</code>特性必须返回它被初始化的值。当一个事件被创建时，该特性必须被初始化为<code>null</code>。</p>
+<p><code>composedPath()</code>方法步骤：</p>
+<ol>
+<li>令<code>composedPath</code>为空列表</li>
+<li>令<code>path</code>为<code>this.path</code></li>
+<li>如果<code>path</code>为空，则返回<code>composedPath</code></li>
+<li>令<code>currentTarget</code>为<code>this.currentTarget</code>特性值</li>
+<li>将<code>currentTarget</code>添加到<code>composedPath</code></li>
+<li>令<code>currentTargetIndex</code>为<code>0</code></li>
+<li>令<code>currentTargetHiddenSubtreeLevel</code>为<code>0</code></li>
+<li>令<code>index</code>为<code>path.size</code>再减1</li>
+<li>只要<code>index &gt;= 0</code>：
+<ol>
+<li>如果<code>path[index]</code>的<code>root-of-closed-tree</code>为<code>true</code>，则将<code>currentTargetHiddenSubtreeLevel</code>加1</li>
+<li>如果<code>path[index]</code>的<code>invocation target</code>为<code>currentTarget</code>，则将<code>currentTargetIndex</code>设为<code>index</code>然后跳出循环</li>
+<li>如果<code>path[index]</code>的<code>slot-in-closed-tree</code>为<code>true</code>，则将<code>currentTargetHiddenSubtreeLevel</code>减<code>1</code></li>
+<li>将<code>index</code>减<code>1</code></li>
+</ol>
+</li>
+<li>令<code>currentHiddenLevel</code>和<code>maxHiddenLevel</code>为<code>currentTargetHiddenSubtreeLevel</code></li>
+<li>将<code>index</code>设为<code>currentTargetIndex − 1</code></li>
+<li>只要<code>index &gt;= 0</code>：
+<ol>
+<li>如果<code>path[index]</code>的<code>root-of-closed-tree</code>为<code>true</code>，则<code>currentHiddenLevel += 1</code></li>
+<li>如果<code>currentHiddenLevel &lt;= maxHiddenLevel</code>，则将<code>path[index]</code>的<code>invocation target</code>添加到<code>composedPath</code>前面</li>
+<li>如果<code>path[index]</code>的<code>slot-in-closed-tree</code>为<code>true</code>，则：
+<ol>
+<li><code>currentHiddenLevel -= 1</code></li>
+<li>如果<code>currentHiddenLevel &lt; maxHiddenLevel</code>，则将<code>maxHiddenLevel</code>设为<code>currentHiddenLevel</code></li>
+</ol>
+</li>
+<li><code>index -= 1</code></li>
+</ol>
+</li>
+<li>将<code>currentHiddenLevel</code>和<code>maxHiddenLevel</code>设为<code>currentTargetHiddenSubtreeLevel</code></li>
+<li>将<code>index</code>设为<code>currentTargetIndex + 1</code></li>
+<li>只要<code>index &lt; path.size</code>
+<ol>
+<li>如果<code>path[index]</code>的<code>slot-in-closed-tree</code>为<code>true</code>，则<code>currentHiddenLevel += 1</code></li>
+<li>如果<code>currentHiddenLevel &lt;= maxHiddenLevel</code>，则将<code>path[index]</code>的<code>invocation target</code>添加到<code>composedPath</code></li>
+<li>如果<code>path[index]</code>的<code>root-of-closed-tree</code>为<code>true</code>，则
+<ol>
+<li><code>currentHiddenLevel -= 1</code></li>
+<li>如果<code>currentHiddenLevel &lt; maxHiddenLevel</code>，则将<code>maxHiddenLevel</code>设为<code>currentHiddenLevel</code></li>
+</ol>
+</li>
+<li><code>index += 1</code></li>
+</ol>
+</li>
+<li>返回<code>composedPath</code></li>
+</ol>
+<p><code>eventPhase</code>特性必须返回它被初始化的值，必须是下列之一：</p>
+<ul>
+<li><code>NONE</code>（数字值0）：当前没有派发的事件处于此阶段。</li>
+<li><code>CAPTURING_PHASE</code>（数字值1）：当一个事件被派发给一个参与了树的对象时，在它到达目标(target)之前，它将处于这个阶段。</li>
+<li><code>AT_TARGET</code>（数字值2）：当一个事件被派发时，当它在目标(target)上时，它将处于这个阶段。</li>
+<li><code>BUBBLING_PHASE</code>（数字值3）：当一个事件被派发给一个参与了树的对象时，在它到达目标(target)之后，它将处于这个阶段。</li>
+</ul>
+<p>此特性最初被初始化为<code>NONE</code></p>
+<p>每个Event有下列关联标志(flag)，最初都没有设置：</p>
+<ul>
+<li>stop propagation flag</li>
+<li>stop immediate propagation flag</li>
+<li>canceled flag</li>
+<li>in passive listener flag</li>
+<li>composed flag</li>
+<li>initialized flag</li>
+<li>dispatch flag</li>
+</ul>
+<p><code>stopPropagation()</code>方法步骤会设置stop propagation flag</p>
+<p><code>cancelBubble</code>getter步骤当stop propagation flag被设置时返回<code>true</code>，否则返回<code>false</code></p>
+<p><code>cancelBubble</code>setter在给定值为<code>true</code>时设置stop propagation flag，否则什么也不做</p>
+<p><code>stopImmediatePropagation()</code>方法步骤设置stop propagation flag和stop immediate propagation flag</p>
+<p><code>bubbles</code>和<code>cancelable</code>特性必须返回它们初始化时的值</p>
+<p>为了设置canceled flag，给定事件<code>event</code>，如果<code>event</code>的<code>cancelable</code>特性值为<code>true</code>且<code>event</code>的in passive listener flag没有设置，则设置<code>event</code>的canceled flag。否则什么也不做。</p>
+<p><code>returnValue</code>getter步骤会在 canceled flag被设置时返回<code>false</code>，否则返回<code>true</code></p>
+<p><code>returnValue</code>setter步骤会在给定值为<code>false</code>时设置canceled flag，否则什么也不做</p>
+<p><code>preventDefault()</code>方法步骤会设置canceled flag</p>
+<p>注意：在某些情况下，调用<code>preventDefault()</code>没有效果。我们鼓励用户代理在开发者控制台中记录准确的原因，以帮助调试。</p>
+<p><code>defaultPrevented</code>getter步骤会在canceled flag被设置时返回<code>true</code>，否则返回<code>false</code></p>
+<p><code>composed</code>getter步骤会在composed flag被设置时返回<code>true</code>，否则返回<code>false</code></p>
+<p><code>isTrusted</code>特性必须返回它被初始化时的值。当事件被创建时此特性被初始化为<code>false</code>。</p>
+<p>注意：<code>isTrusted</code>是一种便利的工具，它表示一个事件是否由用户代理派发（与使用<code>dispatchEvent()</code>相反）。唯一的例外是<code>click()</code>，它导致用户代理派发一个<code>isTrusted</code>属性被初始化为<code>false</code>的事件。</p>
+<p><code>timeStamp</code>特性必须返回它被初始化时的值。</p>
+<p>要使用<code>type</code>, <code>bubbles</code>, <code>cancelable</code>初始化一个事件<code>event</code>，执行以下步骤：</p>
+<ol>
+<li>设置<code>event</code>的initialized flag</li>
+<li>取消设置<code>event</code>的stop propagation flag, stop immediate propagation flag, 和 canceled flag</li>
+<li>将<code>event</code>的<code>isTrusted</code>特性设为<code>false</code></li>
+<li>将<code>event</code>的<code>target</code>设为<code>null</code></li>
+<li>将<code>event</code>的<code>type</code>特性设为<code>type</code></li>
+<li>将<code>event</code>的<code>bubbles</code>特性设为<code>bubbles</code></li>
+<li>将<code>event</code>的<code>cancelable</code>特性设为<code>cancelable</code></li>
+</ol>
+<p><code>initEvent(type, bubbles, cancelable)</code>方法步骤为：</p>
+<ol>
+<li>如果dispatch flag被设置了，则返回</li>
+<li>使用<code>type</code>, <code>bubbles</code>, <code>cancelable</code>初始化事件</li>
+</ol>
+<p>注意：<code>initEvent()</code> 对于事件构造函数来说是多余的，并且无法设置<code>composed</code>。 但为了旧内容必须支持。</p>
+<h2 id="23-window接口的遗留扩展"><a class="markdownIt-Anchor" href="#23-window接口的遗留扩展"></a> 2.3 Window接口的遗留扩展</h2>
+<p>[Replaceable]只能用在readonly上，它的set访问器会将该属性转为数据属性，导致接口中规定的属性被替换而失效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">partial interface Window &#123;</span><br><span class="line">  [Replaceable] readonly attribute (Event or undefined) event; &#x2F;&#x2F; legacy</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>每个<code>Window</code>对象有一个关联的当前事件(current event)（<code>undefined</code>或<code>Event</code>对象）。除非另有说明，否则它是<code>undefined</code>的。</p>
+<p><code>event</code>getter步骤会返回它的当前事件。</p>
+<p>注意：我们强烈建议Web开发者转而依赖传递给事件监听器的<code>Event</code>对象，因为这将使代码有更好的可移植性。这个特性在worker或worklet中是不可用的，对于影子树中派发的事件是不准确的。</p>
+<h2 id="24-customevent接口"><a class="markdownIt-Anchor" href="#24-customevent接口"></a> 2.4 CustomEvent接口</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Exposed&#x3D;(Window,Worker)]</span><br><span class="line">interface CustomEvent : Event &#123;</span><br><span class="line">  constructor(DOMString type, optional CustomEventInit eventInitDict &#x3D; &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  readonly attribute any detail;</span><br><span class="line"></span><br><span class="line">  undefined initCustomEvent(DOMString type, optional boolean bubbles &#x3D; false, optional boolean cancelable &#x3D; false, optional any detail &#x3D; null); &#x2F;&#x2F; legacy</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary CustomEventInit : EventInit &#123;</span><br><span class="line">  any detail &#x3D; null;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>使用<code>CustomEvent</code>接口的事件可以携带自定义数据</p>
+<p>——————<br />
+对于Web开发者：<br />
+<code>event = new CustomEvent(type [, eventInitDict])</code><br />
+除了<code>eventInitDict</code>参数现在也允许设置<code>detail</code>特性外，其作用与Event的构造函数类似。</p>
+<p><code>event . detail</code><br />
+返回创建事件时使用的任何自定义数据。通常用于合成事件。<br />
+——————</p>
+<p><code>detail</code>特性必须返回它被初始化时的值。</p>
+<p><code>initCustomEvent(type, bubbles, cancelable, detail)</code>方法步骤：</p>
+<ol>
+<li>如果设置了<code>dispatch flag</code>，返回</li>
+<li>使用<code>type</code>, <code>bubbles</code>和<code>cancelable</code>初始化</li>
+<li>将<code>detail</code>特性设为参数<code>detail</code></li>
+</ol>
+<h2 id="27-eventtarget接口"><a class="markdownIt-Anchor" href="#27-eventtarget接口"></a> 2.7 EventTarget接口</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[Exposed=(Window,Worker,AudioWorklet)]</span><br><span class="line">interface EventTarget &#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span>);</span><br><span class="line"></span><br><span class="line">  <span class="literal">undefined</span> addEventListener(DOMString type, EventListener? callback, optional (AddEventListenerOptions or boolean) options = &#123;&#125;);</span><br><span class="line">  <span class="literal">undefined</span> removeEventListener(DOMString type, EventListener? callback, optional (EventListenerOptions or boolean) options = &#123;&#125;);</span><br><span class="line">  boolean dispatchEvent(Event event);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">callback interface EventListener &#123;</span><br><span class="line">  <span class="literal">undefined</span> handleEvent(Event event);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary EventListenerOptions &#123;</span><br><span class="line">  boolean capture = <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">dictionary AddEventListenerOptions : EventListenerOptions &#123;</span><br><span class="line">  boolean passive = <span class="literal">false</span>;</span><br><span class="line">  boolean once = <span class="literal">false</span>;</span><br><span class="line">  AbortSignal signal;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>EventTarget</code>对象表示在某事情发生时，事件所派发到的目标。</p>
+<p>每个<code>EventTarget</code>对象有关联的事件监听器列表（零个或多个事件监听器）。它最初被初始化为空列表。</p>
+<p>一个事件监听器用来观察特定的事件，它由下列内容组成：</p>
+<ul>
+<li><code>type</code>（类型，是一个字符串）</li>
+<li><code>callback</code>（回调函数，是<code>null</code>或<code>EventListener</code>对象）</li>
+<li><code>capture</code>（布尔值，最初为<code>false</code>）</li>
+<li><code>passive</code>（布尔值，最初为<code>false</code>）</li>
+<li><code>once</code>（布尔值，最初为<code>false</code>）</li>
+<li><code>signal</code>（信号，<code>null</code>或<code>AbortSignal</code>对象）</li>
+<li><code>removed</code>（布尔值，用于记录，最初为<code>false</code>）</li>
+</ul>
+<p>注意：尽管<code>callback</code>是<code>EventListener</code>对象，但事件监听器是一个更广泛的概念，正如上面所述。</p>
+<p>每个<code>EventTarget</code>对象有一个关联的<code>get the parent</code>算法，它接受一个事件<code>event</code>，并返回<code>EventTarget</code>对象。除非另有说明，否则它返回<code>null</code>。</p>
+<p>注意：<code>Nodes</code>、<code>shadow roots</code>和<code>documents</code>重写了<code>get the parent</code>算法</p>
+<p>每个<code>EventTarget</code>对象有一个关联的<code>activation behavior</code>算法，<code>activation behavior</code>算法被传递一个事件，如<code>dispatch</code>算法中所示。</p>
+<p>注意：它的存在是因为用户代理对某些<code>EventTarget</code>对象（例如，<code>area</code>元素）执行某些动作，以响应<code>type</code>属性为<code>click</code>的合成<code>MouseEvent</code>事件。Web兼容性阻止了它被删除，现在它是定义某个东西的激活的规范方式。[HTML]</p>
+<p>每个有<code>activation behavior</code>的<code>EventTarget</code>对象，都可以同时拥有（而不是任一）<code>legacy-pre-activation behavior</code>算法和<code>legacy-canceled-activation behavior</code>算法。</p>
+<p>注意：这些算法只存在于复选框和单选<code>input</code>元素，不能用在其他地方[HTML]</p>
+<p>——————<br />
+对于Web开发者：<br />
+<code>target = new EventTarget();</code><br />
+创建一个新的<code>EventTarget</code>对象，可以被开发者用来派发和监听事件。</p>
+<p><code>target . addEventListener(type, callback [, options])</code><br />
+为<code>type</code>特性值为参数<code>type</code>的事件添加一个事件监听器。<code>callback</code>参数设置了事件监听器的<code>callback</code>，并且在事件被派发时将被会调用它。<br />
+<code>options</code>参数设置监听器特定的选项。为了兼容，它可以是一个布尔值，在这种情况下，该方法的行为与指定了<code>options</code>的<code>capture</code>完全一样。<br />
+当<code>options.capture</code>为<code>true</code>时，会在事件的<code>eventPhase</code>特性值为<code>BUBBLING_PHASE</code>时阻止<code>callback</code>的调用；当<code>options.capture</code>为<code>false</code>或不存在时，会在事件的<code>eventPhase</code>特性值为<code>CAPTURING_PHASE</code>时阻止<code>callback</code>的调用。无论如何，如果事件的<code>eventPhase</code>特性值是<code>AT_TARGET</code>，<code>callback</code>将被调用。<br />
+当<code>options.passive</code>为<code>true</code>时，它表示<code>callback</code>将不会因为调用<code>preventDefault()</code>而被取消。这是用来实现 2.8 观察事件监听器中描述的性能优化的。<br />
+当<code>options.once</code>为<code>true</code>时，它表示<code>callback</code>只会被调用一次，随后事件监听器将被移除。<br />
+如果一个<code>AbortSignal</code>被传递给<code>options.signal</code>，那么当信号被终止时，事件监听器将被移除。<br />
+事件监听器被追加到目标的事件监听器列表中，如果它有相同的<code>type</code>、<code>callback</code>和<code>capture</code>，则不会被追加。</p>
+<p><code>target . removeEventListener(type, callback [, options])</code><br />
+移除目标的事件监听器列表中具有相同<code>type</code>、<code>callback</code>和<code>options</code>的事件监听器。</p>
+<p><code>target . dispatchEvent(event)</code><br />
+向<code>target</code>派发一个合成事件<code>event</code>，如果<code>event.cancelable</code>特性为<code>false</code>或者它的<code>preventDefault()</code>方法没被调用过，返回<code>true</code>，否则返回<code>false</code></p>
+<p>为了<code>flatten</code> options，执行以下步骤：</p>
+<ol>
+<li>如果<code>options</code>是布尔值，返回<code>options</code></li>
+<li>返回 <code>options['capture']</code></li>
+</ol>
+<p>为了<code>flattern more</code> options，执行以下步骤：</p>
+<ol>
+<li>令<code>capture</code>为<code>flatten</code>options的结果</li>
+<li>令<code>once</code>和<code>passive</code>为<code>false</code></li>
+<li>令<code>signal</code>为<code>null</code></li>
+<li>如果<code>options</code>是字典，则：
+<ol>
+<li>将<code>passive</code>设为<code>options['passive']</code>，将<code>once</code>设为<code>options['once']</code></li>
+<li>如果<code>options['signal']</code>存在，将<code>signal</code>设为<code>options['signal']</code></li>
+</ol>
+</li>
+<li>返回<code>capture</code>, <code>passive</code>, <code>once</code>和<code>signal</code></li>
+</ol>
+<p><code>new EventTarget()</code>构造步骤什么也不做。</p>
+<p>注意：由于其他地方的默认值，返回的<code>EventTarget</code>的<code>get the parent</code>算法将返回<code>null</code>，并且它将没有<code>activation behavior</code>, <code>legacy-pre-activation behavior</code>, 或<code>legacy-canceled-activation behavior</code></p>
+<p>注意：在未来，我们可以允许自定义<code>get the parent</code>算法。如果这对你的程序有用，请告诉我们。目前，所有作者创建的<code>EventTarget</code>都不参与树结构。</p>
+<p>为了<code>add an event listener</code>，给定<code>EventTarget</code>对象<code>eventTarget</code>和事件监听器<code>listener</code>，执行以下步骤：</p>
+<ol>
+<li>如果<code>eventTarget</code>是<code>ServiceWorkerGlobalScope</code>对象，且<code>service worker</code>的<code>script resource</code>的<code>has ever been evaluated flag</code>被设置，并且监听器的类型与任何一个<code>service worker events</code>的<code>type</code>特性值相匹配，则向控制台报告一个警告，即这可能不会得到预期的结果。</li>
+<li>如果<code>signal</code>不是<code>null</code>并且它的<code>aborted flag</code>被设置，则返回</li>
+<li>如果<code>listener.callback</code>为<code>null</code>，则返回</li>
+<li>如果<code>eventTarget</code>的事件监听器列表不包含一个<code>type</code>为<code>listener.type</code>，<code>callback</code>为<code>listener.callback</code>，<code>capture</code>为<code>listener.capture</code>的事件监听器，则将<code>listener</code>添加到<code>eventTarget</code>的事件监听器列表中。</li>
+<li>如果<code>listener.signal</code>不为<code>null</code>，则为它添加下列终止步骤：
+<ol>
+<li>使用<code>eventTarget</code>和<code>listener</code>移除事件监听器</li>
+</ol>
+</li>
+</ol>
+<p>注意：<code>add an event listener</code>概念的存在是为了确保事件处理程序使用相同的代码路径。[HTML]</p>
+<p><code>addEventListener(type, callback, options)</code>方法步骤：</p>
+<ol>
+<li>令<code>capture</code>, <code>passive</code>和<code>once</code>为<code>flattening more</code>options的结果</li>
+<li>使用<code>this</code>和一个<code>type</code>为<code>type</code>, <code>callback</code>为<code>callback</code>, <code>capture</code>为<code>capture</code>, <code>passive</code>为<code>passive</code>, <code>once</code>为<code>once</code>, <code>signal</code>为<code>signal</code>的事件监听器执行<code>Add an event listener</code></li>
+</ol>
+<p>为了<code>remove an event listener</code>，给定<code>EventTarget</code>对象<code>eventTarget</code>和事件监听器<code>listener</code>，执行以下步骤：</p>
+<ol>
+<li>如果<code>eventTarget</code>是<code>ServiceWorkerGlobalScope</code>对象，且<code>service worker</code>的<code>set of event types to handle</code>包含<code>type</code>，则向控制台报告一个警告，即这可能不会得到预期的结果。[SERVEICE-WORKERS]</li>
+<li>将<code>listener.removed</code>设为<code>true</code>，然后从<code>eventTarget</code>的事件监听器列表中移除<code>listener</code></li>
+</ol>
+<p>注意：HTML需要此项来定义事件处理程序[HTML]</p>
+<p>为了<code>remove all event listeners</code>，给定<code>EventTarget</code>对象<code>eventTarget</code>，对<code>eventTarget</code>的事件监听器列表中的每个<code>listener</code>，使用<code>eventTarget</code>和<code>listener</code>执行<code>remove an event listener</code></p>
+<p>注意：HTML需要此项来定义<code>document.open()</code>[HTML]</p>
+<p><code>removeEventListener(type, callback, options)</code>方法步骤：</p>
+<ol>
+<li>令<code>capture</code>为<code>flattening</code>options的结果</li>
+<li>如果<code>this</code>的事件监听器列表包含一个事件监听器，其<code>type</code>为<code>type</code>，<code>callback</code>为<code>callback</code>，<code>capture</code>为<code>capture</code>，则用<code>this</code>和这个事件监听器执行<code>remove an event listener</code></li>
+</ol>
+<p>注意：事件监听器列表不会包含多个具有相同<code>type</code>、<code>callback</code>和<code>capture</code>的事件监听器，因为<code>add an event listener</code>时阻止了这种情况。</p>
+<p><code>dispatchEvent(event)</code>方法步骤：</p>
+<ol>
+<li>如果<code>event</code>的<code>dispatch flag</code>被设置，或如果它的<code>initialized flag</code>没设置，则抛出<code>InvalidStateError</code>异常</li>
+<li>将<code>event</code>的<code>isTrusted</code>初始化为<code>false</code></li>
+<li>返回向<code>this</code>派发<code>event</code>的结果</li>
+</ol>
+<h2 id="28-观察事件监听器"><a class="markdownIt-Anchor" href="#28-观察事件监听器"></a> 2.8 观察事件监听器</h2>
+<p>一般来说，开发者并不期望事件监听器的存在可以被观察到。事件监听器的影响是由其回调决定的。也就是说，一个开发者添加一个无操作的事件监听器不会期望它有任何副作用。</p>
+<p>不幸的是，一些事件API被设计成有效地实现它们需要观察事件监听器。这可以使监听器的存在被观察到，即使是空的监听器也会对应用程序的行为产生巨大的性能影响。例如，触摸和滚轮事件，可以用来阻止异步滚动。在某些情况下，这个问题可以通过指定事件只有在至少有一个非<code>passive</code>监听器的情况下才可以取消而得到缓解。例如，非<code>passive</code>的TouchEvent监听器必须阻止滚动，但如果所有的监听器都是被动的，那么可以通过使TouchEvent不可取消来允许滚动开始（这样对<code>preventDefault()</code>的调用就被忽略了）。因此，调度事件的代码能够观察到非<code>passive</code>的监听器的不存在，并使用它来清除被调度的事件的<code>cancelable</code>属性。</p>
+<p>理想情况下，任何新的事件API被定义为不需要这个属性（使用public-script-coord@w3.org 来讨论）。</p>
+<h2 id="211-行动vs发生"><a class="markdownIt-Anchor" href="#211-行动vs发生"></a> 2.11 行动vs发生</h2>
+<p>一个事件表示一个发生，而不是一个行动。换句话说，它代表来自一个算法的通知，可以用来影响该算法的未来进程（例如，通过调用<code>preventDefault()</code>）。事件不能被用作导致某些算法开始运行的行动或启动器。这不是它们的作用。</p>
+<p>注意：这里特别指出，因为以前的DOM迭代有一个与事件相关的 &quot;默认行动 &quot;的概念，给了人们所有错误的想法。事件不代表或导致行动，它们只能被用来影响正在进行的行动。</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/1%20%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD.html">1 基础设施</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/">DOM</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/DOM/DOM%E6%A0%87%E5%87%86/">DOM标准</a></span><div class="content"><h1 id="1-基础设施"><a class="markdownIt-Anchor" href="#1-基础设施"></a> 1 基础设施</h1>
+<h2 id="11-树"><a class="markdownIt-Anchor" href="#11-树"></a> 1.1 树</h2>
+<p>一个树(tree)是一个有限分层树状结构。树顺序(tree order)是指对树进行先序遍历/深度优先遍历。</p>
+<p>一个参与(participate)了树的对象具有父母(parent)，父母可能是<code>null</code>也可能是一个对象。该对象也有孩子(children)，它是对象的有序集合。如果一个对象<code>A</code>的父母为对象<code>B</code>，那么它是对象<code>B</code>的孩子。</p>
+<p>一个对象的根(root)，在父母为<code>null</code>时是它自己，否则对象的根是它父母的根。树的根是任意参与了树，且父母为<code>null</code>的对象。</p>
+<p>对象A称为对象B的后代(descendant)，是说对象A是对象B的孩子，或者A是某个对象C的孩子，而C又是B的后代。</p>
+<p>包含后代(inclusive descendant)，是指一个对象或它的某个后代</p>
+<p>对象A称为对象B的祖先(ancestor)，当且仅当对象B是对象A的后代</p>
+<p>对象A称为对象B的兄弟(sibling)，当今且当B和A有相同的非<code>null</code>父母</p>
+<p>包含兄弟(inclusive sibling)，是指一个对象或它的某个兄弟</p>
+<p>对象A在对象B的前面(preceding)，是指A和B在同一个树中，且按照树顺序A出现在B之前</p>
+<p>对象A在对象B的后面(following)，是指A和B在同一个树中，且按照树顺序A出现在B后面</p>
+<p>对象的第一个孩子(first child)，是指对象的第一个孩子，如果没有孩子则为<code>null</code></p>
+<p>对象的最后一个孩子(last child)，是指对象的最后一个孩子，如果没有孩子则为<code>null</code></p>
+<p>对象的前一个兄弟(previou sibling)，是指它前面的第一个兄弟，如果没有前面的兄弟则为<code>null</code></p>
+<p>对象的后一个兄弟(next sibling)，是指它后面的第一个兄弟，如果没有后面的兄弟则为<code>null</code></p>
+<p>对象的索引(index)，是指它前面兄弟的数量，如果没有前面的兄弟则为<code>0</code></p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/HTML%E6%A0%87%E5%87%86/2%20%E9%80%9A%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD.html">2 通用基础设施</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-07</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/">HTML语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/HTML%E6%A0%87%E5%87%86/">HTML标准</a></span><div class="content"><h1 id="2-通用基础设施"><a class="markdownIt-Anchor" href="#2-通用基础设施"></a> 2 通用基础设施</h1>
+<p>此规范依赖于 Infra 。</p>
+<h2 id="21-术语"><a class="markdownIt-Anchor" href="#21-术语"></a> 2.1 术语</h2>
+<p>本规范提到了HTML和XML特性，也提到了IDL特性，通常是在同一个上下文中。当不清楚指的是哪个时，HTML和XML特性被称为<strong>内容特性</strong>(content attributes)，而IDL接口上定义的特性则被称为<strong>IDL特性</strong>。同样地，术语 “属性” 也被用于JavaScript对象属性和CSS属性。当不明确时，它们分别被限定为<strong>对象属性</strong>和<strong>CSS属性</strong>。</p>
+<p>一般来说，当规范指出一个功能适用于HTML语法或XML语法时，它也包含另一个。当一个特性明确地只适用于两种语言中的一种时，就会明确地指出它不适用于另一种格式，如 “对于HTML，…”。(这不适用于XML)&quot;。</p>
+<p>本规范使用术语 “文档”(document) 来指任何对HTML的使用，从简短的静态文档到长篇论文或带有丰富多媒体的报告，以及完全成熟的交互式应用程序。这个术语被用来指代<code>Document</code>对象和它们的后代DOM树，以及使用HTML语法或XML语法的序列化字节流，具体取决于上下文。</p>
+<p>在DOM结构的上下文中，术语 HTML文档 和 XML文档 是按照DOM中的定义来使用，并且特指 Document 对象可以在其中找到自己的两种不同模式。[DOM]（此类使用总是超链接到其定义）。</p>
+<p>在字节流的上下文中，术语 HTML文档 指的是标记为<code>text/html</code>的资源，而术语 XML文档 指的是标记为XML MIME类型的资源。</p>
+<p>为了简单起见，有时可能会在指代向用户呈现文档的方式时使用<strong>shown</strong>、<strong>displayed</strong>和<strong>visible</strong>等术语。这些术语并不意味着指代视觉媒介；必须考虑以同等方式将它们应用于其他媒体。</p>
+<h3 id="212-资源"><a class="markdownIt-Anchor" href="#212-资源"></a> 2.1.2 资源</h3>
+<p>本规范在提到用户代理是否具有能够解码外部资源语义的实现时，使用了支持(supported)这一术语。如果实现能够处理该格式或类型的外部资源，而不会忽略该资源的关键方面，则该格式或类型被认为是被支持的。一个特定的资源是否被支持，可能取决于该资源的格式的哪些功能被使用。</p>
+<p>例如：如果一个PNG图像的像素数据可以被解码和渲染，那么它将被认为是被支持的格式，即使实现者不知道该图像还包含动画数据。</p>
+<p>例如：如果所使用的压缩格式不被支持，那么MPEG-4视频文件就不会被认为是被支持的格式，即使实现可以从文件的元数据中确定电影的尺寸。</p>
+<p>一些规范，特别是HTTP规范中，所说的表示(representation)，在本规范中称为资源(resource)。</p>
+<p>一个资源的<strong>关键子资源</strong>(critical subresources)是指必须可用才能被正确处理的资源。哪些资源被认为是关键的或不关键的，由定义资源格式的规范来定义。</p>
+<p>对于CSS样式表，我们暂且定义它们的关键子资源是通过<code>@import</code>规则导入的其他样式表，包括那些由其他导入的样式表间接导入的样式表。</p>
+<p>这个定义并不完全具有互操作性；此外，一些用户代理似乎将背景图像或网页字体等资源算作关键子资源。理想情况下，CSS工作组会对此进行定义；参见w3c/csswg-drafts issue #1088以跟踪这方面的进展。</p>
+<h3 id="214-dom树"><a class="markdownIt-Anchor" href="#214-dom树"></a> 2.1.4 DOM树</h3>
+<p>当说明某些元素或特性被忽略(ignored)，或被作为其他值对待，或被当作其他东西处理时，这仅指结点处于DOM中之后的处理。在这种情况下，用户代理不得对DOM进行突变。</p>
+<p>只有当一个内容特性的新值与它以前的值不同时，才称为内容特性<strong>改变</strong>了值；将一个特性设置为它已经拥有的值并不会<strong>改变</strong>它。</p>
+<p>术语空值(empty)，当用于一个特性值、Text节点或字符串时，意味着文本的长度为零（即甚至不包含controls U+007F到U+009F，或U+0020 SPACE）。</p>
+<p>结点A被插入到结点B中，是说使用参数<code>A</code>调用<strong>插入步骤</strong>，使得A的新父节点是B。同样，从结点B中移除结点A是说，以A为<code>removementNode</code>参数、B为<code>oldParent</code>参数调用移除步骤，B为oldParent参数调用移除步骤时，一个节点A被从一个节点B中移除。</p>
+<p>一个结点被插入到文档中，是说使用该结点作为参数调用插入步骤，使得该结点现在处于文档树中。类似地，一个结点从文档中移除是说，以该结点为参数调用移除步骤，使得它现在不在文档树中。</p>
+<p>一个结点变成连接的，是说以它为参数调用插入步骤，使得它现在是连接的。一个结点变成非连接的，是说以它为参数调用移除步骤，使得它现在不再是连接的。</p>
+<p>一个结点是浏览上下文连接的，是说它是连接的，且它的shadow-including root的浏览上下文是非<code>null</code>。一个结点变成浏览上下文连接的，是说以它为参数调用插入步骤，使得它现在是浏览上下文连接的。一个结点变成浏览上下文非连接的，是说要么以它为参数调用移除步骤使得它不再是浏览上下文连接的，要么它的shadow-including root的浏览上下文变成<code>null</code></p>
+<h3 id="215-脚本编写"><a class="markdownIt-Anchor" href="#215-脚本编写"></a> 2.1.5 脚本编写</h3>
+<p>构造器 “一个Foo对象”，这里Foo实际上是一个接口，有时用于代替更精确的说法 “一个实现Foo接口的对象”。</p>
+<p>一个IDL特性被称为<code>getting</code>，当它的值被检索（例如被作者脚本）。当用新值为它赋值时称为<code>setting</code></p>
+<p>如果一个DOM对象被说成是<code>live</code>的，那么该对象上的特性和方法必须对实际的基础数据而不是数据的快照进行操作。</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/HTML%E6%A0%87%E5%87%86/1%20%E7%AE%80%E4%BB%8B.html">1 简介</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-06</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/">HTML语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%89%8D%E7%AB%AF/HTML%E8%AF%AD%E8%A8%80/HTML%E6%A0%87%E5%87%86/">HTML标准</a></span><div class="content"><h1 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1 简介</h1>
+<h2 id="17-设计说明"><a class="markdownIt-Anchor" href="#17-设计说明"></a> 1.7 设计说明</h2>
+<p>本节为非规范性内容。</p>
+<p>必须承认，HTML的许多方面乍一看似乎是荒谬和不一致的。</p>
+<p>HTML及其支持的DOM API，以及许多支持的技术，都是在数十年间由一系列具有不同优先级的人开发的，在许多情况下，他们并不知道对方的存在。</p>
+<p>因此，功能来自于许多方面，而且并不总是以特别一致的方式设计。此外，由于网络的特殊性，实现错误往往成为事实上的标准，而现在则是法律上的标准，因为内容往往是在无意中写成的，在它们被修复之前就依赖于它们。</p>
+<p>尽管这样，人们还是努力坚持某些设计目标。这些将在接下来的几个小节中描述。</p>
+<h3 id="173-可扩展性"><a class="markdownIt-Anchor" href="#173-可扩展性"></a> 1.7.3 可扩展性</h3>
+<p>本节为非规范性内容。</p>
+<p>HTML具有广泛的可扩展性机制，可用于以安全的方式添加语义。</p>
+<ul>
+<li>作者可以使用<code>class</code>属性来扩展元素，有效地创建他们自己的元素，同时使用最适用的现有 &quot;真正的 &quot;HTML元素，这样浏览器和其他不知道该扩展的工具仍然可以在一定程度上支持它。例如，这就是微格式(microformats)所使用的方法。</li>
+<li>作者可以使用<code>data-*=&quot;&quot;</code>属性为内联的客户端脚本或服务器端的网站脚本提供数据处理。这些属性保证不会被浏览器触及，并允许脚本在HTML元素上包含数据，然后脚本可以查找和处理这些数据。</li>
+<li>作者可以使用<code>&lt;meta name=&quot;&quot; content=&quot;&quot;&gt;</code>机制来包含整个页面的元数据。</li>
+<li>作者可以使用<code>rel=&quot;&quot;</code>机制，通过注册<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/links.html#concept-rel-extensions">扩展</a>到<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/links.html#concept-rel-extensions">预定义的链接类型集</a>，来为<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/links.html#concept-rel-extensions">链接</a>注释特定的含义。这也被微格式所使用。</li>
+<li>作者可以使用<code>&lt;script type=&quot;&quot;&gt;</code>机制嵌入原始数据，并使用自定义类型，以便由内联或服务器端的脚本进一步处理。</li>
+<li>作者可以创建<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/infrastructure.html#plugin">插件</a>并使用<code>embed</code>元素来调用它们。这就是Flash的工作原理。</li>
+<li>作者可以使用JavaScript原型设计机制来扩展API。例如，这被脚本库所广泛使用。</li>
+<li>作者可以使用微数据功能 （<code>itemscope=&quot;&quot;</code>和<code>itemprop=&quot;&quot;</code>属性）来嵌入嵌套的数据<code>名-值</code>对，以便与其他应用程序和网站共享。</li>
+</ul>
+<h2 id="18-html-vs-xml-语法"><a class="markdownIt-Anchor" href="#18-html-vs-xml-语法"></a> 1.8 HTML vs XML 语法</h2>
+<p>本节为非规范性内容。</p>
+<p>HTML规范定义了一种用于描述文档和应用的抽象语言，以及一些用于与使用这种语言的资源的内存表示进行交互的应用编程接口(API)。</p>
+<p>内存中的表示被称为<code>DOM HTML</code>，简称<code>DOM</code></p>
+<p>有各种具体的语法可以用来传输使用这种抽象语言的资源，本规范中定义了其中的两种。</p>
+<p>第一个这样的具体语法是HTML语法。这是大多数作者建议使用的格式。它与大多数旧版 Web 浏览器兼容。如果一个文档以<code>text/html</code> MIME类型传输，那么它将被Web浏览器当作HTML文档来处理。本规范定义了最新的HTML语法，简称为 “HTML”。</p>
+<p>第二种具体的语法是XML。当一个文档以XML MIME类型（如<code>application/xhtml+xml</code>）传输时，那么它就会被Web浏览器当作XML文档来处理，由XML处理器进行解析。请作者注意，对XML和HTML的处理是不同的；特别是，即使是轻微的语法错误，也会阻止标记为XML的文档被完全呈现，而在HTML语法中，这些错误会被忽略。</p>
+<p>注：HTML的XML语法以前被称为 “XHTML”，但本规范没有使用这个术语（除其他原因外，还因为MathML和SVG的HTML语法没有使用这个术语）。</p>
+<p>DOM、HTML语法和XML语法不能都表示相同的内容。例如，命名空间不能用HTML语法表示，但在DOM和XML语法中都支持。同样，使用noscript功能的文档可以用HTML语法表示，但不能用DOM或XML语法表示。包含字符串<code>&quot;--&gt;&quot;</code>的注释只能用DOM表示，不能用HTML和XML语法表示。</p>
+<h2 id="19-本规范的结构"><a class="markdownIt-Anchor" href="#19-本规范的结构"></a> 1.9 本规范的结构</h2>
+<p>本节为非规范性内容。</p>
+<ol>
+<li>简介
+<ul>
+<li>为HTML标准提供背景的非规范性材料。</li>
+</ul>
+</li>
+<li>通用基础设施
+<ul>
+<li>一致性类、算法、定义和本规范其他部分的共同基础。</li>
+</ul>
+</li>
+<li>HTML文档的语义、结构和API
+<ul>
+<li>文档是由元素构建的。这些元素使用DOM形成一棵树。本节定义了这个DOM的特征，并介绍了所有元素的共同特征，以及定义元素时使用的概念。</li>
+</ul>
+</li>
+<li>HTML的元素
+<ul>
+<li>每个元素都有预定的含义，本节将对此进行解释。还给出了作者如何使用该元素的规则，以及用户代理对如何处理每个元素的要求。这包括HTML的大型签名功能，如视频播放和字幕、表单控制和表单提交，以及被称为HTML画布的二维图形API。</li>
+</ul>
+</li>
+<li>微数据
+<ul>
+<li>本规范引入了一种向文档添加机器可读注释的机制，这样工具就可以从文档中提取名-值对的树。本节描述了这种机制和一些可以用来将HTML文档转换成其他格式的算法。本节还定义了一些用于联系信息、日历事件和许可作品的Microdata词汇表样本。</li>
+</ul>
+</li>
+<li>用户互动
+<ul>
+<li>HTML文档可以为用户提供一些互动和修改内容的机制，本节对这些机制进行了描述，如聚焦如何工作，以及拖放等。</li>
+</ul>
+</li>
+<li>加载网页
+<ul>
+<li>HTML文档并不是凭空存在的的——本节定义了许多影响处理多个页面的环境的功能，如Web浏览器。</li>
+</ul>
+</li>
+<li>Web应用程序API
+<ul>
+<li>本节介绍了在HTML中编写应用程序脚本的基本功能。</li>
+</ul>
+</li>
+<li>Web Worker
+<ul>
+<li>本节定义了JavaScript中后台线程的API。</li>
+</ul>
+</li>
+<li>Worklet
+<ul>
+<li>本节定义了需要与主JavaScript执行环境分开运行JavaScript的API的基础结构。</li>
+</ul>
+</li>
+<li>通信API
+<ul>
+<li>本节描述了一些机制，用HTML编写的应用程序可以用来与运行在同一客户端的不同领域的其他应用程序进行通信。它还介绍了一种被称为 &quot;服务器发送的事件 &quot;或 &quot;EventSource &quot;的服务器推送事件流机制，以及一种被称为Web Sockets的脚本双向全双工套接字协议。</li>
+</ul>
+</li>
+<li>网络存储
+<ul>
+<li>本节定义了一种基于名-值对的客户端存储机制。</li>
+</ul>
+</li>
+<li>HTML语法</li>
+<li>XML语法
+<ul>
+<li>如果不能以序列化的形式表示并发送给其他人，那么所有这些功能都是徒劳的，因此这些部分定义了HTML和XML的语法，以及如何使用这些语法解析内容的规则。</li>
+</ul>
+</li>
+<li>渲染
+<ul>
+<li>本节定义了网络浏览器的默认渲染规则。</li>
+</ul>
+</li>
+</ol>
+<p>还有一些附录，列出了过时的功能和IANA考虑，以及一些索引。</p>
+</div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/26%20%E5%8F%8D%E5%B0%84.html">26 反射</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/">JavaScript语言</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/">ES规范</a></span><div class="content"><h1 id="26-反射"><a class="markdownIt-Anchor" href="#26-反射"></a> 26 反射</h1>
+<h2 id="261-reflect对象"><a class="markdownIt-Anchor" href="#261-reflect对象"></a> 26.1 Reflect对象</h2>
+<p>Reflect对象：</p>
+<ul>
+<li>是固有对象<code>%Reflect%</code></li>
+<li>是全局对象的<code>&quot;Reflect&quot;</code>属性的初始值</li>
+<li>是普通对象</li>
+<li>具有<code>[[Prototype]]</code>内部槽，且其值为<code>%Object.prototype%</code></li>
+<li>不是函数对象</li>
+<li>没有<code>[[Construct]]</code>内部方法，不能使用<code>new</code>运算符作为构造函数调用</li>
+<li>没有<code>[[Call]]</code>内部方法，不能作为函数调用</li>
+</ul></div><a class="more" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript%E8%AF%AD%E8%A8%80/ES%E8%A7%84%E8%8C%83/26%20%E5%8F%8D%E5%B0%84.html#more">阅读更多</a><hr></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fa fa-chevron-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/bg.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By rcocco</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.0"></script><script src="/js/fancybox.js?version=1.9.0"></script><script src="/js/sidebar.js?version=1.9.0"></script><script src="/js/copy.js?version=1.9.0"></script><script src="/js/fireworks.js?version=1.9.0"></script><script src="/js/transition.js?version=1.9.0"></script><script src="/js/scroll.js?version=1.9.0"></script><script src="/js/head.js?version=1.9.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
   $('#top-container').addClass('is-mobile')
